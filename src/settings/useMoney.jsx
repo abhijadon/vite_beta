@@ -1,8 +1,6 @@
 import currency from 'currency.js';
-
 import { useSelector } from 'react-redux';
 import storePersist from '@/redux/storePersist';
-
 import { selectMoneyFormat } from '@/redux/settings/selectors';
 
 const useMoney = () => {
@@ -24,18 +22,18 @@ const useMoney = () => {
   function currencyFormat(amount) {
     return currency(amount).dollars() > 0 || !zero_format
       ? currency(amount, {
-          separator: thousand_sep,
-          decimal: decimal_sep,
-          symbol: '',
-          precision: cent_precision,
-        }).format()
+        separator: thousand_sep,
+        decimal: decimal_sep,
+        symbol: '',
+        precision: cent_precision,
+      }).format()
       : 0 +
-          currency(amount, {
-            separator: thousand_sep,
-            decimal: decimal_sep,
-            symbol: '',
-            precision: cent_precision,
-          }).format();
+      currency(amount, {
+        separator: thousand_sep,
+        decimal: decimal_sep,
+        symbol: '',
+        precision: cent_precision,
+      }).format();
   }
 
   function moneyFormatter({ amount = 0 }) {

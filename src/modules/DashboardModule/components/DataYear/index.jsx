@@ -6,7 +6,7 @@ export default function Combining() {
 
     useEffect(() => {
         // Fetch data from the API endpoint
-        fetch('http://localhost:5000/api/payment/list')
+        fetch(`${import.meta.env.VITE_BACKEND_SERVER}api/payment/list`)
             .then(response => response.json())
             .then(data => {
                 setPaymentData(data.result);

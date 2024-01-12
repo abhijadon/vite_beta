@@ -16,10 +16,16 @@
 :where(.css-dkbvqv).ant-modal .ant-modal-close-x {
   color: red !important;
 }
-
-element.style {
+:where(.css-2i2tap).ant-picker{
+  width: 100% !important;
 }
-:where(.css-dev-only-do-not-override-2i2tap).ant-picker-dropdown .ant-picker-header > button {
+:where(.css-2i2tap).ant-picker-dropdown .ant-picker-header button {
+  color: #1677ff !important;
+}
+:where(.css-dkbvqv).ant-picker-dropdown .ant-picker-header > button {
+  color: #1677ff !important;
+}
+:where(.css-dkbvqv).ant-picker-dropdown .ant-picker-header-view button:not(:first-child) {
   color: #1677ff !important;
 }
 
