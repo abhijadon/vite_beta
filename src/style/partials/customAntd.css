@@ -13,12 +13,14 @@
   border-right: 1px solid #edf0f5;
   color: #4f5d75;
 }
-:where(.css-dkbvqv).ant-modal .ant-modal-close-x { color: red !important }
+:where(.css-dkbvqv).ant-modal .ant-modal-close-x {
+  color: red !important;
+}
 
 element.style {
 }
 :where(.css-dev-only-do-not-override-2i2tap).ant-picker-dropdown .ant-picker-header > button {
-  color: black !important;
+  color: #1677ff !important;
 }
 
 :where(.css-dev-only-do-not-override-2i2tap).ant-modal .ant-modal-close {
@@ -28,10 +30,12 @@ element.style {
   flex: auto;
   font-weight: 600;
   line-height: 40px;
-  color: black !important;
-  background: black;
+  color: #1677ff !important;
 }
 
+:where(.css-dev-only-do-not-override-2i2tap).ant-picker-dropdown .ant-picker-header button {
+  color: #1677ff !important;
+}
 :where(.css-dev-only-do-not-override-2i2tap).ant-picker {
   border-color: #1677ff;
   box-shadow: 0 0 0 2px rgba(5, 145, 255, 0.1);

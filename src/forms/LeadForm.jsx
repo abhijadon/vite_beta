@@ -1,16 +1,25 @@
 import { useState, useEffect } from 'react';
-import { Form, Select, Input, Checkbox, Radio, DatePicker, Upload } from 'antd';
+import { Form, Select, Input, Checkbox, Radio, DatePicker, Upload, notification } from 'antd';
 import formData from './formData';
 import { UploadOutlined } from '@ant-design/icons';
 import useLanguage from '@/locale/useLanguage';
 const { Option } = Select;
 // Inside the component
 
+const openNotification = (fieldName) => {
+  const capitalizedFieldName = fieldName.charAt(0).toUpperCase() + fieldName.slice(1);
+  notification.error({
+    message: 'Field Validation',
+    description: `${capitalizedFieldName} is required.`,
+    placement: 'topLeft',
+  });
+};
 
 export default function LeadForm() {
   const [selectedInstitute, setSelectedInstitute] = useState(null);
   const [selectedUniversity, setSelectedUniversity] = useState(null);
   const [studentId, setStudentId] = useState('');
+
   const translate = useLanguage();
   const normFile = (e) => {
     if (Array.isArray(e)) {
@@ -18,6 +27,7 @@ export default function LeadForm() {
     }
     return e && e.fileList;
   };
+
   useEffect(() => {
     if (selectedInstitute && selectedUniversity) {
       setStudentId(generateUniqueId());
@@ -34,14 +44,33 @@ export default function LeadForm() {
 
   const generateFormItems = (fields) => {
     return fields.map((field) => {
+      const capitalizedLabel = field.label.charAt(0).toUpperCase() + field.label.slice(1);
+
       switch (field.type) {
         case 'studentId':
           return (
             <Form.Item
               key={field.id}
-              label={field.label}
+              label={capitalizedLabel}
               name={field.name}
               initialValue={generateUniqueId()}
+              rules={[
+                {
+                  required: field.required === 'require',
+                  validator: (_, value) => {
+                    return new Promise((resolve, reject) => {
+                      if (value || field.required !== 'require') {
+                        // If the value is not empty or the field is not required, resolve
+                        resolve();
+                      } else {
+                        // If the value is empty and the field is required, reject and show notification
+                        openNotification(field.label);
+                        reject(`${field.label} is required.`);
+                      }
+                    });
+                  },
+                },
+              ]}
             >
               <Input
                 placeholder="Generated automatically"
@@ -55,8 +84,25 @@ export default function LeadForm() {
           return (
             <Form.Item
               key={field.id}
-              label={field.label}
+              label={capitalizedLabel}
               name={field.name}
+              rules={[
+                {
+                  required: field.required === 'require',
+                  validator: (_, value) => {
+                    return new Promise((resolve, reject) => {
+                      if (value || field.required !== 'require') {
+                        // If the value is not empty or the field is not required, resolve
+                        resolve();
+                      } else {
+                        // If the value is empty and the field is required, reject and show notification
+                        openNotification(field.label);
+                        reject(`${field.label} is required.`);
+                      }
+                    });
+                  },
+                },
+              ]}
             >
               <Input placeholder={field.place} />
             </Form.Item>
@@ -65,8 +111,25 @@ export default function LeadForm() {
           return (
             <Form.Item
               key={field.id}
-              label={field.label}
+              label={capitalizedLabel}
               name={field.name}
+              rules={[
+                {
+                  required: field.required === 'require',
+                  validator: (_, value) => {
+                    return new Promise((resolve, reject) => {
+                      if (value || field.required !== 'require') {
+                        // If the value is not empty or the field is not required, resolve
+                        resolve();
+                      } else {
+                        // If the value is empty and the field is required, reject and show notification
+                        openNotification(field.label);
+                        reject(`${field.label} is required.`);
+                      }
+                    });
+                  },
+                },
+              ]}
             >
               <Input placeholder={field.place} />
             </Form.Item>
@@ -75,8 +138,25 @@ export default function LeadForm() {
           return (
             <Form.Item
               key={field.id}
-              label={field.label}
+              label={capitalizedLabel}
               name={field.name}
+              rules={[
+                {
+                  required: field.required === 'require',
+                  validator: (_, value) => {
+                    return new Promise((resolve, reject) => {
+                      if (value || field.required !== 'require') {
+                        // If the value is not empty or the field is not required, resolve
+                        resolve();
+                      } else {
+                        // If the value is empty and the field is required, reject and show notification
+                        openNotification(field.label);
+                        reject(`${field.label} is required.`);
+                      }
+                    });
+                  },
+                },
+              ]}
             >
               <Input placeholder={field.place} />
             </Form.Item>
@@ -87,16 +167,50 @@ export default function LeadForm() {
               key={field.id}
               valuePropName="checked"
               name={field.name}
+              rules={[
+                {
+                  required: field.required === 'require',
+                  validator: (_, value) => {
+                    return new Promise((resolve, reject) => {
+                      if (value || field.required !== 'require') {
+                        // If the value is not empty or the field is not required, resolve
+                        resolve();
+                      } else {
+                        // If the value is empty and the field is required, reject and show notification
+                        openNotification(field.label);
+                        reject(`${field.label} is required.`);
+                      }
+                    });
+                  },
+                },
+              ]}
             >
-              <Checkbox>{field.label}</Checkbox>
+              <Checkbox>{capitalizedLabel}</Checkbox>
             </Form.Item>
           );
         case 'radio':
           return (
             <Form.Item
               key={field.id}
-              label={field.label}
+              label={capitalizedLabel}
               name={field.name} // This should be 'customfields.sendfeereceipt'
+              rules={[
+                {
+                  required: field.required === 'require',
+                  validator: (_, value) => {
+                    return new Promise((resolve, reject) => {
+                      if (value || field.required !== 'require') {
+                        // If the value is not empty or the field is not required, resolve
+                        resolve();
+                      } else {
+                        // If the value is empty and the field is required, reject and show notification
+                        openNotification(field.label);
+                        reject(`${field.label} is required.`);
+                      }
+                    });
+                  },
+                },
+              ]}
             >
               <Radio.Group>
                 {field.options.map((option) => (
@@ -109,8 +223,25 @@ export default function LeadForm() {
           return (
             <Form.Item
               key={field.id}
-              label={field.label}
+              label={capitalizedLabel}
               name={field.name}
+              rules={[
+                {
+                  required: field.required === 'require',
+                  validator: (_, value) => {
+                    return new Promise((resolve, reject) => {
+                      if (value || field.required !== 'require') {
+                        // If the value is not empty or the field is not required, resolve
+                        resolve();
+                      } else {
+                        // If the value is empty and the field is required, reject and show notification
+                        openNotification(field.label);
+                        reject(`${field.label} is required.`);
+                      }
+                    });
+                  },
+                },
+              ]}
             >
               <Select placeholder={field.place}>
                 {field.options.map((option) => (
@@ -123,8 +254,25 @@ export default function LeadForm() {
           return (
             <Form.Item
               key={field.id}
-              label={field.label}
+              label={capitalizedLabel}
               name={field.name}
+              rules={[
+                {
+                  required: field.required === 'require',
+                  validator: (_, value) => {
+                    return new Promise((resolve, reject) => {
+                      if (value || field.required !== 'require') {
+                        // If the value is not empty or the field is not required, resolve
+                        resolve();
+                      } else {
+                        // If the value is empty and the field is required, reject and show notification
+                        openNotification(field.label);
+                        reject(`${field.label} is required.`);
+                      }
+                    });
+                  },
+                },
+              ]}
             >
               <DatePicker placeholder={field.place} />
             </Form.Item>
@@ -133,8 +281,25 @@ export default function LeadForm() {
           return (
             <Form.Item
               key={field.id}
-              label={field.label}
+              label={capitalizedLabel}
               name={field.name}
+              rules={[
+                {
+                  required: field.required === 'require',
+                  validator: (_, value) => {
+                    return new Promise((resolve, reject) => {
+                      if (value || field.required !== 'require') {
+                        // If the value is not empty or the field is not required, resolve
+                        resolve();
+                      } else {
+                        // If the value is empty and the field is required, reject and show notification
+                        openNotification(field.label);
+                        reject(`${field.label} is required.`);
+                      }
+                    });
+                  },
+                },
+              ]}
             >
               <Input type="number" placeholder={field.place} />
             </Form.Item>
@@ -143,8 +308,25 @@ export default function LeadForm() {
           return (
             <Form.Item
               key={field.id}
-              label={field.label}
+              label={capitalizedLabel}
               name={field.name}
+              rules={[
+                {
+                  required: field.required === 'require',
+                  validator: (_, value) => {
+                    return new Promise((resolve, reject) => {
+                      if (value || field.required !== 'require') {
+                        // If the value is not empty or the field is not required, resolve
+                        resolve();
+                      } else {
+                        // If the value is empty and the field is required, reject and show notification
+                        openNotification(field.label);
+                        reject(`${field.label} is required.`);
+                      }
+                    });
+                  },
+                },
+              ]}
             >
               <Input.TextArea rows={4} placeholder={field.place} />
             </Form.Item>
@@ -158,8 +340,19 @@ export default function LeadForm() {
               getValueFromEvent={normFile}
               rules={[
                 {
-                  required: true,
-                  message: 'Please upload an image',
+                  required: field.required === 'require',
+                  validator: (_, value) => {
+                    return new Promise((resolve, reject) => {
+                      if (value || field.required !== 'require') {
+                        // If the value is not empty or the field is not required, resolve
+                        resolve();
+                      } else {
+                        // If the value is empty and the field is required, reject and show notification
+                        openNotification(field.label);
+                        reject(`${field.label} is required.`);
+                      }
+                    });
+                  },
                 },
               ]}
             >
@@ -174,12 +367,12 @@ export default function LeadForm() {
             </Form.Item>
           );
 
+
         default:
           return null;
       }
     });
   };
-
   const handleInstituteChange = (value) => {
     setSelectedInstitute(value);
     setSelectedUniversity(null);
