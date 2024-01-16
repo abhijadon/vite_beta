@@ -6,8 +6,8 @@ const INITIAL_SETTINGS_STATE = {
   company_settings: {},
   app_settings: {},
   money_format_settings: {
-    currency: 'USD',
-    currency_symbol: '$',
+    currency: 'IN',
+    currency_symbol: '₹',
     currency_position: 'before',
     decimal_sep: '.',
     thousand_sep: ',',
