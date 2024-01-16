@@ -1,15 +1,11 @@
 import { Form, Input, Upload, Select } from 'antd';
-import { UploadOutlined } from '@ant-design/icons';
+import { InboxOutlined } from '@ant-design/icons';
 import useLanguage from '@/locale/useLanguage';
+const { Dragger } = Upload;
 
 export default function LeadForm() {
     const translate = useLanguage();
-    const normFile = (e) => {
-        if (Array.isArray(e)) {
-            return e;
-        }
-        return e && e.fileList;
-    };
+
     return (
         <>
             <Form.Item
@@ -256,36 +252,39 @@ export default function LeadForm() {
                 <Input />
             </Form.Item>
             <Form.Item
-                label={translate('Fee Receipt Screenshot')}
-                name={['customfields', 'upload_fee_receipt_screenshot']}
-                rules={[
-                    {
-                        required: true,
-                    },
-                ]}
+                label={translate("upload student document")}
+                name={['customfields', 'upload_student_document']}
+                valuePropName="fileList"
+                getValueFromEvent={(e) => e.fileList}
             >
-                <Input />
+                <Dragger
+                    multiple
+                    beforeUpload={() => false} // Prevent automatic upload on file selection
+                >
+                    <p className="ant-upload-drag-icon">
+                        <InboxOutlined />
+                    </p>
+                    <p className="ant-upload-text">Click or drag files to this area to upload</p>
+                    <p className="ant-upload-hint">Support for multiple images</p>
+                </Dragger>
             </Form.Item>
             <Form.Item
-                label={translate('Image')}
-                name="image"
+                label={translate("student fee receipt")}
+                name={['customfields', 'upload_fee_receipt_screenshot']}
                 valuePropName="fileList"
-                getValueFromEvent={normFile}
-                rules={[
-                    {
-                        required: true,
-                        message: 'Please upload an image',
-                    },
-                ]}
+                getValueFromEvent={(e) => e.fileList}
+
             >
-                <Upload
-                    name="logo"
-                    listType="picture"
-                    beforeUpload={() => false}
-                    multiple={false}
+                <Dragger
+                    multiple
+                    beforeUpload={() => false} // Prevent automatic upload on file selection
                 >
-                    <UploadOutlined /> Upload
-                </Upload>
+                    <p className="ant-upload-drag-icon">
+                        <InboxOutlined />
+                    </p>
+                    <p className="ant-upload-text">Click or drag files to this area to upload</p>
+                    <p className="ant-upload-hint">Support for multiple images</p>
+                </Dragger>
             </Form.Item>
             <Form.Item
                 label={translate('status')}

@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import { Form, Select, Input, Checkbox, Radio, DatePicker, notification, Upload } from 'antd';
 import { InboxOutlined } from '@ant-design/icons';
 import formData from './formData';
-import useLanguage from '@/locale/useLanguage';
 
 const { Option } = Select;
 const { Dragger } = Upload;
@@ -364,8 +363,6 @@ export default function LeadForm() {
               </Dragger>
             </Form.Item>
           );
-
-
         default:
           return null;
       }
@@ -380,7 +377,6 @@ export default function LeadForm() {
     setSelectedUniversity(value);
   };
 
-
   return (
     <div>
       <form>
@@ -393,7 +389,6 @@ export default function LeadForm() {
             ))}
           </Select>
         </Form.Item>
-
         {selectedInstitute && (
           <Form.Item label="Select University" name="customfields.university_name">
             <Select onChange={handleUniversityChange} placeholder="--Select University--">
@@ -408,7 +403,6 @@ export default function LeadForm() {
           </Form.Item>
         )}
       </form>
-
       {selectedUniversity && (
         <form>
           {generateFormItems(
@@ -418,7 +412,6 @@ export default function LeadForm() {
           )}
         </form>
       )}
-
     </div>
   );
 }

@@ -1,10 +1,8 @@
 import useLanguage from '@/locale/useLanguage';
-
 import MoneyFormatSettingsModule from '@/modules/SettingModule/MoneyFormatSettingsModule';
 
 export default function MoneyFormatSettings() {
   const translate = useLanguage();
-
   const entity = 'setting';
 
   const Labels = {

@@ -1,5 +1,4 @@
 import * as actionTypes from './types';
-
 const INITIAL_SETTINGS_STATE = {
   crm_settings: {},
   finance_settings: {},

@@ -3,7 +3,6 @@ import { CloseOutlined, CheckOutlined, MinusCircleOutlined, PlusOutlined } from 
 import { useSelector } from 'react-redux';
 import { selectCurrentItem } from '@/redux/crud/selectors';
 import { useState } from 'react';
-
 import useLanguage from '@/locale/useLanguage';
 
 export function SelectType() {
