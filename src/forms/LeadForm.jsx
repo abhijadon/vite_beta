@@ -1,9 +1,12 @@
 import { useState, useEffect } from 'react';
-import { Form, Select, Input, Checkbox, Radio, DatePicker, Upload, notification } from 'antd';
+import { Form, Select, Input, Checkbox, Radio, DatePicker, notification, Upload } from 'antd';
+import { InboxOutlined } from '@ant-design/icons';
 import formData from './formData';
-import { UploadOutlined } from '@ant-design/icons';
 import useLanguage from '@/locale/useLanguage';
+
 const { Option } = Select;
+const { Dragger } = Upload;
+
 // Inside the component
 
 const openNotification = (fieldName) => {
@@ -20,13 +23,6 @@ export default function LeadForm() {
   const [selectedUniversity, setSelectedUniversity] = useState(null);
   const [studentId, setStudentId] = useState('');
 
-  const translate = useLanguage();
-  const normFile = (e) => {
-    if (Array.isArray(e)) {
-      return e.map(file => file.fileList);
-    }
-    return e && e.fileList;
-  };
 
   useEffect(() => {
     if (selectedInstitute && selectedUniversity) {
@@ -334,20 +330,20 @@ export default function LeadForm() {
         case 'file':
           return (
             <Form.Item
-              label={translate('Image')}
-              name="image"
+              label={capitalizedLabel}
+              name={field.name}
               valuePropName="fileList"
-              getValueFromEvent={normFile}
+              getValueFromEvent={(e) => e.fileList}
               rules={[
                 {
                   required: field.required === 'require',
                   validator: (_, value) => {
                     return new Promise((resolve, reject) => {
-                      if (value || field.required !== 'require') {
-                        // If the value is not empty or the field is not required, resolve
-                        resolve();
+                      // Check if there are files or the field is not required
+                      if (value.length > 0 || field.required !== 'require') {
+                        resolve(); // Resolve if the condition is met
                       } else {
-                        // If the value is empty and the field is required, reject and show notification
+                        // If no files are selected and the field is required, reject and show notification
                         openNotification(field.label);
                         reject(`${field.label} is required.`);
                       }
@@ -356,14 +352,16 @@ export default function LeadForm() {
                 },
               ]}
             >
-              <Upload
-                name="logo"
-                listType="picture"
-                beforeUpload={() => false}
-                multiple={true} // Enable multiple file selection
+              <Dragger
+                multiple
+                beforeUpload={() => false} // Prevent automatic upload on file selection
               >
-                <UploadOutlined /> Upload
-              </Upload>
+                <p className="ant-upload-drag-icon">
+                  <InboxOutlined />
+                </p>
+                <p className="ant-upload-text">Click or drag files to this area to upload</p>
+                <p className="ant-upload-hint">Support for multiple images</p>
+              </Dragger>
             </Form.Item>
           );
 
