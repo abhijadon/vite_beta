@@ -27,11 +27,11 @@ export default function Lead() {
       dataIndex: 'full_name',
     },
     {
-      title: 'Email',
+      title: translate('Email'),
       dataIndex: 'contact.email',
     },
     {
-      title: 'Phone',
+      title: translate('Phone'),
       dataIndex: 'contact.phone',
     },
     {
@@ -39,8 +39,16 @@ export default function Lead() {
       dataIndex: 'education.course',
     },
     {
+      title: translate('Specialization'),
+      dataIndex: 'customfields.enter_specialization',
+    },
+    {
       title: translate('Session'),
       dataIndex: 'customfields.session',
+    },
+    {
+      title: translate('Session type'),
+      dataIndex: 'customfields.session_type',
     },
     {
       title: translate('Institute Name'),
@@ -65,18 +73,10 @@ export default function Lead() {
       title: translate('Mother name'),
       dataIndex: 'customfields.mother_name',
     },
-    {
-      title: translate('Session type'),
-      dataIndex: 'customfields.session_type',
-    },
-    {
-      title: translate('Specialization'),
-      dataIndex: 'customfields.enter_specialization',
-    },
+
     {
       title: translate('Date of birth'),
       dataIndex: 'customfields.dob',
-      render: (dob) => (dob ? new Date(dob).toLocaleDateString() : 'N/A'),
     },
     {
       title: translate('gender'),
@@ -96,24 +96,21 @@ export default function Lead() {
       dataIndex: 'customfields.total_course_fee',
     },
     {
-      title: translate('paid amount'),
-      dataIndex: 'customfields.paid_amount',
-    },
-    {
-      title: translate('Due amount'),
-      dataIndex: 'customfields.due_amount',
-    },
-    {
       title: translate('Total Paid amount'),
       dataIndex: 'customfields.total_paid_amount',
     },
+    {
+      title: translate('paid amount'),
+      dataIndex: 'customfields.paid_amount',
+    },
+
     {
       title: translate('Send Fee Receipt'),
       dataIndex: 'customfields.send_fee_receipt',
     },
     {
       title: translate('status'),
-      dataIndex: 'status',
+      dataIndex: 'customfields.status',
     },
   ];
 
@@ -149,9 +146,19 @@ export default function Lead() {
       key: 'course'
     },
     {
+      title: translate('Specialization'),
+      dataIndex: ['customfields', 'enter_specialization'],
+      key: 'enter_specialization'
+    },
+    {
       title: translate('Session'),
       dataIndex: ['customfields', 'session'],
       key: 'session'
+    },
+    {
+      title: translate('Session type'),
+      dataIndex: ['customfields', 'session_type'],
+      key: 'sessionType'
     },
     {
       title: translate('Institute Name'),
@@ -170,10 +177,7 @@ export default function Lead() {
       dataIndex: ['customfields', 'counselor_email'],
       key: 'counselor_email'
     },
-    {
-      title: translate('Lms'),
-      dataIndex: ['lms'],
-    },
+
     {
       title: translate('Father Name'),
       dataIndex: ['customfields', 'father_name'],
@@ -185,20 +189,9 @@ export default function Lead() {
       key: 'mother_name'
     },
     {
-      title: translate('Session type'),
-      dataIndex: ['customfields', 'session_type'],
-      key: 'sessionType'
-    },
-    {
-      title: translate('Specialization'),
-      dataIndex: ['customfields', 'enter_specialization'],
-      key: 'enter_specialization'
-    },
-    {
       title: translate('Date of birth'),
       dataIndex: ['customfields', 'dob'],
       key: 'dob',
-      render: (dob) => (dob ? new Date(dob).toLocaleDateString() : 'N/A'), // Modify the render based on how dob is stored
     },
     {
       title: translate('gender'),
@@ -223,20 +216,31 @@ export default function Lead() {
       key: 'total_course_fee'
     },
     {
+      title: translate('Total Paid amount'),
+      dataIndex: ['customfields', 'total_paid_amount'],
+      key: 'total_paid_amount'
+    },
+    {
       title: translate('paid amount'),
       dataIndex: ['customfields', 'paid_amount'],
       key: 'paid_amount'
     },
     {
       title: translate('Due amount'),
-      dataIndex: ['customfields', 'due_amount'],
-      key: 'due_amount'
+      key: 'due_amount',
+      render: (text, record) => {
+        const totalCourseFee = record.customfields.total_course_fee;
+        const totalPaidAmount = record.customfields.total_paid_amount;
+        const dueAmount = totalCourseFee - totalPaidAmount;
+
+        return (
+          <span>
+            {dueAmount}
+          </span>
+        );
+      }
     },
-    {
-      title: translate('Total Paid amount'),
-      dataIndex: ['customfields', 'total_paid_amount'],
-      key: 'total_paid_amount'
-    },
+
     {
       title: "studnet fee reciept",
       dataIndex: ['customfields', 'upload_fee_receipt_screenshot'],
@@ -246,7 +250,7 @@ export default function Lead() {
           {studentReceipts.map((record) => (
             <div key={record._id}>
               <img
-                src={`http://localhost:5000/public/uploads/studentDocument/${record.filename}`}
+                src={`${import.meta.evn.VITE_BACKEND_SERVER}public/uploads/studentDocument/${record.filename}`}
                 alt={record.originalFilename}
                 style={{ width: "100%", height: "50px" }}
               />
@@ -264,7 +268,7 @@ export default function Lead() {
           {studentReceipts.map((record) => (
             <div key={record._id}>
               <img
-                src={`http://localhost:5000/public/uploads/studentDocument/${record.filename}`}
+                src={`${import.meta.evn.VITE_BACKEND_SERVER}public/uploads/studentDocument/${record.filename}`}
                 alt={record.originalFilename}
                 style={{ width: "100%", height: "50px" }}
               />
@@ -300,6 +304,10 @@ export default function Lead() {
       title: translate('Created'),
       dataIndex: 'created',
       render: (date) => dayjs(date).format('DD/MM/YYYY'),
+    },
+    {
+      title: translate('Lms'),
+      dataIndex: ['lms'],
     },
   ];
 

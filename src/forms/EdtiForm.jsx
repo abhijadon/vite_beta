@@ -2,7 +2,7 @@ import { Form, Input, Upload, Select } from 'antd';
 import { InboxOutlined } from '@ant-design/icons';
 import useLanguage from '@/locale/useLanguage';
 const { Dragger } = Upload;
-
+const { TextArea } = Input;
 export default function LeadForm() {
     const translate = useLanguage();
 
@@ -11,93 +11,71 @@ export default function LeadForm() {
             <Form.Item
                 label={translate('send fee reciept')}
                 name={['customfields', 'send_fee_receipt']}
-                rules={[
-                    {
-                        required: true,
-                    },
-                ]}
             >
                 <Input disabled />
             </Form.Item>
             <Form.Item
                 label={translate('studentid')}
                 name={['lead_id']}
-                rules={[
-                    {
-                        required: true,
-                    },
-                ]}
             >
                 <Input disabled />
             </Form.Item>
             <Form.Item
                 label={translate('student name')}
                 name={['full_name']}
-                rules={[
-                    {
-                        required: true,
-                    },
-                ]}
             >
-                <Input />
+                <Input type='text' autoComplete='on' />
             </Form.Item>
 
             <Form.Item
                 label={translate('email')}
                 name={['contact', 'email']}
-                rules={[
-                    {
-                        required: true,
-                    },
-                ]}
             >
-                <Input />
+                <Input type='email' autoComplete='
+                on'/>
             </Form.Item>
 
             <Form.Item
                 label={translate('phone')}
                 name={['contact', 'phone']}
-                rules={[
-                    {
-                        required: true,
-                    },
-                ]}
             >
-                <Input />
+                <Input type='tel' autoComplete='on' />
             </Form.Item>
 
             <Form.Item
                 label={translate('course')}
                 name={['education', 'course']}
-                rules={[
-                    {
-                        required: true,
-                    },
-                ]}
             >
-                <Input type="tel" />
+                <Input type="text" />
             </Form.Item>
 
+            <Form.Item
+                label={translate('Specialization')}
+                name={['customfields', 'enter_specialization']}
+            >
+                <Input type='text' autoComplete='on' />
+            </Form.Item>
             <Form.Item
                 label={translate('session')}
                 name={['customfields', 'session']}
-                rules={[
-                    {
-                        required: true,
-                    },
-                ]}
             >
                 <Input />
             </Form.Item>
-
+            <Form.Item
+                label={translate('session type')}
+                name={['customfields', 'session_type']}
+            >
+                <Select placeholder='select session type'
+                    options={[
+                        { value: 'Jan', label: translate('Jan') },
+                        { value: 'July', label: translate('July') },
+                        { value: 'N/A', label: translate('N/A') },
+                    ]}
+                ></Select>
+            </Form.Item>
             <Form.Item
                 label={translate('Institute name')}
                 name={['customfields', 'institute_name']}
-                rules={[
-                    {
-                        required: true,
-                    },
-                ]}
             >
                 <Input />
             </Form.Item>
@@ -105,77 +83,28 @@ export default function LeadForm() {
             <Form.Item
                 label={translate('university name')}
                 name={['customfields', 'university_name']}
-                rules={[
-                    {
-                        required: true,
-                    },
-                ]}
             >
                 <Input />
             </Form.Item>
-
 
             <Form.Item
                 label={translate('Counselor Email')}
                 name={['customfields', 'counselor_email']}
-                rules={[
-                    {
-                        required: true,
-                    },
-                ]}
             >
                 <Input />
             </Form.Item>
-
-
-
             <Form.Item
                 label={translate('father name')}
                 name={['customfields', 'father_name']}
-                rules={[
-                    {
-                        required: true,
-                    },
-                ]}
             >
                 <Input />
             </Form.Item>
             <Form.Item
                 label={translate('mother name')}
                 name={['customfields', 'mother_name']}
-                rules={[
-                    {
-                        required: true,
-                    },
-                ]}
             >
                 <Input />
             </Form.Item>
-
-            <Form.Item
-                label={translate('session type')}
-                name={['customfields', 'session_type']}
-                rules={[
-                    {
-                        required: true,
-                    },
-                ]}
-            >
-                <Input />
-            </Form.Item>
-
-            <Form.Item
-                label={translate('Specialization')}
-                name={['customfields', 'enter_specialization']}
-                rules={[
-                    {
-                        required: true,
-                    },
-                ]}
-            >
-                <Input />
-            </Form.Item>
-
             <Form.Item
                 label={translate('date of birth')}
                 name={['customfields', 'dob']}
@@ -186,71 +115,68 @@ export default function LeadForm() {
             <Form.Item
                 label={translate('gender')}
                 name={['customfields', 'gender']}
-                rules={[
-                    {
-                        required: true,
-                    },
-                ]}
             >
-                <Input />
+                <Select
+                    options={[
+                        { value: 'Male', label: translate('Male') },
+                        { value: 'Female', label: translate('Female') },
+                        { value: 'Other', label: translate('Other') },
+                    ]}
+                ></Select>
             </Form.Item>
 
             <Form.Item
                 label={translate('Installment Type')}
                 name={['customfields', 'installment_type']}
-                rules={[
-                    {
-                        required: true,
-                    },
-                ]}
             >
-                <Input />
+                <Select
+                    options={[
+                        { value: '1st installmenttype/New Admission', label: translate('1st installmenttype/New Admission') },
+                        { value: '2nd installment', label: translate('2nd installment') },
+                        { value: '3rd installmen', label: translate('3rd installment') },
+                        { value: '4th installmen', label: translate('4th installment') },
+                        { value: '5th installmen', label: translate('5th installment') },
+                        { value: '6th installmen', label: translate('6th installment') },
+                        { value: '6th installmen', label: translate('8th installment') },
+                        { value: '9th installmen', label: translate('9th installment') },
+                        { value: '10th installmen', label: translate('10th installment') },
+                    ]}
+                ></Select>
             </Form.Item>
             <Form.Item
                 label={translate('Payment Mode')}
                 name={['customfields', 'payment_mode']}
-                rules={[
-                    {
-                        required: true,
-                    },
-                ]}
             >
-                <Input />
+                <Select
+                    options={[
+                        { value: 'DES Bank Account/UPI', label: translate('DES Bank Account/UPI') },
+                        { value: 'University Bank Account', label: translate('University Bank Account') },
+                        { value: 'PayUMoney', label: 'PayUMoney' },
+                        { value: 'Cash/DD', label: 'Cash/DD' },
+
+                    ]}
+                ></Select>
             </Form.Item>
 
             <Form.Item
                 label={translate('Total Course Fee')}
                 name={['customfields', 'total_course_fee']}
-                rules={[
-                    {
-                        required: true,
-                    },
-                ]}
-            >
-                <Input />
-            </Form.Item>
-            <Form.Item
-                label={translate('Paid Amount')}
-                name={['customfields', 'paid_amount']}
-                rules={[
-                    {
-                        required: true,
-                    },
-                ]}
             >
                 <Input />
             </Form.Item>
             <Form.Item
                 label={translate('Total Paid Amount')}
                 name={['customfields', 'total_paid_amount']}
-                rules={[
-                    {
-                        required: true,
-                    },
-                ]}
             >
                 <Input />
             </Form.Item>
+            <Form.Item
+                label={translate('Paid Amount')}
+                name={['customfields', 'paid_amount']}
+            >
+                <Input />
+            </Form.Item>
+
             <Form.Item
                 label={translate("upload student document")}
                 name={['customfields', 'upload_student_document']}
@@ -298,22 +224,17 @@ export default function LeadForm() {
                 <Select
                     options={[
                         { value: 'New', label: translate('New') },
+                        { value: 'Enrolled', label: translate('Enrolled') },
                         { value: 'Cancel', label: translate('cancel') },
                         { value: 'Alumini', label: translate('Alumini') },
-                        { value: 'not interested', label: translate('not interested') },
                     ]}
                 ></Select>
             </Form.Item>
             <Form.Item
                 label={translate('Remark')}
                 name={['customfields', 'remark']}
-                rules={[
-                    {
-                        required: true,
-                    },
-                ]}
             >
-                <Input />
+                <TextArea rows={4} />
             </Form.Item>
         </>
     );
