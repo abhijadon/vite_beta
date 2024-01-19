@@ -9,7 +9,7 @@ import useLanguage from '@/locale/useLanguage';
 
 import { Button, Form } from 'antd';
 import Loading from '@/components/Loading';
-import moment from 'moment';
+
 export default function CreateForm({ config, formElements, withUpload = false }) {
   let { entity } = config;
   const dispatch = useDispatch();
@@ -20,13 +20,9 @@ export default function CreateForm({ config, formElements, withUpload = false })
   const translate = useLanguage();
   const onSubmit = (fieldsValue) => {
     // Manually trim values before submission
+
     if (fieldsValue.file && withUpload) {
       fieldsValue.file = fieldsValue.file[0].originFileObj;
-    }
-
-    // Format the date of birth before sending the request
-    if (fieldsValue['customfields.dob']) {
-      fieldsValue['customfields.dob'] = moment(fieldsValue['customfields.dob']).format('DD-MM-YYYY');
     }
 
     const trimmedValues = Object.keys(fieldsValue).reduce((acc, key) => {
@@ -36,6 +32,7 @@ export default function CreateForm({ config, formElements, withUpload = false })
 
     dispatch(crud.create({ entity, jsonData: trimmedValues, withUpload }));
   };
+
   useEffect(() => {
     if (isSuccess) {
       readBox.open();

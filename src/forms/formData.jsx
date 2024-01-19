@@ -115,7 +115,7 @@ const formData = [
             name: ['customfields', 'dob'],
             place: 'Enter Date of Birth',
             id: 'dob',
-            type: 'date',
+            type: 'text',
             required: 'require'
           },
           {
@@ -512,7 +512,7 @@ const formData = [
             name: ['customfields', 'dob'],
             place: 'Enter Date of Birth',
             id: 'dob',
-            type: 'date',
+            type: 'text',
             required: 'require'
           },
           {
@@ -1090,7 +1090,7 @@ const formData = [
             name: ['customfields', 'dob'],
             place: 'Enter Date of Birth',
             id: 'dob',
-            type: 'date',
+            type: 'text',
             required: 'require'
           },
           {
@@ -2030,7 +2030,7 @@ const formData = [
             name: ['customfields', 'dob'],
             place: 'Enter Date of Birth',
             id: 'dob',
-            type: 'date',
+            type: 'text',
             required: 'require'
           },
           {
@@ -2246,7 +2246,7 @@ const formData = [
             name: ['customfields', 'dob'],
             place: 'Enter Date of Birth',
             id: 'dob',
-            type: 'date',
+            type: 'text',
             required: 'require'
           },
           {
@@ -2462,7 +2462,7 @@ const formData = [
             name: ['customfields', 'dob'],
             place: 'Enter Date of Birth',
             id: 'dob',
-            type: 'date',
+            type: 'text',
             required: 'require'
           },
           {
@@ -2678,7 +2678,7 @@ const formData = [
             name: ['customfields', 'dob'],
             place: 'Enter Date of Birth',
             id: 'dob',
-            type: 'date',
+            type: 'text',
             required: 'require'
           },
           {
@@ -3437,7 +3437,7 @@ const formData = [
             name: ['customfields', 'dob'],
             place: 'Enter Date of Birth',
             id: 'dob',
-            type: 'date',
+            type: 'text',
             required: 'require'
           },
           {
@@ -3653,7 +3653,7 @@ const formData = [
             name: ['customfields', 'dob'],
             place: 'Enter Date of Birth',
             id: 'dob',
-            type: 'date',
+            type: 'text',
             required: 'require'
           },
           {
@@ -3878,7 +3878,7 @@ const formData = [
             name: ['customfields', 'dob'],
             place: 'Enter Date of Birth',
             id: 'dob',
-            type: 'date',
+            type: 'text',
             required: 'require'
           },
           {
@@ -4274,7 +4274,7 @@ const formData = [
             name: ['customfields', 'dob'],
             place: 'Enter Date of Birth',
             id: 'dob',
-            type: 'date',
+            type: 'text',
             required: 'require'
           },
           {
@@ -4852,7 +4852,7 @@ const formData = [
             name: ['customfields', 'dob'],
             place: 'Enter Date of Birth',
             id: 'dob',
-            type: 'date',
+            type: 'text',
             required: 'require'
           },
           {
@@ -5792,7 +5792,7 @@ const formData = [
             name: ['customfields', 'dob'],
             place: 'Enter Date of Birth',
             id: 'dob',
-            type: 'date',
+            type: 'text',
             required: 'require'
           },
           {
@@ -6008,7 +6008,7 @@ const formData = [
             name: ['customfields', 'dob'],
             place: 'Enter Date of Birth',
             id: 'dob',
-            type: 'date',
+            type: 'text',
             required: 'require'
           },
           {
@@ -6224,7 +6224,7 @@ const formData = [
             name: ['customfields', 'dob'],
             place: 'Enter Date of Birth',
             id: 'dob',
-            type: 'date',
+            type: 'text',
             required: 'require'
           },
           {
@@ -6440,7 +6440,7 @@ const formData = [
             name: ['customfields', 'dob'],
             place: 'Enter Date of Birth',
             id: 'dob',
-            type: 'date',
+            type: 'text',
             required: 'require'
           },
           {
@@ -7199,7 +7199,7 @@ const formData = [
             name: ['customfields', 'dob'],
             place: 'Enter Date of Birth',
             id: 'dob',
-            type: 'date',
+            type: 'text',
             required: 'require'
           },
           {
@@ -7415,7 +7415,7 @@ const formData = [
             name: ['customfields', 'dob'],
             place: 'Enter Date of Birth',
             id: 'dob',
-            type: 'date',
+            type: 'text',
             required: 'require'
           },
           {

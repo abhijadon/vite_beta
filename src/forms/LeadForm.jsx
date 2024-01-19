@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Form, Select, Input, Checkbox, Radio, DatePicker, notification, Upload } from 'antd';
+import { Form, Select, Input, Checkbox, Radio, notification, Upload } from 'antd';
 import { InboxOutlined } from '@ant-design/icons';
 import formData from './formData';
 
@@ -244,34 +244,7 @@ export default function LeadForm() {
                 ))}
               </Select>
             </Form.Item>
-          );
-        case 'date':
-          return (
-            <Form.Item
-              key={field.id}
-              label={capitalizedLabel}
-              name={field.name}
-              rules={[
-                {
-                  required: field.required === 'require',
-                  validator: (_, value) => {
-                    return new Promise((resolve, reject) => {
-                      if (value || field.required !== 'require') {
-                        // If the value is not empty or the field is not required, resolve
-                        resolve();
-                      } else {
-                        // If the value is empty and the field is required, reject and show notification
-                        openNotification(field.label);
-                        reject(`${field.label} is required.`);
-                      }
-                    });
-                  },
-                },
-              ]}
-            >
-              <DatePicker placeholder={field.place} />
-            </Form.Item>
-          );
+          )
         case 'number':
           return (
             <Form.Item
