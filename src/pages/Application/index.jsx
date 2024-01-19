@@ -48,7 +48,7 @@ export default function Lead() {
     },
     {
       title: translate('Session type'),
-      dataIndex: 'customfields.session_type',
+      dataIndex: 'customfields.admission_type',
     },
     {
       title: translate('Institute Name'),
@@ -156,9 +156,9 @@ export default function Lead() {
       key: 'session'
     },
     {
-      title: translate('Session type'),
-      dataIndex: ['customfields', 'session_type'],
-      key: 'sessionType'
+      title: translate('Admission type'),
+      dataIndex: ['customfields', 'admission_type'],
+      key: 'admission_type'
     },
     {
       title: translate('Institute Name'),
@@ -250,7 +250,7 @@ export default function Lead() {
           {studentReceipts.map((record) => (
             <div key={record._id}>
               <img
-                src={`${import.meta.evn.VITE_BACKEND_SERVER}public/uploads/studentDocument/${record.filename}`}
+                src={`${import.meta.env.VITE_BACKEND_SERVER}public/uploads/studentDocument/${record.filename}`}
                 alt={record.originalFilename}
                 style={{ width: "100%", height: "50px" }}
               />
@@ -268,7 +268,7 @@ export default function Lead() {
           {studentReceipts.map((record) => (
             <div key={record._id}>
               <img
-                src={`${import.meta.evn.VITE_BACKEND_SERVER}public/uploads/studentDocument/${record.filename}`}
+                src={`${import.meta.env.VITE_BACKEND_SERVER}public/uploads/studentDocument/${record.filename}`}
                 alt={record.originalFilename}
                 style={{ width: "100%", height: "50px" }}
               />

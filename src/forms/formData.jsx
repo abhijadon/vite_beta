@@ -1,20 +1,20 @@
 const formData = [
   {
     label: 'HES',
-    name: 'customfields.institute_name',
+    name: ['customfields', 'institute_name'],
     value: 'HES',
     universities: [
       {
         // First university complete date 
         label: 'SGVU',
-        name: 'customfields.university_name',
+        name: ['customfields', 'university_name'],
         value: 'SGVU',
         fields: [
           {
             key: 'radio',
             label: 'Want to send Fee Receipt',
             id: 'Send',
-            name: 'customfields.send_fee_receipt',
+            name: ['customfields', 'send_fee_receipt'],
             type: 'radio',
             options: ['yes', 'no'],
             required: 'require'
@@ -41,7 +41,7 @@ const formData = [
             key: 'email',
             label: 'Email-id',
             place: 'Enter Email-id',
-            name: 'contact.email',
+            name: ['contact', 'email'],
             id: 'EmailID',
             type: 'email',
             required: 'require'
@@ -49,7 +49,7 @@ const formData = [
           {
             key: 'tel',
             label: 'phone',
-            name: 'contact.phone',
+            name: ['contact', 'phone'],
             place: 'Enter Phone Number',
             id: 'phone',
             type: 'tel',
@@ -58,7 +58,7 @@ const formData = [
           {
             key: 'text',
             label: 'Father Name',
-            name: 'customfields.father_name',
+            name: ['customfields', 'father_name'],
             place: 'Enter Father Name',
             id: 'Father Name',
             type: 'text',
@@ -67,7 +67,7 @@ const formData = [
           {
             key: 'text',
             label: 'Mother Name',
-            name: 'customfields.mother_name',
+            name: ['customfields', 'mother_name'],
             place: 'Enter Mother Name',
             id: 'mother_name',
             type: 'text',
@@ -76,7 +76,7 @@ const formData = [
           {
             key: 'date',
             label: 'Session',
-            name: 'customfields.session',
+            name: ['customfields', 'session'],
             place: 'eg: 2020-2023',
             id: 'Session',
             type: 'text',
@@ -84,17 +84,17 @@ const formData = [
           },
           {
             key: 'select',
-            label: 'Session Type',
-            name: 'customfields.session_type',
+            label: 'Admission Type',
+            name: ['customfields', 'admission_type'],
             id: 'SessionType',
-            place: 'Enter Session Type',
+            place: 'Enter Admission Type',
             type: 'select',
-            options: ['January', 'July', 'N/A'],
+            options: ['Fresher', 'LATERAL ENTRY',],
           },
           {
             key: 'select',
             label: 'Course Name',
-            name: 'education.course',
+            name: ['education', 'course'],
             id: 'course',
             place: 'Enter Course Name',
             type: 'select',
@@ -104,7 +104,7 @@ const formData = [
           {
             key: 'text',
             label: 'Specialization',
-            name: 'customfields.enter_specialization',
+            name: ['customfields', 'enter_specialization'],
             place: 'Enter Specialization',
             id: 'Specialization',
             type: 'text',
@@ -112,7 +112,7 @@ const formData = [
           {
             key: 'date',
             label: 'Date of Birth',
-            name: 'customfields.dob',
+            name: ['customfields', 'dob'],
             place: 'Enter Date of Birth',
             id: 'dob',
             type: 'date',
@@ -121,7 +121,7 @@ const formData = [
           {
             key: 'select',
             label: 'Gender',
-            name: 'customfields.gender',
+            name: ['customfields', 'gender'],
             id: 'Gender',
             place: 'Gender',
             type: 'select',
@@ -131,7 +131,7 @@ const formData = [
             key: 'select',
             label: 'Installment Type',
             id: 'InstallmentType',
-            name: 'customfields.installment_type',
+            name: ['customfields', 'installment_type'],
             place: 'Installment Type',
             type: 'select',
             required: 'require',
@@ -151,7 +151,7 @@ const formData = [
           {
             key: 'select ',
             label: 'Payment mode ',
-            name: 'customfields.payment_mode',
+            name: ['customfields', 'payment_mode'],
             id: 'PaymentMode ',
             type: 'select',
             required: 'require',
@@ -160,7 +160,7 @@ const formData = [
           {
             key: 'number',
             label: 'Total Course Fee',
-            name: 'customfields.total_course_fee',
+            name: ['customfields', 'total_course_fee'],
             place: 'eg: 20000',
             id: 'Total Course Fee',
             type: 'number',
@@ -170,14 +170,14 @@ const formData = [
             key: 'number',
             label: 'Total Paid Amount',
             place: 'eg: 20000',
-            name: 'customfields.total_paid_amount',
+            name: ['customfields', 'total_paid_amount'],
             id: 'Total Paid Amount',
             type: 'number',
           },
           {
             key: 'number',
             label: 'Paid Amount',
-            name: 'customfields.paid_amount',
+            name: ['customfields', 'paid_amount'],
             place: 'eg: 20000',
             id: 'Paid Amount',
             type: 'number',
@@ -186,7 +186,7 @@ const formData = [
           {
             key: 'email',
             label: 'Counselor Email',
-            name: 'customfields.counselor_email',
+            name: ['customfields', 'counselor_email'],
             place: 'Enter Counselor Email',
             id: 'counselor_email',
             type: 'email',
@@ -214,7 +214,7 @@ const formData = [
           {
             key: 'textarea',
             label: 'Remark',
-            name: 'customfields.remark',
+            name: ['customfields', 'remark'],
             place: 'Enter your remark',
             id: 'remark',
             type: 'textarea',
@@ -224,7 +224,7 @@ const formData = [
       {
         // Seconde university complete date 
         label: 'CU',
-        name: 'customfields.university_name',
+        name: ['customfields', 'university_name'],
         value: 'CU',
         fields: [
           {
@@ -249,7 +249,7 @@ const formData = [
             key: 'email',
             label: 'Email-id',
             place: 'Enter Email-id',
-            name: 'contact.email',
+            name: ['contact', 'email'],
             id: 'EmailID',
             type: 'email',
             required: 'require'
@@ -257,7 +257,7 @@ const formData = [
           {
             key: 'tel',
             label: 'phone',
-            name: 'contact.phone',
+            name: ['contact', 'phone'],
             place: 'Enter Phone Number',
             id: 'phone',
             type: 'tel',
@@ -266,7 +266,7 @@ const formData = [
           {
             key: 'date',
             label: 'Session',
-            name: 'customfields.session',
+            name: ['customfields', 'session'],
             place: 'eg: 2020-2023',
             id: 'Session',
             type: 'text',
@@ -274,17 +274,17 @@ const formData = [
           },
           {
             key: 'select',
-            label: 'Session Type',
-            name: 'customfields.session_type',
+            label: 'Admission Type',
+            name: ['customfields', 'admission_type'],
             id: 'SessionType',
-            place: 'Enter Session Type',
+            place: 'Enter Admission Type',
             type: 'select',
-            options: ['January', 'July', 'N/A'],
+            options: ['Fresher', 'LATERAL ENTRY',],
           },
           {
             key: 'select',
             label: 'Course Name',
-            name: 'education.course',
+            name: ['education', 'course'],
             id: 'course',
             place: 'Enter Course Name',
             type: 'select',
@@ -294,7 +294,7 @@ const formData = [
           {
             key: 'text',
             label: 'Specialization',
-            name: 'customfields.enter_specialization',
+            name: ['customfields', 'enter_specialization'],
             place: 'Enter Specialization',
             id: 'Specialization',
             type: 'text',
@@ -302,7 +302,7 @@ const formData = [
           {
             key: 'select',
             label: 'Gender',
-            name: 'customfields.gender',
+            name: ['customfields', 'gender'],
             id: 'Gender',
             place: 'Gender',
             type: 'select',
@@ -312,7 +312,7 @@ const formData = [
             key: 'select',
             label: 'Installment Type',
             id: 'InstallmentType',
-            name: 'customfields.installment_type',
+            name: ['customfields', 'installment_type'],
             place: 'Installment Type',
             type: 'select',
             required: 'require',
@@ -332,7 +332,7 @@ const formData = [
           {
             key: 'select ',
             label: 'Payment mode ',
-            name: 'customfields.payment_mode',
+            name: ['customfields', 'payment_mode'],
             id: 'PaymentMode ',
             type: 'select',
             required: 'require',
@@ -341,7 +341,7 @@ const formData = [
           {
             key: 'number',
             label: 'Total Course Fee',
-            name: 'customfields.total_course_fee',
+            name: ['customfields', 'total_course_fee'],
             place: 'eg: 20000',
             id: 'Total Course Fee',
             type: 'number',
@@ -351,14 +351,14 @@ const formData = [
             key: 'number',
             label: 'Total Paid Amount',
             place: 'eg: 20000',
-            name: 'customfields.total_paid_amount',
+            name: ['customfields', 'total_paid_amount'],
             id: 'Total Paid Amount',
             type: 'number',
           },
           {
             key: 'number',
             label: 'Paid Amount',
-            name: 'customfields.paid_amount',
+            name: ['customfields', 'paid_amount'],
             place: 'eg: 20000',
             id: 'Paid Amount',
             type: 'number',
@@ -367,7 +367,7 @@ const formData = [
           {
             key: 'email',
             label: 'Counselor Email',
-            name: 'customfields.counselor_email',
+            name: ['customfields', 'counselor_email'],
             place: 'Enter Counselor Email',
             id: 'counselor_email',
             type: 'email',
@@ -386,7 +386,7 @@ const formData = [
           {
             key: 'text',
             label: 'Uplaod Student Document',
-            name: 'customfields.upload_student_document',
+            name: ['customfields', 'upload_student_document'],
             place: 'Enter Counselor Email',
             id: 'Uplaod Student Document',
             type: 'text',
@@ -394,7 +394,7 @@ const formData = [
           {
             key: 'textarea',
             label: 'Remark',
-            name: 'customfields.remark',
+            name: ['customfields', 'remark'],
             place: 'Enter Counselor Email',
             id: 'Uplaod Student Document',
             type: 'textarea',
@@ -404,14 +404,14 @@ const formData = [
       {
         // First university complete date 
         label: 'SPU',
-        name: 'customfields.university_name',
+        name: ['customfields', 'university_name'],
         value: 'SPU',
         fields: [
           {
             key: 'radio',
             label: 'Want to send Fee Receipt',
             id: 'Send',
-            name: 'customfields.send_fee_receipt',
+            name: ['customfields', 'send_fee_receipt'],
             type: 'radio',
             options: ['yes', 'no'],
             required: 'require'
@@ -438,7 +438,7 @@ const formData = [
             key: 'email',
             label: 'Email-id',
             place: 'Enter Email-id',
-            name: 'contact.email',
+            name: ['contact', 'email'],
             id: 'EmailID',
             type: 'email',
             required: 'require'
@@ -446,7 +446,7 @@ const formData = [
           {
             key: 'tel',
             label: 'phone',
-            name: 'contact.phone',
+            name: ['contact', 'phone'],
             place: 'Enter Phone Number',
             id: 'phone',
             type: 'tel',
@@ -455,7 +455,7 @@ const formData = [
           {
             key: 'text',
             label: 'Father Name',
-            name: 'customfields.father_name',
+            name: ['customfields', 'father_name'],
             place: 'Enter Father Name',
             id: 'Father Name',
             type: 'text',
@@ -464,7 +464,7 @@ const formData = [
           {
             key: 'text',
             label: 'Mother Name',
-            name: 'customfields.mother_name',
+            name: ['customfields', 'mother_name'],
             place: 'Enter Mother Name',
             id: 'mother_name',
             type: 'text',
@@ -473,7 +473,7 @@ const formData = [
           {
             key: 'date',
             label: 'Session',
-            name: 'customfields.session',
+            name: ['customfields', 'session'],
             place: 'eg: 2020-2023',
             id: 'Session',
             type: 'text',
@@ -481,17 +481,17 @@ const formData = [
           },
           {
             key: 'select',
-            label: 'Session Type',
-            name: 'customfields.session_type',
+            label: 'Admission Type',
+            name: ['customfields', 'admission_type'],
             id: 'SessionType',
-            place: 'Enter Session Type',
+            place: 'Enter Admission Type',
             type: 'select',
-            options: ['January', 'July', 'N/A'],
+            options: ['Fresher', 'LATERAL ENTRY',],
           },
           {
             key: 'select',
             label: 'Course Name',
-            name: 'education.course',
+            name: ['education', 'course'],
             id: 'course',
             place: 'Enter Course Name',
             type: 'select',
@@ -501,7 +501,7 @@ const formData = [
           {
             key: 'text',
             label: 'Specialization',
-            name: 'customfields.enter_specialization',
+            name: ['customfields', 'enter_specialization'],
             place: 'Enter Specialization',
             id: 'Specialization',
             type: 'text',
@@ -509,7 +509,7 @@ const formData = [
           {
             key: 'date',
             label: 'Date of Birth',
-            name: 'customfields.dob',
+            name: ['customfields', 'dob'],
             place: 'Enter Date of Birth',
             id: 'dob',
             type: 'date',
@@ -518,7 +518,7 @@ const formData = [
           {
             key: 'select',
             label: 'Gender',
-            name: 'customfields.gender',
+            name: ['customfields', 'gender'],
             id: 'Gender',
             place: 'Gender',
             type: 'select',
@@ -528,7 +528,7 @@ const formData = [
             key: 'select',
             label: 'Installment Type',
             id: 'InstallmentType',
-            name: 'customfields.installment_type',
+            name: ['customfields', 'installment_type'],
             place: 'Installment Type',
             type: 'select',
             required: 'require',
@@ -548,7 +548,7 @@ const formData = [
           {
             key: 'select ',
             label: 'Payment mode ',
-            name: 'customfields.payment_mode',
+            name: ['customfields', 'payment_mode'],
             id: 'PaymentMode ',
             type: 'select',
             required: 'require',
@@ -557,7 +557,7 @@ const formData = [
           {
             key: 'number',
             label: 'Total Course Fee',
-            name: 'customfields.total_course_fee',
+            name: ['customfields', 'total_course_fee'],
             place: 'eg: 20000',
             id: 'Total Course Fee',
             type: 'number',
@@ -567,14 +567,14 @@ const formData = [
             key: 'number',
             label: 'Total Paid Amount',
             place: 'eg: 20000',
-            name: 'customfields.total_paid_amount',
+            name: ['customfields', 'total_paid_amount'],
             id: 'Total Paid Amount',
             type: 'number',
           },
           {
             key: 'number',
             label: 'Paid Amount',
-            name: 'customfields.paid_amount',
+            name: ['customfields', 'paid_amount'],
             place: 'eg: 20000',
             id: 'Paid Amount',
             type: 'number',
@@ -583,7 +583,7 @@ const formData = [
           {
             key: 'email',
             label: 'Counselor Email',
-            name: 'customfields.counselor_email',
+            name: ['customfields', 'counselor_email'],
             place: 'Enter Counselor Email',
             id: 'counselor_email',
             type: 'email',
@@ -602,7 +602,7 @@ const formData = [
           {
             key: 'file',
             label: 'Uplaod Student Document',
-            name: 'customfields.upload_student_document',
+            name: ['customfields', 'upload_student_document'],
             place: 'Enter Counselor Email',
             id: 'Uplaod Student Document',
             type: 'file',
@@ -610,7 +610,7 @@ const formData = [
           {
             key: 'textarea',
             label: 'Remark',
-            name: 'customfields.remark',
+            name: ['customfields', 'remark'],
             place: 'Enter Counselor Email',
             id: 'Uplaod Student Document',
             type: 'textarea',
@@ -620,7 +620,7 @@ const formData = [
       {
         // Fpurth university complete date 
         label: 'LPU',
-        name: 'customfields.university_name',
+        name: ['customfields', 'university_name'],
         value: 'LPU',
         fields: [
           {
@@ -645,7 +645,7 @@ const formData = [
             key: 'email',
             label: 'Email-id',
             place: 'Enter Email-id',
-            name: 'contact.email',
+            name: ['contact', 'email'],
             id: 'EmailID',
             type: 'email',
             required: 'require'
@@ -653,7 +653,7 @@ const formData = [
           {
             key: 'tel',
             label: 'phone',
-            name: 'contact.phone',
+            name: ['contact', 'phone'],
             place: 'Enter Phone Number',
             id: 'phone',
             type: 'tel',
@@ -662,7 +662,7 @@ const formData = [
           {
             key: 'date',
             label: 'Session',
-            name: 'customfields.session',
+            name: ['customfields', 'session'],
             place: 'eg: 2020-2023',
             id: 'Session',
             type: 'text',
@@ -670,17 +670,17 @@ const formData = [
           },
           {
             key: 'select',
-            label: 'Session Type',
-            name: 'customfields.session_type',
+            label: 'Admission Type',
+            name: ['customfields', 'admission_type'],
             id: 'SessionType',
-            place: 'Enter Session Type',
+            place: 'Enter Admission Type',
             type: 'select',
-            options: ['January', 'July', 'N/A'],
+            options: ['Fresher', 'LATERAL ENTRY',],
           },
           {
             key: 'select',
             label: 'Course Name',
-            name: 'education.course',
+            name: ['education', 'course'],
             id: 'course',
             place: 'Enter Course Name',
             type: 'select',
@@ -690,7 +690,7 @@ const formData = [
           {
             key: 'text',
             label: 'Specialization',
-            name: 'customfields.enter_specialization',
+            name: ['customfields', 'enter_specialization'],
             place: 'Enter Specialization',
             id: 'Specialization',
             type: 'text',
@@ -699,7 +699,7 @@ const formData = [
           {
             key: 'select',
             label: 'Gender',
-            name: 'customfields.gender',
+            name: ['customfields', 'gender'],
             id: 'Gender',
             place: 'Gender',
             type: 'select',
@@ -709,7 +709,7 @@ const formData = [
             key: 'select',
             label: 'Installment Type',
             id: 'InstallmentType',
-            name: 'customfields.installment_type',
+            name: ['customfields', 'installment_type'],
             place: 'Installment Type',
             type: 'select',
             required: 'require',
@@ -729,7 +729,7 @@ const formData = [
           {
             key: 'select ',
             label: 'Payment mode ',
-            name: 'customfields.payment_mode',
+            name: ['customfields', 'payment_mode'],
             id: 'PaymentMode ',
             type: 'select',
             required: 'require',
@@ -738,7 +738,7 @@ const formData = [
           {
             key: 'number',
             label: 'Total Course Fee',
-            name: 'customfields.total_course_fee',
+            name: ['customfields', 'total_course_fee'],
             place: 'eg: 20000',
             id: 'Total Course Fee',
             type: 'number',
@@ -748,14 +748,14 @@ const formData = [
             key: 'number',
             label: 'Total Paid Amount',
             place: 'eg: 20000',
-            name: 'customfields.total_paid_amount',
+            name: ['customfields', 'total_paid_amount'],
             id: 'Total Paid Amount',
             type: 'number',
           },
           {
             key: 'number',
             label: 'Paid Amount',
-            name: 'customfields.paid_amount',
+            name: ['customfields', 'paid_amount'],
             place: 'eg: 20000',
             id: 'Paid Amount',
             type: 'number',
@@ -764,7 +764,7 @@ const formData = [
           {
             key: 'email',
             label: 'Counselor Email',
-            name: 'customfields.counselor_email',
+            name: ['customfields', 'counselor_email'],
             place: 'Enter Counselor Email',
             id: 'counselor_email',
             type: 'email',
@@ -783,7 +783,7 @@ const formData = [
           {
             key: 'text',
             label: 'Uplaod Student Document',
-            name: 'customfields.upload_student_document',
+            name: ['customfields', 'upload_student_document'],
             place: 'Enter Counselor Email',
             id: 'Uplaod Student Document',
             type: 'text',
@@ -791,7 +791,7 @@ const formData = [
           {
             key: 'textarea',
             label: 'Remark',
-            name: 'customfields.remark',
+            name: ['customfields', 'remark'],
             place: 'Enter Counselor Email',
             id: 'Uplaod Student Document',
             type: 'textarea',
@@ -801,7 +801,7 @@ const formData = [
       {
         // Fifth university complete date 
         label: 'JAIN',
-        name: 'customfields.university_name',
+        name: ['customfields', 'university_name'],
         value: 'JAIN',
         fields: [
           {
@@ -826,7 +826,7 @@ const formData = [
             key: 'email',
             label: 'Email-id',
             place: 'Enter Email-id',
-            name: 'contact.email',
+            name: ['contact', 'email'],
             id: 'EmailID',
             type: 'email',
             required: 'require'
@@ -834,7 +834,7 @@ const formData = [
           {
             key: 'tel',
             label: 'phone',
-            name: 'contact.phone',
+            name: ['contact', 'phone'],
             place: 'Enter Phone Number',
             id: 'phone',
             type: 'tel',
@@ -843,7 +843,7 @@ const formData = [
           {
             key: 'date',
             label: 'Session',
-            name: 'customfields.session',
+            name: ['customfields', 'session'],
             place: 'eg: 2020-2023',
             id: 'Session',
             type: 'text',
@@ -851,17 +851,17 @@ const formData = [
           },
           {
             key: 'select',
-            label: 'Session Type',
-            name: 'customfields.session_type',
+            label: 'Admission Type',
+            name: ['customfields', 'admission_type'],
             id: 'SessionType',
-            place: 'Enter Session Type',
+            place: 'Enter Admission Type',
             type: 'select',
-            options: ['January', 'July', 'N/A'],
+            options: ['Fresher', 'LATERAL ENTRY',],
           },
           {
             key: 'select',
             label: 'Course Name',
-            name: 'education.course',
+            name: ['education', 'course'],
             id: 'course',
             place: 'Enter Course Name',
             type: 'select',
@@ -871,7 +871,7 @@ const formData = [
           {
             key: 'text',
             label: 'Specialization',
-            name: 'customfields.enter_specialization',
+            name: ['customfields', 'enter_specialization'],
             place: 'Enter Specialization',
             id: 'Specialization',
             type: 'text',
@@ -880,7 +880,7 @@ const formData = [
           {
             key: 'select',
             label: 'Gender',
-            name: 'customfields.gender',
+            name: ['customfields', 'gender'],
             id: 'Gender',
             place: 'Gender',
             type: 'select',
@@ -890,7 +890,7 @@ const formData = [
             key: 'select',
             label: 'Installment Type',
             id: 'InstallmentType',
-            name: 'customfields.installment_type',
+            name: ['customfields', 'installment_type'],
             place: 'Installment Type',
             type: 'select',
             required: 'require',
@@ -910,7 +910,7 @@ const formData = [
           {
             key: 'select ',
             label: 'Payment mode ',
-            name: 'customfields.payment_mode',
+            name: ['customfields', 'payment_mode'],
             id: 'PaymentMode ',
             type: 'select',
             required: 'require',
@@ -919,7 +919,7 @@ const formData = [
           {
             key: 'number',
             label: 'Total Course Fee',
-            name: 'customfields.total_course_fee',
+            name: ['customfields', 'total_course_fee'],
             place: 'eg: 20000',
             id: 'Total Course Fee',
             type: 'number',
@@ -929,14 +929,14 @@ const formData = [
             key: 'number',
             label: 'Total Paid Amount',
             place: 'eg: 20000',
-            name: 'customfields.total_paid_amount',
+            name: ['customfields', 'total_paid_amount'],
             id: 'Total Paid Amount',
             type: 'number',
           },
           {
             key: 'number',
             label: 'Paid Amount',
-            name: 'customfields.paid_amount',
+            name: ['customfields', 'paid_amount'],
             place: 'eg: 20000',
             id: 'Paid Amount',
             type: 'number',
@@ -945,7 +945,7 @@ const formData = [
           {
             key: 'email',
             label: 'Counselor Email',
-            name: 'customfields.counselor_email',
+            name: ['customfields', 'counselor_email'],
             place: 'Enter Counselor Email',
             id: 'counselor_email',
             type: 'email',
@@ -964,7 +964,7 @@ const formData = [
           {
             key: 'text',
             label: 'Uplaod Student Document',
-            name: 'customfields.upload_student_document',
+            name: ['customfields', 'upload_student_document'],
             place: 'Enter Counselor Email',
             id: 'Uplaod Student Document',
             type: 'text',
@@ -972,7 +972,7 @@ const formData = [
           {
             key: 'textarea',
             label: 'Remark',
-            name: 'customfields.remark',
+            name: ['customfields', 'remark'],
             place: 'Enter Counselor Email',
             id: 'Uplaod Student Document',
             type: 'textarea',
@@ -982,14 +982,14 @@ const formData = [
       {
         // Sixth university complete date 
         label: 'SVSU',
-        name: 'customfields.university_name',
+        name: ['customfields', 'university_name'],
         value: 'SVSU',
         fields: [
           {
             key: 'radio',
             label: 'Want to send Fee Receipt',
             id: 'Send',
-            name: 'customfields.send_fee_receipt',
+            name: ['customfields', 'send_fee_receipt'],
             type: 'radio',
             options: ['yes', 'no'],
             required: 'require'
@@ -1016,7 +1016,7 @@ const formData = [
             key: 'email',
             label: 'Email-id',
             place: 'Enter Email-id',
-            name: 'contact.email',
+            name: ['contact', 'email'],
             id: 'EmailID',
             type: 'email',
             required: 'require'
@@ -1024,7 +1024,7 @@ const formData = [
           {
             key: 'tel',
             label: 'phone',
-            name: 'contact.phone',
+            name: ['contact', 'phone'],
             place: 'Enter Phone Number',
             id: 'phone',
             type: 'tel',
@@ -1033,7 +1033,7 @@ const formData = [
           {
             key: 'text',
             label: 'Father Name',
-            name: 'customfields.father_name',
+            name: ['customfields', 'father_name'],
             place: 'Enter Father Name',
             id: 'Father Name',
             type: 'text',
@@ -1042,7 +1042,7 @@ const formData = [
           {
             key: 'text',
             label: 'Mother Name',
-            name: 'customfields.mother_name',
+            name: ['customfields', 'mother_name'],
             place: 'Enter Mother Name',
             id: 'mother_name',
             type: 'text',
@@ -1051,7 +1051,7 @@ const formData = [
           {
             key: 'date',
             label: 'Session',
-            name: 'customfields.session',
+            name: ['customfields', 'session'],
             place: 'eg: 2020-2023',
             id: 'Session',
             type: 'text',
@@ -1059,17 +1059,17 @@ const formData = [
           },
           {
             key: 'select',
-            label: 'Session Type',
-            name: 'customfields.session_type',
+            label: 'Admission Type',
+            name: ['customfields', 'admission_type'],
             id: 'SessionType',
-            place: 'Enter Session Type',
+            place: 'Enter Admission Type',
             type: 'select',
-            options: ['January', 'July', 'N/A'],
+            options: ['Fresher', 'LATERAL ENTRY',],
           },
           {
             key: 'select',
             label: 'Course Name',
-            name: 'education.course',
+            name: ['education', 'course'],
             id: 'course',
             place: 'Enter Course Name',
             type: 'select',
@@ -1079,7 +1079,7 @@ const formData = [
           {
             key: 'text',
             label: 'Specialization',
-            name: 'customfields.enter_specialization',
+            name: ['customfields', 'enter_specialization'],
             place: 'Enter Specialization',
             id: 'Specialization',
             type: 'text',
@@ -1087,7 +1087,7 @@ const formData = [
           {
             key: 'date',
             label: 'Date of Birth',
-            name: 'customfields.dob',
+            name: ['customfields', 'dob'],
             place: 'Enter Date of Birth',
             id: 'dob',
             type: 'date',
@@ -1096,7 +1096,7 @@ const formData = [
           {
             key: 'select',
             label: 'Gender',
-            name: 'customfields.gender',
+            name: ['customfields', 'gender'],
             id: 'Gender',
             place: 'Gender',
             type: 'select',
@@ -1106,7 +1106,7 @@ const formData = [
             key: 'select',
             label: 'Installment Type',
             id: 'InstallmentType',
-            name: 'customfields.installment_type',
+            name: ['customfields', 'installment_type'],
             place: 'Installment Type',
             type: 'select',
             required: 'require',
@@ -1126,7 +1126,7 @@ const formData = [
           {
             key: 'select ',
             label: 'Payment mode ',
-            name: 'customfields.payment_mode',
+            name: ['customfields', 'payment_mode'],
             id: 'PaymentMode ',
             type: 'select',
             required: 'require',
@@ -1135,7 +1135,7 @@ const formData = [
           {
             key: 'number',
             label: 'Total Course Fee',
-            name: 'customfields.total_course_fee',
+            name: ['customfields', 'total_course_fee'],
             place: 'eg: 20000',
             id: 'Total Course Fee',
             type: 'number',
@@ -1145,14 +1145,14 @@ const formData = [
             key: 'number',
             label: 'Total Paid Amount',
             place: 'eg: 20000',
-            name: 'customfields.total_paid_amount',
+            name: ['customfields', 'total_paid_amount'],
             id: 'Total Paid Amount',
             type: 'number',
           },
           {
             key: 'number',
             label: 'Paid Amount',
-            name: 'customfields.paid_amount',
+            name: ['customfields', 'paid_amount'],
             place: 'eg: 20000',
             id: 'Paid Amount',
             type: 'number',
@@ -1161,7 +1161,7 @@ const formData = [
           {
             key: 'email',
             label: 'Counselor Email',
-            name: 'customfields.counselor_email',
+            name: ['customfields', 'counselor_email'],
             place: 'Enter Counselor Email',
             id: 'counselor_email',
             type: 'email',
@@ -1180,7 +1180,7 @@ const formData = [
           {
             key: 'text',
             label: 'Uplaod Student Document',
-            name: 'customfields.upload_student_document',
+            name: ['customfields', 'upload_student_document'],
             place: 'Enter Counselor Email',
             id: 'Uplaod Student Document',
             type: 'text',
@@ -1188,7 +1188,7 @@ const formData = [
           {
             key: 'textarea',
             label: 'Remark',
-            name: 'customfields.remark',
+            name: ['customfields', 'remark'],
             place: 'Enter Counselor Email',
             id: 'Uplaod Student Document',
             type: 'textarea',
@@ -1198,7 +1198,7 @@ const formData = [
       {
         // Seventh university complete date 
         label: 'NMIMS',
-        name: 'customfields.university_name',
+        name: ['customfields', 'university_name'],
         value: 'NMIMS',
         fields: [
           {
@@ -1223,7 +1223,7 @@ const formData = [
             key: 'email',
             label: 'Email-id',
             place: 'Enter Email-id',
-            name: 'contact.email',
+            name: ['contact', 'email'],
             id: 'EmailID',
             type: 'email',
             required: 'require'
@@ -1231,7 +1231,7 @@ const formData = [
           {
             key: 'tel',
             label: 'phone',
-            name: 'contact.phone',
+            name: ['contact', 'phone'],
             place: 'Enter Phone Number',
             id: 'phone',
             type: 'tel',
@@ -1240,7 +1240,7 @@ const formData = [
           {
             key: 'date',
             label: 'Session',
-            name: 'customfields.session',
+            name: ['customfields', 'session'],
             place: 'eg: 2020-2023',
             id: 'Session',
             type: 'text',
@@ -1248,17 +1248,17 @@ const formData = [
           },
           {
             key: 'select',
-            label: 'Session Type',
-            name: 'customfields.session_type',
+            label: 'Admission Type',
+            name: ['customfields', 'admission_type'],
             id: 'SessionType',
-            place: 'Enter Session Type',
+            place: 'Enter Admission Type',
             type: 'select',
-            options: ['January', 'July', 'N/A'],
+            options: ['Fresher', 'LATERAL ENTRY',],
           },
           {
             key: 'select',
             label: 'Course Name',
-            name: 'education.course',
+            name: ['education', 'course'],
             id: 'course',
             place: 'Enter Course Name',
             type: 'select',
@@ -1268,7 +1268,7 @@ const formData = [
           {
             key: 'text',
             label: 'Specialization',
-            name: 'customfields.enter_specialization',
+            name: ['customfields', 'enter_specialization'],
             place: 'Enter Specialization',
             id: 'Specialization',
             type: 'text',
@@ -1277,7 +1277,7 @@ const formData = [
           {
             key: 'select',
             label: 'Gender',
-            name: 'customfields.gender',
+            name: ['customfields', 'gender'],
             id: 'Gender',
             place: 'Gender',
             type: 'select',
@@ -1287,7 +1287,7 @@ const formData = [
             key: 'select',
             label: 'Installment Type',
             id: 'InstallmentType',
-            name: 'customfields.installment_type',
+            name: ['customfields', 'installment_type'],
             place: 'Installment Type',
             type: 'select',
             required: 'require',
@@ -1307,7 +1307,7 @@ const formData = [
           {
             key: 'select ',
             label: 'Payment mode ',
-            name: 'customfields.payment_mode',
+            name: ['customfields', 'payment_mode'],
             id: 'PaymentMode ',
             type: 'select',
             required: 'require',
@@ -1316,7 +1316,7 @@ const formData = [
           {
             key: 'number',
             label: 'Total Course Fee',
-            name: 'customfields.total_course_fee',
+            name: ['customfields', 'total_course_fee'],
             place: 'eg: 20000',
             id: 'Total Course Fee',
             type: 'number',
@@ -1326,14 +1326,14 @@ const formData = [
             key: 'number',
             label: 'Total Paid Amount',
             place: 'eg: 20000',
-            name: 'customfields.total_paid_amount',
+            name: ['customfields', 'total_paid_amount'],
             id: 'Total Paid Amount',
             type: 'number',
           },
           {
             key: 'number',
             label: 'Paid Amount',
-            name: 'customfields.paid_amount',
+            name: ['customfields', 'paid_amount'],
             place: 'eg: 20000',
             id: 'Paid Amount',
             type: 'number',
@@ -1342,7 +1342,7 @@ const formData = [
           {
             key: 'email',
             label: 'Counselor Email',
-            name: 'customfields.counselor_email',
+            name: ['customfields', 'counselor_email'],
             place: 'Enter Counselor Email',
             id: 'counselor_email',
             type: 'email',
@@ -1361,7 +1361,7 @@ const formData = [
           {
             key: 'text',
             label: 'Uplaod Student Document',
-            name: 'customfields.upload_student_document',
+            name: ['customfields', 'upload_student_document'],
             place: 'Enter Counselor Email',
             id: 'Uplaod Student Document',
             type: 'text',
@@ -1369,7 +1369,7 @@ const formData = [
           {
             key: 'textarea',
             label: 'Remark',
-            name: 'customfields.remark',
+            name: ['customfields', 'remark'],
             place: 'Enter Counselor Email',
             id: 'Uplaod Student Document',
             type: 'textarea',
@@ -1379,7 +1379,7 @@ const formData = [
       {
         // 8th university complete date 
         label: 'VIGNAN',
-        name: 'customfields.university_name',
+        name: ['customfields', 'university_name'],
         value: 'VIGNAN',
         fields: [
           {
@@ -1404,7 +1404,7 @@ const formData = [
             key: 'email',
             label: 'Email-id',
             place: 'Enter Email-id',
-            name: 'contact.email',
+            name: ['contact', 'email'],
             id: 'EmailID',
             type: 'email',
             required: 'require'
@@ -1412,7 +1412,7 @@ const formData = [
           {
             key: 'tel',
             label: 'phone',
-            name: 'contact.phone',
+            name: ['contact', 'phone'],
             place: 'Enter Phone Number',
             id: 'phone',
             type: 'tel',
@@ -1421,7 +1421,7 @@ const formData = [
           {
             key: 'date',
             label: 'Session',
-            name: 'customfields.session',
+            name: ['customfields', 'session'],
             place: 'eg: 2020-2023',
             id: 'Session',
             type: 'text',
@@ -1429,17 +1429,17 @@ const formData = [
           },
           {
             key: 'select',
-            label: 'Session Type',
-            name: 'customfields.session_type',
+            label: 'Admission Type',
+            name: ['customfields', 'admission_type'],
             id: 'SessionType',
-            place: 'Enter Session Type',
+            place: 'Enter Admission Type',
             type: 'select',
-            options: ['January', 'July', 'N/A'],
+            options: ['Fresher', 'LATERAL ENTRY',],
           },
           {
             key: 'select',
             label: 'Course Name',
-            name: 'education.course',
+            name: ['education', 'course'],
             id: 'course',
             place: 'Enter Course Name',
             type: 'select',
@@ -1449,7 +1449,7 @@ const formData = [
           {
             key: 'text',
             label: 'Specialization',
-            name: 'customfields.enter_specialization',
+            name: ['customfields', 'enter_specialization'],
             place: 'Enter Specialization',
             id: 'Specialization',
             type: 'text',
@@ -1458,7 +1458,7 @@ const formData = [
           {
             key: 'select',
             label: 'Gender',
-            name: 'customfields.gender',
+            name: ['customfields', 'gender'],
             id: 'Gender',
             place: 'Gender',
             type: 'select',
@@ -1468,7 +1468,7 @@ const formData = [
             key: 'select',
             label: 'Installment Type',
             id: 'InstallmentType',
-            name: 'customfields.installment_type',
+            name: ['customfields', 'installment_type'],
             place: 'Installment Type',
             type: 'select',
             required: 'require',
@@ -1488,7 +1488,7 @@ const formData = [
           {
             key: 'select ',
             label: 'Payment mode ',
-            name: 'customfields.payment_mode',
+            name: ['customfields', 'payment_mode'],
             id: 'PaymentMode ',
             type: 'select',
             required: 'require',
@@ -1497,7 +1497,7 @@ const formData = [
           {
             key: 'number',
             label: 'Total Course Fee',
-            name: 'customfields.total_course_fee',
+            name: ['customfields', 'total_course_fee'],
             place: 'eg: 20000',
             id: 'Total Course Fee',
             type: 'number',
@@ -1507,14 +1507,14 @@ const formData = [
             key: 'number',
             label: 'Total Paid Amount',
             place: 'eg: 20000',
-            name: 'customfields.total_paid_amount',
+            name: ['customfields', 'total_paid_amount'],
             id: 'Total Paid Amount',
             type: 'number',
           },
           {
             key: 'number',
             label: 'Paid Amount',
-            name: 'customfields.paid_amount',
+            name: ['customfields', 'paid_amount'],
             place: 'eg: 20000',
             id: 'Paid Amount',
             type: 'number',
@@ -1523,7 +1523,7 @@ const formData = [
           {
             key: 'email',
             label: 'Counselor Email',
-            name: 'customfields.counselor_email',
+            name: ['customfields', 'counselor_email'],
             place: 'Enter Counselor Email',
             id: 'counselor_email',
             type: 'email',
@@ -1542,7 +1542,7 @@ const formData = [
           {
             key: 'text',
             label: 'Uplaod Student Document',
-            name: 'customfields.upload_student_document',
+            name: ['customfields', 'upload_student_document'],
             place: 'Enter Counselor Email',
             id: 'Uplaod Student Document',
             type: 'text',
@@ -1550,7 +1550,7 @@ const formData = [
           {
             key: 'textarea',
             label: 'Remark',
-            name: 'customfields.remark',
+            name: ['customfields', 'remark'],
             place: 'Enter Counselor Email',
             id: 'Uplaod Student Document',
             type: 'textarea',
@@ -1560,7 +1560,7 @@ const formData = [
       {
         // 9th university complete date 
         label: 'HINDUSTAN',
-        name: 'customfields.university_name',
+        name: ['customfields', 'university_name'],
         value: 'HINDUSTAN',
         fields: [
           {
@@ -1585,7 +1585,7 @@ const formData = [
             key: 'email',
             label: 'Email-id',
             place: 'Enter Email-id',
-            name: 'contact.email',
+            name: ['contact', 'email'],
             id: 'EmailID',
             type: 'email',
             required: 'require'
@@ -1593,7 +1593,7 @@ const formData = [
           {
             key: 'tel',
             label: 'phone',
-            name: 'contact.phone',
+            name: ['contact', 'phone'],
             place: 'Enter Phone Number',
             id: 'phone',
             type: 'tel',
@@ -1602,7 +1602,7 @@ const formData = [
           {
             key: 'date',
             label: 'Session',
-            name: 'customfields.session',
+            name: ['customfields', 'session'],
             place: 'eg: 2020-2023',
             id: 'Session',
             type: 'text',
@@ -1610,17 +1610,17 @@ const formData = [
           },
           {
             key: 'select',
-            label: 'Session Type',
-            name: 'customfields.session_type',
+            label: 'Admission Type',
+            name: ['customfields', 'admission_type'],
             id: 'SessionType',
-            place: 'Enter Session Type',
+            place: 'Enter Admission Type',
             type: 'select',
-            options: ['January', 'July', 'N/A'],
+            options: ['Fresher', 'LATERAL ENTRY',],
           },
           {
             key: 'select',
             label: 'Course Name',
-            name: 'education.course',
+            name: ['education', 'course'],
             id: 'course',
             place: 'Enter Course Name',
             type: 'select',
@@ -1630,7 +1630,7 @@ const formData = [
           {
             key: 'text',
             label: 'Specialization',
-            name: 'customfields.enter_specialization',
+            name: ['customfields', 'enter_specialization'],
             place: 'Enter Specialization',
             id: 'Specialization',
             type: 'text',
@@ -1639,7 +1639,7 @@ const formData = [
           {
             key: 'select',
             label: 'Gender',
-            name: 'customfields.gender',
+            name: ['customfields', 'gender'],
             id: 'Gender',
             place: 'Gender',
             type: 'select',
@@ -1649,7 +1649,7 @@ const formData = [
             key: 'select',
             label: 'Installment Type',
             id: 'InstallmentType',
-            name: 'customfields.installment_type',
+            name: ['customfields', 'installment_type'],
             place: 'Installment Type',
             type: 'select',
             required: 'require',
@@ -1669,7 +1669,7 @@ const formData = [
           {
             key: 'select ',
             label: 'Payment mode ',
-            name: 'customfields.payment_mode',
+            name: ['customfields', 'payment_mode'],
             id: 'PaymentMode ',
             type: 'select',
             required: 'require',
@@ -1678,7 +1678,7 @@ const formData = [
           {
             key: 'number',
             label: 'Total Course Fee',
-            name: 'customfields.total_course_fee',
+            name: ['customfields', 'total_course_fee'],
             place: 'eg: 20000',
             id: 'Total Course Fee',
             type: 'number',
@@ -1688,14 +1688,14 @@ const formData = [
             key: 'number',
             label: 'Total Paid Amount',
             place: 'eg: 20000',
-            name: 'customfields.total_paid_amount',
+            name: ['customfields', 'total_paid_amount'],
             id: 'Total Paid Amount',
             type: 'number',
           },
           {
             key: 'number',
             label: 'Paid Amount',
-            name: 'customfields.paid_amount',
+            name: ['customfields', 'paid_amount'],
             place: 'eg: 20000',
             id: 'Paid Amount',
             type: 'number',
@@ -1704,7 +1704,7 @@ const formData = [
           {
             key: 'email',
             label: 'Counselor Email',
-            name: 'customfields.counselor_email',
+            name: ['customfields', 'counselor_email'],
             place: 'Enter Counselor Email',
             id: 'counselor_email',
             type: 'email',
@@ -1723,7 +1723,7 @@ const formData = [
           {
             key: 'text',
             label: 'Uplaod Student Document',
-            name: 'customfields.upload_student_document',
+            name: ['customfields', 'upload_student_document'],
             place: 'Enter Counselor Email',
             id: 'Uplaod Student Document',
             type: 'text',
@@ -1731,7 +1731,7 @@ const formData = [
           {
             key: 'textarea',
             label: 'Remark',
-            name: 'customfields.remark',
+            name: ['customfields', 'remark'],
             place: 'Enter Counselor Email',
             id: 'Uplaod Student Document',
             type: 'textarea',
@@ -1741,7 +1741,7 @@ const formData = [
       {
         // 9th university complete date 
         label: 'MANIPAL',
-        name: 'customfields.university_name',
+        name: ['customfields', 'university_name'],
         value: 'MANIPAL',
         fields: [
           {
@@ -1766,7 +1766,7 @@ const formData = [
             key: 'email',
             label: 'Email-id',
             place: 'Enter Email-id',
-            name: 'contact.email',
+            name: ['contact', 'email'],
             id: 'EmailID',
             type: 'email',
             required: 'require'
@@ -1774,7 +1774,7 @@ const formData = [
           {
             key: 'tel',
             label: 'phone',
-            name: 'contact.phone',
+            name: ['contact', 'phone'],
             place: 'Enter Phone Number',
             id: 'phone',
             type: 'tel',
@@ -1783,7 +1783,7 @@ const formData = [
           {
             key: 'date',
             label: 'Session',
-            name: 'customfields.session',
+            name: ['customfields', 'session'],
             place: 'eg: 2020-2023',
             id: 'Session',
             type: 'text',
@@ -1791,17 +1791,17 @@ const formData = [
           },
           {
             key: 'select',
-            label: 'Session Type',
-            name: 'customfields.session_type',
+            label: 'Admission Type',
+            name: ['customfields', 'admission_type'],
             id: 'SessionType',
-            place: 'Enter Session Type',
+            place: 'Enter Admission Type',
             type: 'select',
-            options: ['January', 'July', 'N/A'],
+            options: ['Fresher', 'LATERAL ENTRY',],
           },
           {
             key: 'select',
             label: 'Course Name',
-            name: 'education.course',
+            name: ['education', 'course'],
             id: 'course',
             place: 'Enter Course Name',
             type: 'select',
@@ -1811,7 +1811,7 @@ const formData = [
           {
             key: 'text',
             label: 'Specialization',
-            name: 'customfields.enter_specialization',
+            name: ['customfields', 'enter_specialization'],
             place: 'Enter Specialization',
             id: 'Specialization',
             type: 'text',
@@ -1820,7 +1820,7 @@ const formData = [
           {
             key: 'select',
             label: 'Gender',
-            name: 'customfields.gender',
+            name: ['customfields', 'gender'],
             id: 'Gender',
             place: 'Gender',
             type: 'select',
@@ -1830,7 +1830,7 @@ const formData = [
             key: 'select',
             label: 'Installment Type',
             id: 'InstallmentType',
-            name: 'customfields.installment_type',
+            name: ['customfields', 'installment_type'],
             place: 'Installment Type',
             type: 'select',
             required: 'require',
@@ -1850,7 +1850,7 @@ const formData = [
           {
             key: 'select ',
             label: 'Payment mode ',
-            name: 'customfields.payment_mode',
+            name: ['customfields', 'payment_mode'],
             id: 'PaymentMode ',
             type: 'select',
             required: 'require',
@@ -1859,7 +1859,7 @@ const formData = [
           {
             key: 'number',
             label: 'Total Course Fee',
-            name: 'customfields.total_course_fee',
+            name: ['customfields', 'total_course_fee'],
             place: 'eg: 20000',
             id: 'Total Course Fee',
             type: 'number',
@@ -1869,14 +1869,14 @@ const formData = [
             key: 'number',
             label: 'Total Paid Amount',
             place: 'eg: 20000',
-            name: 'customfields.total_paid_amount',
+            name: ['customfields', 'total_paid_amount'],
             id: 'Total Paid Amount',
             type: 'number',
           },
           {
             key: 'number',
             label: 'Paid Amount',
-            name: 'customfields.paid_amount',
+            name: ['customfields', 'paid_amount'],
             place: 'eg: 20000',
             id: 'Paid Amount',
             type: 'number',
@@ -1885,7 +1885,7 @@ const formData = [
           {
             key: 'email',
             label: 'Counselor Email',
-            name: 'customfields.counselor_email',
+            name: ['customfields', 'counselor_email'],
             place: 'Enter Counselor Email',
             id: 'counselor_email',
             type: 'email',
@@ -1904,7 +1904,7 @@ const formData = [
           {
             key: 'text',
             label: 'Uplaod Student Document',
-            name: 'customfields.upload_student_document',
+            name: ['customfields', 'upload_student_document'],
             place: 'Enter Counselor Email',
             id: 'Uplaod Student Document',
             type: 'text',
@@ -1912,7 +1912,7 @@ const formData = [
           {
             key: 'textarea',
             label: 'Remark',
-            name: 'customfields.remark',
+            name: ['customfields', 'remark'],
             place: 'Enter Counselor Email',
             id: 'Uplaod Student Document',
             type: 'textarea',
@@ -1922,14 +1922,14 @@ const formData = [
       {
         // 10 university complete date 
         label: 'SMU',
-        name: 'customfields.university_name',
+        name: ['customfields', 'university_name'],
         value: 'SMU',
         fields: [
           {
             key: 'radio',
             label: 'Want to send Fee Receipt',
             id: 'Send',
-            name: 'customfields.send_fee_receipt',
+            name: ['customfields', 'send_fee_receipt'],
             type: 'radio',
             options: ['yes', 'no'],
             required: 'require'
@@ -1956,7 +1956,7 @@ const formData = [
             key: 'email',
             label: 'Email-id',
             place: 'Enter Email-id',
-            name: 'contact.email',
+            name: ['contact', 'email'],
             id: 'EmailID',
             type: 'email',
             required: 'require'
@@ -1964,7 +1964,7 @@ const formData = [
           {
             key: 'tel',
             label: 'phone',
-            name: 'contact.phone',
+            name: ['contact', 'phone'],
             place: 'Enter Phone Number',
             id: 'phone',
             type: 'tel',
@@ -1973,7 +1973,7 @@ const formData = [
           {
             key: 'text',
             label: 'Father Name',
-            name: 'customfields.father_name',
+            name: ['customfields', 'father_name'],
             place: 'Enter Father Name',
             id: 'Father Name',
             type: 'text',
@@ -1982,7 +1982,7 @@ const formData = [
           {
             key: 'text',
             label: 'Mother Name',
-            name: 'customfields.mother_name',
+            name: ['customfields', 'mother_name'],
             place: 'Enter Mother Name',
             id: 'mother_name',
             type: 'text',
@@ -1991,7 +1991,7 @@ const formData = [
           {
             key: 'date',
             label: 'Session',
-            name: 'customfields.session',
+            name: ['customfields', 'session'],
             place: 'eg: 2020-2023',
             id: 'Session',
             type: 'text',
@@ -1999,17 +1999,17 @@ const formData = [
           },
           {
             key: 'select',
-            label: 'Session Type',
-            name: 'customfields.session_type',
+            label: 'Admission Type',
+            name: ['customfields', 'admission_type'],
             id: 'SessionType',
-            place: 'Enter Session Type',
+            place: 'Enter Admission Type',
             type: 'select',
-            options: ['January', 'July', 'N/A'],
+            options: ['Fresher', 'LATERAL ENTRY',],
           },
           {
             key: 'select',
             label: 'Course Name',
-            name: 'education.course',
+            name: ['education', 'course'],
             id: 'course',
             place: 'Enter Course Name',
             type: 'select',
@@ -2019,7 +2019,7 @@ const formData = [
           {
             key: 'text',
             label: 'Specialization',
-            name: 'customfields.enter_specialization',
+            name: ['customfields', 'enter_specialization'],
             place: 'Enter Specialization',
             id: 'Specialization',
             type: 'text',
@@ -2027,7 +2027,7 @@ const formData = [
           {
             key: 'date',
             label: 'Date of Birth',
-            name: 'customfields.dob',
+            name: ['customfields', 'dob'],
             place: 'Enter Date of Birth',
             id: 'dob',
             type: 'date',
@@ -2036,7 +2036,7 @@ const formData = [
           {
             key: 'select',
             label: 'Gender',
-            name: 'customfields.gender',
+            name: ['customfields', 'gender'],
             id: 'Gender',
             place: 'Gender',
             type: 'select',
@@ -2046,7 +2046,7 @@ const formData = [
             key: 'select',
             label: 'Installment Type',
             id: 'InstallmentType',
-            name: 'customfields.installment_type',
+            name: ['customfields', 'installment_type'],
             place: 'Installment Type',
             type: 'select',
             required: 'require',
@@ -2066,7 +2066,7 @@ const formData = [
           {
             key: 'select ',
             label: 'Payment mode ',
-            name: 'customfields.payment_mode',
+            name: ['customfields', 'payment_mode'],
             id: 'PaymentMode ',
             type: 'select',
             required: 'require',
@@ -2075,7 +2075,7 @@ const formData = [
           {
             key: 'number',
             label: 'Total Course Fee',
-            name: 'customfields.total_course_fee',
+            name: ['customfields', 'total_course_fee'],
             place: 'eg: 20000',
             id: 'Total Course Fee',
             type: 'number',
@@ -2085,14 +2085,14 @@ const formData = [
             key: 'number',
             label: 'Total Paid Amount',
             place: 'eg: 20000',
-            name: 'customfields.total_paid_amount',
+            name: ['customfields', 'total_paid_amount'],
             id: 'Total Paid Amount',
             type: 'number',
           },
           {
             key: 'number',
             label: 'Paid Amount',
-            name: 'customfields.paid_amount',
+            name: ['customfields', 'paid_amount'],
             place: 'eg: 20000',
             id: 'Paid Amount',
             type: 'number',
@@ -2101,7 +2101,7 @@ const formData = [
           {
             key: 'email',
             label: 'Counselor Email',
-            name: 'customfields.counselor_email',
+            name: ['customfields', 'counselor_email'],
             place: 'Enter Counselor Email',
             id: 'counselor_email',
             type: 'email',
@@ -2120,7 +2120,7 @@ const formData = [
           {
             key: 'text',
             label: 'Uplaod Student Document',
-            name: 'customfields.upload_student_document',
+            name: ['customfields', 'upload_student_document'],
             place: 'Enter Counselor Email',
             id: 'Uplaod Student Document',
             type: 'text',
@@ -2128,7 +2128,7 @@ const formData = [
           {
             key: 'textarea',
             label: 'Remark',
-            name: 'customfields.remark',
+            name: ['customfields', 'remark'],
             place: 'Enter Counselor Email',
             id: 'Uplaod Student Document',
             type: 'textarea',
@@ -2138,14 +2138,14 @@ const formData = [
       {
         // 11th university complete date 
         label: 'HU',
-        name: 'customfields.university_name',
+        name: ['customfields', 'university_name'],
         value: 'HU',
         fields: [
           {
             key: 'radio',
             label: 'Want to send Fee Receipt',
             id: 'Send',
-            name: 'customfields.send_fee_receipt',
+            name: ['customfields', 'send_fee_receipt'],
             type: 'radio',
             options: ['yes', 'no'],
             required: 'require'
@@ -2172,7 +2172,7 @@ const formData = [
             key: 'email',
             label: 'Email-id',
             place: 'Enter Email-id',
-            name: 'contact.email',
+            name: ['contact', 'email'],
             id: 'EmailID',
             type: 'email',
             required: 'require'
@@ -2180,7 +2180,7 @@ const formData = [
           {
             key: 'tel',
             label: 'phone',
-            name: 'contact.phone',
+            name: ['contact', 'phone'],
             place: 'Enter Phone Number',
             id: 'phone',
             type: 'tel',
@@ -2189,7 +2189,7 @@ const formData = [
           {
             key: 'text',
             label: 'Father Name',
-            name: 'customfields.father_name',
+            name: ['customfields', 'father_name'],
             place: 'Enter Father Name',
             id: 'Father Name',
             type: 'text',
@@ -2198,7 +2198,7 @@ const formData = [
           {
             key: 'text',
             label: 'Mother Name',
-            name: 'customfields.mother_name',
+            name: ['customfields', 'mother_name'],
             place: 'Enter Mother Name',
             id: 'mother_name',
             type: 'text',
@@ -2207,7 +2207,7 @@ const formData = [
           {
             key: 'date',
             label: 'Session',
-            name: 'customfields.session',
+            name: ['customfields', 'session'],
             place: 'eg: 2020-2023',
             id: 'Session',
             type: 'text',
@@ -2215,17 +2215,17 @@ const formData = [
           },
           {
             key: 'select',
-            label: 'Session Type',
-            name: 'customfields.session_type',
+            label: 'Admission Type',
+            name: ['customfields', 'admission_type'],
             id: 'SessionType',
-            place: 'Enter Session Type',
+            place: 'Enter Admission Type',
             type: 'select',
-            options: ['January', 'July', 'N/A'],
+            options: ['Fresher', 'LATERAL ENTRY',],
           },
           {
             key: 'select',
             label: 'Course Name',
-            name: 'education.course',
+            name: ['education', 'course'],
             id: 'course',
             place: 'Enter Course Name',
             type: 'select',
@@ -2235,7 +2235,7 @@ const formData = [
           {
             key: 'text',
             label: 'Specialization',
-            name: 'customfields.enter_specialization',
+            name: ['customfields', 'enter_specialization'],
             place: 'Enter Specialization',
             id: 'Specialization',
             type: 'text',
@@ -2243,7 +2243,7 @@ const formData = [
           {
             key: 'date',
             label: 'Date of Birth',
-            name: 'customfields.dob',
+            name: ['customfields', 'dob'],
             place: 'Enter Date of Birth',
             id: 'dob',
             type: 'date',
@@ -2252,7 +2252,7 @@ const formData = [
           {
             key: 'select',
             label: 'Gender',
-            name: 'customfields.gender',
+            name: ['customfields', 'gender'],
             id: 'Gender',
             place: 'Gender',
             type: 'select',
@@ -2262,7 +2262,7 @@ const formData = [
             key: 'select',
             label: 'Installment Type',
             id: 'InstallmentType',
-            name: 'customfields.installment_type',
+            name: ['customfields', 'installment_type'],
             place: 'Installment Type',
             type: 'select',
             required: 'require',
@@ -2282,7 +2282,7 @@ const formData = [
           {
             key: 'select ',
             label: 'Payment mode ',
-            name: 'customfields.payment_mode',
+            name: ['customfields', 'payment_mode'],
             id: 'PaymentMode ',
             type: 'select',
             required: 'require',
@@ -2291,7 +2291,7 @@ const formData = [
           {
             key: 'number',
             label: 'Total Course Fee',
-            name: 'customfields.total_course_fee',
+            name: ['customfields', 'total_course_fee'],
             place: 'eg: 20000',
             id: 'Total Course Fee',
             type: 'number',
@@ -2301,14 +2301,14 @@ const formData = [
             key: 'number',
             label: 'Total Paid Amount',
             place: 'eg: 20000',
-            name: 'customfields.total_paid_amount',
+            name: ['customfields', 'total_paid_amount'],
             id: 'Total Paid Amount',
             type: 'number',
           },
           {
             key: 'number',
             label: 'Paid Amount',
-            name: 'customfields.paid_amount',
+            name: ['customfields', 'paid_amount'],
             place: 'eg: 20000',
             id: 'Paid Amount',
             type: 'number',
@@ -2317,7 +2317,7 @@ const formData = [
           {
             key: 'email',
             label: 'Counselor Email',
-            name: 'customfields.counselor_email',
+            name: ['customfields', 'counselor_email'],
             place: 'Enter Counselor Email',
             id: 'counselor_email',
             type: 'email',
@@ -2336,7 +2336,7 @@ const formData = [
           {
             key: 'text',
             label: 'Uplaod Student Document',
-            name: 'customfields.upload_student_document',
+            name: ['customfields', 'upload_student_document'],
             place: 'Enter Counselor Email',
             id: 'Uplaod Student Document',
             type: 'text',
@@ -2344,7 +2344,7 @@ const formData = [
           {
             key: 'textarea',
             label: 'Remark',
-            name: 'customfields.remark',
+            name: ['customfields', 'remark'],
             place: 'Enter Counselor Email',
             id: 'Uplaod Student Document',
             type: 'textarea',
@@ -2354,14 +2354,14 @@ const formData = [
       {
         // 12th university complete date 
         label: 'BOSSE',
-        name: 'customfields.university_name',
+        name: ['customfields', 'university_name'],
         value: 'BOSSE',
         fields: [
           {
             key: 'radio',
             label: 'Want to send Fee Receipt',
             id: 'Send',
-            name: 'customfields.send_fee_receipt',
+            name: ['customfields', 'send_fee_receipt'],
             type: 'radio',
             options: ['yes', 'no'],
             required: 'require'
@@ -2388,7 +2388,7 @@ const formData = [
             key: 'email',
             label: 'Email-id',
             place: 'Enter Email-id',
-            name: 'contact.email',
+            name: ['contact', 'email'],
             id: 'EmailID',
             type: 'email',
             required: 'require'
@@ -2396,7 +2396,7 @@ const formData = [
           {
             key: 'tel',
             label: 'phone',
-            name: 'contact.phone',
+            name: ['contact', 'phone'],
             place: 'Enter Phone Number',
             id: 'phone',
             type: 'tel',
@@ -2405,7 +2405,7 @@ const formData = [
           {
             key: 'text',
             label: 'Father Name',
-            name: 'customfields.father_name',
+            name: ['customfields', 'father_name'],
             place: 'Enter Father Name',
             id: 'Father Name',
             type: 'text',
@@ -2414,7 +2414,7 @@ const formData = [
           {
             key: 'text',
             label: 'Mother Name',
-            name: 'customfields.mother_name',
+            name: ['customfields', 'mother_name'],
             place: 'Enter Mother Name',
             id: 'mother_name',
             type: 'text',
@@ -2423,7 +2423,7 @@ const formData = [
           {
             key: 'date',
             label: 'Session',
-            name: 'customfields.session',
+            name: ['customfields', 'session'],
             place: 'eg: 2020-2023',
             id: 'Session',
             type: 'text',
@@ -2431,17 +2431,17 @@ const formData = [
           },
           {
             key: 'select',
-            label: 'Session Type',
-            name: 'customfields.session_type',
+            label: 'Admission Type',
+            name: ['customfields', 'admission_type'],
             id: 'SessionType',
-            place: 'Enter Session Type',
+            place: 'Enter Admission Type',
             type: 'select',
-            options: ['January', 'July', 'N/A'],
+            options: ['Fresher', 'LATERAL ENTRY',],
           },
           {
             key: 'select',
             label: 'Course Name',
-            name: 'education.course',
+            name: ['education', 'course'],
             id: 'course',
             place: 'Enter Course Name',
             type: 'select',
@@ -2451,7 +2451,7 @@ const formData = [
           {
             key: 'text',
             label: 'Specialization',
-            name: 'customfields.enter_specialization',
+            name: ['customfields', 'enter_specialization'],
             place: 'Enter Specialization',
             id: 'Specialization',
             type: 'text',
@@ -2459,7 +2459,7 @@ const formData = [
           {
             key: 'date',
             label: 'Date of Birth',
-            name: 'customfields.dob',
+            name: ['customfields', 'dob'],
             place: 'Enter Date of Birth',
             id: 'dob',
             type: 'date',
@@ -2468,7 +2468,7 @@ const formData = [
           {
             key: 'select',
             label: 'Gender',
-            name: 'customfields.gender',
+            name: ['customfields', 'gender'],
             id: 'Gender',
             place: 'Gender',
             type: 'select',
@@ -2478,7 +2478,7 @@ const formData = [
             key: 'select',
             label: 'Installment Type',
             id: 'InstallmentType',
-            name: 'customfields.installment_type',
+            name: ['customfields', 'installment_type'],
             place: 'Installment Type',
             type: 'select',
             required: 'require',
@@ -2498,7 +2498,7 @@ const formData = [
           {
             key: 'select ',
             label: 'Payment mode ',
-            name: 'customfields.payment_mode',
+            name: ['customfields', 'payment_mode'],
             id: 'PaymentMode ',
             type: 'select',
             required: 'require',
@@ -2507,7 +2507,7 @@ const formData = [
           {
             key: 'number',
             label: 'Total Course Fee',
-            name: 'customfields.total_course_fee',
+            name: ['customfields', 'total_course_fee'],
             place: 'eg: 20000',
             id: 'Total Course Fee',
             type: 'number',
@@ -2517,14 +2517,14 @@ const formData = [
             key: 'number',
             label: 'Total Paid Amount',
             place: 'eg: 20000',
-            name: 'customfields.total_paid_amount',
+            name: ['customfields', 'total_paid_amount'],
             id: 'Total Paid Amount',
             type: 'number',
           },
           {
             key: 'number',
             label: 'Paid Amount',
-            name: 'customfields.paid_amount',
+            name: ['customfields', 'paid_amount'],
             place: 'eg: 20000',
             id: 'Paid Amount',
             type: 'number',
@@ -2533,7 +2533,7 @@ const formData = [
           {
             key: 'email',
             label: 'Counselor Email',
-            name: 'customfields.counselor_email',
+            name: ['customfields', 'counselor_email'],
             place: 'Enter Counselor Email',
             id: 'counselor_email',
             type: 'email',
@@ -2552,7 +2552,7 @@ const formData = [
           {
             key: 'text',
             label: 'Uplaod Student Document',
-            name: 'customfields.upload_student_document',
+            name: ['customfields', 'upload_student_document'],
             place: 'Enter Counselor Email',
             id: 'Uplaod Student Document',
             type: 'text',
@@ -2560,7 +2560,7 @@ const formData = [
           {
             key: 'textarea',
             label: 'Remark',
-            name: 'customfields.remark',
+            name: ['customfields', 'remark'],
             place: 'Enter Counselor Email',
             id: 'Uplaod Student Document',
             type: 'textarea',
@@ -2570,14 +2570,14 @@ const formData = [
       {
         // 13th university complete date 
         label: 'SABARMATI',
-        name: 'customfields.university_name',
+        name: ['customfields', 'university_name'],
         value: 'SABARMATI',
         fields: [
           {
             key: 'radio',
             label: 'Want to send Fee Receipt',
             id: 'Send',
-            name: 'customfields.send_fee_receipt',
+            name: ['customfields', 'send_fee_receipt'],
             type: 'radio',
             options: ['yes', 'no'],
             required: 'require'
@@ -2604,7 +2604,7 @@ const formData = [
             key: 'email',
             label: 'Email-id',
             place: 'Enter Email-id',
-            name: 'contact.email',
+            name: ['contact', 'email'],
             id: 'EmailID',
             type: 'email',
             required: 'require'
@@ -2612,7 +2612,7 @@ const formData = [
           {
             key: 'tel',
             label: 'phone',
-            name: 'contact.phone',
+            name: ['contact', 'phone'],
             place: 'Enter Phone Number',
             id: 'phone',
             type: 'tel',
@@ -2621,7 +2621,7 @@ const formData = [
           {
             key: 'text',
             label: 'Father Name',
-            name: 'customfields.father_name',
+            name: ['customfields', 'father_name'],
             place: 'Enter Father Name',
             id: 'Father Name',
             type: 'text',
@@ -2630,7 +2630,7 @@ const formData = [
           {
             key: 'text',
             label: 'Mother Name',
-            name: 'customfields.mother_name',
+            name: ['customfields', 'mother_name'],
             place: 'Enter Mother Name',
             id: 'mother_name',
             type: 'text',
@@ -2639,7 +2639,7 @@ const formData = [
           {
             key: 'date',
             label: 'Session',
-            name: 'customfields.session',
+            name: ['customfields', 'session'],
             place: 'eg: 2020-2023',
             id: 'Session',
             type: 'text',
@@ -2647,17 +2647,17 @@ const formData = [
           },
           {
             key: 'select',
-            label: 'Session Type',
-            name: 'customfields.session_type',
+            label: 'Admission Type',
+            name: ['customfields', 'admission_type'],
             id: 'SessionType',
-            place: 'Enter Session Type',
+            place: 'Enter Admission Type',
             type: 'select',
-            options: ['January', 'July', 'N/A'],
+            options: ['Fresher', 'LATERAL ENTRY',],
           },
           {
             key: 'select',
             label: 'Course Name',
-            name: 'education.course',
+            name: ['education', 'course'],
             id: 'course',
             place: 'Enter Course Name',
             type: 'select',
@@ -2667,7 +2667,7 @@ const formData = [
           {
             key: 'text',
             label: 'Specialization',
-            name: 'customfields.enter_specialization',
+            name: ['customfields', 'enter_specialization'],
             place: 'Enter Specialization',
             id: 'Specialization',
             type: 'text',
@@ -2675,7 +2675,7 @@ const formData = [
           {
             key: 'date',
             label: 'Date of Birth',
-            name: 'customfields.dob',
+            name: ['customfields', 'dob'],
             place: 'Enter Date of Birth',
             id: 'dob',
             type: 'date',
@@ -2684,7 +2684,7 @@ const formData = [
           {
             key: 'select',
             label: 'Gender',
-            name: 'customfields.gender',
+            name: ['customfields', 'gender'],
             id: 'Gender',
             place: 'Gender',
             type: 'select',
@@ -2694,7 +2694,7 @@ const formData = [
             key: 'select',
             label: 'Installment Type',
             id: 'InstallmentType',
-            name: 'customfields.installment_type',
+            name: ['customfields', 'installment_type'],
             place: 'Installment Type',
             type: 'select',
             required: 'require',
@@ -2714,7 +2714,7 @@ const formData = [
           {
             key: 'select ',
             label: 'Payment mode ',
-            name: 'customfields.payment_mode',
+            name: ['customfields', 'payment_mode'],
             id: 'PaymentMode ',
             type: 'select',
             required: 'require',
@@ -2723,7 +2723,7 @@ const formData = [
           {
             key: 'number',
             label: 'Total Course Fee',
-            name: 'customfields.total_course_fee',
+            name: ['customfields', 'total_course_fee'],
             place: 'eg: 20000',
             id: 'Total Course Fee',
             type: 'number',
@@ -2733,14 +2733,14 @@ const formData = [
             key: 'number',
             label: 'Total Paid Amount',
             place: 'eg: 20000',
-            name: 'customfields.total_paid_amount',
+            name: ['customfields', 'total_paid_amount'],
             id: 'Total Paid Amount',
             type: 'number',
           },
           {
             key: 'number',
             label: 'Paid Amount',
-            name: 'customfields.paid_amount',
+            name: ['customfields', 'paid_amount'],
             place: 'eg: 20000',
             id: 'Paid Amount',
             type: 'number',
@@ -2749,7 +2749,7 @@ const formData = [
           {
             key: 'email',
             label: 'Counselor Email',
-            name: 'customfields.counselor_email',
+            name: ['customfields', 'counselor_email'],
             place: 'Enter Counselor Email',
             id: 'counselor_email',
             type: 'email',
@@ -2768,7 +2768,7 @@ const formData = [
           {
             key: 'text',
             label: 'Uplaod Student Document',
-            name: 'customfields.upload_student_document',
+            name: ['customfields', 'upload_student_document'],
             place: 'Enter Counselor Email',
             id: 'Uplaod Student Document',
             type: 'text',
@@ -2776,7 +2776,7 @@ const formData = [
           {
             key: 'textarea',
             label: 'Remark',
-            name: 'customfields.remark',
+            name: ['customfields', 'remark'],
             place: 'Enter Counselor Email',
             id: 'Uplaod Student Document',
             type: 'textarea',
@@ -2786,7 +2786,7 @@ const formData = [
       {
         // 14th university complete date 
         label: 'UU',
-        name: 'customfields.university_name',
+        name: ['customfields', 'university_name'],
         value: 'UU',
         fields: [
           {
@@ -2811,7 +2811,7 @@ const formData = [
             key: 'email',
             label: 'Email-id',
             place: 'Enter Email-id',
-            name: 'contact.email',
+            name: ['contact', 'email'],
             id: 'EmailID',
             type: 'email',
             required: 'require'
@@ -2819,7 +2819,7 @@ const formData = [
           {
             key: 'tel',
             label: 'phone',
-            name: 'contact.phone',
+            name: ['contact', 'phone'],
             place: 'Enter Phone Number',
             id: 'phone',
             type: 'tel',
@@ -2828,7 +2828,7 @@ const formData = [
           {
             key: 'date',
             label: 'Session',
-            name: 'customfields.session',
+            name: ['customfields', 'session'],
             place: 'eg: 2020-2023',
             id: 'Session',
             type: 'text',
@@ -2836,17 +2836,17 @@ const formData = [
           },
           {
             key: 'select',
-            label: 'Session Type',
-            name: 'customfields.session_type',
+            label: 'Admission Type',
+            name: ['customfields', 'admission_type'],
             id: 'SessionType',
-            place: 'Enter Session Type',
+            place: 'Enter Admission Type',
             type: 'select',
-            options: ['January', 'July', 'N/A'],
+            options: ['Fresher', 'LATERAL ENTRY',],
           },
           {
             key: 'select',
             label: 'Course Name',
-            name: 'education.course',
+            name: ['education', 'course'],
             id: 'course',
             place: 'Enter Course Name',
             type: 'select',
@@ -2856,7 +2856,7 @@ const formData = [
           {
             key: 'text',
             label: 'Specialization',
-            name: 'customfields.enter_specialization',
+            name: ['customfields', 'enter_specialization'],
             place: 'Enter Specialization',
             id: 'Specialization',
             type: 'text',
@@ -2865,7 +2865,7 @@ const formData = [
           {
             key: 'select',
             label: 'Gender',
-            name: 'customfields.gender',
+            name: ['customfields', 'gender'],
             id: 'Gender',
             place: 'Gender',
             type: 'select',
@@ -2875,7 +2875,7 @@ const formData = [
             key: 'select',
             label: 'Installment Type',
             id: 'InstallmentType',
-            name: 'customfields.installment_type',
+            name: ['customfields', 'installment_type'],
             place: 'Installment Type',
             type: 'select',
             required: 'require',
@@ -2895,7 +2895,7 @@ const formData = [
           {
             key: 'select ',
             label: 'Payment mode ',
-            name: 'customfields.payment_mode',
+            name: ['customfields', 'payment_mode'],
             id: 'PaymentMode ',
             type: 'select',
             required: 'require',
@@ -2904,7 +2904,7 @@ const formData = [
           {
             key: 'number',
             label: 'Total Course Fee',
-            name: 'customfields.total_course_fee',
+            name: ['customfields', 'total_course_fee'],
             place: 'eg: 20000',
             id: 'Total Course Fee',
             type: 'number',
@@ -2914,14 +2914,14 @@ const formData = [
             key: 'number',
             label: 'Total Paid Amount',
             place: 'eg: 20000',
-            name: 'customfields.total_paid_amount',
+            name: ['customfields', 'total_paid_amount'],
             id: 'Total Paid Amount',
             type: 'number',
           },
           {
             key: 'number',
             label: 'Paid Amount',
-            name: 'customfields.paid_amount',
+            name: ['customfields', 'paid_amount'],
             place: 'eg: 20000',
             id: 'Paid Amount',
             type: 'number',
@@ -2930,7 +2930,7 @@ const formData = [
           {
             key: 'email',
             label: 'Counselor Email',
-            name: 'customfields.counselor_email',
+            name: ['customfields', 'counselor_email'],
             place: 'Enter Counselor Email',
             id: 'counselor_email',
             type: 'email',
@@ -2949,7 +2949,7 @@ const formData = [
           {
             key: 'text',
             label: 'Uplaod Student Document',
-            name: 'customfields.upload_student_document',
+            name: ['customfields', 'upload_student_document'],
             place: 'Enter Counselor Email',
             id: 'Uplaod Student Document',
             type: 'text',
@@ -2957,7 +2957,7 @@ const formData = [
           {
             key: 'textarea',
             label: 'Remark',
-            name: 'customfields.remark',
+            name: ['customfields', 'remark'],
             place: 'Enter Counselor Email',
             id: 'Uplaod Student Document',
             type: 'textarea',
@@ -2967,7 +2967,7 @@ const formData = [
       {
         // 15th university complete date 
         label: 'UPES',
-        name: 'customfields.university_name',
+        name: ['customfields', 'university_name'],
         value: 'UPES',
         fields: [
           {
@@ -2992,7 +2992,7 @@ const formData = [
             key: 'email',
             label: 'Email-id',
             place: 'Enter Email-id',
-            name: 'contact.email',
+            name: ['contact', 'email'],
             id: 'EmailID',
             type: 'email',
             required: 'require'
@@ -3000,7 +3000,7 @@ const formData = [
           {
             key: 'tel',
             label: 'phone',
-            name: 'contact.phone',
+            name: ['contact', 'phone'],
             place: 'Enter Phone Number',
             id: 'phone',
             type: 'tel',
@@ -3009,7 +3009,7 @@ const formData = [
           {
             key: 'date',
             label: 'Session',
-            name: 'customfields.session',
+            name: ['customfields', 'session'],
             place: 'eg: 2020-2023',
             id: 'Session',
             type: 'text',
@@ -3017,17 +3017,17 @@ const formData = [
           },
           {
             key: 'select',
-            label: 'Session Type',
-            name: 'customfields.session_type',
+            label: 'Admission Type',
+            name: ['customfields', 'admission_type'],
             id: 'SessionType',
-            place: 'Enter Session Type',
+            place: 'Enter Admission Type',
             type: 'select',
-            options: ['January', 'July', 'N/A'],
+            options: ['Fresher', 'LATERAL ENTRY',],
           },
           {
             key: 'select',
             label: 'Course Name',
-            name: 'education.course',
+            name: ['education', 'course'],
             id: 'course',
             place: 'Enter Course Name',
             type: 'select',
@@ -3037,7 +3037,7 @@ const formData = [
           {
             key: 'text',
             label: 'Specialization',
-            name: 'customfields.enter_specialization',
+            name: ['customfields', 'enter_specialization'],
             place: 'Enter Specialization',
             id: 'Specialization',
             type: 'text',
@@ -3046,7 +3046,7 @@ const formData = [
           {
             key: 'select',
             label: 'Gender',
-            name: 'customfields.gender',
+            name: ['customfields', 'gender'],
             id: 'Gender',
             place: 'Gender',
             type: 'select',
@@ -3056,7 +3056,7 @@ const formData = [
             key: 'select',
             label: 'Installment Type',
             id: 'InstallmentType',
-            name: 'customfields.installment_type',
+            name: ['customfields', 'installment_type'],
             place: 'Installment Type',
             type: 'select',
             required: 'require',
@@ -3076,7 +3076,7 @@ const formData = [
           {
             key: 'select ',
             label: 'Payment mode ',
-            name: 'customfields.payment_mode',
+            name: ['customfields', 'payment_mode'],
             id: 'PaymentMode ',
             type: 'select',
             required: 'require',
@@ -3085,7 +3085,7 @@ const formData = [
           {
             key: 'number',
             label: 'Total Course Fee',
-            name: 'customfields.total_course_fee',
+            name: ['customfields', 'total_course_fee'],
             place: 'eg: 20000',
             id: 'Total Course Fee',
             type: 'number',
@@ -3095,14 +3095,14 @@ const formData = [
             key: 'number',
             label: 'Total Paid Amount',
             place: 'eg: 20000',
-            name: 'customfields.total_paid_amount',
+            name: ['customfields', 'total_paid_amount'],
             id: 'Total Paid Amount',
             type: 'number',
           },
           {
             key: 'number',
             label: 'Paid Amount',
-            name: 'customfields.paid_amount',
+            name: ['customfields', 'paid_amount'],
             place: 'eg: 20000',
             id: 'Paid Amount',
             type: 'number',
@@ -3111,7 +3111,7 @@ const formData = [
           {
             key: 'email',
             label: 'Counselor Email',
-            name: 'customfields.counselor_email',
+            name: ['customfields', 'counselor_email'],
             place: 'Enter Counselor Email',
             id: 'counselor_email',
             type: 'email',
@@ -3130,7 +3130,7 @@ const formData = [
           {
             key: 'text',
             label: 'Uplaod Student Document',
-            name: 'customfields.upload_student_document',
+            name: ['customfields', 'upload_student_document'],
             place: 'Enter Counselor Email',
             id: 'Uplaod Student Document',
             type: 'text',
@@ -3138,7 +3138,7 @@ const formData = [
           {
             key: 'textarea',
             label: 'Remark',
-            name: 'customfields.remark',
+            name: ['customfields', 'remark'],
             place: 'Enter Counselor Email',
             id: 'Uplaod Student Document',
             type: 'textarea',
@@ -3148,7 +3148,7 @@ const formData = [
       {
         // 15th university complete date 
         label: 'MRU',
-        name: 'customfields.university_name',
+        name: ['customfields', 'university_name'],
         value: 'MRU',
         fields: [
           {
@@ -3173,7 +3173,7 @@ const formData = [
             key: 'email',
             label: 'Email-id',
             place: 'Enter Email-id',
-            name: 'contact.email',
+            name: ['contact', 'email'],
             id: 'EmailID',
             type: 'email',
             required: 'require'
@@ -3181,7 +3181,7 @@ const formData = [
           {
             key: 'tel',
             label: 'phone',
-            name: 'contact.phone',
+            name: ['contact', 'phone'],
             place: 'Enter Phone Number',
             id: 'phone',
             type: 'tel',
@@ -3190,7 +3190,7 @@ const formData = [
           {
             key: 'date',
             label: 'Session',
-            name: 'customfields.session',
+            name: ['customfields', 'session'],
             place: 'eg: 2020-2023',
             id: 'Session',
             type: 'text',
@@ -3198,17 +3198,17 @@ const formData = [
           },
           {
             key: 'select',
-            label: 'Session Type',
-            name: 'customfields.session_type',
+            label: 'Admission Type',
+            name: ['customfields', 'admission_type'],
             id: 'SessionType',
-            place: 'Enter Session Type',
+            place: 'Enter Admission Type',
             type: 'select',
-            options: ['January', 'July', 'N/A'],
+            options: ['Fresher', 'LATERAL ENTRY',],
           },
           {
             key: 'select',
             label: 'Course Name',
-            name: 'education.course',
+            name: ['education', 'course'],
             id: 'course',
             place: 'Enter Course Name',
             type: 'select',
@@ -3218,7 +3218,7 @@ const formData = [
           {
             key: 'text',
             label: 'Specialization',
-            name: 'customfields.enter_specialization',
+            name: ['customfields', 'enter_specialization'],
             place: 'Enter Specialization',
             id: 'Specialization',
             type: 'text',
@@ -3227,7 +3227,7 @@ const formData = [
           {
             key: 'select',
             label: 'Gender',
-            name: 'customfields.gender',
+            name: ['customfields', 'gender'],
             id: 'Gender',
             place: 'Gender',
             type: 'select',
@@ -3237,7 +3237,7 @@ const formData = [
             key: 'select',
             label: 'Installment Type',
             id: 'InstallmentType',
-            name: 'customfields.installment_type',
+            name: ['customfields', 'installment_type'],
             place: 'Installment Type',
             type: 'select',
             required: 'require',
@@ -3257,7 +3257,7 @@ const formData = [
           {
             key: 'select ',
             label: 'Payment mode ',
-            name: 'customfields.payment_mode',
+            name: ['customfields', 'payment_mode'],
             id: 'PaymentMode ',
             type: 'select',
             required: 'require',
@@ -3266,7 +3266,7 @@ const formData = [
           {
             key: 'number',
             label: 'Total Course Fee',
-            name: 'customfields.total_course_fee',
+            name: ['customfields', 'total_course_fee'],
             place: 'eg: 20000',
             id: 'Total Course Fee',
             type: 'number',
@@ -3276,14 +3276,14 @@ const formData = [
             key: 'number',
             label: 'Total Paid Amount',
             place: 'eg: 20000',
-            name: 'customfields.total_paid_amount',
+            name: ['customfields', 'total_paid_amount'],
             id: 'Total Paid Amount',
             type: 'number',
           },
           {
             key: 'number',
             label: 'Paid Amount',
-            name: 'customfields.paid_amount',
+            name: ['customfields', 'paid_amount'],
             place: 'eg: 20000',
             id: 'Paid Amount',
             type: 'number',
@@ -3292,7 +3292,7 @@ const formData = [
           {
             key: 'email',
             label: 'Counselor Email',
-            name: 'customfields.counselor_email',
+            name: ['customfields', 'counselor_email'],
             place: 'Enter Counselor Email',
             id: 'counselor_email',
             type: 'email',
@@ -3311,7 +3311,7 @@ const formData = [
           {
             key: 'text',
             label: 'Uplaod Student Document',
-            name: 'customfields.upload_student_document',
+            name: ['customfields', 'upload_student_document'],
             place: 'Enter Counselor Email',
             id: 'Uplaod Student Document',
             type: 'text',
@@ -3319,7 +3319,7 @@ const formData = [
           {
             key: 'textarea',
             label: 'Remark',
-            name: 'customfields.remark',
+            name: ['customfields', 'remark'],
             place: 'Enter Counselor Email',
             id: 'Uplaod Student Document',
             type: 'textarea',
@@ -3329,14 +3329,14 @@ const formData = [
       {
         // First university complete date 
         label: 'MANGALAYATAN',
-        name: 'customfields.university_name',
+        name: ['customfields', 'university_name'],
         value: 'MANGALAYATAN',
         fields: [
           {
             key: 'radio',
             label: 'Want to send Fee Receipt',
             id: 'Send',
-            name: 'customfields.send_fee_receipt',
+            name: ['customfields', 'send_fee_receipt'],
             type: 'radio',
             options: ['yes', 'no'],
             required: 'require'
@@ -3363,7 +3363,7 @@ const formData = [
             key: 'email',
             label: 'Email-id',
             place: 'Enter Email-id',
-            name: 'contact.email',
+            name: ['contact', 'email'],
             id: 'EmailID',
             type: 'email',
             required: 'require'
@@ -3371,7 +3371,7 @@ const formData = [
           {
             key: 'tel',
             label: 'phone',
-            name: 'contact.phone',
+            name: ['contact', 'phone'],
             place: 'Enter Phone Number',
             id: 'phone',
             type: 'tel',
@@ -3380,7 +3380,7 @@ const formData = [
           {
             key: 'text',
             label: 'Father Name',
-            name: 'customfields.father_name',
+            name: ['customfields', 'father_name'],
             place: 'Enter Father Name',
             id: 'Father Name',
             type: 'text',
@@ -3389,7 +3389,7 @@ const formData = [
           {
             key: 'text',
             label: 'Mother Name',
-            name: 'customfields.mother_name',
+            name: ['customfields', 'mother_name'],
             place: 'Enter Mother Name',
             id: 'mother_name',
             type: 'text',
@@ -3398,7 +3398,7 @@ const formData = [
           {
             key: 'date',
             label: 'Session',
-            name: 'customfields.session',
+            name: ['customfields', 'session'],
             place: 'eg: 2020-2023',
             id: 'Session',
             type: 'text',
@@ -3406,17 +3406,17 @@ const formData = [
           },
           {
             key: 'select',
-            label: 'Session Type',
-            name: 'customfields.session_type',
+            label: 'Admission Type',
+            name: ['customfields', 'admission_type'],
             id: 'SessionType',
-            place: 'Enter Session Type',
+            place: 'Enter Admission Type',
             type: 'select',
-            options: ['January', 'July', 'N/A'],
+            options: ['Fresher', 'LATERAL ENTRY',],
           },
           {
             key: 'select',
             label: 'Course Name',
-            name: 'education.course',
+            name: ['education', 'course'],
             id: 'course',
             place: 'Enter Course Name',
             type: 'select',
@@ -3426,7 +3426,7 @@ const formData = [
           {
             key: 'text',
             label: 'Specialization',
-            name: 'customfields.enter_specialization',
+            name: ['customfields', 'enter_specialization'],
             place: 'Enter Specialization',
             id: 'Specialization',
             type: 'text',
@@ -3434,7 +3434,7 @@ const formData = [
           {
             key: 'date',
             label: 'Date of Birth',
-            name: 'customfields.dob',
+            name: ['customfields', 'dob'],
             place: 'Enter Date of Birth',
             id: 'dob',
             type: 'date',
@@ -3443,7 +3443,7 @@ const formData = [
           {
             key: 'select',
             label: 'Gender',
-            name: 'customfields.gender',
+            name: ['customfields', 'gender'],
             id: 'Gender',
             place: 'Gender',
             type: 'select',
@@ -3453,7 +3453,7 @@ const formData = [
             key: 'select',
             label: 'Installment Type',
             id: 'InstallmentType',
-            name: 'customfields.installment_type',
+            name: ['customfields', 'installment_type'],
             place: 'Installment Type',
             type: 'select',
             required: 'require',
@@ -3473,7 +3473,7 @@ const formData = [
           {
             key: 'select ',
             label: 'Payment mode ',
-            name: 'customfields.payment_mode',
+            name: ['customfields', 'payment_mode'],
             id: 'PaymentMode ',
             type: 'select',
             required: 'require',
@@ -3482,7 +3482,7 @@ const formData = [
           {
             key: 'number',
             label: 'Total Course Fee',
-            name: 'customfields.total_course_fee',
+            name: ['customfields', 'total_course_fee'],
             place: 'eg: 20000',
             id: 'Total Course Fee',
             type: 'number',
@@ -3492,14 +3492,14 @@ const formData = [
             key: 'number',
             label: 'Total Paid Amount',
             place: 'eg: 20000',
-            name: 'customfields.total_paid_amount',
+            name: ['customfields', 'total_paid_amount'],
             id: 'Total Paid Amount',
             type: 'number',
           },
           {
             key: 'number',
             label: 'Paid Amount',
-            name: 'customfields.paid_amount',
+            name: ['customfields', 'paid_amount'],
             place: 'eg: 20000',
             id: 'Paid Amount',
             type: 'number',
@@ -3508,7 +3508,7 @@ const formData = [
           {
             key: 'email',
             label: 'Counselor Email',
-            name: 'customfields.counselor_email',
+            name: ['customfields', 'counselor_email'],
             place: 'Enter Counselor Email',
             id: 'counselor_email',
             type: 'email',
@@ -3527,7 +3527,7 @@ const formData = [
           {
             key: 'text',
             label: 'Uplaod Student Document',
-            name: 'customfields.upload_student_document',
+            name: ['customfields', 'upload_student_document'],
             place: 'Enter Counselor Email',
             id: 'Uplaod Student Document',
             type: 'text',
@@ -3535,7 +3535,7 @@ const formData = [
           {
             key: 'textarea',
             label: 'Remark',
-            name: 'customfields.remark',
+            name: ['customfields', 'remark'],
             place: 'Enter Counselor Email',
             id: 'Uplaod Student Document',
             type: 'textarea',
@@ -3545,14 +3545,14 @@ const formData = [
       {
         // First university complete date 
         label: 'MANGALAYATAN ONLINE',
-        name: 'customfields.university_name',
+        name: ['customfields', 'university_name'],
         value: 'MANGALAYATAN ONLINE',
         fields: [
           {
             key: 'radio',
             label: 'Want to send Fee Receipt',
             id: 'Send',
-            name: 'customfields.send_fee_receipt',
+            name: ['customfields', 'send_fee_receipt'],
             type: 'radio',
             options: ['yes', 'no'],
             required: 'require'
@@ -3579,7 +3579,7 @@ const formData = [
             key: 'email',
             label: 'Email-id',
             place: 'Enter Email-id',
-            name: 'contact.email',
+            name: ['contact', 'email'],
             id: 'EmailID',
             type: 'email',
             required: 'require'
@@ -3587,7 +3587,7 @@ const formData = [
           {
             key: 'tel',
             label: 'phone',
-            name: 'contact.phone',
+            name: ['contact', 'phone'],
             place: 'Enter Phone Number',
             id: 'phone',
             type: 'tel',
@@ -3596,7 +3596,7 @@ const formData = [
           {
             key: 'text',
             label: 'Father Name',
-            name: 'customfields.father_name',
+            name: ['customfields', 'father_name'],
             place: 'Enter Father Name',
             id: 'Father Name',
             type: 'text',
@@ -3605,7 +3605,7 @@ const formData = [
           {
             key: 'text',
             label: 'Mother Name',
-            name: 'customfields.mother_name',
+            name: ['customfields', 'mother_name'],
             place: 'Enter Mother Name',
             id: 'mother_name',
             type: 'text',
@@ -3614,7 +3614,7 @@ const formData = [
           {
             key: 'date',
             label: 'Session',
-            name: 'customfields.session',
+            name: ['customfields', 'session'],
             place: 'eg: 2020-2023',
             id: 'Session',
             type: 'text',
@@ -3622,17 +3622,17 @@ const formData = [
           },
           {
             key: 'select',
-            label: 'Session Type',
-            name: 'customfields.session_type',
+            label: 'Admission Type',
+            name: ['customfields', 'admission_type'],
             id: 'SessionType',
-            place: 'Enter Session Type',
+            place: 'Enter Admission Type',
             type: 'select',
-            options: ['January', 'July', 'N/A'],
+            options: ['Fresher', 'LATERAL ENTRY',],
           },
           {
             key: 'select',
             label: 'Course Name',
-            name: 'education.course',
+            name: ['education', 'course'],
             id: 'course',
             place: 'Enter Course Name',
             type: 'select',
@@ -3642,7 +3642,7 @@ const formData = [
           {
             key: 'text',
             label: 'Specialization',
-            name: 'customfields.enter_specialization',
+            name: ['customfields', 'enter_specialization'],
             place: 'Enter Specialization',
             id: 'Specialization',
             type: 'text',
@@ -3650,7 +3650,7 @@ const formData = [
           {
             key: 'date',
             label: 'Date of Birth',
-            name: 'customfields.dob',
+            name: ['customfields', 'dob'],
             place: 'Enter Date of Birth',
             id: 'dob',
             type: 'date',
@@ -3659,7 +3659,7 @@ const formData = [
           {
             key: 'select',
             label: 'Gender',
-            name: 'customfields.gender',
+            name: ['customfields', 'gender'],
             id: 'Gender',
             place: 'Gender',
             type: 'select',
@@ -3669,7 +3669,7 @@ const formData = [
             key: 'select',
             label: 'Installment Type',
             id: 'InstallmentType',
-            name: 'customfields.installment_type',
+            name: ['customfields', 'installment_type'],
             place: 'Installment Type',
             type: 'select',
             required: 'require',
@@ -3689,7 +3689,7 @@ const formData = [
           {
             key: 'select ',
             label: 'Payment mode ',
-            name: 'customfields.payment_mode',
+            name: ['customfields', 'payment_mode'],
             id: 'PaymentMode ',
             type: 'select',
             required: 'require',
@@ -3698,7 +3698,7 @@ const formData = [
           {
             key: 'number',
             label: 'Total Course Fee',
-            name: 'customfields.total_course_fee',
+            name: ['customfields', 'total_course_fee'],
             place: 'eg: 20000',
             id: 'Total Course Fee',
             type: 'number',
@@ -3708,14 +3708,14 @@ const formData = [
             key: 'number',
             label: 'Total Paid Amount',
             place: 'eg: 20000',
-            name: 'customfields.total_paid_amount',
+            name: ['customfields', 'total_paid_amount'],
             id: 'Total Paid Amount',
             type: 'number',
           },
           {
             key: 'number',
             label: 'Paid Amount',
-            name: 'customfields.paid_amount',
+            name: ['customfields', 'paid_amount'],
             place: 'eg: 20000',
             id: 'Paid Amount',
             type: 'number',
@@ -3724,7 +3724,7 @@ const formData = [
           {
             key: 'email',
             label: 'Counselor Email',
-            name: 'customfields.counselor_email',
+            name: ['customfields', 'counselor_email'],
             place: 'Enter Counselor Email',
             id: 'counselor_email',
             type: 'email',
@@ -3743,7 +3743,7 @@ const formData = [
           {
             key: 'text',
             label: 'Uplaod Student Document',
-            name: 'customfields.upload_student_document',
+            name: ['customfields', 'upload_student_document'],
             place: 'Enter Counselor Email',
             id: 'Uplaod Student Document',
             type: 'text',
@@ -3751,7 +3751,7 @@ const formData = [
           {
             key: 'textarea',
             label: 'Remark',
-            name: 'customfields.remark',
+            name: ['customfields', 'remark'],
             place: 'Enter Counselor Email',
             id: 'Uplaod Student Document',
             type: 'textarea',
@@ -3764,20 +3764,20 @@ const formData = [
   // SECOND INSTITUE 
   {
     label: 'DES',
-    name: 'customfields.institute_name',
+    name: ['customfields', 'institute_name'],
     value: 'DES',
     universities: [
       {
         // First university complete date 
         label: 'SGVU',
-        name: 'customfields.university_name',
+        name: ['customfields', 'university_name'],
         value: 'SGVU',
         fields: [
           {
             key: 'radio',
             label: 'Want to send Fee Receipt',
             id: 'Send',
-            name: 'customfields.send_fee_receipt',
+            name: ['customfields', 'send_fee_receipt'],
             type: 'radio',
             options: ['yes', 'no'],
             required: 'require'
@@ -3804,7 +3804,7 @@ const formData = [
             key: 'email',
             label: 'Email-id',
             place: 'Enter Email-id',
-            name: 'contact.email',
+            name: ['contact', 'email'],
             id: 'EmailID',
             type: 'email',
             required: 'require'
@@ -3812,7 +3812,7 @@ const formData = [
           {
             key: 'tel',
             label: 'phone',
-            name: 'contact.phone',
+            name: ['contact', 'phone'],
             place: 'Enter Phone Number',
             id: 'phone',
             type: 'tel',
@@ -3821,7 +3821,7 @@ const formData = [
           {
             key: 'text',
             label: 'Father Name',
-            name: 'customfields.father_name',
+            name: ['customfields', 'father_name'],
             place: 'Enter Father Name',
             id: 'Father Name',
             type: 'text',
@@ -3830,7 +3830,7 @@ const formData = [
           {
             key: 'text',
             label: 'Mother Name',
-            name: 'customfields.mother_name',
+            name: ['customfields', 'mother_name'],
             place: 'Enter Mother Name',
             id: 'mother_name',
             type: 'text',
@@ -3839,7 +3839,7 @@ const formData = [
           {
             key: 'date',
             label: 'Session',
-            name: 'customfields.session',
+            name: ['customfields', 'session'],
             place: 'eg: 2020-2023',
             id: 'Session',
             type: 'text',
@@ -3847,17 +3847,17 @@ const formData = [
           },
           {
             key: 'select',
-            label: 'Session Type',
-            name: 'customfields.session_type',
+            label: 'Admission Type',
+            name: ['customfields', 'admission_type'],
             id: 'SessionType',
-            place: 'Enter Session Type',
+            place: 'Enter Admission Type',
             type: 'select',
-            options: ['January', 'July', 'N/A'],
+            options: ['Fresher', 'LATERAL ENTRY',],
           },
           {
             key: 'select',
             label: 'Course Name',
-            name: 'education.course',
+            name: ['education', 'course'],
             id: 'course',
             place: 'Enter Course Name',
             type: 'select',
@@ -3867,7 +3867,7 @@ const formData = [
           {
             key: 'text',
             label: 'Specialization',
-            name: 'customfields.enter_specialization',
+            name: ['customfields', 'enter_specialization'],
             place: 'Enter Specialization',
             id: 'Specialization',
             type: 'text',
@@ -3875,7 +3875,7 @@ const formData = [
           {
             key: 'date',
             label: 'Date of Birth',
-            name: 'customfields.dob',
+            name: ['customfields', 'dob'],
             place: 'Enter Date of Birth',
             id: 'dob',
             type: 'date',
@@ -3884,7 +3884,7 @@ const formData = [
           {
             key: 'select',
             label: 'Gender',
-            name: 'customfields.gender',
+            name: ['customfields', 'gender'],
             id: 'Gender',
             place: 'Gender',
             type: 'select',
@@ -3894,7 +3894,7 @@ const formData = [
             key: 'select',
             label: 'Installment Type',
             id: 'InstallmentType',
-            name: 'customfields.installment_type',
+            name: ['customfields', 'installment_type'],
             place: 'Installment Type',
             type: 'select',
             required: 'require',
@@ -3914,7 +3914,7 @@ const formData = [
           {
             key: 'select ',
             label: 'Payment mode ',
-            name: 'customfields.payment_mode',
+            name: ['customfields', 'payment_mode'],
             id: 'PaymentMode ',
             type: 'select',
             required: 'require',
@@ -3923,7 +3923,7 @@ const formData = [
           {
             key: 'number',
             label: 'Total Course Fee',
-            name: 'customfields.total_course_fee',
+            name: ['customfields', 'total_course_fee'],
             place: 'eg: 20000',
             id: 'Total Course Fee',
             type: 'number',
@@ -3933,14 +3933,14 @@ const formData = [
             key: 'number',
             label: 'Total Paid Amount',
             place: 'eg: 20000',
-            name: 'customfields.total_paid_amount',
+            name: ['customfields', 'total_paid_amount'],
             id: 'Total Paid Amount',
             type: 'number',
           },
           {
             key: 'number',
             label: 'Paid Amount',
-            name: 'customfields.paid_amount',
+            name: ['customfields', 'paid_amount'],
             place: 'eg: 20000',
             id: 'Paid Amount',
             type: 'number',
@@ -3949,7 +3949,7 @@ const formData = [
           {
             key: 'email',
             label: 'Counselor Email',
-            name: 'customfields.counselor_email',
+            name: ['customfields', 'counselor_email'],
             place: 'Enter Counselor Email',
             id: 'counselor_email',
             type: 'email',
@@ -3968,7 +3968,7 @@ const formData = [
           {
             key: 'text',
             label: 'Uplaod Student Document',
-            name: 'customfields.upload_student_document',
+            name: ['customfields', 'upload_student_document'],
             place: 'Enter Counselor Email',
             id: 'Uplaod Student Document',
             type: 'text',
@@ -3976,7 +3976,7 @@ const formData = [
           {
             key: 'textarea',
             label: 'Remark',
-            name: 'customfields.remark',
+            name: ['customfields', 'remark'],
             place: 'Enter Counselor Email',
             id: 'Uplaod Student Document',
             type: 'textarea',
@@ -3986,7 +3986,7 @@ const formData = [
       {
         // Seconde university complete date 
         label: 'CU',
-        name: 'customfields.university_name',
+        name: ['customfields', 'university_name'],
         value: 'CU',
         fields: [
           {
@@ -4011,7 +4011,7 @@ const formData = [
             key: 'email',
             label: 'Email-id',
             place: 'Enter Email-id',
-            name: 'contact.email',
+            name: ['contact', 'email'],
             id: 'EmailID',
             type: 'email',
             required: 'require'
@@ -4019,7 +4019,7 @@ const formData = [
           {
             key: 'tel',
             label: 'phone',
-            name: 'contact.phone',
+            name: ['contact', 'phone'],
             place: 'Enter Phone Number',
             id: 'phone',
             type: 'tel',
@@ -4028,7 +4028,7 @@ const formData = [
           {
             key: 'date',
             label: 'Session',
-            name: 'customfields.session',
+            name: ['customfields', 'session'],
             place: 'eg: 2020-2023',
             id: 'Session',
             type: 'text',
@@ -4036,17 +4036,17 @@ const formData = [
           },
           {
             key: 'select',
-            label: 'Session Type',
-            name: 'customfields.session_type',
+            label: 'Admission Type',
+            name: ['customfields', 'admission_type'],
             id: 'SessionType',
-            place: 'Enter Session Type',
+            place: 'Enter Admission Type',
             type: 'select',
-            options: ['January', 'July', 'N/A'],
+            options: ['Fresher', 'LATERAL ENTRY',],
           },
           {
             key: 'select',
             label: 'Course Name',
-            name: 'education.course',
+            name: ['education', 'course'],
             id: 'course',
             place: 'Enter Course Name',
             type: 'select',
@@ -4056,7 +4056,7 @@ const formData = [
           {
             key: 'text',
             label: 'Specialization',
-            name: 'customfields.enter_specialization',
+            name: ['customfields', 'enter_specialization'],
             place: 'Enter Specialization',
             id: 'Specialization',
             type: 'text',
@@ -4064,7 +4064,7 @@ const formData = [
           {
             key: 'select',
             label: 'Gender',
-            name: 'customfields.gender',
+            name: ['customfields', 'gender'],
             id: 'Gender',
             place: 'Gender',
             type: 'select',
@@ -4074,7 +4074,7 @@ const formData = [
             key: 'select',
             label: 'Installment Type',
             id: 'InstallmentType',
-            name: 'customfields.installment_type',
+            name: ['customfields', 'installment_type'],
             place: 'Installment Type',
             type: 'select',
             required: 'require',
@@ -4094,7 +4094,7 @@ const formData = [
           {
             key: 'select ',
             label: 'Payment mode ',
-            name: 'customfields.payment_mode',
+            name: ['customfields', 'payment_mode'],
             id: 'PaymentMode ',
             type: 'select',
             required: 'require',
@@ -4103,7 +4103,7 @@ const formData = [
           {
             key: 'number',
             label: 'Total Course Fee',
-            name: 'customfields.total_course_fee',
+            name: ['customfields', 'total_course_fee'],
             place: 'eg: 20000',
             id: 'Total Course Fee',
             type: 'number',
@@ -4113,14 +4113,14 @@ const formData = [
             key: 'number',
             label: 'Total Paid Amount',
             place: 'eg: 20000',
-            name: 'customfields.total_paid_amount',
+            name: ['customfields', 'total_paid_amount'],
             id: 'Total Paid Amount',
             type: 'number',
           },
           {
             key: 'number',
             label: 'Paid Amount',
-            name: 'customfields.paid_amount',
+            name: ['customfields', 'paid_amount'],
             place: 'eg: 20000',
             id: 'Paid Amount',
             type: 'number',
@@ -4129,7 +4129,7 @@ const formData = [
           {
             key: 'email',
             label: 'Counselor Email',
-            name: 'customfields.counselor_email',
+            name: ['customfields', 'counselor_email'],
             place: 'Enter Counselor Email',
             id: 'counselor_email',
             type: 'email',
@@ -4148,7 +4148,7 @@ const formData = [
           {
             key: 'text',
             label: 'Uplaod Student Document',
-            name: 'customfields.upload_student_document',
+            name: ['customfields', 'upload_student_document'],
             place: 'Enter Counselor Email',
             id: 'Uplaod Student Document',
             type: 'text',
@@ -4156,7 +4156,7 @@ const formData = [
           {
             key: 'textarea',
             label: 'Remark',
-            name: 'customfields.remark',
+            name: ['customfields', 'remark'],
             place: 'Enter Counselor Email',
             id: 'Uplaod Student Document',
             type: 'textarea',
@@ -4166,14 +4166,14 @@ const formData = [
       {
         // First university complete date 
         label: 'SPU',
-        name: 'customfields.university_name',
+        name: ['customfields', 'university_name'],
         value: 'SPU',
         fields: [
           {
             key: 'radio',
             label: 'Want to send Fee Receipt',
             id: 'Send',
-            name: 'customfields.send_fee_receipt',
+            name: ['customfields', 'send_fee_receipt'],
             type: 'radio',
             options: ['yes', 'no'],
             required: 'require'
@@ -4200,7 +4200,7 @@ const formData = [
             key: 'email',
             label: 'Email-id',
             place: 'Enter Email-id',
-            name: 'contact.email',
+            name: ['contact', 'email'],
             id: 'EmailID',
             type: 'email',
             required: 'require'
@@ -4208,7 +4208,7 @@ const formData = [
           {
             key: 'tel',
             label: 'phone',
-            name: 'contact.phone',
+            name: ['contact', 'phone'],
             place: 'Enter Phone Number',
             id: 'phone',
             type: 'tel',
@@ -4217,7 +4217,7 @@ const formData = [
           {
             key: 'text',
             label: 'Father Name',
-            name: 'customfields.father_name',
+            name: ['customfields', 'father_name'],
             place: 'Enter Father Name',
             id: 'Father Name',
             type: 'text',
@@ -4226,7 +4226,7 @@ const formData = [
           {
             key: 'text',
             label: 'Mother Name',
-            name: 'customfields.mother_name',
+            name: ['customfields', 'mother_name'],
             place: 'Enter Mother Name',
             id: 'mother_name',
             type: 'text',
@@ -4235,7 +4235,7 @@ const formData = [
           {
             key: 'date',
             label: 'Session',
-            name: 'customfields.session',
+            name: ['customfields', 'session'],
             place: 'eg: 2020-2023',
             id: 'Session',
             type: 'text',
@@ -4243,17 +4243,17 @@ const formData = [
           },
           {
             key: 'select',
-            label: 'Session Type',
-            name: 'customfields.session_type',
+            label: 'Admission Type',
+            name: ['customfields', 'admission_type'],
             id: 'SessionType',
-            place: 'Enter Session Type',
+            place: 'Enter Admission Type',
             type: 'select',
-            options: ['January', 'July', 'N/A'],
+            options: ['Fresher', 'LATERAL ENTRY',],
           },
           {
             key: 'select',
             label: 'Course Name',
-            name: 'education.course',
+            name: ['education', 'course'],
             id: 'course',
             place: 'Enter Course Name',
             type: 'select',
@@ -4263,7 +4263,7 @@ const formData = [
           {
             key: 'text',
             label: 'Specialization',
-            name: 'customfields.enter_specialization',
+            name: ['customfields', 'enter_specialization'],
             place: 'Enter Specialization',
             id: 'Specialization',
             type: 'text',
@@ -4271,7 +4271,7 @@ const formData = [
           {
             key: 'date',
             label: 'Date of Birth',
-            name: 'customfields.dob',
+            name: ['customfields', 'dob'],
             place: 'Enter Date of Birth',
             id: 'dob',
             type: 'date',
@@ -4280,7 +4280,7 @@ const formData = [
           {
             key: 'select',
             label: 'Gender',
-            name: 'customfields.gender',
+            name: ['customfields', 'gender'],
             id: 'Gender',
             place: 'Gender',
             type: 'select',
@@ -4290,7 +4290,7 @@ const formData = [
             key: 'select',
             label: 'Installment Type',
             id: 'InstallmentType',
-            name: 'customfields.installment_type',
+            name: ['customfields', 'installment_type'],
             place: 'Installment Type',
             type: 'select',
             required: 'require',
@@ -4310,7 +4310,7 @@ const formData = [
           {
             key: 'select ',
             label: 'Payment mode ',
-            name: 'customfields.payment_mode',
+            name: ['customfields', 'payment_mode'],
             id: 'PaymentMode ',
             type: 'select',
             required: 'require',
@@ -4319,7 +4319,7 @@ const formData = [
           {
             key: 'number',
             label: 'Total Course Fee',
-            name: 'customfields.total_course_fee',
+            name: ['customfields', 'total_course_fee'],
             place: 'eg: 20000',
             id: 'Total Course Fee',
             type: 'number',
@@ -4329,14 +4329,14 @@ const formData = [
             key: 'number',
             label: 'Total Paid Amount',
             place: 'eg: 20000',
-            name: 'customfields.total_paid_amount',
+            name: ['customfields', 'total_paid_amount'],
             id: 'Total Paid Amount',
             type: 'number',
           },
           {
             key: 'number',
             label: 'Paid Amount',
-            name: 'customfields.paid_amount',
+            name: ['customfields', 'paid_amount'],
             place: 'eg: 20000',
             id: 'Paid Amount',
             type: 'number',
@@ -4345,7 +4345,7 @@ const formData = [
           {
             key: 'email',
             label: 'Counselor Email',
-            name: 'customfields.counselor_email',
+            name: ['customfields', 'counselor_email'],
             place: 'Enter Counselor Email',
             id: 'counselor_email',
             type: 'email',
@@ -4364,7 +4364,7 @@ const formData = [
           {
             key: 'file',
             label: 'Uplaod Student Document',
-            name: 'customfields.upload_student_document',
+            name: ['customfields', 'upload_student_document'],
             place: 'Enter Counselor Email',
             id: 'Uplaod Student Document',
             type: 'file',
@@ -4372,7 +4372,7 @@ const formData = [
           {
             key: 'textarea',
             label: 'Remark',
-            name: 'customfields.remark',
+            name: ['customfields', 'remark'],
             place: 'Enter Counselor Email',
             id: 'Uplaod Student Document',
             type: 'textarea',
@@ -4382,7 +4382,7 @@ const formData = [
       {
         // Fpurth university complete date 
         label: 'LPU',
-        name: 'customfields.university_name',
+        name: ['customfields', 'university_name'],
         value: 'LPU',
         fields: [
           {
@@ -4407,7 +4407,7 @@ const formData = [
             key: 'email',
             label: 'Email-id',
             place: 'Enter Email-id',
-            name: 'contact.email',
+            name: ['contact', 'email'],
             id: 'EmailID',
             type: 'email',
             required: 'require'
@@ -4415,7 +4415,7 @@ const formData = [
           {
             key: 'tel',
             label: 'phone',
-            name: 'contact.phone',
+            name: ['contact', 'phone'],
             place: 'Enter Phone Number',
             id: 'phone',
             type: 'tel',
@@ -4424,7 +4424,7 @@ const formData = [
           {
             key: 'date',
             label: 'Session',
-            name: 'customfields.session',
+            name: ['customfields', 'session'],
             place: 'eg: 2020-2023',
             id: 'Session',
             type: 'text',
@@ -4432,17 +4432,17 @@ const formData = [
           },
           {
             key: 'select',
-            label: 'Session Type',
-            name: 'customfields.session_type',
+            label: 'Admission Type',
+            name: ['customfields', 'admission_type'],
             id: 'SessionType',
-            place: 'Enter Session Type',
+            place: 'Enter Admission Type',
             type: 'select',
-            options: ['January', 'July', 'N/A'],
+            options: ['Fresher', 'LATERAL ENTRY',],
           },
           {
             key: 'select',
             label: 'Course Name',
-            name: 'education.course',
+            name: ['education', 'course'],
             id: 'course',
             place: 'Enter Course Name',
             type: 'select',
@@ -4452,7 +4452,7 @@ const formData = [
           {
             key: 'text',
             label: 'Specialization',
-            name: 'customfields.enter_specialization',
+            name: ['customfields', 'enter_specialization'],
             place: 'Enter Specialization',
             id: 'Specialization',
             type: 'text',
@@ -4461,7 +4461,7 @@ const formData = [
           {
             key: 'select',
             label: 'Gender',
-            name: 'customfields.gender',
+            name: ['customfields', 'gender'],
             id: 'Gender',
             place: 'Gender',
             type: 'select',
@@ -4471,7 +4471,7 @@ const formData = [
             key: 'select',
             label: 'Installment Type',
             id: 'InstallmentType',
-            name: 'customfields.installment_type',
+            name: ['customfields', 'installment_type'],
             place: 'Installment Type',
             type: 'select',
             required: 'require',
@@ -4491,7 +4491,7 @@ const formData = [
           {
             key: 'select ',
             label: 'Payment mode ',
-            name: 'customfields.payment_mode',
+            name: ['customfields', 'payment_mode'],
             id: 'PaymentMode ',
             type: 'select',
             required: 'require',
@@ -4500,7 +4500,7 @@ const formData = [
           {
             key: 'number',
             label: 'Total Course Fee',
-            name: 'customfields.total_course_fee',
+            name: ['customfields', 'total_course_fee'],
             place: 'eg: 20000',
             id: 'Total Course Fee',
             type: 'number',
@@ -4510,14 +4510,14 @@ const formData = [
             key: 'number',
             label: 'Total Paid Amount',
             place: 'eg: 20000',
-            name: 'customfields.total_paid_amount',
+            name: ['customfields', 'total_paid_amount'],
             id: 'Total Paid Amount',
             type: 'number',
           },
           {
             key: 'number',
             label: 'Paid Amount',
-            name: 'customfields.paid_amount',
+            name: ['customfields', 'paid_amount'],
             place: 'eg: 20000',
             id: 'Paid Amount',
             type: 'number',
@@ -4526,7 +4526,7 @@ const formData = [
           {
             key: 'email',
             label: 'Counselor Email',
-            name: 'customfields.counselor_email',
+            name: ['customfields', 'counselor_email'],
             place: 'Enter Counselor Email',
             id: 'counselor_email',
             type: 'email',
@@ -4545,7 +4545,7 @@ const formData = [
           {
             key: 'text',
             label: 'Uplaod Student Document',
-            name: 'customfields.upload_student_document',
+            name: ['customfields', 'upload_student_document'],
             place: 'Enter Counselor Email',
             id: 'Uplaod Student Document',
             type: 'text',
@@ -4553,7 +4553,7 @@ const formData = [
           {
             key: 'textarea',
             label: 'Remark',
-            name: 'customfields.remark',
+            name: ['customfields', 'remark'],
             place: 'Enter Counselor Email',
             id: 'Uplaod Student Document',
             type: 'textarea',
@@ -4563,7 +4563,7 @@ const formData = [
       {
         // Fifth university complete date 
         label: 'JAIN',
-        name: 'customfields.university_name',
+        name: ['customfields', 'university_name'],
         value: 'JAIN',
         fields: [
           {
@@ -4588,7 +4588,7 @@ const formData = [
             key: 'email',
             label: 'Email-id',
             place: 'Enter Email-id',
-            name: 'contact.email',
+            name: ['contact', 'email'],
             id: 'EmailID',
             type: 'email',
             required: 'require'
@@ -4596,7 +4596,7 @@ const formData = [
           {
             key: 'tel',
             label: 'phone',
-            name: 'contact.phone',
+            name: ['contact', 'phone'],
             place: 'Enter Phone Number',
             id: 'phone',
             type: 'tel',
@@ -4605,7 +4605,7 @@ const formData = [
           {
             key: 'date',
             label: 'Session',
-            name: 'customfields.session',
+            name: ['customfields', 'session'],
             place: 'eg: 2020-2023',
             id: 'Session',
             type: 'text',
@@ -4613,17 +4613,17 @@ const formData = [
           },
           {
             key: 'select',
-            label: 'Session Type',
-            name: 'customfields.session_type',
+            label: 'Admission Type',
+            name: ['customfields', 'admission_type'],
             id: 'SessionType',
-            place: 'Enter Session Type',
+            place: 'Enter Admission Type',
             type: 'select',
-            options: ['January', 'July', 'N/A'],
+            options: ['Fresher', 'LATERAL ENTRY',],
           },
           {
             key: 'select',
             label: 'Course Name',
-            name: 'education.course',
+            name: ['education', 'course'],
             id: 'course',
             place: 'Enter Course Name',
             type: 'select',
@@ -4633,7 +4633,7 @@ const formData = [
           {
             key: 'text',
             label: 'Specialization',
-            name: 'customfields.enter_specialization',
+            name: ['customfields', 'enter_specialization'],
             place: 'Enter Specialization',
             id: 'Specialization',
             type: 'text',
@@ -4642,7 +4642,7 @@ const formData = [
           {
             key: 'select',
             label: 'Gender',
-            name: 'customfields.gender',
+            name: ['customfields', 'gender'],
             id: 'Gender',
             place: 'Gender',
             type: 'select',
@@ -4652,7 +4652,7 @@ const formData = [
             key: 'select',
             label: 'Installment Type',
             id: 'InstallmentType',
-            name: 'customfields.installment_type',
+            name: ['customfields', 'installment_type'],
             place: 'Installment Type',
             type: 'select',
             required: 'require',
@@ -4672,7 +4672,7 @@ const formData = [
           {
             key: 'select ',
             label: 'Payment mode ',
-            name: 'customfields.payment_mode',
+            name: ['customfields', 'payment_mode'],
             id: 'PaymentMode ',
             type: 'select',
             required: 'require',
@@ -4681,7 +4681,7 @@ const formData = [
           {
             key: 'number',
             label: 'Total Course Fee',
-            name: 'customfields.total_course_fee',
+            name: ['customfields', 'total_course_fee'],
             place: 'eg: 20000',
             id: 'Total Course Fee',
             type: 'number',
@@ -4691,14 +4691,14 @@ const formData = [
             key: 'number',
             label: 'Total Paid Amount',
             place: 'eg: 20000',
-            name: 'customfields.total_paid_amount',
+            name: ['customfields', 'total_paid_amount'],
             id: 'Total Paid Amount',
             type: 'number',
           },
           {
             key: 'number',
             label: 'Paid Amount',
-            name: 'customfields.paid_amount',
+            name: ['customfields', 'paid_amount'],
             place: 'eg: 20000',
             id: 'Paid Amount',
             type: 'number',
@@ -4707,7 +4707,7 @@ const formData = [
           {
             key: 'email',
             label: 'Counselor Email',
-            name: 'customfields.counselor_email',
+            name: ['customfields', 'counselor_email'],
             place: 'Enter Counselor Email',
             id: 'counselor_email',
             type: 'email',
@@ -4726,7 +4726,7 @@ const formData = [
           {
             key: 'text',
             label: 'Uplaod Student Document',
-            name: 'customfields.upload_student_document',
+            name: ['customfields', 'upload_student_document'],
             place: 'Enter Counselor Email',
             id: 'Uplaod Student Document',
             type: 'text',
@@ -4734,7 +4734,7 @@ const formData = [
           {
             key: 'textarea',
             label: 'Remark',
-            name: 'customfields.remark',
+            name: ['customfields', 'remark'],
             place: 'Enter Counselor Email',
             id: 'Uplaod Student Document',
             type: 'textarea',
@@ -4744,14 +4744,14 @@ const formData = [
       {
         // Sixth university complete date 
         label: 'SVSU',
-        name: 'customfields.university_name',
+        name: ['customfields', 'university_name'],
         value: 'SVSU',
         fields: [
           {
             key: 'radio',
             label: 'Want to send Fee Receipt',
             id: 'Send',
-            name: 'customfields.send_fee_receipt',
+            name: ['customfields', 'send_fee_receipt'],
             type: 'radio',
             options: ['yes', 'no'],
             required: 'require'
@@ -4778,7 +4778,7 @@ const formData = [
             key: 'email',
             label: 'Email-id',
             place: 'Enter Email-id',
-            name: 'contact.email',
+            name: ['contact', 'email'],
             id: 'EmailID',
             type: 'email',
             required: 'require'
@@ -4786,7 +4786,7 @@ const formData = [
           {
             key: 'tel',
             label: 'phone',
-            name: 'contact.phone',
+            name: ['contact', 'phone'],
             place: 'Enter Phone Number',
             id: 'phone',
             type: 'tel',
@@ -4795,7 +4795,7 @@ const formData = [
           {
             key: 'text',
             label: 'Father Name',
-            name: 'customfields.father_name',
+            name: ['customfields', 'father_name'],
             place: 'Enter Father Name',
             id: 'Father Name',
             type: 'text',
@@ -4804,7 +4804,7 @@ const formData = [
           {
             key: 'text',
             label: 'Mother Name',
-            name: 'customfields.mother_name',
+            name: ['customfields', 'mother_name'],
             place: 'Enter Mother Name',
             id: 'mother_name',
             type: 'text',
@@ -4813,7 +4813,7 @@ const formData = [
           {
             key: 'date',
             label: 'Session',
-            name: 'customfields.session',
+            name: ['customfields', 'session'],
             place: 'eg: 2020-2023',
             id: 'Session',
             type: 'text',
@@ -4821,17 +4821,17 @@ const formData = [
           },
           {
             key: 'select',
-            label: 'Session Type',
-            name: 'customfields.session_type',
+            label: 'Admission Type',
+            name: ['customfields', 'admission_type'],
             id: 'SessionType',
-            place: 'Enter Session Type',
+            place: 'Enter Admission Type',
             type: 'select',
-            options: ['January', 'July', 'N/A'],
+            options: ['Fresher', 'LATERAL ENTRY',],
           },
           {
             key: 'select',
             label: 'Course Name',
-            name: 'education.course',
+            name: ['education', 'course'],
             id: 'course',
             place: 'Enter Course Name',
             type: 'select',
@@ -4841,7 +4841,7 @@ const formData = [
           {
             key: 'text',
             label: 'Specialization',
-            name: 'customfields.enter_specialization',
+            name: ['customfields', 'enter_specialization'],
             place: 'Enter Specialization',
             id: 'Specialization',
             type: 'text',
@@ -4849,7 +4849,7 @@ const formData = [
           {
             key: 'date',
             label: 'Date of Birth',
-            name: 'customfields.dob',
+            name: ['customfields', 'dob'],
             place: 'Enter Date of Birth',
             id: 'dob',
             type: 'date',
@@ -4858,7 +4858,7 @@ const formData = [
           {
             key: 'select',
             label: 'Gender',
-            name: 'customfields.gender',
+            name: ['customfields', 'gender'],
             id: 'Gender',
             place: 'Gender',
             type: 'select',
@@ -4868,7 +4868,7 @@ const formData = [
             key: 'select',
             label: 'Installment Type',
             id: 'InstallmentType',
-            name: 'customfields.installment_type',
+            name: ['customfields', 'installment_type'],
             place: 'Installment Type',
             type: 'select',
             required: 'require',
@@ -4888,7 +4888,7 @@ const formData = [
           {
             key: 'select ',
             label: 'Payment mode ',
-            name: 'customfields.payment_mode',
+            name: ['customfields', 'payment_mode'],
             id: 'PaymentMode ',
             type: 'select',
             required: 'require',
@@ -4897,7 +4897,7 @@ const formData = [
           {
             key: 'number',
             label: 'Total Course Fee',
-            name: 'customfields.total_course_fee',
+            name: ['customfields', 'total_course_fee'],
             place: 'eg: 20000',
             id: 'Total Course Fee',
             type: 'number',
@@ -4907,14 +4907,14 @@ const formData = [
             key: 'number',
             label: 'Total Paid Amount',
             place: 'eg: 20000',
-            name: 'customfields.total_paid_amount',
+            name: ['customfields', 'total_paid_amount'],
             id: 'Total Paid Amount',
             type: 'number',
           },
           {
             key: 'number',
             label: 'Paid Amount',
-            name: 'customfields.paid_amount',
+            name: ['customfields', 'paid_amount'],
             place: 'eg: 20000',
             id: 'Paid Amount',
             type: 'number',
@@ -4923,7 +4923,7 @@ const formData = [
           {
             key: 'email',
             label: 'Counselor Email',
-            name: 'customfields.counselor_email',
+            name: ['customfields', 'counselor_email'],
             place: 'Enter Counselor Email',
             id: 'counselor_email',
             type: 'email',
@@ -4942,7 +4942,7 @@ const formData = [
           {
             key: 'text',
             label: 'Uplaod Student Document',
-            name: 'customfields.upload_student_document',
+            name: ['customfields', 'upload_student_document'],
             place: 'Enter Counselor Email',
             id: 'Uplaod Student Document',
             type: 'text',
@@ -4950,7 +4950,7 @@ const formData = [
           {
             key: 'textarea',
             label: 'Remark',
-            name: 'customfields.remark',
+            name: ['customfields', 'remark'],
             place: 'Enter Counselor Email',
             id: 'Uplaod Student Document',
             type: 'textarea',
@@ -4960,7 +4960,7 @@ const formData = [
       {
         // Seventh university complete date 
         label: 'NMIMS',
-        name: 'customfields.university_name',
+        name: ['customfields', 'university_name'],
         value: 'NMIMS',
         fields: [
           {
@@ -4985,7 +4985,7 @@ const formData = [
             key: 'email',
             label: 'Email-id',
             place: 'Enter Email-id',
-            name: 'contact.email',
+            name: ['contact', 'email'],
             id: 'EmailID',
             type: 'email',
             required: 'require'
@@ -4993,7 +4993,7 @@ const formData = [
           {
             key: 'tel',
             label: 'phone',
-            name: 'contact.phone',
+            name: ['contact', 'phone'],
             place: 'Enter Phone Number',
             id: 'phone',
             type: 'tel',
@@ -5002,7 +5002,7 @@ const formData = [
           {
             key: 'date',
             label: 'Session',
-            name: 'customfields.session',
+            name: ['customfields', 'session'],
             place: 'eg: 2020-2023',
             id: 'Session',
             type: 'text',
@@ -5010,17 +5010,17 @@ const formData = [
           },
           {
             key: 'select',
-            label: 'Session Type',
-            name: 'customfields.session_type',
+            label: 'Admission Type',
+            name: ['customfields', 'admission_type'],
             id: 'SessionType',
-            place: 'Enter Session Type',
+            place: 'Enter Admission Type',
             type: 'select',
-            options: ['January', 'July', 'N/A'],
+            options: ['Fresher', 'LATERAL ENTRY',],
           },
           {
             key: 'select',
             label: 'Course Name',
-            name: 'education.course',
+            name: ['education', 'course'],
             id: 'course',
             place: 'Enter Course Name',
             type: 'select',
@@ -5030,7 +5030,7 @@ const formData = [
           {
             key: 'text',
             label: 'Specialization',
-            name: 'customfields.enter_specialization',
+            name: ['customfields', 'enter_specialization'],
             place: 'Enter Specialization',
             id: 'Specialization',
             type: 'text',
@@ -5039,7 +5039,7 @@ const formData = [
           {
             key: 'select',
             label: 'Gender',
-            name: 'customfields.gender',
+            name: ['customfields', 'gender'],
             id: 'Gender',
             place: 'Gender',
             type: 'select',
@@ -5049,7 +5049,7 @@ const formData = [
             key: 'select',
             label: 'Installment Type',
             id: 'InstallmentType',
-            name: 'customfields.installment_type',
+            name: ['customfields', 'installment_type'],
             place: 'Installment Type',
             type: 'select',
             required: 'require',
@@ -5069,7 +5069,7 @@ const formData = [
           {
             key: 'select ',
             label: 'Payment mode ',
-            name: 'customfields.payment_mode',
+            name: ['customfields', 'payment_mode'],
             id: 'PaymentMode ',
             type: 'select',
             required: 'require',
@@ -5078,7 +5078,7 @@ const formData = [
           {
             key: 'number',
             label: 'Total Course Fee',
-            name: 'customfields.total_course_fee',
+            name: ['customfields', 'total_course_fee'],
             place: 'eg: 20000',
             id: 'Total Course Fee',
             type: 'number',
@@ -5088,14 +5088,14 @@ const formData = [
             key: 'number',
             label: 'Total Paid Amount',
             place: 'eg: 20000',
-            name: 'customfields.total_paid_amount',
+            name: ['customfields', 'total_paid_amount'],
             id: 'Total Paid Amount',
             type: 'number',
           },
           {
             key: 'number',
             label: 'Paid Amount',
-            name: 'customfields.paid_amount',
+            name: ['customfields', 'paid_amount'],
             place: 'eg: 20000',
             id: 'Paid Amount',
             type: 'number',
@@ -5104,7 +5104,7 @@ const formData = [
           {
             key: 'email',
             label: 'Counselor Email',
-            name: 'customfields.counselor_email',
+            name: ['customfields', 'counselor_email'],
             place: 'Enter Counselor Email',
             id: 'counselor_email',
             type: 'email',
@@ -5123,7 +5123,7 @@ const formData = [
           {
             key: 'text',
             label: 'Uplaod Student Document',
-            name: 'customfields.upload_student_document',
+            name: ['customfields', 'upload_student_document'],
             place: 'Enter Counselor Email',
             id: 'Uplaod Student Document',
             type: 'text',
@@ -5131,7 +5131,7 @@ const formData = [
           {
             key: 'textarea',
             label: 'Remark',
-            name: 'customfields.remark',
+            name: ['customfields', 'remark'],
             place: 'Enter Counselor Email',
             id: 'Uplaod Student Document',
             type: 'textarea',
@@ -5141,7 +5141,7 @@ const formData = [
       {
         // 8th university complete date 
         label: 'VIGNAN',
-        name: 'customfields.university_name',
+        name: ['customfields', 'university_name'],
         value: 'VIGNAN',
         fields: [
           {
@@ -5166,7 +5166,7 @@ const formData = [
             key: 'email',
             label: 'Email-id',
             place: 'Enter Email-id',
-            name: 'contact.email',
+            name: ['contact', 'email'],
             id: 'EmailID',
             type: 'email',
             required: 'require'
@@ -5174,7 +5174,7 @@ const formData = [
           {
             key: 'tel',
             label: 'phone',
-            name: 'contact.phone',
+            name: ['contact', 'phone'],
             place: 'Enter Phone Number',
             id: 'phone',
             type: 'tel',
@@ -5183,7 +5183,7 @@ const formData = [
           {
             key: 'date',
             label: 'Session',
-            name: 'customfields.session',
+            name: ['customfields', 'session'],
             place: 'eg: 2020-2023',
             id: 'Session',
             type: 'text',
@@ -5191,17 +5191,17 @@ const formData = [
           },
           {
             key: 'select',
-            label: 'Session Type',
-            name: 'customfields.session_type',
+            label: 'Admission Type',
+            name: ['customfields', 'admission_type'],
             id: 'SessionType',
-            place: 'Enter Session Type',
+            place: 'Enter Admission Type',
             type: 'select',
-            options: ['January', 'July', 'N/A'],
+            options: ['Fresher', 'LATERAL ENTRY',],
           },
           {
             key: 'select',
             label: 'Course Name',
-            name: 'education.course',
+            name: ['education', 'course'],
             id: 'course',
             place: 'Enter Course Name',
             type: 'select',
@@ -5211,7 +5211,7 @@ const formData = [
           {
             key: 'text',
             label: 'Specialization',
-            name: 'customfields.enter_specialization',
+            name: ['customfields', 'enter_specialization'],
             place: 'Enter Specialization',
             id: 'Specialization',
             type: 'text',
@@ -5220,7 +5220,7 @@ const formData = [
           {
             key: 'select',
             label: 'Gender',
-            name: 'customfields.gender',
+            name: ['customfields', 'gender'],
             id: 'Gender',
             place: 'Gender',
             type: 'select',
@@ -5230,7 +5230,7 @@ const formData = [
             key: 'select',
             label: 'Installment Type',
             id: 'InstallmentType',
-            name: 'customfields.installment_type',
+            name: ['customfields', 'installment_type'],
             place: 'Installment Type',
             type: 'select',
             required: 'require',
@@ -5250,7 +5250,7 @@ const formData = [
           {
             key: 'select ',
             label: 'Payment mode ',
-            name: 'customfields.payment_mode',
+            name: ['customfields', 'payment_mode'],
             id: 'PaymentMode ',
             type: 'select',
             required: 'require',
@@ -5259,7 +5259,7 @@ const formData = [
           {
             key: 'number',
             label: 'Total Course Fee',
-            name: 'customfields.total_course_fee',
+            name: ['customfields', 'total_course_fee'],
             place: 'eg: 20000',
             id: 'Total Course Fee',
             type: 'number',
@@ -5269,14 +5269,14 @@ const formData = [
             key: 'number',
             label: 'Total Paid Amount',
             place: 'eg: 20000',
-            name: 'customfields.total_paid_amount',
+            name: ['customfields', 'total_paid_amount'],
             id: 'Total Paid Amount',
             type: 'number',
           },
           {
             key: 'number',
             label: 'Paid Amount',
-            name: 'customfields.paid_amount',
+            name: ['customfields', 'paid_amount'],
             place: 'eg: 20000',
             id: 'Paid Amount',
             type: 'number',
@@ -5285,7 +5285,7 @@ const formData = [
           {
             key: 'email',
             label: 'Counselor Email',
-            name: 'customfields.counselor_email',
+            name: ['customfields', 'counselor_email'],
             place: 'Enter Counselor Email',
             id: 'counselor_email',
             type: 'email',
@@ -5304,7 +5304,7 @@ const formData = [
           {
             key: 'text',
             label: 'Uplaod Student Document',
-            name: 'customfields.upload_student_document',
+            name: ['customfields', 'upload_student_document'],
             place: 'Enter Counselor Email',
             id: 'Uplaod Student Document',
             type: 'text',
@@ -5312,7 +5312,7 @@ const formData = [
           {
             key: 'textarea',
             label: 'Remark',
-            name: 'customfields.remark',
+            name: ['customfields', 'remark'],
             place: 'Enter Counselor Email',
             id: 'Uplaod Student Document',
             type: 'textarea',
@@ -5322,7 +5322,7 @@ const formData = [
       {
         // 9th university complete date 
         label: 'HINDUSTAN',
-        name: 'customfields.university_name',
+        name: ['customfields', 'university_name'],
         value: 'HINDUSTAN',
         fields: [
           {
@@ -5347,7 +5347,7 @@ const formData = [
             key: 'email',
             label: 'Email-id',
             place: 'Enter Email-id',
-            name: 'contact.email',
+            name: ['contact', 'email'],
             id: 'EmailID',
             type: 'email',
             required: 'require'
@@ -5355,7 +5355,7 @@ const formData = [
           {
             key: 'tel',
             label: 'phone',
-            name: 'contact.phone',
+            name: ['contact', 'phone'],
             place: 'Enter Phone Number',
             id: 'phone',
             type: 'tel',
@@ -5364,7 +5364,7 @@ const formData = [
           {
             key: 'date',
             label: 'Session',
-            name: 'customfields.session',
+            name: ['customfields', 'session'],
             place: 'eg: 2020-2023',
             id: 'Session',
             type: 'text',
@@ -5372,17 +5372,17 @@ const formData = [
           },
           {
             key: 'select',
-            label: 'Session Type',
-            name: 'customfields.session_type',
+            label: 'Admission Type',
+            name: ['customfields', 'admission_type'],
             id: 'SessionType',
-            place: 'Enter Session Type',
+            place: 'Enter Admission Type',
             type: 'select',
-            options: ['January', 'July', 'N/A'],
+            options: ['Fresher', 'LATERAL ENTRY',],
           },
           {
             key: 'select',
             label: 'Course Name',
-            name: 'education.course',
+            name: ['education', 'course'],
             id: 'course',
             place: 'Enter Course Name',
             type: 'select',
@@ -5392,7 +5392,7 @@ const formData = [
           {
             key: 'text',
             label: 'Specialization',
-            name: 'customfields.enter_specialization',
+            name: ['customfields', 'enter_specialization'],
             place: 'Enter Specialization',
             id: 'Specialization',
             type: 'text',
@@ -5401,7 +5401,7 @@ const formData = [
           {
             key: 'select',
             label: 'Gender',
-            name: 'customfields.gender',
+            name: ['customfields', 'gender'],
             id: 'Gender',
             place: 'Gender',
             type: 'select',
@@ -5411,7 +5411,7 @@ const formData = [
             key: 'select',
             label: 'Installment Type',
             id: 'InstallmentType',
-            name: 'customfields.installment_type',
+            name: ['customfields', 'installment_type'],
             place: 'Installment Type',
             type: 'select',
             required: 'require',
@@ -5431,7 +5431,7 @@ const formData = [
           {
             key: 'select ',
             label: 'Payment mode ',
-            name: 'customfields.payment_mode',
+            name: ['customfields', 'payment_mode'],
             id: 'PaymentMode ',
             type: 'select',
             required: 'require',
@@ -5440,7 +5440,7 @@ const formData = [
           {
             key: 'number',
             label: 'Total Course Fee',
-            name: 'customfields.total_course_fee',
+            name: ['customfields', 'total_course_fee'],
             place: 'eg: 20000',
             id: 'Total Course Fee',
             type: 'number',
@@ -5450,14 +5450,14 @@ const formData = [
             key: 'number',
             label: 'Total Paid Amount',
             place: 'eg: 20000',
-            name: 'customfields.total_paid_amount',
+            name: ['customfields', 'total_paid_amount'],
             id: 'Total Paid Amount',
             type: 'number',
           },
           {
             key: 'number',
             label: 'Paid Amount',
-            name: 'customfields.paid_amount',
+            name: ['customfields', 'paid_amount'],
             place: 'eg: 20000',
             id: 'Paid Amount',
             type: 'number',
@@ -5466,7 +5466,7 @@ const formData = [
           {
             key: 'email',
             label: 'Counselor Email',
-            name: 'customfields.counselor_email',
+            name: ['customfields', 'counselor_email'],
             place: 'Enter Counselor Email',
             id: 'counselor_email',
             type: 'email',
@@ -5485,7 +5485,7 @@ const formData = [
           {
             key: 'text',
             label: 'Uplaod Student Document',
-            name: 'customfields.upload_student_document',
+            name: ['customfields', 'upload_student_document'],
             place: 'Enter Counselor Email',
             id: 'Uplaod Student Document',
             type: 'text',
@@ -5493,7 +5493,7 @@ const formData = [
           {
             key: 'textarea',
             label: 'Remark',
-            name: 'customfields.remark',
+            name: ['customfields', 'remark'],
             place: 'Enter Counselor Email',
             id: 'Uplaod Student Document',
             type: 'textarea',
@@ -5503,7 +5503,7 @@ const formData = [
       {
         // 9th university complete date 
         label: 'MANIPAL',
-        name: 'customfields.university_name',
+        name: ['customfields', 'university_name'],
         value: 'MANIPAL',
         fields: [
           {
@@ -5528,7 +5528,7 @@ const formData = [
             key: 'email',
             label: 'Email-id',
             place: 'Enter Email-id',
-            name: 'contact.email',
+            name: ['contact', 'email'],
             id: 'EmailID',
             type: 'email',
             required: 'require'
@@ -5536,7 +5536,7 @@ const formData = [
           {
             key: 'tel',
             label: 'phone',
-            name: 'contact.phone',
+            name: ['contact', 'phone'],
             place: 'Enter Phone Number',
             id: 'phone',
             type: 'tel',
@@ -5545,7 +5545,7 @@ const formData = [
           {
             key: 'date',
             label: 'Session',
-            name: 'customfields.session',
+            name: ['customfields', 'session'],
             place: 'eg: 2020-2023',
             id: 'Session',
             type: 'text',
@@ -5553,17 +5553,17 @@ const formData = [
           },
           {
             key: 'select',
-            label: 'Session Type',
-            name: 'customfields.session_type',
+            label: 'Admission Type',
+            name: ['customfields', 'admission_type'],
             id: 'SessionType',
-            place: 'Enter Session Type',
+            place: 'Enter Admission Type',
             type: 'select',
-            options: ['January', 'July', 'N/A'],
+            options: ['Fresher', 'LATERAL ENTRY',],
           },
           {
             key: 'select',
             label: 'Course Name',
-            name: 'education.course',
+            name: ['education', 'course'],
             id: 'course',
             place: 'Enter Course Name',
             type: 'select',
@@ -5573,7 +5573,7 @@ const formData = [
           {
             key: 'text',
             label: 'Specialization',
-            name: 'customfields.enter_specialization',
+            name: ['customfields', 'enter_specialization'],
             place: 'Enter Specialization',
             id: 'Specialization',
             type: 'text',
@@ -5582,7 +5582,7 @@ const formData = [
           {
             key: 'select',
             label: 'Gender',
-            name: 'customfields.gender',
+            name: ['customfields', 'gender'],
             id: 'Gender',
             place: 'Gender',
             type: 'select',
@@ -5592,7 +5592,7 @@ const formData = [
             key: 'select',
             label: 'Installment Type',
             id: 'InstallmentType',
-            name: 'customfields.installment_type',
+            name: ['customfields', 'installment_type'],
             place: 'Installment Type',
             type: 'select',
             required: 'require',
@@ -5612,7 +5612,7 @@ const formData = [
           {
             key: 'select ',
             label: 'Payment mode ',
-            name: 'customfields.payment_mode',
+            name: ['customfields', 'payment_mode'],
             id: 'PaymentMode ',
             type: 'select',
             required: 'require',
@@ -5621,7 +5621,7 @@ const formData = [
           {
             key: 'number',
             label: 'Total Course Fee',
-            name: 'customfields.total_course_fee',
+            name: ['customfields', 'total_course_fee'],
             place: 'eg: 20000',
             id: 'Total Course Fee',
             type: 'number',
@@ -5631,14 +5631,14 @@ const formData = [
             key: 'number',
             label: 'Total Paid Amount',
             place: 'eg: 20000',
-            name: 'customfields.total_paid_amount',
+            name: ['customfields', 'total_paid_amount'],
             id: 'Total Paid Amount',
             type: 'number',
           },
           {
             key: 'number',
             label: 'Paid Amount',
-            name: 'customfields.paid_amount',
+            name: ['customfields', 'paid_amount'],
             place: 'eg: 20000',
             id: 'Paid Amount',
             type: 'number',
@@ -5647,7 +5647,7 @@ const formData = [
           {
             key: 'email',
             label: 'Counselor Email',
-            name: 'customfields.counselor_email',
+            name: ['customfields', 'counselor_email'],
             place: 'Enter Counselor Email',
             id: 'counselor_email',
             type: 'email',
@@ -5666,7 +5666,7 @@ const formData = [
           {
             key: 'text',
             label: 'Uplaod Student Document',
-            name: 'customfields.upload_student_document',
+            name: ['customfields', 'upload_student_document'],
             place: 'Enter Counselor Email',
             id: 'Uplaod Student Document',
             type: 'text',
@@ -5674,7 +5674,7 @@ const formData = [
           {
             key: 'textarea',
             label: 'Remark',
-            name: 'customfields.remark',
+            name: ['customfields', 'remark'],
             place: 'Enter Counselor Email',
             id: 'Uplaod Student Document',
             type: 'textarea',
@@ -5684,14 +5684,14 @@ const formData = [
       {
         // 10 university complete date 
         label: 'SMU',
-        name: 'customfields.university_name',
+        name: ['customfields', 'university_name'],
         value: 'SMU',
         fields: [
           {
             key: 'radio',
             label: 'Want to send Fee Receipt',
             id: 'Send',
-            name: 'customfields.send_fee_receipt',
+            name: ['customfields', 'send_fee_receipt'],
             type: 'radio',
             options: ['yes', 'no'],
             required: 'require'
@@ -5718,7 +5718,7 @@ const formData = [
             key: 'email',
             label: 'Email-id',
             place: 'Enter Email-id',
-            name: 'contact.email',
+            name: ['contact', 'email'],
             id: 'EmailID',
             type: 'email',
             required: 'require'
@@ -5726,7 +5726,7 @@ const formData = [
           {
             key: 'tel',
             label: 'phone',
-            name: 'contact.phone',
+            name: ['contact', 'phone'],
             place: 'Enter Phone Number',
             id: 'phone',
             type: 'tel',
@@ -5735,7 +5735,7 @@ const formData = [
           {
             key: 'text',
             label: 'Father Name',
-            name: 'customfields.father_name',
+            name: ['customfields', 'father_name'],
             place: 'Enter Father Name',
             id: 'Father Name',
             type: 'text',
@@ -5744,7 +5744,7 @@ const formData = [
           {
             key: 'text',
             label: 'Mother Name',
-            name: 'customfields.mother_name',
+            name: ['customfields', 'mother_name'],
             place: 'Enter Mother Name',
             id: 'mother_name',
             type: 'text',
@@ -5753,7 +5753,7 @@ const formData = [
           {
             key: 'date',
             label: 'Session',
-            name: 'customfields.session',
+            name: ['customfields', 'session'],
             place: 'eg: 2020-2023',
             id: 'Session',
             type: 'text',
@@ -5761,17 +5761,17 @@ const formData = [
           },
           {
             key: 'select',
-            label: 'Session Type',
-            name: 'customfields.session_type',
+            label: 'Admission Type',
+            name: ['customfields', 'admission_type'],
             id: 'SessionType',
-            place: 'Enter Session Type',
+            place: 'Enter Admission Type',
             type: 'select',
-            options: ['January', 'July', 'N/A'],
+            options: ['Fresher', 'LATERAL ENTRY',],
           },
           {
             key: 'select',
             label: 'Course Name',
-            name: 'education.course',
+            name: ['education', 'course'],
             id: 'course',
             place: 'Enter Course Name',
             type: 'select',
@@ -5781,7 +5781,7 @@ const formData = [
           {
             key: 'text',
             label: 'Specialization',
-            name: 'customfields.enter_specialization',
+            name: ['customfields', 'enter_specialization'],
             place: 'Enter Specialization',
             id: 'Specialization',
             type: 'text',
@@ -5789,7 +5789,7 @@ const formData = [
           {
             key: 'date',
             label: 'Date of Birth',
-            name: 'customfields.dob',
+            name: ['customfields', 'dob'],
             place: 'Enter Date of Birth',
             id: 'dob',
             type: 'date',
@@ -5798,7 +5798,7 @@ const formData = [
           {
             key: 'select',
             label: 'Gender',
-            name: 'customfields.gender',
+            name: ['customfields', 'gender'],
             id: 'Gender',
             place: 'Gender',
             type: 'select',
@@ -5808,7 +5808,7 @@ const formData = [
             key: 'select',
             label: 'Installment Type',
             id: 'InstallmentType',
-            name: 'customfields.installment_type',
+            name: ['customfields', 'installment_type'],
             place: 'Installment Type',
             type: 'select',
             required: 'require',
@@ -5828,7 +5828,7 @@ const formData = [
           {
             key: 'select ',
             label: 'Payment mode ',
-            name: 'customfields.payment_mode',
+            name: ['customfields', 'payment_mode'],
             id: 'PaymentMode ',
             type: 'select',
             required: 'require',
@@ -5837,7 +5837,7 @@ const formData = [
           {
             key: 'number',
             label: 'Total Course Fee',
-            name: 'customfields.total_course_fee',
+            name: ['customfields', 'total_course_fee'],
             place: 'eg: 20000',
             id: 'Total Course Fee',
             type: 'number',
@@ -5847,14 +5847,14 @@ const formData = [
             key: 'number',
             label: 'Total Paid Amount',
             place: 'eg: 20000',
-            name: 'customfields.total_paid_amount',
+            name: ['customfields', 'total_paid_amount'],
             id: 'Total Paid Amount',
             type: 'number',
           },
           {
             key: 'number',
             label: 'Paid Amount',
-            name: 'customfields.paid_amount',
+            name: ['customfields', 'paid_amount'],
             place: 'eg: 20000',
             id: 'Paid Amount',
             type: 'number',
@@ -5863,7 +5863,7 @@ const formData = [
           {
             key: 'email',
             label: 'Counselor Email',
-            name: 'customfields.counselor_email',
+            name: ['customfields', 'counselor_email'],
             place: 'Enter Counselor Email',
             id: 'counselor_email',
             type: 'email',
@@ -5882,7 +5882,7 @@ const formData = [
           {
             key: 'text',
             label: 'Uplaod Student Document',
-            name: 'customfields.upload_student_document',
+            name: ['customfields', 'upload_student_document'],
             place: 'Enter Counselor Email',
             id: 'Uplaod Student Document',
             type: 'text',
@@ -5890,7 +5890,7 @@ const formData = [
           {
             key: 'textarea',
             label: 'Remark',
-            name: 'customfields.remark',
+            name: ['customfields', 'remark'],
             place: 'Enter Counselor Email',
             id: 'Uplaod Student Document',
             type: 'textarea',
@@ -5900,14 +5900,14 @@ const formData = [
       {
         // 11th university complete date 
         label: 'HU',
-        name: 'customfields.university_name',
+        name: ['customfields', 'university_name'],
         value: 'HU',
         fields: [
           {
             key: 'radio',
             label: 'Want to send Fee Receipt',
             id: 'Send',
-            name: 'customfields.send_fee_receipt',
+            name: ['customfields', 'send_fee_receipt'],
             type: 'radio',
             options: ['yes', 'no'],
             required: 'require'
@@ -5934,7 +5934,7 @@ const formData = [
             key: 'email',
             label: 'Email-id',
             place: 'Enter Email-id',
-            name: 'contact.email',
+            name: ['contact', 'email'],
             id: 'EmailID',
             type: 'email',
             required: 'require'
@@ -5942,7 +5942,7 @@ const formData = [
           {
             key: 'tel',
             label: 'phone',
-            name: 'contact.phone',
+            name: ['contact', 'phone'],
             place: 'Enter Phone Number',
             id: 'phone',
             type: 'tel',
@@ -5951,7 +5951,7 @@ const formData = [
           {
             key: 'text',
             label: 'Father Name',
-            name: 'customfields.father_name',
+            name: ['customfields', 'father_name'],
             place: 'Enter Father Name',
             id: 'Father Name',
             type: 'text',
@@ -5960,7 +5960,7 @@ const formData = [
           {
             key: 'text',
             label: 'Mother Name',
-            name: 'customfields.mother_name',
+            name: ['customfields', 'mother_name'],
             place: 'Enter Mother Name',
             id: 'mother_name',
             type: 'text',
@@ -5969,7 +5969,7 @@ const formData = [
           {
             key: 'date',
             label: 'Session',
-            name: 'customfields.session',
+            name: ['customfields', 'session'],
             place: 'eg: 2020-2023',
             id: 'Session',
             type: 'text',
@@ -5977,17 +5977,17 @@ const formData = [
           },
           {
             key: 'select',
-            label: 'Session Type',
-            name: 'customfields.session_type',
+            label: 'Admission Type',
+            name: ['customfields', 'admission_type'],
             id: 'SessionType',
-            place: 'Enter Session Type',
+            place: 'Enter Admission Type',
             type: 'select',
-            options: ['January', 'July', 'N/A'],
+            options: ['Fresher', 'LATERAL ENTRY',],
           },
           {
             key: 'select',
             label: 'Course Name',
-            name: 'education.course',
+            name: ['education', 'course'],
             id: 'course',
             place: 'Enter Course Name',
             type: 'select',
@@ -5997,7 +5997,7 @@ const formData = [
           {
             key: 'text',
             label: 'Specialization',
-            name: 'customfields.enter_specialization',
+            name: ['customfields', 'enter_specialization'],
             place: 'Enter Specialization',
             id: 'Specialization',
             type: 'text',
@@ -6005,7 +6005,7 @@ const formData = [
           {
             key: 'date',
             label: 'Date of Birth',
-            name: 'customfields.dob',
+            name: ['customfields', 'dob'],
             place: 'Enter Date of Birth',
             id: 'dob',
             type: 'date',
@@ -6014,7 +6014,7 @@ const formData = [
           {
             key: 'select',
             label: 'Gender',
-            name: 'customfields.gender',
+            name: ['customfields', 'gender'],
             id: 'Gender',
             place: 'Gender',
             type: 'select',
@@ -6024,7 +6024,7 @@ const formData = [
             key: 'select',
             label: 'Installment Type',
             id: 'InstallmentType',
-            name: 'customfields.installment_type',
+            name: ['customfields', 'installment_type'],
             place: 'Installment Type',
             type: 'select',
             required: 'require',
@@ -6044,7 +6044,7 @@ const formData = [
           {
             key: 'select ',
             label: 'Payment mode ',
-            name: 'customfields.payment_mode',
+            name: ['customfields', 'payment_mode'],
             id: 'PaymentMode ',
             type: 'select',
             required: 'require',
@@ -6053,7 +6053,7 @@ const formData = [
           {
             key: 'number',
             label: 'Total Course Fee',
-            name: 'customfields.total_course_fee',
+            name: ['customfields', 'total_course_fee'],
             place: 'eg: 20000',
             id: 'Total Course Fee',
             type: 'number',
@@ -6063,14 +6063,14 @@ const formData = [
             key: 'number',
             label: 'Total Paid Amount',
             place: 'eg: 20000',
-            name: 'customfields.total_paid_amount',
+            name: ['customfields', 'total_paid_amount'],
             id: 'Total Paid Amount',
             type: 'number',
           },
           {
             key: 'number',
             label: 'Paid Amount',
-            name: 'customfields.paid_amount',
+            name: ['customfields', 'paid_amount'],
             place: 'eg: 20000',
             id: 'Paid Amount',
             type: 'number',
@@ -6079,7 +6079,7 @@ const formData = [
           {
             key: 'email',
             label: 'Counselor Email',
-            name: 'customfields.counselor_email',
+            name: ['customfields', 'counselor_email'],
             place: 'Enter Counselor Email',
             id: 'counselor_email',
             type: 'email',
@@ -6098,7 +6098,7 @@ const formData = [
           {
             key: 'text',
             label: 'Uplaod Student Document',
-            name: 'customfields.upload_student_document',
+            name: ['customfields', 'upload_student_document'],
             place: 'Enter Counselor Email',
             id: 'Uplaod Student Document',
             type: 'text',
@@ -6106,7 +6106,7 @@ const formData = [
           {
             key: 'textarea',
             label: 'Remark',
-            name: 'customfields.remark',
+            name: ['customfields', 'remark'],
             place: 'Enter Counselor Email',
             id: 'Uplaod Student Document',
             type: 'textarea',
@@ -6116,14 +6116,14 @@ const formData = [
       {
         // 12th university complete date 
         label: 'BOSSE',
-        name: 'customfields.university_name',
+        name: ['customfields', 'university_name'],
         value: 'BOSSE',
         fields: [
           {
             key: 'radio',
             label: 'Want to send Fee Receipt',
             id: 'Send',
-            name: 'customfields.send_fee_receipt',
+            name: ['customfields', 'send_fee_receipt'],
             type: 'radio',
             options: ['yes', 'no'],
             required: 'require'
@@ -6150,7 +6150,7 @@ const formData = [
             key: 'email',
             label: 'Email-id',
             place: 'Enter Email-id',
-            name: 'contact.email',
+            name: ['contact', 'email'],
             id: 'EmailID',
             type: 'email',
             required: 'require'
@@ -6158,7 +6158,7 @@ const formData = [
           {
             key: 'tel',
             label: 'phone',
-            name: 'contact.phone',
+            name: ['contact', 'phone'],
             place: 'Enter Phone Number',
             id: 'phone',
             type: 'tel',
@@ -6167,7 +6167,7 @@ const formData = [
           {
             key: 'text',
             label: 'Father Name',
-            name: 'customfields.father_name',
+            name: ['customfields', 'father_name'],
             place: 'Enter Father Name',
             id: 'Father Name',
             type: 'text',
@@ -6176,7 +6176,7 @@ const formData = [
           {
             key: 'text',
             label: 'Mother Name',
-            name: 'customfields.mother_name',
+            name: ['customfields', 'mother_name'],
             place: 'Enter Mother Name',
             id: 'mother_name',
             type: 'text',
@@ -6185,7 +6185,7 @@ const formData = [
           {
             key: 'date',
             label: 'Session',
-            name: 'customfields.session',
+            name: ['customfields', 'session'],
             place: 'eg: 2020-2023',
             id: 'Session',
             type: 'text',
@@ -6193,17 +6193,17 @@ const formData = [
           },
           {
             key: 'select',
-            label: 'Session Type',
-            name: 'customfields.session_type',
+            label: 'Admission Type',
+            name: ['customfields', 'admission_type'],
             id: 'SessionType',
-            place: 'Enter Session Type',
+            place: 'Enter Admission Type',
             type: 'select',
-            options: ['January', 'July', 'N/A'],
+            options: ['Fresher', 'LATERAL ENTRY',],
           },
           {
             key: 'select',
             label: 'Course Name',
-            name: 'education.course',
+            name: ['education', 'course'],
             id: 'course',
             place: 'Enter Course Name',
             type: 'select',
@@ -6213,7 +6213,7 @@ const formData = [
           {
             key: 'text',
             label: 'Specialization',
-            name: 'customfields.enter_specialization',
+            name: ['customfields', 'enter_specialization'],
             place: 'Enter Specialization',
             id: 'Specialization',
             type: 'text',
@@ -6221,7 +6221,7 @@ const formData = [
           {
             key: 'date',
             label: 'Date of Birth',
-            name: 'customfields.dob',
+            name: ['customfields', 'dob'],
             place: 'Enter Date of Birth',
             id: 'dob',
             type: 'date',
@@ -6230,7 +6230,7 @@ const formData = [
           {
             key: 'select',
             label: 'Gender',
-            name: 'customfields.gender',
+            name: ['customfields', 'gender'],
             id: 'Gender',
             place: 'Gender',
             type: 'select',
@@ -6240,7 +6240,7 @@ const formData = [
             key: 'select',
             label: 'Installment Type',
             id: 'InstallmentType',
-            name: 'customfields.installment_type',
+            name: ['customfields', 'installment_type'],
             place: 'Installment Type',
             type: 'select',
             required: 'require',
@@ -6260,7 +6260,7 @@ const formData = [
           {
             key: 'select ',
             label: 'Payment mode ',
-            name: 'customfields.payment_mode',
+            name: ['customfields', 'payment_mode'],
             id: 'PaymentMode ',
             type: 'select',
             required: 'require',
@@ -6269,7 +6269,7 @@ const formData = [
           {
             key: 'number',
             label: 'Total Course Fee',
-            name: 'customfields.total_course_fee',
+            name: ['customfields', 'total_course_fee'],
             place: 'eg: 20000',
             id: 'Total Course Fee',
             type: 'number',
@@ -6279,14 +6279,14 @@ const formData = [
             key: 'number',
             label: 'Total Paid Amount',
             place: 'eg: 20000',
-            name: 'customfields.total_paid_amount',
+            name: ['customfields', 'total_paid_amount'],
             id: 'Total Paid Amount',
             type: 'number',
           },
           {
             key: 'number',
             label: 'Paid Amount',
-            name: 'customfields.paid_amount',
+            name: ['customfields', 'paid_amount'],
             place: 'eg: 20000',
             id: 'Paid Amount',
             type: 'number',
@@ -6295,7 +6295,7 @@ const formData = [
           {
             key: 'email',
             label: 'Counselor Email',
-            name: 'customfields.counselor_email',
+            name: ['customfields', 'counselor_email'],
             place: 'Enter Counselor Email',
             id: 'counselor_email',
             type: 'email',
@@ -6314,7 +6314,7 @@ const formData = [
           {
             key: 'text',
             label: 'Uplaod Student Document',
-            name: 'customfields.upload_student_document',
+            name: ['customfields', 'upload_student_document'],
             place: 'Enter Counselor Email',
             id: 'Uplaod Student Document',
             type: 'text',
@@ -6322,7 +6322,7 @@ const formData = [
           {
             key: 'textarea',
             label: 'Remark',
-            name: 'customfields.remark',
+            name: ['customfields', 'remark'],
             place: 'Enter Counselor Email',
             id: 'Uplaod Student Document',
             type: 'textarea',
@@ -6332,14 +6332,14 @@ const formData = [
       {
         // 13th university complete date 
         label: 'SABARMATI',
-        name: 'customfields.university_name',
+        name: ['customfields', 'university_name'],
         value: 'SABARMATI',
         fields: [
           {
             key: 'radio',
             label: 'Want to send Fee Receipt',
             id: 'Send',
-            name: 'customfields.send_fee_receipt',
+            name: ['customfields', 'send_fee_receipt'],
             type: 'radio',
             options: ['yes', 'no'],
             required: 'require'
@@ -6366,7 +6366,7 @@ const formData = [
             key: 'email',
             label: 'Email-id',
             place: 'Enter Email-id',
-            name: 'contact.email',
+            name: ['contact', 'email'],
             id: 'EmailID',
             type: 'email',
             required: 'require'
@@ -6374,7 +6374,7 @@ const formData = [
           {
             key: 'tel',
             label: 'phone',
-            name: 'contact.phone',
+            name: ['contact', 'phone'],
             place: 'Enter Phone Number',
             id: 'phone',
             type: 'tel',
@@ -6383,7 +6383,7 @@ const formData = [
           {
             key: 'text',
             label: 'Father Name',
-            name: 'customfields.father_name',
+            name: ['customfields', 'father_name'],
             place: 'Enter Father Name',
             id: 'Father Name',
             type: 'text',
@@ -6392,7 +6392,7 @@ const formData = [
           {
             key: 'text',
             label: 'Mother Name',
-            name: 'customfields.mother_name',
+            name: ['customfields', 'mother_name'],
             place: 'Enter Mother Name',
             id: 'mother_name',
             type: 'text',
@@ -6401,7 +6401,7 @@ const formData = [
           {
             key: 'date',
             label: 'Session',
-            name: 'customfields.session',
+            name: ['customfields', 'session'],
             place: 'eg: 2020-2023',
             id: 'Session',
             type: 'text',
@@ -6409,17 +6409,17 @@ const formData = [
           },
           {
             key: 'select',
-            label: 'Session Type',
-            name: 'customfields.session_type',
+            label: 'Admission Type',
+            name: ['customfields', 'admission_type'],
             id: 'SessionType',
-            place: 'Enter Session Type',
+            place: 'Enter Admission Type',
             type: 'select',
-            options: ['January', 'July', 'N/A'],
+            options: ['Fresher', 'LATERAL ENTRY',],
           },
           {
             key: 'select',
             label: 'Course Name',
-            name: 'education.course',
+            name: ['education', 'course'],
             id: 'course',
             place: 'Enter Course Name',
             type: 'select',
@@ -6429,7 +6429,7 @@ const formData = [
           {
             key: 'text',
             label: 'Specialization',
-            name: 'customfields.enter_specialization',
+            name: ['customfields', 'enter_specialization'],
             place: 'Enter Specialization',
             id: 'Specialization',
             type: 'text',
@@ -6437,7 +6437,7 @@ const formData = [
           {
             key: 'date',
             label: 'Date of Birth',
-            name: 'customfields.dob',
+            name: ['customfields', 'dob'],
             place: 'Enter Date of Birth',
             id: 'dob',
             type: 'date',
@@ -6446,7 +6446,7 @@ const formData = [
           {
             key: 'select',
             label: 'Gender',
-            name: 'customfields.gender',
+            name: ['customfields', 'gender'],
             id: 'Gender',
             place: 'Gender',
             type: 'select',
@@ -6456,7 +6456,7 @@ const formData = [
             key: 'select',
             label: 'Installment Type',
             id: 'InstallmentType',
-            name: 'customfields.installment_type',
+            name: ['customfields', 'installment_type'],
             place: 'Installment Type',
             type: 'select',
             required: 'require',
@@ -6476,7 +6476,7 @@ const formData = [
           {
             key: 'select ',
             label: 'Payment mode ',
-            name: 'customfields.payment_mode',
+            name: ['customfields', 'payment_mode'],
             id: 'PaymentMode ',
             type: 'select',
             required: 'require',
@@ -6485,7 +6485,7 @@ const formData = [
           {
             key: 'number',
             label: 'Total Course Fee',
-            name: 'customfields.total_course_fee',
+            name: ['customfields', 'total_course_fee'],
             place: 'eg: 20000',
             id: 'Total Course Fee',
             type: 'number',
@@ -6495,14 +6495,14 @@ const formData = [
             key: 'number',
             label: 'Total Paid Amount',
             place: 'eg: 20000',
-            name: 'customfields.total_paid_amount',
+            name: ['customfields', 'total_paid_amount'],
             id: 'Total Paid Amount',
             type: 'number',
           },
           {
             key: 'number',
             label: 'Paid Amount',
-            name: 'customfields.paid_amount',
+            name: ['customfields', 'paid_amount'],
             place: 'eg: 20000',
             id: 'Paid Amount',
             type: 'number',
@@ -6511,7 +6511,7 @@ const formData = [
           {
             key: 'email',
             label: 'Counselor Email',
-            name: 'customfields.counselor_email',
+            name: ['customfields', 'counselor_email'],
             place: 'Enter Counselor Email',
             id: 'counselor_email',
             type: 'email',
@@ -6530,7 +6530,7 @@ const formData = [
           {
             key: 'text',
             label: 'Uplaod Student Document',
-            name: 'customfields.upload_student_document',
+            name: ['customfields', 'upload_student_document'],
             place: 'Enter Counselor Email',
             id: 'Uplaod Student Document',
             type: 'text',
@@ -6538,7 +6538,7 @@ const formData = [
           {
             key: 'textarea',
             label: 'Remark',
-            name: 'customfields.remark',
+            name: ['customfields', 'remark'],
             place: 'Enter Counselor Email',
             id: 'Uplaod Student Document',
             type: 'textarea',
@@ -6548,7 +6548,7 @@ const formData = [
       {
         // 14th university complete date 
         label: 'UU',
-        name: 'customfields.university_name',
+        name: ['customfields', 'university_name'],
         value: 'UU',
         fields: [
           {
@@ -6573,7 +6573,7 @@ const formData = [
             key: 'email',
             label: 'Email-id',
             place: 'Enter Email-id',
-            name: 'contact.email',
+            name: ['contact', 'email'],
             id: 'EmailID',
             type: 'email',
             required: 'require'
@@ -6581,7 +6581,7 @@ const formData = [
           {
             key: 'tel',
             label: 'phone',
-            name: 'contact.phone',
+            name: ['contact', 'phone'],
             place: 'Enter Phone Number',
             id: 'phone',
             type: 'tel',
@@ -6590,7 +6590,7 @@ const formData = [
           {
             key: 'date',
             label: 'Session',
-            name: 'customfields.session',
+            name: ['customfields', 'session'],
             place: 'eg: 2020-2023',
             id: 'Session',
             type: 'text',
@@ -6598,17 +6598,17 @@ const formData = [
           },
           {
             key: 'select',
-            label: 'Session Type',
-            name: 'customfields.session_type',
+            label: 'Admission Type',
+            name: ['customfields', 'admission_type'],
             id: 'SessionType',
-            place: 'Enter Session Type',
+            place: 'Enter Admission Type',
             type: 'select',
-            options: ['January', 'July', 'N/A'],
+            options: ['Fresher', 'LATERAL ENTRY',],
           },
           {
             key: 'select',
             label: 'Course Name',
-            name: 'education.course',
+            name: ['education', 'course'],
             id: 'course',
             place: 'Enter Course Name',
             type: 'select',
@@ -6618,7 +6618,7 @@ const formData = [
           {
             key: 'text',
             label: 'Specialization',
-            name: 'customfields.enter_specialization',
+            name: ['customfields', 'enter_specialization'],
             place: 'Enter Specialization',
             id: 'Specialization',
             type: 'text',
@@ -6627,7 +6627,7 @@ const formData = [
           {
             key: 'select',
             label: 'Gender',
-            name: 'customfields.gender',
+            name: ['customfields', 'gender'],
             id: 'Gender',
             place: 'Gender',
             type: 'select',
@@ -6637,7 +6637,7 @@ const formData = [
             key: 'select',
             label: 'Installment Type',
             id: 'InstallmentType',
-            name: 'customfields.installment_type',
+            name: ['customfields', 'installment_type'],
             place: 'Installment Type',
             type: 'select',
             required: 'require',
@@ -6657,7 +6657,7 @@ const formData = [
           {
             key: 'select ',
             label: 'Payment mode ',
-            name: 'customfields.payment_mode',
+            name: ['customfields', 'payment_mode'],
             id: 'PaymentMode ',
             type: 'select',
             required: 'require',
@@ -6666,7 +6666,7 @@ const formData = [
           {
             key: 'number',
             label: 'Total Course Fee',
-            name: 'customfields.total_course_fee',
+            name: ['customfields', 'total_course_fee'],
             place: 'eg: 20000',
             id: 'Total Course Fee',
             type: 'number',
@@ -6676,14 +6676,14 @@ const formData = [
             key: 'number',
             label: 'Total Paid Amount',
             place: 'eg: 20000',
-            name: 'customfields.total_paid_amount',
+            name: ['customfields', 'total_paid_amount'],
             id: 'Total Paid Amount',
             type: 'number',
           },
           {
             key: 'number',
             label: 'Paid Amount',
-            name: 'customfields.paid_amount',
+            name: ['customfields', 'paid_amount'],
             place: 'eg: 20000',
             id: 'Paid Amount',
             type: 'number',
@@ -6692,7 +6692,7 @@ const formData = [
           {
             key: 'email',
             label: 'Counselor Email',
-            name: 'customfields.counselor_email',
+            name: ['customfields', 'counselor_email'],
             place: 'Enter Counselor Email',
             id: 'counselor_email',
             type: 'email',
@@ -6711,7 +6711,7 @@ const formData = [
           {
             key: 'text',
             label: 'Uplaod Student Document',
-            name: 'customfields.upload_student_document',
+            name: ['customfields', 'upload_student_document'],
             place: 'Enter Counselor Email',
             id: 'Uplaod Student Document',
             type: 'text',
@@ -6719,7 +6719,7 @@ const formData = [
           {
             key: 'textarea',
             label: 'Remark',
-            name: 'customfields.remark',
+            name: ['customfields', 'remark'],
             place: 'Enter Counselor Email',
             id: 'Uplaod Student Document',
             type: 'textarea',
@@ -6729,7 +6729,7 @@ const formData = [
       {
         // 15th university complete date 
         label: 'UPES',
-        name: 'customfields.university_name',
+        name: ['customfields', 'university_name'],
         value: 'UPES',
         fields: [
           {
@@ -6754,7 +6754,7 @@ const formData = [
             key: 'email',
             label: 'Email-id',
             place: 'Enter Email-id',
-            name: 'contact.email',
+            name: ['contact', 'email'],
             id: 'EmailID',
             type: 'email',
             required: 'require'
@@ -6762,7 +6762,7 @@ const formData = [
           {
             key: 'tel',
             label: 'phone',
-            name: 'contact.phone',
+            name: ['contact', 'phone'],
             place: 'Enter Phone Number',
             id: 'phone',
             type: 'tel',
@@ -6771,7 +6771,7 @@ const formData = [
           {
             key: 'date',
             label: 'Session',
-            name: 'customfields.session',
+            name: ['customfields', 'session'],
             place: 'eg: 2020-2023',
             id: 'Session',
             type: 'text',
@@ -6779,17 +6779,17 @@ const formData = [
           },
           {
             key: 'select',
-            label: 'Session Type',
-            name: 'customfields.session_type',
+            label: 'Admission Type',
+            name: ['customfields', 'admission_type'],
             id: 'SessionType',
-            place: 'Enter Session Type',
+            place: 'Enter Admission Type',
             type: 'select',
-            options: ['January', 'July', 'N/A'],
+            options: ['Fresher', 'LATERAL ENTRY',],
           },
           {
             key: 'select',
             label: 'Course Name',
-            name: 'education.course',
+            name: ['education', 'course'],
             id: 'course',
             place: 'Enter Course Name',
             type: 'select',
@@ -6799,7 +6799,7 @@ const formData = [
           {
             key: 'text',
             label: 'Specialization',
-            name: 'customfields.enter_specialization',
+            name: ['customfields', 'enter_specialization'],
             place: 'Enter Specialization',
             id: 'Specialization',
             type: 'text',
@@ -6808,7 +6808,7 @@ const formData = [
           {
             key: 'select',
             label: 'Gender',
-            name: 'customfields.gender',
+            name: ['customfields', 'gender'],
             id: 'Gender',
             place: 'Gender',
             type: 'select',
@@ -6818,7 +6818,7 @@ const formData = [
             key: 'select',
             label: 'Installment Type',
             id: 'InstallmentType',
-            name: 'customfields.installment_type',
+            name: ['customfields', 'installment_type'],
             place: 'Installment Type',
             type: 'select',
             required: 'require',
@@ -6838,7 +6838,7 @@ const formData = [
           {
             key: 'select ',
             label: 'Payment mode ',
-            name: 'customfields.payment_mode',
+            name: ['customfields', 'payment_mode'],
             id: 'PaymentMode ',
             type: 'select',
             required: 'require',
@@ -6847,7 +6847,7 @@ const formData = [
           {
             key: 'number',
             label: 'Total Course Fee',
-            name: 'customfields.total_course_fee',
+            name: ['customfields', 'total_course_fee'],
             place: 'eg: 20000',
             id: 'Total Course Fee',
             type: 'number',
@@ -6857,14 +6857,14 @@ const formData = [
             key: 'number',
             label: 'Total Paid Amount',
             place: 'eg: 20000',
-            name: 'customfields.total_paid_amount',
+            name: ['customfields', 'total_paid_amount'],
             id: 'Total Paid Amount',
             type: 'number',
           },
           {
             key: 'number',
             label: 'Paid Amount',
-            name: 'customfields.paid_amount',
+            name: ['customfields', 'paid_amount'],
             place: 'eg: 20000',
             id: 'Paid Amount',
             type: 'number',
@@ -6873,7 +6873,7 @@ const formData = [
           {
             key: 'email',
             label: 'Counselor Email',
-            name: 'customfields.counselor_email',
+            name: ['customfields', 'counselor_email'],
             place: 'Enter Counselor Email',
             id: 'counselor_email',
             type: 'email',
@@ -6892,7 +6892,7 @@ const formData = [
           {
             key: 'text',
             label: 'Uplaod Student Document',
-            name: 'customfields.upload_student_document',
+            name: ['customfields', 'upload_student_document'],
             place: 'Enter Counselor Email',
             id: 'Uplaod Student Document',
             type: 'text',
@@ -6900,7 +6900,7 @@ const formData = [
           {
             key: 'textarea',
             label: 'Remark',
-            name: 'customfields.remark',
+            name: ['customfields', 'remark'],
             place: 'Enter Counselor Email',
             id: 'Uplaod Student Document',
             type: 'textarea',
@@ -6910,7 +6910,7 @@ const formData = [
       {
         // 15th university complete date 
         label: 'MRU',
-        name: 'customfields.university_name',
+        name: ['customfields', 'university_name'],
         value: 'MRU',
         fields: [
           {
@@ -6935,7 +6935,7 @@ const formData = [
             key: 'email',
             label: 'Email-id',
             place: 'Enter Email-id',
-            name: 'contact.email',
+            name: ['contact', 'email'],
             id: 'EmailID',
             type: 'email',
             required: 'require'
@@ -6943,7 +6943,7 @@ const formData = [
           {
             key: 'tel',
             label: 'phone',
-            name: 'contact.phone',
+            name: ['contact', 'phone'],
             place: 'Enter Phone Number',
             id: 'phone',
             type: 'tel',
@@ -6952,7 +6952,7 @@ const formData = [
           {
             key: 'date',
             label: 'Session',
-            name: 'customfields.session',
+            name: ['customfields', 'session'],
             place: 'eg: 2020-2023',
             id: 'Session',
             type: 'text',
@@ -6960,17 +6960,17 @@ const formData = [
           },
           {
             key: 'select',
-            label: 'Session Type',
-            name: 'customfields.session_type',
+            label: 'Admission Type',
+            name: ['customfields', 'admission_type'],
             id: 'SessionType',
-            place: 'Enter Session Type',
+            place: 'Enter Admission Type',
             type: 'select',
-            options: ['January', 'July', 'N/A'],
+            options: ['Fresher', 'LATERAL ENTRY',],
           },
           {
             key: 'select',
             label: 'Course Name',
-            name: 'education.course',
+            name: ['education', 'course'],
             id: 'course',
             place: 'Enter Course Name',
             type: 'select',
@@ -6980,7 +6980,7 @@ const formData = [
           {
             key: 'text',
             label: 'Specialization',
-            name: 'customfields.enter_specialization',
+            name: ['customfields', 'enter_specialization'],
             place: 'Enter Specialization',
             id: 'Specialization',
             type: 'text',
@@ -6989,7 +6989,7 @@ const formData = [
           {
             key: 'select',
             label: 'Gender',
-            name: 'customfields.gender',
+            name: ['customfields', 'gender'],
             id: 'Gender',
             place: 'Gender',
             type: 'select',
@@ -6999,7 +6999,7 @@ const formData = [
             key: 'select',
             label: 'Installment Type',
             id: 'InstallmentType',
-            name: 'customfields.installment_type',
+            name: ['customfields', 'installment_type'],
             place: 'Installment Type',
             type: 'select',
             required: 'require',
@@ -7019,7 +7019,7 @@ const formData = [
           {
             key: 'select ',
             label: 'Payment mode ',
-            name: 'customfields.payment_mode',
+            name: ['customfields', 'payment_mode'],
             id: 'PaymentMode ',
             type: 'select',
             required: 'require',
@@ -7028,7 +7028,7 @@ const formData = [
           {
             key: 'number',
             label: 'Total Course Fee',
-            name: 'customfields.total_course_fee',
+            name: ['customfields', 'total_course_fee'],
             place: 'eg: 20000',
             id: 'Total Course Fee',
             type: 'number',
@@ -7038,14 +7038,14 @@ const formData = [
             key: 'number',
             label: 'Total Paid Amount',
             place: 'eg: 20000',
-            name: 'customfields.total_paid_amount',
+            name: ['customfields', 'total_paid_amount'],
             id: 'Total Paid Amount',
             type: 'number',
           },
           {
             key: 'number',
             label: 'Paid Amount',
-            name: 'customfields.paid_amount',
+            name: ['customfields', 'paid_amount'],
             place: 'eg: 20000',
             id: 'Paid Amount',
             type: 'number',
@@ -7054,7 +7054,7 @@ const formData = [
           {
             key: 'email',
             label: 'Counselor Email',
-            name: 'customfields.counselor_email',
+            name: ['customfields', 'counselor_email'],
             place: 'Enter Counselor Email',
             id: 'counselor_email',
             type: 'email',
@@ -7073,7 +7073,7 @@ const formData = [
           {
             key: 'text',
             label: 'Uplaod Student Document',
-            name: 'customfields.upload_student_document',
+            name: ['customfields', 'upload_student_document'],
             place: 'Enter Counselor Email',
             id: 'Uplaod Student Document',
             type: 'text',
@@ -7081,7 +7081,7 @@ const formData = [
           {
             key: 'textarea',
             label: 'Remark',
-            name: 'customfields.remark',
+            name: ['customfields', 'remark'],
             place: 'Enter Counselor Email',
             id: 'Uplaod Student Document',
             type: 'textarea',
@@ -7091,14 +7091,14 @@ const formData = [
       {
         // First university complete date 
         label: 'MANGALAYATAN',
-        name: 'customfields.university_name',
+        name: ['customfields', 'university_name'],
         value: 'MANGALAYATAN',
         fields: [
           {
             key: 'radio',
             label: 'Want to send Fee Receipt',
             id: 'Send',
-            name: 'customfields.send_fee_receipt',
+            name: ['customfields', 'send_fee_receipt'],
             type: 'radio',
             options: ['yes', 'no'],
             required: 'require'
@@ -7125,7 +7125,7 @@ const formData = [
             key: 'email',
             label: 'Email-id',
             place: 'Enter Email-id',
-            name: 'contact.email',
+            name: ['contact', 'email'],
             id: 'EmailID',
             type: 'email',
             required: 'require'
@@ -7133,7 +7133,7 @@ const formData = [
           {
             key: 'tel',
             label: 'phone',
-            name: 'contact.phone',
+            name: ['contact', 'phone'],
             place: 'Enter Phone Number',
             id: 'phone',
             type: 'tel',
@@ -7142,7 +7142,7 @@ const formData = [
           {
             key: 'text',
             label: 'Father Name',
-            name: 'customfields.father_name',
+            name: ['customfields', 'father_name'],
             place: 'Enter Father Name',
             id: 'Father Name',
             type: 'text',
@@ -7151,7 +7151,7 @@ const formData = [
           {
             key: 'text',
             label: 'Mother Name',
-            name: 'customfields.mother_name',
+            name: ['customfields', 'mother_name'],
             place: 'Enter Mother Name',
             id: 'mother_name',
             type: 'text',
@@ -7160,7 +7160,7 @@ const formData = [
           {
             key: 'date',
             label: 'Session',
-            name: 'customfields.session',
+            name: ['customfields', 'session'],
             place: 'eg: 2020-2023',
             id: 'Session',
             type: 'text',
@@ -7168,17 +7168,17 @@ const formData = [
           },
           {
             key: 'select',
-            label: 'Session Type',
-            name: 'customfields.session_type',
+            label: 'Admission Type',
+            name: ['customfields', 'admission_type'],
             id: 'SessionType',
-            place: 'Enter Session Type',
+            place: 'Enter Admission Type',
             type: 'select',
-            options: ['January', 'July', 'N/A'],
+            options: ['Fresher', 'LATERAL ENTRY',],
           },
           {
             key: 'select',
             label: 'Course Name',
-            name: 'education.course',
+            name: ['education', 'course'],
             id: 'course',
             place: 'Enter Course Name',
             type: 'select',
@@ -7188,7 +7188,7 @@ const formData = [
           {
             key: 'text',
             label: 'Specialization',
-            name: 'customfields.enter_specialization',
+            name: ['customfields', 'enter_specialization'],
             place: 'Enter Specialization',
             id: 'Specialization',
             type: 'text',
@@ -7196,7 +7196,7 @@ const formData = [
           {
             key: 'date',
             label: 'Date of Birth',
-            name: 'customfields.dob',
+            name: ['customfields', 'dob'],
             place: 'Enter Date of Birth',
             id: 'dob',
             type: 'date',
@@ -7205,7 +7205,7 @@ const formData = [
           {
             key: 'select',
             label: 'Gender',
-            name: 'customfields.gender',
+            name: ['customfields', 'gender'],
             id: 'Gender',
             place: 'Gender',
             type: 'select',
@@ -7215,7 +7215,7 @@ const formData = [
             key: 'select',
             label: 'Installment Type',
             id: 'InstallmentType',
-            name: 'customfields.installment_type',
+            name: ['customfields', 'installment_type'],
             place: 'Installment Type',
             type: 'select',
             required: 'require',
@@ -7235,7 +7235,7 @@ const formData = [
           {
             key: 'select ',
             label: 'Payment mode ',
-            name: 'customfields.payment_mode',
+            name: ['customfields', 'payment_mode'],
             id: 'PaymentMode ',
             type: 'select',
             required: 'require',
@@ -7244,7 +7244,7 @@ const formData = [
           {
             key: 'number',
             label: 'Total Course Fee',
-            name: 'customfields.total_course_fee',
+            name: ['customfields', 'total_course_fee'],
             place: 'eg: 20000',
             id: 'Total Course Fee',
             type: 'number',
@@ -7254,14 +7254,14 @@ const formData = [
             key: 'number',
             label: 'Total Paid Amount',
             place: 'eg: 20000',
-            name: 'customfields.total_paid_amount',
+            name: ['customfields', 'total_paid_amount'],
             id: 'Total Paid Amount',
             type: 'number',
           },
           {
             key: 'number',
             label: 'Paid Amount',
-            name: 'customfields.paid_amount',
+            name: ['customfields', 'paid_amount'],
             place: 'eg: 20000',
             id: 'Paid Amount',
             type: 'number',
@@ -7270,7 +7270,7 @@ const formData = [
           {
             key: 'email',
             label: 'Counselor Email',
-            name: 'customfields.counselor_email',
+            name: ['customfields', 'counselor_email'],
             place: 'Enter Counselor Email',
             id: 'counselor_email',
             type: 'email',
@@ -7289,7 +7289,7 @@ const formData = [
           {
             key: 'text',
             label: 'Uplaod Student Document',
-            name: 'customfields.upload_student_document',
+            name: ['customfields', 'upload_student_document'],
             place: 'Enter Counselor Email',
             id: 'Uplaod Student Document',
             type: 'text',
@@ -7297,7 +7297,7 @@ const formData = [
           {
             key: 'textarea',
             label: 'Remark',
-            name: 'customfields.remark',
+            name: ['customfields', 'remark'],
             place: 'Enter Counselor Email',
             id: 'Uplaod Student Document',
             type: 'textarea',
@@ -7307,14 +7307,14 @@ const formData = [
       {
         // First university complete date 
         label: 'MANGALAYATAN ONLINE',
-        name: 'customfields.university_name',
+        name: ['customfields', 'university_name'],
         value: 'MANGALAYATAN ONLINE',
         fields: [
           {
             key: 'radio',
             label: 'Want to send Fee Receipt',
             id: 'Send',
-            name: 'customfields.send_fee_receipt',
+            name: ['customfields', 'send_fee_receipt'],
             type: 'radio',
             options: ['yes', 'no'],
             required: 'require'
@@ -7341,7 +7341,7 @@ const formData = [
             key: 'email',
             label: 'Email-id',
             place: 'Enter Email-id',
-            name: 'contact.email',
+            name: ['contact', 'email'],
             id: 'EmailID',
             type: 'email',
             required: 'require'
@@ -7349,7 +7349,7 @@ const formData = [
           {
             key: 'tel',
             label: 'phone',
-            name: 'contact.phone',
+            name: ['contact', 'phone'],
             place: 'Enter Phone Number',
             id: 'phone',
             type: 'tel',
@@ -7358,7 +7358,7 @@ const formData = [
           {
             key: 'text',
             label: 'Father Name',
-            name: 'customfields.father_name',
+            name: ['customfields', 'father_name'],
             place: 'Enter Father Name',
             id: 'Father Name',
             type: 'text',
@@ -7367,7 +7367,7 @@ const formData = [
           {
             key: 'text',
             label: 'Mother Name',
-            name: 'customfields.mother_name',
+            name: ['customfields', 'mother_name'],
             place: 'Enter Mother Name',
             id: 'mother_name',
             type: 'text',
@@ -7376,7 +7376,7 @@ const formData = [
           {
             key: 'date',
             label: 'Session',
-            name: 'customfields.session',
+            name: ['customfields', 'session'],
             place: 'eg: 2020-2023',
             id: 'Session',
             type: 'text',
@@ -7384,17 +7384,17 @@ const formData = [
           },
           {
             key: 'select',
-            label: 'Session Type',
-            name: 'customfields.session_type',
+            label: 'Admission Type',
+            name: ['customfields', 'admission_type'],
             id: 'SessionType',
-            place: 'Enter Session Type',
+            place: 'Enter Admission Type',
             type: 'select',
-            options: ['January', 'July', 'N/A'],
+            options: ['Fresher', 'LATERAL ENTRY',],
           },
           {
             key: 'select',
             label: 'Course Name',
-            name: 'education.course',
+            name: ['education', 'course'],
             id: 'course',
             place: 'Enter Course Name',
             type: 'select',
@@ -7404,7 +7404,7 @@ const formData = [
           {
             key: 'text',
             label: 'Specialization',
-            name: 'customfields.enter_specialization',
+            name: ['customfields', 'enter_specialization'],
             place: 'Enter Specialization',
             id: 'Specialization',
             type: 'text',
@@ -7412,7 +7412,7 @@ const formData = [
           {
             key: 'date',
             label: 'Date of Birth',
-            name: 'customfields.dob',
+            name: ['customfields', 'dob'],
             place: 'Enter Date of Birth',
             id: 'dob',
             type: 'date',
@@ -7421,7 +7421,7 @@ const formData = [
           {
             key: 'select',
             label: 'Gender',
-            name: 'customfields.gender',
+            name: ['customfields', 'gender'],
             id: 'Gender',
             place: 'Gender',
             type: 'select',
@@ -7431,7 +7431,7 @@ const formData = [
             key: 'select',
             label: 'Installment Type',
             id: 'InstallmentType',
-            name: 'customfields.installment_type',
+            name: ['customfields', 'installment_type'],
             place: 'Installment Type',
             type: 'select',
             required: 'require',
@@ -7451,7 +7451,7 @@ const formData = [
           {
             key: 'select ',
             label: 'Payment mode ',
-            name: 'customfields.payment_mode',
+            name: ['customfields', 'payment_mode'],
             id: 'PaymentMode ',
             type: 'select',
             required: 'require',
@@ -7460,7 +7460,7 @@ const formData = [
           {
             key: 'number',
             label: 'Total Course Fee',
-            name: 'customfields.total_course_fee',
+            name: ['customfields', 'total_course_fee'],
             place: 'eg: 20000',
             id: 'Total Course Fee',
             type: 'number',
@@ -7470,14 +7470,14 @@ const formData = [
             key: 'number',
             label: 'Total Paid Amount',
             place: 'eg: 20000',
-            name: 'customfields.total_paid_amount',
+            name: ['customfields', 'total_paid_amount'],
             id: 'Total Paid Amount',
             type: 'number',
           },
           {
             key: 'number',
             label: 'Paid Amount',
-            name: 'customfields.paid_amount',
+            name: ['customfields', 'paid_amount'],
             place: 'eg: 20000',
             id: 'Paid Amount',
             type: 'number',
@@ -7486,7 +7486,7 @@ const formData = [
           {
             key: 'email',
             label: 'Counselor Email',
-            name: 'customfields.counselor_email',
+            name: ['customfields', 'counselor_email'],
             place: 'Enter Counselor Email',
             id: 'counselor_email',
             type: 'email',
@@ -7505,7 +7505,7 @@ const formData = [
           {
             key: 'text',
             label: 'Uplaod Student Document',
-            name: 'customfields.upload_student_document',
+            name: ['customfields', 'upload_student_document'],
             place: 'Enter Counselor Email',
             id: 'Uplaod Student Document',
             type: 'text',
@@ -7513,7 +7513,7 @@ const formData = [
           {
             key: 'textarea',
             label: 'Remark',
-            name: 'customfields.remark',
+            name: ['customfields', 'remark'],
             place: 'Enter Counselor Email',
             id: 'Uplaod Student Document',
             type: 'textarea',

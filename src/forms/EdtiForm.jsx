@@ -63,7 +63,7 @@ export default function LeadForm() {
             </Form.Item>
             <Form.Item
                 label={translate('session type')}
-                name={['customfields', 'session_type']}
+                name={['customfields', 'admission_type']}
             >
                 <Select placeholder='select session type'
                     options={[
