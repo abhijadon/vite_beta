@@ -20,8 +20,9 @@ const openNotification = (fieldName) => {
 export default function LeadForm() {
   const [selectedInstitute, setSelectedInstitute] = useState(null);
   const [selectedUniversity, setSelectedUniversity] = useState(null);
+  const [selectedCourse, setSelectedCourse] = useState(null);
   const [studentId, setStudentId] = useState('');
-
+  const [selectedSpecialization, setSelectedSpecialization] = useState(null);
 
   useEffect(() => {
     if (selectedInstitute && selectedUniversity) {
@@ -37,10 +38,28 @@ export default function LeadForm() {
     return String(Math.floor(Math.random() * (max - min - 1)) + min);
   };
 
+  const handleInstituteChange = (value) => {
+    setSelectedInstitute(value);
+    setSelectedUniversity(null);
+  };
+
+  const handleUniversityChange = (value) => {
+    setSelectedUniversity(value);
+    setSelectedCourse(null);
+  };
+
+  const handleCourseChange = (value) => {
+    setSelectedCourse(value);
+  };
+
+  const handleSpecializationChange = (value) => {
+    setSelectedSpecialization(value);
+  };
+
   const generateFormItems = (fields) => {
     return fields.map((field) => {
-      const capitalizedLabel = field.label.charAt(0).toUpperCase() + field.label.slice(1);
-
+      // Add a check to ensure that field.label is defined
+      const capitalizedLabel = field.label ? field.label.charAt(0).toUpperCase() + field.label.slice(1) : '';
       switch (field.type) {
         case 'studentId':
           return (
@@ -188,17 +207,15 @@ export default function LeadForm() {
             <Form.Item
               key={field.id}
               label={capitalizedLabel}
-              name={field.name} // This should be 'customfields.sendfeereceipt'
+              name={field.name}
               rules={[
                 {
                   required: field.required === 'require',
                   validator: (_, value) => {
                     return new Promise((resolve, reject) => {
                       if (value || field.required !== 'require') {
-                        // If the value is not empty or the field is not required, resolve
                         resolve();
                       } else {
-                        // If the value is empty and the field is required, reject and show notification
                         openNotification(field.label);
                         reject(`${field.label} is required.`);
                       }
@@ -209,7 +226,9 @@ export default function LeadForm() {
             >
               <Radio.Group>
                 {field.options.map((option) => (
-                  <Radio key={option} value={option}>{option}</Radio>
+                  <Radio key={option} value={option}>
+                    {option.charAt(0).toUpperCase() + option.slice(1)}
+                  </Radio>
                 ))}
               </Radio.Group>
             </Form.Item>
@@ -270,6 +289,33 @@ export default function LeadForm() {
               ]}
             >
               <Input type="number" placeholder={field.place} />
+            </Form.Item>
+          );
+        case 'date':
+          return (
+            <Form.Item
+              key={field.id}
+              label={capitalizedLabel}
+              name={field.name}
+              rules={[
+                {
+                  required: field.required === 'require',
+                  validator: (_, value) => {
+                    return new Promise((resolve, reject) => {
+                      if (value || field.required !== 'require') {
+                        // If the value is not empty or the field is not required, resolve
+                        resolve();
+                      } else {
+                        // If the value is empty and the field is required, reject and show notification
+                        openNotification(field.label);
+                        reject(`${field.label} is required.`);
+                      }
+                    });
+                  },
+                },
+              ]}
+            >
+              <Input type="date" placeholder={field.place} className='uppercase' />
             </Form.Item>
           );
         case 'textarea':
@@ -341,19 +387,11 @@ export default function LeadForm() {
       }
     });
   };
-  const handleInstituteChange = (value) => {
-    setSelectedInstitute(value);
-    setSelectedUniversity(null);
-  };
-
-  const handleUniversityChange = (value) => {
-    setSelectedUniversity(value);
-  };
 
   return (
     <div>
-      <form>
-        <Form.Item label="Select Institute" name="customfields.institute_name">
+      <form className='grid grid-flow-col gap-3'>
+        <Form.Item label="Select Institute" name={['customfields', 'institute_name']}>
           <Select onChange={handleInstituteChange} placeholder="--Select Institute--">
             {formData.map((item) => (
               <Option key={item.value} value={item.value}>
@@ -363,27 +401,65 @@ export default function LeadForm() {
           </Select>
         </Form.Item>
         {selectedInstitute && (
-          <Form.Item label="Select University" name="customfields.university_name">
-            <Select onChange={handleUniversityChange} placeholder="--Select University--">
-              {formData
-                .find((item) => item.value === selectedInstitute)
-                .universities.map((university) => (
-                  <Option key={university.value} value={university.value}>
-                    {university.label}
-                  </Option>
-                ))}
-            </Select>
-          </Form.Item>
+          <>
+            <Form.Item label="Select University" name={['customfields', 'university_name']}>
+              <Select onChange={handleUniversityChange} placeholder="--Select University--">
+                {formData
+                  .find((item) => item.value === selectedInstitute)
+                  .universities.map((university) => (
+                    <Option key={university.value} value={university.value}>
+                      {university.label}
+                    </Option>
+                  ))}
+              </Select>
+            </Form.Item>
+            {selectedUniversity && (
+              <Form.Item label="Select Course" name={['education', 'course']}>
+                <Select onChange={handleCourseChange} placeholder="--Select Course--">
+                  {formData
+                    .find((item) => item.value === selectedInstitute)
+                    .universities.find((university) => university.value === selectedUniversity)
+                    .fields[9].courses.map((course) => (
+                      <Option key={course.value} value={course.value}>
+                        {course.label}
+                      </Option>
+                    ))}
+                </Select>
+              </Form.Item>
+            )}
+            {selectedUniversity && selectedCourse && (
+              <Form.Item label="Select Specialization" name={['customfields', 'enter_specialization']}>
+                <Select
+                  placeholder="--Select Specialization--"
+                  onChange={handleSpecializationChange}
+                >
+                  {formData
+                    .find((item) => item.value === selectedInstitute)
+                    .universities.find((university) => university.value === selectedUniversity)
+                    .fields[9].courses
+                    .find((course) => course.value === selectedCourse)
+                    .specializations.map((specialization) => (
+                      <Option key={specialization.value} value={specialization.value}>
+                        {specialization.label}
+                      </Option>
+                    ))}
+                </Select>
+              </Form.Item>
+            )}
+          </>
         )}
       </form>
       {selectedUniversity && (
-        <form>
-          {generateFormItems(
-            formData
-              .find((item) => item.value === selectedInstitute)
-              .universities.find((university) => university.value === selectedUniversity).fields
-          )}
-        </form>
+        <div>
+          <form className='grid grid-cols-4 gap-3'>
+            {generateFormItems(
+              formData
+                .find((item) => item.value === selectedInstitute)
+                .universities.find((university) => university.value === selectedUniversity).fields
+
+            )}
+          </form>
+        </div>
       )}
     </div>
   );

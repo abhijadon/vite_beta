@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useCrudContext } from '@/context/crud';
 import { useAppContext } from '@/context/appContext';
-import { Grid, Layout, Drawer } from 'antd';
+import { Grid, Layout, Modal } from 'antd'; // Change Drawer to Modal
 import { MenuOutlined } from '@ant-design/icons';
 import CollapseBox from '../CollapseBox';
 
@@ -19,10 +19,6 @@ export default function SidePanel({ config, topContent, bottomContent, fixHeader
   const [leftSider, setLeftSider] = useState('-1px');
   const [opacitySider, setOpacitySider] = useState(0);
   const [paddingTopSider, setPaddingTopSider] = useState('20px');
-
-  // const { state: stateApp, appContextAction } = useAppContext();
-  // const { isNavMenuClose } = stateApp;
-  // const { navMenu } = appContextAction;
 
   useEffect(() => {
     let timer = [];
@@ -55,12 +51,12 @@ export default function SidePanel({ config, topContent, bottomContent, fixHeader
   };
 
   return (
-    <Drawer
-      title="Ahishek"
-      placement="right"
-      onClose={collapsePanel}
-      open={!isPanelClose}
-      width={450}
+    <Modal
+      title="ERP"
+      visible={!isPanelClose} // Use the visibility property
+      onCancel={collapsePanel} // Use onCancel instead of onClose
+      footer={null}
+      width={1000} // No footer in the modal
     >
       <div
         className="sidePanelContent"
@@ -78,23 +74,6 @@ export default function SidePanel({ config, topContent, bottomContent, fixHeader
           bottomContent={bottomContent}
         ></CollapseBox>
       </div>
-    </Drawer>
-    // <Sider
-    //   width={screens.md ? '400px' : '95%'}
-    //   collapsed={isSidePanelClose}
-    //   collapsedWidth={'0px'}
-    //   onCollapse={collapsePanel}
-    //   className="sidePanel"
-    //   zeroWidthTriggerStyle={{
-    //     right: '-50px',
-    //     top: '15px',
-    //   }}
-    //   style={{
-    //     left: leftSider,
-    //     zIndex: '100',
-    //   }}
-    // >
-
-    // </Sider>
+    </Modal>
   );
 }

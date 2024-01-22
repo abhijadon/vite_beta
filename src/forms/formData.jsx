@@ -74,12 +74,13 @@ const formData = [
             required: 'require'
           },
           {
-            key: 'date',
+            key: 'select',
             label: 'Session',
             name: ['customfields', 'session'],
-            place: 'eg: 2020-2023',
+            place: 'eg: jan 20-jan 23',
             id: 'Session',
-            type: 'text',
+            type: 'select',
+            options: ['jan 20-jan 20', 'july 20-july 20', 'jan 21-jan 21', 'july 21-july 21', 'jan 22-jan 22', 'july 22-july 22', 'jan 23-jan 23', 'july 23-july 23', 'jan 24-jan 24', 'july 24-july 24', 'jan 25-jan 25', 'july 25-july 25'],
             required: 'require'
           },
           {
@@ -92,22 +93,23 @@ const formData = [
             options: ['Fresher', 'LATERAL ENTRY',],
           },
           {
-            key: 'select',
-            label: 'Course Name',
-            name: ['education', 'course'],
-            id: 'course',
-            place: 'Enter Course Name',
-            type: 'select',
-            options: ['10th', '12th', 'BA', 'BBA', 'BCA', 'B.SC', 'B.COM', 'MA', 'MBA', 'MCA', 'MSC', 'MCOM', 'BTECH', 'MTECH', 'DIPLOMA', 'PG DIPLOMA', 'B.ED', 'LLB', 'B.LIB', 'M.LIB', 'BSW', 'MSW'],
-            required: 'require'
-          },
-          {
-            key: 'text',
-            label: 'Specialization',
-            name: ['customfields', 'enter_specialization'],
-            place: 'Enter Specialization',
-            id: 'Specialization',
-            type: 'text',
+            courses: [
+              {
+                value: "BA",
+                label: "BA",
+                specializations: [
+                  { "value": "Education", "label": "Education" },
+                  { "value": "English", "label": "English" },
+                  { "value": "Economics", "label": "Economics" },
+                  { "value": "History", "label": "History" },
+                  { "value": "Political science", "label": "Political science" },
+                  { "value": "Sociology", "label": "Sociology" },
+                  { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
+                ],
+
+              },
+
+            ]
           },
           {
             key: 'date',
@@ -115,7 +117,7 @@ const formData = [
             name: ['customfields', 'dob'],
             place: 'Enter Date of Birth',
             id: 'dob',
-            type: 'text',
+            type: 'date',
             required: 'require'
           },
           {
@@ -206,7 +208,7 @@ const formData = [
             key: 'file',
             label: 'Upload fee receipt',
             name: 'upload_fee_receipt_screenshot',
-            place: 'Uplaod Student Document',
+            place: 'Upload fee receipt',
             id: 'Uplaod Student Document',
             type: 'file',
             required: 'require'
@@ -264,12 +266,13 @@ const formData = [
             required: 'require'
           },
           {
-            key: 'date',
+            key: 'select',
             label: 'Session',
             name: ['customfields', 'session'],
-            place: 'eg: 2020-2023',
+            place: 'eg: jan 20-jan 23',
             id: 'Session',
-            type: 'text',
+            type: 'select',
+            options: ['jan 20-jan 20', 'july 20-july 20', 'jan 21-jan 21', 'july 21-july 21', 'jan 22-jan 22', 'july 22-july 22', 'jan 23-jan 23', 'july 23-july 23', 'jan 24-jan 24', 'july 24-july 24', 'jan 25-jan 25', 'july 25-july 25'],
             required: 'require'
           },
           {
@@ -282,22 +285,23 @@ const formData = [
             options: ['Fresher', 'LATERAL ENTRY',],
           },
           {
-            key: 'select',
-            label: 'Course Name',
-            name: ['education', 'course'],
-            id: 'course',
-            place: 'Enter Course Name',
-            type: 'select',
-            options: ['10th', '12th', 'BA', 'BBA', 'BCA', 'B.SC', 'B.COM', 'MA', 'MBA', 'MCA', 'MSC', 'MCOM', 'BTECH', 'MTECH', 'DIPLOMA', 'PG DIPLOMA', 'B.ED', 'LLB', 'B.LIB', 'M.LIB', 'BSW', 'MSW'],
-            required: 'require'
-          },
-          {
-            key: 'text',
-            label: 'Specialization',
-            name: ['customfields', 'enter_specialization'],
-            place: 'Enter Specialization',
-            id: 'Specialization',
-            type: 'text',
+            courses: [
+              {
+                value: "BA",
+                label: "BA",
+                specializations: [
+                  { "value": "Education", "label": "Education" },
+                  { "value": "English", "label": "English" },
+                  { "value": "Economics", "label": "Economics" },
+                  { "value": "History", "label": "History" },
+                  { "value": "Political science", "label": "Political science" },
+                  { "value": "Sociology", "label": "Sociology" },
+                  { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
+                ],
+
+              },
+
+            ]
           },
           {
             key: 'select',
@@ -384,19 +388,19 @@ const formData = [
 
           },
           {
-            key: 'text',
+            key: 'file',
             label: 'Uplaod Student Document',
             name: ['customfields', 'upload_student_document'],
-            place: 'Enter Counselor Email',
+            place: 'Uplaod Student Document',
             id: 'Uplaod Student Document',
-            type: 'text',
+            type: 'file',
           },
           {
             key: 'textarea',
             label: 'Remark',
             name: ['customfields', 'remark'],
-            place: 'Enter Counselor Email',
-            id: 'Uplaod Student Document',
+            place: 'Remark',
+            id: 'Remark',
             type: 'textarea',
           },
         ],
@@ -471,12 +475,13 @@ const formData = [
             required: 'require'
           },
           {
-            key: 'date',
+            key: 'select',
             label: 'Session',
             name: ['customfields', 'session'],
-            place: 'eg: 2020-2023',
+            place: 'eg: jan 20-jan 23',
             id: 'Session',
-            type: 'text',
+            type: 'select',
+            options: ['jan 20-jan 20', 'july 20-july 20', 'jan 21-jan 21', 'july 21-july 21', 'jan 22-jan 22', 'july 22-july 22', 'jan 23-jan 23', 'july 23-july 23', 'jan 24-jan 24', 'july 24-july 24', 'jan 25-jan 25', 'july 25-july 25'],
             required: 'require'
           },
           {
@@ -489,22 +494,23 @@ const formData = [
             options: ['Fresher', 'LATERAL ENTRY',],
           },
           {
-            key: 'select',
-            label: 'Course Name',
-            name: ['education', 'course'],
-            id: 'course',
-            place: 'Enter Course Name',
-            type: 'select',
-            options: ['10th', '12th', 'BA', 'BBA', 'BCA', 'B.SC', 'B.COM', 'MA', 'MBA', 'MCA', 'MSC', 'MCOM', 'BTECH', 'MTECH', 'DIPLOMA', 'PG DIPLOMA', 'B.ED', 'LLB', 'B.LIB', 'M.LIB', 'BSW', 'MSW'],
-            required: 'require'
-          },
-          {
-            key: 'text',
-            label: 'Specialization',
-            name: ['customfields', 'enter_specialization'],
-            place: 'Enter Specialization',
-            id: 'Specialization',
-            type: 'text',
+            courses: [
+              {
+                value: "BA",
+                label: "BA",
+                specializations: [
+                  { "value": "Education", "label": "Education" },
+                  { "value": "English", "label": "English" },
+                  { "value": "Economics", "label": "Economics" },
+                  { "value": "History", "label": "History" },
+                  { "value": "Political science", "label": "Political science" },
+                  { "value": "Sociology", "label": "Sociology" },
+                  { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
+                ],
+
+              },
+
+            ]
           },
           {
             key: 'date',
@@ -512,7 +518,7 @@ const formData = [
             name: ['customfields', 'dob'],
             place: 'Enter Date of Birth',
             id: 'dob',
-            type: 'text',
+            type: 'date',
             required: 'require'
           },
           {
@@ -592,7 +598,7 @@ const formData = [
           {
             key: 'file',
             label: 'Upload Fee Receipt Screenshot',
-            name: 'image',
+            name: ['customfields', 'upload_fee_receipt_screenshot'],
             place: 'Upload Fee Receipt Screenshot',
             id: 'Upload Fee Receipt Screenshot',
             type: 'file',
@@ -603,7 +609,7 @@ const formData = [
             key: 'file',
             label: 'Uplaod Student Document',
             name: ['customfields', 'upload_student_document'],
-            place: 'Enter Counselor Email',
+            place: 'Uplaod Student Document',
             id: 'Uplaod Student Document',
             type: 'file',
           },
@@ -611,8 +617,8 @@ const formData = [
             key: 'textarea',
             label: 'Remark',
             name: ['customfields', 'remark'],
-            place: 'Enter Counselor Email',
-            id: 'Uplaod Student Document',
+            place: 'Remark',
+            id: 'remark',
             type: 'textarea',
           },
         ],
@@ -660,12 +666,13 @@ const formData = [
             required: 'require'
           },
           {
-            key: 'date',
+            key: 'select',
             label: 'Session',
             name: ['customfields', 'session'],
-            place: 'eg: 2020-2023',
+            place: 'eg: jan 20-jan 23',
             id: 'Session',
-            type: 'text',
+            type: 'select',
+            options: ['jan 20-jan 20', 'july 20-july 20', 'jan 21-jan 21', 'july 21-july 21', 'jan 22-jan 22', 'july 22-july 22', 'jan 23-jan 23', 'july 23-july 23', 'jan 24-jan 24', 'july 24-july 24', 'jan 25-jan 25', 'july 25-july 25'],
             required: 'require'
           },
           {
@@ -678,22 +685,23 @@ const formData = [
             options: ['Fresher', 'LATERAL ENTRY',],
           },
           {
-            key: 'select',
-            label: 'Course Name',
-            name: ['education', 'course'],
-            id: 'course',
-            place: 'Enter Course Name',
-            type: 'select',
-            options: ['10th', '12th', 'BA', 'BBA', 'BCA', 'B.SC', 'B.COM', 'MA', 'MBA', 'MCA', 'MSC', 'MCOM', 'BTECH', 'MTECH', 'DIPLOMA', 'PG DIPLOMA', 'B.ED', 'LLB', 'B.LIB', 'M.LIB', 'BSW', 'MSW'],
-            required: 'require'
-          },
-          {
-            key: 'text',
-            label: 'Specialization',
-            name: ['customfields', 'enter_specialization'],
-            place: 'Enter Specialization',
-            id: 'Specialization',
-            type: 'text',
+            courses: [
+              {
+                value: "BA",
+                label: "BA",
+                specializations: [
+                  { "value": "Education", "label": "Education" },
+                  { "value": "English", "label": "English" },
+                  { "value": "Economics", "label": "Economics" },
+                  { "value": "History", "label": "History" },
+                  { "value": "Political science", "label": "Political science" },
+                  { "value": "Sociology", "label": "Sociology" },
+                  { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
+                ],
+
+              },
+
+            ]
           },
 
           {
@@ -773,7 +781,7 @@ const formData = [
           {
             key: 'file',
             label: 'Upload Fee Receipt Screenshot',
-            name: 'image',
+            name: ['customfields', 'upload_fee_receipt_screenshot'],
             place: 'Upload Fee Receipt Screenshot',
             id: 'Upload Fee Receipt Screenshot',
             type: 'file',
@@ -781,18 +789,18 @@ const formData = [
 
           },
           {
-            key: 'text',
+            key: 'file',
             label: 'Uplaod Student Document',
             name: ['customfields', 'upload_student_document'],
-            place: 'Enter Counselor Email',
+            place: 'Uplaod Student Document',
             id: 'Uplaod Student Document',
-            type: 'text',
+            type: 'file',
           },
           {
             key: 'textarea',
             label: 'Remark',
             name: ['customfields', 'remark'],
-            place: 'Enter Counselor Email',
+            place: 'Remark',
             id: 'Uplaod Student Document',
             type: 'textarea',
           },
@@ -841,12 +849,13 @@ const formData = [
             required: 'require'
           },
           {
-            key: 'date',
+            key: 'select',
             label: 'Session',
             name: ['customfields', 'session'],
-            place: 'eg: 2020-2023',
+            place: 'eg: jan 20-jan 23',
             id: 'Session',
-            type: 'text',
+            type: 'select',
+            options: ['jan 20-jan 20', 'july 20-july 20', 'jan 21-jan 21', 'july 21-july 21', 'jan 22-jan 22', 'july 22-july 22', 'jan 23-jan 23', 'july 23-july 23', 'jan 24-jan 24', 'july 24-july 24', 'jan 25-jan 25', 'july 25-july 25'],
             required: 'require'
           },
           {
@@ -859,22 +868,23 @@ const formData = [
             options: ['Fresher', 'LATERAL ENTRY',],
           },
           {
-            key: 'select',
-            label: 'Course Name',
-            name: ['education', 'course'],
-            id: 'course',
-            place: 'Enter Course Name',
-            type: 'select',
-            options: ['10th', '12th', 'BA', 'BBA', 'BCA', 'B.SC', 'B.COM', 'MA', 'MBA', 'MCA', 'MSC', 'MCOM', 'BTECH', 'MTECH', 'DIPLOMA', 'PG DIPLOMA', 'B.ED', 'LLB', 'B.LIB', 'M.LIB', 'BSW', 'MSW'],
-            required: 'require'
-          },
-          {
-            key: 'text',
-            label: 'Specialization',
-            name: ['customfields', 'enter_specialization'],
-            place: 'Enter Specialization',
-            id: 'Specialization',
-            type: 'text',
+            courses: [
+              {
+                value: "BA",
+                label: "BA",
+                specializations: [
+                  { "value": "Education", "label": "Education" },
+                  { "value": "English", "label": "English" },
+                  { "value": "Economics", "label": "Economics" },
+                  { "value": "History", "label": "History" },
+                  { "value": "Political science", "label": "Political science" },
+                  { "value": "Sociology", "label": "Sociology" },
+                  { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
+                ],
+
+              },
+
+            ]
           },
 
           {
@@ -1049,12 +1059,13 @@ const formData = [
             required: 'require'
           },
           {
-            key: 'date',
+            key: 'select',
             label: 'Session',
             name: ['customfields', 'session'],
-            place: 'eg: 2020-2023',
+            place: 'eg: jan 20-jan 23',
             id: 'Session',
-            type: 'text',
+            type: 'select',
+            options: ['jan 20-jan 20', 'july 20-july 20', 'jan 21-jan 21', 'july 21-july 21', 'jan 22-jan 22', 'july 22-july 22', 'jan 23-jan 23', 'july 23-july 23', 'jan 24-jan 24', 'july 24-july 24', 'jan 25-jan 25', 'july 25-july 25'],
             required: 'require'
           },
           {
@@ -1067,22 +1078,23 @@ const formData = [
             options: ['Fresher', 'LATERAL ENTRY',],
           },
           {
-            key: 'select',
-            label: 'Course Name',
-            name: ['education', 'course'],
-            id: 'course',
-            place: 'Enter Course Name',
-            type: 'select',
-            options: ['10th', '12th', 'BA', 'BBA', 'BCA', 'B.SC', 'B.COM', 'MA', 'MBA', 'MCA', 'MSC', 'MCOM', 'BTECH', 'MTECH', 'DIPLOMA', 'PG DIPLOMA', 'B.ED', 'LLB', 'B.LIB', 'M.LIB', 'BSW', 'MSW'],
-            required: 'require'
-          },
-          {
-            key: 'text',
-            label: 'Specialization',
-            name: ['customfields', 'enter_specialization'],
-            place: 'Enter Specialization',
-            id: 'Specialization',
-            type: 'text',
+            courses: [
+              {
+                value: "BA",
+                label: "BA",
+                specializations: [
+                  { "value": "Education", "label": "Education" },
+                  { "value": "English", "label": "English" },
+                  { "value": "Economics", "label": "Economics" },
+                  { "value": "History", "label": "History" },
+                  { "value": "Political science", "label": "Political science" },
+                  { "value": "Sociology", "label": "Sociology" },
+                  { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
+                ],
+
+              },
+
+            ]
           },
           {
             key: 'date',
@@ -1090,7 +1102,7 @@ const formData = [
             name: ['customfields', 'dob'],
             place: 'Enter Date of Birth',
             id: 'dob',
-            type: 'text',
+            type: 'date',
             required: 'require'
           },
           {
@@ -1238,12 +1250,13 @@ const formData = [
             required: 'require'
           },
           {
-            key: 'date',
+            key: 'select',
             label: 'Session',
             name: ['customfields', 'session'],
-            place: 'eg: 2020-2023',
+            place: 'eg: jan 20-jan 23',
             id: 'Session',
-            type: 'text',
+            type: 'select',
+            options: ['jan 20-jan 20', 'july 20-july 20', 'jan 21-jan 21', 'july 21-july 21', 'jan 22-jan 22', 'july 22-july 22', 'jan 23-jan 23', 'july 23-july 23', 'jan 24-jan 24', 'july 24-july 24', 'jan 25-jan 25', 'july 25-july 25'],
             required: 'require'
           },
           {
@@ -1256,22 +1269,23 @@ const formData = [
             options: ['Fresher', 'LATERAL ENTRY',],
           },
           {
-            key: 'select',
-            label: 'Course Name',
-            name: ['education', 'course'],
-            id: 'course',
-            place: 'Enter Course Name',
-            type: 'select',
-            options: ['10th', '12th', 'BA', 'BBA', 'BCA', 'B.SC', 'B.COM', 'MA', 'MBA', 'MCA', 'MSC', 'MCOM', 'BTECH', 'MTECH', 'DIPLOMA', 'PG DIPLOMA', 'B.ED', 'LLB', 'B.LIB', 'M.LIB', 'BSW', 'MSW'],
-            required: 'require'
-          },
-          {
-            key: 'text',
-            label: 'Specialization',
-            name: ['customfields', 'enter_specialization'],
-            place: 'Enter Specialization',
-            id: 'Specialization',
-            type: 'text',
+            courses: [
+              {
+                value: "BA",
+                label: "BA",
+                specializations: [
+                  { "value": "Education", "label": "Education" },
+                  { "value": "English", "label": "English" },
+                  { "value": "Economics", "label": "Economics" },
+                  { "value": "History", "label": "History" },
+                  { "value": "Political science", "label": "Political science" },
+                  { "value": "Sociology", "label": "Sociology" },
+                  { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
+                ],
+
+              },
+
+            ]
           },
 
           {
@@ -1419,12 +1433,13 @@ const formData = [
             required: 'require'
           },
           {
-            key: 'date',
+            key: 'select',
             label: 'Session',
             name: ['customfields', 'session'],
-            place: 'eg: 2020-2023',
+            place: 'eg: jan 20-jan 23',
             id: 'Session',
-            type: 'text',
+            type: 'select',
+            options: ['jan 20-jan 20', 'july 20-july 20', 'jan 21-jan 21', 'july 21-july 21', 'jan 22-jan 22', 'july 22-july 22', 'jan 23-jan 23', 'july 23-july 23', 'jan 24-jan 24', 'july 24-july 24', 'jan 25-jan 25', 'july 25-july 25'],
             required: 'require'
           },
           {
@@ -1437,22 +1452,23 @@ const formData = [
             options: ['Fresher', 'LATERAL ENTRY',],
           },
           {
-            key: 'select',
-            label: 'Course Name',
-            name: ['education', 'course'],
-            id: 'course',
-            place: 'Enter Course Name',
-            type: 'select',
-            options: ['10th', '12th', 'BA', 'BBA', 'BCA', 'B.SC', 'B.COM', 'MA', 'MBA', 'MCA', 'MSC', 'MCOM', 'BTECH', 'MTECH', 'DIPLOMA', 'PG DIPLOMA', 'B.ED', 'LLB', 'B.LIB', 'M.LIB', 'BSW', 'MSW'],
-            required: 'require'
-          },
-          {
-            key: 'text',
-            label: 'Specialization',
-            name: ['customfields', 'enter_specialization'],
-            place: 'Enter Specialization',
-            id: 'Specialization',
-            type: 'text',
+            courses: [
+              {
+                value: "BA",
+                label: "BA",
+                specializations: [
+                  { "value": "Education", "label": "Education" },
+                  { "value": "English", "label": "English" },
+                  { "value": "Economics", "label": "Economics" },
+                  { "value": "History", "label": "History" },
+                  { "value": "Political science", "label": "Political science" },
+                  { "value": "Sociology", "label": "Sociology" },
+                  { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
+                ],
+
+              },
+
+            ]
           },
 
           {
@@ -1600,12 +1616,13 @@ const formData = [
             required: 'require'
           },
           {
-            key: 'date',
+            key: 'select',
             label: 'Session',
             name: ['customfields', 'session'],
-            place: 'eg: 2020-2023',
+            place: 'eg: jan 20-jan 23',
             id: 'Session',
-            type: 'text',
+            type: 'select',
+            options: ['jan 20-jan 20', 'july 20-july 20', 'jan 21-jan 21', 'july 21-july 21', 'jan 22-jan 22', 'july 22-july 22', 'jan 23-jan 23', 'july 23-july 23', 'jan 24-jan 24', 'july 24-july 24', 'jan 25-jan 25', 'july 25-july 25'],
             required: 'require'
           },
           {
@@ -1618,14 +1635,23 @@ const formData = [
             options: ['Fresher', 'LATERAL ENTRY',],
           },
           {
-            key: 'select',
-            label: 'Course Name',
-            name: ['education', 'course'],
-            id: 'course',
-            place: 'Enter Course Name',
-            type: 'select',
-            options: ['10th', '12th', 'BA', 'BBA', 'BCA', 'B.SC', 'B.COM', 'MA', 'MBA', 'MCA', 'MSC', 'MCOM', 'BTECH', 'MTECH', 'DIPLOMA', 'PG DIPLOMA', 'B.ED', 'LLB', 'B.LIB', 'M.LIB', 'BSW', 'MSW'],
-            required: 'require'
+            courses: [
+              {
+                value: "BA",
+                label: "BA",
+                specializations: [
+                  { "value": "Education", "label": "Education" },
+                  { "value": "English", "label": "English" },
+                  { "value": "Economics", "label": "Economics" },
+                  { "value": "History", "label": "History" },
+                  { "value": "Political science", "label": "Political science" },
+                  { "value": "Sociology", "label": "Sociology" },
+                  { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
+                ],
+
+              },
+
+            ]
           },
           {
             key: 'text',
@@ -1781,12 +1807,13 @@ const formData = [
             required: 'require'
           },
           {
-            key: 'date',
+            key: 'select',
             label: 'Session',
             name: ['customfields', 'session'],
-            place: 'eg: 2020-2023',
+            place: 'eg: jan 20-jan 23',
             id: 'Session',
-            type: 'text',
+            type: 'select',
+            options: ['jan 20-jan 20', 'july 20-july 20', 'jan 21-jan 21', 'july 21-july 21', 'jan 22-jan 22', 'july 22-july 22', 'jan 23-jan 23', 'july 23-july 23', 'jan 24-jan 24', 'july 24-july 24', 'jan 25-jan 25', 'july 25-july 25'],
             required: 'require'
           },
           {
@@ -1799,22 +1826,23 @@ const formData = [
             options: ['Fresher', 'LATERAL ENTRY',],
           },
           {
-            key: 'select',
-            label: 'Course Name',
-            name: ['education', 'course'],
-            id: 'course',
-            place: 'Enter Course Name',
-            type: 'select',
-            options: ['10th', '12th', 'BA', 'BBA', 'BCA', 'B.SC', 'B.COM', 'MA', 'MBA', 'MCA', 'MSC', 'MCOM', 'BTECH', 'MTECH', 'DIPLOMA', 'PG DIPLOMA', 'B.ED', 'LLB', 'B.LIB', 'M.LIB', 'BSW', 'MSW'],
-            required: 'require'
-          },
-          {
-            key: 'text',
-            label: 'Specialization',
-            name: ['customfields', 'enter_specialization'],
-            place: 'Enter Specialization',
-            id: 'Specialization',
-            type: 'text',
+            courses: [
+              {
+                value: "BA",
+                label: "BA",
+                specializations: [
+                  { "value": "Education", "label": "Education" },
+                  { "value": "English", "label": "English" },
+                  { "value": "Economics", "label": "Economics" },
+                  { "value": "History", "label": "History" },
+                  { "value": "Political science", "label": "Political science" },
+                  { "value": "Sociology", "label": "Sociology" },
+                  { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
+                ],
+
+              },
+
+            ]
           },
 
           {
@@ -1989,12 +2017,13 @@ const formData = [
             required: 'require'
           },
           {
-            key: 'date',
+            key: 'select',
             label: 'Session',
             name: ['customfields', 'session'],
-            place: 'eg: 2020-2023',
+            place: 'eg: jan 20-jan 23',
             id: 'Session',
-            type: 'text',
+            type: 'select',
+            options: ['jan 20-jan 20', 'july 20-july 20', 'jan 21-jan 21', 'july 21-july 21', 'jan 22-jan 22', 'july 22-july 22', 'jan 23-jan 23', 'july 23-july 23', 'jan 24-jan 24', 'july 24-july 24', 'jan 25-jan 25', 'july 25-july 25'],
             required: 'require'
           },
           {
@@ -2007,22 +2036,23 @@ const formData = [
             options: ['Fresher', 'LATERAL ENTRY',],
           },
           {
-            key: 'select',
-            label: 'Course Name',
-            name: ['education', 'course'],
-            id: 'course',
-            place: 'Enter Course Name',
-            type: 'select',
-            options: ['10th', '12th', 'BA', 'BBA', 'BCA', 'B.SC', 'B.COM', 'MA', 'MBA', 'MCA', 'MSC', 'MCOM', 'BTECH', 'MTECH', 'DIPLOMA', 'PG DIPLOMA', 'B.ED', 'LLB', 'B.LIB', 'M.LIB', 'BSW', 'MSW'],
-            required: 'require'
-          },
-          {
-            key: 'text',
-            label: 'Specialization',
-            name: ['customfields', 'enter_specialization'],
-            place: 'Enter Specialization',
-            id: 'Specialization',
-            type: 'text',
+            courses: [
+              {
+                value: "BA",
+                label: "BA",
+                specializations: [
+                  { "value": "Education", "label": "Education" },
+                  { "value": "English", "label": "English" },
+                  { "value": "Economics", "label": "Economics" },
+                  { "value": "History", "label": "History" },
+                  { "value": "Political science", "label": "Political science" },
+                  { "value": "Sociology", "label": "Sociology" },
+                  { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
+                ],
+
+              },
+
+            ]
           },
           {
             key: 'date',
@@ -2205,12 +2235,13 @@ const formData = [
             required: 'require'
           },
           {
-            key: 'date',
+            key: 'select',
             label: 'Session',
             name: ['customfields', 'session'],
-            place: 'eg: 2020-2023',
+            place: 'eg: jan 20-jan 23',
             id: 'Session',
-            type: 'text',
+            type: 'select',
+            options: ['jan 20-jan 20', 'july 20-july 20', 'jan 21-jan 21', 'july 21-july 21', 'jan 22-jan 22', 'july 22-july 22', 'jan 23-jan 23', 'july 23-july 23', 'jan 24-jan 24', 'july 24-july 24', 'jan 25-jan 25', 'july 25-july 25'],
             required: 'require'
           },
           {
@@ -2223,22 +2254,23 @@ const formData = [
             options: ['Fresher', 'LATERAL ENTRY',],
           },
           {
-            key: 'select',
-            label: 'Course Name',
-            name: ['education', 'course'],
-            id: 'course',
-            place: 'Enter Course Name',
-            type: 'select',
-            options: ['10th', '12th', 'BA', 'BBA', 'BCA', 'B.SC', 'B.COM', 'MA', 'MBA', 'MCA', 'MSC', 'MCOM', 'BTECH', 'MTECH', 'DIPLOMA', 'PG DIPLOMA', 'B.ED', 'LLB', 'B.LIB', 'M.LIB', 'BSW', 'MSW'],
-            required: 'require'
-          },
-          {
-            key: 'text',
-            label: 'Specialization',
-            name: ['customfields', 'enter_specialization'],
-            place: 'Enter Specialization',
-            id: 'Specialization',
-            type: 'text',
+            courses: [
+              {
+                value: "BA",
+                label: "BA",
+                specializations: [
+                  { "value": "Education", "label": "Education" },
+                  { "value": "English", "label": "English" },
+                  { "value": "Economics", "label": "Economics" },
+                  { "value": "History", "label": "History" },
+                  { "value": "Political science", "label": "Political science" },
+                  { "value": "Sociology", "label": "Sociology" },
+                  { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
+                ],
+
+              },
+
+            ]
           },
           {
             key: 'date',
@@ -2421,12 +2453,13 @@ const formData = [
             required: 'require'
           },
           {
-            key: 'date',
+            key: 'select',
             label: 'Session',
             name: ['customfields', 'session'],
-            place: 'eg: 2020-2023',
+            place: 'eg: jan 20-jan 23',
             id: 'Session',
-            type: 'text',
+            type: 'select',
+            options: ['jan 20-jan 20', 'july 20-july 20', 'jan 21-jan 21', 'july 21-july 21', 'jan 22-jan 22', 'july 22-july 22', 'jan 23-jan 23', 'july 23-july 23', 'jan 24-jan 24', 'july 24-july 24', 'jan 25-jan 25', 'july 25-july 25'],
             required: 'require'
           },
           {
@@ -2439,22 +2472,23 @@ const formData = [
             options: ['Fresher', 'LATERAL ENTRY',],
           },
           {
-            key: 'select',
-            label: 'Course Name',
-            name: ['education', 'course'],
-            id: 'course',
-            place: 'Enter Course Name',
-            type: 'select',
-            options: ['10th', '12th', 'BA', 'BBA', 'BCA', 'B.SC', 'B.COM', 'MA', 'MBA', 'MCA', 'MSC', 'MCOM', 'BTECH', 'MTECH', 'DIPLOMA', 'PG DIPLOMA', 'B.ED', 'LLB', 'B.LIB', 'M.LIB', 'BSW', 'MSW'],
-            required: 'require'
-          },
-          {
-            key: 'text',
-            label: 'Specialization',
-            name: ['customfields', 'enter_specialization'],
-            place: 'Enter Specialization',
-            id: 'Specialization',
-            type: 'text',
+            courses: [
+              {
+                value: "BA",
+                label: "BA",
+                specializations: [
+                  { "value": "Education", "label": "Education" },
+                  { "value": "English", "label": "English" },
+                  { "value": "Economics", "label": "Economics" },
+                  { "value": "History", "label": "History" },
+                  { "value": "Political science", "label": "Political science" },
+                  { "value": "Sociology", "label": "Sociology" },
+                  { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
+                ],
+
+              },
+
+            ]
           },
           {
             key: 'date',
@@ -2637,12 +2671,13 @@ const formData = [
             required: 'require'
           },
           {
-            key: 'date',
+            key: 'select',
             label: 'Session',
             name: ['customfields', 'session'],
-            place: 'eg: 2020-2023',
+            place: 'eg: jan 20-jan 23',
             id: 'Session',
-            type: 'text',
+            type: 'select',
+            options: ['jan 20-jan 20', 'july 20-july 20', 'jan 21-jan 21', 'july 21-july 21', 'jan 22-jan 22', 'july 22-july 22', 'jan 23-jan 23', 'july 23-july 23', 'jan 24-jan 24', 'july 24-july 24', 'jan 25-jan 25', 'july 25-july 25'],
             required: 'require'
           },
           {
@@ -2655,22 +2690,23 @@ const formData = [
             options: ['Fresher', 'LATERAL ENTRY',],
           },
           {
-            key: 'select',
-            label: 'Course Name',
-            name: ['education', 'course'],
-            id: 'course',
-            place: 'Enter Course Name',
-            type: 'select',
-            options: ['10th', '12th', 'BA', 'BBA', 'BCA', 'B.SC', 'B.COM', 'MA', 'MBA', 'MCA', 'MSC', 'MCOM', 'BTECH', 'MTECH', 'DIPLOMA', 'PG DIPLOMA', 'B.ED', 'LLB', 'B.LIB', 'M.LIB', 'BSW', 'MSW'],
-            required: 'require'
-          },
-          {
-            key: 'text',
-            label: 'Specialization',
-            name: ['customfields', 'enter_specialization'],
-            place: 'Enter Specialization',
-            id: 'Specialization',
-            type: 'text',
+            courses: [
+              {
+                value: "BA",
+                label: "BA",
+                specializations: [
+                  { "value": "Education", "label": "Education" },
+                  { "value": "English", "label": "English" },
+                  { "value": "Economics", "label": "Economics" },
+                  { "value": "History", "label": "History" },
+                  { "value": "Political science", "label": "Political science" },
+                  { "value": "Sociology", "label": "Sociology" },
+                  { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
+                ],
+
+              },
+
+            ]
           },
           {
             key: 'date',
@@ -2826,12 +2862,13 @@ const formData = [
             required: 'require'
           },
           {
-            key: 'date',
+            key: 'select',
             label: 'Session',
             name: ['customfields', 'session'],
-            place: 'eg: 2020-2023',
+            place: 'eg: jan 20-jan 23',
             id: 'Session',
-            type: 'text',
+            type: 'select',
+            options: ['jan 20-jan 20', 'july 20-july 20', 'jan 21-jan 21', 'july 21-july 21', 'jan 22-jan 22', 'july 22-july 22', 'jan 23-jan 23', 'july 23-july 23', 'jan 24-jan 24', 'july 24-july 24', 'jan 25-jan 25', 'july 25-july 25'],
             required: 'require'
           },
           {
@@ -2844,22 +2881,23 @@ const formData = [
             options: ['Fresher', 'LATERAL ENTRY',],
           },
           {
-            key: 'select',
-            label: 'Course Name',
-            name: ['education', 'course'],
-            id: 'course',
-            place: 'Enter Course Name',
-            type: 'select',
-            options: ['10th', '12th', 'BA', 'BBA', 'BCA', 'B.SC', 'B.COM', 'MA', 'MBA', 'MCA', 'MSC', 'MCOM', 'BTECH', 'MTECH', 'DIPLOMA', 'PG DIPLOMA', 'B.ED', 'LLB', 'B.LIB', 'M.LIB', 'BSW', 'MSW'],
-            required: 'require'
-          },
-          {
-            key: 'text',
-            label: 'Specialization',
-            name: ['customfields', 'enter_specialization'],
-            place: 'Enter Specialization',
-            id: 'Specialization',
-            type: 'text',
+            courses: [
+              {
+                value: "BA",
+                label: "BA",
+                specializations: [
+                  { "value": "Education", "label": "Education" },
+                  { "value": "English", "label": "English" },
+                  { "value": "Economics", "label": "Economics" },
+                  { "value": "History", "label": "History" },
+                  { "value": "Political science", "label": "Political science" },
+                  { "value": "Sociology", "label": "Sociology" },
+                  { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
+                ],
+
+              },
+
+            ]
           },
 
           {
@@ -3007,12 +3045,13 @@ const formData = [
             required: 'require'
           },
           {
-            key: 'date',
+            key: 'select',
             label: 'Session',
             name: ['customfields', 'session'],
-            place: 'eg: 2020-2023',
+            place: 'eg: jan 20-jan 23',
             id: 'Session',
-            type: 'text',
+            type: 'select',
+            options: ['jan 20-jan 20', 'july 20-july 20', 'jan 21-jan 21', 'july 21-july 21', 'jan 22-jan 22', 'july 22-july 22', 'jan 23-jan 23', 'july 23-july 23', 'jan 24-jan 24', 'july 24-july 24', 'jan 25-jan 25', 'july 25-july 25'],
             required: 'require'
           },
           {
@@ -3025,22 +3064,23 @@ const formData = [
             options: ['Fresher', 'LATERAL ENTRY',],
           },
           {
-            key: 'select',
-            label: 'Course Name',
-            name: ['education', 'course'],
-            id: 'course',
-            place: 'Enter Course Name',
-            type: 'select',
-            options: ['10th', '12th', 'BA', 'BBA', 'BCA', 'B.SC', 'B.COM', 'MA', 'MBA', 'MCA', 'MSC', 'MCOM', 'BTECH', 'MTECH', 'DIPLOMA', 'PG DIPLOMA', 'B.ED', 'LLB', 'B.LIB', 'M.LIB', 'BSW', 'MSW'],
-            required: 'require'
-          },
-          {
-            key: 'text',
-            label: 'Specialization',
-            name: ['customfields', 'enter_specialization'],
-            place: 'Enter Specialization',
-            id: 'Specialization',
-            type: 'text',
+            courses: [
+              {
+                value: "BA",
+                label: "BA",
+                specializations: [
+                  { "value": "Education", "label": "Education" },
+                  { "value": "English", "label": "English" },
+                  { "value": "Economics", "label": "Economics" },
+                  { "value": "History", "label": "History" },
+                  { "value": "Political science", "label": "Political science" },
+                  { "value": "Sociology", "label": "Sociology" },
+                  { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
+                ],
+
+              },
+
+            ]
           },
 
           {
@@ -3188,12 +3228,13 @@ const formData = [
             required: 'require'
           },
           {
-            key: 'date',
+            key: 'select',
             label: 'Session',
             name: ['customfields', 'session'],
-            place: 'eg: 2020-2023',
+            place: 'eg: jan 20-jan 23',
             id: 'Session',
-            type: 'text',
+            type: 'select',
+            options: ['jan 20-jan 20', 'july 20-july 20', 'jan 21-jan 21', 'july 21-july 21', 'jan 22-jan 22', 'july 22-july 22', 'jan 23-jan 23', 'july 23-july 23', 'jan 24-jan 24', 'july 24-july 24', 'jan 25-jan 25', 'july 25-july 25'],
             required: 'require'
           },
           {
@@ -3206,22 +3247,23 @@ const formData = [
             options: ['Fresher', 'LATERAL ENTRY',],
           },
           {
-            key: 'select',
-            label: 'Course Name',
-            name: ['education', 'course'],
-            id: 'course',
-            place: 'Enter Course Name',
-            type: 'select',
-            options: ['10th', '12th', 'BA', 'BBA', 'BCA', 'B.SC', 'B.COM', 'MA', 'MBA', 'MCA', 'MSC', 'MCOM', 'BTECH', 'MTECH', 'DIPLOMA', 'PG DIPLOMA', 'B.ED', 'LLB', 'B.LIB', 'M.LIB', 'BSW', 'MSW'],
-            required: 'require'
-          },
-          {
-            key: 'text',
-            label: 'Specialization',
-            name: ['customfields', 'enter_specialization'],
-            place: 'Enter Specialization',
-            id: 'Specialization',
-            type: 'text',
+            courses: [
+              {
+                value: "BA",
+                label: "BA",
+                specializations: [
+                  { "value": "Education", "label": "Education" },
+                  { "value": "English", "label": "English" },
+                  { "value": "Economics", "label": "Economics" },
+                  { "value": "History", "label": "History" },
+                  { "value": "Political science", "label": "Political science" },
+                  { "value": "Sociology", "label": "Sociology" },
+                  { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
+                ],
+
+              },
+
+            ]
           },
 
           {
@@ -3396,12 +3438,13 @@ const formData = [
             required: 'require'
           },
           {
-            key: 'date',
+            key: 'select',
             label: 'Session',
             name: ['customfields', 'session'],
-            place: 'eg: 2020-2023',
+            place: 'eg: jan 20-jan 23',
             id: 'Session',
-            type: 'text',
+            type: 'select',
+            options: ['jan 20-jan 20', 'july 20-july 20', 'jan 21-jan 21', 'july 21-july 21', 'jan 22-jan 22', 'july 22-july 22', 'jan 23-jan 23', 'july 23-july 23', 'jan 24-jan 24', 'july 24-july 24', 'jan 25-jan 25', 'july 25-july 25'],
             required: 'require'
           },
           {
@@ -3414,22 +3457,23 @@ const formData = [
             options: ['Fresher', 'LATERAL ENTRY',],
           },
           {
-            key: 'select',
-            label: 'Course Name',
-            name: ['education', 'course'],
-            id: 'course',
-            place: 'Enter Course Name',
-            type: 'select',
-            options: ['10th', '12th', 'BA', 'BBA', 'BCA', 'B.SC', 'B.COM', 'MA', 'MBA', 'MCA', 'MSC', 'MCOM', 'BTECH', 'MTECH', 'DIPLOMA', 'PG DIPLOMA', 'B.ED', 'LLB', 'B.LIB', 'M.LIB', 'BSW', 'MSW'],
-            required: 'require'
-          },
-          {
-            key: 'text',
-            label: 'Specialization',
-            name: ['customfields', 'enter_specialization'],
-            place: 'Enter Specialization',
-            id: 'Specialization',
-            type: 'text',
+            courses: [
+              {
+                value: "BA",
+                label: "BA",
+                specializations: [
+                  { "value": "Education", "label": "Education" },
+                  { "value": "English", "label": "English" },
+                  { "value": "Economics", "label": "Economics" },
+                  { "value": "History", "label": "History" },
+                  { "value": "Political science", "label": "Political science" },
+                  { "value": "Sociology", "label": "Sociology" },
+                  { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
+                ],
+
+              },
+
+            ]
           },
           {
             key: 'date',
@@ -3612,12 +3656,13 @@ const formData = [
             required: 'require'
           },
           {
-            key: 'date',
+            key: 'select',
             label: 'Session',
             name: ['customfields', 'session'],
-            place: 'eg: 2020-2023',
+            place: 'eg: jan 20-jan 23',
             id: 'Session',
-            type: 'text',
+            type: 'select',
+            options: ['jan 20-jan 20', 'july 20-july 20', 'jan 21-jan 21', 'july 21-july 21', 'jan 22-jan 22', 'july 22-july 22', 'jan 23-jan 23', 'july 23-july 23', 'jan 24-jan 24', 'july 24-july 24', 'jan 25-jan 25', 'july 25-july 25'],
             required: 'require'
           },
           {
@@ -3630,22 +3675,23 @@ const formData = [
             options: ['Fresher', 'LATERAL ENTRY',],
           },
           {
-            key: 'select',
-            label: 'Course Name',
-            name: ['education', 'course'],
-            id: 'course',
-            place: 'Enter Course Name',
-            type: 'select',
-            options: ['10th', '12th', 'BA', 'BBA', 'BCA', 'B.SC', 'B.COM', 'MA', 'MBA', 'MCA', 'MSC', 'MCOM', 'BTECH', 'MTECH', 'DIPLOMA', 'PG DIPLOMA', 'B.ED', 'LLB', 'B.LIB', 'M.LIB', 'BSW', 'MSW'],
-            required: 'require'
-          },
-          {
-            key: 'text',
-            label: 'Specialization',
-            name: ['customfields', 'enter_specialization'],
-            place: 'Enter Specialization',
-            id: 'Specialization',
-            type: 'text',
+            courses: [
+              {
+                value: "BA",
+                label: "BA",
+                specializations: [
+                  { "value": "Education", "label": "Education" },
+                  { "value": "English", "label": "English" },
+                  { "value": "Economics", "label": "Economics" },
+                  { "value": "History", "label": "History" },
+                  { "value": "Political science", "label": "Political science" },
+                  { "value": "Sociology", "label": "Sociology" },
+                  { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
+                ],
+
+              },
+
+            ]
           },
           {
             key: 'date',
@@ -3837,12 +3883,13 @@ const formData = [
             required: 'require'
           },
           {
-            key: 'date',
+            key: 'select',
             label: 'Session',
             name: ['customfields', 'session'],
-            place: 'eg: 2020-2023',
+            place: 'eg: jan 20-jan 23',
             id: 'Session',
-            type: 'text',
+            type: 'select',
+            options: ['jan 20-jan 20', 'july 20-july 20', 'jan 21-jan 21', 'july 21-july 21', 'jan 22-jan 22', 'july 22-july 22', 'jan 23-jan 23', 'july 23-july 23', 'jan 24-jan 24', 'july 24-july 24', 'jan 25-jan 25', 'july 25-july 25'],
             required: 'require'
           },
           {
@@ -3855,22 +3902,23 @@ const formData = [
             options: ['Fresher', 'LATERAL ENTRY',],
           },
           {
-            key: 'select',
-            label: 'Course Name',
-            name: ['education', 'course'],
-            id: 'course',
-            place: 'Enter Course Name',
-            type: 'select',
-            options: ['10th', '12th', 'BA', 'BBA', 'BCA', 'B.SC', 'B.COM', 'MA', 'MBA', 'MCA', 'MSC', 'MCOM', 'BTECH', 'MTECH', 'DIPLOMA', 'PG DIPLOMA', 'B.ED', 'LLB', 'B.LIB', 'M.LIB', 'BSW', 'MSW'],
-            required: 'require'
-          },
-          {
-            key: 'text',
-            label: 'Specialization',
-            name: ['customfields', 'enter_specialization'],
-            place: 'Enter Specialization',
-            id: 'Specialization',
-            type: 'text',
+            courses: [
+              {
+                value: "BA",
+                label: "BA",
+                specializations: [
+                  { "value": "Education", "label": "Education" },
+                  { "value": "English", "label": "English" },
+                  { "value": "Economics", "label": "Economics" },
+                  { "value": "History", "label": "History" },
+                  { "value": "Political science", "label": "Political science" },
+                  { "value": "Sociology", "label": "Sociology" },
+                  { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
+                ],
+
+              },
+
+            ]
           },
           {
             key: 'date',
@@ -4026,12 +4074,13 @@ const formData = [
             required: 'require'
           },
           {
-            key: 'date',
+            key: 'select',
             label: 'Session',
             name: ['customfields', 'session'],
-            place: 'eg: 2020-2023',
+            place: 'eg: jan 20-jan 23',
             id: 'Session',
-            type: 'text',
+            type: 'select',
+            options: ['jan 20-jan 20', 'july 20-july 20', 'jan 21-jan 21', 'july 21-july 21', 'jan 22-jan 22', 'july 22-july 22', 'jan 23-jan 23', 'july 23-july 23', 'jan 24-jan 24', 'july 24-july 24', 'jan 25-jan 25', 'july 25-july 25'],
             required: 'require'
           },
           {
@@ -4044,22 +4093,23 @@ const formData = [
             options: ['Fresher', 'LATERAL ENTRY',],
           },
           {
-            key: 'select',
-            label: 'Course Name',
-            name: ['education', 'course'],
-            id: 'course',
-            place: 'Enter Course Name',
-            type: 'select',
-            options: ['10th', '12th', 'BA', 'BBA', 'BCA', 'B.SC', 'B.COM', 'MA', 'MBA', 'MCA', 'MSC', 'MCOM', 'BTECH', 'MTECH', 'DIPLOMA', 'PG DIPLOMA', 'B.ED', 'LLB', 'B.LIB', 'M.LIB', 'BSW', 'MSW'],
-            required: 'require'
-          },
-          {
-            key: 'text',
-            label: 'Specialization',
-            name: ['customfields', 'enter_specialization'],
-            place: 'Enter Specialization',
-            id: 'Specialization',
-            type: 'text',
+            courses: [
+              {
+                value: "BA",
+                label: "BA",
+                specializations: [
+                  { "value": "Education", "label": "Education" },
+                  { "value": "English", "label": "English" },
+                  { "value": "Economics", "label": "Economics" },
+                  { "value": "History", "label": "History" },
+                  { "value": "Political science", "label": "Political science" },
+                  { "value": "Sociology", "label": "Sociology" },
+                  { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
+                ],
+
+              },
+
+            ]
           },
           {
             key: 'select',
@@ -4233,12 +4283,13 @@ const formData = [
             required: 'require'
           },
           {
-            key: 'date',
+            key: 'select',
             label: 'Session',
             name: ['customfields', 'session'],
-            place: 'eg: 2020-2023',
+            place: 'eg: jan 20-jan 23',
             id: 'Session',
-            type: 'text',
+            type: 'select',
+            options: ['jan 20-jan 20', 'july 20-july 20', 'jan 21-jan 21', 'july 21-july 21', 'jan 22-jan 22', 'july 22-july 22', 'jan 23-jan 23', 'july 23-july 23', 'jan 24-jan 24', 'july 24-july 24', 'jan 25-jan 25', 'july 25-july 25'],
             required: 'require'
           },
           {
@@ -4251,22 +4302,23 @@ const formData = [
             options: ['Fresher', 'LATERAL ENTRY',],
           },
           {
-            key: 'select',
-            label: 'Course Name',
-            name: ['education', 'course'],
-            id: 'course',
-            place: 'Enter Course Name',
-            type: 'select',
-            options: ['10th', '12th', 'BA', 'BBA', 'BCA', 'B.SC', 'B.COM', 'MA', 'MBA', 'MCA', 'MSC', 'MCOM', 'BTECH', 'MTECH', 'DIPLOMA', 'PG DIPLOMA', 'B.ED', 'LLB', 'B.LIB', 'M.LIB', 'BSW', 'MSW'],
-            required: 'require'
-          },
-          {
-            key: 'text',
-            label: 'Specialization',
-            name: ['customfields', 'enter_specialization'],
-            place: 'Enter Specialization',
-            id: 'Specialization',
-            type: 'text',
+            courses: [
+              {
+                value: "BA",
+                label: "BA",
+                specializations: [
+                  { "value": "Education", "label": "Education" },
+                  { "value": "English", "label": "English" },
+                  { "value": "Economics", "label": "Economics" },
+                  { "value": "History", "label": "History" },
+                  { "value": "Political science", "label": "Political science" },
+                  { "value": "Sociology", "label": "Sociology" },
+                  { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
+                ],
+
+              },
+
+            ]
           },
           {
             key: 'date',
@@ -4422,12 +4474,13 @@ const formData = [
             required: 'require'
           },
           {
-            key: 'date',
+            key: 'select',
             label: 'Session',
             name: ['customfields', 'session'],
-            place: 'eg: 2020-2023',
+            place: 'eg: jan 20-jan 23',
             id: 'Session',
-            type: 'text',
+            type: 'select',
+            options: ['jan 20-jan 20', 'july 20-july 20', 'jan 21-jan 21', 'july 21-july 21', 'jan 22-jan 22', 'july 22-july 22', 'jan 23-jan 23', 'july 23-july 23', 'jan 24-jan 24', 'july 24-july 24', 'jan 25-jan 25', 'july 25-july 25'],
             required: 'require'
           },
           {
@@ -4440,22 +4493,23 @@ const formData = [
             options: ['Fresher', 'LATERAL ENTRY',],
           },
           {
-            key: 'select',
-            label: 'Course Name',
-            name: ['education', 'course'],
-            id: 'course',
-            place: 'Enter Course Name',
-            type: 'select',
-            options: ['10th', '12th', 'BA', 'BBA', 'BCA', 'B.SC', 'B.COM', 'MA', 'MBA', 'MCA', 'MSC', 'MCOM', 'BTECH', 'MTECH', 'DIPLOMA', 'PG DIPLOMA', 'B.ED', 'LLB', 'B.LIB', 'M.LIB', 'BSW', 'MSW'],
-            required: 'require'
-          },
-          {
-            key: 'text',
-            label: 'Specialization',
-            name: ['customfields', 'enter_specialization'],
-            place: 'Enter Specialization',
-            id: 'Specialization',
-            type: 'text',
+            courses: [
+              {
+                value: "BA",
+                label: "BA",
+                specializations: [
+                  { "value": "Education", "label": "Education" },
+                  { "value": "English", "label": "English" },
+                  { "value": "Economics", "label": "Economics" },
+                  { "value": "History", "label": "History" },
+                  { "value": "Political science", "label": "Political science" },
+                  { "value": "Sociology", "label": "Sociology" },
+                  { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
+                ],
+
+              },
+
+            ]
           },
 
           {
@@ -4603,12 +4657,13 @@ const formData = [
             required: 'require'
           },
           {
-            key: 'date',
+            key: 'select',
             label: 'Session',
             name: ['customfields', 'session'],
-            place: 'eg: 2020-2023',
+            place: 'eg: jan 20-jan 23',
             id: 'Session',
-            type: 'text',
+            type: 'select',
+            options: ['jan 20-jan 20', 'july 20-july 20', 'jan 21-jan 21', 'july 21-july 21', 'jan 22-jan 22', 'july 22-july 22', 'jan 23-jan 23', 'july 23-july 23', 'jan 24-jan 24', 'july 24-july 24', 'jan 25-jan 25', 'july 25-july 25'],
             required: 'require'
           },
           {
@@ -4621,22 +4676,23 @@ const formData = [
             options: ['Fresher', 'LATERAL ENTRY',],
           },
           {
-            key: 'select',
-            label: 'Course Name',
-            name: ['education', 'course'],
-            id: 'course',
-            place: 'Enter Course Name',
-            type: 'select',
-            options: ['10th', '12th', 'BA', 'BBA', 'BCA', 'B.SC', 'B.COM', 'MA', 'MBA', 'MCA', 'MSC', 'MCOM', 'BTECH', 'MTECH', 'DIPLOMA', 'PG DIPLOMA', 'B.ED', 'LLB', 'B.LIB', 'M.LIB', 'BSW', 'MSW'],
-            required: 'require'
-          },
-          {
-            key: 'text',
-            label: 'Specialization',
-            name: ['customfields', 'enter_specialization'],
-            place: 'Enter Specialization',
-            id: 'Specialization',
-            type: 'text',
+            courses: [
+              {
+                value: "BA",
+                label: "BA",
+                specializations: [
+                  { "value": "Education", "label": "Education" },
+                  { "value": "English", "label": "English" },
+                  { "value": "Economics", "label": "Economics" },
+                  { "value": "History", "label": "History" },
+                  { "value": "Political science", "label": "Political science" },
+                  { "value": "Sociology", "label": "Sociology" },
+                  { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
+                ],
+
+              },
+
+            ]
           },
 
           {
@@ -4811,12 +4867,13 @@ const formData = [
             required: 'require'
           },
           {
-            key: 'date',
+            key: 'select',
             label: 'Session',
             name: ['customfields', 'session'],
-            place: 'eg: 2020-2023',
+            place: 'eg: jan 20-jan 23',
             id: 'Session',
-            type: 'text',
+            type: 'select',
+            options: ['jan 20-jan 20', 'july 20-july 20', 'jan 21-jan 21', 'july 21-july 21', 'jan 22-jan 22', 'july 22-july 22', 'jan 23-jan 23', 'july 23-july 23', 'jan 24-jan 24', 'july 24-july 24', 'jan 25-jan 25', 'july 25-july 25'],
             required: 'require'
           },
           {
@@ -4829,22 +4886,23 @@ const formData = [
             options: ['Fresher', 'LATERAL ENTRY',],
           },
           {
-            key: 'select',
-            label: 'Course Name',
-            name: ['education', 'course'],
-            id: 'course',
-            place: 'Enter Course Name',
-            type: 'select',
-            options: ['10th', '12th', 'BA', 'BBA', 'BCA', 'B.SC', 'B.COM', 'MA', 'MBA', 'MCA', 'MSC', 'MCOM', 'BTECH', 'MTECH', 'DIPLOMA', 'PG DIPLOMA', 'B.ED', 'LLB', 'B.LIB', 'M.LIB', 'BSW', 'MSW'],
-            required: 'require'
-          },
-          {
-            key: 'text',
-            label: 'Specialization',
-            name: ['customfields', 'enter_specialization'],
-            place: 'Enter Specialization',
-            id: 'Specialization',
-            type: 'text',
+            courses: [
+              {
+                value: "BA",
+                label: "BA",
+                specializations: [
+                  { "value": "Education", "label": "Education" },
+                  { "value": "English", "label": "English" },
+                  { "value": "Economics", "label": "Economics" },
+                  { "value": "History", "label": "History" },
+                  { "value": "Political science", "label": "Political science" },
+                  { "value": "Sociology", "label": "Sociology" },
+                  { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
+                ],
+
+              },
+
+            ]
           },
           {
             key: 'date',
@@ -5000,12 +5058,13 @@ const formData = [
             required: 'require'
           },
           {
-            key: 'date',
+            key: 'select',
             label: 'Session',
             name: ['customfields', 'session'],
-            place: 'eg: 2020-2023',
+            place: 'eg: jan 20-jan 23',
             id: 'Session',
-            type: 'text',
+            type: 'select',
+            options: ['jan 20-jan 20', 'july 20-july 20', 'jan 21-jan 21', 'july 21-july 21', 'jan 22-jan 22', 'july 22-july 22', 'jan 23-jan 23', 'july 23-july 23', 'jan 24-jan 24', 'july 24-july 24', 'jan 25-jan 25', 'july 25-july 25'],
             required: 'require'
           },
           {
@@ -5018,22 +5077,23 @@ const formData = [
             options: ['Fresher', 'LATERAL ENTRY',],
           },
           {
-            key: 'select',
-            label: 'Course Name',
-            name: ['education', 'course'],
-            id: 'course',
-            place: 'Enter Course Name',
-            type: 'select',
-            options: ['10th', '12th', 'BA', 'BBA', 'BCA', 'B.SC', 'B.COM', 'MA', 'MBA', 'MCA', 'MSC', 'MCOM', 'BTECH', 'MTECH', 'DIPLOMA', 'PG DIPLOMA', 'B.ED', 'LLB', 'B.LIB', 'M.LIB', 'BSW', 'MSW'],
-            required: 'require'
-          },
-          {
-            key: 'text',
-            label: 'Specialization',
-            name: ['customfields', 'enter_specialization'],
-            place: 'Enter Specialization',
-            id: 'Specialization',
-            type: 'text',
+            courses: [
+              {
+                value: "BA",
+                label: "BA",
+                specializations: [
+                  { "value": "Education", "label": "Education" },
+                  { "value": "English", "label": "English" },
+                  { "value": "Economics", "label": "Economics" },
+                  { "value": "History", "label": "History" },
+                  { "value": "Political science", "label": "Political science" },
+                  { "value": "Sociology", "label": "Sociology" },
+                  { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
+                ],
+
+              },
+
+            ]
           },
 
           {
@@ -5181,12 +5241,13 @@ const formData = [
             required: 'require'
           },
           {
-            key: 'date',
+            key: 'select',
             label: 'Session',
             name: ['customfields', 'session'],
-            place: 'eg: 2020-2023',
+            place: 'eg: jan 20-jan 23',
             id: 'Session',
-            type: 'text',
+            type: 'select',
+            options: ['jan 20-jan 20', 'july 20-july 20', 'jan 21-jan 21', 'july 21-july 21', 'jan 22-jan 22', 'july 22-july 22', 'jan 23-jan 23', 'july 23-july 23', 'jan 24-jan 24', 'july 24-july 24', 'jan 25-jan 25', 'july 25-july 25'],
             required: 'require'
           },
           {
@@ -5199,22 +5260,23 @@ const formData = [
             options: ['Fresher', 'LATERAL ENTRY',],
           },
           {
-            key: 'select',
-            label: 'Course Name',
-            name: ['education', 'course'],
-            id: 'course',
-            place: 'Enter Course Name',
-            type: 'select',
-            options: ['10th', '12th', 'BA', 'BBA', 'BCA', 'B.SC', 'B.COM', 'MA', 'MBA', 'MCA', 'MSC', 'MCOM', 'BTECH', 'MTECH', 'DIPLOMA', 'PG DIPLOMA', 'B.ED', 'LLB', 'B.LIB', 'M.LIB', 'BSW', 'MSW'],
-            required: 'require'
-          },
-          {
-            key: 'text',
-            label: 'Specialization',
-            name: ['customfields', 'enter_specialization'],
-            place: 'Enter Specialization',
-            id: 'Specialization',
-            type: 'text',
+            courses: [
+              {
+                value: "BA",
+                label: "BA",
+                specializations: [
+                  { "value": "Education", "label": "Education" },
+                  { "value": "English", "label": "English" },
+                  { "value": "Economics", "label": "Economics" },
+                  { "value": "History", "label": "History" },
+                  { "value": "Political science", "label": "Political science" },
+                  { "value": "Sociology", "label": "Sociology" },
+                  { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
+                ],
+
+              },
+
+            ]
           },
 
           {
@@ -5362,12 +5424,13 @@ const formData = [
             required: 'require'
           },
           {
-            key: 'date',
+            key: 'select',
             label: 'Session',
             name: ['customfields', 'session'],
-            place: 'eg: 2020-2023',
+            place: 'eg: jan 20-jan 23',
             id: 'Session',
-            type: 'text',
+            type: 'select',
+            options: ['jan 20-jan 20', 'july 20-july 20', 'jan 21-jan 21', 'july 21-july 21', 'jan 22-jan 22', 'july 22-july 22', 'jan 23-jan 23', 'july 23-july 23', 'jan 24-jan 24', 'july 24-july 24', 'jan 25-jan 25', 'july 25-july 25'],
             required: 'require'
           },
           {
@@ -5380,14 +5443,23 @@ const formData = [
             options: ['Fresher', 'LATERAL ENTRY',],
           },
           {
-            key: 'select',
-            label: 'Course Name',
-            name: ['education', 'course'],
-            id: 'course',
-            place: 'Enter Course Name',
-            type: 'select',
-            options: ['10th', '12th', 'BA', 'BBA', 'BCA', 'B.SC', 'B.COM', 'MA', 'MBA', 'MCA', 'MSC', 'MCOM', 'BTECH', 'MTECH', 'DIPLOMA', 'PG DIPLOMA', 'B.ED', 'LLB', 'B.LIB', 'M.LIB', 'BSW', 'MSW'],
-            required: 'require'
+            courses: [
+              {
+                value: "BA",
+                label: "BA",
+                specializations: [
+                  { "value": "Education", "label": "Education" },
+                  { "value": "English", "label": "English" },
+                  { "value": "Economics", "label": "Economics" },
+                  { "value": "History", "label": "History" },
+                  { "value": "Political science", "label": "Political science" },
+                  { "value": "Sociology", "label": "Sociology" },
+                  { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
+                ],
+
+              },
+
+            ]
           },
           {
             key: 'text',
@@ -5543,12 +5615,13 @@ const formData = [
             required: 'require'
           },
           {
-            key: 'date',
+            key: 'select',
             label: 'Session',
             name: ['customfields', 'session'],
-            place: 'eg: 2020-2023',
+            place: 'eg: jan 20-jan 23',
             id: 'Session',
-            type: 'text',
+            type: 'select',
+            options: ['jan 20-jan 20', 'july 20-july 20', 'jan 21-jan 21', 'july 21-july 21', 'jan 22-jan 22', 'july 22-july 22', 'jan 23-jan 23', 'july 23-july 23', 'jan 24-jan 24', 'july 24-july 24', 'jan 25-jan 25', 'july 25-july 25'],
             required: 'require'
           },
           {
@@ -5561,24 +5634,24 @@ const formData = [
             options: ['Fresher', 'LATERAL ENTRY',],
           },
           {
-            key: 'select',
-            label: 'Course Name',
-            name: ['education', 'course'],
-            id: 'course',
-            place: 'Enter Course Name',
-            type: 'select',
-            options: ['10th', '12th', 'BA', 'BBA', 'BCA', 'B.SC', 'B.COM', 'MA', 'MBA', 'MCA', 'MSC', 'MCOM', 'BTECH', 'MTECH', 'DIPLOMA', 'PG DIPLOMA', 'B.ED', 'LLB', 'B.LIB', 'M.LIB', 'BSW', 'MSW'],
-            required: 'require'
-          },
-          {
-            key: 'text',
-            label: 'Specialization',
-            name: ['customfields', 'enter_specialization'],
-            place: 'Enter Specialization',
-            id: 'Specialization',
-            type: 'text',
-          },
+            courses: [
+              {
+                value: "BA",
+                label: "BA",
+                specializations: [
+                  { "value": "Education", "label": "Education" },
+                  { "value": "English", "label": "English" },
+                  { "value": "Economics", "label": "Economics" },
+                  { "value": "History", "label": "History" },
+                  { "value": "Political science", "label": "Political science" },
+                  { "value": "Sociology", "label": "Sociology" },
+                  { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
+                ],
 
+              },
+
+            ]
+          },
           {
             key: 'select',
             label: 'Gender',
@@ -5751,12 +5824,13 @@ const formData = [
             required: 'require'
           },
           {
-            key: 'date',
+            key: 'select',
             label: 'Session',
             name: ['customfields', 'session'],
-            place: 'eg: 2020-2023',
+            place: 'eg: jan 20-jan 23',
             id: 'Session',
-            type: 'text',
+            type: 'select',
+            options: ['jan 20-jan 20', 'july 20-july 20', 'jan 21-jan 21', 'july 21-july 21', 'jan 22-jan 22', 'july 22-july 22', 'jan 23-jan 23', 'july 23-july 23', 'jan 24-jan 24', 'july 24-july 24', 'jan 25-jan 25', 'july 25-july 25'],
             required: 'require'
           },
           {
@@ -5769,22 +5843,23 @@ const formData = [
             options: ['Fresher', 'LATERAL ENTRY',],
           },
           {
-            key: 'select',
-            label: 'Course Name',
-            name: ['education', 'course'],
-            id: 'course',
-            place: 'Enter Course Name',
-            type: 'select',
-            options: ['10th', '12th', 'BA', 'BBA', 'BCA', 'B.SC', 'B.COM', 'MA', 'MBA', 'MCA', 'MSC', 'MCOM', 'BTECH', 'MTECH', 'DIPLOMA', 'PG DIPLOMA', 'B.ED', 'LLB', 'B.LIB', 'M.LIB', 'BSW', 'MSW'],
-            required: 'require'
-          },
-          {
-            key: 'text',
-            label: 'Specialization',
-            name: ['customfields', 'enter_specialization'],
-            place: 'Enter Specialization',
-            id: 'Specialization',
-            type: 'text',
+            courses: [
+              {
+                value: "BA",
+                label: "BA",
+                specializations: [
+                  { "value": "Education", "label": "Education" },
+                  { "value": "English", "label": "English" },
+                  { "value": "Economics", "label": "Economics" },
+                  { "value": "History", "label": "History" },
+                  { "value": "Political science", "label": "Political science" },
+                  { "value": "Sociology", "label": "Sociology" },
+                  { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
+                ],
+
+              },
+
+            ]
           },
           {
             key: 'date',
@@ -5967,12 +6042,13 @@ const formData = [
             required: 'require'
           },
           {
-            key: 'date',
+            key: 'select',
             label: 'Session',
             name: ['customfields', 'session'],
-            place: 'eg: 2020-2023',
+            place: 'eg: jan 20-jan 23',
             id: 'Session',
-            type: 'text',
+            type: 'select',
+            options: ['jan 20-jan 20', 'july 20-july 20', 'jan 21-jan 21', 'july 21-july 21', 'jan 22-jan 22', 'july 22-july 22', 'jan 23-jan 23', 'july 23-july 23', 'jan 24-jan 24', 'july 24-july 24', 'jan 25-jan 25', 'july 25-july 25'],
             required: 'require'
           },
           {
@@ -5985,22 +6061,23 @@ const formData = [
             options: ['Fresher', 'LATERAL ENTRY',],
           },
           {
-            key: 'select',
-            label: 'Course Name',
-            name: ['education', 'course'],
-            id: 'course',
-            place: 'Enter Course Name',
-            type: 'select',
-            options: ['10th', '12th', 'BA', 'BBA', 'BCA', 'B.SC', 'B.COM', 'MA', 'MBA', 'MCA', 'MSC', 'MCOM', 'BTECH', 'MTECH', 'DIPLOMA', 'PG DIPLOMA', 'B.ED', 'LLB', 'B.LIB', 'M.LIB', 'BSW', 'MSW'],
-            required: 'require'
-          },
-          {
-            key: 'text',
-            label: 'Specialization',
-            name: ['customfields', 'enter_specialization'],
-            place: 'Enter Specialization',
-            id: 'Specialization',
-            type: 'text',
+            courses: [
+              {
+                value: "BA",
+                label: "BA",
+                specializations: [
+                  { "value": "Education", "label": "Education" },
+                  { "value": "English", "label": "English" },
+                  { "value": "Economics", "label": "Economics" },
+                  { "value": "History", "label": "History" },
+                  { "value": "Political science", "label": "Political science" },
+                  { "value": "Sociology", "label": "Sociology" },
+                  { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
+                ],
+
+              },
+
+            ]
           },
           {
             key: 'date',
@@ -6183,12 +6260,13 @@ const formData = [
             required: 'require'
           },
           {
-            key: 'date',
+            key: 'select',
             label: 'Session',
             name: ['customfields', 'session'],
-            place: 'eg: 2020-2023',
+            place: 'eg: jan 20-jan 23',
             id: 'Session',
-            type: 'text',
+            type: 'select',
+            options: ['jan 20-jan 20', 'july 20-july 20', 'jan 21-jan 21', 'july 21-july 21', 'jan 22-jan 22', 'july 22-july 22', 'jan 23-jan 23', 'july 23-july 23', 'jan 24-jan 24', 'july 24-july 24', 'jan 25-jan 25', 'july 25-july 25'],
             required: 'require'
           },
           {
@@ -6201,22 +6279,23 @@ const formData = [
             options: ['Fresher', 'LATERAL ENTRY',],
           },
           {
-            key: 'select',
-            label: 'Course Name',
-            name: ['education', 'course'],
-            id: 'course',
-            place: 'Enter Course Name',
-            type: 'select',
-            options: ['10th', '12th', 'BA', 'BBA', 'BCA', 'B.SC', 'B.COM', 'MA', 'MBA', 'MCA', 'MSC', 'MCOM', 'BTECH', 'MTECH', 'DIPLOMA', 'PG DIPLOMA', 'B.ED', 'LLB', 'B.LIB', 'M.LIB', 'BSW', 'MSW'],
-            required: 'require'
-          },
-          {
-            key: 'text',
-            label: 'Specialization',
-            name: ['customfields', 'enter_specialization'],
-            place: 'Enter Specialization',
-            id: 'Specialization',
-            type: 'text',
+            courses: [
+              {
+                value: "BA",
+                label: "BA",
+                specializations: [
+                  { "value": "Education", "label": "Education" },
+                  { "value": "English", "label": "English" },
+                  { "value": "Economics", "label": "Economics" },
+                  { "value": "History", "label": "History" },
+                  { "value": "Political science", "label": "Political science" },
+                  { "value": "Sociology", "label": "Sociology" },
+                  { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
+                ],
+
+              },
+
+            ]
           },
           {
             key: 'date',
@@ -6399,12 +6478,13 @@ const formData = [
             required: 'require'
           },
           {
-            key: 'date',
+            key: 'select',
             label: 'Session',
             name: ['customfields', 'session'],
-            place: 'eg: 2020-2023',
+            place: 'eg: jan 20-jan 23',
             id: 'Session',
-            type: 'text',
+            type: 'select',
+            options: ['jan 20-jan 20', 'july 20-july 20', 'jan 21-jan 21', 'july 21-july 21', 'jan 22-jan 22', 'july 22-july 22', 'jan 23-jan 23', 'july 23-july 23', 'jan 24-jan 24', 'july 24-july 24', 'jan 25-jan 25', 'july 25-july 25'],
             required: 'require'
           },
           {
@@ -6417,22 +6497,23 @@ const formData = [
             options: ['Fresher', 'LATERAL ENTRY',],
           },
           {
-            key: 'select',
-            label: 'Course Name',
-            name: ['education', 'course'],
-            id: 'course',
-            place: 'Enter Course Name',
-            type: 'select',
-            options: ['10th', '12th', 'BA', 'BBA', 'BCA', 'B.SC', 'B.COM', 'MA', 'MBA', 'MCA', 'MSC', 'MCOM', 'BTECH', 'MTECH', 'DIPLOMA', 'PG DIPLOMA', 'B.ED', 'LLB', 'B.LIB', 'M.LIB', 'BSW', 'MSW'],
-            required: 'require'
-          },
-          {
-            key: 'text',
-            label: 'Specialization',
-            name: ['customfields', 'enter_specialization'],
-            place: 'Enter Specialization',
-            id: 'Specialization',
-            type: 'text',
+            courses: [
+              {
+                value: "BA",
+                label: "BA",
+                specializations: [
+                  { "value": "Education", "label": "Education" },
+                  { "value": "English", "label": "English" },
+                  { "value": "Economics", "label": "Economics" },
+                  { "value": "History", "label": "History" },
+                  { "value": "Political science", "label": "Political science" },
+                  { "value": "Sociology", "label": "Sociology" },
+                  { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
+                ],
+
+              },
+
+            ]
           },
           {
             key: 'date',
@@ -6588,12 +6669,13 @@ const formData = [
             required: 'require'
           },
           {
-            key: 'date',
+            key: 'select',
             label: 'Session',
             name: ['customfields', 'session'],
-            place: 'eg: 2020-2023',
+            place: 'eg: jan 20-jan 23',
             id: 'Session',
-            type: 'text',
+            type: 'select',
+            options: ['jan 20-jan 20', 'july 20-july 20', 'jan 21-jan 21', 'july 21-july 21', 'jan 22-jan 22', 'july 22-july 22', 'jan 23-jan 23', 'july 23-july 23', 'jan 24-jan 24', 'july 24-july 24', 'jan 25-jan 25', 'july 25-july 25'],
             required: 'require'
           },
           {
@@ -6606,22 +6688,23 @@ const formData = [
             options: ['Fresher', 'LATERAL ENTRY',],
           },
           {
-            key: 'select',
-            label: 'Course Name',
-            name: ['education', 'course'],
-            id: 'course',
-            place: 'Enter Course Name',
-            type: 'select',
-            options: ['10th', '12th', 'BA', 'BBA', 'BCA', 'B.SC', 'B.COM', 'MA', 'MBA', 'MCA', 'MSC', 'MCOM', 'BTECH', 'MTECH', 'DIPLOMA', 'PG DIPLOMA', 'B.ED', 'LLB', 'B.LIB', 'M.LIB', 'BSW', 'MSW'],
-            required: 'require'
-          },
-          {
-            key: 'text',
-            label: 'Specialization',
-            name: ['customfields', 'enter_specialization'],
-            place: 'Enter Specialization',
-            id: 'Specialization',
-            type: 'text',
+            courses: [
+              {
+                value: "BA",
+                label: "BA",
+                specializations: [
+                  { "value": "Education", "label": "Education" },
+                  { "value": "English", "label": "English" },
+                  { "value": "Economics", "label": "Economics" },
+                  { "value": "History", "label": "History" },
+                  { "value": "Political science", "label": "Political science" },
+                  { "value": "Sociology", "label": "Sociology" },
+                  { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
+                ],
+
+              },
+
+            ]
           },
 
           {
@@ -6769,12 +6852,13 @@ const formData = [
             required: 'require'
           },
           {
-            key: 'date',
+            key: 'select',
             label: 'Session',
             name: ['customfields', 'session'],
-            place: 'eg: 2020-2023',
+            place: 'eg: jan 20-jan 23',
             id: 'Session',
-            type: 'text',
+            type: 'select',
+            options: ['jan 20-jan 20', 'july 20-july 20', 'jan 21-jan 21', 'july 21-july 21', 'jan 22-jan 22', 'july 22-july 22', 'jan 23-jan 23', 'july 23-july 23', 'jan 24-jan 24', 'july 24-july 24', 'jan 25-jan 25', 'july 25-july 25'],
             required: 'require'
           },
           {
@@ -6787,22 +6871,23 @@ const formData = [
             options: ['Fresher', 'LATERAL ENTRY',],
           },
           {
-            key: 'select',
-            label: 'Course Name',
-            name: ['education', 'course'],
-            id: 'course',
-            place: 'Enter Course Name',
-            type: 'select',
-            options: ['10th', '12th', 'BA', 'BBA', 'BCA', 'B.SC', 'B.COM', 'MA', 'MBA', 'MCA', 'MSC', 'MCOM', 'BTECH', 'MTECH', 'DIPLOMA', 'PG DIPLOMA', 'B.ED', 'LLB', 'B.LIB', 'M.LIB', 'BSW', 'MSW'],
-            required: 'require'
-          },
-          {
-            key: 'text',
-            label: 'Specialization',
-            name: ['customfields', 'enter_specialization'],
-            place: 'Enter Specialization',
-            id: 'Specialization',
-            type: 'text',
+            courses: [
+              {
+                value: "BA",
+                label: "BA",
+                specializations: [
+                  { "value": "Education", "label": "Education" },
+                  { "value": "English", "label": "English" },
+                  { "value": "Economics", "label": "Economics" },
+                  { "value": "History", "label": "History" },
+                  { "value": "Political science", "label": "Political science" },
+                  { "value": "Sociology", "label": "Sociology" },
+                  { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
+                ],
+
+              },
+
+            ]
           },
 
           {
@@ -6950,12 +7035,13 @@ const formData = [
             required: 'require'
           },
           {
-            key: 'date',
+            key: 'select',
             label: 'Session',
             name: ['customfields', 'session'],
-            place: 'eg: 2020-2023',
+            place: 'eg: jan 20-jan 23',
             id: 'Session',
-            type: 'text',
+            type: 'select',
+            options: ['jan 20-jan 20', 'july 20-july 20', 'jan 21-jan 21', 'july 21-july 21', 'jan 22-jan 22', 'july 22-july 22', 'jan 23-jan 23', 'july 23-july 23', 'jan 24-jan 24', 'july 24-july 24', 'jan 25-jan 25', 'july 25-july 25'],
             required: 'require'
           },
           {
@@ -6968,22 +7054,23 @@ const formData = [
             options: ['Fresher', 'LATERAL ENTRY',],
           },
           {
-            key: 'select',
-            label: 'Course Name',
-            name: ['education', 'course'],
-            id: 'course',
-            place: 'Enter Course Name',
-            type: 'select',
-            options: ['10th', '12th', 'BA', 'BBA', 'BCA', 'B.SC', 'B.COM', 'MA', 'MBA', 'MCA', 'MSC', 'MCOM', 'BTECH', 'MTECH', 'DIPLOMA', 'PG DIPLOMA', 'B.ED', 'LLB', 'B.LIB', 'M.LIB', 'BSW', 'MSW'],
-            required: 'require'
-          },
-          {
-            key: 'text',
-            label: 'Specialization',
-            name: ['customfields', 'enter_specialization'],
-            place: 'Enter Specialization',
-            id: 'Specialization',
-            type: 'text',
+            courses: [
+              {
+                value: "BA",
+                label: "BA",
+                specializations: [
+                  { "value": "Education", "label": "Education" },
+                  { "value": "English", "label": "English" },
+                  { "value": "Economics", "label": "Economics" },
+                  { "value": "History", "label": "History" },
+                  { "value": "Political science", "label": "Political science" },
+                  { "value": "Sociology", "label": "Sociology" },
+                  { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
+                ],
+
+              },
+
+            ]
           },
 
           {
@@ -7158,12 +7245,13 @@ const formData = [
             required: 'require'
           },
           {
-            key: 'date',
+            key: 'select',
             label: 'Session',
             name: ['customfields', 'session'],
-            place: 'eg: 2020-2023',
+            place: 'eg: jan 20-jan 23',
             id: 'Session',
-            type: 'text',
+            type: 'select',
+            options: ['jan 20-jan 20', 'july 20-july 20', 'jan 21-jan 21', 'july 21-july 21', 'jan 22-jan 22', 'july 22-july 22', 'jan 23-jan 23', 'july 23-july 23', 'jan 24-jan 24', 'july 24-july 24', 'jan 25-jan 25', 'july 25-july 25'],
             required: 'require'
           },
           {
@@ -7176,22 +7264,23 @@ const formData = [
             options: ['Fresher', 'LATERAL ENTRY',],
           },
           {
-            key: 'select',
-            label: 'Course Name',
-            name: ['education', 'course'],
-            id: 'course',
-            place: 'Enter Course Name',
-            type: 'select',
-            options: ['10th', '12th', 'BA', 'BBA', 'BCA', 'B.SC', 'B.COM', 'MA', 'MBA', 'MCA', 'MSC', 'MCOM', 'BTECH', 'MTECH', 'DIPLOMA', 'PG DIPLOMA', 'B.ED', 'LLB', 'B.LIB', 'M.LIB', 'BSW', 'MSW'],
-            required: 'require'
-          },
-          {
-            key: 'text',
-            label: 'Specialization',
-            name: ['customfields', 'enter_specialization'],
-            place: 'Enter Specialization',
-            id: 'Specialization',
-            type: 'text',
+            courses: [
+              {
+                value: "BA",
+                label: "BA",
+                specializations: [
+                  { "value": "Education", "label": "Education" },
+                  { "value": "English", "label": "English" },
+                  { "value": "Economics", "label": "Economics" },
+                  { "value": "History", "label": "History" },
+                  { "value": "Political science", "label": "Political science" },
+                  { "value": "Sociology", "label": "Sociology" },
+                  { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
+                ],
+
+              },
+
+            ]
           },
           {
             key: 'date',
@@ -7374,12 +7463,13 @@ const formData = [
             required: 'require'
           },
           {
-            key: 'date',
+            key: 'select',
             label: 'Session',
             name: ['customfields', 'session'],
-            place: 'eg: 2020-2023',
+            place: 'eg: jan 20-jan 23',
             id: 'Session',
-            type: 'text',
+            type: 'select',
+            options: ['jan 20-jan 20', 'july 20-july 20', 'jan 21-jan 21', 'july 21-july 21', 'jan 22-jan 22', 'july 22-july 22', 'jan 23-jan 23', 'july 23-july 23', 'jan 24-jan 24', 'july 24-july 24', 'jan 25-jan 25', 'july 25-july 25'],
             required: 'require'
           },
           {
@@ -7392,22 +7482,23 @@ const formData = [
             options: ['Fresher', 'LATERAL ENTRY',],
           },
           {
-            key: 'select',
-            label: 'Course Name',
-            name: ['education', 'course'],
-            id: 'course',
-            place: 'Enter Course Name',
-            type: 'select',
-            options: ['10th', '12th', 'BA', 'BBA', 'BCA', 'B.SC', 'B.COM', 'MA', 'MBA', 'MCA', 'MSC', 'MCOM', 'BTECH', 'MTECH', 'DIPLOMA', 'PG DIPLOMA', 'B.ED', 'LLB', 'B.LIB', 'M.LIB', 'BSW', 'MSW'],
-            required: 'require'
-          },
-          {
-            key: 'text',
-            label: 'Specialization',
-            name: ['customfields', 'enter_specialization'],
-            place: 'Enter Specialization',
-            id: 'Specialization',
-            type: 'text',
+            courses: [
+              {
+                value: "BA",
+                label: "BA",
+                specializations: [
+                  { "value": "Education", "label": "Education" },
+                  { "value": "English", "label": "English" },
+                  { "value": "Economics", "label": "Economics" },
+                  { "value": "History", "label": "History" },
+                  { "value": "Political science", "label": "Political science" },
+                  { "value": "Sociology", "label": "Sociology" },
+                  { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
+                ],
+
+              },
+
+            ]
           },
           {
             key: 'date',

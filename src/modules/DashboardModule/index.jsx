@@ -1,4 +1,4 @@
-import { Tag, Row, Col, Select, message, Button } from 'antd';
+import { Tag, Row, Col, Select, message, Button, Input } from 'antd';
 import useLanguage from '@/locale/useLanguage';
 import { useMoney } from '@/settings';
 import { request } from '@/request';
@@ -16,16 +16,14 @@ export default function DashboardModule() {
   const [institutes, setInstitutes] = useState([]);
   const [universities, setUniversities] = useState([]);
   const [counselors, setCounselors] = useState([]);
-  const [selectedTimePeriod, setSelectedTimePeriod] = useState('month');
   const [selectedInstitute, setSelectedInstitute] = useState('');
   const [selectedUniversity, setSelectedUniversity] = useState('');
   const [selectedCounselor, setSelectedCounselor] = useState('');
+  const [selectedDate, setSelectedDate] = useState('');
   const [filteredPaymentData, setFilteredPaymentData] = useState({});
   const [universityExistenceMessage, setUniversityExistenceMessage] = useState('');
 
-  const handleTimePeriodChange = (value) => {
-    setSelectedTimePeriod(value);
-  };
+
 
   const handleInstituteChange = (value) => {
     setSelectedInstitute(value);
@@ -48,10 +46,17 @@ export default function DashboardModule() {
     setSelectedCounselor(value);
   };
 
+
+
+  const handleDateChange = (e) => {
+    setSelectedDate(e.target.value);
+  };
+
   const resetData = () => {
     setSelectedInstitute('');
     setSelectedUniversity('');
     setSelectedCounselor('');
+    setSelectedDate('');
     setFilteredPaymentData({});
     setUniversityExistenceMessage('');
   };
@@ -81,20 +86,40 @@ export default function DashboardModule() {
 
   useEffect(() => {
     const fetchData = async () => {
-      if (selectedInstitute || selectedUniversity || selectedCounselor) {
+      if (selectedInstitute || selectedUniversity || selectedCounselor || selectedDate) {
         try {
           const response = await fetch(
-            `${import.meta.env.VITE_BACKEND_SERVER}api/payment/summary?type=${selectedTimePeriod}&institute_name=${selectedInstitute}&university_name=${selectedUniversity}&counselor_email=${selectedCounselor}`
+            `${import.meta.env.VITE_BACKEND_SERVER}api/payment/summary?institute_name=${selectedInstitute}&university_name=${selectedUniversity}&counselor_email=${selectedCounselor}&date=${selectedDate}`
           );
           const data = await response.json();
-
           if (data.success && data.result !== null) {
             setFilteredPaymentData(data.result || {});
+
+            let successMessage = 'Data fetched successfully.';
+            if (selectedUniversity) {
+              successMessage = `Data fetched successfully for the specified university: ${selectedUniversity}.`;
+            } else if (selectedInstitute) {
+              successMessage = `Data fetched successfully for the specified institute: ${selectedInstitute}.`;
+            } else if (selectedCounselor) {
+              successMessage = `Data fetched successfully for the specified counselor: ${selectedCounselor}.`;
+            } else if (selectedDate) {
+              successMessage = `Data fetched successfully for the specified date: ${selectedDate}.`;
+            }
+
+            message.success(successMessage);
           } else {
             setFilteredPaymentData({ total_course_fee: 0 }); // Set payment to 0
-            message.error(
-              `The specified university (${selectedUniversity}) does not exist in the dataset.`
-            );
+            let errorMessage = 'No data found based on the specified filters.';
+            if (selectedUniversity) {
+              errorMessage = `No data found for the specified filters and university: ${selectedUniversity}.`;
+            } else if (selectedInstitute) {
+              errorMessage = `No data found for the specified filters and institute: ${selectedInstitute}.`;
+            } else if (selectedCounselor) {
+              errorMessage = `No data found for the specified filters and counselor: ${selectedCounselor}.`;
+            } else if (selectedDate) {
+              errorMessage = `No data found for the specified filters and date: ${selectedDate}.`;
+            }
+            message.error(errorMessage);
           }
         } catch (error) {
           console.error('Error fetching data:', error);
@@ -102,7 +127,8 @@ export default function DashboardModule() {
       }
     };
     fetchData();
-  }, [selectedInstitute, selectedUniversity, selectedCounselor, selectedTimePeriod]);
+  }, [selectedInstitute, selectedUniversity, selectedCounselor, selectedDate]);
+
   const { result: invoiceResult, isLoading: invoiceLoading } = useFetch(() =>
     request.summary({ entity: 'invoice' })
   );
@@ -246,7 +272,7 @@ export default function DashboardModule() {
           </Col>
         </Row>
       )}
-      <div className='flex justify-items-start items-center gap-7 mb-[30px]'>
+      <div className='flex justify-items-start items-center mb-[30px]'>
         <Select
           value={selectedInstitute}
           onChange={handleInstituteChange}
@@ -287,14 +313,12 @@ export default function DashboardModule() {
           ))}
         </Select>
 
-        <Select
-          value={selectedTimePeriod}
-          onChange={handleTimePeriodChange} style={{ width: 200, marginRight: 16 }}
-        >
-          <Select.Option value='week'>Week</Select.Option>
-          <Select.Option value='month'>Month</Select.Option>
-          <Select.Option value='year'>Year</Select.Option>
-        </Select>
+        <Input className='text-sm font-thin'
+          type='date'
+          onChange={handleDateChange}
+          value={selectedDate}
+          style={{ width: '140px', marginRight: '16px', textTransform: 'uppercase', }}
+        />
 
         <Button onClick={resetData}>Reset All</Button>
       </div>
