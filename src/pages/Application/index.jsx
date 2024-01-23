@@ -13,8 +13,29 @@ export default function Lead() {
     searchFields: ['full_name', 'company', 'contact.email'],
     outputValue: '_id',
   };
-
-
+  const counselorEmailToName = {
+    'zarin@highereducationschool.com': 'Zarin',
+    'kanchan@highereducationschool.com': 'Kanchan',
+    'kirti@highereducationschool.com': 'Kirti',
+    'ramandeep@highereducationschool.com': 'Raman',
+    'kavita@highereducationschool.com': 'Kavita',
+    'imra@highereducationschool.com': 'Imra',
+    'mahak@highereducationschool.com': 'Mahek',
+    'abhay@highereducationschool.com': 'Abhay',
+    'swati@highereducationschool.com': 'Swati',
+    'gulshan@highereducationschool.com': 'Gulshan',
+    'isha@highereducationschool.com': 'Isha',
+    'sakshi@highereducationschool.com': 'Sakshi',
+    'aashita@highereducationschool.com': 'Ashita',
+    'pratibha@highereducationschool.com': 'Pratibha',
+    'shreyashi@highereducationschool.com': 'Shreyashi',
+  };
+  const toTitleCase = (str) => {
+    if (!str) return ''; // Check for undefined or null
+    return str.toLowerCase().replace(/(?:^|\s)\w/g, function (match) {
+      return match.toUpperCase();
+    });
+  };
   const entityDisplayLabels = ['number', 'company'];
 
   const readColumns = [
@@ -125,15 +146,16 @@ export default function Lead() {
       title: translate('StudentID'),
       dataIndex: ['lead_id'],
     },
-
     {
       title: translate('Student Name'),
       dataIndex: ['full_name'],
+      render: (text) => toTitleCase(text),
     },
     {
       title: 'Email',
       dataIndex: ['contact', 'email'],
       key: 'email',
+      render: (email) => toTitleCase(email),
     },
     {
       title: 'Phone',
@@ -171,11 +193,11 @@ export default function Lead() {
       dataIndex: ['customfields', 'university_name'],
       key: 'university_name',
     },
-
     {
-      title: translate('Counselor Email'),
+      title: translate('Counselor Name'),
       dataIndex: ['customfields', 'counselor_email'],
-      key: 'counselor_email'
+      key: 'counselor_email',
+      render: (email) => toTitleCase(counselorEmailToName[email] || email),
     },
 
     {

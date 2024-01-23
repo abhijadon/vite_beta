@@ -36,7 +36,6 @@
 }
 .collapsed {
   overflow: hidden;
-  height: 250px;
   margin-top: 0 !important;
 }
 

@@ -325,7 +325,11 @@ export default function DataTable({ config, extra = [] }) {
   const handleExportModalCancel = () => {
     setExportModalVisible(false);
   };
-
+  const extractNameFromEmail = (email) => {
+    if (!email) return ''; // Add a check for undefined or null
+    const parts = email.split('@');
+    return parts[0];
+  };
   return (
     <>
       {entity === 'lead' && (
@@ -397,22 +401,25 @@ export default function DataTable({ config, extra = [] }) {
 
           <div className="filter-container">
             <Select
-              placeholder="Select Counselor Email"
+              placeholder="Select Counselor"
               style={{ width: 200, marginRight: 16 }}
               onChange={(value) => handleSelectChange('counselor_email', value)}
               value={selectedFilters.counselor_email}
             >
-              {selectOptions.counselorEmails.map((email) => (
-                <Option key={email} value={email}>
-                  {email}
-                </Option>
-              ))}
+              {selectOptions.counselorEmails.map((email) => {
+                const name = extractNameFromEmail(email); // Replace this function with your logic to extract the name from the email
+                return (
+                  <Option key={email} value={email}>
+                    {name}
+                  </Option>
+                );
+              })}
             </Select>
             <p
               onClick={() => resetFilters('counselor_email')}
               className="text-red-600 font-thin text-[12px] cursor-pointer"
             >
-              Reset Counselor Email
+              Reset Counselor
             </p>
           </div>
           <div>

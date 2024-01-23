@@ -52,7 +52,7 @@ export default function SidePanel({ config, topContent, bottomContent, fixHeader
 
   return (
     <Modal
-      title="ERP"
+      title="ERP_SODE"
       visible={!isPanelClose} // Use the visibility property
       onCancel={collapsePanel} // Use onCancel instead of onClose
       footer={null}

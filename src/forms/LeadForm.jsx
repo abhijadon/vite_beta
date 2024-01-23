@@ -237,7 +237,7 @@ export default function LeadForm() {
           return (
             <Form.Item
               key={field.id}
-              label={capitalizedLabel}
+              label={field.label ? field.label.charAt(0).toUpperCase() + field.label.slice(1) : ''}
               name={field.name}
               rules={[
                 {
@@ -245,10 +245,8 @@ export default function LeadForm() {
                   validator: (_, value) => {
                     return new Promise((resolve, reject) => {
                       if (value || field.required !== 'require') {
-                        // If the value is not empty or the field is not required, resolve
                         resolve();
                       } else {
-                        // If the value is empty and the field is required, reject and show notification
                         openNotification(field.label);
                         reject(`${field.label} is required.`);
                       }
@@ -259,11 +257,13 @@ export default function LeadForm() {
             >
               <Select placeholder={field.place}>
                 {field.options.map((option) => (
-                  <Option key={option} value={option}>{option}</Option>
+                  <Option key={option.value} value={option.value}>
+                    {option.label ? option.label.charAt(0).toUpperCase() + option.label.slice(1) : ''}
+                  </Option>
                 ))}
               </Select>
             </Form.Item>
-          )
+          );
         case 'number':
           return (
             <Form.Item
@@ -342,7 +342,7 @@ export default function LeadForm() {
                 },
               ]}
             >
-              <Input.TextArea rows={4} placeholder={field.place} />
+              <Input.TextArea rows={7} placeholder={field.place} />
             </Form.Item>
           );
         case 'file':

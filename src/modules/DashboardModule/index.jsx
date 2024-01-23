@@ -83,7 +83,6 @@ export default function DashboardModule() {
     fetchData();
   }, []);
 
-
   useEffect(() => {
     const fetchData = async () => {
       if (selectedInstitute || selectedUniversity || selectedCounselor || selectedDate) {
@@ -101,7 +100,7 @@ export default function DashboardModule() {
             } else if (selectedInstitute) {
               successMessage = `Data fetched successfully for the specified institute: ${selectedInstitute}.`;
             } else if (selectedCounselor) {
-              successMessage = `Data fetched successfully for the specified counselor: ${selectedCounselor}.`;
+              successMessage = `Data fetched successfully for the specified counselor: ${getEmailName(selectedCounselor)}.`;
             } else if (selectedDate) {
               successMessage = `Data fetched successfully for the specified date: ${selectedDate}.`;
             }
@@ -115,7 +114,7 @@ export default function DashboardModule() {
             } else if (selectedInstitute) {
               errorMessage = `No data found for the specified filters and institute: ${selectedInstitute}.`;
             } else if (selectedCounselor) {
-              errorMessage = `No data found for the specified filters and counselor: ${selectedCounselor}.`;
+              errorMessage = `No data found for the specified filters and counselor: ${getEmailName(selectedCounselor)}.`;
             } else if (selectedDate) {
               errorMessage = `No data found for the specified filters and date: ${selectedDate}.`;
             }
@@ -125,6 +124,13 @@ export default function DashboardModule() {
           console.error('Error fetching data:', error);
         }
       }
+    };
+
+    const getEmailName = (email) => {
+      console.log('Email:', email); // Log the email value
+      if (!email) return '';
+      const parts = email.split('@');
+      return parts[0];
     };
     fetchData();
   }, [selectedInstitute, selectedUniversity, selectedCounselor, selectedDate]);
@@ -262,7 +268,12 @@ export default function DashboardModule() {
       tagContent={`${moneyFormatter({ amount: filteredPaymentData.due_amount || paymentResult?.due_amount })}`}
     />
   );
-
+  const getEmailName = (email) => {
+    console.log('Email:', email); // Log the email value
+    if (!email) return '';
+    const parts = email.split('@');
+    return parts[0];
+  };
   return (
     <>
       {universityExistenceMessage && (
@@ -306,9 +317,9 @@ export default function DashboardModule() {
           style={{ width: 200, marginRight: 16 }}
         >
           <Select.Option value=''>Select Counselor</Select.Option>
-          {counselors.map((option) => (
-            <Select.Option key={option} value={option}>
-              {option}
+          {counselors.map((email) => (
+            <Select.Option key={email} value={email}>
+              {getEmailName(email)}
             </Select.Option>
           ))}
         </Select>
