@@ -122,7 +122,61 @@ export default function LeadForm() {
                         { value: 'Sakshi@highereducationschool.com', label: 'Sakshi' },
                         { value: 'aashita@highereducationschool.com', label: 'aashita' },
                         { value: 'pratibha@highereducationschool.com', label: 'pratibha' },
-                        { value: 'shreyashi@highereducationschool.com', label: 'Shreyashi ' }
+                        { value: 'shreyashi@highereducationschool.com', label: 'Shreyashi ' },
+                        { value: 'apoorvasrivastava@distanceeducationschool.com', label: 'Apoorva_DES' },
+                        { value: 'asma@distanceeducationschool.com', label: 'Asma_DES' },
+                        { value: 'nehaprashar@distanceeducationschool.com', label: 'Neha_Prasher_DES' },
+                        { value: 'priya@distanceeducationschool.com', label: 'Priya_DES' },
+                        { value: 'diksha@distanceeducationschool.com', label: 'Diksha_DES' },
+                        { value: 'abhilasha@distanceeducationschool.com', label: 'Abhilasha_Gupta_DES' },
+                        { value: 'saher@distanceeducationschool.com', label: 'Saher_Khan_DES' },
+                        { value: 'fiza@distanceeducationschool.com', label: 'Fiza_DES' },
+                        { value: 'muskan@distanceeducationschool.com', label: 'Muskaan_DES' },
+                        { value: 'aniruddh@distanceeducationschool.com', label: 'Aniruddh_DES' },
+                        { value: 'deva@distanceeducationschool.com', label: 'Devendra_DES' },
+                        { value: 'amritpal@distanceeducationschool.com', label: 'Amritpal_DES' },
+                        { value: 'Salman@distanceeducationschool.com:', label: 'Salman_DES' },
+                        { value: 'tariq@distanceeducationschool.com', label: 'Traiq_DES' },
+                        { value: 'shivam@distanceeducationschool.com', label: 'Shivam_sharma_DES' },
+                        { value: 'pushpa@distanceeducationschool.com', label: 'Puspa_DES' },
+                        { value: 'zarin@distanceeducationschool.com', label: 'Zarin_DES' },
+                        { value: 'kanchan@distanceeducationschool.com', label: 'Kanchan_DES' },
+                        { value: 'manu@distanceeducationschool.com', label: 'Manu_DES' },
+
+                        // Jain Team Emails
+                        { value: 'a.anitha.ju@gmail.com', label: 'Anita_JU' },
+                        { value: 'vaniruckmani.ju@gmail.com', label: 'Vani_Ruckmani_JU' },
+                        { value: 'priyankapalle.ju@gmail.com', label: 'Priyanka_JU' },
+                        { value: 'SwatiRamani.manipal@gmail.com', label: 'Swati_JU' },
+
+                        // Manipal Team Email
+                        { value: 'ankitakumari.manipal@gmail.com', label: 'Ankita_MU' },
+                        { value: 'medhahandoo.manipal@gmail.com', label: 'Medha_MU' },
+                        { value: 'amreen.manipal@gmail.com', label: 'Amreen_MU' },
+
+                        // Support Team Email
+                        { value: 'rajesh@distanceeducationschool.com', label: 'Rajesh_sir' },
+                        { value: 'manisha@distanceeducationschool.com', label: 'Manisha' },
+                        { value: 'admin@distanceeducationschool.com', label: 'Nouman_sir' },
+                        { value: 'sandy@distanceeducationschool.com', label: 'Sandy' },
+                        { value: 'neha@distanceeducationschool.com', label: 'Neha' },
+                        { value: 'yashpriya@distanceeducationschool.com', label: 'Yash_Priya' },
+                        { value: 'kavitahaldar@distanceeducationschool.com', label: 'kavitahaldar' },
+                        { value: 'ifla@distanceeducationschool.com', label: 'Ifla' },
+                        { value: 'shalu@distanceeducationschool.com', label: 'Shalu' },
+                        { value: 'zainubia@distanceeducationschool.com', label: 'zainbuia' },
+                        { value: 'pallovi@distanceeducationschool.com', label: 'Pallovi' },
+                        { value: 'kavitakumari@distanceeducationschool.com', label: 'Kavita_Kumari' },
+                        { value: 'manshi@distanceeducationschool.com', label: 'Mansi' },
+                        { value: 'Bhavya.manipal@gmail.com', label: 'Bhavya' },
+                        { value: 'anurag@distanceeducationschool.com', label: 'Anuraj' },
+                        { value: 'rupal@distanceeducationschool.com', label: 'Rupal' },
+                        //B2B Team Email
+                        { value: 'spuhelpdesk@gmail.com', label: 'Binny' },
+                        { value: 'ruchika.spu@gmail.com', label: 'Ruchika' },
+                        { value: 'lalit@distanceeducationschool.com', label: 'Lalit_DES' },
+                        { value: 'lalit.spu@gmail.com', label: 'Lalit' },
+                        { value: 'ramiz.spu@gmail.com', label: 'Ramiz' },
                     ]}>
 
                     </Select>
