@@ -110,6 +110,7 @@ const formData = [
                 value: "BA",
                 label: "BA",
                 specializations: [
+                  { value: "General", label: "General" },
                   { "value": "Education", "label": "Education" },
                   { "value": "English", "label": "English" },
                   { "value": "Economics", "label": "Economics" },
@@ -117,17 +118,147 @@ const formData = [
                   { "value": "Political science", "label": "Political science" },
                   { "value": "Sociology", "label": "Sociology" },
                   { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
+                  { "value": 'Geography', lable: 'Geography' },
                 ],
-
               },
               {
                 value: "BBA",
                 label: "BBA",
                 specializations: [
                   { "value": "Education", "label": "Education" },
-
+                  { value: "Marketing", label: "Marketing" },
+                  { value: "Human Resource Management", label: "Human Resource Management" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "International Business", label: "International Business" }
                 ],
-
+              },
+              {
+                value: "BCA",
+                label: "BCA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BCOM",
+                label: "BCOM",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BSW",
+                label: "BSW",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BLIS",
+                label: "BLIS",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BSC",
+                label: "BSC",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Chemistry", label: "Chemistry" },
+                  { value: "Phycics", label: "Phycics" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: "Microbiology", label: "Microbiology" },
+                  { value: 'Bio-Technology', label: "Bio-Technology" },
+                  { value: "Zoology", label: "Zoology" },
+                  { value: "Animation and Multimedia", label: "Animation and Multimedia" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
+                  { value: "Operation Theater Technology", label: "Operation Theater Technology" },
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                ],
+              },
+              {
+                value: "MA",
+                label: "MA",
+                specializations: [
+                  { value: "Economics", lable: "Economics" },
+                  { value: "English", label: "English" },
+                  { value: "Geography", label: "Geography" },
+                  { value: "History", label: "History" },
+                  { value: "Political Science", label: "Political Science" },
+                  { value: "Sociology", label: "Sociology" },
+                  { value: "Education", label: "Education" },
+                  { value: "Journalism and Mass Communication", label: "Journalism and Mass Communication" }
+                ],
+              },
+              {
+                value: "MCA",
+                label: "MCA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MCOM",
+                label: "MCOM",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MSW",
+                label: "MSW",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MBA",
+                label: "MBA",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "Human Resources Management", label: "Human Resources Management" },
+                  { value: "Information Technology", label: "Information Technology" },
+                  { value: "International Business", label: "International Business" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "Operations Management", label: "Operations Management" },
+                  { value: "Project Management", label: "Project Management" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Tourism and Hospitality Management", label: "Tourism and Hospitality Management" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Hospital Management", label: "Hospital Management" }
+                ],
+              },
+              {
+                value: "MSC",
+                label: "MSC",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Chemistry", label: "Chemistry" },
+                  { value: "Phycics", label: "Phycics" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: "Information Technology", label: "Information Technology" },
+                  { value: "Computer Science", label: "Computer Science" },
+                  { value: "Bio-Technology", label: "Bio-Technology" },
+                  { value: "Zoology", label: "Zoology" },
+                  { value: "Animation & Multimedia", label: "Animation & Multimedia" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
+                  { value: "Optometry", label: "Optometry" },
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                ],
+              },
+              {
+                value: "MLIS",
+                label: "MLIS",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
               },
             ]
           },
@@ -342,6 +473,7 @@ const formData = [
                 value: "BA",
                 label: "BA",
                 specializations: [
+                  { value: "General", label: "General" },
                   { "value": "Education", "label": "Education" },
                   { "value": "English", "label": "English" },
                   { "value": "Economics", "label": "Economics" },
@@ -349,10 +481,148 @@ const formData = [
                   { "value": "Political science", "label": "Political science" },
                   { "value": "Sociology", "label": "Sociology" },
                   { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
+                  { "value": 'Geography', lable: 'Geography' },
                 ],
-
               },
-
+              {
+                value: "BBA",
+                label: "BBA",
+                specializations: [
+                  { "value": "Education", "label": "Education" },
+                  { value: "Marketing", label: "Marketing" },
+                  { value: "Human Resource Management", label: "Human Resource Management" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "International Business", label: "International Business" }
+                ],
+              },
+              {
+                value: "BCA",
+                label: "BCA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BCOM",
+                label: "BCOM",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BSW",
+                label: "BSW",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BLIS",
+                label: "BLIS",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BSC",
+                label: "BSC",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Chemistry", label: "Chemistry" },
+                  { value: "Phycics", label: "Phycics" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: "Microbiology", label: "Microbiology" },
+                  { value: 'Bio-Technology', label: "Bio-Technology" },
+                  { value: "Zoology", label: "Zoology" },
+                  { value: "Animation and Multimedia", label: "Animation and Multimedia" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
+                  { value: "Operation Theater Technology", label: "Operation Theater Technology" },
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                ],
+              },
+              {
+                value: "MA",
+                label: "MA",
+                specializations: [
+                  { value: "Economics", lable: "Economics" },
+                  { value: "English", label: "English" },
+                  { value: "Geography", label: "Geography" },
+                  { value: "History", label: "History" },
+                  { value: "Political Science", label: "Political Science" },
+                  { value: "Sociology", label: "Sociology" },
+                  { value: "Education", label: "Education" },
+                  { value: "Journalism and Mass Communication", label: "Journalism and Mass Communication" }
+                ],
+              },
+              {
+                value: "MCA",
+                label: "MCA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MCOM",
+                label: "MCOM",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MSW",
+                label: "MSW",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MBA",
+                label: "MBA",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "Human Resources Management", label: "Human Resources Management" },
+                  { value: "Information Technology", label: "Information Technology" },
+                  { value: "International Business", label: "International Business" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "Operations Management", label: "Operations Management" },
+                  { value: "Project Management", label: "Project Management" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Tourism and Hospitality Management", label: "Tourism and Hospitality Management" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Hospital Management", label: "Hospital Management" }
+                ],
+              },
+              {
+                value: "MSC",
+                label: "MSC",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Chemistry", label: "Chemistry" },
+                  { value: "Phycics", label: "Phycics" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: "Information Technology", label: "Information Technology" },
+                  { value: "Computer Science", label: "Computer Science" },
+                  { value: "Bio-Technology", label: "Bio-Technology" },
+                  { value: "Zoology", label: "Zoology" },
+                  { value: "Animation & Multimedia", label: "Animation & Multimedia" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
+                  { value: "Optometry", label: "Optometry" },
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                ],
+              },
+              {
+                value: "MLIS",
+                label: "MLIS",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
             ]
           },
           {
@@ -584,6 +854,7 @@ const formData = [
                 value: "BA",
                 label: "BA",
                 specializations: [
+                  { value: "General", label: "General" },
                   { "value": "Education", "label": "Education" },
                   { "value": "English", "label": "English" },
                   { "value": "Economics", "label": "Economics" },
@@ -591,10 +862,148 @@ const formData = [
                   { "value": "Political science", "label": "Political science" },
                   { "value": "Sociology", "label": "Sociology" },
                   { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
+                  { "value": 'Geography', lable: 'Geography' },
                 ],
-
               },
-
+              {
+                value: "BBA",
+                label: "BBA",
+                specializations: [
+                  { "value": "Education", "label": "Education" },
+                  { value: "Marketing", label: "Marketing" },
+                  { value: "Human Resource Management", label: "Human Resource Management" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "International Business", label: "International Business" }
+                ],
+              },
+              {
+                value: "BCA",
+                label: "BCA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BCOM",
+                label: "BCOM",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BSW",
+                label: "BSW",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BLIS",
+                label: "BLIS",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BSC",
+                label: "BSC",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Chemistry", label: "Chemistry" },
+                  { value: "Phycics", label: "Phycics" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: "Microbiology", label: "Microbiology" },
+                  { value: 'Bio-Technology', label: "Bio-Technology" },
+                  { value: "Zoology", label: "Zoology" },
+                  { value: "Animation and Multimedia", label: "Animation and Multimedia" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
+                  { value: "Operation Theater Technology", label: "Operation Theater Technology" },
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                ],
+              },
+              {
+                value: "MA",
+                label: "MA",
+                specializations: [
+                  { value: "Economics", lable: "Economics" },
+                  { value: "English", label: "English" },
+                  { value: "Geography", label: "Geography" },
+                  { value: "History", label: "History" },
+                  { value: "Political Science", label: "Political Science" },
+                  { value: "Sociology", label: "Sociology" },
+                  { value: "Education", label: "Education" },
+                  { value: "Journalism and Mass Communication", label: "Journalism and Mass Communication" }
+                ],
+              },
+              {
+                value: "MCA",
+                label: "MCA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MCOM",
+                label: "MCOM",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MSW",
+                label: "MSW",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MBA",
+                label: "MBA",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "Human Resources Management", label: "Human Resources Management" },
+                  { value: "Information Technology", label: "Information Technology" },
+                  { value: "International Business", label: "International Business" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "Operations Management", label: "Operations Management" },
+                  { value: "Project Management", label: "Project Management" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Tourism and Hospitality Management", label: "Tourism and Hospitality Management" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Hospital Management", label: "Hospital Management" }
+                ],
+              },
+              {
+                value: "MSC",
+                label: "MSC",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Chemistry", label: "Chemistry" },
+                  { value: "Phycics", label: "Phycics" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: "Information Technology", label: "Information Technology" },
+                  { value: "Computer Science", label: "Computer Science" },
+                  { value: "Bio-Technology", label: "Bio-Technology" },
+                  { value: "Zoology", label: "Zoology" },
+                  { value: "Animation & Multimedia", label: "Animation & Multimedia" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
+                  { value: "Optometry", label: "Optometry" },
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                ],
+              },
+              {
+                value: "MLIS",
+                label: "MLIS",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
             ]
           },
           {
@@ -1031,6 +1440,7 @@ const formData = [
                 value: "BA",
                 label: "BA",
                 specializations: [
+                  { value: "General", label: "General" },
                   { "value": "Education", "label": "Education" },
                   { "value": "English", "label": "English" },
                   { "value": "Economics", "label": "Economics" },
@@ -1038,10 +1448,148 @@ const formData = [
                   { "value": "Political science", "label": "Political science" },
                   { "value": "Sociology", "label": "Sociology" },
                   { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
+                  { "value": 'Geography', lable: 'Geography' },
                 ],
-
               },
-
+              {
+                value: "BBA",
+                label: "BBA",
+                specializations: [
+                  { "value": "Education", "label": "Education" },
+                  { value: "Marketing", label: "Marketing" },
+                  { value: "Human Resource Management", label: "Human Resource Management" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "International Business", label: "International Business" }
+                ],
+              },
+              {
+                value: "BCA",
+                label: "BCA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BCOM",
+                label: "BCOM",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BSW",
+                label: "BSW",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BLIS",
+                label: "BLIS",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BSC",
+                label: "BSC",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Chemistry", label: "Chemistry" },
+                  { value: "Phycics", label: "Phycics" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: "Microbiology", label: "Microbiology" },
+                  { value: 'Bio-Technology', label: "Bio-Technology" },
+                  { value: "Zoology", label: "Zoology" },
+                  { value: "Animation and Multimedia", label: "Animation and Multimedia" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
+                  { value: "Operation Theater Technology", label: "Operation Theater Technology" },
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                ],
+              },
+              {
+                value: "MA",
+                label: "MA",
+                specializations: [
+                  { value: "Economics", lable: "Economics" },
+                  { value: "English", label: "English" },
+                  { value: "Geography", label: "Geography" },
+                  { value: "History", label: "History" },
+                  { value: "Political Science", label: "Political Science" },
+                  { value: "Sociology", label: "Sociology" },
+                  { value: "Education", label: "Education" },
+                  { value: "Journalism and Mass Communication", label: "Journalism and Mass Communication" }
+                ],
+              },
+              {
+                value: "MCA",
+                label: "MCA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MCOM",
+                label: "MCOM",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MSW",
+                label: "MSW",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MBA",
+                label: "MBA",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "Human Resources Management", label: "Human Resources Management" },
+                  { value: "Information Technology", label: "Information Technology" },
+                  { value: "International Business", label: "International Business" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "Operations Management", label: "Operations Management" },
+                  { value: "Project Management", label: "Project Management" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Tourism and Hospitality Management", label: "Tourism and Hospitality Management" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Hospital Management", label: "Hospital Management" }
+                ],
+              },
+              {
+                value: "MSC",
+                label: "MSC",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Chemistry", label: "Chemistry" },
+                  { value: "Phycics", label: "Phycics" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: "Information Technology", label: "Information Technology" },
+                  { value: "Computer Science", label: "Computer Science" },
+                  { value: "Bio-Technology", label: "Bio-Technology" },
+                  { value: "Zoology", label: "Zoology" },
+                  { value: "Animation & Multimedia", label: "Animation & Multimedia" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
+                  { value: "Optometry", label: "Optometry" },
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                ],
+              },
+              {
+                value: "MLIS",
+                label: "MLIS",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
             ]
           },
 
@@ -1274,6 +1822,7 @@ const formData = [
                 value: "BA",
                 label: "BA",
                 specializations: [
+                  { value: "General", label: "General" },
                   { "value": "Education", "label": "Education" },
                   { "value": "English", "label": "English" },
                   { "value": "Economics", "label": "Economics" },
@@ -1281,10 +1830,148 @@ const formData = [
                   { "value": "Political science", "label": "Political science" },
                   { "value": "Sociology", "label": "Sociology" },
                   { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
+                  { "value": 'Geography', lable: 'Geography' },
                 ],
-
               },
-
+              {
+                value: "BBA",
+                label: "BBA",
+                specializations: [
+                  { "value": "Education", "label": "Education" },
+                  { value: "Marketing", label: "Marketing" },
+                  { value: "Human Resource Management", label: "Human Resource Management" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "International Business", label: "International Business" }
+                ],
+              },
+              {
+                value: "BCA",
+                label: "BCA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BCOM",
+                label: "BCOM",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BSW",
+                label: "BSW",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BLIS",
+                label: "BLIS",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BSC",
+                label: "BSC",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Chemistry", label: "Chemistry" },
+                  { value: "Phycics", label: "Phycics" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: "Microbiology", label: "Microbiology" },
+                  { value: 'Bio-Technology', label: "Bio-Technology" },
+                  { value: "Zoology", label: "Zoology" },
+                  { value: "Animation and Multimedia", label: "Animation and Multimedia" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
+                  { value: "Operation Theater Technology", label: "Operation Theater Technology" },
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                ],
+              },
+              {
+                value: "MA",
+                label: "MA",
+                specializations: [
+                  { value: "Economics", lable: "Economics" },
+                  { value: "English", label: "English" },
+                  { value: "Geography", label: "Geography" },
+                  { value: "History", label: "History" },
+                  { value: "Political Science", label: "Political Science" },
+                  { value: "Sociology", label: "Sociology" },
+                  { value: "Education", label: "Education" },
+                  { value: "Journalism and Mass Communication", label: "Journalism and Mass Communication" }
+                ],
+              },
+              {
+                value: "MCA",
+                label: "MCA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MCOM",
+                label: "MCOM",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MSW",
+                label: "MSW",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MBA",
+                label: "MBA",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "Human Resources Management", label: "Human Resources Management" },
+                  { value: "Information Technology", label: "Information Technology" },
+                  { value: "International Business", label: "International Business" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "Operations Management", label: "Operations Management" },
+                  { value: "Project Management", label: "Project Management" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Tourism and Hospitality Management", label: "Tourism and Hospitality Management" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Hospital Management", label: "Hospital Management" }
+                ],
+              },
+              {
+                value: "MSC",
+                label: "MSC",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Chemistry", label: "Chemistry" },
+                  { value: "Phycics", label: "Phycics" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: "Information Technology", label: "Information Technology" },
+                  { value: "Computer Science", label: "Computer Science" },
+                  { value: "Bio-Technology", label: "Bio-Technology" },
+                  { value: "Zoology", label: "Zoology" },
+                  { value: "Animation & Multimedia", label: "Animation & Multimedia" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
+                  { value: "Optometry", label: "Optometry" },
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                ],
+              },
+              {
+                value: "MLIS",
+                label: "MLIS",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
             ]
           },
           {
@@ -1498,6 +2185,7 @@ const formData = [
                 value: "BA",
                 label: "BA",
                 specializations: [
+                  { value: "General", label: "General" },
                   { "value": "Education", "label": "Education" },
                   { "value": "English", "label": "English" },
                   { "value": "Economics", "label": "Economics" },
@@ -1505,10 +2193,148 @@ const formData = [
                   { "value": "Political science", "label": "Political science" },
                   { "value": "Sociology", "label": "Sociology" },
                   { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
+                  { "value": 'Geography', lable: 'Geography' },
                 ],
-
               },
-
+              {
+                value: "BBA",
+                label: "BBA",
+                specializations: [
+                  { "value": "Education", "label": "Education" },
+                  { value: "Marketing", label: "Marketing" },
+                  { value: "Human Resource Management", label: "Human Resource Management" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "International Business", label: "International Business" }
+                ],
+              },
+              {
+                value: "BCA",
+                label: "BCA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BCOM",
+                label: "BCOM",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BSW",
+                label: "BSW",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BLIS",
+                label: "BLIS",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BSC",
+                label: "BSC",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Chemistry", label: "Chemistry" },
+                  { value: "Phycics", label: "Phycics" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: "Microbiology", label: "Microbiology" },
+                  { value: 'Bio-Technology', label: "Bio-Technology" },
+                  { value: "Zoology", label: "Zoology" },
+                  { value: "Animation and Multimedia", label: "Animation and Multimedia" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
+                  { value: "Operation Theater Technology", label: "Operation Theater Technology" },
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                ],
+              },
+              {
+                value: "MA",
+                label: "MA",
+                specializations: [
+                  { value: "Economics", lable: "Economics" },
+                  { value: "English", label: "English" },
+                  { value: "Geography", label: "Geography" },
+                  { value: "History", label: "History" },
+                  { value: "Political Science", label: "Political Science" },
+                  { value: "Sociology", label: "Sociology" },
+                  { value: "Education", label: "Education" },
+                  { value: "Journalism and Mass Communication", label: "Journalism and Mass Communication" }
+                ],
+              },
+              {
+                value: "MCA",
+                label: "MCA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MCOM",
+                label: "MCOM",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MSW",
+                label: "MSW",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MBA",
+                label: "MBA",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "Human Resources Management", label: "Human Resources Management" },
+                  { value: "Information Technology", label: "Information Technology" },
+                  { value: "International Business", label: "International Business" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "Operations Management", label: "Operations Management" },
+                  { value: "Project Management", label: "Project Management" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Tourism and Hospitality Management", label: "Tourism and Hospitality Management" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Hospital Management", label: "Hospital Management" }
+                ],
+              },
+              {
+                value: "MSC",
+                label: "MSC",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Chemistry", label: "Chemistry" },
+                  { value: "Phycics", label: "Phycics" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: "Information Technology", label: "Information Technology" },
+                  { value: "Computer Science", label: "Computer Science" },
+                  { value: "Bio-Technology", label: "Bio-Technology" },
+                  { value: "Zoology", label: "Zoology" },
+                  { value: "Animation & Multimedia", label: "Animation & Multimedia" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
+                  { value: "Optometry", label: "Optometry" },
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                ],
+              },
+              {
+                value: "MLIS",
+                label: "MLIS",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
             ]
           },
 
@@ -1714,6 +2540,7 @@ const formData = [
                 value: "BA",
                 label: "BA",
                 specializations: [
+                  { value: "General", label: "General" },
                   { "value": "Education", "label": "Education" },
                   { "value": "English", "label": "English" },
                   { "value": "Economics", "label": "Economics" },
@@ -1721,10 +2548,148 @@ const formData = [
                   { "value": "Political science", "label": "Political science" },
                   { "value": "Sociology", "label": "Sociology" },
                   { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
+                  { "value": 'Geography', lable: 'Geography' },
                 ],
-
               },
-
+              {
+                value: "BBA",
+                label: "BBA",
+                specializations: [
+                  { "value": "Education", "label": "Education" },
+                  { value: "Marketing", label: "Marketing" },
+                  { value: "Human Resource Management", label: "Human Resource Management" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "International Business", label: "International Business" }
+                ],
+              },
+              {
+                value: "BCA",
+                label: "BCA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BCOM",
+                label: "BCOM",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BSW",
+                label: "BSW",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BLIS",
+                label: "BLIS",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BSC",
+                label: "BSC",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Chemistry", label: "Chemistry" },
+                  { value: "Phycics", label: "Phycics" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: "Microbiology", label: "Microbiology" },
+                  { value: 'Bio-Technology', label: "Bio-Technology" },
+                  { value: "Zoology", label: "Zoology" },
+                  { value: "Animation and Multimedia", label: "Animation and Multimedia" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
+                  { value: "Operation Theater Technology", label: "Operation Theater Technology" },
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                ],
+              },
+              {
+                value: "MA",
+                label: "MA",
+                specializations: [
+                  { value: "Economics", lable: "Economics" },
+                  { value: "English", label: "English" },
+                  { value: "Geography", label: "Geography" },
+                  { value: "History", label: "History" },
+                  { value: "Political Science", label: "Political Science" },
+                  { value: "Sociology", label: "Sociology" },
+                  { value: "Education", label: "Education" },
+                  { value: "Journalism and Mass Communication", label: "Journalism and Mass Communication" }
+                ],
+              },
+              {
+                value: "MCA",
+                label: "MCA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MCOM",
+                label: "MCOM",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MSW",
+                label: "MSW",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MBA",
+                label: "MBA",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "Human Resources Management", label: "Human Resources Management" },
+                  { value: "Information Technology", label: "Information Technology" },
+                  { value: "International Business", label: "International Business" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "Operations Management", label: "Operations Management" },
+                  { value: "Project Management", label: "Project Management" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Tourism and Hospitality Management", label: "Tourism and Hospitality Management" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Hospital Management", label: "Hospital Management" }
+                ],
+              },
+              {
+                value: "MSC",
+                label: "MSC",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Chemistry", label: "Chemistry" },
+                  { value: "Phycics", label: "Phycics" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: "Information Technology", label: "Information Technology" },
+                  { value: "Computer Science", label: "Computer Science" },
+                  { value: "Bio-Technology", label: "Bio-Technology" },
+                  { value: "Zoology", label: "Zoology" },
+                  { value: "Animation & Multimedia", label: "Animation & Multimedia" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
+                  { value: "Optometry", label: "Optometry" },
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                ],
+              },
+              {
+                value: "MLIS",
+                label: "MLIS",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
             ]
           },
 
@@ -1930,6 +2895,7 @@ const formData = [
                 value: "BA",
                 label: "BA",
                 specializations: [
+                  { value: "General", label: "General" },
                   { "value": "Education", "label": "Education" },
                   { "value": "English", "label": "English" },
                   { "value": "Economics", "label": "Economics" },
@@ -1937,10 +2903,148 @@ const formData = [
                   { "value": "Political science", "label": "Political science" },
                   { "value": "Sociology", "label": "Sociology" },
                   { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
+                  { "value": 'Geography', lable: 'Geography' },
                 ],
-
               },
-
+              {
+                value: "BBA",
+                label: "BBA",
+                specializations: [
+                  { "value": "Education", "label": "Education" },
+                  { value: "Marketing", label: "Marketing" },
+                  { value: "Human Resource Management", label: "Human Resource Management" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "International Business", label: "International Business" }
+                ],
+              },
+              {
+                value: "BCA",
+                label: "BCA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BCOM",
+                label: "BCOM",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BSW",
+                label: "BSW",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BLIS",
+                label: "BLIS",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BSC",
+                label: "BSC",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Chemistry", label: "Chemistry" },
+                  { value: "Phycics", label: "Phycics" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: "Microbiology", label: "Microbiology" },
+                  { value: 'Bio-Technology', label: "Bio-Technology" },
+                  { value: "Zoology", label: "Zoology" },
+                  { value: "Animation and Multimedia", label: "Animation and Multimedia" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
+                  { value: "Operation Theater Technology", label: "Operation Theater Technology" },
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                ],
+              },
+              {
+                value: "MA",
+                label: "MA",
+                specializations: [
+                  { value: "Economics", lable: "Economics" },
+                  { value: "English", label: "English" },
+                  { value: "Geography", label: "Geography" },
+                  { value: "History", label: "History" },
+                  { value: "Political Science", label: "Political Science" },
+                  { value: "Sociology", label: "Sociology" },
+                  { value: "Education", label: "Education" },
+                  { value: "Journalism and Mass Communication", label: "Journalism and Mass Communication" }
+                ],
+              },
+              {
+                value: "MCA",
+                label: "MCA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MCOM",
+                label: "MCOM",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MSW",
+                label: "MSW",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MBA",
+                label: "MBA",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "Human Resources Management", label: "Human Resources Management" },
+                  { value: "Information Technology", label: "Information Technology" },
+                  { value: "International Business", label: "International Business" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "Operations Management", label: "Operations Management" },
+                  { value: "Project Management", label: "Project Management" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Tourism and Hospitality Management", label: "Tourism and Hospitality Management" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Hospital Management", label: "Hospital Management" }
+                ],
+              },
+              {
+                value: "MSC",
+                label: "MSC",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Chemistry", label: "Chemistry" },
+                  { value: "Phycics", label: "Phycics" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: "Information Technology", label: "Information Technology" },
+                  { value: "Computer Science", label: "Computer Science" },
+                  { value: "Bio-Technology", label: "Bio-Technology" },
+                  { value: "Zoology", label: "Zoology" },
+                  { value: "Animation & Multimedia", label: "Animation & Multimedia" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
+                  { value: "Optometry", label: "Optometry" },
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                ],
+              },
+              {
+                value: "MLIS",
+                label: "MLIS",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
             ]
           },
           {
@@ -2154,6 +3258,7 @@ const formData = [
                 value: "BA",
                 label: "BA",
                 specializations: [
+                  { value: "General", label: "General" },
                   { "value": "Education", "label": "Education" },
                   { "value": "English", "label": "English" },
                   { "value": "Economics", "label": "Economics" },
@@ -2161,10 +3266,148 @@ const formData = [
                   { "value": "Political science", "label": "Political science" },
                   { "value": "Sociology", "label": "Sociology" },
                   { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
+                  { "value": 'Geography', lable: 'Geography' },
                 ],
-
               },
-
+              {
+                value: "BBA",
+                label: "BBA",
+                specializations: [
+                  { "value": "Education", "label": "Education" },
+                  { value: "Marketing", label: "Marketing" },
+                  { value: "Human Resource Management", label: "Human Resource Management" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "International Business", label: "International Business" }
+                ],
+              },
+              {
+                value: "BCA",
+                label: "BCA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BCOM",
+                label: "BCOM",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BSW",
+                label: "BSW",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BLIS",
+                label: "BLIS",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BSC",
+                label: "BSC",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Chemistry", label: "Chemistry" },
+                  { value: "Phycics", label: "Phycics" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: "Microbiology", label: "Microbiology" },
+                  { value: 'Bio-Technology', label: "Bio-Technology" },
+                  { value: "Zoology", label: "Zoology" },
+                  { value: "Animation and Multimedia", label: "Animation and Multimedia" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
+                  { value: "Operation Theater Technology", label: "Operation Theater Technology" },
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                ],
+              },
+              {
+                value: "MA",
+                label: "MA",
+                specializations: [
+                  { value: "Economics", lable: "Economics" },
+                  { value: "English", label: "English" },
+                  { value: "Geography", label: "Geography" },
+                  { value: "History", label: "History" },
+                  { value: "Political Science", label: "Political Science" },
+                  { value: "Sociology", label: "Sociology" },
+                  { value: "Education", label: "Education" },
+                  { value: "Journalism and Mass Communication", label: "Journalism and Mass Communication" }
+                ],
+              },
+              {
+                value: "MCA",
+                label: "MCA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MCOM",
+                label: "MCOM",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MSW",
+                label: "MSW",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MBA",
+                label: "MBA",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "Human Resources Management", label: "Human Resources Management" },
+                  { value: "Information Technology", label: "Information Technology" },
+                  { value: "International Business", label: "International Business" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "Operations Management", label: "Operations Management" },
+                  { value: "Project Management", label: "Project Management" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Tourism and Hospitality Management", label: "Tourism and Hospitality Management" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Hospital Management", label: "Hospital Management" }
+                ],
+              },
+              {
+                value: "MSC",
+                label: "MSC",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Chemistry", label: "Chemistry" },
+                  { value: "Phycics", label: "Phycics" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: "Information Technology", label: "Information Technology" },
+                  { value: "Computer Science", label: "Computer Science" },
+                  { value: "Bio-Technology", label: "Bio-Technology" },
+                  { value: "Zoology", label: "Zoology" },
+                  { value: "Animation & Multimedia", label: "Animation & Multimedia" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
+                  { value: "Optometry", label: "Optometry" },
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                ],
+              },
+              {
+                value: "MLIS",
+                label: "MLIS",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
             ]
           },
 
@@ -2397,6 +3640,7 @@ const formData = [
                 value: "BA",
                 label: "BA",
                 specializations: [
+                  { value: "General", label: "General" },
                   { "value": "Education", "label": "Education" },
                   { "value": "English", "label": "English" },
                   { "value": "Economics", "label": "Economics" },
@@ -2404,10 +3648,148 @@ const formData = [
                   { "value": "Political science", "label": "Political science" },
                   { "value": "Sociology", "label": "Sociology" },
                   { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
+                  { "value": 'Geography', lable: 'Geography' },
                 ],
-
               },
-
+              {
+                value: "BBA",
+                label: "BBA",
+                specializations: [
+                  { "value": "Education", "label": "Education" },
+                  { value: "Marketing", label: "Marketing" },
+                  { value: "Human Resource Management", label: "Human Resource Management" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "International Business", label: "International Business" }
+                ],
+              },
+              {
+                value: "BCA",
+                label: "BCA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BCOM",
+                label: "BCOM",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BSW",
+                label: "BSW",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BLIS",
+                label: "BLIS",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BSC",
+                label: "BSC",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Chemistry", label: "Chemistry" },
+                  { value: "Phycics", label: "Phycics" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: "Microbiology", label: "Microbiology" },
+                  { value: 'Bio-Technology', label: "Bio-Technology" },
+                  { value: "Zoology", label: "Zoology" },
+                  { value: "Animation and Multimedia", label: "Animation and Multimedia" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
+                  { value: "Operation Theater Technology", label: "Operation Theater Technology" },
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                ],
+              },
+              {
+                value: "MA",
+                label: "MA",
+                specializations: [
+                  { value: "Economics", lable: "Economics" },
+                  { value: "English", label: "English" },
+                  { value: "Geography", label: "Geography" },
+                  { value: "History", label: "History" },
+                  { value: "Political Science", label: "Political Science" },
+                  { value: "Sociology", label: "Sociology" },
+                  { value: "Education", label: "Education" },
+                  { value: "Journalism and Mass Communication", label: "Journalism and Mass Communication" }
+                ],
+              },
+              {
+                value: "MCA",
+                label: "MCA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MCOM",
+                label: "MCOM",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MSW",
+                label: "MSW",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MBA",
+                label: "MBA",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "Human Resources Management", label: "Human Resources Management" },
+                  { value: "Information Technology", label: "Information Technology" },
+                  { value: "International Business", label: "International Business" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "Operations Management", label: "Operations Management" },
+                  { value: "Project Management", label: "Project Management" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Tourism and Hospitality Management", label: "Tourism and Hospitality Management" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Hospital Management", label: "Hospital Management" }
+                ],
+              },
+              {
+                value: "MSC",
+                label: "MSC",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Chemistry", label: "Chemistry" },
+                  { value: "Phycics", label: "Phycics" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: "Information Technology", label: "Information Technology" },
+                  { value: "Computer Science", label: "Computer Science" },
+                  { value: "Bio-Technology", label: "Bio-Technology" },
+                  { value: "Zoology", label: "Zoology" },
+                  { value: "Animation & Multimedia", label: "Animation & Multimedia" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
+                  { value: "Optometry", label: "Optometry" },
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                ],
+              },
+              {
+                value: "MLIS",
+                label: "MLIS",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
             ]
           },
           {
@@ -2648,6 +4030,7 @@ const formData = [
                 value: "BA",
                 label: "BA",
                 specializations: [
+                  { value: "General", label: "General" },
                   { "value": "Education", "label": "Education" },
                   { "value": "English", "label": "English" },
                   { "value": "Economics", "label": "Economics" },
@@ -2655,10 +4038,148 @@ const formData = [
                   { "value": "Political science", "label": "Political science" },
                   { "value": "Sociology", "label": "Sociology" },
                   { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
+                  { "value": 'Geography', lable: 'Geography' },
                 ],
-
               },
-
+              {
+                value: "BBA",
+                label: "BBA",
+                specializations: [
+                  { "value": "Education", "label": "Education" },
+                  { value: "Marketing", label: "Marketing" },
+                  { value: "Human Resource Management", label: "Human Resource Management" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "International Business", label: "International Business" }
+                ],
+              },
+              {
+                value: "BCA",
+                label: "BCA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BCOM",
+                label: "BCOM",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BSW",
+                label: "BSW",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BLIS",
+                label: "BLIS",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BSC",
+                label: "BSC",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Chemistry", label: "Chemistry" },
+                  { value: "Phycics", label: "Phycics" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: "Microbiology", label: "Microbiology" },
+                  { value: 'Bio-Technology', label: "Bio-Technology" },
+                  { value: "Zoology", label: "Zoology" },
+                  { value: "Animation and Multimedia", label: "Animation and Multimedia" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
+                  { value: "Operation Theater Technology", label: "Operation Theater Technology" },
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                ],
+              },
+              {
+                value: "MA",
+                label: "MA",
+                specializations: [
+                  { value: "Economics", lable: "Economics" },
+                  { value: "English", label: "English" },
+                  { value: "Geography", label: "Geography" },
+                  { value: "History", label: "History" },
+                  { value: "Political Science", label: "Political Science" },
+                  { value: "Sociology", label: "Sociology" },
+                  { value: "Education", label: "Education" },
+                  { value: "Journalism and Mass Communication", label: "Journalism and Mass Communication" }
+                ],
+              },
+              {
+                value: "MCA",
+                label: "MCA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MCOM",
+                label: "MCOM",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MSW",
+                label: "MSW",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MBA",
+                label: "MBA",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "Human Resources Management", label: "Human Resources Management" },
+                  { value: "Information Technology", label: "Information Technology" },
+                  { value: "International Business", label: "International Business" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "Operations Management", label: "Operations Management" },
+                  { value: "Project Management", label: "Project Management" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Tourism and Hospitality Management", label: "Tourism and Hospitality Management" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Hospital Management", label: "Hospital Management" }
+                ],
+              },
+              {
+                value: "MSC",
+                label: "MSC",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Chemistry", label: "Chemistry" },
+                  { value: "Phycics", label: "Phycics" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: "Information Technology", label: "Information Technology" },
+                  { value: "Computer Science", label: "Computer Science" },
+                  { value: "Bio-Technology", label: "Bio-Technology" },
+                  { value: "Zoology", label: "Zoology" },
+                  { value: "Animation & Multimedia", label: "Animation & Multimedia" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
+                  { value: "Optometry", label: "Optometry" },
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                ],
+              },
+              {
+                value: "MLIS",
+                label: "MLIS",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
             ]
           },
           {
@@ -2899,6 +4420,7 @@ const formData = [
                 value: "BA",
                 label: "BA",
                 specializations: [
+                  { value: "General", label: "General" },
                   { "value": "Education", "label": "Education" },
                   { "value": "English", "label": "English" },
                   { "value": "Economics", "label": "Economics" },
@@ -2906,10 +4428,148 @@ const formData = [
                   { "value": "Political science", "label": "Political science" },
                   { "value": "Sociology", "label": "Sociology" },
                   { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
+                  { "value": 'Geography', lable: 'Geography' },
                 ],
-
               },
-
+              {
+                value: "BBA",
+                label: "BBA",
+                specializations: [
+                  { "value": "Education", "label": "Education" },
+                  { value: "Marketing", label: "Marketing" },
+                  { value: "Human Resource Management", label: "Human Resource Management" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "International Business", label: "International Business" }
+                ],
+              },
+              {
+                value: "BCA",
+                label: "BCA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BCOM",
+                label: "BCOM",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BSW",
+                label: "BSW",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BLIS",
+                label: "BLIS",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BSC",
+                label: "BSC",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Chemistry", label: "Chemistry" },
+                  { value: "Phycics", label: "Phycics" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: "Microbiology", label: "Microbiology" },
+                  { value: 'Bio-Technology', label: "Bio-Technology" },
+                  { value: "Zoology", label: "Zoology" },
+                  { value: "Animation and Multimedia", label: "Animation and Multimedia" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
+                  { value: "Operation Theater Technology", label: "Operation Theater Technology" },
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                ],
+              },
+              {
+                value: "MA",
+                label: "MA",
+                specializations: [
+                  { value: "Economics", lable: "Economics" },
+                  { value: "English", label: "English" },
+                  { value: "Geography", label: "Geography" },
+                  { value: "History", label: "History" },
+                  { value: "Political Science", label: "Political Science" },
+                  { value: "Sociology", label: "Sociology" },
+                  { value: "Education", label: "Education" },
+                  { value: "Journalism and Mass Communication", label: "Journalism and Mass Communication" }
+                ],
+              },
+              {
+                value: "MCA",
+                label: "MCA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MCOM",
+                label: "MCOM",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MSW",
+                label: "MSW",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MBA",
+                label: "MBA",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "Human Resources Management", label: "Human Resources Management" },
+                  { value: "Information Technology", label: "Information Technology" },
+                  { value: "International Business", label: "International Business" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "Operations Management", label: "Operations Management" },
+                  { value: "Project Management", label: "Project Management" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Tourism and Hospitality Management", label: "Tourism and Hospitality Management" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Hospital Management", label: "Hospital Management" }
+                ],
+              },
+              {
+                value: "MSC",
+                label: "MSC",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Chemistry", label: "Chemistry" },
+                  { value: "Phycics", label: "Phycics" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: "Information Technology", label: "Information Technology" },
+                  { value: "Computer Science", label: "Computer Science" },
+                  { value: "Bio-Technology", label: "Bio-Technology" },
+                  { value: "Zoology", label: "Zoology" },
+                  { value: "Animation & Multimedia", label: "Animation & Multimedia" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
+                  { value: "Optometry", label: "Optometry" },
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                ],
+              },
+              {
+                value: "MLIS",
+                label: "MLIS",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
             ]
           },
           {
@@ -3150,6 +4810,7 @@ const formData = [
                 value: "BA",
                 label: "BA",
                 specializations: [
+                  { value: "General", label: "General" },
                   { "value": "Education", "label": "Education" },
                   { "value": "English", "label": "English" },
                   { "value": "Economics", "label": "Economics" },
@@ -3157,10 +4818,148 @@ const formData = [
                   { "value": "Political science", "label": "Political science" },
                   { "value": "Sociology", "label": "Sociology" },
                   { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
+                  { "value": 'Geography', lable: 'Geography' },
                 ],
-
               },
-
+              {
+                value: "BBA",
+                label: "BBA",
+                specializations: [
+                  { "value": "Education", "label": "Education" },
+                  { value: "Marketing", label: "Marketing" },
+                  { value: "Human Resource Management", label: "Human Resource Management" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "International Business", label: "International Business" }
+                ],
+              },
+              {
+                value: "BCA",
+                label: "BCA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BCOM",
+                label: "BCOM",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BSW",
+                label: "BSW",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BLIS",
+                label: "BLIS",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BSC",
+                label: "BSC",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Chemistry", label: "Chemistry" },
+                  { value: "Phycics", label: "Phycics" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: "Microbiology", label: "Microbiology" },
+                  { value: 'Bio-Technology', label: "Bio-Technology" },
+                  { value: "Zoology", label: "Zoology" },
+                  { value: "Animation and Multimedia", label: "Animation and Multimedia" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
+                  { value: "Operation Theater Technology", label: "Operation Theater Technology" },
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                ],
+              },
+              {
+                value: "MA",
+                label: "MA",
+                specializations: [
+                  { value: "Economics", lable: "Economics" },
+                  { value: "English", label: "English" },
+                  { value: "Geography", label: "Geography" },
+                  { value: "History", label: "History" },
+                  { value: "Political Science", label: "Political Science" },
+                  { value: "Sociology", label: "Sociology" },
+                  { value: "Education", label: "Education" },
+                  { value: "Journalism and Mass Communication", label: "Journalism and Mass Communication" }
+                ],
+              },
+              {
+                value: "MCA",
+                label: "MCA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MCOM",
+                label: "MCOM",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MSW",
+                label: "MSW",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MBA",
+                label: "MBA",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "Human Resources Management", label: "Human Resources Management" },
+                  { value: "Information Technology", label: "Information Technology" },
+                  { value: "International Business", label: "International Business" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "Operations Management", label: "Operations Management" },
+                  { value: "Project Management", label: "Project Management" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Tourism and Hospitality Management", label: "Tourism and Hospitality Management" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Hospital Management", label: "Hospital Management" }
+                ],
+              },
+              {
+                value: "MSC",
+                label: "MSC",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Chemistry", label: "Chemistry" },
+                  { value: "Phycics", label: "Phycics" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: "Information Technology", label: "Information Technology" },
+                  { value: "Computer Science", label: "Computer Science" },
+                  { value: "Bio-Technology", label: "Bio-Technology" },
+                  { value: "Zoology", label: "Zoology" },
+                  { value: "Animation & Multimedia", label: "Animation & Multimedia" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
+                  { value: "Optometry", label: "Optometry" },
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                ],
+              },
+              {
+                value: "MLIS",
+                label: "MLIS",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
             ]
           },
           {
@@ -3374,6 +5173,7 @@ const formData = [
                 value: "BA",
                 label: "BA",
                 specializations: [
+                  { value: "General", label: "General" },
                   { "value": "Education", "label": "Education" },
                   { "value": "English", "label": "English" },
                   { "value": "Economics", "label": "Economics" },
@@ -3381,10 +5181,148 @@ const formData = [
                   { "value": "Political science", "label": "Political science" },
                   { "value": "Sociology", "label": "Sociology" },
                   { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
+                  { "value": 'Geography', lable: 'Geography' },
                 ],
-
               },
-
+              {
+                value: "BBA",
+                label: "BBA",
+                specializations: [
+                  { "value": "Education", "label": "Education" },
+                  { value: "Marketing", label: "Marketing" },
+                  { value: "Human Resource Management", label: "Human Resource Management" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "International Business", label: "International Business" }
+                ],
+              },
+              {
+                value: "BCA",
+                label: "BCA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BCOM",
+                label: "BCOM",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BSW",
+                label: "BSW",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BLIS",
+                label: "BLIS",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BSC",
+                label: "BSC",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Chemistry", label: "Chemistry" },
+                  { value: "Phycics", label: "Phycics" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: "Microbiology", label: "Microbiology" },
+                  { value: 'Bio-Technology', label: "Bio-Technology" },
+                  { value: "Zoology", label: "Zoology" },
+                  { value: "Animation and Multimedia", label: "Animation and Multimedia" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
+                  { value: "Operation Theater Technology", label: "Operation Theater Technology" },
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                ],
+              },
+              {
+                value: "MA",
+                label: "MA",
+                specializations: [
+                  { value: "Economics", lable: "Economics" },
+                  { value: "English", label: "English" },
+                  { value: "Geography", label: "Geography" },
+                  { value: "History", label: "History" },
+                  { value: "Political Science", label: "Political Science" },
+                  { value: "Sociology", label: "Sociology" },
+                  { value: "Education", label: "Education" },
+                  { value: "Journalism and Mass Communication", label: "Journalism and Mass Communication" }
+                ],
+              },
+              {
+                value: "MCA",
+                label: "MCA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MCOM",
+                label: "MCOM",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MSW",
+                label: "MSW",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MBA",
+                label: "MBA",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "Human Resources Management", label: "Human Resources Management" },
+                  { value: "Information Technology", label: "Information Technology" },
+                  { value: "International Business", label: "International Business" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "Operations Management", label: "Operations Management" },
+                  { value: "Project Management", label: "Project Management" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Tourism and Hospitality Management", label: "Tourism and Hospitality Management" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Hospital Management", label: "Hospital Management" }
+                ],
+              },
+              {
+                value: "MSC",
+                label: "MSC",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Chemistry", label: "Chemistry" },
+                  { value: "Phycics", label: "Phycics" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: "Information Technology", label: "Information Technology" },
+                  { value: "Computer Science", label: "Computer Science" },
+                  { value: "Bio-Technology", label: "Bio-Technology" },
+                  { value: "Zoology", label: "Zoology" },
+                  { value: "Animation & Multimedia", label: "Animation & Multimedia" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
+                  { value: "Optometry", label: "Optometry" },
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                ],
+              },
+              {
+                value: "MLIS",
+                label: "MLIS",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
             ]
           },
 
@@ -3590,6 +5528,7 @@ const formData = [
                 value: "BA",
                 label: "BA",
                 specializations: [
+                  { value: "General", label: "General" },
                   { "value": "Education", "label": "Education" },
                   { "value": "English", "label": "English" },
                   { "value": "Economics", "label": "Economics" },
@@ -3597,10 +5536,148 @@ const formData = [
                   { "value": "Political science", "label": "Political science" },
                   { "value": "Sociology", "label": "Sociology" },
                   { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
+                  { "value": 'Geography', lable: 'Geography' },
                 ],
-
               },
-
+              {
+                value: "BBA",
+                label: "BBA",
+                specializations: [
+                  { "value": "Education", "label": "Education" },
+                  { value: "Marketing", label: "Marketing" },
+                  { value: "Human Resource Management", label: "Human Resource Management" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "International Business", label: "International Business" }
+                ],
+              },
+              {
+                value: "BCA",
+                label: "BCA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BCOM",
+                label: "BCOM",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BSW",
+                label: "BSW",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BLIS",
+                label: "BLIS",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BSC",
+                label: "BSC",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Chemistry", label: "Chemistry" },
+                  { value: "Phycics", label: "Phycics" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: "Microbiology", label: "Microbiology" },
+                  { value: 'Bio-Technology', label: "Bio-Technology" },
+                  { value: "Zoology", label: "Zoology" },
+                  { value: "Animation and Multimedia", label: "Animation and Multimedia" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
+                  { value: "Operation Theater Technology", label: "Operation Theater Technology" },
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                ],
+              },
+              {
+                value: "MA",
+                label: "MA",
+                specializations: [
+                  { value: "Economics", lable: "Economics" },
+                  { value: "English", label: "English" },
+                  { value: "Geography", label: "Geography" },
+                  { value: "History", label: "History" },
+                  { value: "Political Science", label: "Political Science" },
+                  { value: "Sociology", label: "Sociology" },
+                  { value: "Education", label: "Education" },
+                  { value: "Journalism and Mass Communication", label: "Journalism and Mass Communication" }
+                ],
+              },
+              {
+                value: "MCA",
+                label: "MCA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MCOM",
+                label: "MCOM",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MSW",
+                label: "MSW",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MBA",
+                label: "MBA",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "Human Resources Management", label: "Human Resources Management" },
+                  { value: "Information Technology", label: "Information Technology" },
+                  { value: "International Business", label: "International Business" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "Operations Management", label: "Operations Management" },
+                  { value: "Project Management", label: "Project Management" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Tourism and Hospitality Management", label: "Tourism and Hospitality Management" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Hospital Management", label: "Hospital Management" }
+                ],
+              },
+              {
+                value: "MSC",
+                label: "MSC",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Chemistry", label: "Chemistry" },
+                  { value: "Phycics", label: "Phycics" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: "Information Technology", label: "Information Technology" },
+                  { value: "Computer Science", label: "Computer Science" },
+                  { value: "Bio-Technology", label: "Bio-Technology" },
+                  { value: "Zoology", label: "Zoology" },
+                  { value: "Animation & Multimedia", label: "Animation & Multimedia" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
+                  { value: "Optometry", label: "Optometry" },
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                ],
+              },
+              {
+                value: "MLIS",
+                label: "MLIS",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
             ]
           },
 
@@ -3806,6 +5883,7 @@ const formData = [
                 value: "BA",
                 label: "BA",
                 specializations: [
+                  { value: "General", label: "General" },
                   { "value": "Education", "label": "Education" },
                   { "value": "English", "label": "English" },
                   { "value": "Economics", "label": "Economics" },
@@ -3813,10 +5891,148 @@ const formData = [
                   { "value": "Political science", "label": "Political science" },
                   { "value": "Sociology", "label": "Sociology" },
                   { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
+                  { "value": 'Geography', lable: 'Geography' },
                 ],
-
               },
-
+              {
+                value: "BBA",
+                label: "BBA",
+                specializations: [
+                  { "value": "Education", "label": "Education" },
+                  { value: "Marketing", label: "Marketing" },
+                  { value: "Human Resource Management", label: "Human Resource Management" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "International Business", label: "International Business" }
+                ],
+              },
+              {
+                value: "BCA",
+                label: "BCA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BCOM",
+                label: "BCOM",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BSW",
+                label: "BSW",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BLIS",
+                label: "BLIS",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BSC",
+                label: "BSC",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Chemistry", label: "Chemistry" },
+                  { value: "Phycics", label: "Phycics" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: "Microbiology", label: "Microbiology" },
+                  { value: 'Bio-Technology', label: "Bio-Technology" },
+                  { value: "Zoology", label: "Zoology" },
+                  { value: "Animation and Multimedia", label: "Animation and Multimedia" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
+                  { value: "Operation Theater Technology", label: "Operation Theater Technology" },
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                ],
+              },
+              {
+                value: "MA",
+                label: "MA",
+                specializations: [
+                  { value: "Economics", lable: "Economics" },
+                  { value: "English", label: "English" },
+                  { value: "Geography", label: "Geography" },
+                  { value: "History", label: "History" },
+                  { value: "Political Science", label: "Political Science" },
+                  { value: "Sociology", label: "Sociology" },
+                  { value: "Education", label: "Education" },
+                  { value: "Journalism and Mass Communication", label: "Journalism and Mass Communication" }
+                ],
+              },
+              {
+                value: "MCA",
+                label: "MCA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MCOM",
+                label: "MCOM",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MSW",
+                label: "MSW",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MBA",
+                label: "MBA",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "Human Resources Management", label: "Human Resources Management" },
+                  { value: "Information Technology", label: "Information Technology" },
+                  { value: "International Business", label: "International Business" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "Operations Management", label: "Operations Management" },
+                  { value: "Project Management", label: "Project Management" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Tourism and Hospitality Management", label: "Tourism and Hospitality Management" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Hospital Management", label: "Hospital Management" }
+                ],
+              },
+              {
+                value: "MSC",
+                label: "MSC",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Chemistry", label: "Chemistry" },
+                  { value: "Phycics", label: "Phycics" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: "Information Technology", label: "Information Technology" },
+                  { value: "Computer Science", label: "Computer Science" },
+                  { value: "Bio-Technology", label: "Bio-Technology" },
+                  { value: "Zoology", label: "Zoology" },
+                  { value: "Animation & Multimedia", label: "Animation & Multimedia" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
+                  { value: "Optometry", label: "Optometry" },
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                ],
+              },
+              {
+                value: "MLIS",
+                label: "MLIS",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
             ]
           },
 
@@ -4049,6 +6265,7 @@ const formData = [
                 value: "BA",
                 label: "BA",
                 specializations: [
+                  { value: "General", label: "General" },
                   { "value": "Education", "label": "Education" },
                   { "value": "English", "label": "English" },
                   { "value": "Economics", "label": "Economics" },
@@ -4056,10 +6273,148 @@ const formData = [
                   { "value": "Political science", "label": "Political science" },
                   { "value": "Sociology", "label": "Sociology" },
                   { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
+                  { "value": 'Geography', lable: 'Geography' },
                 ],
-
               },
-
+              {
+                value: "BBA",
+                label: "BBA",
+                specializations: [
+                  { "value": "Education", "label": "Education" },
+                  { value: "Marketing", label: "Marketing" },
+                  { value: "Human Resource Management", label: "Human Resource Management" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "International Business", label: "International Business" }
+                ],
+              },
+              {
+                value: "BCA",
+                label: "BCA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BCOM",
+                label: "BCOM",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BSW",
+                label: "BSW",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BLIS",
+                label: "BLIS",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BSC",
+                label: "BSC",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Chemistry", label: "Chemistry" },
+                  { value: "Phycics", label: "Phycics" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: "Microbiology", label: "Microbiology" },
+                  { value: 'Bio-Technology', label: "Bio-Technology" },
+                  { value: "Zoology", label: "Zoology" },
+                  { value: "Animation and Multimedia", label: "Animation and Multimedia" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
+                  { value: "Operation Theater Technology", label: "Operation Theater Technology" },
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                ],
+              },
+              {
+                value: "MA",
+                label: "MA",
+                specializations: [
+                  { value: "Economics", lable: "Economics" },
+                  { value: "English", label: "English" },
+                  { value: "Geography", label: "Geography" },
+                  { value: "History", label: "History" },
+                  { value: "Political Science", label: "Political Science" },
+                  { value: "Sociology", label: "Sociology" },
+                  { value: "Education", label: "Education" },
+                  { value: "Journalism and Mass Communication", label: "Journalism and Mass Communication" }
+                ],
+              },
+              {
+                value: "MCA",
+                label: "MCA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MCOM",
+                label: "MCOM",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MSW",
+                label: "MSW",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MBA",
+                label: "MBA",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "Human Resources Management", label: "Human Resources Management" },
+                  { value: "Information Technology", label: "Information Technology" },
+                  { value: "International Business", label: "International Business" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "Operations Management", label: "Operations Management" },
+                  { value: "Project Management", label: "Project Management" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Tourism and Hospitality Management", label: "Tourism and Hospitality Management" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Hospital Management", label: "Hospital Management" }
+                ],
+              },
+              {
+                value: "MSC",
+                label: "MSC",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Chemistry", label: "Chemistry" },
+                  { value: "Phycics", label: "Phycics" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: "Information Technology", label: "Information Technology" },
+                  { value: "Computer Science", label: "Computer Science" },
+                  { value: "Bio-Technology", label: "Bio-Technology" },
+                  { value: "Zoology", label: "Zoology" },
+                  { value: "Animation & Multimedia", label: "Animation & Multimedia" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
+                  { value: "Optometry", label: "Optometry" },
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                ],
+              },
+              {
+                value: "MLIS",
+                label: "MLIS",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
             ]
           },
           {
@@ -4300,6 +6655,7 @@ const formData = [
                 value: "BA",
                 label: "BA",
                 specializations: [
+                  { value: "General", label: "General" },
                   { "value": "Education", "label": "Education" },
                   { "value": "English", "label": "English" },
                   { "value": "Economics", "label": "Economics" },
@@ -4307,10 +6663,148 @@ const formData = [
                   { "value": "Political science", "label": "Political science" },
                   { "value": "Sociology", "label": "Sociology" },
                   { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
+                  { "value": 'Geography', lable: 'Geography' },
                 ],
-
               },
-
+              {
+                value: "BBA",
+                label: "BBA",
+                specializations: [
+                  { "value": "Education", "label": "Education" },
+                  { value: "Marketing", label: "Marketing" },
+                  { value: "Human Resource Management", label: "Human Resource Management" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "International Business", label: "International Business" }
+                ],
+              },
+              {
+                value: "BCA",
+                label: "BCA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BCOM",
+                label: "BCOM",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BSW",
+                label: "BSW",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BLIS",
+                label: "BLIS",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BSC",
+                label: "BSC",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Chemistry", label: "Chemistry" },
+                  { value: "Phycics", label: "Phycics" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: "Microbiology", label: "Microbiology" },
+                  { value: 'Bio-Technology', label: "Bio-Technology" },
+                  { value: "Zoology", label: "Zoology" },
+                  { value: "Animation and Multimedia", label: "Animation and Multimedia" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
+                  { value: "Operation Theater Technology", label: "Operation Theater Technology" },
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                ],
+              },
+              {
+                value: "MA",
+                label: "MA",
+                specializations: [
+                  { value: "Economics", lable: "Economics" },
+                  { value: "English", label: "English" },
+                  { value: "Geography", label: "Geography" },
+                  { value: "History", label: "History" },
+                  { value: "Political Science", label: "Political Science" },
+                  { value: "Sociology", label: "Sociology" },
+                  { value: "Education", label: "Education" },
+                  { value: "Journalism and Mass Communication", label: "Journalism and Mass Communication" }
+                ],
+              },
+              {
+                value: "MCA",
+                label: "MCA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MCOM",
+                label: "MCOM",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MSW",
+                label: "MSW",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MBA",
+                label: "MBA",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "Human Resources Management", label: "Human Resources Management" },
+                  { value: "Information Technology", label: "Information Technology" },
+                  { value: "International Business", label: "International Business" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "Operations Management", label: "Operations Management" },
+                  { value: "Project Management", label: "Project Management" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Tourism and Hospitality Management", label: "Tourism and Hospitality Management" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Hospital Management", label: "Hospital Management" }
+                ],
+              },
+              {
+                value: "MSC",
+                label: "MSC",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Chemistry", label: "Chemistry" },
+                  { value: "Phycics", label: "Phycics" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: "Information Technology", label: "Information Technology" },
+                  { value: "Computer Science", label: "Computer Science" },
+                  { value: "Bio-Technology", label: "Bio-Technology" },
+                  { value: "Zoology", label: "Zoology" },
+                  { value: "Animation & Multimedia", label: "Animation & Multimedia" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
+                  { value: "Optometry", label: "Optometry" },
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                ],
+              },
+              {
+                value: "MLIS",
+                label: "MLIS",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
             ]
           },
           {
@@ -4560,6 +7054,7 @@ const formData = [
                 value: "BA",
                 label: "BA",
                 specializations: [
+                  { value: "General", label: "General" },
                   { "value": "Education", "label": "Education" },
                   { "value": "English", "label": "English" },
                   { "value": "Economics", "label": "Economics" },
@@ -4567,10 +7062,148 @@ const formData = [
                   { "value": "Political science", "label": "Political science" },
                   { "value": "Sociology", "label": "Sociology" },
                   { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
+                  { "value": 'Geography', lable: 'Geography' },
                 ],
-
               },
-
+              {
+                value: "BBA",
+                label: "BBA",
+                specializations: [
+                  { "value": "Education", "label": "Education" },
+                  { value: "Marketing", label: "Marketing" },
+                  { value: "Human Resource Management", label: "Human Resource Management" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "International Business", label: "International Business" }
+                ],
+              },
+              {
+                value: "BCA",
+                label: "BCA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BCOM",
+                label: "BCOM",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BSW",
+                label: "BSW",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BLIS",
+                label: "BLIS",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BSC",
+                label: "BSC",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Chemistry", label: "Chemistry" },
+                  { value: "Phycics", label: "Phycics" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: "Microbiology", label: "Microbiology" },
+                  { value: 'Bio-Technology', label: "Bio-Technology" },
+                  { value: "Zoology", label: "Zoology" },
+                  { value: "Animation and Multimedia", label: "Animation and Multimedia" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
+                  { value: "Operation Theater Technology", label: "Operation Theater Technology" },
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                ],
+              },
+              {
+                value: "MA",
+                label: "MA",
+                specializations: [
+                  { value: "Economics", lable: "Economics" },
+                  { value: "English", label: "English" },
+                  { value: "Geography", label: "Geography" },
+                  { value: "History", label: "History" },
+                  { value: "Political Science", label: "Political Science" },
+                  { value: "Sociology", label: "Sociology" },
+                  { value: "Education", label: "Education" },
+                  { value: "Journalism and Mass Communication", label: "Journalism and Mass Communication" }
+                ],
+              },
+              {
+                value: "MCA",
+                label: "MCA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MCOM",
+                label: "MCOM",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MSW",
+                label: "MSW",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MBA",
+                label: "MBA",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "Human Resources Management", label: "Human Resources Management" },
+                  { value: "Information Technology", label: "Information Technology" },
+                  { value: "International Business", label: "International Business" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "Operations Management", label: "Operations Management" },
+                  { value: "Project Management", label: "Project Management" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Tourism and Hospitality Management", label: "Tourism and Hospitality Management" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Hospital Management", label: "Hospital Management" }
+                ],
+              },
+              {
+                value: "MSC",
+                label: "MSC",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Chemistry", label: "Chemistry" },
+                  { value: "Phycics", label: "Phycics" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: "Information Technology", label: "Information Technology" },
+                  { value: "Computer Science", label: "Computer Science" },
+                  { value: "Bio-Technology", label: "Bio-Technology" },
+                  { value: "Zoology", label: "Zoology" },
+                  { value: "Animation & Multimedia", label: "Animation & Multimedia" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
+                  { value: "Optometry", label: "Optometry" },
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                ],
+              },
+              {
+                value: "MLIS",
+                label: "MLIS",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
             ]
           },
           {
@@ -4784,6 +7417,7 @@ const formData = [
                 value: "BA",
                 label: "BA",
                 specializations: [
+                  { value: "General", label: "General" },
                   { "value": "Education", "label": "Education" },
                   { "value": "English", "label": "English" },
                   { "value": "Economics", "label": "Economics" },
@@ -4791,10 +7425,148 @@ const formData = [
                   { "value": "Political science", "label": "Political science" },
                   { "value": "Sociology", "label": "Sociology" },
                   { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
+                  { "value": 'Geography', lable: 'Geography' },
                 ],
-
               },
-
+              {
+                value: "BBA",
+                label: "BBA",
+                specializations: [
+                  { "value": "Education", "label": "Education" },
+                  { value: "Marketing", label: "Marketing" },
+                  { value: "Human Resource Management", label: "Human Resource Management" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "International Business", label: "International Business" }
+                ],
+              },
+              {
+                value: "BCA",
+                label: "BCA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BCOM",
+                label: "BCOM",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BSW",
+                label: "BSW",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BLIS",
+                label: "BLIS",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BSC",
+                label: "BSC",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Chemistry", label: "Chemistry" },
+                  { value: "Phycics", label: "Phycics" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: "Microbiology", label: "Microbiology" },
+                  { value: 'Bio-Technology', label: "Bio-Technology" },
+                  { value: "Zoology", label: "Zoology" },
+                  { value: "Animation and Multimedia", label: "Animation and Multimedia" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
+                  { value: "Operation Theater Technology", label: "Operation Theater Technology" },
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                ],
+              },
+              {
+                value: "MA",
+                label: "MA",
+                specializations: [
+                  { value: "Economics", lable: "Economics" },
+                  { value: "English", label: "English" },
+                  { value: "Geography", label: "Geography" },
+                  { value: "History", label: "History" },
+                  { value: "Political Science", label: "Political Science" },
+                  { value: "Sociology", label: "Sociology" },
+                  { value: "Education", label: "Education" },
+                  { value: "Journalism and Mass Communication", label: "Journalism and Mass Communication" }
+                ],
+              },
+              {
+                value: "MCA",
+                label: "MCA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MCOM",
+                label: "MCOM",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MSW",
+                label: "MSW",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MBA",
+                label: "MBA",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "Human Resources Management", label: "Human Resources Management" },
+                  { value: "Information Technology", label: "Information Technology" },
+                  { value: "International Business", label: "International Business" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "Operations Management", label: "Operations Management" },
+                  { value: "Project Management", label: "Project Management" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Tourism and Hospitality Management", label: "Tourism and Hospitality Management" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Hospital Management", label: "Hospital Management" }
+                ],
+              },
+              {
+                value: "MSC",
+                label: "MSC",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Chemistry", label: "Chemistry" },
+                  { value: "Phycics", label: "Phycics" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: "Information Technology", label: "Information Technology" },
+                  { value: "Computer Science", label: "Computer Science" },
+                  { value: "Bio-Technology", label: "Bio-Technology" },
+                  { value: "Zoology", label: "Zoology" },
+                  { value: "Animation & Multimedia", label: "Animation & Multimedia" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
+                  { value: "Optometry", label: "Optometry" },
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                ],
+              },
+              {
+                value: "MLIS",
+                label: "MLIS",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
             ]
           },
           {
@@ -5026,6 +7798,7 @@ const formData = [
                 value: "BA",
                 label: "BA",
                 specializations: [
+                  { value: "General", label: "General" },
                   { "value": "Education", "label": "Education" },
                   { "value": "English", "label": "English" },
                   { "value": "Economics", "label": "Economics" },
@@ -5033,10 +7806,148 @@ const formData = [
                   { "value": "Political science", "label": "Political science" },
                   { "value": "Sociology", "label": "Sociology" },
                   { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
+                  { "value": 'Geography', lable: 'Geography' },
                 ],
-
               },
-
+              {
+                value: "BBA",
+                label: "BBA",
+                specializations: [
+                  { "value": "Education", "label": "Education" },
+                  { value: "Marketing", label: "Marketing" },
+                  { value: "Human Resource Management", label: "Human Resource Management" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "International Business", label: "International Business" }
+                ],
+              },
+              {
+                value: "BCA",
+                label: "BCA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BCOM",
+                label: "BCOM",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BSW",
+                label: "BSW",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BLIS",
+                label: "BLIS",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BSC",
+                label: "BSC",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Chemistry", label: "Chemistry" },
+                  { value: "Phycics", label: "Phycics" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: "Microbiology", label: "Microbiology" },
+                  { value: 'Bio-Technology', label: "Bio-Technology" },
+                  { value: "Zoology", label: "Zoology" },
+                  { value: "Animation and Multimedia", label: "Animation and Multimedia" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
+                  { value: "Operation Theater Technology", label: "Operation Theater Technology" },
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                ],
+              },
+              {
+                value: "MA",
+                label: "MA",
+                specializations: [
+                  { value: "Economics", lable: "Economics" },
+                  { value: "English", label: "English" },
+                  { value: "Geography", label: "Geography" },
+                  { value: "History", label: "History" },
+                  { value: "Political Science", label: "Political Science" },
+                  { value: "Sociology", label: "Sociology" },
+                  { value: "Education", label: "Education" },
+                  { value: "Journalism and Mass Communication", label: "Journalism and Mass Communication" }
+                ],
+              },
+              {
+                value: "MCA",
+                label: "MCA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MCOM",
+                label: "MCOM",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MSW",
+                label: "MSW",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MBA",
+                label: "MBA",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "Human Resources Management", label: "Human Resources Management" },
+                  { value: "Information Technology", label: "Information Technology" },
+                  { value: "International Business", label: "International Business" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "Operations Management", label: "Operations Management" },
+                  { value: "Project Management", label: "Project Management" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Tourism and Hospitality Management", label: "Tourism and Hospitality Management" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Hospital Management", label: "Hospital Management" }
+                ],
+              },
+              {
+                value: "MSC",
+                label: "MSC",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Chemistry", label: "Chemistry" },
+                  { value: "Phycics", label: "Phycics" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: "Information Technology", label: "Information Technology" },
+                  { value: "Computer Science", label: "Computer Science" },
+                  { value: "Bio-Technology", label: "Bio-Technology" },
+                  { value: "Zoology", label: "Zoology" },
+                  { value: "Animation & Multimedia", label: "Animation & Multimedia" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
+                  { value: "Optometry", label: "Optometry" },
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                ],
+              },
+              {
+                value: "MLIS",
+                label: "MLIS",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
             ]
           },
           {
@@ -5250,6 +8161,7 @@ const formData = [
                 value: "BA",
                 label: "BA",
                 specializations: [
+                  { value: "General", label: "General" },
                   { "value": "Education", "label": "Education" },
                   { "value": "English", "label": "English" },
                   { "value": "Economics", "label": "Economics" },
@@ -5257,10 +8169,148 @@ const formData = [
                   { "value": "Political science", "label": "Political science" },
                   { "value": "Sociology", "label": "Sociology" },
                   { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
+                  { "value": 'Geography', lable: 'Geography' },
                 ],
-
               },
-
+              {
+                value: "BBA",
+                label: "BBA",
+                specializations: [
+                  { "value": "Education", "label": "Education" },
+                  { value: "Marketing", label: "Marketing" },
+                  { value: "Human Resource Management", label: "Human Resource Management" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "International Business", label: "International Business" }
+                ],
+              },
+              {
+                value: "BCA",
+                label: "BCA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BCOM",
+                label: "BCOM",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BSW",
+                label: "BSW",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BLIS",
+                label: "BLIS",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BSC",
+                label: "BSC",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Chemistry", label: "Chemistry" },
+                  { value: "Phycics", label: "Phycics" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: "Microbiology", label: "Microbiology" },
+                  { value: 'Bio-Technology', label: "Bio-Technology" },
+                  { value: "Zoology", label: "Zoology" },
+                  { value: "Animation and Multimedia", label: "Animation and Multimedia" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
+                  { value: "Operation Theater Technology", label: "Operation Theater Technology" },
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                ],
+              },
+              {
+                value: "MA",
+                label: "MA",
+                specializations: [
+                  { value: "Economics", lable: "Economics" },
+                  { value: "English", label: "English" },
+                  { value: "Geography", label: "Geography" },
+                  { value: "History", label: "History" },
+                  { value: "Political Science", label: "Political Science" },
+                  { value: "Sociology", label: "Sociology" },
+                  { value: "Education", label: "Education" },
+                  { value: "Journalism and Mass Communication", label: "Journalism and Mass Communication" }
+                ],
+              },
+              {
+                value: "MCA",
+                label: "MCA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MCOM",
+                label: "MCOM",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MSW",
+                label: "MSW",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MBA",
+                label: "MBA",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "Human Resources Management", label: "Human Resources Management" },
+                  { value: "Information Technology", label: "Information Technology" },
+                  { value: "International Business", label: "International Business" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "Operations Management", label: "Operations Management" },
+                  { value: "Project Management", label: "Project Management" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Tourism and Hospitality Management", label: "Tourism and Hospitality Management" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Hospital Management", label: "Hospital Management" }
+                ],
+              },
+              {
+                value: "MSC",
+                label: "MSC",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Chemistry", label: "Chemistry" },
+                  { value: "Phycics", label: "Phycics" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: "Information Technology", label: "Information Technology" },
+                  { value: "Computer Science", label: "Computer Science" },
+                  { value: "Bio-Technology", label: "Bio-Technology" },
+                  { value: "Zoology", label: "Zoology" },
+                  { value: "Animation & Multimedia", label: "Animation & Multimedia" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
+                  { value: "Optometry", label: "Optometry" },
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                ],
+              },
+              {
+                value: "MLIS",
+                label: "MLIS",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
             ]
           },
 
@@ -5466,6 +8516,7 @@ const formData = [
                 value: "BA",
                 label: "BA",
                 specializations: [
+                  { value: "General", label: "General" },
                   { "value": "Education", "label": "Education" },
                   { "value": "English", "label": "English" },
                   { "value": "Economics", "label": "Economics" },
@@ -5473,10 +8524,148 @@ const formData = [
                   { "value": "Political science", "label": "Political science" },
                   { "value": "Sociology", "label": "Sociology" },
                   { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
+                  { "value": 'Geography', lable: 'Geography' },
                 ],
-
               },
-
+              {
+                value: "BBA",
+                label: "BBA",
+                specializations: [
+                  { "value": "Education", "label": "Education" },
+                  { value: "Marketing", label: "Marketing" },
+                  { value: "Human Resource Management", label: "Human Resource Management" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "International Business", label: "International Business" }
+                ],
+              },
+              {
+                value: "BCA",
+                label: "BCA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BCOM",
+                label: "BCOM",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BSW",
+                label: "BSW",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BLIS",
+                label: "BLIS",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BSC",
+                label: "BSC",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Chemistry", label: "Chemistry" },
+                  { value: "Phycics", label: "Phycics" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: "Microbiology", label: "Microbiology" },
+                  { value: 'Bio-Technology', label: "Bio-Technology" },
+                  { value: "Zoology", label: "Zoology" },
+                  { value: "Animation and Multimedia", label: "Animation and Multimedia" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
+                  { value: "Operation Theater Technology", label: "Operation Theater Technology" },
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                ],
+              },
+              {
+                value: "MA",
+                label: "MA",
+                specializations: [
+                  { value: "Economics", lable: "Economics" },
+                  { value: "English", label: "English" },
+                  { value: "Geography", label: "Geography" },
+                  { value: "History", label: "History" },
+                  { value: "Political Science", label: "Political Science" },
+                  { value: "Sociology", label: "Sociology" },
+                  { value: "Education", label: "Education" },
+                  { value: "Journalism and Mass Communication", label: "Journalism and Mass Communication" }
+                ],
+              },
+              {
+                value: "MCA",
+                label: "MCA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MCOM",
+                label: "MCOM",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MSW",
+                label: "MSW",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MBA",
+                label: "MBA",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "Human Resources Management", label: "Human Resources Management" },
+                  { value: "Information Technology", label: "Information Technology" },
+                  { value: "International Business", label: "International Business" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "Operations Management", label: "Operations Management" },
+                  { value: "Project Management", label: "Project Management" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Tourism and Hospitality Management", label: "Tourism and Hospitality Management" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Hospital Management", label: "Hospital Management" }
+                ],
+              },
+              {
+                value: "MSC",
+                label: "MSC",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Chemistry", label: "Chemistry" },
+                  { value: "Phycics", label: "Phycics" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: "Information Technology", label: "Information Technology" },
+                  { value: "Computer Science", label: "Computer Science" },
+                  { value: "Bio-Technology", label: "Bio-Technology" },
+                  { value: "Zoology", label: "Zoology" },
+                  { value: "Animation & Multimedia", label: "Animation & Multimedia" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
+                  { value: "Optometry", label: "Optometry" },
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                ],
+              },
+              {
+                value: "MLIS",
+                label: "MLIS",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
             ]
           },
 
@@ -5709,6 +8898,7 @@ const formData = [
                 value: "BA",
                 label: "BA",
                 specializations: [
+                  { value: "General", label: "General" },
                   { "value": "Education", "label": "Education" },
                   { "value": "English", "label": "English" },
                   { "value": "Economics", "label": "Economics" },
@@ -5716,10 +8906,148 @@ const formData = [
                   { "value": "Political science", "label": "Political science" },
                   { "value": "Sociology", "label": "Sociology" },
                   { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
+                  { "value": 'Geography', lable: 'Geography' },
                 ],
-
               },
-
+              {
+                value: "BBA",
+                label: "BBA",
+                specializations: [
+                  { "value": "Education", "label": "Education" },
+                  { value: "Marketing", label: "Marketing" },
+                  { value: "Human Resource Management", label: "Human Resource Management" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "International Business", label: "International Business" }
+                ],
+              },
+              {
+                value: "BCA",
+                label: "BCA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BCOM",
+                label: "BCOM",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BSW",
+                label: "BSW",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BLIS",
+                label: "BLIS",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BSC",
+                label: "BSC",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Chemistry", label: "Chemistry" },
+                  { value: "Phycics", label: "Phycics" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: "Microbiology", label: "Microbiology" },
+                  { value: 'Bio-Technology', label: "Bio-Technology" },
+                  { value: "Zoology", label: "Zoology" },
+                  { value: "Animation and Multimedia", label: "Animation and Multimedia" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
+                  { value: "Operation Theater Technology", label: "Operation Theater Technology" },
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                ],
+              },
+              {
+                value: "MA",
+                label: "MA",
+                specializations: [
+                  { value: "Economics", lable: "Economics" },
+                  { value: "English", label: "English" },
+                  { value: "Geography", label: "Geography" },
+                  { value: "History", label: "History" },
+                  { value: "Political Science", label: "Political Science" },
+                  { value: "Sociology", label: "Sociology" },
+                  { value: "Education", label: "Education" },
+                  { value: "Journalism and Mass Communication", label: "Journalism and Mass Communication" }
+                ],
+              },
+              {
+                value: "MCA",
+                label: "MCA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MCOM",
+                label: "MCOM",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MSW",
+                label: "MSW",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MBA",
+                label: "MBA",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "Human Resources Management", label: "Human Resources Management" },
+                  { value: "Information Technology", label: "Information Technology" },
+                  { value: "International Business", label: "International Business" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "Operations Management", label: "Operations Management" },
+                  { value: "Project Management", label: "Project Management" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Tourism and Hospitality Management", label: "Tourism and Hospitality Management" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Hospital Management", label: "Hospital Management" }
+                ],
+              },
+              {
+                value: "MSC",
+                label: "MSC",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Chemistry", label: "Chemistry" },
+                  { value: "Phycics", label: "Phycics" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: "Information Technology", label: "Information Technology" },
+                  { value: "Computer Science", label: "Computer Science" },
+                  { value: "Bio-Technology", label: "Bio-Technology" },
+                  { value: "Zoology", label: "Zoology" },
+                  { value: "Animation & Multimedia", label: "Animation & Multimedia" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
+                  { value: "Optometry", label: "Optometry" },
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                ],
+              },
+              {
+                value: "MLIS",
+                label: "MLIS",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
             ]
           },
           {
@@ -5933,6 +9261,7 @@ const formData = [
                 value: "BA",
                 label: "BA",
                 specializations: [
+                  { value: "General", label: "General" },
                   { "value": "Education", "label": "Education" },
                   { "value": "English", "label": "English" },
                   { "value": "Economics", "label": "Economics" },
@@ -5940,10 +9269,148 @@ const formData = [
                   { "value": "Political science", "label": "Political science" },
                   { "value": "Sociology", "label": "Sociology" },
                   { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
+                  { "value": 'Geography', lable: 'Geography' },
                 ],
-
               },
-
+              {
+                value: "BBA",
+                label: "BBA",
+                specializations: [
+                  { "value": "Education", "label": "Education" },
+                  { value: "Marketing", label: "Marketing" },
+                  { value: "Human Resource Management", label: "Human Resource Management" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "International Business", label: "International Business" }
+                ],
+              },
+              {
+                value: "BCA",
+                label: "BCA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BCOM",
+                label: "BCOM",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BSW",
+                label: "BSW",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BLIS",
+                label: "BLIS",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BSC",
+                label: "BSC",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Chemistry", label: "Chemistry" },
+                  { value: "Phycics", label: "Phycics" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: "Microbiology", label: "Microbiology" },
+                  { value: 'Bio-Technology', label: "Bio-Technology" },
+                  { value: "Zoology", label: "Zoology" },
+                  { value: "Animation and Multimedia", label: "Animation and Multimedia" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
+                  { value: "Operation Theater Technology", label: "Operation Theater Technology" },
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                ],
+              },
+              {
+                value: "MA",
+                label: "MA",
+                specializations: [
+                  { value: "Economics", lable: "Economics" },
+                  { value: "English", label: "English" },
+                  { value: "Geography", label: "Geography" },
+                  { value: "History", label: "History" },
+                  { value: "Political Science", label: "Political Science" },
+                  { value: "Sociology", label: "Sociology" },
+                  { value: "Education", label: "Education" },
+                  { value: "Journalism and Mass Communication", label: "Journalism and Mass Communication" }
+                ],
+              },
+              {
+                value: "MCA",
+                label: "MCA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MCOM",
+                label: "MCOM",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MSW",
+                label: "MSW",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MBA",
+                label: "MBA",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "Human Resources Management", label: "Human Resources Management" },
+                  { value: "Information Technology", label: "Information Technology" },
+                  { value: "International Business", label: "International Business" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "Operations Management", label: "Operations Management" },
+                  { value: "Project Management", label: "Project Management" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Tourism and Hospitality Management", label: "Tourism and Hospitality Management" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Hospital Management", label: "Hospital Management" }
+                ],
+              },
+              {
+                value: "MSC",
+                label: "MSC",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Chemistry", label: "Chemistry" },
+                  { value: "Phycics", label: "Phycics" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: "Information Technology", label: "Information Technology" },
+                  { value: "Computer Science", label: "Computer Science" },
+                  { value: "Bio-Technology", label: "Bio-Technology" },
+                  { value: "Zoology", label: "Zoology" },
+                  { value: "Animation & Multimedia", label: "Animation & Multimedia" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
+                  { value: "Optometry", label: "Optometry" },
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                ],
+              },
+              {
+                value: "MLIS",
+                label: "MLIS",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
             ]
           },
 
@@ -6149,6 +9616,7 @@ const formData = [
                 value: "BA",
                 label: "BA",
                 specializations: [
+                  { value: "General", label: "General" },
                   { "value": "Education", "label": "Education" },
                   { "value": "English", "label": "English" },
                   { "value": "Economics", "label": "Economics" },
@@ -6156,10 +9624,148 @@ const formData = [
                   { "value": "Political science", "label": "Political science" },
                   { "value": "Sociology", "label": "Sociology" },
                   { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
+                  { "value": 'Geography', lable: 'Geography' },
                 ],
-
               },
-
+              {
+                value: "BBA",
+                label: "BBA",
+                specializations: [
+                  { "value": "Education", "label": "Education" },
+                  { value: "Marketing", label: "Marketing" },
+                  { value: "Human Resource Management", label: "Human Resource Management" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "International Business", label: "International Business" }
+                ],
+              },
+              {
+                value: "BCA",
+                label: "BCA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BCOM",
+                label: "BCOM",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BSW",
+                label: "BSW",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BLIS",
+                label: "BLIS",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BSC",
+                label: "BSC",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Chemistry", label: "Chemistry" },
+                  { value: "Phycics", label: "Phycics" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: "Microbiology", label: "Microbiology" },
+                  { value: 'Bio-Technology', label: "Bio-Technology" },
+                  { value: "Zoology", label: "Zoology" },
+                  { value: "Animation and Multimedia", label: "Animation and Multimedia" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
+                  { value: "Operation Theater Technology", label: "Operation Theater Technology" },
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                ],
+              },
+              {
+                value: "MA",
+                label: "MA",
+                specializations: [
+                  { value: "Economics", lable: "Economics" },
+                  { value: "English", label: "English" },
+                  { value: "Geography", label: "Geography" },
+                  { value: "History", label: "History" },
+                  { value: "Political Science", label: "Political Science" },
+                  { value: "Sociology", label: "Sociology" },
+                  { value: "Education", label: "Education" },
+                  { value: "Journalism and Mass Communication", label: "Journalism and Mass Communication" }
+                ],
+              },
+              {
+                value: "MCA",
+                label: "MCA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MCOM",
+                label: "MCOM",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MSW",
+                label: "MSW",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MBA",
+                label: "MBA",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "Human Resources Management", label: "Human Resources Management" },
+                  { value: "Information Technology", label: "Information Technology" },
+                  { value: "International Business", label: "International Business" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "Operations Management", label: "Operations Management" },
+                  { value: "Project Management", label: "Project Management" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Tourism and Hospitality Management", label: "Tourism and Hospitality Management" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Hospital Management", label: "Hospital Management" }
+                ],
+              },
+              {
+                value: "MSC",
+                label: "MSC",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Chemistry", label: "Chemistry" },
+                  { value: "Phycics", label: "Phycics" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: "Information Technology", label: "Information Technology" },
+                  { value: "Computer Science", label: "Computer Science" },
+                  { value: "Bio-Technology", label: "Bio-Technology" },
+                  { value: "Zoology", label: "Zoology" },
+                  { value: "Animation & Multimedia", label: "Animation & Multimedia" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
+                  { value: "Optometry", label: "Optometry" },
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                ],
+              },
+              {
+                value: "MLIS",
+                label: "MLIS",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
             ]
           },
 
@@ -6365,6 +9971,7 @@ const formData = [
                 value: "BA",
                 label: "BA",
                 specializations: [
+                  { value: "General", label: "General" },
                   { "value": "Education", "label": "Education" },
                   { "value": "English", "label": "English" },
                   { "value": "Economics", "label": "Economics" },
@@ -6372,10 +9979,148 @@ const formData = [
                   { "value": "Political science", "label": "Political science" },
                   { "value": "Sociology", "label": "Sociology" },
                   { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
+                  { "value": 'Geography', lable: 'Geography' },
                 ],
-
               },
-
+              {
+                value: "BBA",
+                label: "BBA",
+                specializations: [
+                  { "value": "Education", "label": "Education" },
+                  { value: "Marketing", label: "Marketing" },
+                  { value: "Human Resource Management", label: "Human Resource Management" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "International Business", label: "International Business" }
+                ],
+              },
+              {
+                value: "BCA",
+                label: "BCA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BCOM",
+                label: "BCOM",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BSW",
+                label: "BSW",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BLIS",
+                label: "BLIS",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BSC",
+                label: "BSC",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Chemistry", label: "Chemistry" },
+                  { value: "Phycics", label: "Phycics" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: "Microbiology", label: "Microbiology" },
+                  { value: 'Bio-Technology', label: "Bio-Technology" },
+                  { value: "Zoology", label: "Zoology" },
+                  { value: "Animation and Multimedia", label: "Animation and Multimedia" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
+                  { value: "Operation Theater Technology", label: "Operation Theater Technology" },
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                ],
+              },
+              {
+                value: "MA",
+                label: "MA",
+                specializations: [
+                  { value: "Economics", lable: "Economics" },
+                  { value: "English", label: "English" },
+                  { value: "Geography", label: "Geography" },
+                  { value: "History", label: "History" },
+                  { value: "Political Science", label: "Political Science" },
+                  { value: "Sociology", label: "Sociology" },
+                  { value: "Education", label: "Education" },
+                  { value: "Journalism and Mass Communication", label: "Journalism and Mass Communication" }
+                ],
+              },
+              {
+                value: "MCA",
+                label: "MCA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MCOM",
+                label: "MCOM",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MSW",
+                label: "MSW",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MBA",
+                label: "MBA",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "Human Resources Management", label: "Human Resources Management" },
+                  { value: "Information Technology", label: "Information Technology" },
+                  { value: "International Business", label: "International Business" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "Operations Management", label: "Operations Management" },
+                  { value: "Project Management", label: "Project Management" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Tourism and Hospitality Management", label: "Tourism and Hospitality Management" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Hospital Management", label: "Hospital Management" }
+                ],
+              },
+              {
+                value: "MSC",
+                label: "MSC",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Chemistry", label: "Chemistry" },
+                  { value: "Phycics", label: "Phycics" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: "Information Technology", label: "Information Technology" },
+                  { value: "Computer Science", label: "Computer Science" },
+                  { value: "Bio-Technology", label: "Bio-Technology" },
+                  { value: "Zoology", label: "Zoology" },
+                  { value: "Animation & Multimedia", label: "Animation & Multimedia" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
+                  { value: "Optometry", label: "Optometry" },
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                ],
+              },
+              {
+                value: "MLIS",
+                label: "MLIS",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
             ]
           },
           {
@@ -6589,6 +10334,7 @@ const formData = [
                 value: "BA",
                 label: "BA",
                 specializations: [
+                  { value: "General", label: "General" },
                   { "value": "Education", "label": "Education" },
                   { "value": "English", "label": "English" },
                   { "value": "Economics", "label": "Economics" },
@@ -6596,10 +10342,148 @@ const formData = [
                   { "value": "Political science", "label": "Political science" },
                   { "value": "Sociology", "label": "Sociology" },
                   { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
+                  { "value": 'Geography', lable: 'Geography' },
                 ],
-
               },
-
+              {
+                value: "BBA",
+                label: "BBA",
+                specializations: [
+                  { "value": "Education", "label": "Education" },
+                  { value: "Marketing", label: "Marketing" },
+                  { value: "Human Resource Management", label: "Human Resource Management" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "International Business", label: "International Business" }
+                ],
+              },
+              {
+                value: "BCA",
+                label: "BCA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BCOM",
+                label: "BCOM",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BSW",
+                label: "BSW",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BLIS",
+                label: "BLIS",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BSC",
+                label: "BSC",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Chemistry", label: "Chemistry" },
+                  { value: "Phycics", label: "Phycics" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: "Microbiology", label: "Microbiology" },
+                  { value: 'Bio-Technology', label: "Bio-Technology" },
+                  { value: "Zoology", label: "Zoology" },
+                  { value: "Animation and Multimedia", label: "Animation and Multimedia" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
+                  { value: "Operation Theater Technology", label: "Operation Theater Technology" },
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                ],
+              },
+              {
+                value: "MA",
+                label: "MA",
+                specializations: [
+                  { value: "Economics", lable: "Economics" },
+                  { value: "English", label: "English" },
+                  { value: "Geography", label: "Geography" },
+                  { value: "History", label: "History" },
+                  { value: "Political Science", label: "Political Science" },
+                  { value: "Sociology", label: "Sociology" },
+                  { value: "Education", label: "Education" },
+                  { value: "Journalism and Mass Communication", label: "Journalism and Mass Communication" }
+                ],
+              },
+              {
+                value: "MCA",
+                label: "MCA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MCOM",
+                label: "MCOM",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MSW",
+                label: "MSW",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MBA",
+                label: "MBA",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "Human Resources Management", label: "Human Resources Management" },
+                  { value: "Information Technology", label: "Information Technology" },
+                  { value: "International Business", label: "International Business" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "Operations Management", label: "Operations Management" },
+                  { value: "Project Management", label: "Project Management" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Tourism and Hospitality Management", label: "Tourism and Hospitality Management" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Hospital Management", label: "Hospital Management" }
+                ],
+              },
+              {
+                value: "MSC",
+                label: "MSC",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Chemistry", label: "Chemistry" },
+                  { value: "Phycics", label: "Phycics" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: "Information Technology", label: "Information Technology" },
+                  { value: "Computer Science", label: "Computer Science" },
+                  { value: "Bio-Technology", label: "Bio-Technology" },
+                  { value: "Zoology", label: "Zoology" },
+                  { value: "Animation & Multimedia", label: "Animation & Multimedia" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
+                  { value: "Optometry", label: "Optometry" },
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                ],
+              },
+              {
+                value: "MLIS",
+                label: "MLIS",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
             ]
           },
           {
@@ -6831,6 +10715,7 @@ const formData = [
                 value: "BA",
                 label: "BA",
                 specializations: [
+                  { value: "General", label: "General" },
                   { "value": "Education", "label": "Education" },
                   { "value": "English", "label": "English" },
                   { "value": "Economics", "label": "Economics" },
@@ -6838,10 +10723,148 @@ const formData = [
                   { "value": "Political science", "label": "Political science" },
                   { "value": "Sociology", "label": "Sociology" },
                   { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
+                  { "value": 'Geography', lable: 'Geography' },
                 ],
-
               },
-
+              {
+                value: "BBA",
+                label: "BBA",
+                specializations: [
+                  { "value": "Education", "label": "Education" },
+                  { value: "Marketing", label: "Marketing" },
+                  { value: "Human Resource Management", label: "Human Resource Management" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "International Business", label: "International Business" }
+                ],
+              },
+              {
+                value: "BCA",
+                label: "BCA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BCOM",
+                label: "BCOM",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BSW",
+                label: "BSW",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BLIS",
+                label: "BLIS",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BSC",
+                label: "BSC",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Chemistry", label: "Chemistry" },
+                  { value: "Phycics", label: "Phycics" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: "Microbiology", label: "Microbiology" },
+                  { value: 'Bio-Technology', label: "Bio-Technology" },
+                  { value: "Zoology", label: "Zoology" },
+                  { value: "Animation and Multimedia", label: "Animation and Multimedia" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
+                  { value: "Operation Theater Technology", label: "Operation Theater Technology" },
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                ],
+              },
+              {
+                value: "MA",
+                label: "MA",
+                specializations: [
+                  { value: "Economics", lable: "Economics" },
+                  { value: "English", label: "English" },
+                  { value: "Geography", label: "Geography" },
+                  { value: "History", label: "History" },
+                  { value: "Political Science", label: "Political Science" },
+                  { value: "Sociology", label: "Sociology" },
+                  { value: "Education", label: "Education" },
+                  { value: "Journalism and Mass Communication", label: "Journalism and Mass Communication" }
+                ],
+              },
+              {
+                value: "MCA",
+                label: "MCA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MCOM",
+                label: "MCOM",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MSW",
+                label: "MSW",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MBA",
+                label: "MBA",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "Human Resources Management", label: "Human Resources Management" },
+                  { value: "Information Technology", label: "Information Technology" },
+                  { value: "International Business", label: "International Business" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "Operations Management", label: "Operations Management" },
+                  { value: "Project Management", label: "Project Management" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Tourism and Hospitality Management", label: "Tourism and Hospitality Management" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Hospital Management", label: "Hospital Management" }
+                ],
+              },
+              {
+                value: "MSC",
+                label: "MSC",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Chemistry", label: "Chemistry" },
+                  { value: "Phycics", label: "Phycics" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: "Information Technology", label: "Information Technology" },
+                  { value: "Computer Science", label: "Computer Science" },
+                  { value: "Bio-Technology", label: "Bio-Technology" },
+                  { value: "Zoology", label: "Zoology" },
+                  { value: "Animation & Multimedia", label: "Animation & Multimedia" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
+                  { value: "Optometry", label: "Optometry" },
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                ],
+              },
+              {
+                value: "MLIS",
+                label: "MLIS",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
             ]
           },
           {
@@ -7082,6 +11105,7 @@ const formData = [
                 value: "BA",
                 label: "BA",
                 specializations: [
+                  { value: "General", label: "General" },
                   { "value": "Education", "label": "Education" },
                   { "value": "English", "label": "English" },
                   { "value": "Economics", "label": "Economics" },
@@ -7089,10 +11113,148 @@ const formData = [
                   { "value": "Political science", "label": "Political science" },
                   { "value": "Sociology", "label": "Sociology" },
                   { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
+                  { "value": 'Geography', lable: 'Geography' },
                 ],
-
               },
-
+              {
+                value: "BBA",
+                label: "BBA",
+                specializations: [
+                  { "value": "Education", "label": "Education" },
+                  { value: "Marketing", label: "Marketing" },
+                  { value: "Human Resource Management", label: "Human Resource Management" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "International Business", label: "International Business" }
+                ],
+              },
+              {
+                value: "BCA",
+                label: "BCA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BCOM",
+                label: "BCOM",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BSW",
+                label: "BSW",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BLIS",
+                label: "BLIS",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BSC",
+                label: "BSC",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Chemistry", label: "Chemistry" },
+                  { value: "Phycics", label: "Phycics" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: "Microbiology", label: "Microbiology" },
+                  { value: 'Bio-Technology', label: "Bio-Technology" },
+                  { value: "Zoology", label: "Zoology" },
+                  { value: "Animation and Multimedia", label: "Animation and Multimedia" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
+                  { value: "Operation Theater Technology", label: "Operation Theater Technology" },
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                ],
+              },
+              {
+                value: "MA",
+                label: "MA",
+                specializations: [
+                  { value: "Economics", lable: "Economics" },
+                  { value: "English", label: "English" },
+                  { value: "Geography", label: "Geography" },
+                  { value: "History", label: "History" },
+                  { value: "Political Science", label: "Political Science" },
+                  { value: "Sociology", label: "Sociology" },
+                  { value: "Education", label: "Education" },
+                  { value: "Journalism and Mass Communication", label: "Journalism and Mass Communication" }
+                ],
+              },
+              {
+                value: "MCA",
+                label: "MCA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MCOM",
+                label: "MCOM",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MSW",
+                label: "MSW",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MBA",
+                label: "MBA",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "Human Resources Management", label: "Human Resources Management" },
+                  { value: "Information Technology", label: "Information Technology" },
+                  { value: "International Business", label: "International Business" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "Operations Management", label: "Operations Management" },
+                  { value: "Project Management", label: "Project Management" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Tourism and Hospitality Management", label: "Tourism and Hospitality Management" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Hospital Management", label: "Hospital Management" }
+                ],
+              },
+              {
+                value: "MSC",
+                label: "MSC",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Chemistry", label: "Chemistry" },
+                  { value: "Phycics", label: "Phycics" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: "Information Technology", label: "Information Technology" },
+                  { value: "Computer Science", label: "Computer Science" },
+                  { value: "Bio-Technology", label: "Bio-Technology" },
+                  { value: "Zoology", label: "Zoology" },
+                  { value: "Animation & Multimedia", label: "Animation & Multimedia" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
+                  { value: "Optometry", label: "Optometry" },
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                ],
+              },
+              {
+                value: "MLIS",
+                label: "MLIS",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
             ]
           },
           {
@@ -7333,6 +11495,7 @@ const formData = [
                 value: "BA",
                 label: "BA",
                 specializations: [
+                  { value: "General", label: "General" },
                   { "value": "Education", "label": "Education" },
                   { "value": "English", "label": "English" },
                   { "value": "Economics", "label": "Economics" },
@@ -7340,10 +11503,148 @@ const formData = [
                   { "value": "Political science", "label": "Political science" },
                   { "value": "Sociology", "label": "Sociology" },
                   { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
+                  { "value": 'Geography', lable: 'Geography' },
                 ],
-
               },
-
+              {
+                value: "BBA",
+                label: "BBA",
+                specializations: [
+                  { "value": "Education", "label": "Education" },
+                  { value: "Marketing", label: "Marketing" },
+                  { value: "Human Resource Management", label: "Human Resource Management" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "International Business", label: "International Business" }
+                ],
+              },
+              {
+                value: "BCA",
+                label: "BCA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BCOM",
+                label: "BCOM",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BSW",
+                label: "BSW",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BLIS",
+                label: "BLIS",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BSC",
+                label: "BSC",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Chemistry", label: "Chemistry" },
+                  { value: "Phycics", label: "Phycics" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: "Microbiology", label: "Microbiology" },
+                  { value: 'Bio-Technology', label: "Bio-Technology" },
+                  { value: "Zoology", label: "Zoology" },
+                  { value: "Animation and Multimedia", label: "Animation and Multimedia" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
+                  { value: "Operation Theater Technology", label: "Operation Theater Technology" },
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                ],
+              },
+              {
+                value: "MA",
+                label: "MA",
+                specializations: [
+                  { value: "Economics", lable: "Economics" },
+                  { value: "English", label: "English" },
+                  { value: "Geography", label: "Geography" },
+                  { value: "History", label: "History" },
+                  { value: "Political Science", label: "Political Science" },
+                  { value: "Sociology", label: "Sociology" },
+                  { value: "Education", label: "Education" },
+                  { value: "Journalism and Mass Communication", label: "Journalism and Mass Communication" }
+                ],
+              },
+              {
+                value: "MCA",
+                label: "MCA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MCOM",
+                label: "MCOM",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MSW",
+                label: "MSW",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MBA",
+                label: "MBA",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "Human Resources Management", label: "Human Resources Management" },
+                  { value: "Information Technology", label: "Information Technology" },
+                  { value: "International Business", label: "International Business" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "Operations Management", label: "Operations Management" },
+                  { value: "Project Management", label: "Project Management" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Tourism and Hospitality Management", label: "Tourism and Hospitality Management" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Hospital Management", label: "Hospital Management" }
+                ],
+              },
+              {
+                value: "MSC",
+                label: "MSC",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Chemistry", label: "Chemistry" },
+                  { value: "Phycics", label: "Phycics" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: "Information Technology", label: "Information Technology" },
+                  { value: "Computer Science", label: "Computer Science" },
+                  { value: "Bio-Technology", label: "Bio-Technology" },
+                  { value: "Zoology", label: "Zoology" },
+                  { value: "Animation & Multimedia", label: "Animation & Multimedia" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
+                  { value: "Optometry", label: "Optometry" },
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                ],
+              },
+              {
+                value: "MLIS",
+                label: "MLIS",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
             ]
           },
           {
@@ -7584,6 +11885,7 @@ const formData = [
                 value: "BA",
                 label: "BA",
                 specializations: [
+                  { value: "General", label: "General" },
                   { "value": "Education", "label": "Education" },
                   { "value": "English", "label": "English" },
                   { "value": "Economics", "label": "Economics" },
@@ -7591,10 +11893,148 @@ const formData = [
                   { "value": "Political science", "label": "Political science" },
                   { "value": "Sociology", "label": "Sociology" },
                   { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
+                  { "value": 'Geography', lable: 'Geography' },
                 ],
-
               },
-
+              {
+                value: "BBA",
+                label: "BBA",
+                specializations: [
+                  { "value": "Education", "label": "Education" },
+                  { value: "Marketing", label: "Marketing" },
+                  { value: "Human Resource Management", label: "Human Resource Management" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "International Business", label: "International Business" }
+                ],
+              },
+              {
+                value: "BCA",
+                label: "BCA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BCOM",
+                label: "BCOM",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BSW",
+                label: "BSW",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BLIS",
+                label: "BLIS",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BSC",
+                label: "BSC",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Chemistry", label: "Chemistry" },
+                  { value: "Phycics", label: "Phycics" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: "Microbiology", label: "Microbiology" },
+                  { value: 'Bio-Technology', label: "Bio-Technology" },
+                  { value: "Zoology", label: "Zoology" },
+                  { value: "Animation and Multimedia", label: "Animation and Multimedia" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
+                  { value: "Operation Theater Technology", label: "Operation Theater Technology" },
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                ],
+              },
+              {
+                value: "MA",
+                label: "MA",
+                specializations: [
+                  { value: "Economics", lable: "Economics" },
+                  { value: "English", label: "English" },
+                  { value: "Geography", label: "Geography" },
+                  { value: "History", label: "History" },
+                  { value: "Political Science", label: "Political Science" },
+                  { value: "Sociology", label: "Sociology" },
+                  { value: "Education", label: "Education" },
+                  { value: "Journalism and Mass Communication", label: "Journalism and Mass Communication" }
+                ],
+              },
+              {
+                value: "MCA",
+                label: "MCA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MCOM",
+                label: "MCOM",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MSW",
+                label: "MSW",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MBA",
+                label: "MBA",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "Human Resources Management", label: "Human Resources Management" },
+                  { value: "Information Technology", label: "Information Technology" },
+                  { value: "International Business", label: "International Business" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "Operations Management", label: "Operations Management" },
+                  { value: "Project Management", label: "Project Management" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Tourism and Hospitality Management", label: "Tourism and Hospitality Management" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Hospital Management", label: "Hospital Management" }
+                ],
+              },
+              {
+                value: "MSC",
+                label: "MSC",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Chemistry", label: "Chemistry" },
+                  { value: "Phycics", label: "Phycics" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: "Information Technology", label: "Information Technology" },
+                  { value: "Computer Science", label: "Computer Science" },
+                  { value: "Bio-Technology", label: "Bio-Technology" },
+                  { value: "Zoology", label: "Zoology" },
+                  { value: "Animation & Multimedia", label: "Animation & Multimedia" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
+                  { value: "Optometry", label: "Optometry" },
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                ],
+              },
+              {
+                value: "MLIS",
+                label: "MLIS",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
             ]
           },
           {
@@ -7808,6 +12248,7 @@ const formData = [
                 value: "BA",
                 label: "BA",
                 specializations: [
+                  { value: "General", label: "General" },
                   { "value": "Education", "label": "Education" },
                   { "value": "English", "label": "English" },
                   { "value": "Economics", "label": "Economics" },
@@ -7815,10 +12256,148 @@ const formData = [
                   { "value": "Political science", "label": "Political science" },
                   { "value": "Sociology", "label": "Sociology" },
                   { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
+                  { "value": 'Geography', lable: 'Geography' },
                 ],
-
               },
-
+              {
+                value: "BBA",
+                label: "BBA",
+                specializations: [
+                  { "value": "Education", "label": "Education" },
+                  { value: "Marketing", label: "Marketing" },
+                  { value: "Human Resource Management", label: "Human Resource Management" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "International Business", label: "International Business" }
+                ],
+              },
+              {
+                value: "BCA",
+                label: "BCA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BCOM",
+                label: "BCOM",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BSW",
+                label: "BSW",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BLIS",
+                label: "BLIS",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BSC",
+                label: "BSC",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Chemistry", label: "Chemistry" },
+                  { value: "Phycics", label: "Phycics" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: "Microbiology", label: "Microbiology" },
+                  { value: 'Bio-Technology', label: "Bio-Technology" },
+                  { value: "Zoology", label: "Zoology" },
+                  { value: "Animation and Multimedia", label: "Animation and Multimedia" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
+                  { value: "Operation Theater Technology", label: "Operation Theater Technology" },
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                ],
+              },
+              {
+                value: "MA",
+                label: "MA",
+                specializations: [
+                  { value: "Economics", lable: "Economics" },
+                  { value: "English", label: "English" },
+                  { value: "Geography", label: "Geography" },
+                  { value: "History", label: "History" },
+                  { value: "Political Science", label: "Political Science" },
+                  { value: "Sociology", label: "Sociology" },
+                  { value: "Education", label: "Education" },
+                  { value: "Journalism and Mass Communication", label: "Journalism and Mass Communication" }
+                ],
+              },
+              {
+                value: "MCA",
+                label: "MCA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MCOM",
+                label: "MCOM",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MSW",
+                label: "MSW",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MBA",
+                label: "MBA",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "Human Resources Management", label: "Human Resources Management" },
+                  { value: "Information Technology", label: "Information Technology" },
+                  { value: "International Business", label: "International Business" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "Operations Management", label: "Operations Management" },
+                  { value: "Project Management", label: "Project Management" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Tourism and Hospitality Management", label: "Tourism and Hospitality Management" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Hospital Management", label: "Hospital Management" }
+                ],
+              },
+              {
+                value: "MSC",
+                label: "MSC",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Chemistry", label: "Chemistry" },
+                  { value: "Phycics", label: "Phycics" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: "Information Technology", label: "Information Technology" },
+                  { value: "Computer Science", label: "Computer Science" },
+                  { value: "Bio-Technology", label: "Bio-Technology" },
+                  { value: "Zoology", label: "Zoology" },
+                  { value: "Animation & Multimedia", label: "Animation & Multimedia" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
+                  { value: "Optometry", label: "Optometry" },
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                ],
+              },
+              {
+                value: "MLIS",
+                label: "MLIS",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
             ]
           },
 
@@ -8024,6 +12603,7 @@ const formData = [
                 value: "BA",
                 label: "BA",
                 specializations: [
+                  { value: "General", label: "General" },
                   { "value": "Education", "label": "Education" },
                   { "value": "English", "label": "English" },
                   { "value": "Economics", "label": "Economics" },
@@ -8031,10 +12611,148 @@ const formData = [
                   { "value": "Political science", "label": "Political science" },
                   { "value": "Sociology", "label": "Sociology" },
                   { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
+                  { "value": 'Geography', lable: 'Geography' },
                 ],
-
               },
-
+              {
+                value: "BBA",
+                label: "BBA",
+                specializations: [
+                  { "value": "Education", "label": "Education" },
+                  { value: "Marketing", label: "Marketing" },
+                  { value: "Human Resource Management", label: "Human Resource Management" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "International Business", label: "International Business" }
+                ],
+              },
+              {
+                value: "BCA",
+                label: "BCA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BCOM",
+                label: "BCOM",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BSW",
+                label: "BSW",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BLIS",
+                label: "BLIS",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BSC",
+                label: "BSC",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Chemistry", label: "Chemistry" },
+                  { value: "Phycics", label: "Phycics" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: "Microbiology", label: "Microbiology" },
+                  { value: 'Bio-Technology', label: "Bio-Technology" },
+                  { value: "Zoology", label: "Zoology" },
+                  { value: "Animation and Multimedia", label: "Animation and Multimedia" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
+                  { value: "Operation Theater Technology", label: "Operation Theater Technology" },
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                ],
+              },
+              {
+                value: "MA",
+                label: "MA",
+                specializations: [
+                  { value: "Economics", lable: "Economics" },
+                  { value: "English", label: "English" },
+                  { value: "Geography", label: "Geography" },
+                  { value: "History", label: "History" },
+                  { value: "Political Science", label: "Political Science" },
+                  { value: "Sociology", label: "Sociology" },
+                  { value: "Education", label: "Education" },
+                  { value: "Journalism and Mass Communication", label: "Journalism and Mass Communication" }
+                ],
+              },
+              {
+                value: "MCA",
+                label: "MCA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MCOM",
+                label: "MCOM",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MSW",
+                label: "MSW",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MBA",
+                label: "MBA",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "Human Resources Management", label: "Human Resources Management" },
+                  { value: "Information Technology", label: "Information Technology" },
+                  { value: "International Business", label: "International Business" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "Operations Management", label: "Operations Management" },
+                  { value: "Project Management", label: "Project Management" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Tourism and Hospitality Management", label: "Tourism and Hospitality Management" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Hospital Management", label: "Hospital Management" }
+                ],
+              },
+              {
+                value: "MSC",
+                label: "MSC",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Chemistry", label: "Chemistry" },
+                  { value: "Phycics", label: "Phycics" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: "Information Technology", label: "Information Technology" },
+                  { value: "Computer Science", label: "Computer Science" },
+                  { value: "Bio-Technology", label: "Bio-Technology" },
+                  { value: "Zoology", label: "Zoology" },
+                  { value: "Animation & Multimedia", label: "Animation & Multimedia" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
+                  { value: "Optometry", label: "Optometry" },
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                ],
+              },
+              {
+                value: "MLIS",
+                label: "MLIS",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
             ]
           },
 
@@ -8240,6 +12958,7 @@ const formData = [
                 value: "BA",
                 label: "BA",
                 specializations: [
+                  { value: "General", label: "General" },
                   { "value": "Education", "label": "Education" },
                   { "value": "English", "label": "English" },
                   { "value": "Economics", "label": "Economics" },
@@ -8247,10 +12966,148 @@ const formData = [
                   { "value": "Political science", "label": "Political science" },
                   { "value": "Sociology", "label": "Sociology" },
                   { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
+                  { "value": 'Geography', lable: 'Geography' },
                 ],
-
               },
-
+              {
+                value: "BBA",
+                label: "BBA",
+                specializations: [
+                  { "value": "Education", "label": "Education" },
+                  { value: "Marketing", label: "Marketing" },
+                  { value: "Human Resource Management", label: "Human Resource Management" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "International Business", label: "International Business" }
+                ],
+              },
+              {
+                value: "BCA",
+                label: "BCA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BCOM",
+                label: "BCOM",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BSW",
+                label: "BSW",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BLIS",
+                label: "BLIS",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BSC",
+                label: "BSC",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Chemistry", label: "Chemistry" },
+                  { value: "Phycics", label: "Phycics" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: "Microbiology", label: "Microbiology" },
+                  { value: 'Bio-Technology', label: "Bio-Technology" },
+                  { value: "Zoology", label: "Zoology" },
+                  { value: "Animation and Multimedia", label: "Animation and Multimedia" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
+                  { value: "Operation Theater Technology", label: "Operation Theater Technology" },
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                ],
+              },
+              {
+                value: "MA",
+                label: "MA",
+                specializations: [
+                  { value: "Economics", lable: "Economics" },
+                  { value: "English", label: "English" },
+                  { value: "Geography", label: "Geography" },
+                  { value: "History", label: "History" },
+                  { value: "Political Science", label: "Political Science" },
+                  { value: "Sociology", label: "Sociology" },
+                  { value: "Education", label: "Education" },
+                  { value: "Journalism and Mass Communication", label: "Journalism and Mass Communication" }
+                ],
+              },
+              {
+                value: "MCA",
+                label: "MCA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MCOM",
+                label: "MCOM",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MSW",
+                label: "MSW",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MBA",
+                label: "MBA",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "Human Resources Management", label: "Human Resources Management" },
+                  { value: "Information Technology", label: "Information Technology" },
+                  { value: "International Business", label: "International Business" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "Operations Management", label: "Operations Management" },
+                  { value: "Project Management", label: "Project Management" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Tourism and Hospitality Management", label: "Tourism and Hospitality Management" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Hospital Management", label: "Hospital Management" }
+                ],
+              },
+              {
+                value: "MSC",
+                label: "MSC",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Chemistry", label: "Chemistry" },
+                  { value: "Phycics", label: "Phycics" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: "Information Technology", label: "Information Technology" },
+                  { value: "Computer Science", label: "Computer Science" },
+                  { value: "Bio-Technology", label: "Bio-Technology" },
+                  { value: "Zoology", label: "Zoology" },
+                  { value: "Animation & Multimedia", label: "Animation & Multimedia" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
+                  { value: "Optometry", label: "Optometry" },
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                ],
+              },
+              {
+                value: "MLIS",
+                label: "MLIS",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
             ]
           },
 
@@ -8483,6 +13340,7 @@ const formData = [
                 value: "BA",
                 label: "BA",
                 specializations: [
+                  { value: "General", label: "General" },
                   { "value": "Education", "label": "Education" },
                   { "value": "English", "label": "English" },
                   { "value": "Economics", "label": "Economics" },
@@ -8490,10 +13348,148 @@ const formData = [
                   { "value": "Political science", "label": "Political science" },
                   { "value": "Sociology", "label": "Sociology" },
                   { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
+                  { "value": 'Geography', lable: 'Geography' },
                 ],
-
               },
-
+              {
+                value: "BBA",
+                label: "BBA",
+                specializations: [
+                  { "value": "Education", "label": "Education" },
+                  { value: "Marketing", label: "Marketing" },
+                  { value: "Human Resource Management", label: "Human Resource Management" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "International Business", label: "International Business" }
+                ],
+              },
+              {
+                value: "BCA",
+                label: "BCA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BCOM",
+                label: "BCOM",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BSW",
+                label: "BSW",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BLIS",
+                label: "BLIS",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BSC",
+                label: "BSC",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Chemistry", label: "Chemistry" },
+                  { value: "Phycics", label: "Phycics" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: "Microbiology", label: "Microbiology" },
+                  { value: 'Bio-Technology', label: "Bio-Technology" },
+                  { value: "Zoology", label: "Zoology" },
+                  { value: "Animation and Multimedia", label: "Animation and Multimedia" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
+                  { value: "Operation Theater Technology", label: "Operation Theater Technology" },
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                ],
+              },
+              {
+                value: "MA",
+                label: "MA",
+                specializations: [
+                  { value: "Economics", lable: "Economics" },
+                  { value: "English", label: "English" },
+                  { value: "Geography", label: "Geography" },
+                  { value: "History", label: "History" },
+                  { value: "Political Science", label: "Political Science" },
+                  { value: "Sociology", label: "Sociology" },
+                  { value: "Education", label: "Education" },
+                  { value: "Journalism and Mass Communication", label: "Journalism and Mass Communication" }
+                ],
+              },
+              {
+                value: "MCA",
+                label: "MCA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MCOM",
+                label: "MCOM",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MSW",
+                label: "MSW",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MBA",
+                label: "MBA",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "Human Resources Management", label: "Human Resources Management" },
+                  { value: "Information Technology", label: "Information Technology" },
+                  { value: "International Business", label: "International Business" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "Operations Management", label: "Operations Management" },
+                  { value: "Project Management", label: "Project Management" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Tourism and Hospitality Management", label: "Tourism and Hospitality Management" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Hospital Management", label: "Hospital Management" }
+                ],
+              },
+              {
+                value: "MSC",
+                label: "MSC",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Chemistry", label: "Chemistry" },
+                  { value: "Phycics", label: "Phycics" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: "Information Technology", label: "Information Technology" },
+                  { value: "Computer Science", label: "Computer Science" },
+                  { value: "Bio-Technology", label: "Bio-Technology" },
+                  { value: "Zoology", label: "Zoology" },
+                  { value: "Animation & Multimedia", label: "Animation & Multimedia" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
+                  { value: "Optometry", label: "Optometry" },
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                ],
+              },
+              {
+                value: "MLIS",
+                label: "MLIS",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
             ]
           },
           {
@@ -8734,6 +13730,7 @@ const formData = [
                 value: "BA",
                 label: "BA",
                 specializations: [
+                  { value: "General", label: "General" },
                   { "value": "Education", "label": "Education" },
                   { "value": "English", "label": "English" },
                   { "value": "Economics", "label": "Economics" },
@@ -8741,10 +13738,148 @@ const formData = [
                   { "value": "Political science", "label": "Political science" },
                   { "value": "Sociology", "label": "Sociology" },
                   { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
+                  { "value": 'Geography', lable: 'Geography' },
                 ],
-
               },
-
+              {
+                value: "BBA",
+                label: "BBA",
+                specializations: [
+                  { "value": "Education", "label": "Education" },
+                  { value: "Marketing", label: "Marketing" },
+                  { value: "Human Resource Management", label: "Human Resource Management" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "International Business", label: "International Business" }
+                ],
+              },
+              {
+                value: "BCA",
+                label: "BCA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BCOM",
+                label: "BCOM",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BSW",
+                label: "BSW",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BLIS",
+                label: "BLIS",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BSC",
+                label: "BSC",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Chemistry", label: "Chemistry" },
+                  { value: "Phycics", label: "Phycics" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: "Microbiology", label: "Microbiology" },
+                  { value: 'Bio-Technology', label: "Bio-Technology" },
+                  { value: "Zoology", label: "Zoology" },
+                  { value: "Animation and Multimedia", label: "Animation and Multimedia" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
+                  { value: "Operation Theater Technology", label: "Operation Theater Technology" },
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                ],
+              },
+              {
+                value: "MA",
+                label: "MA",
+                specializations: [
+                  { value: "Economics", lable: "Economics" },
+                  { value: "English", label: "English" },
+                  { value: "Geography", label: "Geography" },
+                  { value: "History", label: "History" },
+                  { value: "Political Science", label: "Political Science" },
+                  { value: "Sociology", label: "Sociology" },
+                  { value: "Education", label: "Education" },
+                  { value: "Journalism and Mass Communication", label: "Journalism and Mass Communication" }
+                ],
+              },
+              {
+                value: "MCA",
+                label: "MCA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MCOM",
+                label: "MCOM",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MSW",
+                label: "MSW",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MBA",
+                label: "MBA",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "Human Resources Management", label: "Human Resources Management" },
+                  { value: "Information Technology", label: "Information Technology" },
+                  { value: "International Business", label: "International Business" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "Operations Management", label: "Operations Management" },
+                  { value: "Project Management", label: "Project Management" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Tourism and Hospitality Management", label: "Tourism and Hospitality Management" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Hospital Management", label: "Hospital Management" }
+                ],
+              },
+              {
+                value: "MSC",
+                label: "MSC",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Chemistry", label: "Chemistry" },
+                  { value: "Phycics", label: "Phycics" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: "Information Technology", label: "Information Technology" },
+                  { value: "Computer Science", label: "Computer Science" },
+                  { value: "Bio-Technology", label: "Bio-Technology" },
+                  { value: "Zoology", label: "Zoology" },
+                  { value: "Animation & Multimedia", label: "Animation & Multimedia" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
+                  { value: "Optometry", label: "Optometry" },
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                ],
+              },
+              {
+                value: "MLIS",
+                label: "MLIS",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
             ]
           },
           {

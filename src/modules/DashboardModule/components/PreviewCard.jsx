@@ -17,7 +17,21 @@ const colours = {
   Enrolled: '#722ed1',
   Alumini: '#614700',
   Univeristy: '#614700',
-  Institute: '#614700'
+  Institute: '#614700',
+  CU: '#595959',
+  JAIN: '#13c2c2',
+  SVSU: '#722ed1',
+  NMIMS: '#1890ff',
+  VIGNAN: '#95de64',
+  HINDUSTAN: '#13c2c2',
+  MANIPAL: '#614700',
+  SMU: '#722ed1',
+  HU: '#ff4d4f',
+  BOSSE: '#13c2c2',
+  SABARMATI: '#95de64',
+  MRU: '#595959',
+  MANGALAYATAN: '#ffa940',
+  'MANGALAYATAN ONLINE': '#1890ff',
 };
 
 const defaultStatistics = [
@@ -33,6 +47,22 @@ const defaultStatistics = [
     tag: 'CU',
     value: 0,
   },
+  {
+    tag: 'LPU',
+    value: 0
+  },
+  { tag: 'SVSU', value: 0 },
+  { tag: 'NMIMS', value: 0 },
+  { tag: 'VIGNAN', value: 0 },
+  { tag: 'HINDUSTAN', value: 0 },
+  { tag: 'MANIPAL', value: 0 },
+  { tag: 'SMU', value: 0 },
+  { tag: 'HU', value: 0 },
+  { tag: 'BOSSE', value: 0 },
+  { tag: 'SABARMATI', value: 0 },
+  { tag: 'MRU', value: 0 },
+  { tag: 'MANGALAYATAN', value: 0 },
+  { tag: 'MANGALAYATAN ONLINE', value: 0 },
   {
     tag: 'UPES',
     value: 0,
