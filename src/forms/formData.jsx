@@ -77,21 +77,21 @@ const formData = [
             key: 'select',
             label: 'Session',
             name: ['customfields', 'session'],
-            place: 'eg: jan 20-jan 23',
+            place: 'eg: jan 20',
             id: 'Session',
             type: 'select',
-            options: [{ value: 'jan 20-jan 20', label: 'Jan 20-Jan 20' },
-            { value: 'july 20-july 20', label: 'July 20-July 20' },
-            { value: 'jan 21-jan 21', label: 'Jan 21-Jan 21' },
-            { value: 'july 21-july 21', label: 'July 21-July 21' },
-            { value: 'jan 22-jan 22', label: 'Jan 22-Jan 22' },
-            { value: 'july 22-july 22', label: 'July 22-July 22' },
-            { value: 'jan 23-jan 23', label: 'Jan 23-Jan 23' },
-            { value: 'july 23-july 23', label: 'July 23-July 23' },
-            { value: 'jan 24-jan 24', label: 'Jan 24-Jan 24' },
-            { value: 'july 24-july 24', label: 'July 24-July 24' },
-            { value: 'jan 25-jan 25', label: 'Jan 25-Jan 25' },
-            { value: 'july 25-july 25', label: 'July 25-July 25' }],
+            options: [{ value: 'jan 20', label: 'Jan 20' },
+            { value: 'july 20', label: 'July 20' },
+            { value: 'jan 21', label: 'Jan 21' },
+            { value: 'july 21', label: 'July 21' },
+            { value: 'jan 22', label: 'Jan 22' },
+            { value: 'july 22', label: 'July 22' },
+            { value: 'jan 23', label: 'Jan 23' },
+            { value: 'july 23', label: 'July 23' },
+            { value: 'jan 24', label: 'Jan 24' },
+            { value: 'july 24', label: 'July 24' },
+            { value: 'jan 25', label: 'Jan 25' },
+            { value: 'july 25', label: 'July 25' }],
             required: 'require'
           },
           {
@@ -101,7 +101,7 @@ const formData = [
             id: 'SessionType',
             place: 'Enter Admission Type',
             type: 'select',
-            options: [{ value: 'Fresher', lable: 'Fresher' },
+            options: [{ value: 'Fresh', label: 'Fresh' },
             { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
           },
           {
@@ -118,7 +118,7 @@ const formData = [
                   { "value": "Political science", "label": "Political science" },
                   { "value": "Sociology", "label": "Sociology" },
                   { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
-                  { "value": 'Geography', lable: 'Geography' },
+                  { "value": 'Geography', label: 'Geography' },
                 ],
               },
               {
@@ -184,7 +184,7 @@ const formData = [
                 value: "MA",
                 label: "MA",
                 specializations: [
-                  { value: "Economics", lable: "Economics" },
+                  { value: "Economics", label: "Economics" },
                   { value: "English", label: "English" },
                   { value: "Geography", label: "Geography" },
                   { value: "History", label: "History" },
@@ -313,7 +313,7 @@ const formData = [
             required: 'require',
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Online Payment', label: 'Online Payment' },
+            { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
           {
@@ -343,7 +343,7 @@ const formData = [
           },
           {
             key: 'select ',
-            label: 'Counselor Email ',
+            label: 'Counselors',
             name: ['customfields', 'counselor_email'],
             id: 'email ',
             type: 'select',
@@ -450,419 +450,10 @@ const formData = [
         ],
       },
       {
-        // Seconde university complete date 
+        // First university complete date 
         label: 'CU',
         name: ['customfields', 'university_name'],
         value: 'CU',
-        fields: [
-          {
-            key: 'studentId',
-            name: 'lead_id',
-            label: 'StudentID',
-            place: 'StudentID',
-            id: 'StudentID',
-            type: 'studentId',
-            required: 'require'
-          },
-          {
-            key: 'text',
-            name: 'full_name',
-            label: 'Student Name',
-            place: 'Student Name',
-            id: 'full_name',
-            type: 'text',
-            required: 'require'
-          },
-          {
-            key: 'email',
-            label: 'Email-id',
-            place: 'Enter Email-id',
-            name: ['contact', 'email'],
-            id: 'EmailID',
-            type: 'email',
-            required: 'require'
-          },
-          {
-            key: 'tel',
-            label: 'phone',
-            name: ['contact', 'phone'],
-            place: 'Enter Phone Number',
-            id: 'phone',
-            type: 'tel',
-            required: 'require'
-          },
-          {
-            key: 'select',
-            label: 'Session',
-            name: ['customfields', 'session'],
-            place: 'eg: jan 20-jan 23',
-            id: 'Session',
-            type: 'select',
-            options: [{ value: 'jan 20-jan 20', label: 'Jan 20-Jan 20' },
-            { value: 'july 20-july 20', label: 'July 20-July 20' },
-            { value: 'jan 21-jan 21', label: 'Jan 21-Jan 21' },
-            { value: 'july 21-july 21', label: 'July 21-July 21' },
-            { value: 'jan 22-jan 22', label: 'Jan 22-Jan 22' },
-            { value: 'july 22-july 22', label: 'July 22-July 22' },
-            { value: 'jan 23-jan 23', label: 'Jan 23-Jan 23' },
-            { value: 'july 23-july 23', label: 'July 23-July 23' },
-            { value: 'jan 24-jan 24', label: 'Jan 24-Jan 24' },
-            { value: 'july 24-july 24', label: 'July 24-July 24' },
-            { value: 'jan 25-jan 25', label: 'Jan 25-Jan 25' },
-            { value: 'july 25-july 25', label: 'July 25-July 25' }],
-            required: 'require'
-          },
-          {
-            key: 'select',
-            label: 'Admission Type',
-            name: ['customfields', 'admission_type'],
-            id: 'SessionType',
-            place: 'Enter Admission Type',
-            type: 'select',
-            options: [{ value: 'Fresher', lable: 'Fresher' },
-            { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
-          },
-          {
-            courses: [
-              {
-                value: "BA",
-                label: "BA",
-                specializations: [
-                  { value: "General", label: "General" },
-                  { "value": "Education", "label": "Education" },
-                  { "value": "English", "label": "English" },
-                  { "value": "Economics", "label": "Economics" },
-                  { "value": "History", "label": "History" },
-                  { "value": "Political science", "label": "Political science" },
-                  { "value": "Sociology", "label": "Sociology" },
-                  { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
-                  { "value": 'Geography', lable: 'Geography' },
-                ],
-              },
-              {
-                value: "BBA",
-                label: "BBA",
-                specializations: [
-                  { "value": "Education", "label": "Education" },
-                  { value: "Marketing", label: "Marketing" },
-                  { value: "Human Resource Management", label: "Human Resource Management" },
-                  { value: "Finance", label: "Finance" },
-                  { value: "International Business", label: "International Business" }
-                ],
-              },
-              {
-                value: "BCA",
-                label: "BCA",
-                specializations: [
-                  { value: "General", label: "General" },
-                ],
-              },
-              {
-                value: "BCOM",
-                label: "BCOM",
-                specializations: [
-                  { value: "General", label: "General" },
-                ],
-              },
-              {
-                value: "BSW",
-                label: "BSW",
-                specializations: [
-                  { value: "General", label: "General" },
-                ],
-              },
-              {
-                value: "BLIS",
-                label: "BLIS",
-                specializations: [
-                  { value: "General", label: "General" },
-                ],
-              },
-              {
-                value: "BSC",
-                label: "BSC",
-                specializations: [
-                  { value: "General", label: "General" },
-                  { value: "Chemistry", label: "Chemistry" },
-                  { value: "Phycics", label: "Phycics" },
-                  { value: "Mathematics", label: "Mathematics" },
-                  { value: "Microbiology", label: "Microbiology" },
-                  { value: 'Bio-Technology', label: "Bio-Technology" },
-                  { value: "Zoology", label: "Zoology" },
-                  { value: "Animation and Multimedia", label: "Animation and Multimedia" },
-                  { value: "Interior Designing", label: "Interior Designing" },
-                  { value: "Fashion Technology", label: "Fashion Technology" },
-                  { value: "Hotel Management", label: "Hotel Management" },
-                  { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
-                  { value: "Operation Theater Technology", label: "Operation Theater Technology" },
-                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
-                ],
-              },
-              {
-                value: "MA",
-                label: "MA",
-                specializations: [
-                  { value: "Economics", lable: "Economics" },
-                  { value: "English", label: "English" },
-                  { value: "Geography", label: "Geography" },
-                  { value: "History", label: "History" },
-                  { value: "Political Science", label: "Political Science" },
-                  { value: "Sociology", label: "Sociology" },
-                  { value: "Education", label: "Education" },
-                  { value: "Journalism and Mass Communication", label: "Journalism and Mass Communication" }
-                ],
-              },
-              {
-                value: "MCA",
-                label: "MCA",
-                specializations: [
-                  { value: "General", label: "General" },
-                ],
-              },
-              {
-                value: "MCOM",
-                label: "MCOM",
-                specializations: [
-                  { value: "General", label: "General" },
-                ],
-              },
-              {
-                value: "MSW",
-                label: "MSW",
-                specializations: [
-                  { value: "General", label: "General" },
-                ],
-              },
-              {
-                value: "MBA",
-                label: "MBA",
-                specializations: [
-                  { value: "General", label: "General" },
-                  { value: "Finance", label: "Finance" },
-                  { value: "Human Resources Management", label: "Human Resources Management" },
-                  { value: "Information Technology", label: "Information Technology" },
-                  { value: "International Business", label: "International Business" },
-                  { value: "Marketing Management", label: "Marketing Management" },
-                  { value: "Operations Management", label: "Operations Management" },
-                  { value: "Project Management", label: "Project Management" },
-                  { value: "Hotel Management", label: "Hotel Management" },
-                  { value: "Tourism and Hospitality Management", label: "Tourism and Hospitality Management" },
-                  { value: "Supply Chain Management", label: "Supply Chain Management" },
-                  { value: "Hospital Management", label: "Hospital Management" }
-                ],
-              },
-              {
-                value: "MSC",
-                label: "MSC",
-                specializations: [
-                  { value: "General", label: "General" },
-                  { value: "Chemistry", label: "Chemistry" },
-                  { value: "Phycics", label: "Phycics" },
-                  { value: "Mathematics", label: "Mathematics" },
-                  { value: "Information Technology", label: "Information Technology" },
-                  { value: "Computer Science", label: "Computer Science" },
-                  { value: "Bio-Technology", label: "Bio-Technology" },
-                  { value: "Zoology", label: "Zoology" },
-                  { value: "Animation & Multimedia", label: "Animation & Multimedia" },
-                  { value: "Interior Designing", label: "Interior Designing" },
-                  { value: "Fashion Technology", label: "Fashion Technology" },
-                  { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
-                  { value: "Optometry", label: "Optometry" },
-                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
-                ],
-              },
-              {
-                value: "MLIS",
-                label: "MLIS",
-                specializations: [
-                  { value: "General", label: "General" },
-                ],
-              },
-            ]
-          },
-          {
-            key: 'select',
-            label: 'Gender',
-            name: ['customfields', 'gender'],
-            id: 'Gender',
-            place: 'Gender',
-            type: 'select',
-            options: [{ value: 'Male', label: 'Male' },
-            { value: 'Female', label: 'Female' },
-            { value: 'Other', label: 'Other' }],
-          },
-          {
-            key: 'select',
-            label: 'Installment Type',
-            id: 'InstallmentType',
-            name: ['customfields', 'installment_type'],
-            place: 'Installment Type',
-            type: 'select',
-            required: 'require',
-            options: [
-              { value: '1st Installment/ New Admission', label: '1st Installment/ New Admission' },
-              { value: '2nd Installment', label: '2nd Installment' },
-              { value: '3rd Installment', label: '3rd Installment' },
-              { value: '4th Installment', label: '4th Installment' },
-              { value: '5th Installment', label: '5th Installment' },
-              { value: '6th Installment', label: '6th Installment' },
-              { value: '7th Installment', label: '7th Installment' },
-              { value: '8th Installment', label: '8th Installment' },
-              { value: '9th Installment', label: '9th Installment' },
-              { value: '10th Installment', label: '10th Installment' },
-            ],
-          },
-          {
-            key: 'select ',
-            label: 'Payment mode ',
-            name: ['customfields', 'payment_mode'],
-            id: 'PaymentMode ',
-            type: 'select',
-            place: 'Select Payment Mode',
-            required: 'require',
-            options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
-            { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Online Payment', label: 'Online Payment' },
-            { value: 'Cash/DD', label: 'Cash/DD' }],
-          },
-          {
-            key: 'number',
-            label: 'Total Course Fee',
-            name: ['customfields', 'total_course_fee'],
-            place: 'eg: 20000',
-            id: 'Total Course Fee',
-            type: 'number',
-            required: 'require'
-          },
-          {
-            key: 'number',
-            label: 'Total Paid Amount',
-            place: 'eg: 20000',
-            name: ['customfields', 'total_paid_amount'],
-            id: 'Total Paid Amount',
-            type: 'number',
-          },
-          {
-            key: 'number',
-            label: 'Paid Amount',
-            name: ['customfields', 'paid_amount'],
-            place: 'eg: 20000',
-            id: 'Paid Amount',
-            type: 'number',
-          },
-
-          {
-            key: 'select ',
-            label: 'Counselor Email ',
-            name: ['customfields', 'counselor_email'],
-            id: 'email ',
-            type: 'select',
-            place: 'select counselor email',
-            required: 'require',
-            options: [{ value: 'zarin@highereducationschool.com', label: 'Zarin' },
-            { value: 'kanchan@highereducationschool.com', label: 'Kanchan' },
-            { value: 'kirti@highereducationschool.com', label: 'Kirti   ' },
-            { value: 'ramandeep@highereducationschool.com', label: 'Raman  ' },
-            { value: 'kavita@highereducationschool.com', label: 'kavita' },
-            { value: 'imra@highereducationschool.com', label: 'Imra' },
-            { value: 'Mahak@highereducationschool.com', label: 'Mahek' },
-            { value: 'abhay@highereducationschool.com', label: 'abhay' },
-            { value: 'swati@highereducationschool.com', label: 'swati' },
-            { value: 'gulshan@highereducationschool.com', label: 'Gulshan' },
-            { value: 'isha@highereducationschool.com', label: 'Isha' },
-            { value: 'Sakshi@highereducationschool.com', label: 'Sakshi' },
-            { value: 'aashita@highereducationschool.com', label: 'aashita' },
-            { value: 'pratibha@highereducationschool.com', label: 'pratibha' },
-            { value: 'shreyashi@highereducationschool.com', label: 'Shreyashi ' },
-            { value: 'apoorvasrivastava@distanceeducationschool.com', label: 'Apoorva_DES' },
-            { value: 'asma@distanceeducationschool.com', label: 'Asma_DES' },
-            { value: 'nehaprashar@distanceeducationschool.com', label: 'Neha_Prasher_DES' },
-            { value: 'priya@distanceeducationschool.com', label: 'Priya_DES' },
-            { value: 'diksha@distanceeducationschool.com', label: 'Diksha_DES' },
-            { value: 'abhilasha@distanceeducationschool.com', label: 'Abhilasha_Gupta_DES' },
-            { value: 'saher@distanceeducationschool.com', label: 'Saher_Khan_DES' },
-            { value: 'fiza@distanceeducationschool.com', label: 'Fiza_DES' },
-            { value: 'muskan@distanceeducationschool.com', label: 'Muskaan_DES' },
-            { value: 'aniruddh@distanceeducationschool.com', label: 'Aniruddh_DES' },
-            { value: 'deva@distanceeducationschool.com', label: 'Devendra_DES' },
-            { value: 'amritpal@distanceeducationschool.com', label: 'Amritpal_DES' },
-            { value: 'Salman@distanceeducationschool.com:', label: 'Salman_DES' },
-            { value: 'tariq@distanceeducationschool.com', label: 'Traiq_DES' },
-            { value: 'shivam@distanceeducationschool.com', label: 'Shivam_sharma_DES' },
-            { value: 'pushpa@distanceeducationschool.com', label: 'Puspa_DES' },
-            { value: 'zarin@distanceeducationschool.com', label: 'Zarin_DES' },
-            { value: 'kanchan@distanceeducationschool.com', label: 'Kanchan_DES' },
-            { value: 'manu@distanceeducationschool.com', label: 'Manu_DES' },
-
-            // Jain Team Emails
-            { value: 'a.anitha.ju@gmail.com', label: 'Anita_JU' },
-            { value: 'vaniruckmani.ju@gmail.com', label: 'Vani_Ruckmani_JU' },
-            { value: 'priyankapalle.ju@gmail.com', label: 'Priyanka_JU' },
-            { value: 'SwatiRamani.manipal@gmail.com', label: 'Swati_JU' },
-
-            // Manipal Team Email
-            { value: 'ankitakumari.manipal@gmail.com', label: 'Ankita_MU' },
-            { value: 'medhahandoo.manipal@gmail.com', label: 'Medha_MU' },
-            { value: 'amreen.manipal@gmail.com', label: 'Amreen_MU' },
-
-            // Support Team Email
-            { value: 'rajesh@distanceeducationschool.com', label: 'Rajesh_sir' },
-            { value: 'manisha@distanceeducationschool.com', label: 'Manisha' },
-            { value: 'admin@distanceeducationschool.com', label: 'Nouman_sir' },
-            { value: 'sandy@distanceeducationschool.com', label: 'Sandy' },
-            { value: 'neha@distanceeducationschool.com', label: 'Neha' },
-            { value: 'yashpriya@distanceeducationschool.com', label: 'Yash_Priya' },
-            { value: 'kavitahaldar@distanceeducationschool.com', label: 'kavitahaldar' },
-            { value: 'ifla@distanceeducationschool.com', label: 'Ifla' },
-            { value: 'shalu@distanceeducationschool.com', label: 'Shalu' },
-            { value: 'zainubia@distanceeducationschool.com', label: 'zainbuia' },
-            { value: 'pallovi@distanceeducationschool.com', label: 'Pallovi' },
-            { value: 'kavitakumari@distanceeducationschool.com', label: 'Kavita_Kumari' },
-            { value: 'manshi@distanceeducationschool.com', label: 'Mansi' },
-            { value: 'Bhavya.manipal@gmail.com', label: 'Bhavya' },
-            { value: 'anurag@distanceeducationschool.com', label: 'Anuraj' },
-            { value: 'rupal@distanceeducationschool.com', label: 'Rupal' },
-            //B2B Team Email
-            { value: 'spuhelpdesk@gmail.com', label: 'Binny' },
-            { value: 'ruchika.spu@gmail.com', label: 'Ruchika' },
-            { value: 'lalit@distanceeducationschool.com', label: 'Lalit_DES' },
-            { value: 'lalit.spu@gmail.com', label: 'Lalit' },
-            { value: 'ramiz.spu@gmail.com', label: 'Ramiz' }
-            ],
-          },
-          {
-            key: 'file',
-            label: 'Upload Fee Receipt Screenshot',
-            name: 'image',
-            place: 'Upload Fee Receipt Screenshot',
-            id: 'Upload Fee Receipt Screenshot',
-            type: 'file',
-            required: 'require'
-
-          },
-          {
-            key: 'file',
-            label: 'Uplaod Student Document',
-            name: ['customfields', 'upload_student_document'],
-            place: 'Uplaod Student Document',
-            id: 'Uplaod Student Document',
-            type: 'file',
-          },
-          {
-            key: 'textarea',
-            label: 'Remark',
-            name: ['customfields', 'remark'],
-            place: 'Remark',
-            id: 'Remark',
-            type: 'textarea',
-          },
-        ],
-      },
-      {
-        // First university complete date 
-        label: 'SPU',
-        name: ['customfields', 'university_name'],
-        value: 'SPU',
         fields: [
           {
             key: 'radio',
@@ -931,21 +522,21 @@ const formData = [
             key: 'select',
             label: 'Session',
             name: ['customfields', 'session'],
-            place: 'eg: jan 20-jan 23',
+            place: 'eg: jan 20',
             id: 'Session',
             type: 'select',
-            options: [{ value: 'jan 20-jan 20', label: 'Jan 20-Jan 20' },
-            { value: 'july 20-july 20', label: 'July 20-July 20' },
-            { value: 'jan 21-jan 21', label: 'Jan 21-Jan 21' },
-            { value: 'july 21-july 21', label: 'July 21-July 21' },
-            { value: 'jan 22-jan 22', label: 'Jan 22-Jan 22' },
-            { value: 'july 22-july 22', label: 'July 22-July 22' },
-            { value: 'jan 23-jan 23', label: 'Jan 23-Jan 23' },
-            { value: 'july 23-july 23', label: 'July 23-July 23' },
-            { value: 'jan 24-jan 24', label: 'Jan 24-Jan 24' },
-            { value: 'july 24-july 24', label: 'July 24-July 24' },
-            { value: 'jan 25-jan 25', label: 'Jan 25-Jan 25' },
-            { value: 'july 25-july 25', label: 'July 25-July 25' }],
+            options: [{ value: 'jan 20', label: 'Jan 20' },
+            { value: 'july 20', label: 'July 20' },
+            { value: 'jan 21', label: 'Jan 21' },
+            { value: 'july 21', label: 'July 21' },
+            { value: 'jan 22', label: 'Jan 22' },
+            { value: 'july 22', label: 'July 22' },
+            { value: 'jan 23', label: 'Jan 23' },
+            { value: 'july 23', label: 'July 23' },
+            { value: 'jan 24', label: 'Jan 24' },
+            { value: 'july 24', label: 'July 24' },
+            { value: 'jan 25', label: 'Jan 25' },
+            { value: 'july 25', label: 'July 25' }],
             required: 'require'
           },
           {
@@ -955,7 +546,7 @@ const formData = [
             id: 'SessionType',
             place: 'Enter Admission Type',
             type: 'select',
-            options: [{ value: 'Fresher', lable: 'Fresher' },
+            options: [{ value: 'Fresh', label: 'Fresh' },
             { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
           },
           {
@@ -972,7 +563,7 @@ const formData = [
                   { "value": "Political science", "label": "Political science" },
                   { "value": "Sociology", "label": "Sociology" },
                   { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
-                  { "value": 'Geography', lable: 'Geography' },
+                  { "value": 'Geography', label: 'Geography' },
                 ],
               },
               {
@@ -1038,7 +629,7 @@ const formData = [
                 value: "MA",
                 label: "MA",
                 specializations: [
-                  { value: "Economics", lable: "Economics" },
+                  { value: "Economics", label: "Economics" },
                   { value: "English", label: "English" },
                   { value: "Geography", label: "Geography" },
                   { value: "History", label: "History" },
@@ -1167,7 +758,452 @@ const formData = [
             required: 'require',
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Online Payment', label: 'Online Payment' },
+            { value: 'Payment Gateway', label: 'Payment Gateway' },
+            { value: 'Cash/DD', label: 'Cash/DD' }],
+          },
+          {
+            key: 'number',
+            label: 'Total Course Fee',
+            name: ['customfields', 'total_course_fee'],
+            place: 'eg: 20000',
+            id: 'Total Course Fee',
+            type: 'number',
+            required: 'require'
+          },
+          {
+            key: 'number',
+            label: 'Total Paid Amount',
+            place: 'eg: 20000',
+            name: ['customfields', 'total_paid_amount'],
+            id: 'Total Paid Amount',
+            type: 'number',
+          },
+          {
+            key: 'number',
+            label: 'Paid Amount',
+            name: ['customfields', 'paid_amount'],
+            place: 'eg: 20000',
+            id: 'Paid Amount',
+            type: 'number',
+          },
+          {
+            key: 'select ',
+            label: 'Counselors ',
+            name: ['customfields', 'counselor_email'],
+            id: 'email ',
+            type: 'select',
+            place: 'select counselor email',
+            required: 'require',
+            options: [{ value: 'zarin@highereducationschool.com', label: 'Zarin' },
+            { value: 'kanchan@highereducationschool.com', label: 'Kanchan' },
+            { value: 'kirti@highereducationschool.com', label: 'Kirti   ' },
+            { value: 'ramandeep@highereducationschool.com', label: 'Raman  ' },
+            { value: 'kavita@highereducationschool.com', label: 'kavita' },
+            { value: 'imra@highereducationschool.com', label: 'Imra' },
+            { value: 'Mahak@highereducationschool.com', label: 'Mahek' },
+            { value: 'abhay@highereducationschool.com', label: 'abhay' },
+            { value: 'swati@highereducationschool.com', label: 'swati' },
+            { value: 'gulshan@highereducationschool.com', label: 'Gulshan' },
+            { value: 'isha@highereducationschool.com', label: 'Isha' },
+            { value: 'Sakshi@highereducationschool.com', label: 'Sakshi' },
+            { value: 'aashita@highereducationschool.com', label: 'aashita' },
+            { value: 'pratibha@highereducationschool.com', label: 'pratibha' },
+            { value: 'shreyashi@highereducationschool.com', label: 'Shreyashi ' },
+            { value: 'apoorvasrivastava@distanceeducationschool.com', label: 'Apoorva_DES' },
+            { value: 'asma@distanceeducationschool.com', label: 'Asma_DES' },
+            { value: 'nehaprashar@distanceeducationschool.com', label: 'Neha_Prasher_DES' },
+            { value: 'priya@distanceeducationschool.com', label: 'Priya_DES' },
+            { value: 'diksha@distanceeducationschool.com', label: 'Diksha_DES' },
+            { value: 'abhilasha@distanceeducationschool.com', label: 'Abhilasha_Gupta_DES' },
+            { value: 'saher@distanceeducationschool.com', label: 'Saher_Khan_DES' },
+            { value: 'fiza@distanceeducationschool.com', label: 'Fiza_DES' },
+            { value: 'muskan@distanceeducationschool.com', label: 'Muskaan_DES' },
+            { value: 'aniruddh@distanceeducationschool.com', label: 'Aniruddh_DES' },
+            { value: 'deva@distanceeducationschool.com', label: 'Devendra_DES' },
+            { value: 'amritpal@distanceeducationschool.com', label: 'Amritpal_DES' },
+            { value: 'Salman@distanceeducationschool.com:', label: 'Salman_DES' },
+            { value: 'tariq@distanceeducationschool.com', label: 'Traiq_DES' },
+            { value: 'shivam@distanceeducationschool.com', label: 'Shivam_sharma_DES' },
+            { value: 'pushpa@distanceeducationschool.com', label: 'Puspa_DES' },
+            { value: 'zarin@distanceeducationschool.com', label: 'Zarin_DES' },
+            { value: 'kanchan@distanceeducationschool.com', label: 'Kanchan_DES' },
+            { value: 'manu@distanceeducationschool.com', label: 'Manu_DES' },
+
+            // Jain Team Emails
+            { value: 'a.anitha.ju@gmail.com', label: 'Anita_JU' },
+            { value: 'vaniruckmani.ju@gmail.com', label: 'Vani_Ruckmani_JU' },
+            { value: 'priyankapalle.ju@gmail.com', label: 'Priyanka_JU' },
+            { value: 'SwatiRamani.manipal@gmail.com', label: 'Swati_JU' },
+
+            // Manipal Team Email
+            { value: 'ankitakumari.manipal@gmail.com', label: 'Ankita_MU' },
+            { value: 'medhahandoo.manipal@gmail.com', label: 'Medha_MU' },
+            { value: 'amreen.manipal@gmail.com', label: 'Amreen_MU' },
+
+            // Support Team Email
+            { value: 'rajesh@distanceeducationschool.com', label: 'Rajesh_sir' },
+            { value: 'manisha@distanceeducationschool.com', label: 'Manisha' },
+            { value: 'admin@distanceeducationschool.com', label: 'Nouman_sir' },
+            { value: 'sandy@distanceeducationschool.com', label: 'Sandy' },
+            { value: 'neha@distanceeducationschool.com', label: 'Neha' },
+            { value: 'yashpriya@distanceeducationschool.com', label: 'Yash_Priya' },
+            { value: 'kavitahaldar@distanceeducationschool.com', label: 'kavitahaldar' },
+            { value: 'ifla@distanceeducationschool.com', label: 'Ifla' },
+            { value: 'shalu@distanceeducationschool.com', label: 'Shalu' },
+            { value: 'zainubia@distanceeducationschool.com', label: 'zainbuia' },
+            { value: 'pallovi@distanceeducationschool.com', label: 'Pallovi' },
+            { value: 'kavitakumari@distanceeducationschool.com', label: 'Kavita_Kumari' },
+            { value: 'manshi@distanceeducationschool.com', label: 'Mansi' },
+            { value: 'Bhavya.manipal@gmail.com', label: 'Bhavya' },
+            { value: 'anurag@distanceeducationschool.com', label: 'Anuraj' },
+            { value: 'rupal@distanceeducationschool.com', label: 'Rupal' },
+            //B2B Team Email
+            { value: 'spuhelpdesk@gmail.com', label: 'Binny' },
+            { value: 'ruchika.spu@gmail.com', label: 'Ruchika' },
+            { value: 'lalit@distanceeducationschool.com', label: 'Lalit_DES' },
+            { value: 'lalit.spu@gmail.com', label: 'Lalit' },
+            { value: 'ramiz.spu@gmail.com', label: 'Ramiz' }
+            ],
+          },
+          {
+            key: 'file',
+            label: 'Upload student document',
+            name: 'upload_student_document',
+            place: 'Upload student document',
+            id: 'upload_student_document',
+            type: 'file',
+            required: 'require'
+
+          },
+          {
+            key: 'file',
+            label: 'Upload fee receipt',
+            name: 'upload_fee_receipt_screenshot',
+            place: 'Upload fee receipt',
+            id: 'Uplaod Student Document',
+            type: 'file',
+            required: 'require'
+          },
+          {
+            key: 'textarea',
+            label: 'Remark',
+            name: ['customfields', 'remark'],
+            place: 'Enter your remark',
+            id: 'remark',
+            type: 'textarea',
+          },
+        ],
+      },
+      {
+        // First university complete date 
+        label: 'SPU',
+        name: ['customfields', 'university_name'],
+        value: 'SPU',
+        fields: [
+          {
+            key: 'radio',
+            label: 'Want to send Fee Receipt',
+            id: 'Send',
+            name: ['customfields', 'send_fee_receipt'],
+            type: 'radio',
+            options: ['yes', 'no'],
+            required: 'require'
+          },
+          {
+            key: 'studentId',
+            name: 'lead_id',
+            label: 'StudentID',
+            place: 'StudentID',
+            id: 'StudentID',
+            type: 'studentId',
+            required: 'require'
+          },
+          {
+            key: 'text',
+            name: 'full_name',
+            label: 'Student Name',
+            place: 'Student Name',
+            id: 'full_name',
+            type: 'text',
+            required: 'require'
+          },
+          {
+            key: 'email',
+            label: 'Email-id',
+            place: 'Enter Email-id',
+            name: ['contact', 'email'],
+            id: 'EmailID',
+            type: 'email',
+            required: 'require'
+          },
+          {
+            key: 'tel',
+            label: 'phone',
+            name: ['contact', 'phone'],
+            place: 'Enter Phone Number',
+            id: 'phone',
+            type: 'tel',
+            required: 'require'
+          },
+          {
+            key: 'text',
+            label: 'Father Name',
+            name: ['customfields', 'father_name'],
+            place: 'Enter Father Name',
+            id: 'Father Name',
+            type: 'text',
+            required: 'require'
+          },
+          {
+            key: 'text',
+            label: 'Mother Name',
+            name: ['customfields', 'mother_name'],
+            place: 'Enter Mother Name',
+            id: 'mother_name',
+            type: 'text',
+            required: 'require'
+          },
+          {
+            key: 'select',
+            label: 'Session',
+            name: ['customfields', 'session'],
+            place: 'eg: jan 20',
+            id: 'Session',
+            type: 'select',
+            options: [{ value: 'jan 20', label: 'Jan 20' },
+            { value: 'july 20', label: 'July 20' },
+            { value: 'jan 21', label: 'Jan 21' },
+            { value: 'july 21', label: 'July 21' },
+            { value: 'jan 22', label: 'Jan 22' },
+            { value: 'july 22', label: 'July 22' },
+            { value: 'jan 23', label: 'Jan 23' },
+            { value: 'july 23', label: 'July 23' },
+            { value: 'jan 24', label: 'Jan 24' },
+            { value: 'july 24', label: 'July 24' },
+            { value: 'jan 25', label: 'Jan 25' },
+            { value: 'july 25', label: 'July 25' }],
+            required: 'require'
+          },
+          {
+            key: 'select',
+            label: 'Admission Type',
+            name: ['customfields', 'admission_type'],
+            id: 'SessionType',
+            place: 'Enter Admission Type',
+            type: 'select',
+            options: [{ value: 'Fresh', label: 'Fresh' },
+            { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
+          },
+          {
+            courses: [
+              {
+                value: "BA",
+                label: "BA",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { "value": "Education", "label": "Education" },
+                  { "value": "English", "label": "English" },
+                  { "value": "Economics", "label": "Economics" },
+                  { "value": "History", "label": "History" },
+                  { "value": "Political science", "label": "Political science" },
+                  { "value": "Sociology", "label": "Sociology" },
+                  { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
+                  { "value": 'Geography', label: 'Geography' },
+                ],
+              },
+              {
+                value: "BBA",
+                label: "BBA",
+                specializations: [
+                  { "value": "Education", "label": "Education" },
+                  { value: "Marketing", label: "Marketing" },
+                  { value: "Human Resource Management", label: "Human Resource Management" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "International Business", label: "International Business" }
+                ],
+              },
+              {
+                value: "BCA",
+                label: "BCA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BCOM",
+                label: "BCOM",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BSW",
+                label: "BSW",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BLIS",
+                label: "BLIS",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BSC",
+                label: "BSC",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Chemistry", label: "Chemistry" },
+                  { value: "Phycics", label: "Phycics" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: "Microbiology", label: "Microbiology" },
+                  { value: 'Bio-Technology', label: "Bio-Technology" },
+                  { value: "Zoology", label: "Zoology" },
+                  { value: "Animation and Multimedia", label: "Animation and Multimedia" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
+                  { value: "Operation Theater Technology", label: "Operation Theater Technology" },
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                ],
+              },
+              {
+                value: "MA",
+                label: "MA",
+                specializations: [
+                  { value: "Economics", label: "Economics" },
+                  { value: "English", label: "English" },
+                  { value: "Geography", label: "Geography" },
+                  { value: "History", label: "History" },
+                  { value: "Political Science", label: "Political Science" },
+                  { value: "Sociology", label: "Sociology" },
+                  { value: "Education", label: "Education" },
+                  { value: "Journalism and Mass Communication", label: "Journalism and Mass Communication" }
+                ],
+              },
+              {
+                value: "MCA",
+                label: "MCA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MCOM",
+                label: "MCOM",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MSW",
+                label: "MSW",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MBA",
+                label: "MBA",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "Human Resources Management", label: "Human Resources Management" },
+                  { value: "Information Technology", label: "Information Technology" },
+                  { value: "International Business", label: "International Business" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "Operations Management", label: "Operations Management" },
+                  { value: "Project Management", label: "Project Management" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Tourism and Hospitality Management", label: "Tourism and Hospitality Management" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Hospital Management", label: "Hospital Management" }
+                ],
+              },
+              {
+                value: "MSC",
+                label: "MSC",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Chemistry", label: "Chemistry" },
+                  { value: "Phycics", label: "Phycics" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: "Information Technology", label: "Information Technology" },
+                  { value: "Computer Science", label: "Computer Science" },
+                  { value: "Bio-Technology", label: "Bio-Technology" },
+                  { value: "Zoology", label: "Zoology" },
+                  { value: "Animation & Multimedia", label: "Animation & Multimedia" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
+                  { value: "Optometry", label: "Optometry" },
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                ],
+              },
+              {
+                value: "MLIS",
+                label: "MLIS",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+            ]
+          },
+          {
+            key: 'date',
+            label: 'Date of Birth',
+            name: ['customfields', 'dob'],
+            place: 'Enter Date of Birth',
+            id: 'dob',
+            type: 'date',
+            required: 'require'
+          },
+          {
+            key: 'select',
+            label: 'Gender',
+            name: ['customfields', 'gender'],
+            id: 'Gender',
+            place: 'Gender',
+            type: 'select',
+            options: [{ value: 'Male', label: 'Male' },
+            { value: 'Female', label: 'Female' },
+            { value: 'Other', label: 'Other' }],
+          },
+          {
+            key: 'select',
+            label: 'Installment Type',
+            id: 'InstallmentType',
+            name: ['customfields', 'installment_type'],
+            place: 'Installment Type',
+            type: 'select',
+            required: 'require',
+            options: [
+              { value: '1st Installment/ New Admission', label: '1st Installment/ New Admission' },
+              { value: '2nd Installment', label: '2nd Installment' },
+              { value: '3rd Installment', label: '3rd Installment' },
+              { value: '4th Installment', label: '4th Installment' },
+              { value: '5th Installment', label: '5th Installment' },
+              { value: '6th Installment', label: '6th Installment' },
+              { value: '7th Installment', label: '7th Installment' },
+              { value: '8th Installment', label: '8th Installment' },
+              { value: '9th Installment', label: '9th Installment' },
+              { value: '10th Installment', label: '10th Installment' },
+            ],
+          },
+          {
+            key: 'select ',
+            label: 'Payment mode ',
+            name: ['customfields', 'payment_mode'],
+            id: 'PaymentMode ',
+            type: 'select',
+            place: 'Select Payment Mode',
+            required: 'require',
+            options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
+            { value: 'University Bank Account', label: 'University Bank Account' },
+            { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
           {
@@ -1198,7 +1234,7 @@ const formData = [
 
           {
             key: 'select ',
-            label: 'Counselor Email ',
+            label: 'Counselors ',
             name: ['customfields', 'counselor_email'],
             id: 'email ',
             type: 'select',
@@ -1304,698 +1340,10 @@ const formData = [
         ],
       },
       {
-        // Fpurth university complete date 
+        // First university complete date 
         label: 'LPU',
         name: ['customfields', 'university_name'],
         value: 'LPU',
-        fields: [
-          {
-            key: 'studentId',
-            name: 'lead_id',
-            label: 'StudentID',
-            place: 'StudentID',
-            id: 'StudentID',
-            type: 'studentId',
-            required: 'require'
-          },
-          {
-            key: 'text',
-            name: 'full_name',
-            label: 'Student Name',
-            place: 'Student Name',
-            id: 'full_name',
-            type: 'text',
-            required: 'require'
-          },
-          {
-            key: 'email',
-            label: 'Email-id',
-            place: 'Enter Email-id',
-            name: ['contact', 'email'],
-            id: 'EmailID',
-            type: 'email',
-            required: 'require'
-          },
-          {
-            key: 'tel',
-            label: 'phone',
-            name: ['contact', 'phone'],
-            place: 'Enter Phone Number',
-            id: 'phone',
-            type: 'tel',
-            required: 'require'
-          },
-          {
-            key: 'select',
-            label: 'Session',
-            name: ['customfields', 'session'],
-            place: 'eg: jan 20-jan 23',
-            id: 'Session',
-            type: 'select',
-            options: [{ value: 'jan 20-jan 20', label: 'Jan 20-Jan 20' },
-            { value: 'july 20-july 20', label: 'July 20-July 20' },
-            { value: 'jan 21-jan 21', label: 'Jan 21-Jan 21' },
-            { value: 'july 21-july 21', label: 'July 21-July 21' },
-            { value: 'jan 22-jan 22', label: 'Jan 22-Jan 22' },
-            { value: 'july 22-july 22', label: 'July 22-July 22' },
-            { value: 'jan 23-jan 23', label: 'Jan 23-Jan 23' },
-            { value: 'july 23-july 23', label: 'July 23-July 23' },
-            { value: 'jan 24-jan 24', label: 'Jan 24-Jan 24' },
-            { value: 'july 24-july 24', label: 'July 24-July 24' },
-            { value: 'jan 25-jan 25', label: 'Jan 25-Jan 25' },
-            { value: 'july 25-july 25', label: 'July 25-July 25' }],
-            required: 'require'
-          },
-          {
-            key: 'select',
-            label: 'Admission Type',
-            name: ['customfields', 'admission_type'],
-            id: 'SessionType',
-            place: 'Enter Admission Type',
-            type: 'select',
-            options: [{ value: 'Fresher', lable: 'Fresher' },
-            { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
-          },
-          {
-            courses: [
-              {
-                value: "BA",
-                label: "BA",
-                specializations: [
-                  { "value": "Education", "label": "Education" },
-                  { "value": "English", "label": "English" },
-                  { "value": "Economics", "label": "Economics" },
-                  { "value": "History", "label": "History" },
-                  { "value": "Political science", "label": "Political science" },
-                  { "value": "Sociology", "label": "Sociology" },
-                  { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
-                ],
-
-              },
-              {
-                value: "BBA",
-                label: "BBA",
-                specializations: [
-                  { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
-                ],
-
-              },
-            ]
-          },
-
-          {
-            key: 'select',
-            label: 'Gender',
-            name: ['customfields', 'gender'],
-            id: 'Gender',
-            place: 'Gender',
-            type: 'select',
-            options: [{ value: 'Male', label: 'Male' },
-            { value: 'Female', label: 'Female' },
-            { value: 'Other', label: 'Other' }],
-          },
-          {
-            key: 'select',
-            label: 'Installment Type',
-            id: 'InstallmentType',
-            name: ['customfields', 'installment_type'],
-            place: 'Installment Type',
-            type: 'select',
-            required: 'require',
-            options: [
-              { value: '1st Installment/ New Admission', label: '1st Installment/ New Admission' },
-              { value: '2nd Installment', label: '2nd Installment' },
-              { value: '3rd Installment', label: '3rd Installment' },
-              { value: '4th Installment', label: '4th Installment' },
-              { value: '5th Installment', label: '5th Installment' },
-              { value: '6th Installment', label: '6th Installment' },
-              { value: '7th Installment', label: '7th Installment' },
-              { value: '8th Installment', label: '8th Installment' },
-              { value: '9th Installment', label: '9th Installment' },
-              { value: '10th Installment', label: '10th Installment' },
-            ],
-          },
-          {
-            key: 'select ',
-            label: 'Payment mode ',
-            name: ['customfields', 'payment_mode'],
-            id: 'PaymentMode ',
-            type: 'select',
-            place: 'Select Payment Mode',
-            required: 'require',
-            options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
-            { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Online Payment', label: 'Online Payment' },
-            { value: 'Cash/DD', label: 'Cash/DD' }],
-          },
-          {
-            key: 'number',
-            label: 'Total Course Fee',
-            name: ['customfields', 'total_course_fee'],
-            place: 'eg: 20000',
-            id: 'Total Course Fee',
-            type: 'number',
-            required: 'require'
-          },
-          {
-            key: 'number',
-            label: 'Total Paid Amount',
-            place: 'eg: 20000',
-            name: ['customfields', 'total_paid_amount'],
-            id: 'Total Paid Amount',
-            type: 'number',
-          },
-          {
-            key: 'number',
-            label: 'Paid Amount',
-            name: ['customfields', 'paid_amount'],
-            place: 'eg: 20000',
-            id: 'Paid Amount',
-            type: 'number',
-          },
-
-          {
-            key: 'select ',
-            label: 'Counselor Email ',
-            name: ['customfields', 'counselor_email'],
-            id: 'email ',
-            type: 'select',
-            place: 'select counselor email',
-            required: 'require',
-            options: [{ value: 'zarin@highereducationschool.com', label: 'Zarin' },
-            { value: 'kanchan@highereducationschool.com', label: 'Kanchan' },
-            { value: 'kirti@highereducationschool.com', label: 'Kirti   ' },
-            { value: 'ramandeep@highereducationschool.com', label: 'Raman  ' },
-            { value: 'kavita@highereducationschool.com', label: 'kavita' },
-            { value: 'imra@highereducationschool.com', label: 'Imra' },
-            { value: 'Mahak@highereducationschool.com', label: 'Mahek' },
-            { value: 'abhay@highereducationschool.com', label: 'abhay' },
-            { value: 'swati@highereducationschool.com', label: 'swati' },
-            { value: 'gulshan@highereducationschool.com', label: 'Gulshan' },
-            { value: 'isha@highereducationschool.com', label: 'Isha' },
-            { value: 'Sakshi@highereducationschool.com', label: 'Sakshi' },
-            { value: 'aashita@highereducationschool.com', label: 'aashita' },
-            { value: 'pratibha@highereducationschool.com', label: 'pratibha' },
-            { value: 'shreyashi@highereducationschool.com', label: 'Shreyashi ' },
-            { value: 'apoorvasrivastava@distanceeducationschool.com', label: 'Apoorva_DES' },
-            { value: 'asma@distanceeducationschool.com', label: 'Asma_DES' },
-            { value: 'nehaprashar@distanceeducationschool.com', label: 'Neha_Prasher_DES' },
-            { value: 'priya@distanceeducationschool.com', label: 'Priya_DES' },
-            { value: 'diksha@distanceeducationschool.com', label: 'Diksha_DES' },
-            { value: 'abhilasha@distanceeducationschool.com', label: 'Abhilasha_Gupta_DES' },
-            { value: 'saher@distanceeducationschool.com', label: 'Saher_Khan_DES' },
-            { value: 'fiza@distanceeducationschool.com', label: 'Fiza_DES' },
-            { value: 'muskan@distanceeducationschool.com', label: 'Muskaan_DES' },
-            { value: 'aniruddh@distanceeducationschool.com', label: 'Aniruddh_DES' },
-            { value: 'deva@distanceeducationschool.com', label: 'Devendra_DES' },
-            { value: 'amritpal@distanceeducationschool.com', label: 'Amritpal_DES' },
-            { value: 'Salman@distanceeducationschool.com:', label: 'Salman_DES' },
-            { value: 'tariq@distanceeducationschool.com', label: 'Traiq_DES' },
-            { value: 'shivam@distanceeducationschool.com', label: 'Shivam_sharma_DES' },
-            { value: 'pushpa@distanceeducationschool.com', label: 'Puspa_DES' },
-            { value: 'zarin@distanceeducationschool.com', label: 'Zarin_DES' },
-            { value: 'kanchan@distanceeducationschool.com', label: 'Kanchan_DES' },
-            { value: 'manu@distanceeducationschool.com', label: 'Manu_DES' },
-
-            // Jain Team Emails
-            { value: 'a.anitha.ju@gmail.com', label: 'Anita_JU' },
-            { value: 'vaniruckmani.ju@gmail.com', label: 'Vani_Ruckmani_JU' },
-            { value: 'priyankapalle.ju@gmail.com', label: 'Priyanka_JU' },
-            { value: 'SwatiRamani.manipal@gmail.com', label: 'Swati_JU' },
-
-            // Manipal Team Email
-            { value: 'ankitakumari.manipal@gmail.com', label: 'Ankita_MU' },
-            { value: 'medhahandoo.manipal@gmail.com', label: 'Medha_MU' },
-            { value: 'amreen.manipal@gmail.com', label: 'Amreen_MU' },
-
-            // Support Team Email
-            { value: 'rajesh@distanceeducationschool.com', label: 'Rajesh_sir' },
-            { value: 'manisha@distanceeducationschool.com', label: 'Manisha' },
-            { value: 'admin@distanceeducationschool.com', label: 'Nouman_sir' },
-            { value: 'sandy@distanceeducationschool.com', label: 'Sandy' },
-            { value: 'neha@distanceeducationschool.com', label: 'Neha' },
-            { value: 'yashpriya@distanceeducationschool.com', label: 'Yash_Priya' },
-            { value: 'kavitahaldar@distanceeducationschool.com', label: 'kavitahaldar' },
-            { value: 'ifla@distanceeducationschool.com', label: 'Ifla' },
-            { value: 'shalu@distanceeducationschool.com', label: 'Shalu' },
-            { value: 'zainubia@distanceeducationschool.com', label: 'zainbuia' },
-            { value: 'pallovi@distanceeducationschool.com', label: 'Pallovi' },
-            { value: 'kavitakumari@distanceeducationschool.com', label: 'Kavita_Kumari' },
-            { value: 'manshi@distanceeducationschool.com', label: 'Mansi' },
-            { value: 'Bhavya.manipal@gmail.com', label: 'Bhavya' },
-            { value: 'anurag@distanceeducationschool.com', label: 'Anuraj' },
-            { value: 'rupal@distanceeducationschool.com', label: 'Rupal' },
-            //B2B Team Email
-            { value: 'spuhelpdesk@gmail.com', label: 'Binny' },
-            { value: 'ruchika.spu@gmail.com', label: 'Ruchika' },
-            { value: 'lalit@distanceeducationschool.com', label: 'Lalit_DES' },
-            { value: 'lalit.spu@gmail.com', label: 'Lalit' },
-            { value: 'ramiz.spu@gmail.com', label: 'Ramiz' }
-            ],
-          },
-          {
-            key: 'file',
-            label: 'Upload Fee Receipt Screenshot',
-            name: ['customfields', 'upload_fee_receipt_screenshot'],
-            place: 'Upload Fee Receipt Screenshot',
-            id: 'Upload Fee Receipt Screenshot',
-            type: 'file',
-            required: 'require'
-
-          },
-          {
-            key: 'file',
-            label: 'Uplaod Student Document',
-            name: ['customfields', 'upload_student_document'],
-            place: 'Uplaod Student Document',
-            id: 'Uplaod Student Document',
-            type: 'file',
-          },
-          {
-            key: 'textarea',
-            label: 'Remark',
-            name: ['customfields', 'remark'],
-            place: 'Remark',
-            id: 'Uplaod Student Document',
-            type: 'textarea',
-          },
-        ],
-      },
-      {
-        // Fifth university complete date 
-        label: 'JAIN',
-        name: ['customfields', 'university_name'],
-        value: 'JAIN',
-        fields: [
-          {
-            key: 'studentId',
-            name: 'lead_id',
-            label: 'StudentID',
-            place: 'StudentID',
-            id: 'StudentID',
-            type: 'studentId',
-            required: 'require'
-          },
-          {
-            key: 'text',
-            name: 'full_name',
-            label: 'Student Name',
-            place: 'Student Name',
-            id: 'full_name',
-            type: 'text',
-            required: 'require'
-          },
-          {
-            key: 'email',
-            label: 'Email-id',
-            place: 'Enter Email-id',
-            name: ['contact', 'email'],
-            id: 'EmailID',
-            type: 'email',
-            required: 'require'
-          },
-          {
-            key: 'tel',
-            label: 'phone',
-            name: ['contact', 'phone'],
-            place: 'Enter Phone Number',
-            id: 'phone',
-            type: 'tel',
-            required: 'require'
-          },
-          {
-            key: 'select',
-            label: 'Session',
-            name: ['customfields', 'session'],
-            place: 'eg: jan 20-jan 23',
-            id: 'Session',
-            type: 'select',
-            options: [{ value: 'jan 20-jan 20', label: 'Jan 20-Jan 20' },
-            { value: 'july 20-july 20', label: 'July 20-July 20' },
-            { value: 'jan 21-jan 21', label: 'Jan 21-Jan 21' },
-            { value: 'july 21-july 21', label: 'July 21-July 21' },
-            { value: 'jan 22-jan 22', label: 'Jan 22-Jan 22' },
-            { value: 'july 22-july 22', label: 'July 22-July 22' },
-            { value: 'jan 23-jan 23', label: 'Jan 23-Jan 23' },
-            { value: 'july 23-july 23', label: 'July 23-July 23' },
-            { value: 'jan 24-jan 24', label: 'Jan 24-Jan 24' },
-            { value: 'july 24-july 24', label: 'July 24-July 24' },
-            { value: 'jan 25-jan 25', label: 'Jan 25-Jan 25' },
-            { value: 'july 25-july 25', label: 'July 25-July 25' }],
-            required: 'require'
-          },
-          {
-            key: 'select',
-            label: 'Admission Type',
-            name: ['customfields', 'admission_type'],
-            id: 'SessionType',
-            place: 'Enter Admission Type',
-            type: 'select',
-            options: [{ value: 'Fresher', lable: 'Fresher' },
-            { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
-          },
-          {
-            courses: [
-              {
-                value: "BA",
-                label: "BA",
-                specializations: [
-                  { value: "General", label: "General" },
-                  { "value": "Education", "label": "Education" },
-                  { "value": "English", "label": "English" },
-                  { "value": "Economics", "label": "Economics" },
-                  { "value": "History", "label": "History" },
-                  { "value": "Political science", "label": "Political science" },
-                  { "value": "Sociology", "label": "Sociology" },
-                  { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
-                  { "value": 'Geography', lable: 'Geography' },
-                ],
-              },
-              {
-                value: "BBA",
-                label: "BBA",
-                specializations: [
-                  { "value": "Education", "label": "Education" },
-                  { value: "Marketing", label: "Marketing" },
-                  { value: "Human Resource Management", label: "Human Resource Management" },
-                  { value: "Finance", label: "Finance" },
-                  { value: "International Business", label: "International Business" }
-                ],
-              },
-              {
-                value: "BCA",
-                label: "BCA",
-                specializations: [
-                  { value: "General", label: "General" },
-                ],
-              },
-              {
-                value: "BCOM",
-                label: "BCOM",
-                specializations: [
-                  { value: "General", label: "General" },
-                ],
-              },
-              {
-                value: "BSW",
-                label: "BSW",
-                specializations: [
-                  { value: "General", label: "General" },
-                ],
-              },
-              {
-                value: "BLIS",
-                label: "BLIS",
-                specializations: [
-                  { value: "General", label: "General" },
-                ],
-              },
-              {
-                value: "BSC",
-                label: "BSC",
-                specializations: [
-                  { value: "General", label: "General" },
-                  { value: "Chemistry", label: "Chemistry" },
-                  { value: "Phycics", label: "Phycics" },
-                  { value: "Mathematics", label: "Mathematics" },
-                  { value: "Microbiology", label: "Microbiology" },
-                  { value: 'Bio-Technology', label: "Bio-Technology" },
-                  { value: "Zoology", label: "Zoology" },
-                  { value: "Animation and Multimedia", label: "Animation and Multimedia" },
-                  { value: "Interior Designing", label: "Interior Designing" },
-                  { value: "Fashion Technology", label: "Fashion Technology" },
-                  { value: "Hotel Management", label: "Hotel Management" },
-                  { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
-                  { value: "Operation Theater Technology", label: "Operation Theater Technology" },
-                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
-                ],
-              },
-              {
-                value: "MA",
-                label: "MA",
-                specializations: [
-                  { value: "Economics", lable: "Economics" },
-                  { value: "English", label: "English" },
-                  { value: "Geography", label: "Geography" },
-                  { value: "History", label: "History" },
-                  { value: "Political Science", label: "Political Science" },
-                  { value: "Sociology", label: "Sociology" },
-                  { value: "Education", label: "Education" },
-                  { value: "Journalism and Mass Communication", label: "Journalism and Mass Communication" }
-                ],
-              },
-              {
-                value: "MCA",
-                label: "MCA",
-                specializations: [
-                  { value: "General", label: "General" },
-                ],
-              },
-              {
-                value: "MCOM",
-                label: "MCOM",
-                specializations: [
-                  { value: "General", label: "General" },
-                ],
-              },
-              {
-                value: "MSW",
-                label: "MSW",
-                specializations: [
-                  { value: "General", label: "General" },
-                ],
-              },
-              {
-                value: "MBA",
-                label: "MBA",
-                specializations: [
-                  { value: "General", label: "General" },
-                  { value: "Finance", label: "Finance" },
-                  { value: "Human Resources Management", label: "Human Resources Management" },
-                  { value: "Information Technology", label: "Information Technology" },
-                  { value: "International Business", label: "International Business" },
-                  { value: "Marketing Management", label: "Marketing Management" },
-                  { value: "Operations Management", label: "Operations Management" },
-                  { value: "Project Management", label: "Project Management" },
-                  { value: "Hotel Management", label: "Hotel Management" },
-                  { value: "Tourism and Hospitality Management", label: "Tourism and Hospitality Management" },
-                  { value: "Supply Chain Management", label: "Supply Chain Management" },
-                  { value: "Hospital Management", label: "Hospital Management" }
-                ],
-              },
-              {
-                value: "MSC",
-                label: "MSC",
-                specializations: [
-                  { value: "General", label: "General" },
-                  { value: "Chemistry", label: "Chemistry" },
-                  { value: "Phycics", label: "Phycics" },
-                  { value: "Mathematics", label: "Mathematics" },
-                  { value: "Information Technology", label: "Information Technology" },
-                  { value: "Computer Science", label: "Computer Science" },
-                  { value: "Bio-Technology", label: "Bio-Technology" },
-                  { value: "Zoology", label: "Zoology" },
-                  { value: "Animation & Multimedia", label: "Animation & Multimedia" },
-                  { value: "Interior Designing", label: "Interior Designing" },
-                  { value: "Fashion Technology", label: "Fashion Technology" },
-                  { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
-                  { value: "Optometry", label: "Optometry" },
-                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
-                ],
-              },
-              {
-                value: "MLIS",
-                label: "MLIS",
-                specializations: [
-                  { value: "General", label: "General" },
-                ],
-              },
-            ]
-          },
-
-          {
-            key: 'select',
-            label: 'Gender',
-            name: ['customfields', 'gender'],
-            id: 'Gender',
-            place: 'Gender',
-            type: 'select',
-            options: [{ value: 'Male', label: 'Male' },
-            { value: 'Female', label: 'Female' },
-            { value: 'Other', label: 'Other' }],
-          },
-          {
-            key: 'select',
-            label: 'Installment Type',
-            id: 'InstallmentType',
-            name: ['customfields', 'installment_type'],
-            place: 'Installment Type',
-            type: 'select',
-            required: 'require',
-            options: [
-              { value: '1st Installment/ New Admission', label: '1st Installment/ New Admission' },
-              { value: '2nd Installment', label: '2nd Installment' },
-              { value: '3rd Installment', label: '3rd Installment' },
-              { value: '4th Installment', label: '4th Installment' },
-              { value: '5th Installment', label: '5th Installment' },
-              { value: '6th Installment', label: '6th Installment' },
-              { value: '7th Installment', label: '7th Installment' },
-              { value: '8th Installment', label: '8th Installment' },
-              { value: '9th Installment', label: '9th Installment' },
-              { value: '10th Installment', label: '10th Installment' },
-            ],
-          },
-          {
-            key: 'select ',
-            label: 'Payment mode ',
-            name: ['customfields', 'payment_mode'],
-            id: 'PaymentMode ',
-            type: 'select',
-            place: 'Select Payment Mode',
-            required: 'require',
-            options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
-            { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Online Payment', label: 'Online Payment' },
-            { value: 'Cash/DD', label: 'Cash/DD' }],
-          },
-          {
-            key: 'number',
-            label: 'Total Course Fee',
-            name: ['customfields', 'total_course_fee'],
-            place: 'eg: 20000',
-            id: 'Total Course Fee',
-            type: 'number',
-            required: 'require'
-          },
-          {
-            key: 'number',
-            label: 'Total Paid Amount',
-            place: 'eg: 20000',
-            name: ['customfields', 'total_paid_amount'],
-            id: 'Total Paid Amount',
-            type: 'number',
-          },
-          {
-            key: 'number',
-            label: 'Paid Amount',
-            name: ['customfields', 'paid_amount'],
-            place: 'eg: 20000',
-            id: 'Paid Amount',
-            type: 'number',
-          },
-
-          {
-            key: 'select ',
-            label: 'Counselor Email ',
-            name: ['customfields', 'counselor_email'],
-            id: 'email ',
-            type: 'select',
-            place: 'select counselor email',
-            required: 'require',
-            options: [{ value: 'zarin@highereducationschool.com', label: 'Zarin' },
-            { value: 'kanchan@highereducationschool.com', label: 'Kanchan' },
-            { value: 'kirti@highereducationschool.com', label: 'Kirti   ' },
-            { value: 'ramandeep@highereducationschool.com', label: 'Raman  ' },
-            { value: 'kavita@highereducationschool.com', label: 'kavita' },
-            { value: 'imra@highereducationschool.com', label: 'Imra' },
-            { value: 'Mahak@highereducationschool.com', label: 'Mahek' },
-            { value: 'abhay@highereducationschool.com', label: 'abhay' },
-            { value: 'swati@highereducationschool.com', label: 'swati' },
-            { value: 'gulshan@highereducationschool.com', label: 'Gulshan' },
-            { value: 'isha@highereducationschool.com', label: 'Isha' },
-            { value: 'Sakshi@highereducationschool.com', label: 'Sakshi' },
-            { value: 'aashita@highereducationschool.com', label: 'aashita' },
-            { value: 'pratibha@highereducationschool.com', label: 'pratibha' },
-            { value: 'shreyashi@highereducationschool.com', label: 'Shreyashi ' },
-            { value: 'apoorvasrivastava@distanceeducationschool.com', label: 'Apoorva_DES' },
-            { value: 'asma@distanceeducationschool.com', label: 'Asma_DES' },
-            { value: 'nehaprashar@distanceeducationschool.com', label: 'Neha_Prasher_DES' },
-            { value: 'priya@distanceeducationschool.com', label: 'Priya_DES' },
-            { value: 'diksha@distanceeducationschool.com', label: 'Diksha_DES' },
-            { value: 'abhilasha@distanceeducationschool.com', label: 'Abhilasha_Gupta_DES' },
-            { value: 'saher@distanceeducationschool.com', label: 'Saher_Khan_DES' },
-            { value: 'fiza@distanceeducationschool.com', label: 'Fiza_DES' },
-            { value: 'muskan@distanceeducationschool.com', label: 'Muskaan_DES' },
-            { value: 'aniruddh@distanceeducationschool.com', label: 'Aniruddh_DES' },
-            { value: 'deva@distanceeducationschool.com', label: 'Devendra_DES' },
-            { value: 'amritpal@distanceeducationschool.com', label: 'Amritpal_DES' },
-            { value: 'Salman@distanceeducationschool.com:', label: 'Salman_DES' },
-            { value: 'tariq@distanceeducationschool.com', label: 'Traiq_DES' },
-            { value: 'shivam@distanceeducationschool.com', label: 'Shivam_sharma_DES' },
-            { value: 'pushpa@distanceeducationschool.com', label: 'Puspa_DES' },
-            { value: 'zarin@distanceeducationschool.com', label: 'Zarin_DES' },
-            { value: 'kanchan@distanceeducationschool.com', label: 'Kanchan_DES' },
-            { value: 'manu@distanceeducationschool.com', label: 'Manu_DES' },
-
-            // Jain Team Emails
-            { value: 'a.anitha.ju@gmail.com', label: 'Anita_JU' },
-            { value: 'vaniruckmani.ju@gmail.com', label: 'Vani_Ruckmani_JU' },
-            { value: 'priyankapalle.ju@gmail.com', label: 'Priyanka_JU' },
-            { value: 'SwatiRamani.manipal@gmail.com', label: 'Swati_JU' },
-
-            // Manipal Team Email
-            { value: 'ankitakumari.manipal@gmail.com', label: 'Ankita_MU' },
-            { value: 'medhahandoo.manipal@gmail.com', label: 'Medha_MU' },
-            { value: 'amreen.manipal@gmail.com', label: 'Amreen_MU' },
-
-            // Support Team Email
-            { value: 'rajesh@distanceeducationschool.com', label: 'Rajesh_sir' },
-            { value: 'manisha@distanceeducationschool.com', label: 'Manisha' },
-            { value: 'admin@distanceeducationschool.com', label: 'Nouman_sir' },
-            { value: 'sandy@distanceeducationschool.com', label: 'Sandy' },
-            { value: 'neha@distanceeducationschool.com', label: 'Neha' },
-            { value: 'yashpriya@distanceeducationschool.com', label: 'Yash_Priya' },
-            { value: 'kavitahaldar@distanceeducationschool.com', label: 'kavitahaldar' },
-            { value: 'ifla@distanceeducationschool.com', label: 'Ifla' },
-            { value: 'shalu@distanceeducationschool.com', label: 'Shalu' },
-            { value: 'zainubia@distanceeducationschool.com', label: 'zainbuia' },
-            { value: 'pallovi@distanceeducationschool.com', label: 'Pallovi' },
-            { value: 'kavitakumari@distanceeducationschool.com', label: 'Kavita_Kumari' },
-            { value: 'manshi@distanceeducationschool.com', label: 'Mansi' },
-            { value: 'Bhavya.manipal@gmail.com', label: 'Bhavya' },
-            { value: 'anurag@distanceeducationschool.com', label: 'Anuraj' },
-            { value: 'rupal@distanceeducationschool.com', label: 'Rupal' },
-            //B2B Team Email
-            { value: 'spuhelpdesk@gmail.com', label: 'Binny' },
-            { value: 'ruchika.spu@gmail.com', label: 'Ruchika' },
-            { value: 'lalit@distanceeducationschool.com', label: 'Lalit_DES' },
-            { value: 'lalit.spu@gmail.com', label: 'Lalit' },
-            { value: 'ramiz.spu@gmail.com', label: 'Ramiz' }
-            ],
-          },
-          {
-            key: 'file',
-            label: 'Upload Fee Receipt Screenshot',
-            name: 'image',
-            place: 'Upload Fee Receipt Screenshot',
-            id: 'Upload Fee Receipt Screenshot',
-            type: 'file',
-            required: 'require'
-
-          },
-          {
-            key: 'text',
-            label: 'Uplaod Student Document',
-            name: ['customfields', 'upload_student_document'],
-            place: 'Enter Counselor Email',
-            id: 'Uplaod Student Document',
-            type: 'text',
-          },
-          {
-            key: 'textarea',
-            label: 'Remark',
-            name: ['customfields', 'remark'],
-            place: 'Enter Counselor Email',
-            id: 'Uplaod Student Document',
-            type: 'textarea',
-          },
-        ],
-      },
-      {
-        // Sixth university complete date 
-        label: 'SVSU',
-        name: ['customfields', 'university_name'],
-        value: 'SVSU',
         fields: [
           {
             key: 'radio',
@@ -2064,21 +1412,21 @@ const formData = [
             key: 'select',
             label: 'Session',
             name: ['customfields', 'session'],
-            place: 'eg: jan 20-jan 23',
+            place: 'eg: jan 20',
             id: 'Session',
             type: 'select',
-            options: [{ value: 'jan 20-jan 20', label: 'Jan 20-Jan 20' },
-            { value: 'july 20-july 20', label: 'July 20-July 20' },
-            { value: 'jan 21-jan 21', label: 'Jan 21-Jan 21' },
-            { value: 'july 21-july 21', label: 'July 21-July 21' },
-            { value: 'jan 22-jan 22', label: 'Jan 22-Jan 22' },
-            { value: 'july 22-july 22', label: 'July 22-July 22' },
-            { value: 'jan 23-jan 23', label: 'Jan 23-Jan 23' },
-            { value: 'july 23-july 23', label: 'July 23-July 23' },
-            { value: 'jan 24-jan 24', label: 'Jan 24-Jan 24' },
-            { value: 'july 24-july 24', label: 'July 24-July 24' },
-            { value: 'jan 25-jan 25', label: 'Jan 25-Jan 25' },
-            { value: 'july 25-july 25', label: 'July 25-July 25' }],
+            options: [{ value: 'jan 20', label: 'Jan 20' },
+            { value: 'july 20', label: 'July 20' },
+            { value: 'jan 21', label: 'Jan 21' },
+            { value: 'july 21', label: 'July 21' },
+            { value: 'jan 22', label: 'Jan 22' },
+            { value: 'july 22', label: 'July 22' },
+            { value: 'jan 23', label: 'Jan 23' },
+            { value: 'july 23', label: 'July 23' },
+            { value: 'jan 24', label: 'Jan 24' },
+            { value: 'july 24', label: 'July 24' },
+            { value: 'jan 25', label: 'Jan 25' },
+            { value: 'july 25', label: 'July 25' }],
             required: 'require'
           },
           {
@@ -2088,7 +1436,7 @@ const formData = [
             id: 'SessionType',
             place: 'Enter Admission Type',
             type: 'select',
-            options: [{ value: 'Fresher', lable: 'Fresher' },
+            options: [{ value: 'Fresh', label: 'Fresh' },
             { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
           },
           {
@@ -2105,7 +1453,7 @@ const formData = [
                   { "value": "Political science", "label": "Political science" },
                   { "value": "Sociology", "label": "Sociology" },
                   { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
-                  { "value": 'Geography', lable: 'Geography' },
+                  { "value": 'Geography', label: 'Geography' },
                 ],
               },
               {
@@ -2171,7 +1519,7 @@ const formData = [
                 value: "MA",
                 label: "MA",
                 specializations: [
-                  { value: "Economics", lable: "Economics" },
+                  { value: "Economics", label: "Economics" },
                   { value: "English", label: "English" },
                   { value: "Geography", label: "Geography" },
                   { value: "History", label: "History" },
@@ -2300,7 +1648,7 @@ const formData = [
             required: 'require',
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Online Payment', label: 'Online Payment' },
+            { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
           {
@@ -2331,7 +1679,7 @@ const formData = [
 
           {
             key: 'select ',
-            label: 'Counselor Email ',
+            label: 'Counselors ',
             name: ['customfields', 'counselor_email'],
             id: 'email ',
             type: 'select',
@@ -2411,7 +1759,7 @@ const formData = [
           {
             key: 'file',
             label: 'Upload Fee Receipt Screenshot',
-            name: 'image',
+            name: ['customfields', 'upload_fee_receipt_screenshot'],
             place: 'Upload Fee Receipt Screenshot',
             id: 'Upload Fee Receipt Screenshot',
             type: 'file',
@@ -2419,30 +1767,929 @@ const formData = [
 
           },
           {
-            key: 'text',
+            key: 'file',
             label: 'Uplaod Student Document',
             name: ['customfields', 'upload_student_document'],
-            place: 'Enter Counselor Email',
+            place: 'Uplaod Student Document',
             id: 'Uplaod Student Document',
-            type: 'text',
+            type: 'file',
           },
           {
             key: 'textarea',
             label: 'Remark',
             name: ['customfields', 'remark'],
-            place: 'Enter Counselor Email',
-            id: 'Uplaod Student Document',
+            place: 'Remark',
+            id: 'remark',
             type: 'textarea',
           },
         ],
       },
       {
-        // Seventh university complete date 
+        // First university complete date 
+        label: 'JAIN',
+        name: ['customfields', 'university_name'],
+        value: 'JAIN',
+        fields: [
+          {
+            key: 'radio',
+            label: 'Want to send Fee Receipt',
+            id: 'Send',
+            name: ['customfields', 'send_fee_receipt'],
+            type: 'radio',
+            options: ['yes', 'no'],
+            required: 'require'
+          },
+          {
+            key: 'studentId',
+            name: 'lead_id',
+            label: 'StudentID',
+            place: 'StudentID',
+            id: 'StudentID',
+            type: 'studentId',
+            required: 'require'
+          },
+          {
+            key: 'text',
+            name: 'full_name',
+            label: 'Student Name',
+            place: 'Student Name',
+            id: 'full_name',
+            type: 'text',
+            required: 'require'
+          },
+          {
+            key: 'email',
+            label: 'Email-id',
+            place: 'Enter Email-id',
+            name: ['contact', 'email'],
+            id: 'EmailID',
+            type: 'email',
+            required: 'require'
+          },
+          {
+            key: 'tel',
+            label: 'phone',
+            name: ['contact', 'phone'],
+            place: 'Enter Phone Number',
+            id: 'phone',
+            type: 'tel',
+            required: 'require'
+          },
+          {
+            key: 'text',
+            label: 'Father Name',
+            name: ['customfields', 'father_name'],
+            place: 'Enter Father Name',
+            id: 'Father Name',
+            type: 'text',
+            required: 'require'
+          },
+          {
+            key: 'text',
+            label: 'Mother Name',
+            name: ['customfields', 'mother_name'],
+            place: 'Enter Mother Name',
+            id: 'mother_name',
+            type: 'text',
+            required: 'require'
+          },
+          {
+            key: 'select',
+            label: 'Session',
+            name: ['customfields', 'session'],
+            place: 'eg: jan 20',
+            id: 'Session',
+            type: 'select',
+            options: [{ value: 'jan 20', label: 'Jan 20' },
+            { value: 'july 20', label: 'July 20' },
+            { value: 'jan 21', label: 'Jan 21' },
+            { value: 'july 21', label: 'July 21' },
+            { value: 'jan 22', label: 'Jan 22' },
+            { value: 'july 22', label: 'July 22' },
+            { value: 'jan 23', label: 'Jan 23' },
+            { value: 'july 23', label: 'July 23' },
+            { value: 'jan 24', label: 'Jan 24' },
+            { value: 'july 24', label: 'July 24' },
+            { value: 'jan 25', label: 'Jan 25' },
+            { value: 'july 25', label: 'July 25' }],
+            required: 'require'
+          },
+          {
+            key: 'select',
+            label: 'Admission Type',
+            name: ['customfields', 'admission_type'],
+            id: 'SessionType',
+            place: 'Enter Admission Type',
+            type: 'select',
+            options: [{ value: 'Fresh', label: 'Fresh' },
+            { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
+          },
+          {
+            courses: [
+              {
+                value: "BA",
+                label: "BA",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { "value": "Education", "label": "Education" },
+                  { "value": "English", "label": "English" },
+                  { "value": "Economics", "label": "Economics" },
+                  { "value": "History", "label": "History" },
+                  { "value": "Political science", "label": "Political science" },
+                  { "value": "Sociology", "label": "Sociology" },
+                  { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
+                  { "value": 'Geography', label: 'Geography' },
+                ],
+              },
+              {
+                value: "BBA",
+                label: "BBA",
+                specializations: [
+                  { "value": "Education", "label": "Education" },
+                  { value: "Marketing", label: "Marketing" },
+                  { value: "Human Resource Management", label: "Human Resource Management" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "International Business", label: "International Business" }
+                ],
+              },
+              {
+                value: "BCA",
+                label: "BCA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BCOM",
+                label: "BCOM",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BSW",
+                label: "BSW",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BLIS",
+                label: "BLIS",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BSC",
+                label: "BSC",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Chemistry", label: "Chemistry" },
+                  { value: "Phycics", label: "Phycics" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: "Microbiology", label: "Microbiology" },
+                  { value: 'Bio-Technology', label: "Bio-Technology" },
+                  { value: "Zoology", label: "Zoology" },
+                  { value: "Animation and Multimedia", label: "Animation and Multimedia" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
+                  { value: "Operation Theater Technology", label: "Operation Theater Technology" },
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                ],
+              },
+              {
+                value: "MA",
+                label: "MA",
+                specializations: [
+                  { value: "Economics", label: "Economics" },
+                  { value: "English", label: "English" },
+                  { value: "Geography", label: "Geography" },
+                  { value: "History", label: "History" },
+                  { value: "Political Science", label: "Political Science" },
+                  { value: "Sociology", label: "Sociology" },
+                  { value: "Education", label: "Education" },
+                  { value: "Journalism and Mass Communication", label: "Journalism and Mass Communication" }
+                ],
+              },
+              {
+                value: "MCA",
+                label: "MCA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MCOM",
+                label: "MCOM",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MSW",
+                label: "MSW",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MBA",
+                label: "MBA",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "Human Resources Management", label: "Human Resources Management" },
+                  { value: "Information Technology", label: "Information Technology" },
+                  { value: "International Business", label: "International Business" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "Operations Management", label: "Operations Management" },
+                  { value: "Project Management", label: "Project Management" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Tourism and Hospitality Management", label: "Tourism and Hospitality Management" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Hospital Management", label: "Hospital Management" }
+                ],
+              },
+              {
+                value: "MSC",
+                label: "MSC",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Chemistry", label: "Chemistry" },
+                  { value: "Phycics", label: "Phycics" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: "Information Technology", label: "Information Technology" },
+                  { value: "Computer Science", label: "Computer Science" },
+                  { value: "Bio-Technology", label: "Bio-Technology" },
+                  { value: "Zoology", label: "Zoology" },
+                  { value: "Animation & Multimedia", label: "Animation & Multimedia" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
+                  { value: "Optometry", label: "Optometry" },
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                ],
+              },
+              {
+                value: "MLIS",
+                label: "MLIS",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+            ]
+          },
+          {
+            key: 'date',
+            label: 'Date of Birth',
+            name: ['customfields', 'dob'],
+            place: 'Enter Date of Birth',
+            id: 'dob',
+            type: 'date',
+            required: 'require'
+          },
+          {
+            key: 'select',
+            label: 'Gender',
+            name: ['customfields', 'gender'],
+            id: 'Gender',
+            place: 'Gender',
+            type: 'select',
+            options: [{ value: 'Male', label: 'Male' },
+            { value: 'Female', label: 'Female' },
+            { value: 'Other', label: 'Other' }],
+          },
+          {
+            key: 'select',
+            label: 'Installment Type',
+            id: 'InstallmentType',
+            name: ['customfields', 'installment_type'],
+            place: 'Installment Type',
+            type: 'select',
+            required: 'require',
+            options: [
+              { value: '1st Installment/ New Admission', label: '1st Installment/ New Admission' },
+              { value: '2nd Installment', label: '2nd Installment' },
+              { value: '3rd Installment', label: '3rd Installment' },
+              { value: '4th Installment', label: '4th Installment' },
+              { value: '5th Installment', label: '5th Installment' },
+              { value: '6th Installment', label: '6th Installment' },
+              { value: '7th Installment', label: '7th Installment' },
+              { value: '8th Installment', label: '8th Installment' },
+              { value: '9th Installment', label: '9th Installment' },
+              { value: '10th Installment', label: '10th Installment' },
+            ],
+          },
+          {
+            key: 'select ',
+            label: 'Payment mode ',
+            name: ['customfields', 'payment_mode'],
+            id: 'PaymentMode ',
+            type: 'select',
+            place: 'Select Payment Mode',
+            required: 'require',
+            options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
+            { value: 'University Bank Account', label: 'University Bank Account' },
+            { value: 'Payment Gateway', label: 'Payment Gateway' },
+            { value: 'Cash/DD', label: 'Cash/DD' }],
+          },
+          {
+            key: 'number',
+            label: 'Total Course Fee',
+            name: ['customfields', 'total_course_fee'],
+            place: 'eg: 20000',
+            id: 'Total Course Fee',
+            type: 'number',
+            required: 'require'
+          },
+          {
+            key: 'number',
+            label: 'Total Paid Amount',
+            place: 'eg: 20000',
+            name: ['customfields', 'total_paid_amount'],
+            id: 'Total Paid Amount',
+            type: 'number',
+          },
+          {
+            key: 'number',
+            label: 'Paid Amount',
+            name: ['customfields', 'paid_amount'],
+            place: 'eg: 20000',
+            id: 'Paid Amount',
+            type: 'number',
+          },
+
+          {
+            key: 'select ',
+            label: 'Counselors ',
+            name: ['customfields', 'counselor_email'],
+            id: 'email ',
+            type: 'select',
+            place: 'select counselor email',
+            required: 'require',
+            options: [{ value: 'zarin@highereducationschool.com', label: 'Zarin' },
+            { value: 'kanchan@highereducationschool.com', label: 'Kanchan' },
+            { value: 'kirti@highereducationschool.com', label: 'Kirti   ' },
+            { value: 'ramandeep@highereducationschool.com', label: 'Raman  ' },
+            { value: 'kavita@highereducationschool.com', label: 'kavita' },
+            { value: 'imra@highereducationschool.com', label: 'Imra' },
+            { value: 'Mahak@highereducationschool.com', label: 'Mahek' },
+            { value: 'abhay@highereducationschool.com', label: 'abhay' },
+            { value: 'swati@highereducationschool.com', label: 'swati' },
+            { value: 'gulshan@highereducationschool.com', label: 'Gulshan' },
+            { value: 'isha@highereducationschool.com', label: 'Isha' },
+            { value: 'Sakshi@highereducationschool.com', label: 'Sakshi' },
+            { value: 'aashita@highereducationschool.com', label: 'aashita' },
+            { value: 'pratibha@highereducationschool.com', label: 'pratibha' },
+            { value: 'shreyashi@highereducationschool.com', label: 'Shreyashi ' },
+            { value: 'apoorvasrivastava@distanceeducationschool.com', label: 'Apoorva_DES' },
+            { value: 'asma@distanceeducationschool.com', label: 'Asma_DES' },
+            { value: 'nehaprashar@distanceeducationschool.com', label: 'Neha_Prasher_DES' },
+            { value: 'priya@distanceeducationschool.com', label: 'Priya_DES' },
+            { value: 'diksha@distanceeducationschool.com', label: 'Diksha_DES' },
+            { value: 'abhilasha@distanceeducationschool.com', label: 'Abhilasha_Gupta_DES' },
+            { value: 'saher@distanceeducationschool.com', label: 'Saher_Khan_DES' },
+            { value: 'fiza@distanceeducationschool.com', label: 'Fiza_DES' },
+            { value: 'muskan@distanceeducationschool.com', label: 'Muskaan_DES' },
+            { value: 'aniruddh@distanceeducationschool.com', label: 'Aniruddh_DES' },
+            { value: 'deva@distanceeducationschool.com', label: 'Devendra_DES' },
+            { value: 'amritpal@distanceeducationschool.com', label: 'Amritpal_DES' },
+            { value: 'Salman@distanceeducationschool.com:', label: 'Salman_DES' },
+            { value: 'tariq@distanceeducationschool.com', label: 'Traiq_DES' },
+            { value: 'shivam@distanceeducationschool.com', label: 'Shivam_sharma_DES' },
+            { value: 'pushpa@distanceeducationschool.com', label: 'Puspa_DES' },
+            { value: 'zarin@distanceeducationschool.com', label: 'Zarin_DES' },
+            { value: 'kanchan@distanceeducationschool.com', label: 'Kanchan_DES' },
+            { value: 'manu@distanceeducationschool.com', label: 'Manu_DES' },
+
+            // Jain Team Emails
+            { value: 'a.anitha.ju@gmail.com', label: 'Anita_JU' },
+            { value: 'vaniruckmani.ju@gmail.com', label: 'Vani_Ruckmani_JU' },
+            { value: 'priyankapalle.ju@gmail.com', label: 'Priyanka_JU' },
+            { value: 'SwatiRamani.manipal@gmail.com', label: 'Swati_JU' },
+
+            // Manipal Team Email
+            { value: 'ankitakumari.manipal@gmail.com', label: 'Ankita_MU' },
+            { value: 'medhahandoo.manipal@gmail.com', label: 'Medha_MU' },
+            { value: 'amreen.manipal@gmail.com', label: 'Amreen_MU' },
+
+            // Support Team Email
+            { value: 'rajesh@distanceeducationschool.com', label: 'Rajesh_sir' },
+            { value: 'manisha@distanceeducationschool.com', label: 'Manisha' },
+            { value: 'admin@distanceeducationschool.com', label: 'Nouman_sir' },
+            { value: 'sandy@distanceeducationschool.com', label: 'Sandy' },
+            { value: 'neha@distanceeducationschool.com', label: 'Neha' },
+            { value: 'yashpriya@distanceeducationschool.com', label: 'Yash_Priya' },
+            { value: 'kavitahaldar@distanceeducationschool.com', label: 'kavitahaldar' },
+            { value: 'ifla@distanceeducationschool.com', label: 'Ifla' },
+            { value: 'shalu@distanceeducationschool.com', label: 'Shalu' },
+            { value: 'zainubia@distanceeducationschool.com', label: 'zainbuia' },
+            { value: 'pallovi@distanceeducationschool.com', label: 'Pallovi' },
+            { value: 'kavitakumari@distanceeducationschool.com', label: 'Kavita_Kumari' },
+            { value: 'manshi@distanceeducationschool.com', label: 'Mansi' },
+            { value: 'Bhavya.manipal@gmail.com', label: 'Bhavya' },
+            { value: 'anurag@distanceeducationschool.com', label: 'Anuraj' },
+            { value: 'rupal@distanceeducationschool.com', label: 'Rupal' },
+            //B2B Team Email
+            { value: 'spuhelpdesk@gmail.com', label: 'Binny' },
+            { value: 'ruchika.spu@gmail.com', label: 'Ruchika' },
+            { value: 'lalit@distanceeducationschool.com', label: 'Lalit_DES' },
+            { value: 'lalit.spu@gmail.com', label: 'Lalit' },
+            { value: 'ramiz.spu@gmail.com', label: 'Ramiz' }
+            ],
+          },
+          {
+            key: 'file',
+            label: 'Upload Fee Receipt Screenshot',
+            name: ['customfields', 'upload_fee_receipt_screenshot'],
+            place: 'Upload Fee Receipt Screenshot',
+            id: 'Upload Fee Receipt Screenshot',
+            type: 'file',
+            required: 'require'
+
+          },
+          {
+            key: 'file',
+            label: 'Uplaod Student Document',
+            name: ['customfields', 'upload_student_document'],
+            place: 'Uplaod Student Document',
+            id: 'Uplaod Student Document',
+            type: 'file',
+          },
+          {
+            key: 'textarea',
+            label: 'Remark',
+            name: ['customfields', 'remark'],
+            place: 'Remark',
+            id: 'remark',
+            type: 'textarea',
+          },
+        ],
+      },
+      {
+        // First university complete date 
+        label: 'SVSU',
+        name: ['customfields', 'university_name'],
+        value: 'SVSU',
+        fields: [
+          {
+            key: 'radio',
+            label: 'Want to send Fee Receipt',
+            id: 'Send',
+            name: ['customfields', 'send_fee_receipt'],
+            type: 'radio',
+            options: ['yes', 'no'],
+            required: 'require'
+          },
+          {
+            key: 'studentId',
+            name: 'lead_id',
+            label: 'StudentID',
+            place: 'StudentID',
+            id: 'StudentID',
+            type: 'studentId',
+            required: 'require'
+          },
+          {
+            key: 'text',
+            name: 'full_name',
+            label: 'Student Name',
+            place: 'Student Name',
+            id: 'full_name',
+            type: 'text',
+            required: 'require'
+          },
+          {
+            key: 'email',
+            label: 'Email-id',
+            place: 'Enter Email-id',
+            name: ['contact', 'email'],
+            id: 'EmailID',
+            type: 'email',
+            required: 'require'
+          },
+          {
+            key: 'tel',
+            label: 'phone',
+            name: ['contact', 'phone'],
+            place: 'Enter Phone Number',
+            id: 'phone',
+            type: 'tel',
+            required: 'require'
+          },
+          {
+            key: 'text',
+            label: 'Father Name',
+            name: ['customfields', 'father_name'],
+            place: 'Enter Father Name',
+            id: 'Father Name',
+            type: 'text',
+            required: 'require'
+          },
+          {
+            key: 'text',
+            label: 'Mother Name',
+            name: ['customfields', 'mother_name'],
+            place: 'Enter Mother Name',
+            id: 'mother_name',
+            type: 'text',
+            required: 'require'
+          },
+          {
+            key: 'select',
+            label: 'Session',
+            name: ['customfields', 'session'],
+            place: 'eg: jan 20',
+            id: 'Session',
+            type: 'select',
+            options: [{ value: 'jan 20', label: 'Jan 20' },
+            { value: 'july 20', label: 'July 20' },
+            { value: 'jan 21', label: 'Jan 21' },
+            { value: 'july 21', label: 'July 21' },
+            { value: 'jan 22', label: 'Jan 22' },
+            { value: 'july 22', label: 'July 22' },
+            { value: 'jan 23', label: 'Jan 23' },
+            { value: 'july 23', label: 'July 23' },
+            { value: 'jan 24', label: 'Jan 24' },
+            { value: 'july 24', label: 'July 24' },
+            { value: 'jan 25', label: 'Jan 25' },
+            { value: 'july 25', label: 'July 25' }],
+            required: 'require'
+          },
+          {
+            key: 'select',
+            label: 'Admission Type',
+            name: ['customfields', 'admission_type'],
+            id: 'SessionType',
+            place: 'Enter Admission Type',
+            type: 'select',
+            options: [{ value: 'Fresh', label: 'Fresh' },
+            { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
+          },
+          {
+            courses: [
+              {
+                value: "BA",
+                label: "BA",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { "value": "Education", "label": "Education" },
+                  { "value": "English", "label": "English" },
+                  { "value": "Economics", "label": "Economics" },
+                  { "value": "History", "label": "History" },
+                  { "value": "Political science", "label": "Political science" },
+                  { "value": "Sociology", "label": "Sociology" },
+                  { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
+                  { "value": 'Geography', label: 'Geography' },
+                ],
+              },
+              {
+                value: "BBA",
+                label: "BBA",
+                specializations: [
+                  { "value": "Education", "label": "Education" },
+                  { value: "Marketing", label: "Marketing" },
+                  { value: "Human Resource Management", label: "Human Resource Management" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "International Business", label: "International Business" }
+                ],
+              },
+              {
+                value: "BCA",
+                label: "BCA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BCOM",
+                label: "BCOM",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BSW",
+                label: "BSW",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BLIS",
+                label: "BLIS",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BSC",
+                label: "BSC",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Chemistry", label: "Chemistry" },
+                  { value: "Phycics", label: "Phycics" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: "Microbiology", label: "Microbiology" },
+                  { value: 'Bio-Technology', label: "Bio-Technology" },
+                  { value: "Zoology", label: "Zoology" },
+                  { value: "Animation and Multimedia", label: "Animation and Multimedia" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
+                  { value: "Operation Theater Technology", label: "Operation Theater Technology" },
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                ],
+              },
+              {
+                value: "MA",
+                label: "MA",
+                specializations: [
+                  { value: "Economics", label: "Economics" },
+                  { value: "English", label: "English" },
+                  { value: "Geography", label: "Geography" },
+                  { value: "History", label: "History" },
+                  { value: "Political Science", label: "Political Science" },
+                  { value: "Sociology", label: "Sociology" },
+                  { value: "Education", label: "Education" },
+                  { value: "Journalism and Mass Communication", label: "Journalism and Mass Communication" }
+                ],
+              },
+              {
+                value: "MCA",
+                label: "MCA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MCOM",
+                label: "MCOM",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MSW",
+                label: "MSW",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MBA",
+                label: "MBA",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "Human Resources Management", label: "Human Resources Management" },
+                  { value: "Information Technology", label: "Information Technology" },
+                  { value: "International Business", label: "International Business" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "Operations Management", label: "Operations Management" },
+                  { value: "Project Management", label: "Project Management" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Tourism and Hospitality Management", label: "Tourism and Hospitality Management" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Hospital Management", label: "Hospital Management" }
+                ],
+              },
+              {
+                value: "MSC",
+                label: "MSC",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Chemistry", label: "Chemistry" },
+                  { value: "Phycics", label: "Phycics" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: "Information Technology", label: "Information Technology" },
+                  { value: "Computer Science", label: "Computer Science" },
+                  { value: "Bio-Technology", label: "Bio-Technology" },
+                  { value: "Zoology", label: "Zoology" },
+                  { value: "Animation & Multimedia", label: "Animation & Multimedia" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
+                  { value: "Optometry", label: "Optometry" },
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                ],
+              },
+              {
+                value: "MLIS",
+                label: "MLIS",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+            ]
+          },
+          {
+            key: 'date',
+            label: 'Date of Birth',
+            name: ['customfields', 'dob'],
+            place: 'Enter Date of Birth',
+            id: 'dob',
+            type: 'date',
+            required: 'require'
+          },
+          {
+            key: 'select',
+            label: 'Gender',
+            name: ['customfields', 'gender'],
+            id: 'Gender',
+            place: 'Gender',
+            type: 'select',
+            options: [{ value: 'Male', label: 'Male' },
+            { value: 'Female', label: 'Female' },
+            { value: 'Other', label: 'Other' }],
+          },
+          {
+            key: 'select',
+            label: 'Installment Type',
+            id: 'InstallmentType',
+            name: ['customfields', 'installment_type'],
+            place: 'Installment Type',
+            type: 'select',
+            required: 'require',
+            options: [
+              { value: '1st Installment/ New Admission', label: '1st Installment/ New Admission' },
+              { value: '2nd Installment', label: '2nd Installment' },
+              { value: '3rd Installment', label: '3rd Installment' },
+              { value: '4th Installment', label: '4th Installment' },
+              { value: '5th Installment', label: '5th Installment' },
+              { value: '6th Installment', label: '6th Installment' },
+              { value: '7th Installment', label: '7th Installment' },
+              { value: '8th Installment', label: '8th Installment' },
+              { value: '9th Installment', label: '9th Installment' },
+              { value: '10th Installment', label: '10th Installment' },
+            ],
+          },
+          {
+            key: 'select ',
+            label: 'Payment mode ',
+            name: ['customfields', 'payment_mode'],
+            id: 'PaymentMode ',
+            type: 'select',
+            place: 'Select Payment Mode',
+            required: 'require',
+            options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
+            { value: 'University Bank Account', label: 'University Bank Account' },
+            { value: 'Payment Gateway', label: 'Payment Gateway' },
+            { value: 'Cash/DD', label: 'Cash/DD' }],
+          },
+          {
+            key: 'number',
+            label: 'Total Course Fee',
+            name: ['customfields', 'total_course_fee'],
+            place: 'eg: 20000',
+            id: 'Total Course Fee',
+            type: 'number',
+            required: 'require'
+          },
+          {
+            key: 'number',
+            label: 'Total Paid Amount',
+            place: 'eg: 20000',
+            name: ['customfields', 'total_paid_amount'],
+            id: 'Total Paid Amount',
+            type: 'number',
+          },
+          {
+            key: 'number',
+            label: 'Paid Amount',
+            name: ['customfields', 'paid_amount'],
+            place: 'eg: 20000',
+            id: 'Paid Amount',
+            type: 'number',
+          },
+
+          {
+            key: 'select ',
+            label: 'Counselors ',
+            name: ['customfields', 'counselor_email'],
+            id: 'email ',
+            type: 'select',
+            place: 'select counselor email',
+            required: 'require',
+            options: [{ value: 'zarin@highereducationschool.com', label: 'Zarin' },
+            { value: 'kanchan@highereducationschool.com', label: 'Kanchan' },
+            { value: 'kirti@highereducationschool.com', label: 'Kirti   ' },
+            { value: 'ramandeep@highereducationschool.com', label: 'Raman  ' },
+            { value: 'kavita@highereducationschool.com', label: 'kavita' },
+            { value: 'imra@highereducationschool.com', label: 'Imra' },
+            { value: 'Mahak@highereducationschool.com', label: 'Mahek' },
+            { value: 'abhay@highereducationschool.com', label: 'abhay' },
+            { value: 'swati@highereducationschool.com', label: 'swati' },
+            { value: 'gulshan@highereducationschool.com', label: 'Gulshan' },
+            { value: 'isha@highereducationschool.com', label: 'Isha' },
+            { value: 'Sakshi@highereducationschool.com', label: 'Sakshi' },
+            { value: 'aashita@highereducationschool.com', label: 'aashita' },
+            { value: 'pratibha@highereducationschool.com', label: 'pratibha' },
+            { value: 'shreyashi@highereducationschool.com', label: 'Shreyashi ' },
+            { value: 'apoorvasrivastava@distanceeducationschool.com', label: 'Apoorva_DES' },
+            { value: 'asma@distanceeducationschool.com', label: 'Asma_DES' },
+            { value: 'nehaprashar@distanceeducationschool.com', label: 'Neha_Prasher_DES' },
+            { value: 'priya@distanceeducationschool.com', label: 'Priya_DES' },
+            { value: 'diksha@distanceeducationschool.com', label: 'Diksha_DES' },
+            { value: 'abhilasha@distanceeducationschool.com', label: 'Abhilasha_Gupta_DES' },
+            { value: 'saher@distanceeducationschool.com', label: 'Saher_Khan_DES' },
+            { value: 'fiza@distanceeducationschool.com', label: 'Fiza_DES' },
+            { value: 'muskan@distanceeducationschool.com', label: 'Muskaan_DES' },
+            { value: 'aniruddh@distanceeducationschool.com', label: 'Aniruddh_DES' },
+            { value: 'deva@distanceeducationschool.com', label: 'Devendra_DES' },
+            { value: 'amritpal@distanceeducationschool.com', label: 'Amritpal_DES' },
+            { value: 'Salman@distanceeducationschool.com:', label: 'Salman_DES' },
+            { value: 'tariq@distanceeducationschool.com', label: 'Traiq_DES' },
+            { value: 'shivam@distanceeducationschool.com', label: 'Shivam_sharma_DES' },
+            { value: 'pushpa@distanceeducationschool.com', label: 'Puspa_DES' },
+            { value: 'zarin@distanceeducationschool.com', label: 'Zarin_DES' },
+            { value: 'kanchan@distanceeducationschool.com', label: 'Kanchan_DES' },
+            { value: 'manu@distanceeducationschool.com', label: 'Manu_DES' },
+
+            // Jain Team Emails
+            { value: 'a.anitha.ju@gmail.com', label: 'Anita_JU' },
+            { value: 'vaniruckmani.ju@gmail.com', label: 'Vani_Ruckmani_JU' },
+            { value: 'priyankapalle.ju@gmail.com', label: 'Priyanka_JU' },
+            { value: 'SwatiRamani.manipal@gmail.com', label: 'Swati_JU' },
+
+            // Manipal Team Email
+            { value: 'ankitakumari.manipal@gmail.com', label: 'Ankita_MU' },
+            { value: 'medhahandoo.manipal@gmail.com', label: 'Medha_MU' },
+            { value: 'amreen.manipal@gmail.com', label: 'Amreen_MU' },
+
+            // Support Team Email
+            { value: 'rajesh@distanceeducationschool.com', label: 'Rajesh_sir' },
+            { value: 'manisha@distanceeducationschool.com', label: 'Manisha' },
+            { value: 'admin@distanceeducationschool.com', label: 'Nouman_sir' },
+            { value: 'sandy@distanceeducationschool.com', label: 'Sandy' },
+            { value: 'neha@distanceeducationschool.com', label: 'Neha' },
+            { value: 'yashpriya@distanceeducationschool.com', label: 'Yash_Priya' },
+            { value: 'kavitahaldar@distanceeducationschool.com', label: 'kavitahaldar' },
+            { value: 'ifla@distanceeducationschool.com', label: 'Ifla' },
+            { value: 'shalu@distanceeducationschool.com', label: 'Shalu' },
+            { value: 'zainubia@distanceeducationschool.com', label: 'zainbuia' },
+            { value: 'pallovi@distanceeducationschool.com', label: 'Pallovi' },
+            { value: 'kavitakumari@distanceeducationschool.com', label: 'Kavita_Kumari' },
+            { value: 'manshi@distanceeducationschool.com', label: 'Mansi' },
+            { value: 'Bhavya.manipal@gmail.com', label: 'Bhavya' },
+            { value: 'anurag@distanceeducationschool.com', label: 'Anuraj' },
+            { value: 'rupal@distanceeducationschool.com', label: 'Rupal' },
+            //B2B Team Email
+            { value: 'spuhelpdesk@gmail.com', label: 'Binny' },
+            { value: 'ruchika.spu@gmail.com', label: 'Ruchika' },
+            { value: 'lalit@distanceeducationschool.com', label: 'Lalit_DES' },
+            { value: 'lalit.spu@gmail.com', label: 'Lalit' },
+            { value: 'ramiz.spu@gmail.com', label: 'Ramiz' }
+            ],
+          },
+          {
+            key: 'file',
+            label: 'Upload Fee Receipt Screenshot',
+            name: ['customfields', 'upload_fee_receipt_screenshot'],
+            place: 'Upload Fee Receipt Screenshot',
+            id: 'Upload Fee Receipt Screenshot',
+            type: 'file',
+            required: 'require'
+
+          },
+          {
+            key: 'file',
+            label: 'Uplaod Student Document',
+            name: ['customfields', 'upload_student_document'],
+            place: 'Uplaod Student Document',
+            id: 'Uplaod Student Document',
+            type: 'file',
+          },
+          {
+            key: 'textarea',
+            label: 'Remark',
+            name: ['customfields', 'remark'],
+            place: 'Remark',
+            id: 'remark',
+            type: 'textarea',
+          },
+        ],
+      },
+      {
+        // First university complete date 
         label: 'NMIMS',
         name: ['customfields', 'university_name'],
         value: 'NMIMS',
         fields: [
           {
+            key: 'radio',
+            label: 'Want to send Fee Receipt',
+            id: 'Send',
+            name: ['customfields', 'send_fee_receipt'],
+            type: 'radio',
+            options: ['yes', 'no'],
+            required: 'require'
+          },
+          {
             key: 'studentId',
             name: 'lead_id',
             label: 'StudentID',
@@ -2479,24 +2726,42 @@ const formData = [
             required: 'require'
           },
           {
+            key: 'text',
+            label: 'Father Name',
+            name: ['customfields', 'father_name'],
+            place: 'Enter Father Name',
+            id: 'Father Name',
+            type: 'text',
+            required: 'require'
+          },
+          {
+            key: 'text',
+            label: 'Mother Name',
+            name: ['customfields', 'mother_name'],
+            place: 'Enter Mother Name',
+            id: 'mother_name',
+            type: 'text',
+            required: 'require'
+          },
+          {
             key: 'select',
             label: 'Session',
             name: ['customfields', 'session'],
-            place: 'eg: jan 20-jan 23',
+            place: 'eg: jan 20',
             id: 'Session',
             type: 'select',
-            options: [{ value: 'jan 20-jan 20', label: 'Jan 20-Jan 20' },
-            { value: 'july 20-july 20', label: 'July 20-July 20' },
-            { value: 'jan 21-jan 21', label: 'Jan 21-Jan 21' },
-            { value: 'july 21-july 21', label: 'July 21-July 21' },
-            { value: 'jan 22-jan 22', label: 'Jan 22-Jan 22' },
-            { value: 'july 22-july 22', label: 'July 22-July 22' },
-            { value: 'jan 23-jan 23', label: 'Jan 23-Jan 23' },
-            { value: 'july 23-july 23', label: 'July 23-July 23' },
-            { value: 'jan 24-jan 24', label: 'Jan 24-Jan 24' },
-            { value: 'july 24-july 24', label: 'July 24-July 24' },
-            { value: 'jan 25-jan 25', label: 'Jan 25-Jan 25' },
-            { value: 'july 25-july 25', label: 'July 25-July 25' }],
+            options: [{ value: 'jan 20', label: 'Jan 20' },
+            { value: 'july 20', label: 'July 20' },
+            { value: 'jan 21', label: 'Jan 21' },
+            { value: 'july 21', label: 'July 21' },
+            { value: 'jan 22', label: 'Jan 22' },
+            { value: 'july 22', label: 'July 22' },
+            { value: 'jan 23', label: 'Jan 23' },
+            { value: 'july 23', label: 'July 23' },
+            { value: 'jan 24', label: 'Jan 24' },
+            { value: 'july 24', label: 'July 24' },
+            { value: 'jan 25', label: 'Jan 25' },
+            { value: 'july 25', label: 'July 25' }],
             required: 'require'
           },
           {
@@ -2506,7 +2771,7 @@ const formData = [
             id: 'SessionType',
             place: 'Enter Admission Type',
             type: 'select',
-            options: [{ value: 'Fresher', lable: 'Fresher' },
+            options: [{ value: 'Fresh', label: 'Fresh' },
             { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
           },
           {
@@ -2523,7 +2788,7 @@ const formData = [
                   { "value": "Political science", "label": "Political science" },
                   { "value": "Sociology", "label": "Sociology" },
                   { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
-                  { "value": 'Geography', lable: 'Geography' },
+                  { "value": 'Geography', label: 'Geography' },
                 ],
               },
               {
@@ -2589,7 +2854,7 @@ const formData = [
                 value: "MA",
                 label: "MA",
                 specializations: [
-                  { value: "Economics", lable: "Economics" },
+                  { value: "Economics", label: "Economics" },
                   { value: "English", label: "English" },
                   { value: "Geography", label: "Geography" },
                   { value: "History", label: "History" },
@@ -2667,7 +2932,15 @@ const formData = [
               },
             ]
           },
-
+          {
+            key: 'date',
+            label: 'Date of Birth',
+            name: ['customfields', 'dob'],
+            place: 'Enter Date of Birth',
+            id: 'dob',
+            type: 'date',
+            required: 'require'
+          },
           {
             key: 'select',
             label: 'Gender',
@@ -2710,7 +2983,7 @@ const formData = [
             required: 'require',
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Online Payment', label: 'Online Payment' },
+            { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
           {
@@ -2741,7 +3014,7 @@ const formData = [
 
           {
             key: 'select ',
-            label: 'Counselor Email ',
+            label: 'Counselors ',
             name: ['customfields', 'counselor_email'],
             id: 'email ',
             type: 'select',
@@ -2821,7 +3094,7 @@ const formData = [
           {
             key: 'file',
             label: 'Upload Fee Receipt Screenshot',
-            name: 'image',
+            name: ['customfields', 'upload_fee_receipt_screenshot'],
             place: 'Upload Fee Receipt Screenshot',
             id: 'Upload Fee Receipt Screenshot',
             type: 'file',
@@ -2829,30 +3102,39 @@ const formData = [
 
           },
           {
-            key: 'text',
+            key: 'file',
             label: 'Uplaod Student Document',
             name: ['customfields', 'upload_student_document'],
-            place: 'Enter Counselor Email',
+            place: 'Uplaod Student Document',
             id: 'Uplaod Student Document',
-            type: 'text',
+            type: 'file',
           },
           {
             key: 'textarea',
             label: 'Remark',
             name: ['customfields', 'remark'],
-            place: 'Enter Counselor Email',
-            id: 'Uplaod Student Document',
+            place: 'Remark',
+            id: 'remark',
             type: 'textarea',
           },
         ],
       },
       {
-        // 8th university complete date 
+        // First university complete date 
         label: 'VIGNAN',
         name: ['customfields', 'university_name'],
         value: 'VIGNAN',
         fields: [
           {
+            key: 'radio',
+            label: 'Want to send Fee Receipt',
+            id: 'Send',
+            name: ['customfields', 'send_fee_receipt'],
+            type: 'radio',
+            options: ['yes', 'no'],
+            required: 'require'
+          },
+          {
             key: 'studentId',
             name: 'lead_id',
             label: 'StudentID',
@@ -2889,24 +3171,42 @@ const formData = [
             required: 'require'
           },
           {
+            key: 'text',
+            label: 'Father Name',
+            name: ['customfields', 'father_name'],
+            place: 'Enter Father Name',
+            id: 'Father Name',
+            type: 'text',
+            required: 'require'
+          },
+          {
+            key: 'text',
+            label: 'Mother Name',
+            name: ['customfields', 'mother_name'],
+            place: 'Enter Mother Name',
+            id: 'mother_name',
+            type: 'text',
+            required: 'require'
+          },
+          {
             key: 'select',
             label: 'Session',
             name: ['customfields', 'session'],
-            place: 'eg: jan 20-jan 23',
+            place: 'eg: jan 20',
             id: 'Session',
             type: 'select',
-            options: [{ value: 'jan 20-jan 20', label: 'Jan 20-Jan 20' },
-            { value: 'july 20-july 20', label: 'July 20-July 20' },
-            { value: 'jan 21-jan 21', label: 'Jan 21-Jan 21' },
-            { value: 'july 21-july 21', label: 'July 21-July 21' },
-            { value: 'jan 22-jan 22', label: 'Jan 22-Jan 22' },
-            { value: 'july 22-july 22', label: 'July 22-July 22' },
-            { value: 'jan 23-jan 23', label: 'Jan 23-Jan 23' },
-            { value: 'july 23-july 23', label: 'July 23-July 23' },
-            { value: 'jan 24-jan 24', label: 'Jan 24-Jan 24' },
-            { value: 'july 24-july 24', label: 'July 24-July 24' },
-            { value: 'jan 25-jan 25', label: 'Jan 25-Jan 25' },
-            { value: 'july 25-july 25', label: 'July 25-July 25' }],
+            options: [{ value: 'jan 20', label: 'Jan 20' },
+            { value: 'july 20', label: 'July 20' },
+            { value: 'jan 21', label: 'Jan 21' },
+            { value: 'july 21', label: 'July 21' },
+            { value: 'jan 22', label: 'Jan 22' },
+            { value: 'july 22', label: 'July 22' },
+            { value: 'jan 23', label: 'Jan 23' },
+            { value: 'july 23', label: 'July 23' },
+            { value: 'jan 24', label: 'Jan 24' },
+            { value: 'july 24', label: 'July 24' },
+            { value: 'jan 25', label: 'Jan 25' },
+            { value: 'july 25', label: 'July 25' }],
             required: 'require'
           },
           {
@@ -2916,7 +3216,7 @@ const formData = [
             id: 'SessionType',
             place: 'Enter Admission Type',
             type: 'select',
-            options: [{ value: 'Fresher', lable: 'Fresher' },
+            options: [{ value: 'Fresh', label: 'Fresh' },
             { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
           },
           {
@@ -2933,7 +3233,7 @@ const formData = [
                   { "value": "Political science", "label": "Political science" },
                   { "value": "Sociology", "label": "Sociology" },
                   { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
-                  { "value": 'Geography', lable: 'Geography' },
+                  { "value": 'Geography', label: 'Geography' },
                 ],
               },
               {
@@ -2999,7 +3299,7 @@ const formData = [
                 value: "MA",
                 label: "MA",
                 specializations: [
-                  { value: "Economics", lable: "Economics" },
+                  { value: "Economics", label: "Economics" },
                   { value: "English", label: "English" },
                   { value: "Geography", label: "Geography" },
                   { value: "History", label: "History" },
@@ -3077,7 +3377,15 @@ const formData = [
               },
             ]
           },
-
+          {
+            key: 'date',
+            label: 'Date of Birth',
+            name: ['customfields', 'dob'],
+            place: 'Enter Date of Birth',
+            id: 'dob',
+            type: 'date',
+            required: 'require'
+          },
           {
             key: 'select',
             label: 'Gender',
@@ -3120,7 +3428,7 @@ const formData = [
             required: 'require',
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Online Payment', label: 'Online Payment' },
+            { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
           {
@@ -3151,7 +3459,7 @@ const formData = [
 
           {
             key: 'select ',
-            label: 'Counselor Email ',
+            label: 'Counselors ',
             name: ['customfields', 'counselor_email'],
             id: 'email ',
             type: 'select',
@@ -3231,7 +3539,7 @@ const formData = [
           {
             key: 'file',
             label: 'Upload Fee Receipt Screenshot',
-            name: 'image',
+            name: ['customfields', 'upload_fee_receipt_screenshot'],
             place: 'Upload Fee Receipt Screenshot',
             id: 'Upload Fee Receipt Screenshot',
             type: 'file',
@@ -3239,30 +3547,39 @@ const formData = [
 
           },
           {
-            key: 'text',
+            key: 'file',
             label: 'Uplaod Student Document',
             name: ['customfields', 'upload_student_document'],
-            place: 'Enter Counselor Email',
+            place: 'Uplaod Student Document',
             id: 'Uplaod Student Document',
-            type: 'text',
+            type: 'file',
           },
           {
             key: 'textarea',
             label: 'Remark',
             name: ['customfields', 'remark'],
-            place: 'Enter Counselor Email',
-            id: 'Uplaod Student Document',
+            place: 'Remark',
+            id: 'remark',
             type: 'textarea',
           },
         ],
       },
       {
-        // 9th university complete date 
+        // First university complete date 
         label: 'HINDUSTAN',
         name: ['customfields', 'university_name'],
         value: 'HINDUSTAN',
         fields: [
           {
+            key: 'radio',
+            label: 'Want to send Fee Receipt',
+            id: 'Send',
+            name: ['customfields', 'send_fee_receipt'],
+            type: 'radio',
+            options: ['yes', 'no'],
+            required: 'require'
+          },
+          {
             key: 'studentId',
             name: 'lead_id',
             label: 'StudentID',
@@ -3299,24 +3616,42 @@ const formData = [
             required: 'require'
           },
           {
+            key: 'text',
+            label: 'Father Name',
+            name: ['customfields', 'father_name'],
+            place: 'Enter Father Name',
+            id: 'Father Name',
+            type: 'text',
+            required: 'require'
+          },
+          {
+            key: 'text',
+            label: 'Mother Name',
+            name: ['customfields', 'mother_name'],
+            place: 'Enter Mother Name',
+            id: 'mother_name',
+            type: 'text',
+            required: 'require'
+          },
+          {
             key: 'select',
             label: 'Session',
             name: ['customfields', 'session'],
-            place: 'eg: jan 20-jan 23',
+            place: 'eg: jan 20',
             id: 'Session',
             type: 'select',
-            options: [{ value: 'jan 20-jan 20', label: 'Jan 20-Jan 20' },
-            { value: 'july 20-july 20', label: 'July 20-July 20' },
-            { value: 'jan 21-jan 21', label: 'Jan 21-Jan 21' },
-            { value: 'july 21-july 21', label: 'July 21-July 21' },
-            { value: 'jan 22-jan 22', label: 'Jan 22-Jan 22' },
-            { value: 'july 22-july 22', label: 'July 22-July 22' },
-            { value: 'jan 23-jan 23', label: 'Jan 23-Jan 23' },
-            { value: 'july 23-july 23', label: 'July 23-July 23' },
-            { value: 'jan 24-jan 24', label: 'Jan 24-Jan 24' },
-            { value: 'july 24-july 24', label: 'July 24-July 24' },
-            { value: 'jan 25-jan 25', label: 'Jan 25-Jan 25' },
-            { value: 'july 25-july 25', label: 'July 25-July 25' }],
+            options: [{ value: 'jan 20', label: 'Jan 20' },
+            { value: 'july 20', label: 'July 20' },
+            { value: 'jan 21', label: 'Jan 21' },
+            { value: 'july 21', label: 'July 21' },
+            { value: 'jan 22', label: 'Jan 22' },
+            { value: 'july 22', label: 'July 22' },
+            { value: 'jan 23', label: 'Jan 23' },
+            { value: 'july 23', label: 'July 23' },
+            { value: 'jan 24', label: 'Jan 24' },
+            { value: 'july 24', label: 'July 24' },
+            { value: 'jan 25', label: 'Jan 25' },
+            { value: 'july 25', label: 'July 25' }],
             required: 'require'
           },
           {
@@ -3326,7 +3661,7 @@ const formData = [
             id: 'SessionType',
             place: 'Enter Admission Type',
             type: 'select',
-            options: [{ value: 'Fresher', lable: 'Fresher' },
+            options: [{ value: 'Fresh', label: 'Fresh' },
             { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
           },
           {
@@ -3343,7 +3678,7 @@ const formData = [
                   { "value": "Political science", "label": "Political science" },
                   { "value": "Sociology", "label": "Sociology" },
                   { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
-                  { "value": 'Geography', lable: 'Geography' },
+                  { "value": 'Geography', label: 'Geography' },
                 ],
               },
               {
@@ -3409,7 +3744,7 @@ const formData = [
                 value: "MA",
                 label: "MA",
                 specializations: [
-                  { value: "Economics", lable: "Economics" },
+                  { value: "Economics", label: "Economics" },
                   { value: "English", label: "English" },
                   { value: "Geography", label: "Geography" },
                   { value: "History", label: "History" },
@@ -3488,14 +3823,14 @@ const formData = [
             ]
           },
           {
-            key: 'text',
-            label: 'Specialization',
-            name: ['customfields', 'enter_specialization'],
-            place: 'Enter Specialization',
-            id: 'Specialization',
-            type: 'text',
+            key: 'date',
+            label: 'Date of Birth',
+            name: ['customfields', 'dob'],
+            place: 'Enter Date of Birth',
+            id: 'dob',
+            type: 'date',
+            required: 'require'
           },
-
           {
             key: 'select',
             label: 'Gender',
@@ -3538,7 +3873,7 @@ const formData = [
             required: 'require',
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Online Payment', label: 'Online Payment' },
+            { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
           {
@@ -3569,7 +3904,7 @@ const formData = [
 
           {
             key: 'select ',
-            label: 'Counselor Email ',
+            label: 'Counselors ',
             name: ['customfields', 'counselor_email'],
             id: 'email ',
             type: 'select',
@@ -3649,7 +3984,7 @@ const formData = [
           {
             key: 'file',
             label: 'Upload Fee Receipt Screenshot',
-            name: 'image',
+            name: ['customfields', 'upload_fee_receipt_screenshot'],
             place: 'Upload Fee Receipt Screenshot',
             id: 'Upload Fee Receipt Screenshot',
             type: 'file',
@@ -3657,30 +3992,39 @@ const formData = [
 
           },
           {
-            key: 'text',
+            key: 'file',
             label: 'Uplaod Student Document',
             name: ['customfields', 'upload_student_document'],
-            place: 'Enter Counselor Email',
+            place: 'Uplaod Student Document',
             id: 'Uplaod Student Document',
-            type: 'text',
+            type: 'file',
           },
           {
             key: 'textarea',
             label: 'Remark',
             name: ['customfields', 'remark'],
-            place: 'Enter Counselor Email',
-            id: 'Uplaod Student Document',
+            place: 'Remark',
+            id: 'remark',
             type: 'textarea',
           },
         ],
       },
       {
-        // 9th university complete date 
+        // First university complete date 
         label: 'MANIPAL',
         name: ['customfields', 'university_name'],
         value: 'MANIPAL',
         fields: [
           {
+            key: 'radio',
+            label: 'Want to send Fee Receipt',
+            id: 'Send',
+            name: ['customfields', 'send_fee_receipt'],
+            type: 'radio',
+            options: ['yes', 'no'],
+            required: 'require'
+          },
+          {
             key: 'studentId',
             name: 'lead_id',
             label: 'StudentID',
@@ -3717,24 +4061,42 @@ const formData = [
             required: 'require'
           },
           {
+            key: 'text',
+            label: 'Father Name',
+            name: ['customfields', 'father_name'],
+            place: 'Enter Father Name',
+            id: 'Father Name',
+            type: 'text',
+            required: 'require'
+          },
+          {
+            key: 'text',
+            label: 'Mother Name',
+            name: ['customfields', 'mother_name'],
+            place: 'Enter Mother Name',
+            id: 'mother_name',
+            type: 'text',
+            required: 'require'
+          },
+          {
             key: 'select',
             label: 'Session',
             name: ['customfields', 'session'],
-            place: 'eg: jan 20-jan 23',
+            place: 'eg: jan 20',
             id: 'Session',
             type: 'select',
-            options: [{ value: 'jan 20-jan 20', label: 'Jan 20-Jan 20' },
-            { value: 'july 20-july 20', label: 'July 20-July 20' },
-            { value: 'jan 21-jan 21', label: 'Jan 21-Jan 21' },
-            { value: 'july 21-july 21', label: 'July 21-July 21' },
-            { value: 'jan 22-jan 22', label: 'Jan 22-Jan 22' },
-            { value: 'july 22-july 22', label: 'July 22-July 22' },
-            { value: 'jan 23-jan 23', label: 'Jan 23-Jan 23' },
-            { value: 'july 23-july 23', label: 'July 23-July 23' },
-            { value: 'jan 24-jan 24', label: 'Jan 24-Jan 24' },
-            { value: 'july 24-july 24', label: 'July 24-July 24' },
-            { value: 'jan 25-jan 25', label: 'Jan 25-Jan 25' },
-            { value: 'july 25-july 25', label: 'July 25-July 25' }],
+            options: [{ value: 'jan 20', label: 'Jan 20' },
+            { value: 'july 20', label: 'July 20' },
+            { value: 'jan 21', label: 'Jan 21' },
+            { value: 'july 21', label: 'July 21' },
+            { value: 'jan 22', label: 'Jan 22' },
+            { value: 'july 22', label: 'July 22' },
+            { value: 'jan 23', label: 'Jan 23' },
+            { value: 'july 23', label: 'July 23' },
+            { value: 'jan 24', label: 'Jan 24' },
+            { value: 'july 24', label: 'July 24' },
+            { value: 'jan 25', label: 'Jan 25' },
+            { value: 'july 25', label: 'July 25' }],
             required: 'require'
           },
           {
@@ -3744,7 +4106,7 @@ const formData = [
             id: 'SessionType',
             place: 'Enter Admission Type',
             type: 'select',
-            options: [{ value: 'Fresher', lable: 'Fresher' },
+            options: [{ value: 'Fresh', label: 'Fresh' },
             { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
           },
           {
@@ -3761,7 +4123,7 @@ const formData = [
                   { "value": "Political science", "label": "Political science" },
                   { "value": "Sociology", "label": "Sociology" },
                   { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
-                  { "value": 'Geography', lable: 'Geography' },
+                  { "value": 'Geography', label: 'Geography' },
                 ],
               },
               {
@@ -3827,7 +4189,7 @@ const formData = [
                 value: "MA",
                 label: "MA",
                 specializations: [
-                  { value: "Economics", lable: "Economics" },
+                  { value: "Economics", label: "Economics" },
                   { value: "English", label: "English" },
                   { value: "Geography", label: "Geography" },
                   { value: "History", label: "History" },
@@ -3905,7 +4267,15 @@ const formData = [
               },
             ]
           },
-
+          {
+            key: 'date',
+            label: 'Date of Birth',
+            name: ['customfields', 'dob'],
+            place: 'Enter Date of Birth',
+            id: 'dob',
+            type: 'date',
+            required: 'require'
+          },
           {
             key: 'select',
             label: 'Gender',
@@ -3948,7 +4318,7 @@ const formData = [
             required: 'require',
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Online Payment', label: 'Online Payment' },
+            { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
           {
@@ -3979,7 +4349,7 @@ const formData = [
 
           {
             key: 'select ',
-            label: 'Counselor Email ',
+            label: 'Counselors ',
             name: ['customfields', 'counselor_email'],
             id: 'email ',
             type: 'select',
@@ -4059,7 +4429,7 @@ const formData = [
           {
             key: 'file',
             label: 'Upload Fee Receipt Screenshot',
-            name: 'image',
+            name: ['customfields', 'upload_fee_receipt_screenshot'],
             place: 'Upload Fee Receipt Screenshot',
             id: 'Upload Fee Receipt Screenshot',
             type: 'file',
@@ -4067,25 +4437,25 @@ const formData = [
 
           },
           {
-            key: 'text',
+            key: 'file',
             label: 'Uplaod Student Document',
             name: ['customfields', 'upload_student_document'],
-            place: 'Enter Counselor Email',
+            place: 'Uplaod Student Document',
             id: 'Uplaod Student Document',
-            type: 'text',
+            type: 'file',
           },
           {
             key: 'textarea',
             label: 'Remark',
             name: ['customfields', 'remark'],
-            place: 'Enter Counselor Email',
-            id: 'Uplaod Student Document',
+            place: 'Remark',
+            id: 'remark',
             type: 'textarea',
           },
         ],
       },
       {
-        // 10 university complete date 
+        // First university complete date 
         label: 'SMU',
         name: ['customfields', 'university_name'],
         value: 'SMU',
@@ -4157,21 +4527,21 @@ const formData = [
             key: 'select',
             label: 'Session',
             name: ['customfields', 'session'],
-            place: 'eg: jan 20-jan 23',
+            place: 'eg: jan 20',
             id: 'Session',
             type: 'select',
-            options: [{ value: 'jan 20-jan 20', label: 'Jan 20-Jan 20' },
-            { value: 'july 20-july 20', label: 'July 20-July 20' },
-            { value: 'jan 21-jan 21', label: 'Jan 21-Jan 21' },
-            { value: 'july 21-july 21', label: 'July 21-July 21' },
-            { value: 'jan 22-jan 22', label: 'Jan 22-Jan 22' },
-            { value: 'july 22-july 22', label: 'July 22-July 22' },
-            { value: 'jan 23-jan 23', label: 'Jan 23-Jan 23' },
-            { value: 'july 23-july 23', label: 'July 23-July 23' },
-            { value: 'jan 24-jan 24', label: 'Jan 24-Jan 24' },
-            { value: 'july 24-july 24', label: 'July 24-July 24' },
-            { value: 'jan 25-jan 25', label: 'Jan 25-Jan 25' },
-            { value: 'july 25-july 25', label: 'July 25-July 25' }],
+            options: [{ value: 'jan 20', label: 'Jan 20' },
+            { value: 'july 20', label: 'July 20' },
+            { value: 'jan 21', label: 'Jan 21' },
+            { value: 'july 21', label: 'July 21' },
+            { value: 'jan 22', label: 'Jan 22' },
+            { value: 'july 22', label: 'July 22' },
+            { value: 'jan 23', label: 'Jan 23' },
+            { value: 'july 23', label: 'July 23' },
+            { value: 'jan 24', label: 'Jan 24' },
+            { value: 'july 24', label: 'July 24' },
+            { value: 'jan 25', label: 'Jan 25' },
+            { value: 'july 25', label: 'July 25' }],
             required: 'require'
           },
           {
@@ -4181,7 +4551,7 @@ const formData = [
             id: 'SessionType',
             place: 'Enter Admission Type',
             type: 'select',
-            options: [{ value: 'Fresher', lable: 'Fresher' },
+            options: [{ value: 'Fresh', label: 'Fresh' },
             { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
           },
           {
@@ -4198,7 +4568,7 @@ const formData = [
                   { "value": "Political science", "label": "Political science" },
                   { "value": "Sociology", "label": "Sociology" },
                   { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
-                  { "value": 'Geography', lable: 'Geography' },
+                  { "value": 'Geography', label: 'Geography' },
                 ],
               },
               {
@@ -4264,7 +4634,7 @@ const formData = [
                 value: "MA",
                 label: "MA",
                 specializations: [
-                  { value: "Economics", lable: "Economics" },
+                  { value: "Economics", label: "Economics" },
                   { value: "English", label: "English" },
                   { value: "Geography", label: "Geography" },
                   { value: "History", label: "History" },
@@ -4348,7 +4718,7 @@ const formData = [
             name: ['customfields', 'dob'],
             place: 'Enter Date of Birth',
             id: 'dob',
-            type: 'text',
+            type: 'date',
             required: 'require'
           },
           {
@@ -4393,7 +4763,7 @@ const formData = [
             required: 'require',
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Online Payment', label: 'Online Payment' },
+            { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
           {
@@ -4424,7 +4794,7 @@ const formData = [
 
           {
             key: 'select ',
-            label: 'Counselor Email ',
+            label: 'Counselors ',
             name: ['customfields', 'counselor_email'],
             id: 'email ',
             type: 'select',
@@ -4504,7 +4874,7 @@ const formData = [
           {
             key: 'file',
             label: 'Upload Fee Receipt Screenshot',
-            name: 'image',
+            name: ['customfields', 'upload_fee_receipt_screenshot'],
             place: 'Upload Fee Receipt Screenshot',
             id: 'Upload Fee Receipt Screenshot',
             type: 'file',
@@ -4512,25 +4882,25 @@ const formData = [
 
           },
           {
-            key: 'text',
+            key: 'file',
             label: 'Uplaod Student Document',
             name: ['customfields', 'upload_student_document'],
-            place: 'Enter Counselor Email',
+            place: 'Uplaod Student Document',
             id: 'Uplaod Student Document',
-            type: 'text',
+            type: 'file',
           },
           {
             key: 'textarea',
             label: 'Remark',
             name: ['customfields', 'remark'],
-            place: 'Enter Counselor Email',
-            id: 'Uplaod Student Document',
+            place: 'Remark',
+            id: 'remark',
             type: 'textarea',
           },
         ],
       },
       {
-        // 11th university complete date 
+        // First university complete date 
         label: 'HU',
         name: ['customfields', 'university_name'],
         value: 'HU',
@@ -4602,21 +4972,21 @@ const formData = [
             key: 'select',
             label: 'Session',
             name: ['customfields', 'session'],
-            place: 'eg: jan 20-jan 23',
+            place: 'eg: jan 20',
             id: 'Session',
             type: 'select',
-            options: [{ value: 'jan 20-jan 20', label: 'Jan 20-Jan 20' },
-            { value: 'july 20-july 20', label: 'July 20-July 20' },
-            { value: 'jan 21-jan 21', label: 'Jan 21-Jan 21' },
-            { value: 'july 21-july 21', label: 'July 21-July 21' },
-            { value: 'jan 22-jan 22', label: 'Jan 22-Jan 22' },
-            { value: 'july 22-july 22', label: 'July 22-July 22' },
-            { value: 'jan 23-jan 23', label: 'Jan 23-Jan 23' },
-            { value: 'july 23-july 23', label: 'July 23-July 23' },
-            { value: 'jan 24-jan 24', label: 'Jan 24-Jan 24' },
-            { value: 'july 24-july 24', label: 'July 24-July 24' },
-            { value: 'jan 25-jan 25', label: 'Jan 25-Jan 25' },
-            { value: 'july 25-july 25', label: 'July 25-July 25' }],
+            options: [{ value: 'jan 20', label: 'Jan 20' },
+            { value: 'july 20', label: 'July 20' },
+            { value: 'jan 21', label: 'Jan 21' },
+            { value: 'july 21', label: 'July 21' },
+            { value: 'jan 22', label: 'Jan 22' },
+            { value: 'july 22', label: 'July 22' },
+            { value: 'jan 23', label: 'Jan 23' },
+            { value: 'july 23', label: 'July 23' },
+            { value: 'jan 24', label: 'Jan 24' },
+            { value: 'july 24', label: 'July 24' },
+            { value: 'jan 25', label: 'Jan 25' },
+            { value: 'july 25', label: 'July 25' }],
             required: 'require'
           },
           {
@@ -4626,7 +4996,7 @@ const formData = [
             id: 'SessionType',
             place: 'Enter Admission Type',
             type: 'select',
-            options: [{ value: 'Fresher', lable: 'Fresher' },
+            options: [{ value: 'Fresh', label: 'Fresh' },
             { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
           },
           {
@@ -4643,7 +5013,7 @@ const formData = [
                   { "value": "Political science", "label": "Political science" },
                   { "value": "Sociology", "label": "Sociology" },
                   { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
-                  { "value": 'Geography', lable: 'Geography' },
+                  { "value": 'Geography', label: 'Geography' },
                 ],
               },
               {
@@ -4709,7 +5079,7 @@ const formData = [
                 value: "MA",
                 label: "MA",
                 specializations: [
-                  { value: "Economics", lable: "Economics" },
+                  { value: "Economics", label: "Economics" },
                   { value: "English", label: "English" },
                   { value: "Geography", label: "Geography" },
                   { value: "History", label: "History" },
@@ -4793,7 +5163,7 @@ const formData = [
             name: ['customfields', 'dob'],
             place: 'Enter Date of Birth',
             id: 'dob',
-            type: 'text',
+            type: 'date',
             required: 'require'
           },
           {
@@ -4838,7 +5208,7 @@ const formData = [
             required: 'require',
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Online Payment', label: 'Online Payment' },
+            { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
           {
@@ -4869,7 +5239,7 @@ const formData = [
 
           {
             key: 'select ',
-            label: 'Counselor Email ',
+            label: 'Counselors ',
             name: ['customfields', 'counselor_email'],
             id: 'email ',
             type: 'select',
@@ -4949,7 +5319,7 @@ const formData = [
           {
             key: 'file',
             label: 'Upload Fee Receipt Screenshot',
-            name: 'image',
+            name: ['customfields', 'upload_fee_receipt_screenshot'],
             place: 'Upload Fee Receipt Screenshot',
             id: 'Upload Fee Receipt Screenshot',
             type: 'file',
@@ -4957,25 +5327,25 @@ const formData = [
 
           },
           {
-            key: 'text',
+            key: 'file',
             label: 'Uplaod Student Document',
             name: ['customfields', 'upload_student_document'],
-            place: 'Enter Counselor Email',
+            place: 'Uplaod Student Document',
             id: 'Uplaod Student Document',
-            type: 'text',
+            type: 'file',
           },
           {
             key: 'textarea',
             label: 'Remark',
             name: ['customfields', 'remark'],
-            place: 'Enter Counselor Email',
-            id: 'Uplaod Student Document',
+            place: 'Remark',
+            id: 'remark',
             type: 'textarea',
           },
         ],
       },
       {
-        // 12th university complete date 
+        // First university complete date 
         label: 'BOSSE',
         name: ['customfields', 'university_name'],
         value: 'BOSSE',
@@ -5047,21 +5417,21 @@ const formData = [
             key: 'select',
             label: 'Session',
             name: ['customfields', 'session'],
-            place: 'eg: jan 20-jan 23',
+            place: 'eg: jan 20',
             id: 'Session',
             type: 'select',
-            options: [{ value: 'jan 20-jan 20', label: 'Jan 20-Jan 20' },
-            { value: 'july 20-july 20', label: 'July 20-July 20' },
-            { value: 'jan 21-jan 21', label: 'Jan 21-Jan 21' },
-            { value: 'july 21-july 21', label: 'July 21-July 21' },
-            { value: 'jan 22-jan 22', label: 'Jan 22-Jan 22' },
-            { value: 'july 22-july 22', label: 'July 22-July 22' },
-            { value: 'jan 23-jan 23', label: 'Jan 23-Jan 23' },
-            { value: 'july 23-july 23', label: 'July 23-July 23' },
-            { value: 'jan 24-jan 24', label: 'Jan 24-Jan 24' },
-            { value: 'july 24-july 24', label: 'July 24-July 24' },
-            { value: 'jan 25-jan 25', label: 'Jan 25-Jan 25' },
-            { value: 'july 25-july 25', label: 'July 25-July 25' }],
+            options: [{ value: 'jan 20', label: 'Jan 20' },
+            { value: 'july 20', label: 'July 20' },
+            { value: 'jan 21', label: 'Jan 21' },
+            { value: 'july 21', label: 'July 21' },
+            { value: 'jan 22', label: 'Jan 22' },
+            { value: 'july 22', label: 'July 22' },
+            { value: 'jan 23', label: 'Jan 23' },
+            { value: 'july 23', label: 'July 23' },
+            { value: 'jan 24', label: 'Jan 24' },
+            { value: 'july 24', label: 'July 24' },
+            { value: 'jan 25', label: 'Jan 25' },
+            { value: 'july 25', label: 'July 25' }],
             required: 'require'
           },
           {
@@ -5071,7 +5441,7 @@ const formData = [
             id: 'SessionType',
             place: 'Enter Admission Type',
             type: 'select',
-            options: [{ value: 'Fresher', lable: 'Fresher' },
+            options: [{ value: 'Fresh', label: 'Fresh' },
             { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
           },
           {
@@ -5088,7 +5458,7 @@ const formData = [
                   { "value": "Political science", "label": "Political science" },
                   { "value": "Sociology", "label": "Sociology" },
                   { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
-                  { "value": 'Geography', lable: 'Geography' },
+                  { "value": 'Geography', label: 'Geography' },
                 ],
               },
               {
@@ -5154,7 +5524,7 @@ const formData = [
                 value: "MA",
                 label: "MA",
                 specializations: [
-                  { value: "Economics", lable: "Economics" },
+                  { value: "Economics", label: "Economics" },
                   { value: "English", label: "English" },
                   { value: "Geography", label: "Geography" },
                   { value: "History", label: "History" },
@@ -5238,7 +5608,7 @@ const formData = [
             name: ['customfields', 'dob'],
             place: 'Enter Date of Birth',
             id: 'dob',
-            type: 'text',
+            type: 'date',
             required: 'require'
           },
           {
@@ -5283,7 +5653,7 @@ const formData = [
             required: 'require',
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Online Payment', label: 'Online Payment' },
+            { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
           {
@@ -5314,7 +5684,7 @@ const formData = [
 
           {
             key: 'select ',
-            label: 'Counselor Email ',
+            label: 'Counselors ',
             name: ['customfields', 'counselor_email'],
             id: 'email ',
             type: 'select',
@@ -5394,7 +5764,7 @@ const formData = [
           {
             key: 'file',
             label: 'Upload Fee Receipt Screenshot',
-            name: 'image',
+            name: ['customfields', 'upload_fee_receipt_screenshot'],
             place: 'Upload Fee Receipt Screenshot',
             id: 'Upload Fee Receipt Screenshot',
             type: 'file',
@@ -5402,25 +5772,25 @@ const formData = [
 
           },
           {
-            key: 'text',
+            key: 'file',
             label: 'Uplaod Student Document',
             name: ['customfields', 'upload_student_document'],
-            place: 'Enter Counselor Email',
+            place: 'Uplaod Student Document',
             id: 'Uplaod Student Document',
-            type: 'text',
+            type: 'file',
           },
           {
             key: 'textarea',
             label: 'Remark',
             name: ['customfields', 'remark'],
-            place: 'Enter Counselor Email',
-            id: 'Uplaod Student Document',
+            place: 'Remark',
+            id: 'remark',
             type: 'textarea',
           },
         ],
       },
       {
-        // 13th university complete date 
+        // First university complete date 
         label: 'SABARMATI',
         name: ['customfields', 'university_name'],
         value: 'SABARMATI',
@@ -5492,21 +5862,21 @@ const formData = [
             key: 'select',
             label: 'Session',
             name: ['customfields', 'session'],
-            place: 'eg: jan 20-jan 23',
+            place: 'eg: jan 20',
             id: 'Session',
             type: 'select',
-            options: [{ value: 'jan 20-jan 20', label: 'Jan 20-Jan 20' },
-            { value: 'july 20-july 20', label: 'July 20-July 20' },
-            { value: 'jan 21-jan 21', label: 'Jan 21-Jan 21' },
-            { value: 'july 21-july 21', label: 'July 21-July 21' },
-            { value: 'jan 22-jan 22', label: 'Jan 22-Jan 22' },
-            { value: 'july 22-july 22', label: 'July 22-July 22' },
-            { value: 'jan 23-jan 23', label: 'Jan 23-Jan 23' },
-            { value: 'july 23-july 23', label: 'July 23-July 23' },
-            { value: 'jan 24-jan 24', label: 'Jan 24-Jan 24' },
-            { value: 'july 24-july 24', label: 'July 24-July 24' },
-            { value: 'jan 25-jan 25', label: 'Jan 25-Jan 25' },
-            { value: 'july 25-july 25', label: 'July 25-July 25' }],
+            options: [{ value: 'jan 20', label: 'Jan 20' },
+            { value: 'july 20', label: 'July 20' },
+            { value: 'jan 21', label: 'Jan 21' },
+            { value: 'july 21', label: 'July 21' },
+            { value: 'jan 22', label: 'Jan 22' },
+            { value: 'july 22', label: 'July 22' },
+            { value: 'jan 23', label: 'Jan 23' },
+            { value: 'july 23', label: 'July 23' },
+            { value: 'jan 24', label: 'Jan 24' },
+            { value: 'july 24', label: 'July 24' },
+            { value: 'jan 25', label: 'Jan 25' },
+            { value: 'july 25', label: 'July 25' }],
             required: 'require'
           },
           {
@@ -5516,7 +5886,7 @@ const formData = [
             id: 'SessionType',
             place: 'Enter Admission Type',
             type: 'select',
-            options: [{ value: 'Fresher', lable: 'Fresher' },
+            options: [{ value: 'Fresh', label: 'Fresh' },
             { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
           },
           {
@@ -5533,7 +5903,7 @@ const formData = [
                   { "value": "Political science", "label": "Political science" },
                   { "value": "Sociology", "label": "Sociology" },
                   { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
-                  { "value": 'Geography', lable: 'Geography' },
+                  { "value": 'Geography', label: 'Geography' },
                 ],
               },
               {
@@ -5599,7 +5969,7 @@ const formData = [
                 value: "MA",
                 label: "MA",
                 specializations: [
-                  { value: "Economics", lable: "Economics" },
+                  { value: "Economics", label: "Economics" },
                   { value: "English", label: "English" },
                   { value: "Geography", label: "Geography" },
                   { value: "History", label: "History" },
@@ -5683,7 +6053,7 @@ const formData = [
             name: ['customfields', 'dob'],
             place: 'Enter Date of Birth',
             id: 'dob',
-            type: 'text',
+            type: 'date',
             required: 'require'
           },
           {
@@ -5728,7 +6098,7 @@ const formData = [
             required: 'require',
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Online Payment', label: 'Online Payment' },
+            { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
           {
@@ -5759,7 +6129,7 @@ const formData = [
 
           {
             key: 'select ',
-            label: 'Counselor Email ',
+            label: 'Counselors ',
             name: ['customfields', 'counselor_email'],
             id: 'email ',
             type: 'select',
@@ -5839,7 +6209,7 @@ const formData = [
           {
             key: 'file',
             label: 'Upload Fee Receipt Screenshot',
-            name: 'image',
+            name: ['customfields', 'upload_fee_receipt_screenshot'],
             place: 'Upload Fee Receipt Screenshot',
             id: 'Upload Fee Receipt Screenshot',
             type: 'file',
@@ -5847,30 +6217,39 @@ const formData = [
 
           },
           {
-            key: 'text',
+            key: 'file',
             label: 'Uplaod Student Document',
             name: ['customfields', 'upload_student_document'],
-            place: 'Enter Counselor Email',
+            place: 'Uplaod Student Document',
             id: 'Uplaod Student Document',
-            type: 'text',
+            type: 'file',
           },
           {
             key: 'textarea',
             label: 'Remark',
             name: ['customfields', 'remark'],
-            place: 'Enter Counselor Email',
-            id: 'Uplaod Student Document',
+            place: 'Remark',
+            id: 'remark',
             type: 'textarea',
           },
         ],
       },
       {
-        // 14th university complete date 
+        // First university complete date 
         label: 'UU',
         name: ['customfields', 'university_name'],
         value: 'UU',
         fields: [
           {
+            key: 'radio',
+            label: 'Want to send Fee Receipt',
+            id: 'Send',
+            name: ['customfields', 'send_fee_receipt'],
+            type: 'radio',
+            options: ['yes', 'no'],
+            required: 'require'
+          },
+          {
             key: 'studentId',
             name: 'lead_id',
             label: 'StudentID',
@@ -5907,24 +6286,42 @@ const formData = [
             required: 'require'
           },
           {
+            key: 'text',
+            label: 'Father Name',
+            name: ['customfields', 'father_name'],
+            place: 'Enter Father Name',
+            id: 'Father Name',
+            type: 'text',
+            required: 'require'
+          },
+          {
+            key: 'text',
+            label: 'Mother Name',
+            name: ['customfields', 'mother_name'],
+            place: 'Enter Mother Name',
+            id: 'mother_name',
+            type: 'text',
+            required: 'require'
+          },
+          {
             key: 'select',
             label: 'Session',
             name: ['customfields', 'session'],
-            place: 'eg: jan 20-jan 23',
+            place: 'eg: jan 20',
             id: 'Session',
             type: 'select',
-            options: [{ value: 'jan 20-jan 20', label: 'Jan 20-Jan 20' },
-            { value: 'july 20-july 20', label: 'July 20-July 20' },
-            { value: 'jan 21-jan 21', label: 'Jan 21-Jan 21' },
-            { value: 'july 21-july 21', label: 'July 21-July 21' },
-            { value: 'jan 22-jan 22', label: 'Jan 22-Jan 22' },
-            { value: 'july 22-july 22', label: 'July 22-July 22' },
-            { value: 'jan 23-jan 23', label: 'Jan 23-Jan 23' },
-            { value: 'july 23-july 23', label: 'July 23-July 23' },
-            { value: 'jan 24-jan 24', label: 'Jan 24-Jan 24' },
-            { value: 'july 24-july 24', label: 'July 24-July 24' },
-            { value: 'jan 25-jan 25', label: 'Jan 25-Jan 25' },
-            { value: 'july 25-july 25', label: 'July 25-July 25' }],
+            options: [{ value: 'jan 20', label: 'Jan 20' },
+            { value: 'july 20', label: 'July 20' },
+            { value: 'jan 21', label: 'Jan 21' },
+            { value: 'july 21', label: 'July 21' },
+            { value: 'jan 22', label: 'Jan 22' },
+            { value: 'july 22', label: 'July 22' },
+            { value: 'jan 23', label: 'Jan 23' },
+            { value: 'july 23', label: 'July 23' },
+            { value: 'jan 24', label: 'Jan 24' },
+            { value: 'july 24', label: 'July 24' },
+            { value: 'jan 25', label: 'Jan 25' },
+            { value: 'july 25', label: 'July 25' }],
             required: 'require'
           },
           {
@@ -5934,7 +6331,7 @@ const formData = [
             id: 'SessionType',
             place: 'Enter Admission Type',
             type: 'select',
-            options: [{ value: 'Fresher', lable: 'Fresher' },
+            options: [{ value: 'Fresh', label: 'Fresh' },
             { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
           },
           {
@@ -5951,7 +6348,7 @@ const formData = [
                   { "value": "Political science", "label": "Political science" },
                   { "value": "Sociology", "label": "Sociology" },
                   { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
-                  { "value": 'Geography', lable: 'Geography' },
+                  { "value": 'Geography', label: 'Geography' },
                 ],
               },
               {
@@ -6017,7 +6414,7 @@ const formData = [
                 value: "MA",
                 label: "MA",
                 specializations: [
-                  { value: "Economics", lable: "Economics" },
+                  { value: "Economics", label: "Economics" },
                   { value: "English", label: "English" },
                   { value: "Geography", label: "Geography" },
                   { value: "History", label: "History" },
@@ -6095,7 +6492,15 @@ const formData = [
               },
             ]
           },
-
+          {
+            key: 'date',
+            label: 'Date of Birth',
+            name: ['customfields', 'dob'],
+            place: 'Enter Date of Birth',
+            id: 'dob',
+            type: 'date',
+            required: 'require'
+          },
           {
             key: 'select',
             label: 'Gender',
@@ -6138,7 +6543,7 @@ const formData = [
             required: 'require',
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Online Payment', label: 'Online Payment' },
+            { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
           {
@@ -6169,7 +6574,7 @@ const formData = [
 
           {
             key: 'select ',
-            label: 'Counselor Email ',
+            label: 'Counselors ',
             name: ['customfields', 'counselor_email'],
             id: 'email ',
             type: 'select',
@@ -6249,7 +6654,7 @@ const formData = [
           {
             key: 'file',
             label: 'Upload Fee Receipt Screenshot',
-            name: 'image',
+            name: ['customfields', 'upload_fee_receipt_screenshot'],
             place: 'Upload Fee Receipt Screenshot',
             id: 'Upload Fee Receipt Screenshot',
             type: 'file',
@@ -6257,30 +6662,39 @@ const formData = [
 
           },
           {
-            key: 'text',
+            key: 'file',
             label: 'Uplaod Student Document',
             name: ['customfields', 'upload_student_document'],
-            place: 'Enter Counselor Email',
+            place: 'Uplaod Student Document',
             id: 'Uplaod Student Document',
-            type: 'text',
+            type: 'file',
           },
           {
             key: 'textarea',
             label: 'Remark',
             name: ['customfields', 'remark'],
-            place: 'Enter Counselor Email',
-            id: 'Uplaod Student Document',
+            place: 'Remark',
+            id: 'remark',
             type: 'textarea',
           },
         ],
       },
       {
-        // 15th university complete date 
+        // First university complete date 
         label: 'UPES',
         name: ['customfields', 'university_name'],
         value: 'UPES',
         fields: [
           {
+            key: 'radio',
+            label: 'Want to send Fee Receipt',
+            id: 'Send',
+            name: ['customfields', 'send_fee_receipt'],
+            type: 'radio',
+            options: ['yes', 'no'],
+            required: 'require'
+          },
+          {
             key: 'studentId',
             name: 'lead_id',
             label: 'StudentID',
@@ -6317,24 +6731,42 @@ const formData = [
             required: 'require'
           },
           {
+            key: 'text',
+            label: 'Father Name',
+            name: ['customfields', 'father_name'],
+            place: 'Enter Father Name',
+            id: 'Father Name',
+            type: 'text',
+            required: 'require'
+          },
+          {
+            key: 'text',
+            label: 'Mother Name',
+            name: ['customfields', 'mother_name'],
+            place: 'Enter Mother Name',
+            id: 'mother_name',
+            type: 'text',
+            required: 'require'
+          },
+          {
             key: 'select',
             label: 'Session',
             name: ['customfields', 'session'],
-            place: 'eg: jan 20-jan 23',
+            place: 'eg: jan 20',
             id: 'Session',
             type: 'select',
-            options: [{ value: 'jan 20-jan 20', label: 'Jan 20-Jan 20' },
-            { value: 'july 20-july 20', label: 'July 20-July 20' },
-            { value: 'jan 21-jan 21', label: 'Jan 21-Jan 21' },
-            { value: 'july 21-july 21', label: 'July 21-July 21' },
-            { value: 'jan 22-jan 22', label: 'Jan 22-Jan 22' },
-            { value: 'july 22-july 22', label: 'July 22-July 22' },
-            { value: 'jan 23-jan 23', label: 'Jan 23-Jan 23' },
-            { value: 'july 23-july 23', label: 'July 23-July 23' },
-            { value: 'jan 24-jan 24', label: 'Jan 24-Jan 24' },
-            { value: 'july 24-july 24', label: 'July 24-July 24' },
-            { value: 'jan 25-jan 25', label: 'Jan 25-Jan 25' },
-            { value: 'july 25-july 25', label: 'July 25-July 25' }],
+            options: [{ value: 'jan 20', label: 'Jan 20' },
+            { value: 'july 20', label: 'July 20' },
+            { value: 'jan 21', label: 'Jan 21' },
+            { value: 'july 21', label: 'July 21' },
+            { value: 'jan 22', label: 'Jan 22' },
+            { value: 'july 22', label: 'July 22' },
+            { value: 'jan 23', label: 'Jan 23' },
+            { value: 'july 23', label: 'July 23' },
+            { value: 'jan 24', label: 'Jan 24' },
+            { value: 'july 24', label: 'July 24' },
+            { value: 'jan 25', label: 'Jan 25' },
+            { value: 'july 25', label: 'July 25' }],
             required: 'require'
           },
           {
@@ -6344,7 +6776,7 @@ const formData = [
             id: 'SessionType',
             place: 'Enter Admission Type',
             type: 'select',
-            options: [{ value: 'Fresher', lable: 'Fresher' },
+            options: [{ value: 'Fresh', label: 'Fresh' },
             { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
           },
           {
@@ -6361,7 +6793,7 @@ const formData = [
                   { "value": "Political science", "label": "Political science" },
                   { "value": "Sociology", "label": "Sociology" },
                   { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
-                  { "value": 'Geography', lable: 'Geography' },
+                  { "value": 'Geography', label: 'Geography' },
                 ],
               },
               {
@@ -6427,7 +6859,7 @@ const formData = [
                 value: "MA",
                 label: "MA",
                 specializations: [
-                  { value: "Economics", lable: "Economics" },
+                  { value: "Economics", label: "Economics" },
                   { value: "English", label: "English" },
                   { value: "Geography", label: "Geography" },
                   { value: "History", label: "History" },
@@ -6505,7 +6937,15 @@ const formData = [
               },
             ]
           },
-
+          {
+            key: 'date',
+            label: 'Date of Birth',
+            name: ['customfields', 'dob'],
+            place: 'Enter Date of Birth',
+            id: 'dob',
+            type: 'date',
+            required: 'require'
+          },
           {
             key: 'select',
             label: 'Gender',
@@ -6548,7 +6988,7 @@ const formData = [
             required: 'require',
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Online Payment', label: 'Online Payment' },
+            { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
           {
@@ -6579,7 +7019,7 @@ const formData = [
 
           {
             key: 'select ',
-            label: 'Counselor Email ',
+            label: 'Counselors ',
             name: ['customfields', 'counselor_email'],
             id: 'email ',
             type: 'select',
@@ -6659,7 +7099,7 @@ const formData = [
           {
             key: 'file',
             label: 'Upload Fee Receipt Screenshot',
-            name: 'image',
+            name: ['customfields', 'upload_fee_receipt_screenshot'],
             place: 'Upload Fee Receipt Screenshot',
             id: 'Upload Fee Receipt Screenshot',
             type: 'file',
@@ -6667,29 +7107,38 @@ const formData = [
 
           },
           {
-            key: 'text',
+            key: 'file',
             label: 'Uplaod Student Document',
             name: ['customfields', 'upload_student_document'],
-            place: 'Enter Counselor Email',
+            place: 'Uplaod Student Document',
             id: 'Uplaod Student Document',
-            type: 'text',
+            type: 'file',
           },
           {
             key: 'textarea',
             label: 'Remark',
             name: ['customfields', 'remark'],
-            place: 'Enter Counselor Email',
-            id: 'Uplaod Student Document',
+            place: 'Remark',
+            id: 'remark',
             type: 'textarea',
           },
         ],
       },
       {
-        // 15th university complete date 
+        // First university complete date 
         label: 'MRU',
         name: ['customfields', 'university_name'],
         value: 'MRU',
         fields: [
+          {
+            key: 'radio',
+            label: 'Want to send Fee Receipt',
+            id: 'Send',
+            name: ['customfields', 'send_fee_receipt'],
+            type: 'radio',
+            options: ['yes', 'no'],
+            required: 'require'
+          },
           {
             key: 'studentId',
             name: 'lead_id',
@@ -6727,24 +7176,42 @@ const formData = [
             required: 'require'
           },
           {
+            key: 'text',
+            label: 'Father Name',
+            name: ['customfields', 'father_name'],
+            place: 'Enter Father Name',
+            id: 'Father Name',
+            type: 'text',
+            required: 'require'
+          },
+          {
+            key: 'text',
+            label: 'Mother Name',
+            name: ['customfields', 'mother_name'],
+            place: 'Enter Mother Name',
+            id: 'mother_name',
+            type: 'text',
+            required: 'require'
+          },
+          {
             key: 'select',
             label: 'Session',
             name: ['customfields', 'session'],
-            place: 'eg: jan 20-jan 23',
+            place: 'eg: jan 20',
             id: 'Session',
             type: 'select',
-            options: [{ value: 'jan 20-jan 20', label: 'Jan 20-Jan 20' },
-            { value: 'july 20-july 20', label: 'July 20-July 20' },
-            { value: 'jan 21-jan 21', label: 'Jan 21-Jan 21' },
-            { value: 'july 21-july 21', label: 'July 21-July 21' },
-            { value: 'jan 22-jan 22', label: 'Jan 22-Jan 22' },
-            { value: 'july 22-july 22', label: 'July 22-July 22' },
-            { value: 'jan 23-jan 23', label: 'Jan 23-Jan 23' },
-            { value: 'july 23-july 23', label: 'July 23-July 23' },
-            { value: 'jan 24-jan 24', label: 'Jan 24-Jan 24' },
-            { value: 'july 24-july 24', label: 'July 24-July 24' },
-            { value: 'jan 25-jan 25', label: 'Jan 25-Jan 25' },
-            { value: 'july 25-july 25', label: 'July 25-July 25' }],
+            options: [{ value: 'jan 20', label: 'Jan 20' },
+            { value: 'july 20', label: 'July 20' },
+            { value: 'jan 21', label: 'Jan 21' },
+            { value: 'july 21', label: 'July 21' },
+            { value: 'jan 22', label: 'Jan 22' },
+            { value: 'july 22', label: 'July 22' },
+            { value: 'jan 23', label: 'Jan 23' },
+            { value: 'july 23', label: 'July 23' },
+            { value: 'jan 24', label: 'Jan 24' },
+            { value: 'july 24', label: 'July 24' },
+            { value: 'jan 25', label: 'Jan 25' },
+            { value: 'july 25', label: 'July 25' }],
             required: 'require'
           },
           {
@@ -6754,7 +7221,7 @@ const formData = [
             id: 'SessionType',
             place: 'Enter Admission Type',
             type: 'select',
-            options: [{ value: 'Fresher', lable: 'Fresher' },
+            options: [{ value: 'Fresh', label: 'Fresh' },
             { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
           },
           {
@@ -6771,7 +7238,7 @@ const formData = [
                   { "value": "Political science", "label": "Political science" },
                   { "value": "Sociology", "label": "Sociology" },
                   { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
-                  { "value": 'Geography', lable: 'Geography' },
+                  { "value": 'Geography', label: 'Geography' },
                 ],
               },
               {
@@ -6837,7 +7304,7 @@ const formData = [
                 value: "MA",
                 label: "MA",
                 specializations: [
-                  { value: "Economics", lable: "Economics" },
+                  { value: "Economics", label: "Economics" },
                   { value: "English", label: "English" },
                   { value: "Geography", label: "Geography" },
                   { value: "History", label: "History" },
@@ -6915,7 +7382,15 @@ const formData = [
               },
             ]
           },
-
+          {
+            key: 'date',
+            label: 'Date of Birth',
+            name: ['customfields', 'dob'],
+            place: 'Enter Date of Birth',
+            id: 'dob',
+            type: 'date',
+            required: 'require'
+          },
           {
             key: 'select',
             label: 'Gender',
@@ -6958,7 +7433,7 @@ const formData = [
             required: 'require',
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Online Payment', label: 'Online Payment' },
+            { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
           {
@@ -6989,7 +7464,7 @@ const formData = [
 
           {
             key: 'select ',
-            label: 'Counselor Email ',
+            label: 'Counselors ',
             name: ['customfields', 'counselor_email'],
             id: 'email ',
             type: 'select',
@@ -7069,7 +7544,7 @@ const formData = [
           {
             key: 'file',
             label: 'Upload Fee Receipt Screenshot',
-            name: 'image',
+            name: ['customfields', 'upload_fee_receipt_screenshot'],
             place: 'Upload Fee Receipt Screenshot',
             id: 'Upload Fee Receipt Screenshot',
             type: 'file',
@@ -7077,19 +7552,19 @@ const formData = [
 
           },
           {
-            key: 'text',
+            key: 'file',
             label: 'Uplaod Student Document',
             name: ['customfields', 'upload_student_document'],
-            place: 'Enter Counselor Email',
+            place: 'Uplaod Student Document',
             id: 'Uplaod Student Document',
-            type: 'text',
+            type: 'file',
           },
           {
             key: 'textarea',
             label: 'Remark',
             name: ['customfields', 'remark'],
-            place: 'Enter Counselor Email',
-            id: 'Uplaod Student Document',
+            place: 'Remark',
+            id: 'remark',
             type: 'textarea',
           },
         ],
@@ -7167,21 +7642,21 @@ const formData = [
             key: 'select',
             label: 'Session',
             name: ['customfields', 'session'],
-            place: 'eg: jan 20-jan 23',
+            place: 'eg: jan 20',
             id: 'Session',
             type: 'select',
-            options: [{ value: 'jan 20-jan 20', label: 'Jan 20-Jan 20' },
-            { value: 'july 20-july 20', label: 'July 20-July 20' },
-            { value: 'jan 21-jan 21', label: 'Jan 21-Jan 21' },
-            { value: 'july 21-july 21', label: 'July 21-July 21' },
-            { value: 'jan 22-jan 22', label: 'Jan 22-Jan 22' },
-            { value: 'july 22-july 22', label: 'July 22-July 22' },
-            { value: 'jan 23-jan 23', label: 'Jan 23-Jan 23' },
-            { value: 'july 23-july 23', label: 'July 23-July 23' },
-            { value: 'jan 24-jan 24', label: 'Jan 24-Jan 24' },
-            { value: 'july 24-july 24', label: 'July 24-July 24' },
-            { value: 'jan 25-jan 25', label: 'Jan 25-Jan 25' },
-            { value: 'july 25-july 25', label: 'July 25-July 25' }],
+            options: [{ value: 'jan 20', label: 'Jan 20' },
+            { value: 'july 20', label: 'July 20' },
+            { value: 'jan 21', label: 'Jan 21' },
+            { value: 'july 21', label: 'July 21' },
+            { value: 'jan 22', label: 'Jan 22' },
+            { value: 'july 22', label: 'July 22' },
+            { value: 'jan 23', label: 'Jan 23' },
+            { value: 'july 23', label: 'July 23' },
+            { value: 'jan 24', label: 'Jan 24' },
+            { value: 'july 24', label: 'July 24' },
+            { value: 'jan 25', label: 'Jan 25' },
+            { value: 'july 25', label: 'July 25' }],
             required: 'require'
           },
           {
@@ -7191,7 +7666,7 @@ const formData = [
             id: 'SessionType',
             place: 'Enter Admission Type',
             type: 'select',
-            options: [{ value: 'Fresher', lable: 'Fresher' },
+            options: [{ value: 'Fresh', label: 'Fresh' },
             { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
           },
           {
@@ -7208,7 +7683,7 @@ const formData = [
                   { "value": "Political science", "label": "Political science" },
                   { "value": "Sociology", "label": "Sociology" },
                   { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
-                  { "value": 'Geography', lable: 'Geography' },
+                  { "value": 'Geography', label: 'Geography' },
                 ],
               },
               {
@@ -7274,7 +7749,7 @@ const formData = [
                 value: "MA",
                 label: "MA",
                 specializations: [
-                  { value: "Economics", lable: "Economics" },
+                  { value: "Economics", label: "Economics" },
                   { value: "English", label: "English" },
                   { value: "Geography", label: "Geography" },
                   { value: "History", label: "History" },
@@ -7358,7 +7833,7 @@ const formData = [
             name: ['customfields', 'dob'],
             place: 'Enter Date of Birth',
             id: 'dob',
-            type: 'text',
+            type: 'date',
             required: 'require'
           },
           {
@@ -7403,7 +7878,7 @@ const formData = [
             required: 'require',
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Online Payment', label: 'Online Payment' },
+            { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
           {
@@ -7434,7 +7909,7 @@ const formData = [
 
           {
             key: 'select ',
-            label: 'Counselor Email ',
+            label: 'Counselors ',
             name: ['customfields', 'counselor_email'],
             id: 'email ',
             type: 'select',
@@ -7514,7 +7989,7 @@ const formData = [
           {
             key: 'file',
             label: 'Upload Fee Receipt Screenshot',
-            name: 'image',
+            name: ['customfields', 'upload_fee_receipt_screenshot'],
             place: 'Upload Fee Receipt Screenshot',
             id: 'Upload Fee Receipt Screenshot',
             type: 'file',
@@ -7522,19 +7997,19 @@ const formData = [
 
           },
           {
-            key: 'text',
+            key: 'file',
             label: 'Uplaod Student Document',
             name: ['customfields', 'upload_student_document'],
-            place: 'Enter Counselor Email',
+            place: 'Uplaod Student Document',
             id: 'Uplaod Student Document',
-            type: 'text',
+            type: 'file',
           },
           {
             key: 'textarea',
             label: 'Remark',
             name: ['customfields', 'remark'],
-            place: 'Enter Counselor Email',
-            id: 'Uplaod Student Document',
+            place: 'Remark',
+            id: 'remark',
             type: 'textarea',
           },
         ],
@@ -7612,21 +8087,21 @@ const formData = [
             key: 'select',
             label: 'Session',
             name: ['customfields', 'session'],
-            place: 'eg: jan 20-jan 23',
+            place: 'eg: jan 20',
             id: 'Session',
             type: 'select',
-            options: [{ value: 'jan 20-jan 20', label: 'Jan 20-Jan 20' },
-            { value: 'july 20-july 20', label: 'July 20-July 20' },
-            { value: 'jan 21-jan 21', label: 'Jan 21-Jan 21' },
-            { value: 'july 21-july 21', label: 'July 21-July 21' },
-            { value: 'jan 22-jan 22', label: 'Jan 22-Jan 22' },
-            { value: 'july 22-july 22', label: 'July 22-July 22' },
-            { value: 'jan 23-jan 23', label: 'Jan 23-Jan 23' },
-            { value: 'july 23-july 23', label: 'July 23-July 23' },
-            { value: 'jan 24-jan 24', label: 'Jan 24-Jan 24' },
-            { value: 'july 24-july 24', label: 'July 24-July 24' },
-            { value: 'jan 25-jan 25', label: 'Jan 25-Jan 25' },
-            { value: 'july 25-july 25', label: 'July 25-July 25' }],
+            options: [{ value: 'jan 20', label: 'Jan 20' },
+            { value: 'july 20', label: 'July 20' },
+            { value: 'jan 21', label: 'Jan 21' },
+            { value: 'july 21', label: 'July 21' },
+            { value: 'jan 22', label: 'Jan 22' },
+            { value: 'july 22', label: 'July 22' },
+            { value: 'jan 23', label: 'Jan 23' },
+            { value: 'july 23', label: 'July 23' },
+            { value: 'jan 24', label: 'Jan 24' },
+            { value: 'july 24', label: 'July 24' },
+            { value: 'jan 25', label: 'Jan 25' },
+            { value: 'july 25', label: 'July 25' }],
             required: 'require'
           },
           {
@@ -7636,7 +8111,7 @@ const formData = [
             id: 'SessionType',
             place: 'Enter Admission Type',
             type: 'select',
-            options: [{ value: 'Fresher', lable: 'Fresher' },
+            options: [{ value: 'Fresh', label: 'Fresh' },
             { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
           },
           {
@@ -7653,7 +8128,7 @@ const formData = [
                   { "value": "Political science", "label": "Political science" },
                   { "value": "Sociology", "label": "Sociology" },
                   { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
-                  { "value": 'Geography', lable: 'Geography' },
+                  { "value": 'Geography', label: 'Geography' },
                 ],
               },
               {
@@ -7719,7 +8194,7 @@ const formData = [
                 value: "MA",
                 label: "MA",
                 specializations: [
-                  { value: "Economics", lable: "Economics" },
+                  { value: "Economics", label: "Economics" },
                   { value: "English", label: "English" },
                   { value: "Geography", label: "Geography" },
                   { value: "History", label: "History" },
@@ -7803,7 +8278,7 @@ const formData = [
             name: ['customfields', 'dob'],
             place: 'Enter Date of Birth',
             id: 'dob',
-            type: 'text',
+            type: 'date',
             required: 'require'
           },
           {
@@ -7848,7 +8323,7 @@ const formData = [
             required: 'require',
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Online Payment', label: 'Online Payment' },
+            { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
           {
@@ -7879,7 +8354,7 @@ const formData = [
 
           {
             key: 'select ',
-            label: 'Counselor Email ',
+            label: 'Counselors ',
             name: ['customfields', 'counselor_email'],
             id: 'email ',
             type: 'select',
@@ -7959,7 +8434,7 @@ const formData = [
           {
             key: 'file',
             label: 'Upload Fee Receipt Screenshot',
-            name: 'image',
+            name: ['customfields', 'upload_fee_receipt_screenshot'],
             place: 'Upload Fee Receipt Screenshot',
             id: 'Upload Fee Receipt Screenshot',
             type: 'file',
@@ -7967,19 +8442,19 @@ const formData = [
 
           },
           {
-            key: 'text',
+            key: 'file',
             label: 'Uplaod Student Document',
             name: ['customfields', 'upload_student_document'],
-            place: 'Enter Counselor Email',
+            place: 'Uplaod Student Document',
             id: 'Uplaod Student Document',
-            type: 'text',
+            type: 'file',
           },
           {
             key: 'textarea',
             label: 'Remark',
             name: ['customfields', 'remark'],
-            place: 'Enter Counselor Email',
-            id: 'Uplaod Student Document',
+            place: 'Remark',
+            id: 'remark',
             type: 'textarea',
           },
         ],
@@ -8066,21 +8541,21 @@ const formData = [
             key: 'select',
             label: 'Session',
             name: ['customfields', 'session'],
-            place: 'eg: jan 20-jan 23',
+            place: 'eg: jan 20',
             id: 'Session',
             type: 'select',
-            options: [{ value: 'jan 20-jan 20', label: 'Jan 20-Jan 20' },
-            { value: 'july 20-july 20', label: 'July 20-July 20' },
-            { value: 'jan 21-jan 21', label: 'Jan 21-Jan 21' },
-            { value: 'july 21-july 21', label: 'July 21-July 21' },
-            { value: 'jan 22-jan 22', label: 'Jan 22-Jan 22' },
-            { value: 'july 22-july 22', label: 'July 22-July 22' },
-            { value: 'jan 23-jan 23', label: 'Jan 23-Jan 23' },
-            { value: 'july 23-july 23', label: 'July 23-July 23' },
-            { value: 'jan 24-jan 24', label: 'Jan 24-Jan 24' },
-            { value: 'july 24-july 24', label: 'July 24-July 24' },
-            { value: 'jan 25-jan 25', label: 'Jan 25-Jan 25' },
-            { value: 'july 25-july 25', label: 'July 25-July 25' }],
+            options: [{ value: 'jan 20', label: 'Jan 20' },
+            { value: 'july 20', label: 'July 20' },
+            { value: 'jan 21', label: 'Jan 21' },
+            { value: 'july 21', label: 'July 21' },
+            { value: 'jan 22', label: 'Jan 22' },
+            { value: 'july 22', label: 'July 22' },
+            { value: 'jan 23', label: 'Jan 23' },
+            { value: 'july 23', label: 'July 23' },
+            { value: 'jan 24', label: 'Jan 24' },
+            { value: 'july 24', label: 'July 24' },
+            { value: 'jan 25', label: 'Jan 25' },
+            { value: 'july 25', label: 'July 25' }],
             required: 'require'
           },
           {
@@ -8090,7 +8565,7 @@ const formData = [
             id: 'SessionType',
             place: 'Enter Admission Type',
             type: 'select',
-            options: [{ value: 'Fresher', lable: 'Fresher' },
+            options: [{ value: 'Fresh', label: 'Fresh' },
             { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
           },
           {
@@ -8107,7 +8582,7 @@ const formData = [
                   { "value": "Political science", "label": "Political science" },
                   { "value": "Sociology", "label": "Sociology" },
                   { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
-                  { "value": 'Geography', lable: 'Geography' },
+                  { "value": 'Geography', label: 'Geography' },
                 ],
               },
               {
@@ -8173,7 +8648,7 @@ const formData = [
                 value: "MA",
                 label: "MA",
                 specializations: [
-                  { value: "Economics", lable: "Economics" },
+                  { value: "Economics", label: "Economics" },
                   { value: "English", label: "English" },
                   { value: "Geography", label: "Geography" },
                   { value: "History", label: "History" },
@@ -8257,7 +8732,7 @@ const formData = [
             name: ['customfields', 'dob'],
             place: 'Enter Date of Birth',
             id: 'dob',
-            type: 'text',
+            type: 'date',
             required: 'require'
           },
           {
@@ -8302,7 +8777,7 @@ const formData = [
             required: 'require',
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Online Payment', label: 'Online Payment' },
+            { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
           {
@@ -8330,10 +8805,9 @@ const formData = [
             id: 'Paid Amount',
             type: 'number',
           },
-
           {
             key: 'select ',
-            label: 'Counselor Email ',
+            label: 'Counselors ',
             name: ['customfields', 'counselor_email'],
             id: 'email ',
             type: 'select',
@@ -8412,38 +8886,48 @@ const formData = [
           },
           {
             key: 'file',
-            label: 'Upload Fee Receipt Screenshot',
-            name: 'image',
-            place: 'Upload Fee Receipt Screenshot',
-            id: 'Upload Fee Receipt Screenshot',
+            label: 'Upload student document',
+            name: 'upload_student_document',
+            place: 'Upload student document',
+            id: 'upload_student_document',
             type: 'file',
             required: 'require'
 
           },
           {
-            key: 'text',
-            label: 'Uplaod Student Document',
-            name: ['customfields', 'upload_student_document'],
-            place: 'Enter Counselor Email',
+            key: 'file',
+            label: 'Upload fee receipt',
+            name: 'upload_fee_receipt_screenshot',
+            place: 'Upload fee receipt',
             id: 'Uplaod Student Document',
-            type: 'text',
+            type: 'file',
+            required: 'require'
           },
           {
             key: 'textarea',
             label: 'Remark',
             name: ['customfields', 'remark'],
-            place: 'Enter Counselor Email',
-            id: 'Uplaod Student Document',
+            place: 'Enter your remark',
+            id: 'remark',
             type: 'textarea',
           },
         ],
       },
       {
-        // Seconde university complete date 
+        // First university complete date 
         label: 'CU',
         name: ['customfields', 'university_name'],
         value: 'CU',
         fields: [
+          {
+            key: 'radio',
+            label: 'Want to send Fee Receipt',
+            id: 'Send',
+            name: ['customfields', 'send_fee_receipt'],
+            type: 'radio',
+            options: ['yes', 'no'],
+            required: 'require'
+          },
           {
             key: 'studentId',
             name: 'lead_id',
@@ -8481,24 +8965,42 @@ const formData = [
             required: 'require'
           },
           {
+            key: 'text',
+            label: 'Father Name',
+            name: ['customfields', 'father_name'],
+            place: 'Enter Father Name',
+            id: 'Father Name',
+            type: 'text',
+            required: 'require'
+          },
+          {
+            key: 'text',
+            label: 'Mother Name',
+            name: ['customfields', 'mother_name'],
+            place: 'Enter Mother Name',
+            id: 'mother_name',
+            type: 'text',
+            required: 'require'
+          },
+          {
             key: 'select',
             label: 'Session',
             name: ['customfields', 'session'],
-            place: 'eg: jan 20-jan 23',
+            place: 'eg: jan 20',
             id: 'Session',
             type: 'select',
-            options: [{ value: 'jan 20-jan 20', label: 'Jan 20-Jan 20' },
-            { value: 'july 20-july 20', label: 'July 20-July 20' },
-            { value: 'jan 21-jan 21', label: 'Jan 21-Jan 21' },
-            { value: 'july 21-july 21', label: 'July 21-July 21' },
-            { value: 'jan 22-jan 22', label: 'Jan 22-Jan 22' },
-            { value: 'july 22-july 22', label: 'July 22-July 22' },
-            { value: 'jan 23-jan 23', label: 'Jan 23-Jan 23' },
-            { value: 'july 23-july 23', label: 'July 23-July 23' },
-            { value: 'jan 24-jan 24', label: 'Jan 24-Jan 24' },
-            { value: 'july 24-july 24', label: 'July 24-July 24' },
-            { value: 'jan 25-jan 25', label: 'Jan 25-Jan 25' },
-            { value: 'july 25-july 25', label: 'July 25-July 25' }],
+            options: [{ value: 'jan 20', label: 'Jan 20' },
+            { value: 'july 20', label: 'July 20' },
+            { value: 'jan 21', label: 'Jan 21' },
+            { value: 'july 21', label: 'July 21' },
+            { value: 'jan 22', label: 'Jan 22' },
+            { value: 'july 22', label: 'July 22' },
+            { value: 'jan 23', label: 'Jan 23' },
+            { value: 'july 23', label: 'July 23' },
+            { value: 'jan 24', label: 'Jan 24' },
+            { value: 'july 24', label: 'July 24' },
+            { value: 'jan 25', label: 'Jan 25' },
+            { value: 'july 25', label: 'July 25' }],
             required: 'require'
           },
           {
@@ -8508,7 +9010,7 @@ const formData = [
             id: 'SessionType',
             place: 'Enter Admission Type',
             type: 'select',
-            options: [{ value: 'Fresher', lable: 'Fresher' },
+            options: [{ value: 'Fresh', label: 'Fresh' },
             { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
           },
           {
@@ -8525,7 +9027,7 @@ const formData = [
                   { "value": "Political science", "label": "Political science" },
                   { "value": "Sociology", "label": "Sociology" },
                   { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
-                  { "value": 'Geography', lable: 'Geography' },
+                  { "value": 'Geography', label: 'Geography' },
                 ],
               },
               {
@@ -8591,7 +9093,7 @@ const formData = [
                 value: "MA",
                 label: "MA",
                 specializations: [
-                  { value: "Economics", lable: "Economics" },
+                  { value: "Economics", label: "Economics" },
                   { value: "English", label: "English" },
                   { value: "Geography", label: "Geography" },
                   { value: "History", label: "History" },
@@ -8670,6 +9172,15 @@ const formData = [
             ]
           },
           {
+            key: 'date',
+            label: 'Date of Birth',
+            name: ['customfields', 'dob'],
+            place: 'Enter Date of Birth',
+            id: 'dob',
+            type: 'date',
+            required: 'require'
+          },
+          {
             key: 'select',
             label: 'Gender',
             name: ['customfields', 'gender'],
@@ -8711,7 +9222,7 @@ const formData = [
             required: 'require',
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Online Payment', label: 'Online Payment' },
+            { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
           {
@@ -8739,10 +9250,9 @@ const formData = [
             id: 'Paid Amount',
             type: 'number',
           },
-
           {
             key: 'select ',
-            label: 'Counselor Email ',
+            label: 'Counselors ',
             name: ['customfields', 'counselor_email'],
             id: 'email ',
             type: 'select',
@@ -8821,28 +9331,29 @@ const formData = [
           },
           {
             key: 'file',
-            label: 'Upload Fee Receipt Screenshot',
-            name: 'image',
-            place: 'Upload Fee Receipt Screenshot',
-            id: 'Upload Fee Receipt Screenshot',
+            label: 'Upload student document',
+            name: 'upload_student_document',
+            place: 'Upload student document',
+            id: 'upload_student_document',
             type: 'file',
             required: 'require'
 
           },
           {
-            key: 'text',
-            label: 'Uplaod Student Document',
-            name: ['customfields', 'upload_student_document'],
-            place: 'Enter Counselor Email',
+            key: 'file',
+            label: 'Upload fee receipt',
+            name: 'upload_fee_receipt_screenshot',
+            place: 'Upload fee receipt',
             id: 'Uplaod Student Document',
-            type: 'text',
+            type: 'file',
+            required: 'require'
           },
           {
             key: 'textarea',
             label: 'Remark',
             name: ['customfields', 'remark'],
-            place: 'Enter Counselor Email',
-            id: 'Uplaod Student Document',
+            place: 'Enter your remark',
+            id: 'remark',
             type: 'textarea',
           },
         ],
@@ -8920,21 +9431,21 @@ const formData = [
             key: 'select',
             label: 'Session',
             name: ['customfields', 'session'],
-            place: 'eg: jan 20-jan 23',
+            place: 'eg: jan 20',
             id: 'Session',
             type: 'select',
-            options: [{ value: 'jan 20-jan 20', label: 'Jan 20-Jan 20' },
-            { value: 'july 20-july 20', label: 'July 20-July 20' },
-            { value: 'jan 21-jan 21', label: 'Jan 21-Jan 21' },
-            { value: 'july 21-july 21', label: 'July 21-July 21' },
-            { value: 'jan 22-jan 22', label: 'Jan 22-Jan 22' },
-            { value: 'july 22-july 22', label: 'July 22-July 22' },
-            { value: 'jan 23-jan 23', label: 'Jan 23-Jan 23' },
-            { value: 'july 23-july 23', label: 'July 23-July 23' },
-            { value: 'jan 24-jan 24', label: 'Jan 24-Jan 24' },
-            { value: 'july 24-july 24', label: 'July 24-July 24' },
-            { value: 'jan 25-jan 25', label: 'Jan 25-Jan 25' },
-            { value: 'july 25-july 25', label: 'July 25-July 25' }],
+            options: [{ value: 'jan 20', label: 'Jan 20' },
+            { value: 'july 20', label: 'July 20' },
+            { value: 'jan 21', label: 'Jan 21' },
+            { value: 'july 21', label: 'July 21' },
+            { value: 'jan 22', label: 'Jan 22' },
+            { value: 'july 22', label: 'July 22' },
+            { value: 'jan 23', label: 'Jan 23' },
+            { value: 'july 23', label: 'July 23' },
+            { value: 'jan 24', label: 'Jan 24' },
+            { value: 'july 24', label: 'July 24' },
+            { value: 'jan 25', label: 'Jan 25' },
+            { value: 'july 25', label: 'July 25' }],
             required: 'require'
           },
           {
@@ -8944,7 +9455,7 @@ const formData = [
             id: 'SessionType',
             place: 'Enter Admission Type',
             type: 'select',
-            options: [{ value: 'Fresher', lable: 'Fresher' },
+            options: [{ value: 'Fresh', label: 'Fresh' },
             { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
           },
           {
@@ -8961,7 +9472,7 @@ const formData = [
                   { "value": "Political science", "label": "Political science" },
                   { "value": "Sociology", "label": "Sociology" },
                   { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
-                  { "value": 'Geography', lable: 'Geography' },
+                  { "value": 'Geography', label: 'Geography' },
                 ],
               },
               {
@@ -9027,7 +9538,7 @@ const formData = [
                 value: "MA",
                 label: "MA",
                 specializations: [
-                  { value: "Economics", lable: "Economics" },
+                  { value: "Economics", label: "Economics" },
                   { value: "English", label: "English" },
                   { value: "Geography", label: "Geography" },
                   { value: "History", label: "History" },
@@ -9111,7 +9622,7 @@ const formData = [
             name: ['customfields', 'dob'],
             place: 'Enter Date of Birth',
             id: 'dob',
-            type: 'text',
+            type: 'date',
             required: 'require'
           },
           {
@@ -9156,7 +9667,7 @@ const formData = [
             required: 'require',
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Online Payment', label: 'Online Payment' },
+            { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
           {
@@ -9187,7 +9698,7 @@ const formData = [
 
           {
             key: 'select ',
-            label: 'Counselor Email ',
+            label: 'Counselors ',
             name: ['customfields', 'counselor_email'],
             id: 'email ',
             type: 'select',
@@ -9267,7 +9778,7 @@ const formData = [
           {
             key: 'file',
             label: 'Upload Fee Receipt Screenshot',
-            name: 'image',
+            name: ['customfields', 'upload_fee_receipt_screenshot'],
             place: 'Upload Fee Receipt Screenshot',
             id: 'Upload Fee Receipt Screenshot',
             type: 'file',
@@ -9278,7 +9789,7 @@ const formData = [
             key: 'file',
             label: 'Uplaod Student Document',
             name: ['customfields', 'upload_student_document'],
-            place: 'Enter Counselor Email',
+            place: 'Uplaod Student Document',
             id: 'Uplaod Student Document',
             type: 'file',
           },
@@ -9286,19 +9797,28 @@ const formData = [
             key: 'textarea',
             label: 'Remark',
             name: ['customfields', 'remark'],
-            place: 'Enter Counselor Email',
-            id: 'Uplaod Student Document',
+            place: 'Remark',
+            id: 'remark',
             type: 'textarea',
           },
         ],
       },
       {
-        // Fpurth university complete date 
+        // First university complete date 
         label: 'LPU',
         name: ['customfields', 'university_name'],
         value: 'LPU',
         fields: [
           {
+            key: 'radio',
+            label: 'Want to send Fee Receipt',
+            id: 'Send',
+            name: ['customfields', 'send_fee_receipt'],
+            type: 'radio',
+            options: ['yes', 'no'],
+            required: 'require'
+          },
+          {
             key: 'studentId',
             name: 'lead_id',
             label: 'StudentID',
@@ -9335,24 +9855,42 @@ const formData = [
             required: 'require'
           },
           {
+            key: 'text',
+            label: 'Father Name',
+            name: ['customfields', 'father_name'],
+            place: 'Enter Father Name',
+            id: 'Father Name',
+            type: 'text',
+            required: 'require'
+          },
+          {
+            key: 'text',
+            label: 'Mother Name',
+            name: ['customfields', 'mother_name'],
+            place: 'Enter Mother Name',
+            id: 'mother_name',
+            type: 'text',
+            required: 'require'
+          },
+          {
             key: 'select',
             label: 'Session',
             name: ['customfields', 'session'],
-            place: 'eg: jan 20-jan 23',
+            place: 'eg: jan 20',
             id: 'Session',
             type: 'select',
-            options: [{ value: 'jan 20-jan 20', label: 'Jan 20-Jan 20' },
-            { value: 'july 20-july 20', label: 'July 20-July 20' },
-            { value: 'jan 21-jan 21', label: 'Jan 21-Jan 21' },
-            { value: 'july 21-july 21', label: 'July 21-July 21' },
-            { value: 'jan 22-jan 22', label: 'Jan 22-Jan 22' },
-            { value: 'july 22-july 22', label: 'July 22-July 22' },
-            { value: 'jan 23-jan 23', label: 'Jan 23-Jan 23' },
-            { value: 'july 23-july 23', label: 'July 23-July 23' },
-            { value: 'jan 24-jan 24', label: 'Jan 24-Jan 24' },
-            { value: 'july 24-july 24', label: 'July 24-July 24' },
-            { value: 'jan 25-jan 25', label: 'Jan 25-Jan 25' },
-            { value: 'july 25-july 25', label: 'July 25-July 25' }],
+            options: [{ value: 'jan 20', label: 'Jan 20' },
+            { value: 'july 20', label: 'July 20' },
+            { value: 'jan 21', label: 'Jan 21' },
+            { value: 'july 21', label: 'July 21' },
+            { value: 'jan 22', label: 'Jan 22' },
+            { value: 'july 22', label: 'July 22' },
+            { value: 'jan 23', label: 'Jan 23' },
+            { value: 'july 23', label: 'July 23' },
+            { value: 'jan 24', label: 'Jan 24' },
+            { value: 'july 24', label: 'July 24' },
+            { value: 'jan 25', label: 'Jan 25' },
+            { value: 'july 25', label: 'July 25' }],
             required: 'require'
           },
           {
@@ -9362,7 +9900,7 @@ const formData = [
             id: 'SessionType',
             place: 'Enter Admission Type',
             type: 'select',
-            options: [{ value: 'Fresher', lable: 'Fresher' },
+            options: [{ value: 'Fresh', label: 'Fresh' },
             { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
           },
           {
@@ -9379,7 +9917,7 @@ const formData = [
                   { "value": "Political science", "label": "Political science" },
                   { "value": "Sociology", "label": "Sociology" },
                   { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
-                  { "value": 'Geography', lable: 'Geography' },
+                  { "value": 'Geography', label: 'Geography' },
                 ],
               },
               {
@@ -9445,7 +9983,7 @@ const formData = [
                 value: "MA",
                 label: "MA",
                 specializations: [
-                  { value: "Economics", lable: "Economics" },
+                  { value: "Economics", label: "Economics" },
                   { value: "English", label: "English" },
                   { value: "Geography", label: "Geography" },
                   { value: "History", label: "History" },
@@ -9523,7 +10061,15 @@ const formData = [
               },
             ]
           },
-
+          {
+            key: 'date',
+            label: 'Date of Birth',
+            name: ['customfields', 'dob'],
+            place: 'Enter Date of Birth',
+            id: 'dob',
+            type: 'date',
+            required: 'require'
+          },
           {
             key: 'select',
             label: 'Gender',
@@ -9566,7 +10112,7 @@ const formData = [
             required: 'require',
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Online Payment', label: 'Online Payment' },
+            { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
           {
@@ -9597,7 +10143,7 @@ const formData = [
 
           {
             key: 'select ',
-            label: 'Counselor Email ',
+            label: 'Counselors ',
             name: ['customfields', 'counselor_email'],
             id: 'email ',
             type: 'select',
@@ -9677,7 +10223,7 @@ const formData = [
           {
             key: 'file',
             label: 'Upload Fee Receipt Screenshot',
-            name: 'image',
+            name: ['customfields', 'upload_fee_receipt_screenshot'],
             place: 'Upload Fee Receipt Screenshot',
             id: 'Upload Fee Receipt Screenshot',
             type: 'file',
@@ -9685,30 +10231,39 @@ const formData = [
 
           },
           {
-            key: 'text',
+            key: 'file',
             label: 'Uplaod Student Document',
             name: ['customfields', 'upload_student_document'],
-            place: 'Enter Counselor Email',
+            place: 'Uplaod Student Document',
             id: 'Uplaod Student Document',
-            type: 'text',
+            type: 'file',
           },
           {
             key: 'textarea',
             label: 'Remark',
             name: ['customfields', 'remark'],
-            place: 'Enter Counselor Email',
-            id: 'Uplaod Student Document',
+            place: 'Remark',
+            id: 'remark',
             type: 'textarea',
           },
         ],
       },
       {
-        // Fifth university complete date 
+        // First university complete date 
         label: 'JAIN',
         name: ['customfields', 'university_name'],
         value: 'JAIN',
         fields: [
           {
+            key: 'radio',
+            label: 'Want to send Fee Receipt',
+            id: 'Send',
+            name: ['customfields', 'send_fee_receipt'],
+            type: 'radio',
+            options: ['yes', 'no'],
+            required: 'require'
+          },
+          {
             key: 'studentId',
             name: 'lead_id',
             label: 'StudentID',
@@ -9745,24 +10300,42 @@ const formData = [
             required: 'require'
           },
           {
+            key: 'text',
+            label: 'Father Name',
+            name: ['customfields', 'father_name'],
+            place: 'Enter Father Name',
+            id: 'Father Name',
+            type: 'text',
+            required: 'require'
+          },
+          {
+            key: 'text',
+            label: 'Mother Name',
+            name: ['customfields', 'mother_name'],
+            place: 'Enter Mother Name',
+            id: 'mother_name',
+            type: 'text',
+            required: 'require'
+          },
+          {
             key: 'select',
             label: 'Session',
             name: ['customfields', 'session'],
-            place: 'eg: jan 20-jan 23',
+            place: 'eg: jan 20',
             id: 'Session',
             type: 'select',
-            options: [{ value: 'jan 20-jan 20', label: 'Jan 20-Jan 20' },
-            { value: 'july 20-july 20', label: 'July 20-July 20' },
-            { value: 'jan 21-jan 21', label: 'Jan 21-Jan 21' },
-            { value: 'july 21-july 21', label: 'July 21-July 21' },
-            { value: 'jan 22-jan 22', label: 'Jan 22-Jan 22' },
-            { value: 'july 22-july 22', label: 'July 22-July 22' },
-            { value: 'jan 23-jan 23', label: 'Jan 23-Jan 23' },
-            { value: 'july 23-july 23', label: 'July 23-July 23' },
-            { value: 'jan 24-jan 24', label: 'Jan 24-Jan 24' },
-            { value: 'july 24-july 24', label: 'July 24-July 24' },
-            { value: 'jan 25-jan 25', label: 'Jan 25-Jan 25' },
-            { value: 'july 25-july 25', label: 'July 25-July 25' }],
+            options: [{ value: 'jan 20', label: 'Jan 20' },
+            { value: 'july 20', label: 'July 20' },
+            { value: 'jan 21', label: 'Jan 21' },
+            { value: 'july 21', label: 'July 21' },
+            { value: 'jan 22', label: 'Jan 22' },
+            { value: 'july 22', label: 'July 22' },
+            { value: 'jan 23', label: 'Jan 23' },
+            { value: 'july 23', label: 'July 23' },
+            { value: 'jan 24', label: 'Jan 24' },
+            { value: 'july 24', label: 'July 24' },
+            { value: 'jan 25', label: 'Jan 25' },
+            { value: 'july 25', label: 'July 25' }],
             required: 'require'
           },
           {
@@ -9772,7 +10345,7 @@ const formData = [
             id: 'SessionType',
             place: 'Enter Admission Type',
             type: 'select',
-            options: [{ value: 'Fresher', lable: 'Fresher' },
+            options: [{ value: 'Fresh', label: 'Fresh' },
             { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
           },
           {
@@ -9789,7 +10362,7 @@ const formData = [
                   { "value": "Political science", "label": "Political science" },
                   { "value": "Sociology", "label": "Sociology" },
                   { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
-                  { "value": 'Geography', lable: 'Geography' },
+                  { "value": 'Geography', label: 'Geography' },
                 ],
               },
               {
@@ -9855,7 +10428,7 @@ const formData = [
                 value: "MA",
                 label: "MA",
                 specializations: [
-                  { value: "Economics", lable: "Economics" },
+                  { value: "Economics", label: "Economics" },
                   { value: "English", label: "English" },
                   { value: "Geography", label: "Geography" },
                   { value: "History", label: "History" },
@@ -9933,7 +10506,15 @@ const formData = [
               },
             ]
           },
-
+          {
+            key: 'date',
+            label: 'Date of Birth',
+            name: ['customfields', 'dob'],
+            place: 'Enter Date of Birth',
+            id: 'dob',
+            type: 'date',
+            required: 'require'
+          },
           {
             key: 'select',
             label: 'Gender',
@@ -9976,7 +10557,7 @@ const formData = [
             required: 'require',
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Online Payment', label: 'Online Payment' },
+            { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
           {
@@ -10007,7 +10588,7 @@ const formData = [
 
           {
             key: 'select ',
-            label: 'Counselor Email ',
+            label: 'Counselors ',
             name: ['customfields', 'counselor_email'],
             id: 'email ',
             type: 'select',
@@ -10087,7 +10668,7 @@ const formData = [
           {
             key: 'file',
             label: 'Upload Fee Receipt Screenshot',
-            name: 'image',
+            name: ['customfields', 'upload_fee_receipt_screenshot'],
             place: 'Upload Fee Receipt Screenshot',
             id: 'Upload Fee Receipt Screenshot',
             type: 'file',
@@ -10095,25 +10676,25 @@ const formData = [
 
           },
           {
-            key: 'text',
+            key: 'file',
             label: 'Uplaod Student Document',
             name: ['customfields', 'upload_student_document'],
-            place: 'Enter Counselor Email',
+            place: 'Uplaod Student Document',
             id: 'Uplaod Student Document',
-            type: 'text',
+            type: 'file',
           },
           {
             key: 'textarea',
             label: 'Remark',
             name: ['customfields', 'remark'],
-            place: 'Enter Counselor Email',
-            id: 'Uplaod Student Document',
+            place: 'Remark',
+            id: 'remark',
             type: 'textarea',
           },
         ],
       },
       {
-        // Sixth university complete date 
+        // First university complete date 
         label: 'SVSU',
         name: ['customfields', 'university_name'],
         value: 'SVSU',
@@ -10185,21 +10766,21 @@ const formData = [
             key: 'select',
             label: 'Session',
             name: ['customfields', 'session'],
-            place: 'eg: jan 20-jan 23',
+            place: 'eg: jan 20',
             id: 'Session',
             type: 'select',
-            options: [{ value: 'jan 20-jan 20', label: 'Jan 20-Jan 20' },
-            { value: 'july 20-july 20', label: 'July 20-July 20' },
-            { value: 'jan 21-jan 21', label: 'Jan 21-Jan 21' },
-            { value: 'july 21-july 21', label: 'July 21-July 21' },
-            { value: 'jan 22-jan 22', label: 'Jan 22-Jan 22' },
-            { value: 'july 22-july 22', label: 'July 22-July 22' },
-            { value: 'jan 23-jan 23', label: 'Jan 23-Jan 23' },
-            { value: 'july 23-july 23', label: 'July 23-July 23' },
-            { value: 'jan 24-jan 24', label: 'Jan 24-Jan 24' },
-            { value: 'july 24-july 24', label: 'July 24-July 24' },
-            { value: 'jan 25-jan 25', label: 'Jan 25-Jan 25' },
-            { value: 'july 25-july 25', label: 'July 25-July 25' }],
+            options: [{ value: 'jan 20', label: 'Jan 20' },
+            { value: 'july 20', label: 'July 20' },
+            { value: 'jan 21', label: 'Jan 21' },
+            { value: 'july 21', label: 'July 21' },
+            { value: 'jan 22', label: 'Jan 22' },
+            { value: 'july 22', label: 'July 22' },
+            { value: 'jan 23', label: 'Jan 23' },
+            { value: 'july 23', label: 'July 23' },
+            { value: 'jan 24', label: 'Jan 24' },
+            { value: 'july 24', label: 'July 24' },
+            { value: 'jan 25', label: 'Jan 25' },
+            { value: 'july 25', label: 'July 25' }],
             required: 'require'
           },
           {
@@ -10209,7 +10790,7 @@ const formData = [
             id: 'SessionType',
             place: 'Enter Admission Type',
             type: 'select',
-            options: [{ value: 'Fresher', lable: 'Fresher' },
+            options: [{ value: 'Fresh', label: 'Fresh' },
             { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
           },
           {
@@ -10226,7 +10807,7 @@ const formData = [
                   { "value": "Political science", "label": "Political science" },
                   { "value": "Sociology", "label": "Sociology" },
                   { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
-                  { "value": 'Geography', lable: 'Geography' },
+                  { "value": 'Geography', label: 'Geography' },
                 ],
               },
               {
@@ -10292,7 +10873,7 @@ const formData = [
                 value: "MA",
                 label: "MA",
                 specializations: [
-                  { value: "Economics", lable: "Economics" },
+                  { value: "Economics", label: "Economics" },
                   { value: "English", label: "English" },
                   { value: "Geography", label: "Geography" },
                   { value: "History", label: "History" },
@@ -10376,7 +10957,7 @@ const formData = [
             name: ['customfields', 'dob'],
             place: 'Enter Date of Birth',
             id: 'dob',
-            type: 'text',
+            type: 'date',
             required: 'require'
           },
           {
@@ -10421,7 +11002,7 @@ const formData = [
             required: 'require',
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Online Payment', label: 'Online Payment' },
+            { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
           {
@@ -10452,7 +11033,7 @@ const formData = [
 
           {
             key: 'select ',
-            label: 'Counselor Email ',
+            label: 'Counselors ',
             name: ['customfields', 'counselor_email'],
             id: 'email ',
             type: 'select',
@@ -10532,7 +11113,7 @@ const formData = [
           {
             key: 'file',
             label: 'Upload Fee Receipt Screenshot',
-            name: 'image',
+            name: ['customfields', 'upload_fee_receipt_screenshot'],
             place: 'Upload Fee Receipt Screenshot',
             id: 'Upload Fee Receipt Screenshot',
             type: 'file',
@@ -10540,30 +11121,39 @@ const formData = [
 
           },
           {
-            key: 'text',
+            key: 'file',
             label: 'Uplaod Student Document',
             name: ['customfields', 'upload_student_document'],
-            place: 'Enter Counselor Email',
+            place: 'Uplaod Student Document',
             id: 'Uplaod Student Document',
-            type: 'text',
+            type: 'file',
           },
           {
             key: 'textarea',
             label: 'Remark',
             name: ['customfields', 'remark'],
-            place: 'Enter Counselor Email',
-            id: 'Uplaod Student Document',
+            place: 'Remark',
+            id: 'remark',
             type: 'textarea',
           },
         ],
       },
       {
-        // Seventh university complete date 
+        // First university complete date 
         label: 'NMIMS',
         name: ['customfields', 'university_name'],
         value: 'NMIMS',
         fields: [
           {
+            key: 'radio',
+            label: 'Want to send Fee Receipt',
+            id: 'Send',
+            name: ['customfields', 'send_fee_receipt'],
+            type: 'radio',
+            options: ['yes', 'no'],
+            required: 'require'
+          },
+          {
             key: 'studentId',
             name: 'lead_id',
             label: 'StudentID',
@@ -10600,24 +11190,42 @@ const formData = [
             required: 'require'
           },
           {
+            key: 'text',
+            label: 'Father Name',
+            name: ['customfields', 'father_name'],
+            place: 'Enter Father Name',
+            id: 'Father Name',
+            type: 'text',
+            required: 'require'
+          },
+          {
+            key: 'text',
+            label: 'Mother Name',
+            name: ['customfields', 'mother_name'],
+            place: 'Enter Mother Name',
+            id: 'mother_name',
+            type: 'text',
+            required: 'require'
+          },
+          {
             key: 'select',
             label: 'Session',
             name: ['customfields', 'session'],
-            place: 'eg: jan 20-jan 23',
+            place: 'eg: jan 20',
             id: 'Session',
             type: 'select',
-            options: [{ value: 'jan 20-jan 20', label: 'Jan 20-Jan 20' },
-            { value: 'july 20-july 20', label: 'July 20-July 20' },
-            { value: 'jan 21-jan 21', label: 'Jan 21-Jan 21' },
-            { value: 'july 21-july 21', label: 'July 21-July 21' },
-            { value: 'jan 22-jan 22', label: 'Jan 22-Jan 22' },
-            { value: 'july 22-july 22', label: 'July 22-July 22' },
-            { value: 'jan 23-jan 23', label: 'Jan 23-Jan 23' },
-            { value: 'july 23-july 23', label: 'July 23-July 23' },
-            { value: 'jan 24-jan 24', label: 'Jan 24-Jan 24' },
-            { value: 'july 24-july 24', label: 'July 24-July 24' },
-            { value: 'jan 25-jan 25', label: 'Jan 25-Jan 25' },
-            { value: 'july 25-july 25', label: 'July 25-July 25' }],
+            options: [{ value: 'jan 20', label: 'Jan 20' },
+            { value: 'july 20', label: 'July 20' },
+            { value: 'jan 21', label: 'Jan 21' },
+            { value: 'july 21', label: 'July 21' },
+            { value: 'jan 22', label: 'Jan 22' },
+            { value: 'july 22', label: 'July 22' },
+            { value: 'jan 23', label: 'Jan 23' },
+            { value: 'july 23', label: 'July 23' },
+            { value: 'jan 24', label: 'Jan 24' },
+            { value: 'july 24', label: 'July 24' },
+            { value: 'jan 25', label: 'Jan 25' },
+            { value: 'july 25', label: 'July 25' }],
             required: 'require'
           },
           {
@@ -10627,7 +11235,7 @@ const formData = [
             id: 'SessionType',
             place: 'Enter Admission Type',
             type: 'select',
-            options: [{ value: 'Fresher', lable: 'Fresher' },
+            options: [{ value: 'Fresh', label: 'Fresh' },
             { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
           },
           {
@@ -10644,7 +11252,7 @@ const formData = [
                   { "value": "Political science", "label": "Political science" },
                   { "value": "Sociology", "label": "Sociology" },
                   { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
-                  { "value": 'Geography', lable: 'Geography' },
+                  { "value": 'Geography', label: 'Geography' },
                 ],
               },
               {
@@ -10710,7 +11318,7 @@ const formData = [
                 value: "MA",
                 label: "MA",
                 specializations: [
-                  { value: "Economics", lable: "Economics" },
+                  { value: "Economics", label: "Economics" },
                   { value: "English", label: "English" },
                   { value: "Geography", label: "Geography" },
                   { value: "History", label: "History" },
@@ -10788,7 +11396,15 @@ const formData = [
               },
             ]
           },
-
+          {
+            key: 'date',
+            label: 'Date of Birth',
+            name: ['customfields', 'dob'],
+            place: 'Enter Date of Birth',
+            id: 'dob',
+            type: 'date',
+            required: 'require'
+          },
           {
             key: 'select',
             label: 'Gender',
@@ -10831,7 +11447,7 @@ const formData = [
             required: 'require',
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Online Payment', label: 'Online Payment' },
+            { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
           {
@@ -10862,7 +11478,7 @@ const formData = [
 
           {
             key: 'select ',
-            label: 'Counselor Email ',
+            label: 'Counselors ',
             name: ['customfields', 'counselor_email'],
             id: 'email ',
             type: 'select',
@@ -10942,7 +11558,7 @@ const formData = [
           {
             key: 'file',
             label: 'Upload Fee Receipt Screenshot',
-            name: 'image',
+            name: ['customfields', 'upload_fee_receipt_screenshot'],
             place: 'Upload Fee Receipt Screenshot',
             id: 'Upload Fee Receipt Screenshot',
             type: 'file',
@@ -10950,30 +11566,39 @@ const formData = [
 
           },
           {
-            key: 'text',
+            key: 'file',
             label: 'Uplaod Student Document',
             name: ['customfields', 'upload_student_document'],
-            place: 'Enter Counselor Email',
+            place: 'Uplaod Student Document',
             id: 'Uplaod Student Document',
-            type: 'text',
+            type: 'file',
           },
           {
             key: 'textarea',
             label: 'Remark',
             name: ['customfields', 'remark'],
-            place: 'Enter Counselor Email',
-            id: 'Uplaod Student Document',
+            place: 'Remark',
+            id: 'remark',
             type: 'textarea',
           },
         ],
       },
       {
-        // 8th university complete date 
+        // First university complete date 
         label: 'VIGNAN',
         name: ['customfields', 'university_name'],
         value: 'VIGNAN',
         fields: [
           {
+            key: 'radio',
+            label: 'Want to send Fee Receipt',
+            id: 'Send',
+            name: ['customfields', 'send_fee_receipt'],
+            type: 'radio',
+            options: ['yes', 'no'],
+            required: 'require'
+          },
+          {
             key: 'studentId',
             name: 'lead_id',
             label: 'StudentID',
@@ -11010,24 +11635,42 @@ const formData = [
             required: 'require'
           },
           {
+            key: 'text',
+            label: 'Father Name',
+            name: ['customfields', 'father_name'],
+            place: 'Enter Father Name',
+            id: 'Father Name',
+            type: 'text',
+            required: 'require'
+          },
+          {
+            key: 'text',
+            label: 'Mother Name',
+            name: ['customfields', 'mother_name'],
+            place: 'Enter Mother Name',
+            id: 'mother_name',
+            type: 'text',
+            required: 'require'
+          },
+          {
             key: 'select',
             label: 'Session',
             name: ['customfields', 'session'],
-            place: 'eg: jan 20-jan 23',
+            place: 'eg: jan 20',
             id: 'Session',
             type: 'select',
-            options: [{ value: 'jan 20-jan 20', label: 'Jan 20-Jan 20' },
-            { value: 'july 20-july 20', label: 'July 20-July 20' },
-            { value: 'jan 21-jan 21', label: 'Jan 21-Jan 21' },
-            { value: 'july 21-july 21', label: 'July 21-July 21' },
-            { value: 'jan 22-jan 22', label: 'Jan 22-Jan 22' },
-            { value: 'july 22-july 22', label: 'July 22-July 22' },
-            { value: 'jan 23-jan 23', label: 'Jan 23-Jan 23' },
-            { value: 'july 23-july 23', label: 'July 23-July 23' },
-            { value: 'jan 24-jan 24', label: 'Jan 24-Jan 24' },
-            { value: 'july 24-july 24', label: 'July 24-July 24' },
-            { value: 'jan 25-jan 25', label: 'Jan 25-Jan 25' },
-            { value: 'july 25-july 25', label: 'July 25-July 25' }],
+            options: [{ value: 'jan 20', label: 'Jan 20' },
+            { value: 'july 20', label: 'July 20' },
+            { value: 'jan 21', label: 'Jan 21' },
+            { value: 'july 21', label: 'July 21' },
+            { value: 'jan 22', label: 'Jan 22' },
+            { value: 'july 22', label: 'July 22' },
+            { value: 'jan 23', label: 'Jan 23' },
+            { value: 'july 23', label: 'July 23' },
+            { value: 'jan 24', label: 'Jan 24' },
+            { value: 'july 24', label: 'July 24' },
+            { value: 'jan 25', label: 'Jan 25' },
+            { value: 'july 25', label: 'July 25' }],
             required: 'require'
           },
           {
@@ -11037,7 +11680,7 @@ const formData = [
             id: 'SessionType',
             place: 'Enter Admission Type',
             type: 'select',
-            options: [{ value: 'Fresher', lable: 'Fresher' },
+            options: [{ value: 'Fresh', label: 'Fresh' },
             { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
           },
           {
@@ -11054,7 +11697,7 @@ const formData = [
                   { "value": "Political science", "label": "Political science" },
                   { "value": "Sociology", "label": "Sociology" },
                   { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
-                  { "value": 'Geography', lable: 'Geography' },
+                  { "value": 'Geography', label: 'Geography' },
                 ],
               },
               {
@@ -11120,7 +11763,7 @@ const formData = [
                 value: "MA",
                 label: "MA",
                 specializations: [
-                  { value: "Economics", lable: "Economics" },
+                  { value: "Economics", label: "Economics" },
                   { value: "English", label: "English" },
                   { value: "Geography", label: "Geography" },
                   { value: "History", label: "History" },
@@ -11198,7 +11841,15 @@ const formData = [
               },
             ]
           },
-
+          {
+            key: 'date',
+            label: 'Date of Birth',
+            name: ['customfields', 'dob'],
+            place: 'Enter Date of Birth',
+            id: 'dob',
+            type: 'date',
+            required: 'require'
+          },
           {
             key: 'select',
             label: 'Gender',
@@ -11241,7 +11892,7 @@ const formData = [
             required: 'require',
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Online Payment', label: 'Online Payment' },
+            { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
           {
@@ -11272,7 +11923,7 @@ const formData = [
 
           {
             key: 'select ',
-            label: 'Counselor Email ',
+            label: 'Counselors ',
             name: ['customfields', 'counselor_email'],
             id: 'email ',
             type: 'select',
@@ -11352,7 +12003,7 @@ const formData = [
           {
             key: 'file',
             label: 'Upload Fee Receipt Screenshot',
-            name: 'image',
+            name: ['customfields', 'upload_fee_receipt_screenshot'],
             place: 'Upload Fee Receipt Screenshot',
             id: 'Upload Fee Receipt Screenshot',
             type: 'file',
@@ -11360,30 +12011,39 @@ const formData = [
 
           },
           {
-            key: 'text',
+            key: 'file',
             label: 'Uplaod Student Document',
             name: ['customfields', 'upload_student_document'],
-            place: 'Enter Counselor Email',
+            place: 'Uplaod Student Document',
             id: 'Uplaod Student Document',
-            type: 'text',
+            type: 'file',
           },
           {
             key: 'textarea',
             label: 'Remark',
             name: ['customfields', 'remark'],
-            place: 'Enter Counselor Email',
-            id: 'Uplaod Student Document',
+            place: 'Remark',
+            id: 'remark',
             type: 'textarea',
           },
         ],
       },
       {
-        // 9th university complete date 
+        // First university complete date 
         label: 'HINDUSTAN',
         name: ['customfields', 'university_name'],
         value: 'HINDUSTAN',
         fields: [
           {
+            key: 'radio',
+            label: 'Want to send Fee Receipt',
+            id: 'Send',
+            name: ['customfields', 'send_fee_receipt'],
+            type: 'radio',
+            options: ['yes', 'no'],
+            required: 'require'
+          },
+          {
             key: 'studentId',
             name: 'lead_id',
             label: 'StudentID',
@@ -11420,24 +12080,42 @@ const formData = [
             required: 'require'
           },
           {
+            key: 'text',
+            label: 'Father Name',
+            name: ['customfields', 'father_name'],
+            place: 'Enter Father Name',
+            id: 'Father Name',
+            type: 'text',
+            required: 'require'
+          },
+          {
+            key: 'text',
+            label: 'Mother Name',
+            name: ['customfields', 'mother_name'],
+            place: 'Enter Mother Name',
+            id: 'mother_name',
+            type: 'text',
+            required: 'require'
+          },
+          {
             key: 'select',
             label: 'Session',
             name: ['customfields', 'session'],
-            place: 'eg: jan 20-jan 23',
+            place: 'eg: jan 20',
             id: 'Session',
             type: 'select',
-            options: [{ value: 'jan 20-jan 20', label: 'Jan 20-Jan 20' },
-            { value: 'july 20-july 20', label: 'July 20-July 20' },
-            { value: 'jan 21-jan 21', label: 'Jan 21-Jan 21' },
-            { value: 'july 21-july 21', label: 'July 21-July 21' },
-            { value: 'jan 22-jan 22', label: 'Jan 22-Jan 22' },
-            { value: 'july 22-july 22', label: 'July 22-July 22' },
-            { value: 'jan 23-jan 23', label: 'Jan 23-Jan 23' },
-            { value: 'july 23-july 23', label: 'July 23-July 23' },
-            { value: 'jan 24-jan 24', label: 'Jan 24-Jan 24' },
-            { value: 'july 24-july 24', label: 'July 24-July 24' },
-            { value: 'jan 25-jan 25', label: 'Jan 25-Jan 25' },
-            { value: 'july 25-july 25', label: 'July 25-July 25' }],
+            options: [{ value: 'jan 20', label: 'Jan 20' },
+            { value: 'july 20', label: 'July 20' },
+            { value: 'jan 21', label: 'Jan 21' },
+            { value: 'july 21', label: 'July 21' },
+            { value: 'jan 22', label: 'Jan 22' },
+            { value: 'july 22', label: 'July 22' },
+            { value: 'jan 23', label: 'Jan 23' },
+            { value: 'july 23', label: 'July 23' },
+            { value: 'jan 24', label: 'Jan 24' },
+            { value: 'july 24', label: 'July 24' },
+            { value: 'jan 25', label: 'Jan 25' },
+            { value: 'july 25', label: 'July 25' }],
             required: 'require'
           },
           {
@@ -11447,7 +12125,7 @@ const formData = [
             id: 'SessionType',
             place: 'Enter Admission Type',
             type: 'select',
-            options: [{ value: 'Fresher', lable: 'Fresher' },
+            options: [{ value: 'Fresh', label: 'Fresh' },
             { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
           },
           {
@@ -11464,7 +12142,7 @@ const formData = [
                   { "value": "Political science", "label": "Political science" },
                   { "value": "Sociology", "label": "Sociology" },
                   { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
-                  { "value": 'Geography', lable: 'Geography' },
+                  { "value": 'Geography', label: 'Geography' },
                 ],
               },
               {
@@ -11530,7 +12208,7 @@ const formData = [
                 value: "MA",
                 label: "MA",
                 specializations: [
-                  { value: "Economics", lable: "Economics" },
+                  { value: "Economics", label: "Economics" },
                   { value: "English", label: "English" },
                   { value: "Geography", label: "Geography" },
                   { value: "History", label: "History" },
@@ -11609,14 +12287,14 @@ const formData = [
             ]
           },
           {
-            key: 'text',
-            label: 'Specialization',
-            name: ['customfields', 'enter_specialization'],
-            place: 'Enter Specialization',
-            id: 'Specialization',
-            type: 'text',
+            key: 'date',
+            label: 'Date of Birth',
+            name: ['customfields', 'dob'],
+            place: 'Enter Date of Birth',
+            id: 'dob',
+            type: 'date',
+            required: 'require'
           },
-
           {
             key: 'select',
             label: 'Gender',
@@ -11659,7 +12337,7 @@ const formData = [
             required: 'require',
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Online Payment', label: 'Online Payment' },
+            { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
           {
@@ -11690,7 +12368,7 @@ const formData = [
 
           {
             key: 'select ',
-            label: 'Counselor Email ',
+            label: 'Counselors ',
             name: ['customfields', 'counselor_email'],
             id: 'email ',
             type: 'select',
@@ -11770,7 +12448,7 @@ const formData = [
           {
             key: 'file',
             label: 'Upload Fee Receipt Screenshot',
-            name: 'image',
+            name: ['customfields', 'upload_fee_receipt_screenshot'],
             place: 'Upload Fee Receipt Screenshot',
             id: 'Upload Fee Receipt Screenshot',
             type: 'file',
@@ -11778,30 +12456,39 @@ const formData = [
 
           },
           {
-            key: 'text',
+            key: 'file',
             label: 'Uplaod Student Document',
             name: ['customfields', 'upload_student_document'],
-            place: 'Enter Counselor Email',
+            place: 'Uplaod Student Document',
             id: 'Uplaod Student Document',
-            type: 'text',
+            type: 'file',
           },
           {
             key: 'textarea',
             label: 'Remark',
             name: ['customfields', 'remark'],
-            place: 'Enter Counselor Email',
-            id: 'Uplaod Student Document',
+            place: 'Remark',
+            id: 'remark',
             type: 'textarea',
           },
         ],
       },
       {
-        // 9th university complete date 
+        // First university complete date 
         label: 'MANIPAL',
         name: ['customfields', 'university_name'],
         value: 'MANIPAL',
         fields: [
           {
+            key: 'radio',
+            label: 'Want to send Fee Receipt',
+            id: 'Send',
+            name: ['customfields', 'send_fee_receipt'],
+            type: 'radio',
+            options: ['yes', 'no'],
+            required: 'require'
+          },
+          {
             key: 'studentId',
             name: 'lead_id',
             label: 'StudentID',
@@ -11838,24 +12525,42 @@ const formData = [
             required: 'require'
           },
           {
+            key: 'text',
+            label: 'Father Name',
+            name: ['customfields', 'father_name'],
+            place: 'Enter Father Name',
+            id: 'Father Name',
+            type: 'text',
+            required: 'require'
+          },
+          {
+            key: 'text',
+            label: 'Mother Name',
+            name: ['customfields', 'mother_name'],
+            place: 'Enter Mother Name',
+            id: 'mother_name',
+            type: 'text',
+            required: 'require'
+          },
+          {
             key: 'select',
             label: 'Session',
             name: ['customfields', 'session'],
-            place: 'eg: jan 20-jan 23',
+            place: 'eg: jan 20',
             id: 'Session',
             type: 'select',
-            options: [{ value: 'jan 20-jan 20', label: 'Jan 20-Jan 20' },
-            { value: 'july 20-july 20', label: 'July 20-July 20' },
-            { value: 'jan 21-jan 21', label: 'Jan 21-Jan 21' },
-            { value: 'july 21-july 21', label: 'July 21-July 21' },
-            { value: 'jan 22-jan 22', label: 'Jan 22-Jan 22' },
-            { value: 'july 22-july 22', label: 'July 22-July 22' },
-            { value: 'jan 23-jan 23', label: 'Jan 23-Jan 23' },
-            { value: 'july 23-july 23', label: 'July 23-July 23' },
-            { value: 'jan 24-jan 24', label: 'Jan 24-Jan 24' },
-            { value: 'july 24-july 24', label: 'July 24-July 24' },
-            { value: 'jan 25-jan 25', label: 'Jan 25-Jan 25' },
-            { value: 'july 25-july 25', label: 'July 25-July 25' }],
+            options: [{ value: 'jan 20', label: 'Jan 20' },
+            { value: 'july 20', label: 'July 20' },
+            { value: 'jan 21', label: 'Jan 21' },
+            { value: 'july 21', label: 'July 21' },
+            { value: 'jan 22', label: 'Jan 22' },
+            { value: 'july 22', label: 'July 22' },
+            { value: 'jan 23', label: 'Jan 23' },
+            { value: 'july 23', label: 'July 23' },
+            { value: 'jan 24', label: 'Jan 24' },
+            { value: 'july 24', label: 'July 24' },
+            { value: 'jan 25', label: 'Jan 25' },
+            { value: 'july 25', label: 'July 25' }],
             required: 'require'
           },
           {
@@ -11865,7 +12570,7 @@ const formData = [
             id: 'SessionType',
             place: 'Enter Admission Type',
             type: 'select',
-            options: [{ value: 'Fresher', lable: 'Fresher' },
+            options: [{ value: 'Fresh', label: 'Fresh' },
             { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
           },
           {
@@ -11882,7 +12587,7 @@ const formData = [
                   { "value": "Political science", "label": "Political science" },
                   { "value": "Sociology", "label": "Sociology" },
                   { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
-                  { "value": 'Geography', lable: 'Geography' },
+                  { "value": 'Geography', label: 'Geography' },
                 ],
               },
               {
@@ -11948,7 +12653,7 @@ const formData = [
                 value: "MA",
                 label: "MA",
                 specializations: [
-                  { value: "Economics", lable: "Economics" },
+                  { value: "Economics", label: "Economics" },
                   { value: "English", label: "English" },
                   { value: "Geography", label: "Geography" },
                   { value: "History", label: "History" },
@@ -12027,6 +12732,15 @@ const formData = [
             ]
           },
           {
+            key: 'date',
+            label: 'Date of Birth',
+            name: ['customfields', 'dob'],
+            place: 'Enter Date of Birth',
+            id: 'dob',
+            type: 'date',
+            required: 'require'
+          },
+          {
             key: 'select',
             label: 'Gender',
             name: ['customfields', 'gender'],
@@ -12068,7 +12782,7 @@ const formData = [
             required: 'require',
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Online Payment', label: 'Online Payment' },
+            { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
           {
@@ -12099,7 +12813,7 @@ const formData = [
 
           {
             key: 'select ',
-            label: 'Counselor Email ',
+            label: 'Counselors ',
             name: ['customfields', 'counselor_email'],
             id: 'email ',
             type: 'select',
@@ -12179,7 +12893,7 @@ const formData = [
           {
             key: 'file',
             label: 'Upload Fee Receipt Screenshot',
-            name: 'image',
+            name: ['customfields', 'upload_fee_receipt_screenshot'],
             place: 'Upload Fee Receipt Screenshot',
             id: 'Upload Fee Receipt Screenshot',
             type: 'file',
@@ -12187,25 +12901,25 @@ const formData = [
 
           },
           {
-            key: 'text',
+            key: 'file',
             label: 'Uplaod Student Document',
             name: ['customfields', 'upload_student_document'],
-            place: 'Enter Counselor Email',
+            place: 'Uplaod Student Document',
             id: 'Uplaod Student Document',
-            type: 'text',
+            type: 'file',
           },
           {
             key: 'textarea',
             label: 'Remark',
             name: ['customfields', 'remark'],
-            place: 'Enter Counselor Email',
-            id: 'Uplaod Student Document',
+            place: 'Remark',
+            id: 'remark',
             type: 'textarea',
           },
         ],
       },
       {
-        // 10 university complete date 
+        // First university complete date 
         label: 'SMU',
         name: ['customfields', 'university_name'],
         value: 'SMU',
@@ -12277,21 +12991,21 @@ const formData = [
             key: 'select',
             label: 'Session',
             name: ['customfields', 'session'],
-            place: 'eg: jan 20-jan 23',
+            place: 'eg: jan 20',
             id: 'Session',
             type: 'select',
-            options: [{ value: 'jan 20-jan 20', label: 'Jan 20-Jan 20' },
-            { value: 'july 20-july 20', label: 'July 20-July 20' },
-            { value: 'jan 21-jan 21', label: 'Jan 21-Jan 21' },
-            { value: 'july 21-july 21', label: 'July 21-July 21' },
-            { value: 'jan 22-jan 22', label: 'Jan 22-Jan 22' },
-            { value: 'july 22-july 22', label: 'July 22-July 22' },
-            { value: 'jan 23-jan 23', label: 'Jan 23-Jan 23' },
-            { value: 'july 23-july 23', label: 'July 23-July 23' },
-            { value: 'jan 24-jan 24', label: 'Jan 24-Jan 24' },
-            { value: 'july 24-july 24', label: 'July 24-July 24' },
-            { value: 'jan 25-jan 25', label: 'Jan 25-Jan 25' },
-            { value: 'july 25-july 25', label: 'July 25-July 25' }],
+            options: [{ value: 'jan 20', label: 'Jan 20' },
+            { value: 'july 20', label: 'July 20' },
+            { value: 'jan 21', label: 'Jan 21' },
+            { value: 'july 21', label: 'July 21' },
+            { value: 'jan 22', label: 'Jan 22' },
+            { value: 'july 22', label: 'July 22' },
+            { value: 'jan 23', label: 'Jan 23' },
+            { value: 'july 23', label: 'July 23' },
+            { value: 'jan 24', label: 'Jan 24' },
+            { value: 'july 24', label: 'July 24' },
+            { value: 'jan 25', label: 'Jan 25' },
+            { value: 'july 25', label: 'July 25' }],
             required: 'require'
           },
           {
@@ -12301,7 +13015,7 @@ const formData = [
             id: 'SessionType',
             place: 'Enter Admission Type',
             type: 'select',
-            options: [{ value: 'Fresher', lable: 'Fresher' },
+            options: [{ value: 'Fresh', label: 'Fresh' },
             { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
           },
           {
@@ -12318,7 +13032,7 @@ const formData = [
                   { "value": "Political science", "label": "Political science" },
                   { "value": "Sociology", "label": "Sociology" },
                   { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
-                  { "value": 'Geography', lable: 'Geography' },
+                  { "value": 'Geography', label: 'Geography' },
                 ],
               },
               {
@@ -12384,7 +13098,7 @@ const formData = [
                 value: "MA",
                 label: "MA",
                 specializations: [
-                  { value: "Economics", lable: "Economics" },
+                  { value: "Economics", label: "Economics" },
                   { value: "English", label: "English" },
                   { value: "Geography", label: "Geography" },
                   { value: "History", label: "History" },
@@ -12468,7 +13182,7 @@ const formData = [
             name: ['customfields', 'dob'],
             place: 'Enter Date of Birth',
             id: 'dob',
-            type: 'text',
+            type: 'date',
             required: 'require'
           },
           {
@@ -12513,7 +13227,7 @@ const formData = [
             required: 'require',
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Online Payment', label: 'Online Payment' },
+            { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
           {
@@ -12544,7 +13258,7 @@ const formData = [
 
           {
             key: 'select ',
-            label: 'Counselor Email ',
+            label: 'Counselors ',
             name: ['customfields', 'counselor_email'],
             id: 'email ',
             type: 'select',
@@ -12624,7 +13338,7 @@ const formData = [
           {
             key: 'file',
             label: 'Upload Fee Receipt Screenshot',
-            name: 'image',
+            name: ['customfields', 'upload_fee_receipt_screenshot'],
             place: 'Upload Fee Receipt Screenshot',
             id: 'Upload Fee Receipt Screenshot',
             type: 'file',
@@ -12632,25 +13346,25 @@ const formData = [
 
           },
           {
-            key: 'text',
+            key: 'file',
             label: 'Uplaod Student Document',
             name: ['customfields', 'upload_student_document'],
-            place: 'Enter Counselor Email',
+            place: 'Uplaod Student Document',
             id: 'Uplaod Student Document',
-            type: 'text',
+            type: 'file',
           },
           {
             key: 'textarea',
             label: 'Remark',
             name: ['customfields', 'remark'],
-            place: 'Enter Counselor Email',
-            id: 'Uplaod Student Document',
+            place: 'Remark',
+            id: 'remark',
             type: 'textarea',
           },
         ],
       },
       {
-        // 11th university complete date 
+        // First university complete date 
         label: 'HU',
         name: ['customfields', 'university_name'],
         value: 'HU',
@@ -12722,21 +13436,21 @@ const formData = [
             key: 'select',
             label: 'Session',
             name: ['customfields', 'session'],
-            place: 'eg: jan 20-jan 23',
+            place: 'eg: jan 20',
             id: 'Session',
             type: 'select',
-            options: [{ value: 'jan 20-jan 20', label: 'Jan 20-Jan 20' },
-            { value: 'july 20-july 20', label: 'July 20-July 20' },
-            { value: 'jan 21-jan 21', label: 'Jan 21-Jan 21' },
-            { value: 'july 21-july 21', label: 'July 21-July 21' },
-            { value: 'jan 22-jan 22', label: 'Jan 22-Jan 22' },
-            { value: 'july 22-july 22', label: 'July 22-July 22' },
-            { value: 'jan 23-jan 23', label: 'Jan 23-Jan 23' },
-            { value: 'july 23-july 23', label: 'July 23-July 23' },
-            { value: 'jan 24-jan 24', label: 'Jan 24-Jan 24' },
-            { value: 'july 24-july 24', label: 'July 24-July 24' },
-            { value: 'jan 25-jan 25', label: 'Jan 25-Jan 25' },
-            { value: 'july 25-july 25', label: 'July 25-July 25' }],
+            options: [{ value: 'jan 20', label: 'Jan 20' },
+            { value: 'july 20', label: 'July 20' },
+            { value: 'jan 21', label: 'Jan 21' },
+            { value: 'july 21', label: 'July 21' },
+            { value: 'jan 22', label: 'Jan 22' },
+            { value: 'july 22', label: 'July 22' },
+            { value: 'jan 23', label: 'Jan 23' },
+            { value: 'july 23', label: 'July 23' },
+            { value: 'jan 24', label: 'Jan 24' },
+            { value: 'july 24', label: 'July 24' },
+            { value: 'jan 25', label: 'Jan 25' },
+            { value: 'july 25', label: 'July 25' }],
             required: 'require'
           },
           {
@@ -12746,7 +13460,7 @@ const formData = [
             id: 'SessionType',
             place: 'Enter Admission Type',
             type: 'select',
-            options: [{ value: 'Fresher', lable: 'Fresher' },
+            options: [{ value: 'Fresh', label: 'Fresh' },
             { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
           },
           {
@@ -12763,7 +13477,7 @@ const formData = [
                   { "value": "Political science", "label": "Political science" },
                   { "value": "Sociology", "label": "Sociology" },
                   { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
-                  { "value": 'Geography', lable: 'Geography' },
+                  { "value": 'Geography', label: 'Geography' },
                 ],
               },
               {
@@ -12829,7 +13543,7 @@ const formData = [
                 value: "MA",
                 label: "MA",
                 specializations: [
-                  { value: "Economics", lable: "Economics" },
+                  { value: "Economics", label: "Economics" },
                   { value: "English", label: "English" },
                   { value: "Geography", label: "Geography" },
                   { value: "History", label: "History" },
@@ -12913,7 +13627,7 @@ const formData = [
             name: ['customfields', 'dob'],
             place: 'Enter Date of Birth',
             id: 'dob',
-            type: 'text',
+            type: 'date',
             required: 'require'
           },
           {
@@ -12958,7 +13672,7 @@ const formData = [
             required: 'require',
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Online Payment', label: 'Online Payment' },
+            { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
           {
@@ -12989,7 +13703,7 @@ const formData = [
 
           {
             key: 'select ',
-            label: 'Counselor Email ',
+            label: 'Counselors ',
             name: ['customfields', 'counselor_email'],
             id: 'email ',
             type: 'select',
@@ -13069,7 +13783,7 @@ const formData = [
           {
             key: 'file',
             label: 'Upload Fee Receipt Screenshot',
-            name: 'image',
+            name: ['customfields', 'upload_fee_receipt_screenshot'],
             place: 'Upload Fee Receipt Screenshot',
             id: 'Upload Fee Receipt Screenshot',
             type: 'file',
@@ -13077,25 +13791,25 @@ const formData = [
 
           },
           {
-            key: 'text',
+            key: 'file',
             label: 'Uplaod Student Document',
             name: ['customfields', 'upload_student_document'],
-            place: 'Enter Counselor Email',
+            place: 'Uplaod Student Document',
             id: 'Uplaod Student Document',
-            type: 'text',
+            type: 'file',
           },
           {
             key: 'textarea',
             label: 'Remark',
             name: ['customfields', 'remark'],
-            place: 'Enter Counselor Email',
-            id: 'Uplaod Student Document',
+            place: 'Remark',
+            id: 'remark',
             type: 'textarea',
           },
         ],
       },
       {
-        // 12th university complete date 
+        // First university complete date 
         label: 'BOSSE',
         name: ['customfields', 'university_name'],
         value: 'BOSSE',
@@ -13167,21 +13881,21 @@ const formData = [
             key: 'select',
             label: 'Session',
             name: ['customfields', 'session'],
-            place: 'eg: jan 20-jan 23',
+            place: 'eg: jan 20',
             id: 'Session',
             type: 'select',
-            options: [{ value: 'jan 20-jan 20', label: 'Jan 20-Jan 20' },
-            { value: 'july 20-july 20', label: 'July 20-July 20' },
-            { value: 'jan 21-jan 21', label: 'Jan 21-Jan 21' },
-            { value: 'july 21-july 21', label: 'July 21-July 21' },
-            { value: 'jan 22-jan 22', label: 'Jan 22-Jan 22' },
-            { value: 'july 22-july 22', label: 'July 22-July 22' },
-            { value: 'jan 23-jan 23', label: 'Jan 23-Jan 23' },
-            { value: 'july 23-july 23', label: 'July 23-July 23' },
-            { value: 'jan 24-jan 24', label: 'Jan 24-Jan 24' },
-            { value: 'july 24-july 24', label: 'July 24-July 24' },
-            { value: 'jan 25-jan 25', label: 'Jan 25-Jan 25' },
-            { value: 'july 25-july 25', label: 'July 25-July 25' }],
+            options: [{ value: 'jan 20', label: 'Jan 20' },
+            { value: 'july 20', label: 'July 20' },
+            { value: 'jan 21', label: 'Jan 21' },
+            { value: 'july 21', label: 'July 21' },
+            { value: 'jan 22', label: 'Jan 22' },
+            { value: 'july 22', label: 'July 22' },
+            { value: 'jan 23', label: 'Jan 23' },
+            { value: 'july 23', label: 'July 23' },
+            { value: 'jan 24', label: 'Jan 24' },
+            { value: 'july 24', label: 'July 24' },
+            { value: 'jan 25', label: 'Jan 25' },
+            { value: 'july 25', label: 'July 25' }],
             required: 'require'
           },
           {
@@ -13191,7 +13905,7 @@ const formData = [
             id: 'SessionType',
             place: 'Enter Admission Type',
             type: 'select',
-            options: [{ value: 'Fresher', lable: 'Fresher' },
+            options: [{ value: 'Fresh', label: 'Fresh' },
             { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
           },
           {
@@ -13208,7 +13922,7 @@ const formData = [
                   { "value": "Political science", "label": "Political science" },
                   { "value": "Sociology", "label": "Sociology" },
                   { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
-                  { "value": 'Geography', lable: 'Geography' },
+                  { "value": 'Geography', label: 'Geography' },
                 ],
               },
               {
@@ -13274,7 +13988,7 @@ const formData = [
                 value: "MA",
                 label: "MA",
                 specializations: [
-                  { value: "Economics", lable: "Economics" },
+                  { value: "Economics", label: "Economics" },
                   { value: "English", label: "English" },
                   { value: "Geography", label: "Geography" },
                   { value: "History", label: "History" },
@@ -13358,7 +14072,7 @@ const formData = [
             name: ['customfields', 'dob'],
             place: 'Enter Date of Birth',
             id: 'dob',
-            type: 'text',
+            type: 'date',
             required: 'require'
           },
           {
@@ -13403,7 +14117,7 @@ const formData = [
             required: 'require',
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Online Payment', label: 'Online Payment' },
+            { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
           {
@@ -13434,7 +14148,7 @@ const formData = [
 
           {
             key: 'select ',
-            label: 'Counselor Email ',
+            label: 'Counselors ',
             name: ['customfields', 'counselor_email'],
             id: 'email ',
             type: 'select',
@@ -13514,7 +14228,7 @@ const formData = [
           {
             key: 'file',
             label: 'Upload Fee Receipt Screenshot',
-            name: 'image',
+            name: ['customfields', 'upload_fee_receipt_screenshot'],
             place: 'Upload Fee Receipt Screenshot',
             id: 'Upload Fee Receipt Screenshot',
             type: 'file',
@@ -13522,25 +14236,25 @@ const formData = [
 
           },
           {
-            key: 'text',
+            key: 'file',
             label: 'Uplaod Student Document',
             name: ['customfields', 'upload_student_document'],
-            place: 'Enter Counselor Email',
+            place: 'Uplaod Student Document',
             id: 'Uplaod Student Document',
-            type: 'text',
+            type: 'file',
           },
           {
             key: 'textarea',
             label: 'Remark',
             name: ['customfields', 'remark'],
-            place: 'Enter Counselor Email',
-            id: 'Uplaod Student Document',
+            place: 'Remark',
+            id: 'remark',
             type: 'textarea',
           },
         ],
       },
       {
-        // 13th university complete date 
+        // First university complete date 
         label: 'SABARMATI',
         name: ['customfields', 'university_name'],
         value: 'SABARMATI',
@@ -13612,21 +14326,21 @@ const formData = [
             key: 'select',
             label: 'Session',
             name: ['customfields', 'session'],
-            place: 'eg: jan 20-jan 23',
+            place: 'eg: jan 20',
             id: 'Session',
             type: 'select',
-            options: [{ value: 'jan 20-jan 20', label: 'Jan 20-Jan 20' },
-            { value: 'july 20-july 20', label: 'July 20-July 20' },
-            { value: 'jan 21-jan 21', label: 'Jan 21-Jan 21' },
-            { value: 'july 21-july 21', label: 'July 21-July 21' },
-            { value: 'jan 22-jan 22', label: 'Jan 22-Jan 22' },
-            { value: 'july 22-july 22', label: 'July 22-July 22' },
-            { value: 'jan 23-jan 23', label: 'Jan 23-Jan 23' },
-            { value: 'july 23-july 23', label: 'July 23-July 23' },
-            { value: 'jan 24-jan 24', label: 'Jan 24-Jan 24' },
-            { value: 'july 24-july 24', label: 'July 24-July 24' },
-            { value: 'jan 25-jan 25', label: 'Jan 25-Jan 25' },
-            { value: 'july 25-july 25', label: 'July 25-July 25' }],
+            options: [{ value: 'jan 20', label: 'Jan 20' },
+            { value: 'july 20', label: 'July 20' },
+            { value: 'jan 21', label: 'Jan 21' },
+            { value: 'july 21', label: 'July 21' },
+            { value: 'jan 22', label: 'Jan 22' },
+            { value: 'july 22', label: 'July 22' },
+            { value: 'jan 23', label: 'Jan 23' },
+            { value: 'july 23', label: 'July 23' },
+            { value: 'jan 24', label: 'Jan 24' },
+            { value: 'july 24', label: 'July 24' },
+            { value: 'jan 25', label: 'Jan 25' },
+            { value: 'july 25', label: 'July 25' }],
             required: 'require'
           },
           {
@@ -13636,7 +14350,7 @@ const formData = [
             id: 'SessionType',
             place: 'Enter Admission Type',
             type: 'select',
-            options: [{ value: 'Fresher', lable: 'Fresher' },
+            options: [{ value: 'Fresh', label: 'Fresh' },
             { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
           },
           {
@@ -13653,7 +14367,7 @@ const formData = [
                   { "value": "Political science", "label": "Political science" },
                   { "value": "Sociology", "label": "Sociology" },
                   { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
-                  { "value": 'Geography', lable: 'Geography' },
+                  { "value": 'Geography', label: 'Geography' },
                 ],
               },
               {
@@ -13719,7 +14433,7 @@ const formData = [
                 value: "MA",
                 label: "MA",
                 specializations: [
-                  { value: "Economics", lable: "Economics" },
+                  { value: "Economics", label: "Economics" },
                   { value: "English", label: "English" },
                   { value: "Geography", label: "Geography" },
                   { value: "History", label: "History" },
@@ -13803,7 +14517,7 @@ const formData = [
             name: ['customfields', 'dob'],
             place: 'Enter Date of Birth',
             id: 'dob',
-            type: 'text',
+            type: 'date',
             required: 'require'
           },
           {
@@ -13848,7 +14562,7 @@ const formData = [
             required: 'require',
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Online Payment', label: 'Online Payment' },
+            { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
           {
@@ -13879,7 +14593,7 @@ const formData = [
 
           {
             key: 'select ',
-            label: 'Counselor Email ',
+            label: 'Counselors ',
             name: ['customfields', 'counselor_email'],
             id: 'email ',
             type: 'select',
@@ -13959,7 +14673,7 @@ const formData = [
           {
             key: 'file',
             label: 'Upload Fee Receipt Screenshot',
-            name: 'image',
+            name: ['customfields', 'upload_fee_receipt_screenshot'],
             place: 'Upload Fee Receipt Screenshot',
             id: 'Upload Fee Receipt Screenshot',
             type: 'file',
@@ -13967,30 +14681,39 @@ const formData = [
 
           },
           {
-            key: 'text',
+            key: 'file',
             label: 'Uplaod Student Document',
             name: ['customfields', 'upload_student_document'],
-            place: 'Enter Counselor Email',
+            place: 'Uplaod Student Document',
             id: 'Uplaod Student Document',
-            type: 'text',
+            type: 'file',
           },
           {
             key: 'textarea',
             label: 'Remark',
             name: ['customfields', 'remark'],
-            place: 'Enter Counselor Email',
-            id: 'Uplaod Student Document',
+            place: 'Remark',
+            id: 'remark',
             type: 'textarea',
           },
         ],
       },
       {
-        // 14th university complete date 
+        // First university complete date 
         label: 'UU',
         name: ['customfields', 'university_name'],
         value: 'UU',
         fields: [
           {
+            key: 'radio',
+            label: 'Want to send Fee Receipt',
+            id: 'Send',
+            name: ['customfields', 'send_fee_receipt'],
+            type: 'radio',
+            options: ['yes', 'no'],
+            required: 'require'
+          },
+          {
             key: 'studentId',
             name: 'lead_id',
             label: 'StudentID',
@@ -14027,24 +14750,42 @@ const formData = [
             required: 'require'
           },
           {
+            key: 'text',
+            label: 'Father Name',
+            name: ['customfields', 'father_name'],
+            place: 'Enter Father Name',
+            id: 'Father Name',
+            type: 'text',
+            required: 'require'
+          },
+          {
+            key: 'text',
+            label: 'Mother Name',
+            name: ['customfields', 'mother_name'],
+            place: 'Enter Mother Name',
+            id: 'mother_name',
+            type: 'text',
+            required: 'require'
+          },
+          {
             key: 'select',
             label: 'Session',
             name: ['customfields', 'session'],
-            place: 'eg: jan 20-jan 23',
+            place: 'eg: jan 20',
             id: 'Session',
             type: 'select',
-            options: [{ value: 'jan 20-jan 20', label: 'Jan 20-Jan 20' },
-            { value: 'july 20-july 20', label: 'July 20-July 20' },
-            { value: 'jan 21-jan 21', label: 'Jan 21-Jan 21' },
-            { value: 'july 21-july 21', label: 'July 21-July 21' },
-            { value: 'jan 22-jan 22', label: 'Jan 22-Jan 22' },
-            { value: 'july 22-july 22', label: 'July 22-July 22' },
-            { value: 'jan 23-jan 23', label: 'Jan 23-Jan 23' },
-            { value: 'july 23-july 23', label: 'July 23-July 23' },
-            { value: 'jan 24-jan 24', label: 'Jan 24-Jan 24' },
-            { value: 'july 24-july 24', label: 'July 24-July 24' },
-            { value: 'jan 25-jan 25', label: 'Jan 25-Jan 25' },
-            { value: 'july 25-july 25', label: 'July 25-July 25' }],
+            options: [{ value: 'jan 20', label: 'Jan 20' },
+            { value: 'july 20', label: 'July 20' },
+            { value: 'jan 21', label: 'Jan 21' },
+            { value: 'july 21', label: 'July 21' },
+            { value: 'jan 22', label: 'Jan 22' },
+            { value: 'july 22', label: 'July 22' },
+            { value: 'jan 23', label: 'Jan 23' },
+            { value: 'july 23', label: 'July 23' },
+            { value: 'jan 24', label: 'Jan 24' },
+            { value: 'july 24', label: 'July 24' },
+            { value: 'jan 25', label: 'Jan 25' },
+            { value: 'july 25', label: 'July 25' }],
             required: 'require'
           },
           {
@@ -14054,7 +14795,7 @@ const formData = [
             id: 'SessionType',
             place: 'Enter Admission Type',
             type: 'select',
-            options: [{ value: 'Fresher', lable: 'Fresher' },
+            options: [{ value: 'Fresh', label: 'Fresh' },
             { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
           },
           {
@@ -14071,7 +14812,7 @@ const formData = [
                   { "value": "Political science", "label": "Political science" },
                   { "value": "Sociology", "label": "Sociology" },
                   { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
-                  { "value": 'Geography', lable: 'Geography' },
+                  { "value": 'Geography', label: 'Geography' },
                 ],
               },
               {
@@ -14137,7 +14878,7 @@ const formData = [
                 value: "MA",
                 label: "MA",
                 specializations: [
-                  { value: "Economics", lable: "Economics" },
+                  { value: "Economics", label: "Economics" },
                   { value: "English", label: "English" },
                   { value: "Geography", label: "Geography" },
                   { value: "History", label: "History" },
@@ -14215,7 +14956,15 @@ const formData = [
               },
             ]
           },
-
+          {
+            key: 'date',
+            label: 'Date of Birth',
+            name: ['customfields', 'dob'],
+            place: 'Enter Date of Birth',
+            id: 'dob',
+            type: 'date',
+            required: 'require'
+          },
           {
             key: 'select',
             label: 'Gender',
@@ -14258,7 +15007,7 @@ const formData = [
             required: 'require',
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Online Payment', label: 'Online Payment' },
+            { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
           {
@@ -14289,7 +15038,7 @@ const formData = [
 
           {
             key: 'select ',
-            label: 'Counselor Email ',
+            label: 'Counselors ',
             name: ['customfields', 'counselor_email'],
             id: 'email ',
             type: 'select',
@@ -14369,7 +15118,7 @@ const formData = [
           {
             key: 'file',
             label: 'Upload Fee Receipt Screenshot',
-            name: 'image',
+            name: ['customfields', 'upload_fee_receipt_screenshot'],
             place: 'Upload Fee Receipt Screenshot',
             id: 'Upload Fee Receipt Screenshot',
             type: 'file',
@@ -14377,30 +15126,39 @@ const formData = [
 
           },
           {
-            key: 'text',
+            key: 'file',
             label: 'Uplaod Student Document',
             name: ['customfields', 'upload_student_document'],
-            place: 'Enter Counselor Email',
+            place: 'Uplaod Student Document',
             id: 'Uplaod Student Document',
-            type: 'text',
+            type: 'file',
           },
           {
             key: 'textarea',
             label: 'Remark',
             name: ['customfields', 'remark'],
-            place: 'Enter Counselor Email',
-            id: 'Uplaod Student Document',
+            place: 'Remark',
+            id: 'remark',
             type: 'textarea',
           },
         ],
       },
       {
-        // 15th university complete date 
+        // First university complete date 
         label: 'UPES',
         name: ['customfields', 'university_name'],
         value: 'UPES',
         fields: [
           {
+            key: 'radio',
+            label: 'Want to send Fee Receipt',
+            id: 'Send',
+            name: ['customfields', 'send_fee_receipt'],
+            type: 'radio',
+            options: ['yes', 'no'],
+            required: 'require'
+          },
+          {
             key: 'studentId',
             name: 'lead_id',
             label: 'StudentID',
@@ -14437,24 +15195,42 @@ const formData = [
             required: 'require'
           },
           {
+            key: 'text',
+            label: 'Father Name',
+            name: ['customfields', 'father_name'],
+            place: 'Enter Father Name',
+            id: 'Father Name',
+            type: 'text',
+            required: 'require'
+          },
+          {
+            key: 'text',
+            label: 'Mother Name',
+            name: ['customfields', 'mother_name'],
+            place: 'Enter Mother Name',
+            id: 'mother_name',
+            type: 'text',
+            required: 'require'
+          },
+          {
             key: 'select',
             label: 'Session',
             name: ['customfields', 'session'],
-            place: 'eg: jan 20-jan 23',
+            place: 'eg: jan 20',
             id: 'Session',
             type: 'select',
-            options: [{ value: 'jan 20-jan 20', label: 'Jan 20-Jan 20' },
-            { value: 'july 20-july 20', label: 'July 20-July 20' },
-            { value: 'jan 21-jan 21', label: 'Jan 21-Jan 21' },
-            { value: 'july 21-july 21', label: 'July 21-July 21' },
-            { value: 'jan 22-jan 22', label: 'Jan 22-Jan 22' },
-            { value: 'july 22-july 22', label: 'July 22-July 22' },
-            { value: 'jan 23-jan 23', label: 'Jan 23-Jan 23' },
-            { value: 'july 23-july 23', label: 'July 23-July 23' },
-            { value: 'jan 24-jan 24', label: 'Jan 24-Jan 24' },
-            { value: 'july 24-july 24', label: 'July 24-July 24' },
-            { value: 'jan 25-jan 25', label: 'Jan 25-Jan 25' },
-            { value: 'july 25-july 25', label: 'July 25-July 25' }],
+            options: [{ value: 'jan 20', label: 'Jan 20' },
+            { value: 'july 20', label: 'July 20' },
+            { value: 'jan 21', label: 'Jan 21' },
+            { value: 'july 21', label: 'July 21' },
+            { value: 'jan 22', label: 'Jan 22' },
+            { value: 'july 22', label: 'July 22' },
+            { value: 'jan 23', label: 'Jan 23' },
+            { value: 'july 23', label: 'July 23' },
+            { value: 'jan 24', label: 'Jan 24' },
+            { value: 'july 24', label: 'July 24' },
+            { value: 'jan 25', label: 'Jan 25' },
+            { value: 'july 25', label: 'July 25' }],
             required: 'require'
           },
           {
@@ -14464,7 +15240,7 @@ const formData = [
             id: 'SessionType',
             place: 'Enter Admission Type',
             type: 'select',
-            options: [{ value: 'Fresher', lable: 'Fresher' },
+            options: [{ value: 'Fresh', label: 'Fresh' },
             { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
           },
           {
@@ -14481,7 +15257,7 @@ const formData = [
                   { "value": "Political science", "label": "Political science" },
                   { "value": "Sociology", "label": "Sociology" },
                   { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
-                  { "value": 'Geography', lable: 'Geography' },
+                  { "value": 'Geography', label: 'Geography' },
                 ],
               },
               {
@@ -14547,7 +15323,7 @@ const formData = [
                 value: "MA",
                 label: "MA",
                 specializations: [
-                  { value: "Economics", lable: "Economics" },
+                  { value: "Economics", label: "Economics" },
                   { value: "English", label: "English" },
                   { value: "Geography", label: "Geography" },
                   { value: "History", label: "History" },
@@ -14625,7 +15401,15 @@ const formData = [
               },
             ]
           },
-
+          {
+            key: 'date',
+            label: 'Date of Birth',
+            name: ['customfields', 'dob'],
+            place: 'Enter Date of Birth',
+            id: 'dob',
+            type: 'date',
+            required: 'require'
+          },
           {
             key: 'select',
             label: 'Gender',
@@ -14668,7 +15452,7 @@ const formData = [
             required: 'require',
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Online Payment', label: 'Online Payment' },
+            { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
           {
@@ -14699,7 +15483,7 @@ const formData = [
 
           {
             key: 'select ',
-            label: 'Counselor Email ',
+            label: 'Counselors ',
             name: ['customfields', 'counselor_email'],
             id: 'email ',
             type: 'select',
@@ -14779,7 +15563,7 @@ const formData = [
           {
             key: 'file',
             label: 'Upload Fee Receipt Screenshot',
-            name: 'image',
+            name: ['customfields', 'upload_fee_receipt_screenshot'],
             place: 'Upload Fee Receipt Screenshot',
             id: 'Upload Fee Receipt Screenshot',
             type: 'file',
@@ -14787,29 +15571,38 @@ const formData = [
 
           },
           {
-            key: 'text',
+            key: 'file',
             label: 'Uplaod Student Document',
             name: ['customfields', 'upload_student_document'],
-            place: 'Enter Counselor Email',
+            place: 'Uplaod Student Document',
             id: 'Uplaod Student Document',
-            type: 'text',
+            type: 'file',
           },
           {
             key: 'textarea',
             label: 'Remark',
             name: ['customfields', 'remark'],
-            place: 'Enter Counselor Email',
-            id: 'Uplaod Student Document',
+            place: 'Remark',
+            id: 'remark',
             type: 'textarea',
           },
         ],
       },
       {
-        // 15th university complete date 
+        // First university complete date 
         label: 'MRU',
         name: ['customfields', 'university_name'],
         value: 'MRU',
         fields: [
+          {
+            key: 'radio',
+            label: 'Want to send Fee Receipt',
+            id: 'Send',
+            name: ['customfields', 'send_fee_receipt'],
+            type: 'radio',
+            options: ['yes', 'no'],
+            required: 'require'
+          },
           {
             key: 'studentId',
             name: 'lead_id',
@@ -14847,24 +15640,42 @@ const formData = [
             required: 'require'
           },
           {
+            key: 'text',
+            label: 'Father Name',
+            name: ['customfields', 'father_name'],
+            place: 'Enter Father Name',
+            id: 'Father Name',
+            type: 'text',
+            required: 'require'
+          },
+          {
+            key: 'text',
+            label: 'Mother Name',
+            name: ['customfields', 'mother_name'],
+            place: 'Enter Mother Name',
+            id: 'mother_name',
+            type: 'text',
+            required: 'require'
+          },
+          {
             key: 'select',
             label: 'Session',
             name: ['customfields', 'session'],
-            place: 'eg: jan 20-jan 23',
+            place: 'eg: jan 20',
             id: 'Session',
             type: 'select',
-            options: [{ value: 'jan 20-jan 20', label: 'Jan 20-Jan 20' },
-            { value: 'july 20-july 20', label: 'July 20-July 20' },
-            { value: 'jan 21-jan 21', label: 'Jan 21-Jan 21' },
-            { value: 'july 21-july 21', label: 'July 21-July 21' },
-            { value: 'jan 22-jan 22', label: 'Jan 22-Jan 22' },
-            { value: 'july 22-july 22', label: 'July 22-July 22' },
-            { value: 'jan 23-jan 23', label: 'Jan 23-Jan 23' },
-            { value: 'july 23-july 23', label: 'July 23-July 23' },
-            { value: 'jan 24-jan 24', label: 'Jan 24-Jan 24' },
-            { value: 'july 24-july 24', label: 'July 24-July 24' },
-            { value: 'jan 25-jan 25', label: 'Jan 25-Jan 25' },
-            { value: 'july 25-july 25', label: 'July 25-July 25' }],
+            options: [{ value: 'jan 20', label: 'Jan 20' },
+            { value: 'july 20', label: 'July 20' },
+            { value: 'jan 21', label: 'Jan 21' },
+            { value: 'july 21', label: 'July 21' },
+            { value: 'jan 22', label: 'Jan 22' },
+            { value: 'july 22', label: 'July 22' },
+            { value: 'jan 23', label: 'Jan 23' },
+            { value: 'july 23', label: 'July 23' },
+            { value: 'jan 24', label: 'Jan 24' },
+            { value: 'july 24', label: 'July 24' },
+            { value: 'jan 25', label: 'Jan 25' },
+            { value: 'july 25', label: 'July 25' }],
             required: 'require'
           },
           {
@@ -14874,7 +15685,7 @@ const formData = [
             id: 'SessionType',
             place: 'Enter Admission Type',
             type: 'select',
-            options: [{ value: 'Fresher', lable: 'Fresher' },
+            options: [{ value: 'Fresh', label: 'Fresh' },
             { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
           },
           {
@@ -14891,7 +15702,7 @@ const formData = [
                   { "value": "Political science", "label": "Political science" },
                   { "value": "Sociology", "label": "Sociology" },
                   { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
-                  { "value": 'Geography', lable: 'Geography' },
+                  { "value": 'Geography', label: 'Geography' },
                 ],
               },
               {
@@ -14957,7 +15768,7 @@ const formData = [
                 value: "MA",
                 label: "MA",
                 specializations: [
-                  { value: "Economics", lable: "Economics" },
+                  { value: "Economics", label: "Economics" },
                   { value: "English", label: "English" },
                   { value: "Geography", label: "Geography" },
                   { value: "History", label: "History" },
@@ -15035,7 +15846,15 @@ const formData = [
               },
             ]
           },
-
+          {
+            key: 'date',
+            label: 'Date of Birth',
+            name: ['customfields', 'dob'],
+            place: 'Enter Date of Birth',
+            id: 'dob',
+            type: 'date',
+            required: 'require'
+          },
           {
             key: 'select',
             label: 'Gender',
@@ -15078,7 +15897,7 @@ const formData = [
             required: 'require',
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Online Payment', label: 'Online Payment' },
+            { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
           {
@@ -15109,7 +15928,7 @@ const formData = [
 
           {
             key: 'select ',
-            label: 'Counselor Email ',
+            label: 'Counselors ',
             name: ['customfields', 'counselor_email'],
             id: 'email ',
             type: 'select',
@@ -15189,7 +16008,7 @@ const formData = [
           {
             key: 'file',
             label: 'Upload Fee Receipt Screenshot',
-            name: 'image',
+            name: ['customfields', 'upload_fee_receipt_screenshot'],
             place: 'Upload Fee Receipt Screenshot',
             id: 'Upload Fee Receipt Screenshot',
             type: 'file',
@@ -15197,19 +16016,19 @@ const formData = [
 
           },
           {
-            key: 'text',
+            key: 'file',
             label: 'Uplaod Student Document',
             name: ['customfields', 'upload_student_document'],
-            place: 'Enter Counselor Email',
+            place: 'Uplaod Student Document',
             id: 'Uplaod Student Document',
-            type: 'text',
+            type: 'file',
           },
           {
             key: 'textarea',
             label: 'Remark',
             name: ['customfields', 'remark'],
-            place: 'Enter Counselor Email',
-            id: 'Uplaod Student Document',
+            place: 'Remark',
+            id: 'remark',
             type: 'textarea',
           },
         ],
@@ -15287,21 +16106,21 @@ const formData = [
             key: 'select',
             label: 'Session',
             name: ['customfields', 'session'],
-            place: 'eg: jan 20-jan 23',
+            place: 'eg: jan 20',
             id: 'Session',
             type: 'select',
-            options: [{ value: 'jan 20-jan 20', label: 'Jan 20-Jan 20' },
-            { value: 'july 20-july 20', label: 'July 20-July 20' },
-            { value: 'jan 21-jan 21', label: 'Jan 21-Jan 21' },
-            { value: 'july 21-july 21', label: 'July 21-July 21' },
-            { value: 'jan 22-jan 22', label: 'Jan 22-Jan 22' },
-            { value: 'july 22-july 22', label: 'July 22-July 22' },
-            { value: 'jan 23-jan 23', label: 'Jan 23-Jan 23' },
-            { value: 'july 23-july 23', label: 'July 23-July 23' },
-            { value: 'jan 24-jan 24', label: 'Jan 24-Jan 24' },
-            { value: 'july 24-july 24', label: 'July 24-July 24' },
-            { value: 'jan 25-jan 25', label: 'Jan 25-Jan 25' },
-            { value: 'july 25-july 25', label: 'July 25-July 25' }],
+            options: [{ value: 'jan 20', label: 'Jan 20' },
+            { value: 'july 20', label: 'July 20' },
+            { value: 'jan 21', label: 'Jan 21' },
+            { value: 'july 21', label: 'July 21' },
+            { value: 'jan 22', label: 'Jan 22' },
+            { value: 'july 22', label: 'July 22' },
+            { value: 'jan 23', label: 'Jan 23' },
+            { value: 'july 23', label: 'July 23' },
+            { value: 'jan 24', label: 'Jan 24' },
+            { value: 'july 24', label: 'July 24' },
+            { value: 'jan 25', label: 'Jan 25' },
+            { value: 'july 25', label: 'July 25' }],
             required: 'require'
           },
           {
@@ -15311,7 +16130,7 @@ const formData = [
             id: 'SessionType',
             place: 'Enter Admission Type',
             type: 'select',
-            options: [{ value: 'Fresher', lable: 'Fresher' },
+            options: [{ value: 'Fresh', label: 'Fresh' },
             { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
           },
           {
@@ -15328,7 +16147,7 @@ const formData = [
                   { "value": "Political science", "label": "Political science" },
                   { "value": "Sociology", "label": "Sociology" },
                   { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
-                  { "value": 'Geography', lable: 'Geography' },
+                  { "value": 'Geography', label: 'Geography' },
                 ],
               },
               {
@@ -15394,7 +16213,7 @@ const formData = [
                 value: "MA",
                 label: "MA",
                 specializations: [
-                  { value: "Economics", lable: "Economics" },
+                  { value: "Economics", label: "Economics" },
                   { value: "English", label: "English" },
                   { value: "Geography", label: "Geography" },
                   { value: "History", label: "History" },
@@ -15478,7 +16297,7 @@ const formData = [
             name: ['customfields', 'dob'],
             place: 'Enter Date of Birth',
             id: 'dob',
-            type: 'text',
+            type: 'date',
             required: 'require'
           },
           {
@@ -15523,7 +16342,7 @@ const formData = [
             required: 'require',
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Online Payment', label: 'Online Payment' },
+            { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
           {
@@ -15554,7 +16373,7 @@ const formData = [
 
           {
             key: 'select ',
-            label: 'Counselor Email ',
+            label: 'Counselors ',
             name: ['customfields', 'counselor_email'],
             id: 'email ',
             type: 'select',
@@ -15634,7 +16453,7 @@ const formData = [
           {
             key: 'file',
             label: 'Upload Fee Receipt Screenshot',
-            name: 'image',
+            name: ['customfields', 'upload_fee_receipt_screenshot'],
             place: 'Upload Fee Receipt Screenshot',
             id: 'Upload Fee Receipt Screenshot',
             type: 'file',
@@ -15642,19 +16461,19 @@ const formData = [
 
           },
           {
-            key: 'text',
+            key: 'file',
             label: 'Uplaod Student Document',
             name: ['customfields', 'upload_student_document'],
-            place: 'Enter Counselor Email',
+            place: 'Uplaod Student Document',
             id: 'Uplaod Student Document',
-            type: 'text',
+            type: 'file',
           },
           {
             key: 'textarea',
             label: 'Remark',
             name: ['customfields', 'remark'],
-            place: 'Enter Counselor Email',
-            id: 'Uplaod Student Document',
+            place: 'Remark',
+            id: 'remark',
             type: 'textarea',
           },
         ],
@@ -15732,21 +16551,21 @@ const formData = [
             key: 'select',
             label: 'Session',
             name: ['customfields', 'session'],
-            place: 'eg: jan 20-jan 23',
+            place: 'eg: jan 20',
             id: 'Session',
             type: 'select',
-            options: [{ value: 'jan 20-jan 20', label: 'Jan 20-Jan 20' },
-            { value: 'july 20-july 20', label: 'July 20-July 20' },
-            { value: 'jan 21-jan 21', label: 'Jan 21-Jan 21' },
-            { value: 'july 21-july 21', label: 'July 21-July 21' },
-            { value: 'jan 22-jan 22', label: 'Jan 22-Jan 22' },
-            { value: 'july 22-july 22', label: 'July 22-July 22' },
-            { value: 'jan 23-jan 23', label: 'Jan 23-Jan 23' },
-            { value: 'july 23-july 23', label: 'July 23-July 23' },
-            { value: 'jan 24-jan 24', label: 'Jan 24-Jan 24' },
-            { value: 'july 24-july 24', label: 'July 24-July 24' },
-            { value: 'jan 25-jan 25', label: 'Jan 25-Jan 25' },
-            { value: 'july 25-july 25', label: 'July 25-July 25' }],
+            options: [{ value: 'jan 20', label: 'Jan 20' },
+            { value: 'july 20', label: 'July 20' },
+            { value: 'jan 21', label: 'Jan 21' },
+            { value: 'july 21', label: 'July 21' },
+            { value: 'jan 22', label: 'Jan 22' },
+            { value: 'july 22', label: 'July 22' },
+            { value: 'jan 23', label: 'Jan 23' },
+            { value: 'july 23', label: 'July 23' },
+            { value: 'jan 24', label: 'Jan 24' },
+            { value: 'july 24', label: 'July 24' },
+            { value: 'jan 25', label: 'Jan 25' },
+            { value: 'july 25', label: 'July 25' }],
             required: 'require'
           },
           {
@@ -15756,7 +16575,7 @@ const formData = [
             id: 'SessionType',
             place: 'Enter Admission Type',
             type: 'select',
-            options: [{ value: 'Fresher', lable: 'Fresher' },
+            options: [{ value: 'Fresh', label: 'Fresh' },
             { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
           },
           {
@@ -15773,7 +16592,7 @@ const formData = [
                   { "value": "Political science", "label": "Political science" },
                   { "value": "Sociology", "label": "Sociology" },
                   { "value": "Journalism and Mass Communication", "label": "Journalism and Mass Communication" },
-                  { "value": 'Geography', lable: 'Geography' },
+                  { "value": 'Geography', label: 'Geography' },
                 ],
               },
               {
@@ -15839,7 +16658,7 @@ const formData = [
                 value: "MA",
                 label: "MA",
                 specializations: [
-                  { value: "Economics", lable: "Economics" },
+                  { value: "Economics", label: "Economics" },
                   { value: "English", label: "English" },
                   { value: "Geography", label: "Geography" },
                   { value: "History", label: "History" },
@@ -15923,7 +16742,7 @@ const formData = [
             name: ['customfields', 'dob'],
             place: 'Enter Date of Birth',
             id: 'dob',
-            type: 'text',
+            type: 'date',
             required: 'require'
           },
           {
@@ -15968,7 +16787,7 @@ const formData = [
             required: 'require',
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Online Payment', label: 'Online Payment' },
+            { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
           {
@@ -15999,7 +16818,7 @@ const formData = [
 
           {
             key: 'select ',
-            label: 'Counselor Email ',
+            label: 'Counselors ',
             name: ['customfields', 'counselor_email'],
             id: 'email ',
             type: 'select',
@@ -16079,7 +16898,7 @@ const formData = [
           {
             key: 'file',
             label: 'Upload Fee Receipt Screenshot',
-            name: 'image',
+            name: ['customfields', 'upload_fee_receipt_screenshot'],
             place: 'Upload Fee Receipt Screenshot',
             id: 'Upload Fee Receipt Screenshot',
             type: 'file',
@@ -16087,19 +16906,19 @@ const formData = [
 
           },
           {
-            key: 'text',
+            key: 'file',
             label: 'Uplaod Student Document',
             name: ['customfields', 'upload_student_document'],
-            place: 'Enter Counselor Email',
+            place: 'Uplaod Student Document',
             id: 'Uplaod Student Document',
-            type: 'text',
+            type: 'file',
           },
           {
             key: 'textarea',
             label: 'Remark',
             name: ['customfields', 'remark'],
-            place: 'Enter Counselor Email',
-            id: 'Uplaod Student Document',
+            place: 'Remark',
+            id: 'remark',
             type: 'textarea',
           },
         ],

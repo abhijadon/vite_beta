@@ -92,18 +92,7 @@ const defaultStatistics = [
     tag: 'VIGNAN',
     value: 0,
   },
-  {
-    tag: 'VIGNAN',
-    value: 0,
-  },
-  {
-    tag: 'VIGNAN',
-    value: 0,
-  },
-  {
-    tag: 'VIGNAN',
-    value: 0,
-  },
+
 ];
 
 const defaultInvoiceStatistics = [

@@ -61,18 +61,18 @@ export default function LeadForm() {
                     name={['customfields', 'session']}
                 >
                     <Select placeholder='select session' options={[
-                        { value: 'jan 20-jan 20', label: 'Jan 20-Jan 20' },
-                        { value: 'july 20-july 20', label: 'July 20-July 20' },
-                        { value: 'jan 21-jan 21', label: 'Jan 21-Jan 21' },
-                        { value: 'july 21-july 21', label: 'July 21-July 21' },
-                        { value: 'jan 22-jan 22', label: 'Jan 22-Jan 22' },
-                        { value: 'july 22-july 22', label: 'July 22-July 22' },
-                        { value: 'jan 23-jan 23', label: 'Jan 23-Jan 23' },
-                        { value: 'july 23-july 23', label: 'July 23-July 23' },
-                        { value: 'jan 24-jan 24', label: 'Jan 24-Jan 24' },
-                        { value: 'july 24-july 24', label: 'July 24-July 24' },
-                        { value: 'jan 25-jan 25', label: 'Jan 25-Jan 25' },
-                        { value: 'july 25-july 25', label: 'July 25-July 25' }
+                        { value: 'jan 20', label: 'Jan 20' },
+                        { value: 'july 20', label: 'July 20' },
+                        { value: 'jan 21', label: 'Jan 21' },
+                        { value: 'july 21', label: 'July 21' },
+                        { value: 'jan 22', label: 'Jan 22' },
+                        { value: 'july 22', label: 'July 22' },
+                        { value: 'jan 23', label: 'Jan 23' },
+                        { value: 'july 23', label: 'July 23' },
+                        { value: 'jan 24', label: 'Jan 24' },
+                        { value: 'july 24', label: 'July 24' },
+                        { value: 'jan 25', label: 'Jan 25' },
+                        { value: 'july 25', label: 'July 25' }
                     ]}>
 
                     </Select>
@@ -239,7 +239,7 @@ export default function LeadForm() {
                         options={[
                             { value: 'DES Bank Account/UPI', label: translate('DES Bank Account/UPI') },
                             { value: 'University Bank Account', label: translate('University Bank Account') },
-                            { value: 'PayUMoney', label: 'PayUMoney' },
+                            { value: 'Payment Gateway', label: 'Payment Gateway' },
                             { value: 'Cash/DD', label: 'Cash/DD' },
 
                         ]}
@@ -250,13 +250,13 @@ export default function LeadForm() {
                     label={translate('Total Course Fee')}
                     name={['customfields', 'total_course_fee']}
                 >
-                    <Input />
+                    <Input disabled />
                 </Form.Item>
                 <Form.Item
                     label={translate('Total Paid Amount')}
                     name={['customfields', 'total_paid_amount']}
                 >
-                    <Input />
+                    <Input disabled />
                 </Form.Item>
                 <Form.Item
                     label={translate('Paid Amount')}

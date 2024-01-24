@@ -249,15 +249,7 @@ export default function DashboardModule() {
     />
   );
 
-  const paidAmountCard = (
-    <SummaryCard
-      title={translate('Recent Paid')}
-      tagColor={'green'}
-      prefix={translate('Paid Amount')}
-      isLoading={paymentLoading}
-      tagContent={`${moneyFormatter({ amount: filteredPaymentData.paid_amount || paymentResult?.paid_amount })}`}
-    />
-  );
+
 
   const dueAmountCard = (
     <SummaryCard
@@ -337,7 +329,6 @@ export default function DashboardModule() {
       <Row gutter={[32, 32]}>
         {invoiceCard}
         {totalPaidAmountCard}
-        {paidAmountCard}
         {dueAmountCard}
       </Row>
       <div className="space30"></div>
