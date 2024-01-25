@@ -26,6 +26,8 @@ export default function ReadPaymentModule({ config }) {
 
   item = currentResult;
   return (
+
+    
     <ErpLayout>
       {item ? <ReadItem config={config} selectedItem={item} /> : <PageLoader />}
     </ErpLayout>

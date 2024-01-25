@@ -13,13 +13,15 @@
   border-right: 1px solid #edf0f5;
   color: #4f5d75;
 }
-:where(.css-dkbvqv).ant-modal .ant-modal-close-x {
+:where(.css-1qhpsh8).ant-modal .ant-modal-close-x {
   color: red !important;
 }
 :where(.css-2i2tap).ant-picker {
   width: 100% !important;
 }
-:where(.css-2i2tap).ant-picker-dropdown .ant-picker-header button {
+:where(.css-dev-only-do-not-override-zl9ks2).ant-pagination
+  .ant-pagination-disabled
+  .ant-pagination-item-link {
   color: #1677ff !important;
 }
 :where(.css-dkbvqv).ant-picker-dropdown .ant-picker-header > button {

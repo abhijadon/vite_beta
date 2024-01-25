@@ -282,49 +282,12 @@ export default function LeadForm() {
                         ]}
                     ></Select>
                 </Form.Item>
-            </div>
-            <div className='grid grid-cols-3 gap-3'>
-                <Form.Item
-                    label={translate("upload student document")}
-                    name={['customfields', 'upload_student_document']}
-                    valuePropName="fileList"
-                    getValueFromEvent={(e) => e.fileList}
-                >
-                    <Dragger
-                        multiple
-                        beforeUpload={() => false} // Prevent automatic upload on file selection
-                    >
-                        <p className="ant-upload-drag-icon">
-                            <InboxOutlined />
-                        </p>
-                        <p className="ant-upload-text">Click or drag files to this area to upload</p>
-                        <p className="ant-upload-hint">Support for multiple images</p>
-                    </Dragger>
-                </Form.Item>
-                <Form.Item
-                    label={translate("student fee receipt")}
-                    name={['customfields', 'upload_fee_receipt_screenshot']}
-                    valuePropName="fileList"
-                    getValueFromEvent={(e) => e.fileList}
-
-                >
-                    <Dragger
-                        multiple
-                        beforeUpload={() => false}
-                    >
-                        <p className="ant-upload-drag-icon">
-                            <InboxOutlined />
-                        </p>
-                        <p className="ant-upload-text">Click or drag files to this area to upload</p>
-                        <p className="ant-upload-hint">Support for multiple images</p>
-                    </Dragger>
-                </Form.Item>
 
                 <Form.Item
                     label={translate('Remark')}
                     name={['customfields', 'remark']}
                 >
-                    <TextArea rows={7} />
+                    <TextArea rows={1} />
                 </Form.Item>
             </div>
         </>

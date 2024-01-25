@@ -1,11 +1,22 @@
 import { useState, useEffect } from 'react';
-import { Form, Select, Input, Checkbox, Radio, notification, Upload } from 'antd';
+import { Form, Select, Input, Checkbox, Radio, notification, Upload, message } from 'antd';
 import { InboxOutlined } from '@ant-design/icons';
 import formData from './formData';
 
 const { Option } = Select;
 const { Dragger } = Upload;
-
+const beforeUpload = (file) => {
+  const isJpgOrPng =
+    file.type === 'image/jpeg' || file.type === 'image/png' || file.type === 'image/svg+xml';
+  if (!isJpgOrPng) {
+    message.error('You can only upload JPG/PNG or SVG file!');
+  }
+  const isLt2M = file.size / 1024 / 1024 < 5;
+  if (!isLt2M) {
+    message.error('Image must smaller than 5MB!');
+  }
+  return false;
+};
 // Inside the component
 
 const openNotification = (fieldName) => {
@@ -342,7 +353,7 @@ export default function LeadForm() {
                 },
               ]}
             >
-              <Input.TextArea rows={7} placeholder={field.place} />
+              <Input.TextArea rows={1} placeholder={field.place} />
             </Form.Item>
           );
         case 'file':
@@ -372,7 +383,9 @@ export default function LeadForm() {
             >
               <Dragger
                 multiple
-                beforeUpload={() => false} // Prevent automatic upload on file selection
+                beforeUpload={beforeUpload}
+                listType="picture"
+                accept="image/png, image/jpeg ,image/svg+xml"
               >
                 <p className="ant-upload-drag-icon">
                   <InboxOutlined />
@@ -414,38 +427,48 @@ export default function LeadForm() {
               </Select>
             </Form.Item>
             {selectedUniversity && (
-              <Form.Item label="Select Course" name={['education', 'course']}>
-                <Select onChange={handleCourseChange} placeholder="--Select Course--">
-                  {formData
-                    .find((item) => item.value === selectedInstitute)
-                    .universities.find((university) => university.value === selectedUniversity)
-                    .fields[9]?.courses?.map((course) => (
-                      <Option key={course.value} value={course.value}>
-                        {course.label}
-                      </Option>
-                    ))}
-                </Select>
-              </Form.Item>
+              <>
+                {formData
+                  .find((item) => item.value === selectedInstitute)
+                  .universities.find((university) => university.value === selectedUniversity)
+                  .fields[9]?.courses ? (
+                  <Form.Item label="Select Course" name={['education', 'course']}>
+                    <Select onChange={handleCourseChange} placeholder="--Select Course--">
+                      {formData
+                        .find((item) => item.value === selectedInstitute)
+                        .universities.find((university) => university.value === selectedUniversity)
+                        .fields[9]?.courses?.map((course) => (
+                          <Option key={course.value} value={course.value}>
+                            {course.label}
+                          </Option>
+                        ))}
+                    </Select>
+                  </Form.Item>
+                ) : null}
+                {selectedCourse && (
+                  <div>
+                    <Form.Item label="Select Specialization" name={['customfields', 'enter_specialization']}>
+                      <Select
+                        placeholder="--Select Specialization--"
+                        onChange={handleSpecializationChange}
+                      >
+                        {formData
+                          .find((item) => item.value === selectedInstitute)
+                          .universities.find((university) => university.value === selectedUniversity)
+                          .fields[9]?.courses
+                          .find((course) => course.value === selectedCourse)
+                          ?.specializations?.map((specialization) => (
+                            <Option key={specialization.value} value={specialization.value}>
+                              {specialization.label}
+                            </Option>
+                          ))}
+                      </Select>
+                    </Form.Item>
+                  </div>
+                )}
+              </>
             )}
-            {selectedUniversity && selectedCourse && (
-              <Form.Item label="Select Specialization" name={['customfields', 'enter_specialization']}>
-                <Select
-                  placeholder="--Select Specialization--"
-                  onChange={handleSpecializationChange}
-                >
-                  {formData
-                    .find((item) => item.value === selectedInstitute)
-                    .universities.find((university) => university.value === selectedUniversity)
-                    .fields[9]?.courses
-                    .find((course) => course.value === selectedCourse)
-                    ?.specializations?.map((specialization) => (
-                      <Option key={specialization.value} value={specialization.value}>
-                        {specialization.label}
-                      </Option>
-                    ))}
-                </Select>
-              </Form.Item>
-            )}
+
           </>
         )}
       </form>

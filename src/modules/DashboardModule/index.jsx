@@ -238,7 +238,6 @@ export default function DashboardModule() {
       tagContent={`${moneyFormatter({ amount: filteredPaymentData.total_course_fee || paymentResult?.total_course_fee })}`}
     />
   );
-
   const totalPaidAmountCard = (
     <SummaryCard
       title={translate('Total Paid Amount')}
@@ -248,9 +247,6 @@ export default function DashboardModule() {
       tagContent={`${moneyFormatter({ amount: filteredPaymentData.total_paid_amount || paymentResult?.total_paid_amount })}`}
     />
   );
-
-
-
   const dueAmountCard = (
     <SummaryCard
       title={translate('Due Amount')}
@@ -261,7 +257,6 @@ export default function DashboardModule() {
     />
   );
   const getEmailName = (email) => {
-    console.log('Email:', email); // Log the email value
     if (!email) return '';
     const parts = email.split('@');
     return parts[0];
