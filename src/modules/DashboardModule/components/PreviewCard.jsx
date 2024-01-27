@@ -311,7 +311,11 @@ export default function PreviewCard({
             .sort(customSort)}
 
         {showAllUniversities && (
-          <Modal title="All Universities" visible={showAllUniversities} onCancel={toggleShowAllUniversities} footer={null}>
+          <Modal title={
+            <div className='mb-8' style={{ textAlign: 'center', borderBottom: '2px solid #efefef', width: '100%' }}>
+              <span style={{ paddingBottom: '4px' }}>All</span>
+            </div>
+          } visible={showAllUniversities} onCancel={toggleShowAllUniversities} footer={null} width={900}>
             <Row gutter={[16, 16]}>
               {statisticsMap?.map((status, index) => {
                 const count =

@@ -431,13 +431,13 @@ export default function LeadForm() {
                 {formData
                   .find((item) => item.value === selectedInstitute)
                   .universities.find((university) => university.value === selectedUniversity)
-                  .fields[9]?.courses ? (
+                  .fields[0]?.courses ? (
                   <Form.Item label="Select Course" name={['education', 'course']}>
                     <Select onChange={handleCourseChange} placeholder="--Select Course--">
                       {formData
                         .find((item) => item.value === selectedInstitute)
                         .universities.find((university) => university.value === selectedUniversity)
-                        .fields[9]?.courses?.map((course) => (
+                        .fields[0]?.courses?.map((course) => (
                           <Option key={course.value} value={course.value}>
                             {course.label}
                           </Option>
@@ -455,7 +455,7 @@ export default function LeadForm() {
                         {formData
                           .find((item) => item.value === selectedInstitute)
                           .universities.find((university) => university.value === selectedUniversity)
-                          .fields[9]?.courses
+                          .fields[0]?.courses
                           .find((course) => course.value === selectedCourse)
                           ?.specializations?.map((specialization) => (
                             <Option key={specialization.value} value={specialization.value}>
