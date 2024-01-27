@@ -24,6 +24,9 @@
   .ant-pagination-item-link {
   color: #1677ff !important;
 }
+.css-6hp17o-MuiList-root-MuiMenu-list {
+  padding: 0px !important;
+}
 :where(.css-dkbvqv).ant-picker-dropdown .ant-picker-header > button {
   color: #1677ff !important;
 }

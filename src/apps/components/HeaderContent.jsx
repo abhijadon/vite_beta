@@ -139,6 +139,7 @@ export default function HeaderContent() {
           {currentAdmin?.name.charAt(0).toUpperCase()}
         </Avatar>
       </Dropdown>
+      <SelectLanguage />
       <Badge count={notificationCount}>
         <Dropdown
           className='mt-2'
@@ -152,7 +153,6 @@ export default function HeaderContent() {
 
         </Dropdown>
       </Badge>
-      <SelectLanguage />
     </Header>
   );
 }

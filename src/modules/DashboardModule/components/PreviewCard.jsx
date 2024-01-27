@@ -51,18 +51,54 @@ const defaultStatistics = [
     tag: 'LPU',
     value: 0
   },
-  { tag: 'SVSU', value: 0 },
-  { tag: 'NMIMS', value: 0 },
-  { tag: 'VIGNAN', value: 0 },
-  { tag: 'HINDUSTAN', value: 0 },
-  { tag: 'MANIPAL', value: 0 },
-  { tag: 'SMU', value: 0 },
-  { tag: 'HU', value: 0 },
-  { tag: 'BOSSE', value: 0 },
-  { tag: 'SABARMATI', value: 0 },
-  { tag: 'MRU', value: 0 },
-  { tag: 'MANGALAYATAN', value: 0 },
-  { tag: 'MANGALAYATAN ONLINE', value: 0 },
+  {
+    tag: 'SVSU',
+    value: 0
+  },
+  {
+    tag: 'NMIMS',
+    value: 0
+  },
+  {
+    tag: 'VIGNAN',
+    value: 0
+  },
+  {
+    tag: 'HINDUSTAN',
+    value: 0
+  },
+  {
+    tag: 'MANIPAL',
+    value: 0
+  },
+  {
+    tag: 'SMU',
+    value: 0
+  },
+  {
+    tag: 'HU',
+    value: 0
+  },
+  {
+    tag: 'BOSSE',
+    value: 0
+  },
+  {
+    tag: 'SABARMATI',
+    value: 0
+  },
+  {
+    tag: 'MRU',
+    value: 0
+  },
+  {
+    tag: 'MANGALAYATAN',
+    value: 0
+  },
+  {
+    tag: 'MANGALAYATAN ONLINE',
+    value: 0
+  },
   {
     tag: 'UPES',
     value: 0,

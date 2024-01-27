@@ -435,7 +435,14 @@ const formData = [
               { value: 'Alumini', label: 'Alumini' },
             ],
           },
-
+          {
+            key: 'text',
+            label: 'LMS',
+            name: ['customfields', 'lms'],
+            place: 'Enter LMS',
+            id: 'lms',
+            type: 'text',
+          },
           {
             key: 'textarea',
             label: 'Remark',
@@ -1319,7 +1326,14 @@ const formData = [
               { value: 'Alumini', label: 'Alumini' },
             ],
           },
-
+          {
+            key: 'text',
+            label: 'LMS',
+            name: ['customfields', 'lms'],
+            place: 'Enter LMS',
+            id: 'lms',
+            type: 'text',
+          },
           {
             key: 'textarea',
             label: 'Remark',
