@@ -16,7 +16,7 @@ const colours = {
   cancel: '#13c2c2',
   Enrolled: '#722ed1',
   Alumini: '#614700',
-  Univeristy: '#614700',
+  University: '#614700',
   Institute: '#614700',
   CU: '#595959',
   JAIN: '#13c2c2',
@@ -36,7 +36,7 @@ const colours = {
 
 const defaultStatistics = [
   {
-    tag: 'Univeristy',
+    tag: 'University',
     value: 0,
   },
   {
@@ -44,7 +44,7 @@ const defaultStatistics = [
     value: 0,
   },
   {
-    tag: 'CU',
+    tag: 'SGVU',
     value: 0,
   },
   {
