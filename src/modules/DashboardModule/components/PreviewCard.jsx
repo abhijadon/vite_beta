@@ -273,42 +273,41 @@ export default function PreviewCard({
     });
     return counts;
   }, [instituteCounts]);
-
-  const customSort = (a, b) => {
+  const customSort = (a, b, counts) => {
     if (!a || !b) {
       return 0; // Add your desired handling for null values
     }
 
-    const colorOrder = Object.values(colours);
-    const indexA = colorOrder.indexOf(colours[a.tag]);
-    const indexB = colorOrder.indexOf(colours[b.tag]);
-    return indexA - indexB;
+    // Sort based on counts in descending order
+    const countA = counts[a.tag] || 0;
+    const countB = counts[b.tag] || 0;
+
+    return countB - countA;
+  };
+  const renderStatistics = (counts) => {
+    return statisticsMap
+      ?.sort((a, b) => customSort(a, b, counts))
+      .slice(0, 3)
+      .map((status, index) => {
+        const count = counts[status.tag];
+        return (
+          <PreviewState
+            key={index}
+            tag={status.tag}
+            color={colours[status.tag]}
+            value={status.value}
+            displayedValue={count !== undefined ? count.toString() : ''}
+          />
+        );
+      })
+      .filter(Boolean);
   };
 
   return (
     <Col className="gutter-row" xs={{ span: 24 }} sm={{ span: 24 }} md={{ span: 8 }} lg={{ span: 8 }}>
       <div className="pad20">
         <h3 style={{ color: '#22075e', fontSize: 'large', marginBottom: 40, marginTop: 0 }}>{title}</h3>
-        {!isLoading &&
-          statisticsMap
-            ?.slice(0, 3)
-            .map((status, index) => {
-              const count =
-                type === 'university'
-                  ? universityTagCounts[status.tag]
-                  : instituteTagCounts[status.tag];
-              return (
-                <PreviewState
-                  key={index}
-                  tag={status.tag}
-                  color={colours[status.tag]}
-                  value={status.value}
-                  displayedValue={count !== undefined ? count.toString() : ''} // Ensure displayedValue is defined
-                />
-              );
-            })
-            .filter(Boolean) // Filter out null values
-            .sort(customSort)}
+        {!isLoading && renderStatistics(type === 'university' ? universityTagCounts : instituteTagCounts)}
 
         {showAllUniversities && (
           <Modal title={
@@ -318,17 +317,14 @@ export default function PreviewCard({
           } visible={showAllUniversities} onCancel={toggleShowAllUniversities} footer={null} width={900}>
             <Row gutter={[16, 16]}>
               {statisticsMap?.map((status, index) => {
-                const count =
-                  type === 'university'
-                    ? universityTagCounts[status.tag]
-                    : instituteTagCounts[status.tag];
+                const count = type === 'university' ? universityTagCounts[status.tag] : instituteTagCounts[status.tag];
                 return (
                   <Col key={index} xs={{ span: 24 }} sm={{ span: 12 }} md={{ span: 12 }} lg={{ span: 6 }}>
                     <PreviewState
                       tag={status.tag}
                       color={colours[status.tag]}
                       value={status.value}
-                      displayedValue={count !== undefined ? count.toString() : ''} // Ensure displayedValue is defined
+                      displayedValue={count !== undefined ? count.toString() : ''}
                     />
                   </Col>
                 );
