@@ -68,6 +68,15 @@ const formData = [
                 ],
               },
               {
+                value: "BTECH",
+                label: "BTECH",
+                specializations: [
+                  { value: "Mechanical", label: "Mechanical" },
+                  { value: "Computer science", label: "Computer science" },
+                  { value: "IT", label: "IT" },
+                ],
+              },
+              {
                 value: "BCOM",
                 label: "BCOM",
                 specializations: [
@@ -340,7 +349,11 @@ const formData = [
             { value: 'jan 24', label: 'Jan 24' },
             { value: 'july 24', label: 'July 24' },
             { value: 'jan 25', label: 'Jan 25' },
-            { value: 'july 25', label: 'July 25' }],
+            { value: 'july 25', label: 'July 25' },
+            { value: 'mar 23', label: 'mar 23' },
+            { value: 'apr 23', label: 'apr 23' },
+            { value: 'oct 23', label: 'oct 23' },
+            { value: 'nov 23', label: 'nov 23' },],
             required: 'require'
           },
           {
@@ -443,8 +456,8 @@ const formData = [
             required: 'require',
             options: [{ value: 'zarin@highereducationschool.com', label: 'Zarin' },
             { value: 'kanchan@highereducationschool.com', label: 'Kanchan' },
-            { value: 'kirti@highereducationschool.com', label: 'Kirti   ' },
-            { value: 'ramandeep@highereducationschool.com', label: 'Raman  ' },
+            { value: 'kirti@highereducationschool.com', label: 'Kirti' },
+            { value: 'ramandeep@highereducationschool.com', label: 'Raman' },
             { value: 'kavita@highereducationschool.com', label: 'kavita' },
             { value: 'imra@highereducationschool.com', label: 'Imra' },
             { value: 'Mahak@highereducationschool.com', label: 'Mahek' },
@@ -606,6 +619,15 @@ const formData = [
                   { value: "General", label: "General" },
                   { value: "Cloud and Security", label: "Cloud and Security" },
                   { value: "Data Analytics", label: "Data Analytics" },
+                ],
+              },
+              {
+                value: "BTECH",
+                label: "BTECH",
+                specializations: [
+                  { value: "Mechanical", label: "Mechanical" },
+                  { value: "Computer science", label: "Computer science" },
+                  { value: "IT", label: "IT" },
                 ],
               },
               {
@@ -881,7 +903,11 @@ const formData = [
             { value: 'jan 24', label: 'Jan 24' },
             { value: 'july 24', label: 'July 24' },
             { value: 'jan 25', label: 'Jan 25' },
-            { value: 'july 25', label: 'July 25' }],
+            { value: 'july 25', label: 'July 25' },
+            { value: 'mar 23', label: 'mar 23' },
+            { value: 'apr 23', label: 'apr 23' },
+            { value: 'oct 23', label: 'oct 23' },
+            { value: 'nov 23', label: 'nov 23' },],
             required: 'require'
           },
           {
@@ -1150,6 +1176,15 @@ const formData = [
                 ],
               },
               {
+                value: "BTECH",
+                label: "BTECH",
+                specializations: [
+                  { value: "Mechanical", label: "Mechanical" },
+                  { value: "Computer science", label: "Computer science" },
+                  { value: "IT", label: "IT" },
+                ],
+              },
+              {
                 value: "BCOM",
                 label: "BCOM",
                 specializations: [
@@ -1422,7 +1457,11 @@ const formData = [
             { value: 'jan 24', label: 'Jan 24' },
             { value: 'july 24', label: 'July 24' },
             { value: 'jan 25', label: 'Jan 25' },
-            { value: 'july 25', label: 'July 25' }],
+            { value: 'july 25', label: 'July 25' },
+            { value: 'mar 23', label: 'mar 23' },
+            { value: 'apr 23', label: 'apr 23' },
+            { value: 'oct 23', label: 'oct 23' },
+            { value: 'nov 23', label: 'nov 23' },],
             required: 'require'
           },
           {
@@ -1691,6 +1730,15 @@ const formData = [
                 ],
               },
               {
+                value: "BTECH",
+                label: "BTECH",
+                specializations: [
+                  { value: "Mechanical", label: "Mechanical" },
+                  { value: "Computer science", label: "Computer science" },
+                  { value: "IT", label: "IT" },
+                ],
+              },
+              {
                 value: "BCOM",
                 label: "BCOM",
                 specializations: [
@@ -1963,7 +2011,11 @@ const formData = [
             { value: 'jan 24', label: 'Jan 24' },
             { value: 'july 24', label: 'July 24' },
             { value: 'jan 25', label: 'Jan 25' },
-            { value: 'july 25', label: 'July 25' }],
+            { value: 'july 25', label: 'July 25' },
+            { value: 'mar 23', label: 'mar 23' },
+            { value: 'apr 23', label: 'apr 23' },
+            { value: 'oct 23', label: 'oct 23' },
+            { value: 'nov 23', label: 'nov 23' },],
             required: 'require'
           },
           {
@@ -2232,6 +2284,15 @@ const formData = [
                 ],
               },
               {
+                value: "BTECH",
+                label: "BTECH",
+                specializations: [
+                  { value: "Mechanical", label: "Mechanical" },
+                  { value: "Computer science", label: "Computer science" },
+                  { value: "IT", label: "IT" },
+                ],
+              },
+              {
                 value: "BCOM",
                 label: "BCOM",
                 specializations: [
@@ -2504,7 +2565,11 @@ const formData = [
             { value: 'jan 24', label: 'Jan 24' },
             { value: 'july 24', label: 'July 24' },
             { value: 'jan 25', label: 'Jan 25' },
-            { value: 'july 25', label: 'July 25' }],
+            { value: 'july 25', label: 'July 25' },
+            { value: 'mar 23', label: 'mar 23' },
+            { value: 'apr 23', label: 'apr 23' },
+            { value: 'oct 23', label: 'oct 23' },
+            { value: 'nov 23', label: 'nov 23' },],
             required: 'require'
           },
           {
@@ -2773,6 +2838,15 @@ const formData = [
                 ],
               },
               {
+                value: "BTECH",
+                label: "BTECH",
+                specializations: [
+                  { value: "Mechanical", label: "Mechanical" },
+                  { value: "Computer science", label: "Computer science" },
+                  { value: "IT", label: "IT" },
+                ],
+              },
+              {
                 value: "BCOM",
                 label: "BCOM",
                 specializations: [
@@ -3045,7 +3119,11 @@ const formData = [
             { value: 'jan 24', label: 'Jan 24' },
             { value: 'july 24', label: 'July 24' },
             { value: 'jan 25', label: 'Jan 25' },
-            { value: 'july 25', label: 'July 25' }],
+            { value: 'july 25', label: 'July 25' },
+            { value: 'mar 23', label: 'mar 23' },
+            { value: 'apr 23', label: 'apr 23' },
+            { value: 'oct 23', label: 'oct 23' },
+            { value: 'nov 23', label: 'nov 23' },],
             required: 'require'
           },
           {
@@ -3314,6 +3392,15 @@ const formData = [
                 ],
               },
               {
+                value: "BTECH",
+                label: "BTECH",
+                specializations: [
+                  { value: "Mechanical", label: "Mechanical" },
+                  { value: "Computer science", label: "Computer science" },
+                  { value: "IT", label: "IT" },
+                ],
+              },
+              {
                 value: "BCOM",
                 label: "BCOM",
                 specializations: [
@@ -3586,7 +3673,11 @@ const formData = [
             { value: 'jan 24', label: 'Jan 24' },
             { value: 'july 24', label: 'July 24' },
             { value: 'jan 25', label: 'Jan 25' },
-            { value: 'july 25', label: 'July 25' }],
+            { value: 'july 25', label: 'July 25' },
+            { value: 'mar 23', label: 'mar 23' },
+            { value: 'apr 23', label: 'apr 23' },
+            { value: 'oct 23', label: 'oct 23' },
+            { value: 'nov 23', label: 'nov 23' },],
             required: 'require'
           },
           {
@@ -3855,6 +3946,15 @@ const formData = [
                 ],
               },
               {
+                value: "BTECH",
+                label: "BTECH",
+                specializations: [
+                  { value: "Mechanical", label: "Mechanical" },
+                  { value: "Computer science", label: "Computer science" },
+                  { value: "IT", label: "IT" },
+                ],
+              },
+              {
                 value: "BCOM",
                 label: "BCOM",
                 specializations: [
@@ -4127,7 +4227,11 @@ const formData = [
             { value: 'jan 24', label: 'Jan 24' },
             { value: 'july 24', label: 'July 24' },
             { value: 'jan 25', label: 'Jan 25' },
-            { value: 'july 25', label: 'July 25' }],
+            { value: 'july 25', label: 'July 25' },
+            { value: 'mar 23', label: 'mar 23' },
+            { value: 'apr 23', label: 'apr 23' },
+            { value: 'oct 23', label: 'oct 23' },
+            { value: 'nov 23', label: 'nov 23' },],
             required: 'require'
           },
           {
@@ -4396,6 +4500,15 @@ const formData = [
                 ],
               },
               {
+                value: "BTECH",
+                label: "BTECH",
+                specializations: [
+                  { value: "Mechanical", label: "Mechanical" },
+                  { value: "Computer science", label: "Computer science" },
+                  { value: "IT", label: "IT" },
+                ],
+              },
+              {
                 value: "BCOM",
                 label: "BCOM",
                 specializations: [
@@ -4668,7 +4781,11 @@ const formData = [
             { value: 'jan 24', label: 'Jan 24' },
             { value: 'july 24', label: 'July 24' },
             { value: 'jan 25', label: 'Jan 25' },
-            { value: 'july 25', label: 'July 25' }],
+            { value: 'july 25', label: 'July 25' },
+            { value: 'mar 23', label: 'mar 23' },
+            { value: 'apr 23', label: 'apr 23' },
+            { value: 'oct 23', label: 'oct 23' },
+            { value: 'nov 23', label: 'nov 23' },],
             required: 'require'
           },
           {
@@ -4937,6 +5054,15 @@ const formData = [
                 ],
               },
               {
+                value: "BTECH",
+                label: "BTECH",
+                specializations: [
+                  { value: "Mechanical", label: "Mechanical" },
+                  { value: "Computer science", label: "Computer science" },
+                  { value: "IT", label: "IT" },
+                ],
+              },
+              {
                 value: "BCOM",
                 label: "BCOM",
                 specializations: [
@@ -5209,7 +5335,11 @@ const formData = [
             { value: 'jan 24', label: 'Jan 24' },
             { value: 'july 24', label: 'July 24' },
             { value: 'jan 25', label: 'Jan 25' },
-            { value: 'july 25', label: 'July 25' }],
+            { value: 'july 25', label: 'July 25' },
+            { value: 'mar 23', label: 'mar 23' },
+            { value: 'apr 23', label: 'apr 23' },
+            { value: 'oct 23', label: 'oct 23' },
+            { value: 'nov 23', label: 'nov 23' },],
             required: 'require'
           },
           {
@@ -5478,6 +5608,15 @@ const formData = [
                 ],
               },
               {
+                value: "BTECH",
+                label: "BTECH",
+                specializations: [
+                  { value: "Mechanical", label: "Mechanical" },
+                  { value: "Computer science", label: "Computer science" },
+                  { value: "IT", label: "IT" },
+                ],
+              },
+              {
                 value: "BCOM",
                 label: "BCOM",
                 specializations: [
@@ -5750,7 +5889,11 @@ const formData = [
             { value: 'jan 24', label: 'Jan 24' },
             { value: 'july 24', label: 'July 24' },
             { value: 'jan 25', label: 'Jan 25' },
-            { value: 'july 25', label: 'July 25' }],
+            { value: 'july 25', label: 'July 25' },
+            { value: 'mar 23', label: 'mar 23' },
+            { value: 'apr 23', label: 'apr 23' },
+            { value: 'oct 23', label: 'oct 23' },
+            { value: 'nov 23', label: 'nov 23' },],
             required: 'require'
           },
           {
@@ -6019,6 +6162,15 @@ const formData = [
                 ],
               },
               {
+                value: "BTECH",
+                label: "BTECH",
+                specializations: [
+                  { value: "Mechanical", label: "Mechanical" },
+                  { value: "Computer science", label: "Computer science" },
+                  { value: "IT", label: "IT" },
+                ],
+              },
+              {
                 value: "BCOM",
                 label: "BCOM",
                 specializations: [
@@ -6291,7 +6443,11 @@ const formData = [
             { value: 'jan 24', label: 'Jan 24' },
             { value: 'july 24', label: 'July 24' },
             { value: 'jan 25', label: 'Jan 25' },
-            { value: 'july 25', label: 'July 25' }],
+            { value: 'july 25', label: 'July 25' },
+            { value: 'mar 23', label: 'mar 23' },
+            { value: 'apr 23', label: 'apr 23' },
+            { value: 'oct 23', label: 'oct 23' },
+            { value: 'nov 23', label: 'nov 23' },],
             required: 'require'
           },
           {
@@ -6560,6 +6716,15 @@ const formData = [
                 ],
               },
               {
+                value: "BTECH",
+                label: "BTECH",
+                specializations: [
+                  { value: "Mechanical", label: "Mechanical" },
+                  { value: "Computer science", label: "Computer science" },
+                  { value: "IT", label: "IT" },
+                ],
+              },
+              {
                 value: "BCOM",
                 label: "BCOM",
                 specializations: [
@@ -6832,7 +6997,11 @@ const formData = [
             { value: 'jan 24', label: 'Jan 24' },
             { value: 'july 24', label: 'July 24' },
             { value: 'jan 25', label: 'Jan 25' },
-            { value: 'july 25', label: 'July 25' }],
+            { value: 'july 25', label: 'July 25' },
+            { value: 'mar 23', label: 'mar 23' },
+            { value: 'apr 23', label: 'apr 23' },
+            { value: 'oct 23', label: 'oct 23' },
+            { value: 'nov 23', label: 'nov 23' },],
             required: 'require'
           },
           {
@@ -7101,6 +7270,15 @@ const formData = [
                 ],
               },
               {
+                value: "BTECH",
+                label: "BTECH",
+                specializations: [
+                  { value: "Mechanical", label: "Mechanical" },
+                  { value: "Computer science", label: "Computer science" },
+                  { value: "IT", label: "IT" },
+                ],
+              },
+              {
                 value: "BCOM",
                 label: "BCOM",
                 specializations: [
@@ -7373,7 +7551,11 @@ const formData = [
             { value: 'jan 24', label: 'Jan 24' },
             { value: 'july 24', label: 'July 24' },
             { value: 'jan 25', label: 'Jan 25' },
-            { value: 'july 25', label: 'July 25' }],
+            { value: 'july 25', label: 'July 25' },
+            { value: 'mar 23', label: 'mar 23' },
+            { value: 'apr 23', label: 'apr 23' },
+            { value: 'oct 23', label: 'oct 23' },
+            { value: 'nov 23', label: 'nov 23' },],
             required: 'require'
           },
           {
@@ -7642,6 +7824,15 @@ const formData = [
                 ],
               },
               {
+                value: "BTECH",
+                label: "BTECH",
+                specializations: [
+                  { value: "Mechanical", label: "Mechanical" },
+                  { value: "Computer science", label: "Computer science" },
+                  { value: "IT", label: "IT" },
+                ],
+              },
+              {
                 value: "BCOM",
                 label: "BCOM",
                 specializations: [
@@ -7914,7 +8105,11 @@ const formData = [
             { value: 'jan 24', label: 'Jan 24' },
             { value: 'july 24', label: 'July 24' },
             { value: 'jan 25', label: 'Jan 25' },
-            { value: 'july 25', label: 'July 25' }],
+            { value: 'july 25', label: 'July 25' },
+            { value: 'mar 23', label: 'mar 23' },
+            { value: 'apr 23', label: 'apr 23' },
+            { value: 'oct 23', label: 'oct 23' },
+            { value: 'nov 23', label: 'nov 23' },],
             required: 'require'
           },
           {
@@ -8183,6 +8378,15 @@ const formData = [
                 ],
               },
               {
+                value: "BTECH",
+                label: "BTECH",
+                specializations: [
+                  { value: "Mechanical", label: "Mechanical" },
+                  { value: "Computer science", label: "Computer science" },
+                  { value: "IT", label: "IT" },
+                ],
+              },
+              {
                 value: "BCOM",
                 label: "BCOM",
                 specializations: [
@@ -8455,7 +8659,11 @@ const formData = [
             { value: 'jan 24', label: 'Jan 24' },
             { value: 'july 24', label: 'July 24' },
             { value: 'jan 25', label: 'Jan 25' },
-            { value: 'july 25', label: 'July 25' }],
+            { value: 'july 25', label: 'July 25' },
+            { value: 'mar 23', label: 'mar 23' },
+            { value: 'apr 23', label: 'apr 23' },
+            { value: 'oct 23', label: 'oct 23' },
+            { value: 'nov 23', label: 'nov 23' },],
             required: 'require'
           },
           {
@@ -8724,6 +8932,15 @@ const formData = [
                 ],
               },
               {
+                value: "BTECH",
+                label: "BTECH",
+                specializations: [
+                  { value: "Mechanical", label: "Mechanical" },
+                  { value: "Computer science", label: "Computer science" },
+                  { value: "IT", label: "IT" },
+                ],
+              },
+              {
                 value: "BCOM",
                 label: "BCOM",
                 specializations: [
@@ -8996,7 +9213,11 @@ const formData = [
             { value: 'jan 24', label: 'Jan 24' },
             { value: 'july 24', label: 'July 24' },
             { value: 'jan 25', label: 'Jan 25' },
-            { value: 'july 25', label: 'July 25' }],
+            { value: 'july 25', label: 'July 25' },
+            { value: 'mar 23', label: 'mar 23' },
+            { value: 'apr 23', label: 'apr 23' },
+            { value: 'oct 23', label: 'oct 23' },
+            { value: 'nov 23', label: 'nov 23' },],
             required: 'require'
           },
           {
@@ -9265,6 +9486,15 @@ const formData = [
                 ],
               },
               {
+                value: "BTECH",
+                label: "BTECH",
+                specializations: [
+                  { value: "Mechanical", label: "Mechanical" },
+                  { value: "Computer science", label: "Computer science" },
+                  { value: "IT", label: "IT" },
+                ],
+              },
+              {
                 value: "BCOM",
                 label: "BCOM",
                 specializations: [
@@ -9537,7 +9767,11 @@ const formData = [
             { value: 'jan 24', label: 'Jan 24' },
             { value: 'july 24', label: 'July 24' },
             { value: 'jan 25', label: 'Jan 25' },
-            { value: 'july 25', label: 'July 25' }],
+            { value: 'july 25', label: 'July 25' },
+            { value: 'mar 23', label: 'mar 23' },
+            { value: 'apr 23', label: 'apr 23' },
+            { value: 'oct 23', label: 'oct 23' },
+            { value: 'nov 23', label: 'nov 23' },],
             required: 'require'
           },
           {
@@ -9806,6 +10040,15 @@ const formData = [
                 ],
               },
               {
+                value: "BTECH",
+                label: "BTECH",
+                specializations: [
+                  { value: "Mechanical", label: "Mechanical" },
+                  { value: "Computer science", label: "Computer science" },
+                  { value: "IT", label: "IT" },
+                ],
+              },
+              {
                 value: "BCOM",
                 label: "BCOM",
                 specializations: [
@@ -10078,7 +10321,11 @@ const formData = [
             { value: 'jan 24', label: 'Jan 24' },
             { value: 'july 24', label: 'July 24' },
             { value: 'jan 25', label: 'Jan 25' },
-            { value: 'july 25', label: 'July 25' }],
+            { value: 'july 25', label: 'July 25' },
+            { value: 'mar 23', label: 'mar 23' },
+            { value: 'apr 23', label: 'apr 23' },
+            { value: 'oct 23', label: 'oct 23' },
+            { value: 'nov 23', label: 'nov 23' },],
             required: 'require'
           },
           {
@@ -10356,6 +10603,15 @@ const formData = [
                 ],
               },
               {
+                value: "BTECH",
+                label: "BTECH",
+                specializations: [
+                  { value: "Mechanical", label: "Mechanical" },
+                  { value: "Computer science", label: "Computer science" },
+                  { value: "IT", label: "IT" },
+                ],
+              },
+              {
                 value: "BCOM",
                 label: "BCOM",
                 specializations: [
@@ -10628,7 +10884,11 @@ const formData = [
             { value: 'jan 24', label: 'Jan 24' },
             { value: 'july 24', label: 'July 24' },
             { value: 'jan 25', label: 'Jan 25' },
-            { value: 'july 25', label: 'July 25' }],
+            { value: 'july 25', label: 'July 25' },
+            { value: 'mar 23', label: 'mar 23' },
+            { value: 'apr 23', label: 'apr 23' },
+            { value: 'oct 23', label: 'oct 23' },
+            { value: 'nov 23', label: 'nov 23' },],
             required: 'require'
           },
           {
@@ -10897,6 +11157,15 @@ const formData = [
                 ],
               },
               {
+                value: "BTECH",
+                label: "BTECH",
+                specializations: [
+                  { value: "Mechanical", label: "Mechanical" },
+                  { value: "Computer science", label: "Computer science" },
+                  { value: "IT", label: "IT" },
+                ],
+              },
+              {
                 value: "BCOM",
                 label: "BCOM",
                 specializations: [
@@ -11169,7 +11438,11 @@ const formData = [
             { value: 'jan 24', label: 'Jan 24' },
             { value: 'july 24', label: 'July 24' },
             { value: 'jan 25', label: 'Jan 25' },
-            { value: 'july 25', label: 'July 25' }],
+            { value: 'july 25', label: 'July 25' },
+            { value: 'mar 23', label: 'mar 23' },
+            { value: 'apr 23', label: 'apr 23' },
+            { value: 'oct 23', label: 'oct 23' },
+            { value: 'nov 23', label: 'nov 23' },],
             required: 'require'
           },
           {
@@ -11438,6 +11711,15 @@ const formData = [
                 ],
               },
               {
+                value: "BTECH",
+                label: "BTECH",
+                specializations: [
+                  { value: "Mechanical", label: "Mechanical" },
+                  { value: "Computer science", label: "Computer science" },
+                  { value: "IT", label: "IT" },
+                ],
+              },
+              {
                 value: "BCOM",
                 label: "BCOM",
                 specializations: [
@@ -11710,7 +11992,11 @@ const formData = [
             { value: 'jan 24', label: 'Jan 24' },
             { value: 'july 24', label: 'July 24' },
             { value: 'jan 25', label: 'Jan 25' },
-            { value: 'july 25', label: 'July 25' }],
+            { value: 'july 25', label: 'July 25' },
+            { value: 'mar 23', label: 'mar 23' },
+            { value: 'apr 23', label: 'apr 23' },
+            { value: 'oct 23', label: 'oct 23' },
+            { value: 'nov 23', label: 'nov 23' },],
             required: 'require'
           },
           {
@@ -11979,6 +12265,15 @@ const formData = [
                 ],
               },
               {
+                value: "BTECH",
+                label: "BTECH",
+                specializations: [
+                  { value: "Mechanical", label: "Mechanical" },
+                  { value: "Computer science", label: "Computer science" },
+                  { value: "IT", label: "IT" },
+                ],
+              },
+              {
                 value: "BCOM",
                 label: "BCOM",
                 specializations: [
@@ -12251,7 +12546,11 @@ const formData = [
             { value: 'jan 24', label: 'Jan 24' },
             { value: 'july 24', label: 'July 24' },
             { value: 'jan 25', label: 'Jan 25' },
-            { value: 'july 25', label: 'July 25' }],
+            { value: 'july 25', label: 'July 25' },
+            { value: 'mar 23', label: 'mar 23' },
+            { value: 'apr 23', label: 'apr 23' },
+            { value: 'oct 23', label: 'oct 23' },
+            { value: 'nov 23', label: 'nov 23' },],
             required: 'require'
           },
           {
@@ -12520,6 +12819,15 @@ const formData = [
                 ],
               },
               {
+                value: "BTECH",
+                label: "BTECH",
+                specializations: [
+                  { value: "Mechanical", label: "Mechanical" },
+                  { value: "Computer science", label: "Computer science" },
+                  { value: "IT", label: "IT" },
+                ],
+              },
+              {
                 value: "BCOM",
                 label: "BCOM",
                 specializations: [
@@ -12792,7 +13100,11 @@ const formData = [
             { value: 'jan 24', label: 'Jan 24' },
             { value: 'july 24', label: 'July 24' },
             { value: 'jan 25', label: 'Jan 25' },
-            { value: 'july 25', label: 'July 25' }],
+            { value: 'july 25', label: 'July 25' },
+            { value: 'mar 23', label: 'mar 23' },
+            { value: 'apr 23', label: 'apr 23' },
+            { value: 'oct 23', label: 'oct 23' },
+            { value: 'nov 23', label: 'nov 23' },],
             required: 'require'
           },
           {
@@ -13061,6 +13373,15 @@ const formData = [
                 ],
               },
               {
+                value: "BTECH",
+                label: "BTECH",
+                specializations: [
+                  { value: "Mechanical", label: "Mechanical" },
+                  { value: "Computer science", label: "Computer science" },
+                  { value: "IT", label: "IT" },
+                ],
+              },
+              {
                 value: "BCOM",
                 label: "BCOM",
                 specializations: [
@@ -13333,7 +13654,11 @@ const formData = [
             { value: 'jan 24', label: 'Jan 24' },
             { value: 'july 24', label: 'July 24' },
             { value: 'jan 25', label: 'Jan 25' },
-            { value: 'july 25', label: 'July 25' }],
+            { value: 'july 25', label: 'July 25' },
+            { value: 'mar 23', label: 'mar 23' },
+            { value: 'apr 23', label: 'apr 23' },
+            { value: 'oct 23', label: 'oct 23' },
+            { value: 'nov 23', label: 'nov 23' },],
             required: 'require'
           },
           {
@@ -13602,6 +13927,15 @@ const formData = [
                 ],
               },
               {
+                value: "BTECH",
+                label: "BTECH",
+                specializations: [
+                  { value: "Mechanical", label: "Mechanical" },
+                  { value: "Computer science", label: "Computer science" },
+                  { value: "IT", label: "IT" },
+                ],
+              },
+              {
                 value: "BCOM",
                 label: "BCOM",
                 specializations: [
@@ -13874,7 +14208,11 @@ const formData = [
             { value: 'jan 24', label: 'Jan 24' },
             { value: 'july 24', label: 'July 24' },
             { value: 'jan 25', label: 'Jan 25' },
-            { value: 'july 25', label: 'July 25' }],
+            { value: 'july 25', label: 'July 25' },
+            { value: 'mar 23', label: 'mar 23' },
+            { value: 'apr 23', label: 'apr 23' },
+            { value: 'oct 23', label: 'oct 23' },
+            { value: 'nov 23', label: 'nov 23' },],
             required: 'require'
           },
           {
@@ -14143,6 +14481,15 @@ const formData = [
                 ],
               },
               {
+                value: "BTECH",
+                label: "BTECH",
+                specializations: [
+                  { value: "Mechanical", label: "Mechanical" },
+                  { value: "Computer science", label: "Computer science" },
+                  { value: "IT", label: "IT" },
+                ],
+              },
+              {
                 value: "BCOM",
                 label: "BCOM",
                 specializations: [
@@ -14415,7 +14762,11 @@ const formData = [
             { value: 'jan 24', label: 'Jan 24' },
             { value: 'july 24', label: 'July 24' },
             { value: 'jan 25', label: 'Jan 25' },
-            { value: 'july 25', label: 'July 25' }],
+            { value: 'july 25', label: 'July 25' },
+            { value: 'mar 23', label: 'mar 23' },
+            { value: 'apr 23', label: 'apr 23' },
+            { value: 'oct 23', label: 'oct 23' },
+            { value: 'nov 23', label: 'nov 23' },],
             required: 'require'
           },
           {
@@ -14684,6 +15035,15 @@ const formData = [
                 ],
               },
               {
+                value: "BTECH",
+                label: "BTECH",
+                specializations: [
+                  { value: "Mechanical", label: "Mechanical" },
+                  { value: "Computer science", label: "Computer science" },
+                  { value: "IT", label: "IT" },
+                ],
+              },
+              {
                 value: "BCOM",
                 label: "BCOM",
                 specializations: [
@@ -14956,7 +15316,11 @@ const formData = [
             { value: 'jan 24', label: 'Jan 24' },
             { value: 'july 24', label: 'July 24' },
             { value: 'jan 25', label: 'Jan 25' },
-            { value: 'july 25', label: 'July 25' }],
+            { value: 'july 25', label: 'July 25' },
+            { value: 'mar 23', label: 'mar 23' },
+            { value: 'apr 23', label: 'apr 23' },
+            { value: 'oct 23', label: 'oct 23' },
+            { value: 'nov 23', label: 'nov 23' },],
             required: 'require'
           },
           {
@@ -15225,6 +15589,15 @@ const formData = [
                 ],
               },
               {
+                value: "BTECH",
+                label: "BTECH",
+                specializations: [
+                  { value: "Mechanical", label: "Mechanical" },
+                  { value: "Computer science", label: "Computer science" },
+                  { value: "IT", label: "IT" },
+                ],
+              },
+              {
                 value: "BCOM",
                 label: "BCOM",
                 specializations: [
@@ -15497,7 +15870,11 @@ const formData = [
             { value: 'jan 24', label: 'Jan 24' },
             { value: 'july 24', label: 'July 24' },
             { value: 'jan 25', label: 'Jan 25' },
-            { value: 'july 25', label: 'July 25' }],
+            { value: 'july 25', label: 'July 25' },
+            { value: 'mar 23', label: 'mar 23' },
+            { value: 'apr 23', label: 'apr 23' },
+            { value: 'oct 23', label: 'oct 23' },
+            { value: 'nov 23', label: 'nov 23' },],
             required: 'require'
           },
           {
@@ -15766,6 +16143,15 @@ const formData = [
                 ],
               },
               {
+                value: "BTECH",
+                label: "BTECH",
+                specializations: [
+                  { value: "Mechanical", label: "Mechanical" },
+                  { value: "Computer science", label: "Computer science" },
+                  { value: "IT", label: "IT" },
+                ],
+              },
+              {
                 value: "BCOM",
                 label: "BCOM",
                 specializations: [
@@ -16038,7 +16424,11 @@ const formData = [
             { value: 'jan 24', label: 'Jan 24' },
             { value: 'july 24', label: 'July 24' },
             { value: 'jan 25', label: 'Jan 25' },
-            { value: 'july 25', label: 'July 25' }],
+            { value: 'july 25', label: 'July 25' },
+            { value: 'mar 23', label: 'mar 23' },
+            { value: 'apr 23', label: 'apr 23' },
+            { value: 'oct 23', label: 'oct 23' },
+            { value: 'nov 23', label: 'nov 23' },],
             required: 'require'
           },
           {
@@ -16307,6 +16697,15 @@ const formData = [
                 ],
               },
               {
+                value: "BTECH",
+                label: "BTECH",
+                specializations: [
+                  { value: "Mechanical", label: "Mechanical" },
+                  { value: "Computer science", label: "Computer science" },
+                  { value: "IT", label: "IT" },
+                ],
+              },
+              {
                 value: "BCOM",
                 label: "BCOM",
                 specializations: [
@@ -16579,7 +16978,11 @@ const formData = [
             { value: 'jan 24', label: 'Jan 24' },
             { value: 'july 24', label: 'July 24' },
             { value: 'jan 25', label: 'Jan 25' },
-            { value: 'july 25', label: 'July 25' }],
+            { value: 'july 25', label: 'July 25' },
+            { value: 'mar 23', label: 'mar 23' },
+            { value: 'apr 23', label: 'apr 23' },
+            { value: 'oct 23', label: 'oct 23' },
+            { value: 'nov 23', label: 'nov 23' },],
             required: 'require'
           },
           {
@@ -16848,6 +17251,15 @@ const formData = [
                 ],
               },
               {
+                value: "BTECH",
+                label: "BTECH",
+                specializations: [
+                  { value: "Mechanical", label: "Mechanical" },
+                  { value: "Computer science", label: "Computer science" },
+                  { value: "IT", label: "IT" },
+                ],
+              },
+              {
                 value: "BCOM",
                 label: "BCOM",
                 specializations: [
@@ -17120,7 +17532,11 @@ const formData = [
             { value: 'jan 24', label: 'Jan 24' },
             { value: 'july 24', label: 'July 24' },
             { value: 'jan 25', label: 'Jan 25' },
-            { value: 'july 25', label: 'July 25' }],
+            { value: 'july 25', label: 'July 25' },
+            { value: 'mar 23', label: 'mar 23' },
+            { value: 'apr 23', label: 'apr 23' },
+            { value: 'oct 23', label: 'oct 23' },
+            { value: 'nov 23', label: 'nov 23' },],
             required: 'require'
           },
           {
@@ -17389,6 +17805,15 @@ const formData = [
                 ],
               },
               {
+                value: "BTECH",
+                label: "BTECH",
+                specializations: [
+                  { value: "Mechanical", label: "Mechanical" },
+                  { value: "Computer science", label: "Computer science" },
+                  { value: "IT", label: "IT" },
+                ],
+              },
+              {
                 value: "BCOM",
                 label: "BCOM",
                 specializations: [
@@ -17661,7 +18086,11 @@ const formData = [
             { value: 'jan 24', label: 'Jan 24' },
             { value: 'july 24', label: 'July 24' },
             { value: 'jan 25', label: 'Jan 25' },
-            { value: 'july 25', label: 'July 25' }],
+            { value: 'july 25', label: 'July 25' },
+            { value: 'mar 23', label: 'mar 23' },
+            { value: 'apr 23', label: 'apr 23' },
+            { value: 'oct 23', label: 'oct 23' },
+            { value: 'nov 23', label: 'nov 23' },],
             required: 'require'
           },
           {
@@ -17930,6 +18359,15 @@ const formData = [
                 ],
               },
               {
+                value: "BTECH",
+                label: "BTECH",
+                specializations: [
+                  { value: "Mechanical", label: "Mechanical" },
+                  { value: "Computer science", label: "Computer science" },
+                  { value: "IT", label: "IT" },
+                ],
+              },
+              {
                 value: "BCOM",
                 label: "BCOM",
                 specializations: [
@@ -18202,7 +18640,11 @@ const formData = [
             { value: 'jan 24', label: 'Jan 24' },
             { value: 'july 24', label: 'July 24' },
             { value: 'jan 25', label: 'Jan 25' },
-            { value: 'july 25', label: 'July 25' }],
+            { value: 'july 25', label: 'July 25' },
+            { value: 'mar 23', label: 'mar 23' },
+            { value: 'apr 23', label: 'apr 23' },
+            { value: 'oct 23', label: 'oct 23' },
+            { value: 'nov 23', label: 'nov 23' },],
             required: 'require'
           },
           {
@@ -18471,6 +18913,15 @@ const formData = [
                 ],
               },
               {
+                value: "BTECH",
+                label: "BTECH",
+                specializations: [
+                  { value: "Mechanical", label: "Mechanical" },
+                  { value: "Computer science", label: "Computer science" },
+                  { value: "IT", label: "IT" },
+                ],
+              },
+              {
                 value: "BCOM",
                 label: "BCOM",
                 specializations: [
@@ -18743,7 +19194,11 @@ const formData = [
             { value: 'jan 24', label: 'Jan 24' },
             { value: 'july 24', label: 'July 24' },
             { value: 'jan 25', label: 'Jan 25' },
-            { value: 'july 25', label: 'July 25' }],
+            { value: 'july 25', label: 'July 25' },
+            { value: 'mar 23', label: 'mar 23' },
+            { value: 'apr 23', label: 'apr 23' },
+            { value: 'oct 23', label: 'oct 23' },
+            { value: 'nov 23', label: 'nov 23' },],
             required: 'require'
           },
           {
@@ -19012,6 +19467,15 @@ const formData = [
                 ],
               },
               {
+                value: "BTECH",
+                label: "BTECH",
+                specializations: [
+                  { value: "Mechanical", label: "Mechanical" },
+                  { value: "Computer science", label: "Computer science" },
+                  { value: "IT", label: "IT" },
+                ],
+              },
+              {
                 value: "BCOM",
                 label: "BCOM",
                 specializations: [
@@ -19284,7 +19748,11 @@ const formData = [
             { value: 'jan 24', label: 'Jan 24' },
             { value: 'july 24', label: 'July 24' },
             { value: 'jan 25', label: 'Jan 25' },
-            { value: 'july 25', label: 'July 25' }],
+            { value: 'july 25', label: 'July 25' },
+            { value: 'mar 23', label: 'mar 23' },
+            { value: 'apr 23', label: 'apr 23' },
+            { value: 'oct 23', label: 'oct 23' },
+            { value: 'nov 23', label: 'nov 23' },],
             required: 'require'
           },
           {
@@ -19553,6 +20021,15 @@ const formData = [
                 ],
               },
               {
+                value: "BTECH",
+                label: "BTECH",
+                specializations: [
+                  { value: "Mechanical", label: "Mechanical" },
+                  { value: "Computer science", label: "Computer science" },
+                  { value: "IT", label: "IT" },
+                ],
+              },
+              {
                 value: "BCOM",
                 label: "BCOM",
                 specializations: [
@@ -19825,7 +20302,11 @@ const formData = [
             { value: 'jan 24', label: 'Jan 24' },
             { value: 'july 24', label: 'July 24' },
             { value: 'jan 25', label: 'Jan 25' },
-            { value: 'july 25', label: 'July 25' }],
+            { value: 'july 25', label: 'July 25' },
+            { value: 'mar 23', label: 'mar 23' },
+            { value: 'apr 23', label: 'apr 23' },
+            { value: 'oct 23', label: 'oct 23' },
+            { value: 'nov 23', label: 'nov 23' },],
             required: 'require'
           },
           {
@@ -20094,6 +20575,15 @@ const formData = [
                 ],
               },
               {
+                value: "BTECH",
+                label: "BTECH",
+                specializations: [
+                  { value: "Mechanical", label: "Mechanical" },
+                  { value: "Computer science", label: "Computer science" },
+                  { value: "IT", label: "IT" },
+                ],
+              },
+              {
                 value: "BCOM",
                 label: "BCOM",
                 specializations: [
@@ -20366,7 +20856,11 @@ const formData = [
             { value: 'jan 24', label: 'Jan 24' },
             { value: 'july 24', label: 'July 24' },
             { value: 'jan 25', label: 'Jan 25' },
-            { value: 'july 25', label: 'July 25' }],
+            { value: 'july 25', label: 'July 25' },
+            { value: 'mar 23', label: 'mar 23' },
+            { value: 'apr 23', label: 'apr 23' },
+            { value: 'oct 23', label: 'oct 23' },
+            { value: 'nov 23', label: 'nov 23' },],
             required: 'require'
           },
           {

@@ -1,9 +1,10 @@
+// HeaderContent.jsx
 import { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { Avatar, Dropdown, Layout, Badge } from 'antd';
+import { Avatar, Dropdown, Layout } from 'antd';
 import Notifications from '@/components/Notification';
-import { SettingOutlined, LogoutOutlined, BellOutlined } from '@ant-design/icons';
+import { SettingOutlined, LogoutOutlined } from '@ant-design/icons';
 import { checkImage } from '@/request';
 import { selectCurrentAdmin } from '@/redux/auth/selectors';
 import { useNavigate } from 'react-router-dom';
@@ -11,13 +12,13 @@ import { BASE_URL } from '@/config/serverApiConfig';
 import useLanguage from '@/locale/useLanguage';
 import SelectLanguage from '@/components/SelectLanguage';
 
+
 export default function HeaderContent() {
   const currentAdmin = useSelector(selectCurrentAdmin);
   const { Header } = Layout;
-
   const translate = useLanguage();
-  const [notificationCount, setNotificationCount] = useState(0);
   const [hasPhotoprofile, setHasPhotoprofile] = useState(false);
+  const [notificationCount, setNotificationCount] = useState(0);
 
   useEffect(() => {
     async function fetchData() {
@@ -31,22 +32,7 @@ export default function HeaderContent() {
 
     fetchData();
   }, [currentAdmin]);
-  useEffect(() => {
-    const fetchInitialNotifications = async () => {
-      try {
-        const response = await fetch(`${import.meta.env.VITE_BACKEND_SERVER}api/lead/getNotifications`);
-        const data = await response.json();
 
-        if (data.success && data.notifications && Array.isArray(data.notifications.notifications)) {
-          setNotificationCount(data.notifications.notificationCount);
-        }
-      } catch (error) {
-        console.error('Error fetching initial notifications:', error);
-      }
-    };
-
-    fetchInitialNotifications();
-  }, []);
   const srcImgProfile = hasPhotoprofile ? BASE_URL + currentAdmin?.photo : null;
 
   const ProfileDropdown = () => {
@@ -140,19 +126,7 @@ export default function HeaderContent() {
         </Avatar>
       </Dropdown>
       <SelectLanguage />
-      <Badge count={notificationCount}>
-        <Dropdown
-          className='mt-2'
-          overlay={<Notifications setNotificationCount={setNotificationCount} />}
-          placement="bottomRight"
-          trigger={['click']}
-          style={{ marginRight: '15px' }}
-        >
-
-          <BellOutlined className='text-white mt-2 text-2xl' />
-
-        </Dropdown>
-      </Badge>
+      <Notifications setNotificationCount={setNotificationCount} />
     </Header>
   );
 }

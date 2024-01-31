@@ -109,7 +109,7 @@ const defaultStatistics = [
   },
 
   {
-    tag: 'SGVU',
+    tag: 'CU',
     value: 0,
   },
   {

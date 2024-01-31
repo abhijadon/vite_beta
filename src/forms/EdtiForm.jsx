@@ -1,7 +1,6 @@
-import { Form, Input, Upload, Select } from 'antd';
-import { InboxOutlined } from '@ant-design/icons';
+import { Form, Input, Select } from 'antd';
 import useLanguage from '@/locale/useLanguage';
-const { Dragger } = Upload;
+
 const { TextArea } = Input;
 export default function LeadForm() {
     const translate = useLanguage();
@@ -72,7 +71,11 @@ export default function LeadForm() {
                         { value: 'jan 24', label: 'Jan 24' },
                         { value: 'july 24', label: 'July 24' },
                         { value: 'jan 25', label: 'Jan 25' },
-                        { value: 'july 25', label: 'July 25' }
+                        { value: 'july 25', label: 'July 25' },
+                        { value: 'mar 23', label: 'mar 23' },
+                        { value: 'apr 23', label: 'apr 23' },
+                        { value: 'oct 23', label: 'oct 23' },
+                        { value: 'nov 23', label: 'nov 23' },
                     ]}>
 
                     </Select>
