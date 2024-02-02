@@ -247,7 +247,18 @@ export default function LeadForm() {
                         ]}
                     ></Select>
                 </Form.Item>
-
+                <Form.Item
+                    label={translate('payment type')}
+                    name={['customfields', 'payment_type']}
+                >
+                    <Select placeholder='select payment type'
+                        options={[
+                            { value: 'semester', label: translate('semester') },
+                            { value: 'yearly', label: 'yearly' },
+                            { value: 'fullfees', label: 'fullfees' },
+                        ]}
+                    ></Select>
+                </Form.Item>
                 <Form.Item
                     label={translate('Total Course Fee')}
                     name={['customfields', 'total_course_fee']}

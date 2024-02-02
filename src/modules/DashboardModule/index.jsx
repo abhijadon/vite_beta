@@ -16,9 +16,11 @@ export default function DashboardModule() {
   const [institutes, setInstitutes] = useState([]);
   const [universities, setUniversities] = useState([]);
   const [counselors, setCounselors] = useState([]);
+  const [paymentType, setpaymentType] = useState([]);
   const [selectedInstitute, setSelectedInstitute] = useState('');
   const [selectedUniversity, setSelectedUniversity] = useState('');
   const [selectedCounselor, setSelectedCounselor] = useState('');
+  const [selectedPayment, setSelectedPayment] = useState('');
   const [selectedDate, setSelectedDate] = useState('');
   const [filteredPaymentData, setFilteredPaymentData] = useState({});
   const [universityExistenceMessage, setUniversityExistenceMessage] = useState('');
@@ -45,8 +47,9 @@ export default function DashboardModule() {
   const handleCounselorChange = (value) => {
     setSelectedCounselor(value);
   };
-
-
+  const handlePaymentChange = (value) => {
+    setSelectedPayment(value);
+  };
 
   const handleDateChange = (e) => {
     setSelectedDate(e.target.value);
@@ -56,6 +59,7 @@ export default function DashboardModule() {
     setSelectedInstitute('');
     setSelectedUniversity('');
     setSelectedCounselor('');
+    setSelectedPayment('');
     setSelectedDate('');
     setFilteredPaymentData({});
     setUniversityExistenceMessage('');
@@ -69,10 +73,12 @@ export default function DashboardModule() {
         const uniqueInstitutes = Array.isArray(data.result) ? [...new Set(data.result.map((item) => item.institute_name))] : [];
         const uniqueUniversities = Array.isArray(data.result) ? [...new Set(data.result.map((item) => item.university_name))] : [];
         const uniqueCounselors = Array.isArray(data.result) ? [...new Set(data.result.map((item) => item.counselor_email))] : [];
+        const uniquePayment = Array.isArray(data.result) ? [...new Set(data.result.map((item) => item.payment_type))] : [];
 
         setInstitutes(uniqueInstitutes);
         setUniversities(uniqueUniversities);
         setCounselors(uniqueCounselors);
+        setpaymentType(uniquePayment);
       }
     } catch (error) {
       console.error('Error fetching data:', error);
@@ -85,10 +91,10 @@ export default function DashboardModule() {
 
   useEffect(() => {
     const fetchData = async () => {
-      if (selectedInstitute || selectedUniversity || selectedCounselor || selectedDate) {
+      if (selectedInstitute || selectedUniversity || selectedCounselor || selectedDate || selectedPayment) {
         try {
           const response = await fetch(
-            `${import.meta.env.VITE_BACKEND_SERVER}api/payment/summary?institute_name=${selectedInstitute}&university_name=${selectedUniversity}&counselor_email=${selectedCounselor}&date=${selectedDate}`
+            `${import.meta.env.VITE_BACKEND_SERVER}api/payment/summary?institute_name=${selectedInstitute}&university_name=${selectedUniversity}&counselor_email=${selectedCounselor}&date=${selectedDate}&payment_type=${selectedPayment}`
           );
           const data = await response.json();
           if (data.success && data.result !== null) {
@@ -104,7 +110,9 @@ export default function DashboardModule() {
             } else if (selectedDate) {
               successMessage = `Data fetched successfully for the specified date: ${selectedDate}.`;
             }
-
+            else if (selectedPayment) {
+              successMessage = `Data fetched successfully for the specified date: ${selectedPayment}.`;
+            }
             message.success(successMessage);
           } else {
             setFilteredPaymentData({ total_course_fee: 0 }); // Set payment to 0
@@ -117,6 +125,9 @@ export default function DashboardModule() {
               errorMessage = `No data found for the specified filters and counselor: ${getEmailName(selectedCounselor)}.`;
             } else if (selectedDate) {
               errorMessage = `No data found for the specified filters and date: ${selectedDate}.`;
+            }
+            else if (selectedPayment) {
+              errorMessage = `No data found for the specified filters and date: ${selectedPayment}.`;
             }
             message.error(errorMessage);
           }
@@ -133,7 +144,7 @@ export default function DashboardModule() {
       return parts[0];
     };
     fetchData();
-  }, [selectedInstitute, selectedUniversity, selectedCounselor, selectedDate]);
+  }, [selectedInstitute, selectedUniversity, selectedCounselor, selectedDate, selectedPayment]);
 
   const { result: invoiceResult, isLoading: invoiceLoading } = useFetch(() =>
     request.summary({ entity: 'invoice' })
@@ -310,7 +321,18 @@ export default function DashboardModule() {
             </Select.Option>
           ))}
         </Select>
-
+        <Select
+          value={selectedPayment}
+          onChange={handlePaymentChange}
+          style={{ width: 200, marginRight: 16 }}
+        >
+          <Select.Option value=''>Select Payment Type</Select.Option>
+          {paymentType.map((payment) => (
+            <Select.Option key={payment} value={payment}>
+              {payment}
+            </Select.Option>
+          ))}
+        </Select>
         <Input className='text-sm font-thin'
           type='date'
           onChange={handleDateChange}

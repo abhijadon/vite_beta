@@ -1,4 +1,4 @@
-import { useLayoutEffect } from 'react';
+import { useLayoutEffect, useState } from 'react';
 import { Layout } from 'antd';
 import { useAppContext } from '@/context/appContext';
 import Navigation from '@/apps/components/Navigation';
@@ -10,10 +10,9 @@ import useIsMobile from '@/hooks/useIsMobile';
 
 export default function ErpCrmApp() {
   const { Content } = Layout;
-
+  const [currentPath, setCurrentPath] = useState('');
   const { state: stateApp } = useAppContext();
   const { isNavMenuClose } = stateApp;
-
   const isMobile = useIsMobile();
 
   const dispatch = useDispatch();
@@ -21,9 +20,13 @@ export default function ErpCrmApp() {
     dispatch(settingsAction.list({ entity: 'setting' }));
   }, []);
 
+  const handlePathChange = (path) => {
+    setCurrentPath(path);
+  };
+
   return (
     <Layout hasSider>
-      <Navigation />
+      <Navigation onPathChange={handlePathChange} />
 
       {isMobile ? (
         <Layout style={{ marginLeft: 0 }}>
@@ -42,7 +45,7 @@ export default function ErpCrmApp() {
         </Layout>
       ) : (
         <Layout style={{ marginLeft: isNavMenuClose ? 100 : 220 }}>
-          <HeaderContent />
+          <HeaderContent currentPath={currentPath} />
           <Content
             style={{
               margin: '40px auto 30px',

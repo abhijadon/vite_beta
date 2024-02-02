@@ -290,6 +290,11 @@ export default function Lead() {
       key: 'payment_mode'
     },
     {
+      title: translate('Payment type'),
+      dataIndex: ['customfields', 'payment_type'],
+      key: 'payment_type'
+    },
+    {
       title: translate('Total Course Fee'),
       dataIndex: ['customfields', 'total_course_fee'],
       key: 'total_course_fee'

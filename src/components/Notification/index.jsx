@@ -1,7 +1,12 @@
-// Notifications.jsx
 import { useState, useEffect, useRef } from 'react';
-import { message, Space, Badge, Dropdown, Menu } from 'antd';
-import { ClockCircleTwoTone, BellOutlined, MailTwoTone, UserOutlined } from '@ant-design/icons';
+import { message, Space, Badge, Dropdown, Menu, Modal } from 'antd';
+import {
+  ClockCircleTwoTone,
+  BellOutlined,
+  MailTwoTone,
+  UserOutlined,
+  DeleteTwoTone,
+} from '@ant-design/icons';
 
 const Notifications = ({ setNotificationCount }) => {
   const [notifications, setNotifications] = useState([]);
@@ -11,7 +16,7 @@ const Notifications = ({ setNotificationCount }) => {
 
   useEffect(() => {
     // Start WebSocket connection only once when the component mounts
-    const newWs = new WebSocket('ws://localhost:5000');
+    const newWs = new WebSocket('wss://api.sode.co.in/');
 
     newWs.onmessage = (event) => {
       const notification = JSON.parse(event.data);
@@ -34,7 +39,7 @@ const Notifications = ({ setNotificationCount }) => {
         newWs.close();
         // Reconnect only if the component is still mounted
         if (mountedRef.current) {
-          newWs.current = new WebSocket('ws://localhost:5000');
+          newWs.current = new WebSocket('wss://api.sode.co.in/');
         }
       }, 1000); // Reconnect after 1 second
     };
@@ -45,7 +50,7 @@ const Notifications = ({ setNotificationCount }) => {
         newWs.close();
         // Reconnect only if the component is still mounted
         if (mountedRef.current) {
-          newWs.current = new WebSocket('ws://localhost:5000');
+          newWs.current = new WebSocket('wss://api.sode.co.in/');
         }
       }, 1000); // Reconnect after 1 second
     };
@@ -71,7 +76,6 @@ const Notifications = ({ setNotificationCount }) => {
   }, []);
 
   useEffect(() => {
-    // Check for existing notifications in local storage on component mount
     const storedNotifications = JSON.parse(localStorage.getItem('notifications'));
     if (storedNotifications && Array.isArray(storedNotifications)) {
       setNotifications(storedNotifications);
@@ -79,7 +83,6 @@ const Notifications = ({ setNotificationCount }) => {
       setNotificationCount(storedNotifications.length);
     }
 
-    // Fetch initial notifications from the API
     const fetchInitialNotifications = async () => {
       try {
         const response = await fetch(`${import.meta.env.VITE_BACKEND_SERVER}api/notifications/`);
@@ -107,7 +110,7 @@ const Notifications = ({ setNotificationCount }) => {
       const data = await response.json();
 
       if (data.success && data.notifications && Array.isArray(data.notifications)) {
-        setNotifications(data.notifications); // Set all notifications
+        setNotifications(data.notifications);
         setLocalNotificationCount(data.notifications.length);
         setNotificationCount(data.notifications.length);
       }
@@ -116,11 +119,47 @@ const Notifications = ({ setNotificationCount }) => {
     }
   };
 
+  const handleDeleteNotification = async (id) => {
+    Modal.confirm({
+      title: 'Confirm Deletion',
+      content: 'Do you really want to delete this notification?',
+      onOk: async () => {
+        try {
+          const response = await fetch(`${import.meta.env.VITE_BACKEND_SERVER}api/notifications/${id}`, {
+            method: 'DELETE',
+          });
+          const data = await response.json();
+
+          if (data.success) {
+            const updatedNotifications = notifications.filter((n) => n._id !== id);
+            setNotifications(updatedNotifications);
+            setLocalNotificationCount(updatedNotifications.length);
+            setNotificationCount(updatedNotifications.length);
+            localStorage.setItem('notifications', JSON.stringify(updatedNotifications));
+            message.success('Notification deleted successfully');
+
+            if (ws && ws.readyState === WebSocket.OPEN) {
+              const deleteMessage = {
+                type: 'DELETE_NOTIFICATION',
+                id,
+              };
+              ws.send(JSON.stringify(deleteMessage));
+            }
+          } else {
+            message.error('Error deleting notification');
+          }
+        } catch (error) {
+          console.error('Error deleting notification:', error);
+          message.error('Error deleting notification');
+        }
+      },
+    });
+  };
+
   const notificationMenu = (
     <Menu style={{
       overflowX: 'auto',
-      maxHeight: '300px',
-     
+      maxHeight: '400px',
     }}>
       <div key="viewAll" onClick={handleViewAll} className='flex justify-between sticky pl-3 pr-3 gap-10 items-center mb-3 border-b-black border-b-[1px]'>
         <div>Notifications</div>
@@ -131,27 +170,30 @@ const Notifications = ({ setNotificationCount }) => {
           <Menu.Item key={notification._id}>
             <Space className='flex items-center border-b-2'>
               <Badge dot>
-                <div className="text-start">
-                  <span className='text-[13px]'><UserOutlined className='text-blue-700' />: {notification.full_name}</span> <br />
-                  <span className='text-xs'><MailTwoTone />: {notification.email}</span> <br />
-                  <span className='text-[11px]'><ClockCircleTwoTone /> {notification.timeAgo}</span>
+                <div className='flex gap-10'>
+                  <div className="text-start">
+                    <span className='text-[13px]'><UserOutlined className='text-blue-700' />: {notification.full_name}</span> <br />
+                    <span className='text-xs'><MailTwoTone />: {notification.email}</span> <br />
+                    <span className='text-[11px]'><ClockCircleTwoTone /> {notification.timeAgo}</span>
+                  </div>
+                  <div>
+                    <DeleteTwoTone onClick={() => handleDeleteNotification(notification._id)} />
+                  </div>
                 </div>
               </Badge>
             </Space>
           </Menu.Item>
         ))
       }
-
     </Menu >
   );
 
   return (
     <Badge count={notificationCount}>
       <Dropdown overlay={notificationMenu} trigger={['click']}>
-        {<BellOutlined className='mt-3 text-xl text-white' />}
+        {<BellOutlined className='mt-1.5 text-xl text-white' />}
       </Dropdown>
     </Badge>
-
   );
 };
 

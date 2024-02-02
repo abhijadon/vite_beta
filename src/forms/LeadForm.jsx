@@ -17,8 +17,8 @@ const beforeUpload = (file) => {
   }
   return false;
 };
-// Inside the component
 
+/* require message show on notification */
 const openNotification = (fieldName) => {
   const capitalizedFieldName = fieldName.charAt(0).toUpperCase() + fieldName.slice(1);
   notification.error({
@@ -27,14 +27,18 @@ const openNotification = (fieldName) => {
     placement: 'topLeft',
   });
 };
-
+/* require message show on notification */
 export default function LeadForm() {
+  /* useState, useEffect uses condition */
   const [selectedInstitute, setSelectedInstitute] = useState(null);
   const [selectedUniversity, setSelectedUniversity] = useState(null);
   const [selectedCourse, setSelectedCourse] = useState(null);
+  const [selectedPayment, setSelectedPayment] = useState(null);
   const [studentId, setStudentId] = useState('');
   const [selectedSpecialization, setSelectedSpecialization] = useState(null);
+  /* useState, useEffect uses condition */
 
+  /* student id generate automatica */
   useEffect(() => {
     if (selectedInstitute && selectedUniversity) {
       setStudentId(generateUniqueId());
@@ -48,7 +52,9 @@ export default function LeadForm() {
     const max = 999999;
     return String(Math.floor(Math.random() * (max - min - 1)) + min);
   };
+  /* student id generate automatica */
 
+  /* handlechanges */
   const handleInstituteChange = (value) => {
     setSelectedInstitute(value);
     setSelectedUniversity(null);
@@ -66,6 +72,13 @@ export default function LeadForm() {
   const handleSpecializationChange = (value) => {
     setSelectedSpecialization(value);
   };
+
+  const handlePaymentChange = (value) => {
+    setSelectedPayment(value)
+  }
+  /* handlechanges */
+
+  /* generate fields dynamic by selectedUniversity */
 
   const generateFormItems = (fields) => {
     return fields.map((field) => {
@@ -400,11 +413,11 @@ export default function LeadForm() {
       }
     });
   };
-
+  /* generate fields dynamic by selectedUniversity */
   return (
     <div>
-      <form className='grid grid-flow-col gap-3'>
-        <Form.Item label="Select Institute" name={['customfields', 'institute_name']}>
+      <form className='grid grid-cols-4 gap-3'>
+        <Form.Item label="Select Institute" name={['customfields', 'institute_name']} >
           <Select onChange={handleInstituteChange} placeholder="--Select Institute--">
             {formData.map((item) => (
               <Option key={item.value} value={item.value}>
@@ -415,7 +428,7 @@ export default function LeadForm() {
         </Form.Item>
         {selectedInstitute && (
           <>
-            <Form.Item label="Select University" name={['customfields', 'university_name']}>
+            <Form.Item label="Select University" name={['customfields', 'university_name']} >
               <Select onChange={handleUniversityChange} placeholder="--Select University--">
                 {formData
                   .find((item) => item.value === selectedInstitute)
@@ -426,6 +439,7 @@ export default function LeadForm() {
                   ))}
               </Select>
             </Form.Item>
+            {/* selectedcourse and then show specialization */}
             {selectedUniversity && (
               <>
                 {formData
@@ -468,10 +482,61 @@ export default function LeadForm() {
                 )}
               </>
             )}
+            {/* selectedcourse and then show specialization */}
 
           </>
         )}
       </form>
+      {/* selected payment and then show generate fields fees */}
+      {selectedUniversity && (
+        <>
+          <div>
+            {formData
+              .find((item) => item.value === selectedInstitute)
+              .universities.find((university) => university.value === selectedUniversity)
+              .fields[1]?.payments ? (
+              <Form.Item label="Select payment" name={['customfields', 'payment_type']} className='grid col-span-1'>
+                <Select onChange={handlePaymentChange} placeholder="--Select Payment--">
+                  {formData
+                    .find((item) => item.value === selectedInstitute)
+                    .universities.find((university) => university.value === selectedUniversity)
+                    .fields[1]?.payments?.map((payment) => (
+                      <Option key={payment.value} value={payment.value}>
+                        {payment.label}
+                      </Option>
+                    ))}
+                </Select>
+              </Form.Item>
+            ) : null}
+            {selectedPayment && (
+              <div>
+                <Form.Item>
+                  {(formData
+                    .find((item) => item.value === selectedInstitute)
+                    .universities.find((university) => university.value === selectedUniversity)
+                    .fields[1]?.payments.find((payment) => payment.value === selectedPayment)?.paymentType || []
+                  ).map((pay) => (
+                    <Form.Item
+                      key={pay.label}
+                      label={pay.label}
+                      name={pay.name}  // Use pay.name as the name
+                      rules={[
+                        {
+                          required: pay.required === 'require',
+                          message: `Please input ${pay.label}!`,
+                        },
+                      ]}
+                    >
+                      <Input placeholder={pay.place} type={pay.type} />
+                    </Form.Item>
+                  ))}
+                </Form.Item>
+              </div>
+            )}
+          </div>
+        </>
+      )}
+      {/* selected payment and then show generate fields fees */}
       {selectedUniversity && (
         <div>
           <form className='grid grid-cols-4 gap-3'>
@@ -483,6 +548,7 @@ export default function LeadForm() {
           </form>
         </div>
       )}
+
     </div>
   );
 }

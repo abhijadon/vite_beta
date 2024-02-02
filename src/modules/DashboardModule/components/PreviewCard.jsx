@@ -52,10 +52,6 @@ const defaultStatistics = [
     value: 0
   },
   {
-    tag: 'SVSU',
-    value: 0
-  },
-  {
     tag: 'NMIMS',
     value: 0
   },
@@ -118,14 +114,6 @@ const defaultStatistics = [
   },
   {
     tag: 'SVSU',
-    value: 0,
-  },
-  {
-    tag: 'NMIMS',
-    value: 0,
-  },
-  {
-    tag: 'VIGNAN',
     value: 0,
   },
 

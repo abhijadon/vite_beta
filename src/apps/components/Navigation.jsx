@@ -23,18 +23,29 @@ const { Sider } = Layout;
 
 import { selectCurrentAdmin } from '@/redux/auth/selectors';
 
-export default function Navigation() {
+export default function Navigation({ onPathChange }) {
+
+  const handlePathChange = (newPathname) => {
+    onPathChange(newPathname);
+    localStorage.setItem('currentPathname', newPathname);
+  };
+  useEffect(() => {
+    const storedPath = localStorage.getItem('currentPathname');
+    if (storedPath) {
+      onPathChange(storedPath);
+    }
+  }, [onPathChange]);
+
   return (
     <>
       <div className="sidebar-wraper">
-        <Sidebar collapsible={true} />
+        <Sidebar collapsible={true} onPathChange={handlePathChange} />
       </div>
-      <MobileSidebar />
+      <MobileSidebar onPathChange={handlePathChange} />
     </>
   );
 }
-
-function Sidebar({ collapsible }) {
+function Sidebar({ collapsible, onPathChange }) {
   let location = useLocation();
 
   const { state: stateApp, appContextAction } = useAppContext();
@@ -119,10 +130,13 @@ function Sidebar({ collapsible }) {
     settingsSection,
   ].filter(Boolean);
 
-  useEffect(() => {
-    if (location && currentPath !== location.pathname) setCurrentPath(location.pathname);
-  }, [location, currentPath]);
 
+  useEffect(() => {
+    if (location && currentPath !== location.pathname) {
+      setCurrentPath(location.pathname);
+      onPathChange(location.pathname);
+    }
+  }, [location, currentPath, onPathChange]);
   useEffect(() => {
     if (isNavMenuClose) {
       setLogoApp(isNavMenuClose);
