@@ -106,5 +106,11 @@ export default function Payment() {
     searchConfig,
     entityDisplayLabels,
   };
-  return <PaymentDataTableModule config={config} />;
+  return (
+    <>
+
+      <PaymentDataTableModule config={config} />
+
+    </>
+  )
 }

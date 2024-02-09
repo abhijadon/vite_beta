@@ -1,5 +1,5 @@
 .ant-layout {
-  background: #f9fafc !important;
+  background: #f6f7fb !important;
 }
 .site-layout .site-layout-background {
   background: #fff;
@@ -146,11 +146,16 @@
 }
 .ant-table {
   display: block;
-  overflow-x: scroll;
-  overflow-y: auto;
   max-height: 400px;
+  overflow: auto;
+  border-radius: 999px;
   white-space: nowrap;
+  scrollbar-width: thin;
+  scroll-behavior: smooth;
+  border-radius: 999px;
 }
+
+
 .ant-typography strong {
   font-weight: 700;
 }
@@ -164,8 +169,7 @@ h6 {
 }
 .ant-layout-header {
   padding: 10px 20px !important;
-  background: #1677ff !important;
-  border-top-right-radius: 15px !important;
+    border-top-right-radius: 15px !important;
   margin-bottom: -16px;
 }
 
@@ -219,3 +223,5 @@ h6 {
     animation: App-logo-spin infinite 20s linear;
   }
 }
+
+

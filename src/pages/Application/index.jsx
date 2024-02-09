@@ -313,8 +313,11 @@ export default function Lead() {
       title: translate('Due amount'),
       key: 'due_amount',
       render: (text, record) => {
-        const totalCourseFee = record.customfields.total_course_fee;
-        const totalPaidAmount = record.customfields.total_paid_amount;
+        const customFields = record.customfields;
+        if (!customFields) return null; // Return null if customfields is undefined or null
+
+        const totalCourseFee = customFields.total_course_fee;
+        const totalPaidAmount = customFields.total_paid_amount;
         const dueAmount = totalCourseFee - totalPaidAmount;
 
         return (
@@ -324,14 +327,13 @@ export default function Lead() {
         );
       }
     },
-
     {
       title: "studnet fee reciept",
       dataIndex: ['customfields', 'upload_fee_receipt_screenshot'],
       key: "upload_fee_receipt_screenshot",
       render: (studentReceipts) => (
         <Space size="middle">
-          {studentReceipts.map((record) => (
+          {Array.isArray(studentReceipts) && studentReceipts.map((record) => (
             <div key={record._id}>
               <img
                 src={`${import.meta.env.VITE_BACKEND_SERVER}public/uploads/studentDocument/${record.filename}`}
@@ -349,7 +351,7 @@ export default function Lead() {
       key: "upload_student_document",
       render: (studentReceipts) => (
         <Space size="middle">
-          {studentReceipts.map((record) => (
+          {Array.isArray(studentReceipts) && studentReceipts.map((record) => (
             <div key={record._id}>
               <img
                 src={`${import.meta.env.VITE_BACKEND_SERVER}public/uploads/studentDocument/${record.filename}`}

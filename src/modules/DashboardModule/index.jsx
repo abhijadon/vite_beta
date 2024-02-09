@@ -1,10 +1,15 @@
-import { Tag, Row, Col, Select, message, Button, Input } from 'antd';
+import { Tag, Row, Col, Select, message, Button, Input, Progress } from 'antd';
 import useLanguage from '@/locale/useLanguage';
 import { useMoney } from '@/settings';
+import Card from '@mui/joy/Card';
+import CardContent from '@mui/joy/CardContent';
+import Typography from '@mui/joy/Typography';
 import { request } from '@/request';
 import useFetch from '@/hooks/useFetch';
 import RecentTable from './components/RecentTable';
-import SummaryCard from './components/SummaryCard';
+import CircularProgress from '@mui/joy/CircularProgress';
+import { GrPowerReset } from "react-icons/gr";
+import SvgIcon from '@mui/joy/SvgIcon';
 import PreviewCard from './components/PreviewCard';
 import CustomerPreviewCard from './components/CustomerPreviewCard';
 import { useState, useEffect } from 'react';
@@ -240,38 +245,22 @@ export default function DashboardModule() {
       />
     );
   });
-  const invoiceCard = (
-    <SummaryCard
-      title={translate('Total Course Fee')}
-      tagColor={'purple'}
-      prefix={translate('Total Amount')}
-      isLoading={paymentLoading}
-      tagContent={`${moneyFormatter({ amount: filteredPaymentData.total_course_fee || paymentResult?.total_course_fee })}`}
-    />
-  );
-  const totalPaidAmountCard = (
-    <SummaryCard
-      title={translate('Total Paid Amount')}
-      tagColor={'blue'}
-      prefix={translate('Total Amount')}
-      isLoading={paymentLoading}
-      tagContent={`${moneyFormatter({ amount: filteredPaymentData.total_paid_amount || paymentResult?.total_paid_amount })}`}
-    />
-  );
-  const dueAmountCard = (
-    <SummaryCard
-      title={translate('Due Amount')}
-      tagColor={'red'}
-      prefix={translate('Due amount')}
-      isLoading={paymentLoading}
-      tagContent={`${moneyFormatter({ amount: filteredPaymentData.due_amount || paymentResult?.due_amount })}`}
-    />
-  );
+
   const getEmailName = (email) => {
     if (!email) return '';
     const parts = email.split('@');
     return parts[0];
   };
+
+  {/* progrsh bar */ }
+  const calculatePercentage = (currentAmount, targetAmount) => {
+    return (currentAmount / targetAmount) * 100;
+  };
+  const percentage1 = filteredPaymentData ? calculatePercentage(filteredPaymentData.total_course_fee || paymentResult?.total_course_fee, 3000000) : 0;
+  const percentage2 = filteredPaymentData ? calculatePercentage(filteredPaymentData.total_paid_amount || paymentResult?.total_paid_amount, 2000000) : 0;
+  const percentage3 = filteredPaymentData ? calculatePercentage(filteredPaymentData.due_amount || paymentResult?.due_amount, 1000000) : 0;
+  {/* progrsh bar */ }
+
   return (
     <>
       {universityExistenceMessage && (
@@ -281,12 +270,11 @@ export default function DashboardModule() {
           </Col>
         </Row>
       )}
-      <div className='flex justify-items-start items-center mb-[30px]'>
-        <Select
+      <div className='flex justify-items-start items-center mb-[30px] gap-3'>
+        <Select className='w-72 h-10'
           value={selectedInstitute}
           onChange={handleInstituteChange}
           placeholder="Select Institute Name"
-          style={{ width: 200, marginRight: 16 }}
         >
           <Select.Option value=''>Select Institute Name</Select.Option>
           {institutes.map((option) => (
@@ -296,10 +284,9 @@ export default function DashboardModule() {
           ))}
         </Select>
 
-        <Select
+        <Select className='w-72 h-10'
           value={selectedUniversity}
           onChange={handleUniversityChange}
-          style={{ width: 200, marginRight: 16 }}
         >
           <Select.Option value=''>Select University Name</Select.Option>
           {universities.map((option) => (
@@ -309,10 +296,9 @@ export default function DashboardModule() {
           ))}
         </Select>
 
-        <Select
+        <Select className='w-72 h-10'
           value={selectedCounselor}
           onChange={handleCounselorChange}
-          style={{ width: 200, marginRight: 16 }}
         >
           <Select.Option value=''>Select Counselor</Select.Option>
           {counselors.map((email) => (
@@ -321,10 +307,9 @@ export default function DashboardModule() {
             </Select.Option>
           ))}
         </Select>
-        <Select
+        <Select className='w-72 h-10'
           value={selectedPayment}
           onChange={handlePaymentChange}
-          style={{ width: 200, marginRight: 16 }}
         >
           <Select.Option value=''>Select Payment Type</Select.Option>
           {paymentType.map((payment) => (
@@ -333,21 +318,128 @@ export default function DashboardModule() {
             </Select.Option>
           ))}
         </Select>
-        <Input className='text-sm font-thin'
+        <Input className='text-sm font-thin h-10'
           type='date'
           onChange={handleDateChange}
           value={selectedDate}
           style={{ width: '140px', marginRight: '16px', textTransform: 'uppercase', }}
         />
 
-        <Button onClick={resetData}>Reset All</Button>
+        <Button onClick={resetData} className='bg-transparent text-gray-500 flex items-center gap-2 hover:text-blue-500'>
+          <GrPowerReset />Reset
+        </Button>
       </div>
 
-      <Row gutter={[32, 32]}>
-        {invoiceCard}
-        {totalPaidAmountCard}
-        {dueAmountCard}
-      </Row>
+
+      <div className='mb-10 flex gap-4'>
+        <Card className="w-1/3 shadow-lg">
+          <div className='flex justify-between'>
+            <div>
+              <CardContent orientation="horizontal">
+                <CardContent>
+                  <Typography className="text-gray-500">Total Course Fee</Typography>
+                  <Typography level="h3" className="text-green-500">₹ {filteredPaymentData.total_course_fee || paymentResult?.total_course_fee}</Typography>
+                </CardContent>
+              </CardContent>
+            </div>
+            <div>
+              <CircularProgress size="lg" determinate value={percentage1}>
+                <SvgIcon>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="green"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941"
+                    />
+                  </svg>
+                </SvgIcon>
+              </CircularProgress>
+            </div>
+          </div>
+          <Progress percent={Math.floor(percentage1)} status="active" strokeColor={{
+            from: 'green',
+            to: 'black',
+          }} className='mt-3' />
+        </Card>
+        <Card className="w-1/3 shadow-lg">
+          <div className='flex justify-between'>
+            <div>
+              <CardContent orientation="horizontal">
+                <CardContent>
+                  <Typography className="text-gray-500">Total Paid Amount</Typography>
+                  <Typography level="h3" className="text-red-500">₹  {filteredPaymentData.total_paid_amount || paymentResult?.total_paid_amount}</Typography>
+
+                </CardContent>
+              </CardContent>
+            </div>
+            <div>
+              <CircularProgress size="lg" determinate value={percentage2}>
+                <SvgIcon>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke='red'
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941"
+                    />
+                  </svg>
+                </SvgIcon>
+              </CircularProgress>
+            </div>
+          </div>
+          <Progress percent={Math.floor(percentage2)} status="active" strokeColor={{
+            from: 'red',
+            to: 'green',
+          }} className='mt-3' />
+        </Card>
+        <Card className="w-1/3 shadow-lg">
+          <div className='flex justify-between'>
+            <div>
+              <CardContent orientation="horizontal">
+                <CardContent>
+                  <Typography className="text-gray-500">Due Amount</Typography>
+                  <Typography level="h3" className="text-blue-500">₹ {filteredPaymentData.due_amount || paymentResult?.due_amount}</Typography>
+                </CardContent>
+              </CardContent>
+            </div>
+            <div>
+              <CircularProgress size="lg" determinate value={percentage3}>
+                <SvgIcon>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="blue"
+                  >
+                    <path
+                      strokeLinecap="blue"
+                      strokeLinejoin="round"
+                      d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941"
+                    />
+                  </svg>
+                </SvgIcon>
+              </CircularProgress>
+            </div>
+          </div>
+          <Progress percent={Math.floor(percentage3)} status="active" strokeColor={{
+            from: 'blue',
+            to: 'red',
+          }} className='mt-3' />
+        </Card>
+      </div>
+
       <div className="space30"></div>
       <Row gutter={[32, 32]}>
         <Col className="gutter-row w-full" sm={{ span: 24 }} md={{ span: 24 }} lg={{ span: 18 }}>

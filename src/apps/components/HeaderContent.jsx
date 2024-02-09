@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { Avatar, Dropdown, Layout } from 'antd';
+import { Avatar, Dropdown, Layout, Menu } from 'antd';
 import Notifications from '@/components/Notification';
 import { SettingOutlined, LogoutOutlined } from '@ant-design/icons';
 import { checkImage } from '@/request';
@@ -10,14 +10,36 @@ import { useNavigate } from 'react-router-dom';
 import { BASE_URL } from '@/config/serverApiConfig';
 import useLanguage from '@/locale/useLanguage';
 import SelectLanguage from '@/components/SelectLanguage';
-
+import { BsMoonStars } from 'react-icons/bs';
+import { GrSun } from 'react-icons/gr'
+import { MdOutlineComputer } from 'react-icons/md'
 const { Header } = Layout;
-
-export default function HeaderContent({ currentPath }) {
+import '@/style/tailwind.css'
+export default function HeaderContent() {
   const currentAdmin = useSelector(selectCurrentAdmin);
   const translate = useLanguage();
   const [hasPhotoprofile, setHasPhotoprofile] = useState(false);
   const [notificationCount, setNotificationCount] = useState(0);
+  const [darkMode, setDarkMode] = useState(false);
+  const [activeKey, setActiveKey] = useState(null);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    function handleScroll() {
+      const scrollPosition = window.scrollY;
+      if (scrollPosition > 0) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   useEffect(() => {
     async function fetchData() {
@@ -92,22 +114,68 @@ export default function HeaderContent({ currentPath }) {
     },
   ];
 
+
+
+  {/*dark mode function */ }
+  function toggleTheme() {
+    document.documentElement.classList.toggle('dark')
+  }
+
+  const handleItemClick = (key) => {
+    setActiveKey(key);
+    // Add additional logic if needed
+  };
+  const darkModeIcons = [
+    {
+      icon: <BsMoonStars />,
+      key: 'dark',
+      label: 'Dark',
+      onClick: () => setDarkMode(!darkMode),
+    },
+    {
+      icon: <GrSun />,
+      key: 'light',
+      label: 'Light',
+      onClick: () => setDarkMode(!darkMode),
+    },
+    {
+      icon: <MdOutlineComputer />,
+      key: 'system',
+      label: 'System',
+      onClick: () => setDarkMode(!darkMode),
+    },
+  ];
+
+  const darkModeDropdown = (
+    <Menu className='w-36' selectedKeys={[activeKey]}>
+      {darkModeIcons.map((item) => (
+        <Menu.Item
+          key={item.key}
+          onClick={() => handleItemClick(item.key)}
+          style={{ display: 'flex', alignItems: 'center' }}
+        ><div className='flex items-center gap-2.5'>
+            {item.icon} <span>{item.label}</span>
+          </div>
+        </Menu.Item>
+      ))}
+    </Menu>
+  );
+  {/*dark mode function */ }
+
+
   return (
     <Header
-      className="sticky top-0 z-50"
+      className={`sticky top-0 z-50 ${isScrolled ? 'scrolled' : 'bg-white w-[100%] scroll-smooth'}`}
       style={{
-        padding: '20px',
-        background: '#f9fafc',
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
       }}
     >
       <div className='text-[15px] font-thin'>
-        <span className='text-white '>ERP</span>
-        <span style={{ color: 'red' }} className='text-sm capitalize font-thin'>{currentPath}</span>
+        <span className='text-black uppercase'>Dashboard</span>
       </div>
-      <div className='flex gap-4 items-center flex-row-reverse text-white'>
+      <div className='flex flex-row-reverse text-white gap-3 items-center'>
         <Dropdown
           menu={{
             items,
@@ -129,8 +197,13 @@ export default function HeaderContent({ currentPath }) {
             {currentAdmin?.name.charAt(0).toUpperCase()}
           </Avatar>
         </Dropdown>
-        <SelectLanguage />
         <Notifications setNotificationCount={setNotificationCount} />
+        <Dropdown overlay={darkModeDropdown} trigger={['click']} placement='bottomRight'>
+          <div>
+            <BsMoonStars className='text-[20px] text-black cursor-pointer' />
+          </div>
+        </Dropdown>
+        <SelectLanguage />
       </div>
     </Header>
   );

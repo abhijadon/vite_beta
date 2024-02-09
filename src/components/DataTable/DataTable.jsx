@@ -4,12 +4,14 @@ import { Dropdown, Table, Button, Select, Input, Modal, Radio } from 'antd';
 import { PageHeader } from '@ant-design/pro-layout';
 import { useSelector, useDispatch } from 'react-redux';
 import { crud } from '@/redux/crud/actions';
+import { GrPowerReset } from "react-icons/gr";
 import { selectListItems } from '@/redux/crud/selectors';
 import useLanguage from '@/locale/useLanguage';
 import useResponsiveTable from '@/hooks/useResponsiveTable';
+import { AiOutlineExport } from "react-icons/ai";
 import { useCrudContext } from '@/context/crud';
 import ExcelJS from 'exceljs';
-
+import '@/style/tailwind.css'
 const { Option } = Select;
 
 function AddNewItem({ config }) {
@@ -31,7 +33,7 @@ function AddNewItem({ config }) {
 export default function DataTable({ config, extra = [] }) {
 
 
-  let { entity, dataTableColumns, DATATABLE_TITLE } = config;
+  let { entity, dataTableColumns } = config;
   const { crudContextAction } = useCrudContext();
   const { panel, collapsedBox, modal, readBox, editBox, advancedBox } = crudContextAction;
   const translate = useLanguage();
@@ -333,143 +335,123 @@ export default function DataTable({ config, extra = [] }) {
   return (
     <>
       {entity === 'lead' && (
-        <div className='mb-14 -mt-12 -ml-9 flex flex-wrap gap-4'>
-
+        <div className='flex items-center justify-between -mt-10'>
           {/* Select components for filtering */}
-          <div className="filter-container">
-            <Select
-              placeholder="Select Institute Name"
-              style={{ width: 200, marginRight: 16 }}
-              onChange={(value) => handleSelectChange('institute_name', value)}
-              value={selectedFilters.institute_name}
-            >
-              {selectOptions.instituteNames.map((name) => (
-                <Option key={name} value={name}>
-                  {name}
-                </Option>
-              ))}
-            </Select>
-            <p
-              onClick={() => resetFilters('institute_name')}
-              className="text-red-600 font-thin text-[12px] cursor-pointer"
-            >
-              Reset Institute
-            </p>
-          </div>
-
-          <div className="filter-container">
-            <Select
-              placeholder="Select University Name"
-              style={{ width: 200, marginRight: 16 }}
-              onChange={(value) => handleSelectChange('university_name', value)}
-              value={selectedFilters.university_name}
-            >
-              {selectOptions.universityNames.map((name) => (
-                <Option key={name} value={name}>
-                  {name}
-                </Option>
-              ))}
-            </Select>
-            <p
-              onClick={() => resetFilters('university_name')}
-              className="text-red-600 font-thin text-[12px] cursor-pointer"
-            >
-              Reset University
-            </p>
-          </div>
-
-          <div className="filter-container">
-            <Select
-              placeholder="Select Session"
-              style={{ width: 200, marginRight: 16 }}
-              onChange={(value) => handleSelectChange('session', value)}
-              value={selectedFilters.session}
-            >
-              {selectOptions.sessions.map((session) => (
-                <Option key={session} value={session}>
-                  {session}
-                </Option>
-              ))}
-            </Select>
-            <p
-              onClick={() => resetFilters('session')}
-              className="text-red-600 font-thin text-[12px] cursor-pointer"
-            >
-              Reset Session
-            </p>
-          </div>
-
-          <div className="filter-container">
-            <Select
-              placeholder="Select Counselor"
-              style={{ width: 200, marginRight: 16 }}
-              onChange={(value) => handleSelectChange('counselor_email', value)}
-              value={selectedFilters.counselor_email}
-            >
-              {selectOptions.counselorEmails.map((email) => {
-                const name = extractNameFromEmail(email); // Replace this function with your logic to extract the name from the email
-                return (
-                  <Option key={email} value={email}>
+          <div className='grid grid-cols-4 gap-6'>
+            <div>
+              <Select className='w-[270px] h-10'
+                placeholder="Select Institute Name"
+                onChange={(value) => handleSelectChange('institute_name', value)}
+                value={selectedFilters.institute_name}
+              >
+                {selectOptions.instituteNames.map((name) => (
+                  <Option key={name} value={name}>
                     {name}
                   </Option>
-                );
-              })}
-            </Select>
-            <p
-              onClick={() => resetFilters('counselor_email')}
-              className="text-red-600 font-thin text-[12px] cursor-pointer"
-            >
-              Reset Counselor
-            </p>
-          </div>
-          <div>
-            <Select
-              placeholder="Select Status"
-              style={{ width: 200, marginRight: 16 }}
-              onChange={(value) => handleSelectChange('status', value)}
-              value={selectedFilters.status}
-            >
-              {selectOptions.statuses.map((status) => (
-                <Option key={status} value={status}>
-                  {status}
-                </Option>
-              ))}
-            </Select>
-            <p
-              onClick={() => resetFilters('status')}
-              className="text-red-600 font-thin text-[12px] cursor-pointer"
-            >
-              Reset Status
-            </p>
+                ))}
+              </Select>
+              <p
+                onClick={() => resetFilters('institute_name')}
+                className="text-red-600 font-thin text-[12px] cursor-pointer"
+              >
+                Reset Institute
+              </p>
+            </div>
+
+            <div>
+              <Select className='w-[270px] h-10'
+                placeholder="Select University Name"
+                onChange={(value) => handleSelectChange('university_name', value)}
+                value={selectedFilters.university_name}
+              >
+                {selectOptions.universityNames.map((name) => (
+                  <Option key={name} value={name}>
+                    {name}
+                  </Option>
+                ))}
+              </Select >
+              <p
+                onClick={() => resetFilters('university_name')}
+                className="text-red-600 font-thin text-[12px] cursor-pointer"
+              >
+                Reset University
+              </p>
+            </div >
+
+            <div>
+              <Select className='w-[270px] h-10'
+                placeholder="Select Session"
+                onChange={(value) => handleSelectChange('session', value)
+                }
+                value={selectedFilters.session}
+              >
+                {
+                  selectOptions.sessions.map((session) => (
+                    <Option key={session} value={session}>
+                      {session}
+                    </Option>
+                  ))
+                }
+              </Select >
+              <p
+                onClick={() => resetFilters('session')}
+                className="text-red-600 font-thin text-[12px] cursor-pointer"
+              >
+                Reset Session
+              </p>
+            </div >
+
+            <div>
+              <Select className='w-[270px] h-10'
+                placeholder="Select Counselor"
+                onChange={(value) => handleSelectChange('counselor_email', value)}
+                value={selectedFilters.counselor_email}
+              >
+                {
+                  selectOptions.counselorEmails.map((email) => {
+                    const name = extractNameFromEmail(email); // Replace this function with your logic to extract the name from the email
+                    return (
+                      <Option key={email} value={email}>
+                        {name}
+                      </Option>
+                    );
+                  })
+                }
+              </Select >
+              <p
+                onClick={() => resetFilters('counselor_email')}
+                className="text-red-600 font-thin text-[12px] cursor-pointer"
+              >
+                Reset Counselor
+              </p>
+            </div >
+            <div>
+              <Select className='w-[270px] h-10'
+                placeholder="Select Status"
+                onChange={(value) => handleSelectChange('status', value)}
+                value={selectedFilters.status}
+              >
+                {selectOptions.statuses.map((status) => (
+                  <Option key={status} value={status}>
+                    {status}
+                  </Option>
+                ))}
+              </Select>
+              <p
+                onClick={() => resetFilters('status')}
+                className="text-red-600 font-thin text-[12px] cursor-pointer"
+              >
+                Reset Status
+              </p>
+            </div>
+          </div >
+          <div className='relative mt-5 float-right flex items-center'>
+            <Button onClick={resetAllFilters} className='text-xs gap-2 bg-transparent text-gray-500 hover:text-blue-500 font-thin cursor-pointer flex items-center' title='Reset All' >
+              <GrPowerReset /> Reset
+            </Button>
           </div>
           {/* Other filters... */}
-
-          <div className="filter-container">
-            <Input.Search
-              placeholder="Search"
-              onSearch={handleSearch}
-              onChange={(e) => handleSearch(e.target.value)}
-              style={{ width: 200, marginRight: 16 }}
-            />
-            <Select
-              placeholder="Select Rows to Download"
-              style={{ width: 200, marginRight: 16 }}
-              onChange={(value) => setDownloadCount(value)}
-              value={downloadCount}
-            >
-              {[10, 20, 50, 100].map((count) => (
-                <Select.Option key={count} value={count}>
-                  {count}
-                </Select.Option>
-              ))}
-            </Select>
-            <Button onClick={() => setExportModalVisible(true)} type="primary">
-              Export to Excel
-            </Button>
-
-          </div>
-
-        </div>
+        </div >
       )
       }
       <Modal
@@ -484,32 +466,35 @@ export default function DataTable({ config, extra = [] }) {
           <Radio value="pdf" disabled>PDF</Radio>
         </Radio.Group>
       </Modal>
-      <div className='-mt-6'>
-
+      <div className='mt-16'>
         <div ref={tableHeader}>
-          {/* Show total count based on applied filters */}
           <PageHeader
             onBack={() => window.history.back()}
-            title={`${DATATABLE_TITLE} (${translate('Total')} ${pagination.total || 0} )`}
             ghost={false}
-            extra={[
-              <Button
-                key="resetAll"
-                title="Reset all"
-                onClick={() => resetAllFilters()}
-                className="text-red-600 font-thin text-[12px] float-right cursor-pointer"
-              >
-                Reset All
-              </Button>,
-              <Button key="refresh" onClick={handelDataTableLoad}>
-                {translate('Refresh')}
-              </Button>,
-              <AddNewItem key="addNewItem" config={config} />,
-            ]}
             style={{
               padding: '20px 0px',
             }}
           />
+          {entity === 'lead' && (
+            <div>
+              <div className='flex justify-between mb-5'>
+                <div>
+                  <Input.Search className='w-64'
+                    placeholder="Search"
+                    onSearch={handleSearch}
+                    onChange={(e) => handleSearch(e.target.value)}
+                  />
+                </div>
+                <div className='space-x-2 flex items-center'>
+                  <Button onClick={() => setExportModalVisible(true)} className='bg-transparent text-gray-500 flex items-center gap-2 hover:text-blue-500'>
+                    <AiOutlineExport />Export to Excel
+                  </Button>
+                  <AddNewItem key="addNewItem" config={config} />
+                </div>
+
+              </div >
+            </div>
+          )}
         </div>
         {/* Table component */}
         <Table

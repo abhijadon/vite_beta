@@ -7,7 +7,9 @@ import logoIcon from '@/style/images/sodelogo.png';
 import logoText from '@/style/images/sodeicon.png';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-
+import { PiUsersThree } from "react-icons/pi";
+import { BsPersonCheck } from "react-icons/bs";
+import { MdLockOpen } from "react-icons/md";
 import {
   SettingOutlined,
   FileTextOutlined,
@@ -92,6 +94,30 @@ function Sidebar({ collapsible, onPathChange }) {
     }
     : null;
 
+  const rolesPermission = [
+    {
+      key: 'roles',
+      icon: <PiUsersThree className='text-[18px]' />,
+      label: <Link to={'/roles'}>{translate('roles')}</Link>,
+    },
+    {
+      key: 'permissions',
+      icon: <BsPersonCheck className='text-[18px]' />,
+      label: <Link to={'/permissions'}>{translate('permissions')}</Link>,
+    },
+
+  ];
+
+
+  const rolesSection = isAdmin
+    ? {
+      label: 'Roles & Permissions',
+      key: 'rolesSection',
+      icon: <MdLockOpen />,
+      children: rolesPermission,
+    }
+    : null;
+
   const items = [
     {
       key: 'dashboard',
@@ -127,7 +153,9 @@ function Sidebar({ collapsible, onPathChange }) {
         },
       ]
       : []),
+    rolesSection,
     settingsSection,
+
   ].filter(Boolean);
 
 
