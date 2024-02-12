@@ -279,7 +279,9 @@ export default function LeadForm() {
                 },
               ]}
             >
-              <Select placeholder={field.place}>
+              <Select showSearch optionFilterProp='children' filterOption={(input, option) =>
+                option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+              } placeholder={field.place}>
                 {field.options.map((option) => (
                   <Option key={option.value} value={option.value}>
                     {option.label ? option.label.charAt(0).toUpperCase() + option.label.slice(1) : ''}
@@ -418,7 +420,10 @@ export default function LeadForm() {
     <div>
       <form className='grid grid-cols-4 gap-3'>
         <Form.Item label="Select Institute" name={['customfields', 'institute_name']} >
-          <Select onChange={handleInstituteChange} placeholder="--Select Institute--">
+          <Select showSearch optionFilterProp='children' filterOption={(input, option) =>
+            option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+          }
+            onChange={handleInstituteChange} placeholder="--Select Institute--">
             {formData.map((item) => (
               <Option key={item.value} value={item.value}>
                 {item.label}
@@ -429,7 +434,10 @@ export default function LeadForm() {
         {selectedInstitute && (
           <>
             <Form.Item label="Select University" name={['customfields', 'university_name']} >
-              <Select onChange={handleUniversityChange} placeholder="--Select University--">
+              <Select showSearch optionFilterProp='children' filterOption={(input, option) =>
+                option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+              }
+                onChange={handleUniversityChange} placeholder="--Select University--">
                 {formData
                   .find((item) => item.value === selectedInstitute)
                   .universities?.map((university) => (
@@ -447,7 +455,9 @@ export default function LeadForm() {
                   .universities.find((university) => university.value === selectedUniversity)
                   .fields[0]?.courses ? (
                   <Form.Item label="Select Course" name={['education', 'course']}>
-                    <Select onChange={handleCourseChange} placeholder="--Select Course--">
+                    <Select showSearch optionFilterProp='children' filterOption={(input, option) =>
+                      option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+                    } onChange={handleCourseChange} placeholder="--Select Course--">
                       {formData
                         .find((item) => item.value === selectedInstitute)
                         .universities.find((university) => university.value === selectedUniversity)
@@ -462,7 +472,9 @@ export default function LeadForm() {
                 {selectedCourse && (
                   <div>
                     <Form.Item label="Select Specialization" name={['customfields', 'enter_specialization']}>
-                      <Select
+                      <Select showSearch optionFilterProp='children' filterOption={(input, option) =>
+                        option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+                      }
                         placeholder="--Select Specialization--"
                         onChange={handleSpecializationChange}
                       >
@@ -496,7 +508,9 @@ export default function LeadForm() {
               .universities.find((university) => university.value === selectedUniversity)
               .fields[1]?.payments ? (
               <Form.Item label="Select payment" name={['customfields', 'payment_type']} className='grid col-span-1'>
-                <Select onChange={handlePaymentChange} placeholder="--Select Payment--">
+                <Select showSearch optionFilterProp='children' filterOption={(input, option) =>
+                  option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+                } onChange={handlePaymentChange} placeholder="--Select Payment--">
                   {formData
                     .find((item) => item.value === selectedInstitute)
                     .universities.find((university) => university.value === selectedUniversity)

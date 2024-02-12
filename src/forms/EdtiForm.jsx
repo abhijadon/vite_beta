@@ -1,4 +1,4 @@
-import { Form, Input, Select } from 'antd';
+import { DatePicker, Form, Input, Select } from 'antd';
 import useLanguage from '@/locale/useLanguage';
 
 const { TextArea } = Input;
@@ -59,24 +59,26 @@ export default function LeadForm() {
                     label={translate('session')}
                     name={['customfields', 'session']}
                 >
-                    <Select placeholder='select session' options={[
-                        { value: 'jan 20', label: 'Jan 20' },
-                        { value: 'july 20', label: 'July 20' },
-                        { value: 'jan 21', label: 'Jan 21' },
-                        { value: 'july 21', label: 'July 21' },
-                        { value: 'jan 22', label: 'Jan 22' },
-                        { value: 'july 22', label: 'July 22' },
-                        { value: 'jan 23', label: 'Jan 23' },
-                        { value: 'july 23', label: 'July 23' },
-                        { value: 'jan 24', label: 'Jan 24' },
-                        { value: 'july 24', label: 'July 24' },
-                        { value: 'jan 25', label: 'Jan 25' },
-                        { value: 'july 25', label: 'July 25' },
-                        { value: 'mar 23', label: 'mar 23' },
-                        { value: 'apr 23', label: 'apr 23' },
-                        { value: 'oct 23', label: 'oct 23' },
-                        { value: 'nov 23', label: 'nov 23' },
-                    ]}>
+                    <Select
+                        showSearch
+                        placeholder='select session' options={[
+                            { value: 'JAN_20', label: 'JAN_20' },
+                            { value: 'JULY_20', label: 'JULY_20' },
+                            { value: 'JAN_21', label: 'JAN_21' },
+                            { value: 'JULY_21', label: 'JULY_21' },
+                            { value: 'JAN_22', label: 'JAN_22' },
+                            { value: 'JULY_22', label: 'JULY_22' },
+                            { value: 'JAN_23', label: 'JAN_23' },
+                            { value: 'JULY_23', label: 'JULY_23' },
+                            { value: 'JAN_24', label: 'JAN_24' },
+                            { value: 'JULY_24', label: 'JULY_24' },
+                            { value: 'JAN_25', label: 'JAN_25' },
+                            { value: 'JULY_25', label: 'JULY_25' },
+                            { value: 'MAR_23', label: 'MAR_23' },
+                            { value: 'APR_23', label: 'APR_23' },
+                            { value: 'OCT_23', label: 'OCT_23' },
+                            { value: 'NOV_23', label: 'NOV_23' },
+                        ]}>
 
                     </Select>
                 </Form.Item>
@@ -84,9 +86,11 @@ export default function LeadForm() {
                     label={translate('admission type')}
                     name={['customfields', 'admission_type']}
                 >
-                    <Select placeholder='select admission type'
+                    <Select
+                        showSearch
+                        placeholder='select admission type'
                         options={[
-                            { value: 'Fresh', label: translate('Fresh') },
+                            { value: 'FRESH', label: 'FRESH' },
                             { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }
                         ]}
                     ></Select>
@@ -109,77 +113,84 @@ export default function LeadForm() {
                     label={translate('Counselor Email')}
                     name={['customfields', 'counselor_email']}
                 >
-                    <Select options={[
-                        { value: 'zarin@highereducationschool.com', label: 'Zarin' },
-                        { value: 'kanchan@highereducationschool.com', label: 'Kanchan' },
-                        { value: 'kirti@highereducationschool.com', label: 'Kirti   ' },
-                        { value: 'ramandeep@highereducationschool.com', label: 'Raman  ' },
-                        { value: 'kavita@highereducationschool.com', label: 'kavita' },
-                        { value: 'imra@highereducationschool.com', label: 'Imra' },
-                        { value: 'Mahak@highereducationschool.com', label: 'Mahek' },
-                        { value: 'abhay@highereducationschool.com', label: 'abhay' },
-                        { value: 'swati@highereducationschool.com', label: 'swati' },
-                        { value: 'gulshan@highereducationschool.com', label: 'Gulshan' },
-                        { value: 'isha@highereducationschool.com', label: 'Isha' },
-                        { value: 'Sakshi@highereducationschool.com', label: 'Sakshi' },
-                        { value: 'aashita@highereducationschool.com', label: 'aashita' },
-                        { value: 'pratibha@highereducationschool.com', label: 'pratibha' },
-                        { value: 'shreyashi@highereducationschool.com', label: 'Shreyashi ' },
-                        { value: 'apoorvasrivastava@distanceeducationschool.com', label: 'Apoorva_DES' },
-                        { value: 'asma@distanceeducationschool.com', label: 'Asma_DES' },
-                        { value: 'nehaprashar@distanceeducationschool.com', label: 'Neha_Prasher_DES' },
-                        { value: 'priya@distanceeducationschool.com', label: 'Priya_DES' },
-                        { value: 'diksha@distanceeducationschool.com', label: 'Diksha_DES' },
-                        { value: 'abhilasha@distanceeducationschool.com', label: 'Abhilasha_Gupta_DES' },
-                        { value: 'saher@distanceeducationschool.com', label: 'Saher_Khan_DES' },
-                        { value: 'fiza@distanceeducationschool.com', label: 'Fiza_DES' },
-                        { value: 'muskan@distanceeducationschool.com', label: 'Muskaan_DES' },
-                        { value: 'aniruddh@distanceeducationschool.com', label: 'Aniruddh_DES' },
-                        { value: 'deva@distanceeducationschool.com', label: 'Devendra_DES' },
-                        { value: 'amritpal@distanceeducationschool.com', label: 'Amritpal_DES' },
-                        { value: 'Salman@distanceeducationschool.com:', label: 'Salman_DES' },
-                        { value: 'tariq@distanceeducationschool.com', label: 'Traiq_DES' },
-                        { value: 'shivam@distanceeducationschool.com', label: 'Shivam_sharma_DES' },
-                        { value: 'pushpa@distanceeducationschool.com', label: 'Puspa_DES' },
-                        { value: 'zarin@distanceeducationschool.com', label: 'Zarin_DES' },
-                        { value: 'kanchan@distanceeducationschool.com', label: 'Kanchan_DES' },
-                        { value: 'manu@distanceeducationschool.com', label: 'Manu_DES' },
+                    <Select
+                        showSearch
+                        options={[
+                            // DES External email with name
+                            { value: 'apoorvasrivastava@sode.co.in', label: 'Apoorva Srivastava' },
+                            { value: 'nehaprashar@sode.co.in', label: 'Neha Prasher' },
+                            { value: 'priya@sode.co.in', label: 'Priya Anand' },
+                            { value: 'diksha@sode.co.in', label: 'Diksha Singh' },
+                            { value: 'abhilasha@sode.co.in', label: 'Abhilasha Gupta' },
+                            { value: 'saher@sode.co.in', label: 'Saher Khan' },
 
-                        // Jain Team Emails
-                        { value: 'a.anitha.ju@gmail.com', label: 'Anita_JU' },
-                        { value: 'vaniruckmani.ju@gmail.com', label: 'Vani_Ruckmani_JU' },
-                        { value: 'priyankapalle.ju@gmail.com', label: 'Priyanka_JU' },
-                        { value: 'SwatiRamani.manipal@gmail.com', label: 'Swati_JU' },
+                            // DES Internal email with name 
+                            { value: 'muskan@distanceeducationschool.com', label: 'Muskaan ' },
+                            { value: 'aniruddh@distanceeducationschool.com', label: 'Aniruddh Prakash' },
+                            { value: 'amritpal@sode.co.in', label: 'Amritpal Singh' },
+                            { value: 'salman@sode.co.in', label: 'Salman' },
+                            { value: 'tariq@sode.co.in', label: 'Tariq Hasan' },
+                            { value: 'shivam@sode.co.in', label: 'Shivam sharma' },
+                            { value: 'pushpa@sode.co.in', label: 'Pushpa Pramanik' },
 
-                        // Manipal Team Email
-                        { value: 'ankitakumari.manipal@gmail.com', label: 'Ankita_MU' },
-                        { value: 'medhahandoo.manipal@gmail.com', label: 'Medha_MU' },
-                        { value: 'amreen.manipal@gmail.com', label: 'Amreen_MU' },
+                            // DES Internal email with name 
+                            { value: 'anurag@distanceeducationschool.com', label: 'Anurag Yadav' },
+                            { value: 'kavitakumari@sode.co.in', label: 'Kavita Kumari' },
+                            { value: 'rupal@sode.co.in', label: 'Rupal Gautam' },
+                            { value: 'deva@sode.co.in', label: 'Devendra' },
+                            { value: 'manshi@sode.co.in', label: 'Manshi Kem' },
 
-                        // Support Team Email
-                        { value: 'rajesh@distanceeducationschool.com', label: 'Rajesh_sir' },
-                        { value: 'manisha@distanceeducationschool.com', label: 'Manisha' },
-                        { value: 'admin@distanceeducationschool.com', label: 'Nouman_sir' },
-                        { value: 'sandy@distanceeducationschool.com', label: 'Sandy' },
-                        { value: 'neha@distanceeducationschool.com', label: 'Neha' },
-                        { value: 'yashpriya@distanceeducationschool.com', label: 'Yash_Priya' },
-                        { value: 'kavitahaldar@distanceeducationschool.com', label: 'kavitahaldar' },
-                        { value: 'ifla@distanceeducationschool.com', label: 'Ifla' },
-                        { value: 'shalu@distanceeducationschool.com', label: 'Shalu' },
-                        { value: 'zainubia@distanceeducationschool.com', label: 'zainbuia' },
-                        { value: 'pallovi@distanceeducationschool.com', label: 'Pallovi' },
-                        { value: 'kavitakumari@distanceeducationschool.com', label: 'Kavita_Kumari' },
-                        { value: 'manshi@distanceeducationschool.com', label: 'Mansi' },
-                        { value: 'Bhavya.manipal@gmail.com', label: 'Bhavya' },
-                        { value: 'anurag@distanceeducationschool.com', label: 'Anuraj' },
-                        { value: 'rupal@distanceeducationschool.com', label: 'Rupal' },
-                        //B2B Team Email
-                        { value: 'spuhelpdesk@gmail.com', label: 'Binny' },
-                        { value: 'ruchika.spu@gmail.com', label: 'Ruchika' },
-                        { value: 'lalit@distanceeducationschool.com', label: 'Lalit_DES' },
-                        { value: 'lalit.spu@gmail.com', label: 'Lalit' },
-                        { value: 'ramiz.spu@gmail.com', label: 'Ramiz' },
-                    ]}>
+                            // DES - INTERNATIONAL email with name 
+                            { value: 'zarin@distanceeducationschool.com', label: 'Zarin Badar' },
+
+                            // HES team email with name 
+                            { value: 'kanchan@highereducationschool.com', label: 'Kanchan Sharma' },
+                            { value: 'kirti@highereducationschool.com', label: 'Kirti Dubey' },
+                            { value: 'ramandeep@highereducationschool.com', label: 'Ramandeep Kaur' },
+                            { value: 'kavita@highereducationschool.com', label: 'Kavita Yadav' },
+                            { value: 'imra@highereducationschool.com', label: 'Imra Khan' },
+                            { value: 'mahak@highereducationschool.com', label: 'Mahek' },
+                            { value: 'abhay@highereducationschool.com', label: 'Abhay Dubey' },
+                            { value: 'swati@highereducationschool.com', label: 'Swati' },
+                            { value: 'gulshan@highereducationschool.com', label: 'Gulshan Nayyar' },
+                            { value: 'isha@highereducationschool.com', label: 'Isha Jaiswal' },
+                            { value: 'sakshi@highereducationschool.com', label: 'Sakshi Arora' },
+
+                            // Jain team email with name 
+                            { value: 'anitha@sode.co.in', label: 'A.Anitha' },
+                            { value: 'vani@sode.co.in', label: 'Vani Ruckmani' },
+
+                            // Manipal team email with name 
+                            { value: 'SwatiRamani.manipal@gmail.com', label: 'Swati Ramani' },
+                            { value: 'ankitakumar@sode.co.in', label: 'Ankita Kumari' },
+                            { value: 'nidhi@sode.co.in', label: 'Nidhi' },
+                            { value: 'amreen@sode.co.in', label: 'Amreen ALI Khan' },
+                            { value: 'umar@sode.co.in', label: 'MD Umar' },
+                            { value: 'nehagupta@sode.co.in', label: 'Neha Gupta' },
+                            { value: 'pawankumar@sode.co.in', label: 'Pawan Kumar' },
+                            { value: 'bhavya@sode.co.in', label: 'Bhavya' },
+
+                            // ALL DES && HES team email with name 
+                            { value: 'rajesh@distanceeducationschool.com', label: 'Rajesh Sir' },
+                            { value: 'manisha@distanceeducationschool.com', label: 'Manisha Yadav' },
+                            { value: 'admin@distanceeducationschool.com', label: 'Nouman Sir' },
+                            { value: 'sandy@distanceeducationschool.com', label: 'Sandy' },
+                            { value: 'neha@distanceeducationschool.com', label: 'Neha Raj' },
+                            { value: 'yashpriya@distanceeducationschool.com', label: 'Yash Priya' },
+                            { value: 'kavitahaldar@distanceeducationschool.com', label: 'Kavita Haldar' },
+                            { value: 'ifla@distanceeducationschool.com', label: 'Ifla' },
+                            { value: 'shalu@distanceeducationschool.com', label: 'Shalu' },
+                            { value: 'zainubia@distanceeducationschool.com', label: 'Zainbuia' },
+                            { value: 'pallovi@distanceeducationschool.com', label: 'Pallovi' },
+                            { value: 'hansi@distanceeducationschool.com', label: 'Hansi' },
+                            { value: 'shristi@distanceeducationschool.com', label: 'Shristi' },
+                            { value: 'aashita@highereducationschool.com', label: 'Aashita' },
+                            { value: 'pratibha@highereducationschool.com', label: 'Pratibha' },
+                            { value: 'shreyashi@highereducationschool.com', label: 'Shreyashi' },
+                            { value: 'spuhelpdesk@gmail.com', label: 'Binny' },
+                            { value: 'ruchika.spu@gmail.com', label: 'Ruchika' },
+                            { value: 'ramiz.spu@gmail.com', label: 'Ramiz' },
+                        ]}>
 
                     </Select>
                 </Form.Item>
@@ -207,6 +218,7 @@ export default function LeadForm() {
                     name={['customfields', 'gender']}
                 >
                     <Select
+                        showSearch
                         options={[
                             { value: 'Male', label: translate('Male') },
                             { value: 'Female', label: translate('Female') },
@@ -220,16 +232,18 @@ export default function LeadForm() {
                     name={['customfields', 'installment_type']}
                 >
                     <Select
+                        showSearch
                         options={[
-                            { value: '1st installmenttype/New Admission', label: translate('1st installmenttype/New Admission') },
-                            { value: '2nd installment', label: translate('2nd installment') },
-                            { value: '3rd installmen', label: translate('3rd installment') },
-                            { value: '4th installmen', label: translate('4th installment') },
-                            { value: '5th installmen', label: translate('5th installment') },
-                            { value: '6th installmen', label: translate('6th installment') },
-                            { value: '6th installmen', label: translate('8th installment') },
-                            { value: '9th installmen', label: translate('9th installment') },
-                            { value: '10th installmen', label: translate('10th installment') },
+                            { value: '1st Installment/ New Admission', label: '1st Installment/ New Admission' },
+                            { value: '2nd Installment', label: '2nd Installment' },
+                            { value: '3rd Installment', label: '3rd Installment' },
+                            { value: '4th Installment', label: '4th Installment' },
+                            { value: '5th Installment', label: '5th Installment' },
+                            { value: '6th Installment', label: '6th Installment' },
+                            { value: '7th Installment', label: '7th Installment' },
+                            { value: '8th Installment', label: '8th Installment' },
+                            { value: '9th Installment', label: '9th Installment' },
+                            { value: '10th Installment', label: '10th Installment' },
                         ]}
                     ></Select>
                 </Form.Item>
@@ -238,11 +252,13 @@ export default function LeadForm() {
                     name={['customfields', 'payment_mode']}
                 >
                     <Select
+                        showSearch
                         options={[
-                            { value: 'DES Bank Account/UPI', label: translate('DES Bank Account/UPI') },
-                            { value: 'University Bank Account', label: translate('University Bank Account') },
+                            { value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
+                            { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
+                            { value: 'University Bank Account', label: 'University Bank Account' },
                             { value: 'Payment Gateway', label: 'Payment Gateway' },
-                            { value: 'Cash/DD', label: 'Cash/DD' },
+                            { value: 'Cash/DD', label: 'Cash/DD' }
 
                         ]}
                     ></Select>
@@ -251,7 +267,8 @@ export default function LeadForm() {
                     label={translate('payment type')}
                     name={['customfields', 'payment_type']}
                 >
-                    <Select placeholder='select payment type'
+                    <Select
+                        showSearch
                         options={[
                             { value: 'semester', label: translate('semester') },
                             { value: 'yearly', label: 'yearly' },
@@ -287,6 +304,8 @@ export default function LeadForm() {
                     ]}
                 >
                     <Select
+                        showSearch
+                        optionFilterProp='children'
                         options={[
                             { value: 'New', label: translate('New') },
                             { value: 'Enrolled', label: translate('Enrolled') },
@@ -301,6 +320,12 @@ export default function LeadForm() {
                     name={['customfields', 'remark']}
                 >
                     <TextArea rows={1} />
+                </Form.Item>
+                <Form.Item
+                    label={translate('Create_at')}
+                    name='created'
+                >
+                    <DatePicker className='uppercase' />
                 </Form.Item>
             </div>
         </>

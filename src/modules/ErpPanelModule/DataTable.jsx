@@ -55,7 +55,7 @@ export default function DataTable({ config, extra = [] }) {
   const [filteredCount, setFilteredCount] = useState(0);
   let { entity, dataTableColumns, create = true } = config;
   const { result: listResult, isLoading: listIsLoading } = useSelector(selectListItems);
-  const { pagination, items: dataSource } = listResult;
+  const { items: dataSource } = listResult;
   const { erpContextAction } = useErpContext();
   const { modal } = erpContextAction;
   {/* filters code  */ }
@@ -275,13 +275,13 @@ export default function DataTable({ config, extra = [] }) {
   const calculatePercentage = (currentAmount, targetAmount) => {
     return (currentAmount / targetAmount) * 100;
   };
-  const percentage1 = paymentSummary ? calculatePercentage(paymentSummary.result.total_course_fee, 3000000) : 0;
-  const percentage2 = paymentSummary ? calculatePercentage(paymentSummary.result.total_course_feet, 2000000) : 0;
-  const percentage3 = paymentSummary ? calculatePercentage(paymentSummary.result.total_course_fee, 1000000) : 0;
-  {/* progrsh bar */ }
+  const percentage1 = paymentSummary && paymentSummary.result && paymentSummary.result.total_course_fee ? calculatePercentage(paymentSummary.result.total_course_fee, 3000000) : 0;
+  const percentage2 = paymentSummary && paymentSummary.result && paymentSummary.result.total_paid_amount ? calculatePercentage(paymentSummary.result.total_paid_amount, 2000000) : 0;
+  const percentage3 = paymentSummary && paymentSummary.result && paymentSummary.result.due_amount ? calculatePercentage(paymentSummary.result.due_amount, 1000000) : 0;
+
+
   {/* progrsh bar */ }
 
-  {/* email split code onlye show name */ }
   {/* email split code onlye show name */ }
 
   const getEmailName = (email) => {
@@ -506,7 +506,7 @@ export default function DataTable({ config, extra = [] }) {
           {entity === 'payment' && (
             <div>
               <div className='flex justify-between items-center'>
-                <div className='grid grid-rows-1 gap-1 font-thin text-red-500 '>
+                <div className='grid grid-rows-1 gap-1 font-thin text-xs text-red-500 '>
                   <p>Showing {totalCount} to {filteredCount}</p>
                   <Search placeholder="input search text" allowClear style={{ width: 200 }} />
                 </div>
@@ -526,7 +526,7 @@ export default function DataTable({ config, extra = [] }) {
         columns={tableColumns}
         rowKey={(item) => item._id}
         dataSource={filteredData}
-        pagination={pagination}
+        pagination={false}
         loading={listIsLoading}
         onChange={handelDataTableLoad}
       />

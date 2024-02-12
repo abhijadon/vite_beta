@@ -372,7 +372,7 @@ const formData = [
             name: ['customfields', 'send_fee_receipt'],
             type: 'radio',
             options: ['yes', 'no'],
-            required: 'require'
+
           },
           {
             key: 'studentId',
@@ -381,7 +381,7 @@ const formData = [
             place: 'StudentID',
             id: 'StudentID',
             type: 'studentId',
-            required: 'require'
+
           },
           {
             key: 'text',
@@ -390,7 +390,7 @@ const formData = [
             place: 'Student Name',
             id: 'full_name',
             type: 'text',
-            required: 'require'
+
           },
           {
             key: 'email',
@@ -399,7 +399,7 @@ const formData = [
             name: ['contact', 'email'],
             id: 'EmailID',
             type: 'email',
-            required: 'require'
+
           },
           {
             key: 'tel',
@@ -408,7 +408,7 @@ const formData = [
             place: 'Enter Phone Number',
             id: 'phone',
             type: 'tel',
-            required: 'require'
+
           },
           {
             key: 'text',
@@ -417,7 +417,7 @@ const formData = [
             place: 'Enter Father Name',
             id: 'Father Name',
             type: 'text',
-            required: 'require'
+
           },
           {
             key: 'text',
@@ -426,32 +426,32 @@ const formData = [
             place: 'Enter Mother Name',
             id: 'mother_name',
             type: 'text',
-            required: 'require'
+
           },
           {
             key: 'select',
             label: 'Session',
             name: ['customfields', 'session'],
-            place: 'eg: jan 20',
+            place: 'eg: JAN_20',
             id: 'Session',
             type: 'select',
-            options: [{ value: 'jan 20', label: 'Jan 20' },
-            { value: 'july 20', label: 'July 20' },
-            { value: 'jan 21', label: 'Jan 21' },
-            { value: 'july 21', label: 'July 21' },
-            { value: 'jan 22', label: 'Jan 22' },
-            { value: 'july 22', label: 'July 22' },
-            { value: 'jan 23', label: 'Jan 23' },
-            { value: 'july 23', label: 'July 23' },
-            { value: 'jan 24', label: 'Jan 24' },
-            { value: 'july 24', label: 'July 24' },
-            { value: 'jan 25', label: 'Jan 25' },
-            { value: 'july 25', label: 'July 25' },
-            { value: 'mar 23', label: 'mar 23' },
-            { value: 'apr 23', label: 'apr 23' },
-            { value: 'oct 23', label: 'oct 23' },
-            { value: 'nov 23', label: 'nov 23' },],
-            required: 'require'
+            options: [{ value: 'JAN_20', label: 'JAN_20' },
+            { value: 'JULY_20', label: 'JULY_20' },
+            { value: 'JAN_21', label: 'JAN_21' },
+            { value: 'JULY_21', label: 'JULY_21' },
+            { value: 'JAN_22', label: 'JAN_22' },
+            { value: 'JULY_22', label: 'JULY_22' },
+            { value: 'JAN_23', label: 'JAN_23' },
+            { value: 'JULY_23', label: 'JULY_23' },
+            { value: 'JAN_24', label: 'JAN_24' },
+            { value: 'JULY_24', label: 'JULY_24' },
+            { value: 'JAN_25', label: 'JAN_25' },
+            { value: 'JULY_25', label: 'JULY_25' },
+            { value: 'MAR_23', label: 'MAR_23' },
+            { value: 'APR_23', label: 'APR_23' },
+            { value: 'OCT_23', label: 'OCT_23' },
+            { value: 'NOV_23', label: 'NOV_23' },],
+
           },
           {
             key: 'select',
@@ -460,7 +460,7 @@ const formData = [
             id: 'SessionType',
             place: 'Enter Admission Type',
             type: 'select',
-            options: [{ value: 'Fresh', label: 'Fresh' },
+            options: [{ value: 'FRESH', label: 'FRESH' },
             { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
           },
 
@@ -471,7 +471,7 @@ const formData = [
             place: 'Enter Date of Birth',
             id: 'dob',
             type: 'date',
-            required: 'require'
+
           },
           {
             key: 'select',
@@ -491,7 +491,7 @@ const formData = [
             name: ['customfields', 'installment_type'],
             place: 'Installment Type',
             type: 'select',
-            required: 'require',
+
             options: [
               { value: '1st Installment/ New Admission', label: '1st Installment/ New Admission' },
               { value: '2nd Installment', label: '2nd Installment' },
@@ -512,8 +512,9 @@ const formData = [
             id: 'PaymentMode ',
             type: 'select',
             place: 'Select Payment Mode',
-            required: 'require',
+
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
+            { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
             { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
@@ -524,77 +525,82 @@ const formData = [
             name: ['customfields', 'counselor_email'],
             id: 'email ',
             type: 'select',
-            place: 'select counselor email',
-            required: 'require',
-            options: [{ value: 'zarin@highereducationschool.com', label: 'Zarin' },
-            { value: 'kanchan@highereducationschool.com', label: 'Kanchan' },
-            { value: 'kirti@highereducationschool.com', label: 'Kirti' },
-            { value: 'ramandeep@highereducationschool.com', label: 'Raman' },
-            { value: 'kavita@highereducationschool.com', label: 'kavita' },
-            { value: 'imra@highereducationschool.com', label: 'Imra' },
-            { value: 'Mahak@highereducationschool.com', label: 'Mahek' },
-            { value: 'abhay@highereducationschool.com', label: 'abhay' },
-            { value: 'swati@highereducationschool.com', label: 'swati' },
-            { value: 'gulshan@highereducationschool.com', label: 'Gulshan' },
-            { value: 'isha@highereducationschool.com', label: 'Isha' },
-            { value: 'Sakshi@highereducationschool.com', label: 'Sakshi' },
-            { value: 'aashita@highereducationschool.com', label: 'aashita' },
-            { value: 'pratibha@highereducationschool.com', label: 'pratibha' },
-            { value: 'shreyashi@highereducationschool.com', label: 'Shreyashi ' },
-            { value: 'apoorvasrivastava@distanceeducationschool.com', label: 'Apoorva_DES' },
-            { value: 'asma@distanceeducationschool.com', label: 'Asma_DES' },
-            { value: 'nehaprashar@distanceeducationschool.com', label: 'Neha_Prasher_DES' },
-            { value: 'priya@distanceeducationschool.com', label: 'Priya_DES' },
-            { value: 'diksha@distanceeducationschool.com', label: 'Diksha_DES' },
-            { value: 'abhilasha@distanceeducationschool.com', label: 'Abhilasha_Gupta_DES' },
-            { value: 'saher@distanceeducationschool.com', label: 'Saher_Khan_DES' },
-            { value: 'fiza@distanceeducationschool.com', label: 'Fiza_DES' },
-            { value: 'muskan@distanceeducationschool.com', label: 'Muskaan_DES' },
-            { value: 'aniruddh@distanceeducationschool.com', label: 'Aniruddh_DES' },
-            { value: 'deva@distanceeducationschool.com', label: 'Devendra_DES' },
-            { value: 'amritpal@distanceeducationschool.com', label: 'Amritpal_DES' },
-            { value: 'Salman@distanceeducationschool.com:', label: 'Salman_DES' },
-            { value: 'tariq@distanceeducationschool.com', label: 'Traiq_DES' },
-            { value: 'shivam@distanceeducationschool.com', label: 'Shivam_sharma_DES' },
-            { value: 'pushpa@distanceeducationschool.com', label: 'Puspa_DES' },
-            { value: 'zarin@distanceeducationschool.com', label: 'Zarin_DES' },
-            { value: 'kanchan@distanceeducationschool.com', label: 'Kanchan_DES' },
-            { value: 'manu@distanceeducationschool.com', label: 'Manu_DES' },
+            place: 'select counselor name',
+            options: [
+              // DES External email with name
+              { value: 'apoorvasrivastava@sode.co.in', label: 'Apoorva Srivastava' },
+              { value: 'nehaprashar@sode.co.in', label: 'Neha Prasher' },
+              { value: 'priya@sode.co.in', label: 'Priya Anand' },
+              { value: 'diksha@sode.co.in', label: 'Diksha Singh' },
+              { value: 'abhilasha@sode.co.in', label: 'Abhilasha Gupta' },
+              { value: 'saher@sode.co.in', label: 'Saher Khan' },
 
-            // Jain Team Emails
-            { value: 'a.anitha.ju@gmail.com', label: 'Anita_JU' },
-            { value: 'vaniruckmani.ju@gmail.com', label: 'Vani_Ruckmani_JU' },
-            { value: 'priyankapalle.ju@gmail.com', label: 'Priyanka_JU' },
-            { value: 'SwatiRamani.manipal@gmail.com', label: 'Swati_JU' },
+              // DES Internal email with name 
+              { value: 'muskan@distanceeducationschool.com', label: 'Muskaan ' },
+              { value: 'aniruddh@distanceeducationschool.com', label: 'Aniruddh Prakash' },
+              { value: 'amritpal@sode.co.in', label: 'Amritpal Singh' },
+              { value: 'salman@sode.co.in', label: 'Salman' },
+              { value: 'tariq@sode.co.in', label: 'Tariq Hasan' },
+              { value: 'shivam@sode.co.in', label: 'Shivam sharma' },
+              { value: 'pushpa@sode.co.in', label: 'Pushpa Pramanik' },
 
-            // Manipal Team Email
-            { value: 'ankitakumari.manipal@gmail.com', label: 'Ankita_MU' },
-            { value: 'medhahandoo.manipal@gmail.com', label: 'Medha_MU' },
-            { value: 'amreen.manipal@gmail.com', label: 'Amreen_MU' },
+              // DES Internal email with name 
+              { value: 'anurag@distanceeducationschool.com', label: 'Anurag Yadav' },
+              { value: 'kavitakumari@sode.co.in', label: 'Kavita Kumari' },
+              { value: 'rupal@sode.co.in', label: 'Rupal Gautam' },
+              { value: 'deva@sode.co.in', label: 'Devendra' },
+              { value: 'manshi@sode.co.in', label: 'Manshi Kem' },
 
-            // Support Team Email
-            { value: 'rajesh@distanceeducationschool.com', label: 'Rajesh_sir' },
-            { value: 'manisha@distanceeducationschool.com', label: 'Manisha' },
-            { value: 'admin@distanceeducationschool.com', label: 'Nouman_sir' },
-            { value: 'sandy@distanceeducationschool.com', label: 'Sandy' },
-            { value: 'neha@distanceeducationschool.com', label: 'Neha' },
-            { value: 'yashpriya@distanceeducationschool.com', label: 'Yash_Priya' },
-            { value: 'kavitahaldar@distanceeducationschool.com', label: 'kavitahaldar' },
-            { value: 'ifla@distanceeducationschool.com', label: 'Ifla' },
-            { value: 'shalu@distanceeducationschool.com', label: 'Shalu' },
-            { value: 'zainubia@distanceeducationschool.com', label: 'zainbuia' },
-            { value: 'pallovi@distanceeducationschool.com', label: 'Pallovi' },
-            { value: 'kavitakumari@distanceeducationschool.com', label: 'Kavita_Kumari' },
-            { value: 'manshi@distanceeducationschool.com', label: 'Mansi' },
-            { value: 'Bhavya.manipal@gmail.com', label: 'Bhavya' },
-            { value: 'anurag@distanceeducationschool.com', label: 'Anuraj' },
-            { value: 'rupal@distanceeducationschool.com', label: 'Rupal' },
-            //B2B Team Email
-            { value: 'spuhelpdesk@gmail.com', label: 'Binny' },
-            { value: 'ruchika.spu@gmail.com', label: 'Ruchika' },
-            { value: 'lalit@distanceeducationschool.com', label: 'Lalit_DES' },
-            { value: 'lalit.spu@gmail.com', label: 'Lalit' },
-            { value: 'ramiz.spu@gmail.com', label: 'Ramiz' }
+              // DES - INTERNATIONAL email with name 
+              { value: 'zarin@distanceeducationschool.com', label: 'Zarin Badar' },
+
+              // HES team email with name 
+              { value: 'kanchan@highereducationschool.com', label: 'Kanchan Sharma' },
+              { value: 'kirti@highereducationschool.com', label: 'Kirti Dubey' },
+              { value: 'ramandeep@highereducationschool.com', label: 'Ramandeep Kaur' },
+              { value: 'kavita@highereducationschool.com', label: 'Kavita Yadav' },
+              { value: 'imra@highereducationschool.com', label: 'Imra Khan' },
+              { value: 'mahak@highereducationschool.com', label: 'Mahek' },
+              { value: 'abhay@highereducationschool.com', label: 'Abhay Dubey' },
+              { value: 'swati@highereducationschool.com', label: 'Swati' },
+              { value: 'gulshan@highereducationschool.com', label: 'Gulshan Nayyar' },
+              { value: 'isha@highereducationschool.com', label: 'Isha Jaiswal' },
+              { value: 'sakshi@highereducationschool.com', label: 'Sakshi Arora' },
+
+              // Jain team email with name 
+              { value: 'anitha@sode.co.in', label: 'A.Anitha' },
+              { value: 'vani@sode.co.in', label: 'Vani Ruckmani' },
+
+              // Manipal team email with name 
+              { value: 'SwatiRamani.manipal@gmail.com', label: 'Swati Ramani' },
+              { value: 'ankitakumar@sode.co.in', label: 'Ankita Kumari' },
+              { value: 'nidhi@sode.co.in', label: 'Nidhi' },
+              { value: 'amreen@sode.co.in', label: 'Amreen ALI Khan' },
+              { value: 'umar@sode.co.in', label: 'MD Umar' },
+              { value: 'nehagupta@sode.co.in', label: 'Neha Gupta' },
+              { value: 'pawankumar@sode.co.in', label: 'Pawan Kumar' },
+              { value: 'bhavya@sode.co.in', label: 'Bhavya' },
+
+              // ALL DES && HES team email with name 
+              { value: 'rajesh@distanceeducationschool.com', label: 'Rajesh Sir' },
+              { value: 'manisha@distanceeducationschool.com', label: 'Manisha Yadav' },
+              { value: 'admin@distanceeducationschool.com', label: 'Nouman Sir' },
+              { value: 'sandy@distanceeducationschool.com', label: 'Sandy' },
+              { value: 'neha@distanceeducationschool.com', label: 'Neha Raj' },
+              { value: 'yashpriya@distanceeducationschool.com', label: 'Yash Priya' },
+              { value: 'kavitahaldar@distanceeducationschool.com', label: 'Kavita Haldar' },
+              { value: 'ifla@distanceeducationschool.com', label: 'Ifla' },
+              { value: 'shalu@distanceeducationschool.com', label: 'Shalu' },
+              { value: 'zainubia@distanceeducationschool.com', label: 'Zainbuia' },
+              { value: 'pallovi@distanceeducationschool.com', label: 'Pallovi' },
+              { value: 'hansi@distanceeducationschool.com', label: 'Hansi' },
+              { value: 'shristi@distanceeducationschool.com', label: 'Shristi' },
+              { value: 'aashita@highereducationschool.com', label: 'Aashita' },
+              { value: 'pratibha@highereducationschool.com', label: 'Pratibha' },
+              { value: 'shreyashi@highereducationschool.com', label: 'Shreyashi' },
+              { value: 'spuhelpdesk@gmail.com', label: 'Binny' },
+              { value: 'ruchika.spu@gmail.com', label: 'Ruchika' },
+              { value: 'ramiz.spu@gmail.com', label: 'Ramiz' },
             ],
           },
           {
@@ -604,7 +610,7 @@ const formData = [
             id: 'status ',
             type: 'select',
             place: 'select status',
-            required: 'require',
+
             options: [
               { value: 'New', label: 'New' },
               { value: 'Cancel', label: 'Cancel' },
@@ -627,6 +633,13 @@ const formData = [
             place: 'Enter your remark',
             id: 'remark',
             type: 'textarea',
+          },
+          {
+            key: 'date',
+            label: 'Created At',
+            name: 'created',
+            id: 'created',
+            type: 'date',
           },
         ],
       },
@@ -998,7 +1011,7 @@ const formData = [
             name: ['customfields', 'send_fee_receipt'],
             type: 'radio',
             options: ['yes', 'no'],
-            required: 'require'
+
           },
           {
             key: 'studentId',
@@ -1007,7 +1020,7 @@ const formData = [
             place: 'StudentID',
             id: 'StudentID',
             type: 'studentId',
-            required: 'require'
+
           },
           {
             key: 'text',
@@ -1016,7 +1029,7 @@ const formData = [
             place: 'Student Name',
             id: 'full_name',
             type: 'text',
-            required: 'require'
+
           },
           {
             key: 'email',
@@ -1025,7 +1038,7 @@ const formData = [
             name: ['contact', 'email'],
             id: 'EmailID',
             type: 'email',
-            required: 'require'
+
           },
           {
             key: 'tel',
@@ -1034,7 +1047,7 @@ const formData = [
             place: 'Enter Phone Number',
             id: 'phone',
             type: 'tel',
-            required: 'require'
+
           },
           {
             key: 'text',
@@ -1043,7 +1056,7 @@ const formData = [
             place: 'Enter Father Name',
             id: 'Father Name',
             type: 'text',
-            required: 'require'
+
           },
           {
             key: 'text',
@@ -1052,32 +1065,32 @@ const formData = [
             place: 'Enter Mother Name',
             id: 'mother_name',
             type: 'text',
-            required: 'require'
+
           },
           {
             key: 'select',
             label: 'Session',
             name: ['customfields', 'session'],
-            place: 'eg: jan 20',
+            place: 'eg: JAN_20',
             id: 'Session',
             type: 'select',
-            options: [{ value: 'jan 20', label: 'Jan 20' },
-            { value: 'july 20', label: 'July 20' },
-            { value: 'jan 21', label: 'Jan 21' },
-            { value: 'july 21', label: 'July 21' },
-            { value: 'jan 22', label: 'Jan 22' },
-            { value: 'july 22', label: 'July 22' },
-            { value: 'jan 23', label: 'Jan 23' },
-            { value: 'july 23', label: 'July 23' },
-            { value: 'jan 24', label: 'Jan 24' },
-            { value: 'july 24', label: 'July 24' },
-            { value: 'jan 25', label: 'Jan 25' },
-            { value: 'july 25', label: 'July 25' },
-            { value: 'mar 23', label: 'mar 23' },
-            { value: 'apr 23', label: 'apr 23' },
-            { value: 'oct 23', label: 'oct 23' },
-            { value: 'nov 23', label: 'nov 23' },],
-            required: 'require'
+            options: [{ value: 'JAN_20', label: 'JAN_20' },
+            { value: 'JULY_20', label: 'JULY_20' },
+            { value: 'JAN_21', label: 'JAN_21' },
+            { value: 'JULY_21', label: 'JULY_21' },
+            { value: 'JAN_22', label: 'JAN_22' },
+            { value: 'JULY_22', label: 'JULY_22' },
+            { value: 'JAN_23', label: 'JAN_23' },
+            { value: 'JULY_23', label: 'JULY_23' },
+            { value: 'JAN_24', label: 'JAN_24' },
+            { value: 'JULY_24', label: 'JULY_24' },
+            { value: 'JAN_25', label: 'JAN_25' },
+            { value: 'JULY_25', label: 'JULY_25' },
+            { value: 'MAR_23', label: 'MAR_23' },
+            { value: 'APR_23', label: 'APR_23' },
+            { value: 'OCT_23', label: 'OCT_23' },
+            { value: 'NOV_23', label: 'NOV_23' },],
+
           },
           {
             key: 'select',
@@ -1086,7 +1099,7 @@ const formData = [
             id: 'SessionType',
             place: 'Enter Admission Type',
             type: 'select',
-            options: [{ value: 'Fresh', label: 'Fresh' },
+            options: [{ value: 'FRESH', label: 'FRESH' },
             { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
           },
 
@@ -1097,7 +1110,7 @@ const formData = [
             place: 'Enter Date of Birth',
             id: 'dob',
             type: 'date',
-            required: 'require'
+
           },
           {
             key: 'select',
@@ -1117,7 +1130,7 @@ const formData = [
             name: ['customfields', 'installment_type'],
             place: 'Installment Type',
             type: 'select',
-            required: 'require',
+
             options: [
               { value: '1st Installment/ New Admission', label: '1st Installment/ New Admission' },
               { value: '2nd Installment', label: '2nd Installment' },
@@ -1138,8 +1151,9 @@ const formData = [
             id: 'PaymentMode ',
             type: 'select',
             place: 'Select Payment Mode',
-            required: 'require',
+
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
+            { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
             { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
@@ -1150,77 +1164,82 @@ const formData = [
             name: ['customfields', 'counselor_email'],
             id: 'email ',
             type: 'select',
-            place: 'select counselor email',
-            required: 'require',
-            options: [{ value: 'zarin@highereducationschool.com', label: 'Zarin' },
-            { value: 'kanchan@highereducationschool.com', label: 'Kanchan' },
-            { value: 'kirti@highereducationschool.com', label: 'Kirti' },
-            { value: 'ramandeep@highereducationschool.com', label: 'Raman' },
-            { value: 'kavita@highereducationschool.com', label: 'kavita' },
-            { value: 'imra@highereducationschool.com', label: 'Imra' },
-            { value: 'Mahak@highereducationschool.com', label: 'Mahek' },
-            { value: 'abhay@highereducationschool.com', label: 'abhay' },
-            { value: 'swati@highereducationschool.com', label: 'swati' },
-            { value: 'gulshan@highereducationschool.com', label: 'Gulshan' },
-            { value: 'isha@highereducationschool.com', label: 'Isha' },
-            { value: 'Sakshi@highereducationschool.com', label: 'Sakshi' },
-            { value: 'aashita@highereducationschool.com', label: 'aashita' },
-            { value: 'pratibha@highereducationschool.com', label: 'pratibha' },
-            { value: 'shreyashi@highereducationschool.com', label: 'Shreyashi ' },
-            { value: 'apoorvasrivastava@distanceeducationschool.com', label: 'Apoorva_DES' },
-            { value: 'asma@distanceeducationschool.com', label: 'Asma_DES' },
-            { value: 'nehaprashar@distanceeducationschool.com', label: 'Neha_Prasher_DES' },
-            { value: 'priya@distanceeducationschool.com', label: 'Priya_DES' },
-            { value: 'diksha@distanceeducationschool.com', label: 'Diksha_DES' },
-            { value: 'abhilasha@distanceeducationschool.com', label: 'Abhilasha_Gupta_DES' },
-            { value: 'saher@distanceeducationschool.com', label: 'Saher_Khan_DES' },
-            { value: 'fiza@distanceeducationschool.com', label: 'Fiza_DES' },
-            { value: 'muskan@distanceeducationschool.com', label: 'Muskaan_DES' },
-            { value: 'aniruddh@distanceeducationschool.com', label: 'Aniruddh_DES' },
-            { value: 'deva@distanceeducationschool.com', label: 'Devendra_DES' },
-            { value: 'amritpal@distanceeducationschool.com', label: 'Amritpal_DES' },
-            { value: 'Salman@distanceeducationschool.com:', label: 'Salman_DES' },
-            { value: 'tariq@distanceeducationschool.com', label: 'Traiq_DES' },
-            { value: 'shivam@distanceeducationschool.com', label: 'Shivam_sharma_DES' },
-            { value: 'pushpa@distanceeducationschool.com', label: 'Puspa_DES' },
-            { value: 'zarin@distanceeducationschool.com', label: 'Zarin_DES' },
-            { value: 'kanchan@distanceeducationschool.com', label: 'Kanchan_DES' },
-            { value: 'manu@distanceeducationschool.com', label: 'Manu_DES' },
+            place: 'select counselor name',
+            options: [
+              // DES External email with name
+              { value: 'apoorvasrivastava@sode.co.in', label: 'Apoorva Srivastava' },
+              { value: 'nehaprashar@sode.co.in', label: 'Neha Prasher' },
+              { value: 'priya@sode.co.in', label: 'Priya Anand' },
+              { value: 'diksha@sode.co.in', label: 'Diksha Singh' },
+              { value: 'abhilasha@sode.co.in', label: 'Abhilasha Gupta' },
+              { value: 'saher@sode.co.in', label: 'Saher Khan' },
 
-            // Jain Team Emails
-            { value: 'a.anitha.ju@gmail.com', label: 'Anita_JU' },
-            { value: 'vaniruckmani.ju@gmail.com', label: 'Vani_Ruckmani_JU' },
-            { value: 'priyankapalle.ju@gmail.com', label: 'Priyanka_JU' },
-            { value: 'SwatiRamani.manipal@gmail.com', label: 'Swati_JU' },
+              // DES Internal email with name 
+              { value: 'muskan@distanceeducationschool.com', label: 'Muskaan ' },
+              { value: 'aniruddh@distanceeducationschool.com', label: 'Aniruddh Prakash' },
+              { value: 'amritpal@sode.co.in', label: 'Amritpal Singh' },
+              { value: 'salman@sode.co.in', label: 'Salman' },
+              { value: 'tariq@sode.co.in', label: 'Tariq Hasan' },
+              { value: 'shivam@sode.co.in', label: 'Shivam sharma' },
+              { value: 'pushpa@sode.co.in', label: 'Pushpa Pramanik' },
 
-            // Manipal Team Email
-            { value: 'ankitakumari.manipal@gmail.com', label: 'Ankita_MU' },
-            { value: 'medhahandoo.manipal@gmail.com', label: 'Medha_MU' },
-            { value: 'amreen.manipal@gmail.com', label: 'Amreen_MU' },
+              // DES Internal email with name 
+              { value: 'anurag@distanceeducationschool.com', label: 'Anurag Yadav' },
+              { value: 'kavitakumari@sode.co.in', label: 'Kavita Kumari' },
+              { value: 'rupal@sode.co.in', label: 'Rupal Gautam' },
+              { value: 'deva@sode.co.in', label: 'Devendra' },
+              { value: 'manshi@sode.co.in', label: 'Manshi Kem' },
 
-            // Support Team Email
-            { value: 'rajesh@distanceeducationschool.com', label: 'Rajesh_sir' },
-            { value: 'manisha@distanceeducationschool.com', label: 'Manisha' },
-            { value: 'admin@distanceeducationschool.com', label: 'Nouman_sir' },
-            { value: 'sandy@distanceeducationschool.com', label: 'Sandy' },
-            { value: 'neha@distanceeducationschool.com', label: 'Neha' },
-            { value: 'yashpriya@distanceeducationschool.com', label: 'Yash_Priya' },
-            { value: 'kavitahaldar@distanceeducationschool.com', label: 'kavitahaldar' },
-            { value: 'ifla@distanceeducationschool.com', label: 'Ifla' },
-            { value: 'shalu@distanceeducationschool.com', label: 'Shalu' },
-            { value: 'zainubia@distanceeducationschool.com', label: 'zainbuia' },
-            { value: 'pallovi@distanceeducationschool.com', label: 'Pallovi' },
-            { value: 'kavitakumari@distanceeducationschool.com', label: 'Kavita_Kumari' },
-            { value: 'manshi@distanceeducationschool.com', label: 'Mansi' },
-            { value: 'Bhavya.manipal@gmail.com', label: 'Bhavya' },
-            { value: 'anurag@distanceeducationschool.com', label: 'Anuraj' },
-            { value: 'rupal@distanceeducationschool.com', label: 'Rupal' },
-            //B2B Team Email
-            { value: 'spuhelpdesk@gmail.com', label: 'Binny' },
-            { value: 'ruchika.spu@gmail.com', label: 'Ruchika' },
-            { value: 'lalit@distanceeducationschool.com', label: 'Lalit_DES' },
-            { value: 'lalit.spu@gmail.com', label: 'Lalit' },
-            { value: 'ramiz.spu@gmail.com', label: 'Ramiz' }
+              // DES - INTERNATIONAL email with name 
+              { value: 'zarin@distanceeducationschool.com', label: 'Zarin Badar' },
+
+              // HES team email with name 
+              { value: 'kanchan@highereducationschool.com', label: 'Kanchan Sharma' },
+              { value: 'kirti@highereducationschool.com', label: 'Kirti Dubey' },
+              { value: 'ramandeep@highereducationschool.com', label: 'Ramandeep Kaur' },
+              { value: 'kavita@highereducationschool.com', label: 'Kavita Yadav' },
+              { value: 'imra@highereducationschool.com', label: 'Imra Khan' },
+              { value: 'mahak@highereducationschool.com', label: 'Mahek' },
+              { value: 'abhay@highereducationschool.com', label: 'Abhay Dubey' },
+              { value: 'swati@highereducationschool.com', label: 'Swati' },
+              { value: 'gulshan@highereducationschool.com', label: 'Gulshan Nayyar' },
+              { value: 'isha@highereducationschool.com', label: 'Isha Jaiswal' },
+              { value: 'sakshi@highereducationschool.com', label: 'Sakshi Arora' },
+
+              // Jain team email with name 
+              { value: 'anitha@sode.co.in', label: 'A.Anitha' },
+              { value: 'vani@sode.co.in', label: 'Vani Ruckmani' },
+
+              // Manipal team email with name 
+              { value: 'SwatiRamani.manipal@gmail.com', label: 'Swati Ramani' },
+              { value: 'ankitakumar@sode.co.in', label: 'Ankita Kumari' },
+              { value: 'nidhi@sode.co.in', label: 'Nidhi' },
+              { value: 'amreen@sode.co.in', label: 'Amreen ALI Khan' },
+              { value: 'umar@sode.co.in', label: 'MD Umar' },
+              { value: 'nehagupta@sode.co.in', label: 'Neha Gupta' },
+              { value: 'pawankumar@sode.co.in', label: 'Pawan Kumar' },
+              { value: 'bhavya@sode.co.in', label: 'Bhavya' },
+
+              // ALL DES && HES team email with name 
+              { value: 'rajesh@distanceeducationschool.com', label: 'Rajesh Sir' },
+              { value: 'manisha@distanceeducationschool.com', label: 'Manisha Yadav' },
+              { value: 'admin@distanceeducationschool.com', label: 'Nouman Sir' },
+              { value: 'sandy@distanceeducationschool.com', label: 'Sandy' },
+              { value: 'neha@distanceeducationschool.com', label: 'Neha Raj' },
+              { value: 'yashpriya@distanceeducationschool.com', label: 'Yash Priya' },
+              { value: 'kavitahaldar@distanceeducationschool.com', label: 'Kavita Haldar' },
+              { value: 'ifla@distanceeducationschool.com', label: 'Ifla' },
+              { value: 'shalu@distanceeducationschool.com', label: 'Shalu' },
+              { value: 'zainubia@distanceeducationschool.com', label: 'Zainbuia' },
+              { value: 'pallovi@distanceeducationschool.com', label: 'Pallovi' },
+              { value: 'hansi@distanceeducationschool.com', label: 'Hansi' },
+              { value: 'shristi@distanceeducationschool.com', label: 'Shristi' },
+              { value: 'aashita@highereducationschool.com', label: 'Aashita' },
+              { value: 'pratibha@highereducationschool.com', label: 'Pratibha' },
+              { value: 'shreyashi@highereducationschool.com', label: 'Shreyashi' },
+              { value: 'spuhelpdesk@gmail.com', label: 'Binny' },
+              { value: 'ruchika.spu@gmail.com', label: 'Ruchika' },
+              { value: 'ramiz.spu@gmail.com', label: 'Ramiz' },
             ],
           },
           {
@@ -1230,7 +1249,7 @@ const formData = [
             id: 'status ',
             type: 'select',
             place: 'select status',
-            required: 'require',
+
             options: [
               { value: 'New', label: 'New' },
               { value: 'Cancel', label: 'Cancel' },
@@ -1253,6 +1272,13 @@ const formData = [
             place: 'Enter your remark',
             id: 'remark',
             type: 'textarea',
+          },
+          {
+            key: 'date',
+            label: 'Created At',
+            name: 'created',
+            id: 'created',
+            type: 'date',
           },
         ],
       },
@@ -1624,7 +1650,7 @@ const formData = [
             name: ['customfields', 'send_fee_receipt'],
             type: 'radio',
             options: ['yes', 'no'],
-            required: 'require'
+
           },
           {
             key: 'studentId',
@@ -1633,7 +1659,7 @@ const formData = [
             place: 'StudentID',
             id: 'StudentID',
             type: 'studentId',
-            required: 'require'
+
           },
           {
             key: 'text',
@@ -1642,7 +1668,7 @@ const formData = [
             place: 'Student Name',
             id: 'full_name',
             type: 'text',
-            required: 'require'
+
           },
           {
             key: 'email',
@@ -1651,7 +1677,7 @@ const formData = [
             name: ['contact', 'email'],
             id: 'EmailID',
             type: 'email',
-            required: 'require'
+
           },
           {
             key: 'tel',
@@ -1660,7 +1686,7 @@ const formData = [
             place: 'Enter Phone Number',
             id: 'phone',
             type: 'tel',
-            required: 'require'
+
           },
           {
             key: 'text',
@@ -1669,7 +1695,7 @@ const formData = [
             place: 'Enter Father Name',
             id: 'Father Name',
             type: 'text',
-            required: 'require'
+
           },
           {
             key: 'text',
@@ -1678,32 +1704,32 @@ const formData = [
             place: 'Enter Mother Name',
             id: 'mother_name',
             type: 'text',
-            required: 'require'
+
           },
           {
             key: 'select',
             label: 'Session',
             name: ['customfields', 'session'],
-            place: 'eg: jan 20',
+            place: 'eg: JAN_20',
             id: 'Session',
             type: 'select',
-            options: [{ value: 'jan 20', label: 'Jan 20' },
-            { value: 'july 20', label: 'July 20' },
-            { value: 'jan 21', label: 'Jan 21' },
-            { value: 'july 21', label: 'July 21' },
-            { value: 'jan 22', label: 'Jan 22' },
-            { value: 'july 22', label: 'July 22' },
-            { value: 'jan 23', label: 'Jan 23' },
-            { value: 'july 23', label: 'July 23' },
-            { value: 'jan 24', label: 'Jan 24' },
-            { value: 'july 24', label: 'July 24' },
-            { value: 'jan 25', label: 'Jan 25' },
-            { value: 'july 25', label: 'July 25' },
-            { value: 'mar 23', label: 'mar 23' },
-            { value: 'apr 23', label: 'apr 23' },
-            { value: 'oct 23', label: 'oct 23' },
-            { value: 'nov 23', label: 'nov 23' },],
-            required: 'require'
+            options: [{ value: 'JAN_20', label: 'JAN_20' },
+            { value: 'JULY_20', label: 'JULY_20' },
+            { value: 'JAN_21', label: 'JAN_21' },
+            { value: 'JULY_21', label: 'JULY_21' },
+            { value: 'JAN_22', label: 'JAN_22' },
+            { value: 'JULY_22', label: 'JULY_22' },
+            { value: 'JAN_23', label: 'JAN_23' },
+            { value: 'JULY_23', label: 'JULY_23' },
+            { value: 'JAN_24', label: 'JAN_24' },
+            { value: 'JULY_24', label: 'JULY_24' },
+            { value: 'JAN_25', label: 'JAN_25' },
+            { value: 'JULY_25', label: 'JULY_25' },
+            { value: 'MAR_23', label: 'MAR_23' },
+            { value: 'APR_23', label: 'APR_23' },
+            { value: 'OCT_23', label: 'OCT_23' },
+            { value: 'NOV_23', label: 'NOV_23' },],
+
           },
           {
             key: 'select',
@@ -1712,7 +1738,7 @@ const formData = [
             id: 'SessionType',
             place: 'Enter Admission Type',
             type: 'select',
-            options: [{ value: 'Fresh', label: 'Fresh' },
+            options: [{ value: 'FRESH', label: 'FRESH' },
             { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
           },
 
@@ -1723,7 +1749,7 @@ const formData = [
             place: 'Enter Date of Birth',
             id: 'dob',
             type: 'date',
-            required: 'require'
+
           },
           {
             key: 'select',
@@ -1743,7 +1769,7 @@ const formData = [
             name: ['customfields', 'installment_type'],
             place: 'Installment Type',
             type: 'select',
-            required: 'require',
+
             options: [
               { value: '1st Installment/ New Admission', label: '1st Installment/ New Admission' },
               { value: '2nd Installment', label: '2nd Installment' },
@@ -1764,8 +1790,9 @@ const formData = [
             id: 'PaymentMode ',
             type: 'select',
             place: 'Select Payment Mode',
-            required: 'require',
+
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
+            { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
             { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
@@ -1776,77 +1803,82 @@ const formData = [
             name: ['customfields', 'counselor_email'],
             id: 'email ',
             type: 'select',
-            place: 'select counselor email',
-            required: 'require',
-            options: [{ value: 'zarin@highereducationschool.com', label: 'Zarin' },
-            { value: 'kanchan@highereducationschool.com', label: 'Kanchan' },
-            { value: 'kirti@highereducationschool.com', label: 'Kirti' },
-            { value: 'ramandeep@highereducationschool.com', label: 'Raman' },
-            { value: 'kavita@highereducationschool.com', label: 'kavita' },
-            { value: 'imra@highereducationschool.com', label: 'Imra' },
-            { value: 'Mahak@highereducationschool.com', label: 'Mahek' },
-            { value: 'abhay@highereducationschool.com', label: 'abhay' },
-            { value: 'swati@highereducationschool.com', label: 'swati' },
-            { value: 'gulshan@highereducationschool.com', label: 'Gulshan' },
-            { value: 'isha@highereducationschool.com', label: 'Isha' },
-            { value: 'Sakshi@highereducationschool.com', label: 'Sakshi' },
-            { value: 'aashita@highereducationschool.com', label: 'aashita' },
-            { value: 'pratibha@highereducationschool.com', label: 'pratibha' },
-            { value: 'shreyashi@highereducationschool.com', label: 'Shreyashi ' },
-            { value: 'apoorvasrivastava@distanceeducationschool.com', label: 'Apoorva_DES' },
-            { value: 'asma@distanceeducationschool.com', label: 'Asma_DES' },
-            { value: 'nehaprashar@distanceeducationschool.com', label: 'Neha_Prasher_DES' },
-            { value: 'priya@distanceeducationschool.com', label: 'Priya_DES' },
-            { value: 'diksha@distanceeducationschool.com', label: 'Diksha_DES' },
-            { value: 'abhilasha@distanceeducationschool.com', label: 'Abhilasha_Gupta_DES' },
-            { value: 'saher@distanceeducationschool.com', label: 'Saher_Khan_DES' },
-            { value: 'fiza@distanceeducationschool.com', label: 'Fiza_DES' },
-            { value: 'muskan@distanceeducationschool.com', label: 'Muskaan_DES' },
-            { value: 'aniruddh@distanceeducationschool.com', label: 'Aniruddh_DES' },
-            { value: 'deva@distanceeducationschool.com', label: 'Devendra_DES' },
-            { value: 'amritpal@distanceeducationschool.com', label: 'Amritpal_DES' },
-            { value: 'Salman@distanceeducationschool.com:', label: 'Salman_DES' },
-            { value: 'tariq@distanceeducationschool.com', label: 'Traiq_DES' },
-            { value: 'shivam@distanceeducationschool.com', label: 'Shivam_sharma_DES' },
-            { value: 'pushpa@distanceeducationschool.com', label: 'Puspa_DES' },
-            { value: 'zarin@distanceeducationschool.com', label: 'Zarin_DES' },
-            { value: 'kanchan@distanceeducationschool.com', label: 'Kanchan_DES' },
-            { value: 'manu@distanceeducationschool.com', label: 'Manu_DES' },
+            place: 'select counselor name',
+            options: [
+              // DES External email with name
+              { value: 'apoorvasrivastava@sode.co.in', label: 'Apoorva Srivastava' },
+              { value: 'nehaprashar@sode.co.in', label: 'Neha Prasher' },
+              { value: 'priya@sode.co.in', label: 'Priya Anand' },
+              { value: 'diksha@sode.co.in', label: 'Diksha Singh' },
+              { value: 'abhilasha@sode.co.in', label: 'Abhilasha Gupta' },
+              { value: 'saher@sode.co.in', label: 'Saher Khan' },
 
-            // Jain Team Emails
-            { value: 'a.anitha.ju@gmail.com', label: 'Anita_JU' },
-            { value: 'vaniruckmani.ju@gmail.com', label: 'Vani_Ruckmani_JU' },
-            { value: 'priyankapalle.ju@gmail.com', label: 'Priyanka_JU' },
-            { value: 'SwatiRamani.manipal@gmail.com', label: 'Swati_JU' },
+              // DES Internal email with name 
+              { value: 'muskan@distanceeducationschool.com', label: 'Muskaan ' },
+              { value: 'aniruddh@distanceeducationschool.com', label: 'Aniruddh Prakash' },
+              { value: 'amritpal@sode.co.in', label: 'Amritpal Singh' },
+              { value: 'salman@sode.co.in', label: 'Salman' },
+              { value: 'tariq@sode.co.in', label: 'Tariq Hasan' },
+              { value: 'shivam@sode.co.in', label: 'Shivam sharma' },
+              { value: 'pushpa@sode.co.in', label: 'Pushpa Pramanik' },
 
-            // Manipal Team Email
-            { value: 'ankitakumari.manipal@gmail.com', label: 'Ankita_MU' },
-            { value: 'medhahandoo.manipal@gmail.com', label: 'Medha_MU' },
-            { value: 'amreen.manipal@gmail.com', label: 'Amreen_MU' },
+              // DES Internal email with name 
+              { value: 'anurag@distanceeducationschool.com', label: 'Anurag Yadav' },
+              { value: 'kavitakumari@sode.co.in', label: 'Kavita Kumari' },
+              { value: 'rupal@sode.co.in', label: 'Rupal Gautam' },
+              { value: 'deva@sode.co.in', label: 'Devendra' },
+              { value: 'manshi@sode.co.in', label: 'Manshi Kem' },
 
-            // Support Team Email
-            { value: 'rajesh@distanceeducationschool.com', label: 'Rajesh_sir' },
-            { value: 'manisha@distanceeducationschool.com', label: 'Manisha' },
-            { value: 'admin@distanceeducationschool.com', label: 'Nouman_sir' },
-            { value: 'sandy@distanceeducationschool.com', label: 'Sandy' },
-            { value: 'neha@distanceeducationschool.com', label: 'Neha' },
-            { value: 'yashpriya@distanceeducationschool.com', label: 'Yash_Priya' },
-            { value: 'kavitahaldar@distanceeducationschool.com', label: 'kavitahaldar' },
-            { value: 'ifla@distanceeducationschool.com', label: 'Ifla' },
-            { value: 'shalu@distanceeducationschool.com', label: 'Shalu' },
-            { value: 'zainubia@distanceeducationschool.com', label: 'zainbuia' },
-            { value: 'pallovi@distanceeducationschool.com', label: 'Pallovi' },
-            { value: 'kavitakumari@distanceeducationschool.com', label: 'Kavita_Kumari' },
-            { value: 'manshi@distanceeducationschool.com', label: 'Mansi' },
-            { value: 'Bhavya.manipal@gmail.com', label: 'Bhavya' },
-            { value: 'anurag@distanceeducationschool.com', label: 'Anuraj' },
-            { value: 'rupal@distanceeducationschool.com', label: 'Rupal' },
-            //B2B Team Email
-            { value: 'spuhelpdesk@gmail.com', label: 'Binny' },
-            { value: 'ruchika.spu@gmail.com', label: 'Ruchika' },
-            { value: 'lalit@distanceeducationschool.com', label: 'Lalit_DES' },
-            { value: 'lalit.spu@gmail.com', label: 'Lalit' },
-            { value: 'ramiz.spu@gmail.com', label: 'Ramiz' }
+              // DES - INTERNATIONAL email with name 
+              { value: 'zarin@distanceeducationschool.com', label: 'Zarin Badar' },
+
+              // HES team email with name 
+              { value: 'kanchan@highereducationschool.com', label: 'Kanchan Sharma' },
+              { value: 'kirti@highereducationschool.com', label: 'Kirti Dubey' },
+              { value: 'ramandeep@highereducationschool.com', label: 'Ramandeep Kaur' },
+              { value: 'kavita@highereducationschool.com', label: 'Kavita Yadav' },
+              { value: 'imra@highereducationschool.com', label: 'Imra Khan' },
+              { value: 'mahak@highereducationschool.com', label: 'Mahek' },
+              { value: 'abhay@highereducationschool.com', label: 'Abhay Dubey' },
+              { value: 'swati@highereducationschool.com', label: 'Swati' },
+              { value: 'gulshan@highereducationschool.com', label: 'Gulshan Nayyar' },
+              { value: 'isha@highereducationschool.com', label: 'Isha Jaiswal' },
+              { value: 'sakshi@highereducationschool.com', label: 'Sakshi Arora' },
+
+              // Jain team email with name 
+              { value: 'anitha@sode.co.in', label: 'A.Anitha' },
+              { value: 'vani@sode.co.in', label: 'Vani Ruckmani' },
+
+              // Manipal team email with name 
+              { value: 'SwatiRamani.manipal@gmail.com', label: 'Swati Ramani' },
+              { value: 'ankitakumar@sode.co.in', label: 'Ankita Kumari' },
+              { value: 'nidhi@sode.co.in', label: 'Nidhi' },
+              { value: 'amreen@sode.co.in', label: 'Amreen ALI Khan' },
+              { value: 'umar@sode.co.in', label: 'MD Umar' },
+              { value: 'nehagupta@sode.co.in', label: 'Neha Gupta' },
+              { value: 'pawankumar@sode.co.in', label: 'Pawan Kumar' },
+              { value: 'bhavya@sode.co.in', label: 'Bhavya' },
+
+              // ALL DES && HES team email with name 
+              { value: 'rajesh@distanceeducationschool.com', label: 'Rajesh Sir' },
+              { value: 'manisha@distanceeducationschool.com', label: 'Manisha Yadav' },
+              { value: 'admin@distanceeducationschool.com', label: 'Nouman Sir' },
+              { value: 'sandy@distanceeducationschool.com', label: 'Sandy' },
+              { value: 'neha@distanceeducationschool.com', label: 'Neha Raj' },
+              { value: 'yashpriya@distanceeducationschool.com', label: 'Yash Priya' },
+              { value: 'kavitahaldar@distanceeducationschool.com', label: 'Kavita Haldar' },
+              { value: 'ifla@distanceeducationschool.com', label: 'Ifla' },
+              { value: 'shalu@distanceeducationschool.com', label: 'Shalu' },
+              { value: 'zainubia@distanceeducationschool.com', label: 'Zainbuia' },
+              { value: 'pallovi@distanceeducationschool.com', label: 'Pallovi' },
+              { value: 'hansi@distanceeducationschool.com', label: 'Hansi' },
+              { value: 'shristi@distanceeducationschool.com', label: 'Shristi' },
+              { value: 'aashita@highereducationschool.com', label: 'Aashita' },
+              { value: 'pratibha@highereducationschool.com', label: 'Pratibha' },
+              { value: 'shreyashi@highereducationschool.com', label: 'Shreyashi' },
+              { value: 'spuhelpdesk@gmail.com', label: 'Binny' },
+              { value: 'ruchika.spu@gmail.com', label: 'Ruchika' },
+              { value: 'ramiz.spu@gmail.com', label: 'Ramiz' },
             ],
           },
           {
@@ -1856,7 +1888,7 @@ const formData = [
             id: 'status ',
             type: 'select',
             place: 'select status',
-            required: 'require',
+
             options: [
               { value: 'New', label: 'New' },
               { value: 'Cancel', label: 'Cancel' },
@@ -1879,6 +1911,13 @@ const formData = [
             place: 'Enter your remark',
             id: 'remark',
             type: 'textarea',
+          },
+          {
+            key: 'date',
+            label: 'Created At',
+            name: 'created',
+            id: 'created',
+            type: 'date',
           },
         ],
       },
@@ -2250,7 +2289,7 @@ const formData = [
             name: ['customfields', 'send_fee_receipt'],
             type: 'radio',
             options: ['yes', 'no'],
-            required: 'require'
+
           },
           {
             key: 'studentId',
@@ -2259,7 +2298,7 @@ const formData = [
             place: 'StudentID',
             id: 'StudentID',
             type: 'studentId',
-            required: 'require'
+
           },
           {
             key: 'text',
@@ -2268,7 +2307,7 @@ const formData = [
             place: 'Student Name',
             id: 'full_name',
             type: 'text',
-            required: 'require'
+
           },
           {
             key: 'email',
@@ -2277,7 +2316,7 @@ const formData = [
             name: ['contact', 'email'],
             id: 'EmailID',
             type: 'email',
-            required: 'require'
+
           },
           {
             key: 'tel',
@@ -2286,7 +2325,7 @@ const formData = [
             place: 'Enter Phone Number',
             id: 'phone',
             type: 'tel',
-            required: 'require'
+
           },
           {
             key: 'text',
@@ -2295,7 +2334,7 @@ const formData = [
             place: 'Enter Father Name',
             id: 'Father Name',
             type: 'text',
-            required: 'require'
+
           },
           {
             key: 'text',
@@ -2304,32 +2343,32 @@ const formData = [
             place: 'Enter Mother Name',
             id: 'mother_name',
             type: 'text',
-            required: 'require'
+
           },
           {
             key: 'select',
             label: 'Session',
             name: ['customfields', 'session'],
-            place: 'eg: jan 20',
+            place: 'eg: JAN_20',
             id: 'Session',
             type: 'select',
-            options: [{ value: 'jan 20', label: 'Jan 20' },
-            { value: 'july 20', label: 'July 20' },
-            { value: 'jan 21', label: 'Jan 21' },
-            { value: 'july 21', label: 'July 21' },
-            { value: 'jan 22', label: 'Jan 22' },
-            { value: 'july 22', label: 'July 22' },
-            { value: 'jan 23', label: 'Jan 23' },
-            { value: 'july 23', label: 'July 23' },
-            { value: 'jan 24', label: 'Jan 24' },
-            { value: 'july 24', label: 'July 24' },
-            { value: 'jan 25', label: 'Jan 25' },
-            { value: 'july 25', label: 'July 25' },
-            { value: 'mar 23', label: 'mar 23' },
-            { value: 'apr 23', label: 'apr 23' },
-            { value: 'oct 23', label: 'oct 23' },
-            { value: 'nov 23', label: 'nov 23' },],
-            required: 'require'
+            options: [{ value: 'JAN_20', label: 'JAN_20' },
+            { value: 'JULY_20', label: 'JULY_20' },
+            { value: 'JAN_21', label: 'JAN_21' },
+            { value: 'JULY_21', label: 'JULY_21' },
+            { value: 'JAN_22', label: 'JAN_22' },
+            { value: 'JULY_22', label: 'JULY_22' },
+            { value: 'JAN_23', label: 'JAN_23' },
+            { value: 'JULY_23', label: 'JULY_23' },
+            { value: 'JAN_24', label: 'JAN_24' },
+            { value: 'JULY_24', label: 'JULY_24' },
+            { value: 'JAN_25', label: 'JAN_25' },
+            { value: 'JULY_25', label: 'JULY_25' },
+            { value: 'MAR_23', label: 'MAR_23' },
+            { value: 'APR_23', label: 'APR_23' },
+            { value: 'OCT_23', label: 'OCT_23' },
+            { value: 'NOV_23', label: 'NOV_23' },],
+
           },
           {
             key: 'select',
@@ -2338,7 +2377,7 @@ const formData = [
             id: 'SessionType',
             place: 'Enter Admission Type',
             type: 'select',
-            options: [{ value: 'Fresh', label: 'Fresh' },
+            options: [{ value: 'FRESH', label: 'FRESH' },
             { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
           },
 
@@ -2349,7 +2388,7 @@ const formData = [
             place: 'Enter Date of Birth',
             id: 'dob',
             type: 'date',
-            required: 'require'
+
           },
           {
             key: 'select',
@@ -2369,7 +2408,7 @@ const formData = [
             name: ['customfields', 'installment_type'],
             place: 'Installment Type',
             type: 'select',
-            required: 'require',
+
             options: [
               { value: '1st Installment/ New Admission', label: '1st Installment/ New Admission' },
               { value: '2nd Installment', label: '2nd Installment' },
@@ -2390,8 +2429,9 @@ const formData = [
             id: 'PaymentMode ',
             type: 'select',
             place: 'Select Payment Mode',
-            required: 'require',
+
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
+            { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
             { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
@@ -2402,77 +2442,82 @@ const formData = [
             name: ['customfields', 'counselor_email'],
             id: 'email ',
             type: 'select',
-            place: 'select counselor email',
-            required: 'require',
-            options: [{ value: 'zarin@highereducationschool.com', label: 'Zarin' },
-            { value: 'kanchan@highereducationschool.com', label: 'Kanchan' },
-            { value: 'kirti@highereducationschool.com', label: 'Kirti' },
-            { value: 'ramandeep@highereducationschool.com', label: 'Raman' },
-            { value: 'kavita@highereducationschool.com', label: 'kavita' },
-            { value: 'imra@highereducationschool.com', label: 'Imra' },
-            { value: 'Mahak@highereducationschool.com', label: 'Mahek' },
-            { value: 'abhay@highereducationschool.com', label: 'abhay' },
-            { value: 'swati@highereducationschool.com', label: 'swati' },
-            { value: 'gulshan@highereducationschool.com', label: 'Gulshan' },
-            { value: 'isha@highereducationschool.com', label: 'Isha' },
-            { value: 'Sakshi@highereducationschool.com', label: 'Sakshi' },
-            { value: 'aashita@highereducationschool.com', label: 'aashita' },
-            { value: 'pratibha@highereducationschool.com', label: 'pratibha' },
-            { value: 'shreyashi@highereducationschool.com', label: 'Shreyashi ' },
-            { value: 'apoorvasrivastava@distanceeducationschool.com', label: 'Apoorva_DES' },
-            { value: 'asma@distanceeducationschool.com', label: 'Asma_DES' },
-            { value: 'nehaprashar@distanceeducationschool.com', label: 'Neha_Prasher_DES' },
-            { value: 'priya@distanceeducationschool.com', label: 'Priya_DES' },
-            { value: 'diksha@distanceeducationschool.com', label: 'Diksha_DES' },
-            { value: 'abhilasha@distanceeducationschool.com', label: 'Abhilasha_Gupta_DES' },
-            { value: 'saher@distanceeducationschool.com', label: 'Saher_Khan_DES' },
-            { value: 'fiza@distanceeducationschool.com', label: 'Fiza_DES' },
-            { value: 'muskan@distanceeducationschool.com', label: 'Muskaan_DES' },
-            { value: 'aniruddh@distanceeducationschool.com', label: 'Aniruddh_DES' },
-            { value: 'deva@distanceeducationschool.com', label: 'Devendra_DES' },
-            { value: 'amritpal@distanceeducationschool.com', label: 'Amritpal_DES' },
-            { value: 'Salman@distanceeducationschool.com:', label: 'Salman_DES' },
-            { value: 'tariq@distanceeducationschool.com', label: 'Traiq_DES' },
-            { value: 'shivam@distanceeducationschool.com', label: 'Shivam_sharma_DES' },
-            { value: 'pushpa@distanceeducationschool.com', label: 'Puspa_DES' },
-            { value: 'zarin@distanceeducationschool.com', label: 'Zarin_DES' },
-            { value: 'kanchan@distanceeducationschool.com', label: 'Kanchan_DES' },
-            { value: 'manu@distanceeducationschool.com', label: 'Manu_DES' },
+            place: 'select counselor name',
+            options: [
+              // DES External email with name
+              { value: 'apoorvasrivastava@sode.co.in', label: 'Apoorva Srivastava' },
+              { value: 'nehaprashar@sode.co.in', label: 'Neha Prasher' },
+              { value: 'priya@sode.co.in', label: 'Priya Anand' },
+              { value: 'diksha@sode.co.in', label: 'Diksha Singh' },
+              { value: 'abhilasha@sode.co.in', label: 'Abhilasha Gupta' },
+              { value: 'saher@sode.co.in', label: 'Saher Khan' },
 
-            // Jain Team Emails
-            { value: 'a.anitha.ju@gmail.com', label: 'Anita_JU' },
-            { value: 'vaniruckmani.ju@gmail.com', label: 'Vani_Ruckmani_JU' },
-            { value: 'priyankapalle.ju@gmail.com', label: 'Priyanka_JU' },
-            { value: 'SwatiRamani.manipal@gmail.com', label: 'Swati_JU' },
+              // DES Internal email with name 
+              { value: 'muskan@distanceeducationschool.com', label: 'Muskaan ' },
+              { value: 'aniruddh@distanceeducationschool.com', label: 'Aniruddh Prakash' },
+              { value: 'amritpal@sode.co.in', label: 'Amritpal Singh' },
+              { value: 'salman@sode.co.in', label: 'Salman' },
+              { value: 'tariq@sode.co.in', label: 'Tariq Hasan' },
+              { value: 'shivam@sode.co.in', label: 'Shivam sharma' },
+              { value: 'pushpa@sode.co.in', label: 'Pushpa Pramanik' },
 
-            // Manipal Team Email
-            { value: 'ankitakumari.manipal@gmail.com', label: 'Ankita_MU' },
-            { value: 'medhahandoo.manipal@gmail.com', label: 'Medha_MU' },
-            { value: 'amreen.manipal@gmail.com', label: 'Amreen_MU' },
+              // DES Internal email with name 
+              { value: 'anurag@distanceeducationschool.com', label: 'Anurag Yadav' },
+              { value: 'kavitakumari@sode.co.in', label: 'Kavita Kumari' },
+              { value: 'rupal@sode.co.in', label: 'Rupal Gautam' },
+              { value: 'deva@sode.co.in', label: 'Devendra' },
+              { value: 'manshi@sode.co.in', label: 'Manshi Kem' },
 
-            // Support Team Email
-            { value: 'rajesh@distanceeducationschool.com', label: 'Rajesh_sir' },
-            { value: 'manisha@distanceeducationschool.com', label: 'Manisha' },
-            { value: 'admin@distanceeducationschool.com', label: 'Nouman_sir' },
-            { value: 'sandy@distanceeducationschool.com', label: 'Sandy' },
-            { value: 'neha@distanceeducationschool.com', label: 'Neha' },
-            { value: 'yashpriya@distanceeducationschool.com', label: 'Yash_Priya' },
-            { value: 'kavitahaldar@distanceeducationschool.com', label: 'kavitahaldar' },
-            { value: 'ifla@distanceeducationschool.com', label: 'Ifla' },
-            { value: 'shalu@distanceeducationschool.com', label: 'Shalu' },
-            { value: 'zainubia@distanceeducationschool.com', label: 'zainbuia' },
-            { value: 'pallovi@distanceeducationschool.com', label: 'Pallovi' },
-            { value: 'kavitakumari@distanceeducationschool.com', label: 'Kavita_Kumari' },
-            { value: 'manshi@distanceeducationschool.com', label: 'Mansi' },
-            { value: 'Bhavya.manipal@gmail.com', label: 'Bhavya' },
-            { value: 'anurag@distanceeducationschool.com', label: 'Anuraj' },
-            { value: 'rupal@distanceeducationschool.com', label: 'Rupal' },
-            //B2B Team Email
-            { value: 'spuhelpdesk@gmail.com', label: 'Binny' },
-            { value: 'ruchika.spu@gmail.com', label: 'Ruchika' },
-            { value: 'lalit@distanceeducationschool.com', label: 'Lalit_DES' },
-            { value: 'lalit.spu@gmail.com', label: 'Lalit' },
-            { value: 'ramiz.spu@gmail.com', label: 'Ramiz' }
+              // DES - INTERNATIONAL email with name 
+              { value: 'zarin@distanceeducationschool.com', label: 'Zarin Badar' },
+
+              // HES team email with name 
+              { value: 'kanchan@highereducationschool.com', label: 'Kanchan Sharma' },
+              { value: 'kirti@highereducationschool.com', label: 'Kirti Dubey' },
+              { value: 'ramandeep@highereducationschool.com', label: 'Ramandeep Kaur' },
+              { value: 'kavita@highereducationschool.com', label: 'Kavita Yadav' },
+              { value: 'imra@highereducationschool.com', label: 'Imra Khan' },
+              { value: 'mahak@highereducationschool.com', label: 'Mahek' },
+              { value: 'abhay@highereducationschool.com', label: 'Abhay Dubey' },
+              { value: 'swati@highereducationschool.com', label: 'Swati' },
+              { value: 'gulshan@highereducationschool.com', label: 'Gulshan Nayyar' },
+              { value: 'isha@highereducationschool.com', label: 'Isha Jaiswal' },
+              { value: 'sakshi@highereducationschool.com', label: 'Sakshi Arora' },
+
+              // Jain team email with name 
+              { value: 'anitha@sode.co.in', label: 'A.Anitha' },
+              { value: 'vani@sode.co.in', label: 'Vani Ruckmani' },
+
+              // Manipal team email with name 
+              { value: 'SwatiRamani.manipal@gmail.com', label: 'Swati Ramani' },
+              { value: 'ankitakumar@sode.co.in', label: 'Ankita Kumari' },
+              { value: 'nidhi@sode.co.in', label: 'Nidhi' },
+              { value: 'amreen@sode.co.in', label: 'Amreen ALI Khan' },
+              { value: 'umar@sode.co.in', label: 'MD Umar' },
+              { value: 'nehagupta@sode.co.in', label: 'Neha Gupta' },
+              { value: 'pawankumar@sode.co.in', label: 'Pawan Kumar' },
+              { value: 'bhavya@sode.co.in', label: 'Bhavya' },
+
+              // ALL DES && HES team email with name 
+              { value: 'rajesh@distanceeducationschool.com', label: 'Rajesh Sir' },
+              { value: 'manisha@distanceeducationschool.com', label: 'Manisha Yadav' },
+              { value: 'admin@distanceeducationschool.com', label: 'Nouman Sir' },
+              { value: 'sandy@distanceeducationschool.com', label: 'Sandy' },
+              { value: 'neha@distanceeducationschool.com', label: 'Neha Raj' },
+              { value: 'yashpriya@distanceeducationschool.com', label: 'Yash Priya' },
+              { value: 'kavitahaldar@distanceeducationschool.com', label: 'Kavita Haldar' },
+              { value: 'ifla@distanceeducationschool.com', label: 'Ifla' },
+              { value: 'shalu@distanceeducationschool.com', label: 'Shalu' },
+              { value: 'zainubia@distanceeducationschool.com', label: 'Zainbuia' },
+              { value: 'pallovi@distanceeducationschool.com', label: 'Pallovi' },
+              { value: 'hansi@distanceeducationschool.com', label: 'Hansi' },
+              { value: 'shristi@distanceeducationschool.com', label: 'Shristi' },
+              { value: 'aashita@highereducationschool.com', label: 'Aashita' },
+              { value: 'pratibha@highereducationschool.com', label: 'Pratibha' },
+              { value: 'shreyashi@highereducationschool.com', label: 'Shreyashi' },
+              { value: 'spuhelpdesk@gmail.com', label: 'Binny' },
+              { value: 'ruchika.spu@gmail.com', label: 'Ruchika' },
+              { value: 'ramiz.spu@gmail.com', label: 'Ramiz' },
             ],
           },
           {
@@ -2482,7 +2527,7 @@ const formData = [
             id: 'status ',
             type: 'select',
             place: 'select status',
-            required: 'require',
+
             options: [
               { value: 'New', label: 'New' },
               { value: 'Cancel', label: 'Cancel' },
@@ -2505,6 +2550,13 @@ const formData = [
             place: 'Enter your remark',
             id: 'remark',
             type: 'textarea',
+          },
+          {
+            key: 'date',
+            label: 'Created At',
+            name: 'created',
+            id: 'created',
+            type: 'date',
           },
         ],
       },
@@ -2876,7 +2928,7 @@ const formData = [
             name: ['customfields', 'send_fee_receipt'],
             type: 'radio',
             options: ['yes', 'no'],
-            required: 'require'
+
           },
           {
             key: 'studentId',
@@ -2885,7 +2937,7 @@ const formData = [
             place: 'StudentID',
             id: 'StudentID',
             type: 'studentId',
-            required: 'require'
+
           },
           {
             key: 'text',
@@ -2894,7 +2946,7 @@ const formData = [
             place: 'Student Name',
             id: 'full_name',
             type: 'text',
-            required: 'require'
+
           },
           {
             key: 'email',
@@ -2903,7 +2955,7 @@ const formData = [
             name: ['contact', 'email'],
             id: 'EmailID',
             type: 'email',
-            required: 'require'
+
           },
           {
             key: 'tel',
@@ -2912,7 +2964,7 @@ const formData = [
             place: 'Enter Phone Number',
             id: 'phone',
             type: 'tel',
-            required: 'require'
+
           },
           {
             key: 'text',
@@ -2921,7 +2973,7 @@ const formData = [
             place: 'Enter Father Name',
             id: 'Father Name',
             type: 'text',
-            required: 'require'
+
           },
           {
             key: 'text',
@@ -2930,32 +2982,32 @@ const formData = [
             place: 'Enter Mother Name',
             id: 'mother_name',
             type: 'text',
-            required: 'require'
+
           },
           {
             key: 'select',
             label: 'Session',
             name: ['customfields', 'session'],
-            place: 'eg: jan 20',
+            place: 'eg: JAN_20',
             id: 'Session',
             type: 'select',
-            options: [{ value: 'jan 20', label: 'Jan 20' },
-            { value: 'july 20', label: 'July 20' },
-            { value: 'jan 21', label: 'Jan 21' },
-            { value: 'july 21', label: 'July 21' },
-            { value: 'jan 22', label: 'Jan 22' },
-            { value: 'july 22', label: 'July 22' },
-            { value: 'jan 23', label: 'Jan 23' },
-            { value: 'july 23', label: 'July 23' },
-            { value: 'jan 24', label: 'Jan 24' },
-            { value: 'july 24', label: 'July 24' },
-            { value: 'jan 25', label: 'Jan 25' },
-            { value: 'july 25', label: 'July 25' },
-            { value: 'mar 23', label: 'mar 23' },
-            { value: 'apr 23', label: 'apr 23' },
-            { value: 'oct 23', label: 'oct 23' },
-            { value: 'nov 23', label: 'nov 23' },],
-            required: 'require'
+            options: [{ value: 'JAN_20', label: 'JAN_20' },
+            { value: 'JULY_20', label: 'JULY_20' },
+            { value: 'JAN_21', label: 'JAN_21' },
+            { value: 'JULY_21', label: 'JULY_21' },
+            { value: 'JAN_22', label: 'JAN_22' },
+            { value: 'JULY_22', label: 'JULY_22' },
+            { value: 'JAN_23', label: 'JAN_23' },
+            { value: 'JULY_23', label: 'JULY_23' },
+            { value: 'JAN_24', label: 'JAN_24' },
+            { value: 'JULY_24', label: 'JULY_24' },
+            { value: 'JAN_25', label: 'JAN_25' },
+            { value: 'JULY_25', label: 'JULY_25' },
+            { value: 'MAR_23', label: 'MAR_23' },
+            { value: 'APR_23', label: 'APR_23' },
+            { value: 'OCT_23', label: 'OCT_23' },
+            { value: 'NOV_23', label: 'NOV_23' },],
+
           },
           {
             key: 'select',
@@ -2964,7 +3016,7 @@ const formData = [
             id: 'SessionType',
             place: 'Enter Admission Type',
             type: 'select',
-            options: [{ value: 'Fresh', label: 'Fresh' },
+            options: [{ value: 'FRESH', label: 'FRESH' },
             { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
           },
 
@@ -2975,7 +3027,7 @@ const formData = [
             place: 'Enter Date of Birth',
             id: 'dob',
             type: 'date',
-            required: 'require'
+
           },
           {
             key: 'select',
@@ -2995,7 +3047,7 @@ const formData = [
             name: ['customfields', 'installment_type'],
             place: 'Installment Type',
             type: 'select',
-            required: 'require',
+
             options: [
               { value: '1st Installment/ New Admission', label: '1st Installment/ New Admission' },
               { value: '2nd Installment', label: '2nd Installment' },
@@ -3016,8 +3068,9 @@ const formData = [
             id: 'PaymentMode ',
             type: 'select',
             place: 'Select Payment Mode',
-            required: 'require',
+
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
+            { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
             { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
@@ -3028,77 +3081,82 @@ const formData = [
             name: ['customfields', 'counselor_email'],
             id: 'email ',
             type: 'select',
-            place: 'select counselor email',
-            required: 'require',
-            options: [{ value: 'zarin@highereducationschool.com', label: 'Zarin' },
-            { value: 'kanchan@highereducationschool.com', label: 'Kanchan' },
-            { value: 'kirti@highereducationschool.com', label: 'Kirti' },
-            { value: 'ramandeep@highereducationschool.com', label: 'Raman' },
-            { value: 'kavita@highereducationschool.com', label: 'kavita' },
-            { value: 'imra@highereducationschool.com', label: 'Imra' },
-            { value: 'Mahak@highereducationschool.com', label: 'Mahek' },
-            { value: 'abhay@highereducationschool.com', label: 'abhay' },
-            { value: 'swati@highereducationschool.com', label: 'swati' },
-            { value: 'gulshan@highereducationschool.com', label: 'Gulshan' },
-            { value: 'isha@highereducationschool.com', label: 'Isha' },
-            { value: 'Sakshi@highereducationschool.com', label: 'Sakshi' },
-            { value: 'aashita@highereducationschool.com', label: 'aashita' },
-            { value: 'pratibha@highereducationschool.com', label: 'pratibha' },
-            { value: 'shreyashi@highereducationschool.com', label: 'Shreyashi ' },
-            { value: 'apoorvasrivastava@distanceeducationschool.com', label: 'Apoorva_DES' },
-            { value: 'asma@distanceeducationschool.com', label: 'Asma_DES' },
-            { value: 'nehaprashar@distanceeducationschool.com', label: 'Neha_Prasher_DES' },
-            { value: 'priya@distanceeducationschool.com', label: 'Priya_DES' },
-            { value: 'diksha@distanceeducationschool.com', label: 'Diksha_DES' },
-            { value: 'abhilasha@distanceeducationschool.com', label: 'Abhilasha_Gupta_DES' },
-            { value: 'saher@distanceeducationschool.com', label: 'Saher_Khan_DES' },
-            { value: 'fiza@distanceeducationschool.com', label: 'Fiza_DES' },
-            { value: 'muskan@distanceeducationschool.com', label: 'Muskaan_DES' },
-            { value: 'aniruddh@distanceeducationschool.com', label: 'Aniruddh_DES' },
-            { value: 'deva@distanceeducationschool.com', label: 'Devendra_DES' },
-            { value: 'amritpal@distanceeducationschool.com', label: 'Amritpal_DES' },
-            { value: 'Salman@distanceeducationschool.com:', label: 'Salman_DES' },
-            { value: 'tariq@distanceeducationschool.com', label: 'Traiq_DES' },
-            { value: 'shivam@distanceeducationschool.com', label: 'Shivam_sharma_DES' },
-            { value: 'pushpa@distanceeducationschool.com', label: 'Puspa_DES' },
-            { value: 'zarin@distanceeducationschool.com', label: 'Zarin_DES' },
-            { value: 'kanchan@distanceeducationschool.com', label: 'Kanchan_DES' },
-            { value: 'manu@distanceeducationschool.com', label: 'Manu_DES' },
+            place: 'select counselor name',
+            options: [
+              // DES External email with name
+              { value: 'apoorvasrivastava@sode.co.in', label: 'Apoorva Srivastava' },
+              { value: 'nehaprashar@sode.co.in', label: 'Neha Prasher' },
+              { value: 'priya@sode.co.in', label: 'Priya Anand' },
+              { value: 'diksha@sode.co.in', label: 'Diksha Singh' },
+              { value: 'abhilasha@sode.co.in', label: 'Abhilasha Gupta' },
+              { value: 'saher@sode.co.in', label: 'Saher Khan' },
 
-            // Jain Team Emails
-            { value: 'a.anitha.ju@gmail.com', label: 'Anita_JU' },
-            { value: 'vaniruckmani.ju@gmail.com', label: 'Vani_Ruckmani_JU' },
-            { value: 'priyankapalle.ju@gmail.com', label: 'Priyanka_JU' },
-            { value: 'SwatiRamani.manipal@gmail.com', label: 'Swati_JU' },
+              // DES Internal email with name 
+              { value: 'muskan@distanceeducationschool.com', label: 'Muskaan ' },
+              { value: 'aniruddh@distanceeducationschool.com', label: 'Aniruddh Prakash' },
+              { value: 'amritpal@sode.co.in', label: 'Amritpal Singh' },
+              { value: 'salman@sode.co.in', label: 'Salman' },
+              { value: 'tariq@sode.co.in', label: 'Tariq Hasan' },
+              { value: 'shivam@sode.co.in', label: 'Shivam sharma' },
+              { value: 'pushpa@sode.co.in', label: 'Pushpa Pramanik' },
 
-            // Manipal Team Email
-            { value: 'ankitakumari.manipal@gmail.com', label: 'Ankita_MU' },
-            { value: 'medhahandoo.manipal@gmail.com', label: 'Medha_MU' },
-            { value: 'amreen.manipal@gmail.com', label: 'Amreen_MU' },
+              // DES Internal email with name 
+              { value: 'anurag@distanceeducationschool.com', label: 'Anurag Yadav' },
+              { value: 'kavitakumari@sode.co.in', label: 'Kavita Kumari' },
+              { value: 'rupal@sode.co.in', label: 'Rupal Gautam' },
+              { value: 'deva@sode.co.in', label: 'Devendra' },
+              { value: 'manshi@sode.co.in', label: 'Manshi Kem' },
 
-            // Support Team Email
-            { value: 'rajesh@distanceeducationschool.com', label: 'Rajesh_sir' },
-            { value: 'manisha@distanceeducationschool.com', label: 'Manisha' },
-            { value: 'admin@distanceeducationschool.com', label: 'Nouman_sir' },
-            { value: 'sandy@distanceeducationschool.com', label: 'Sandy' },
-            { value: 'neha@distanceeducationschool.com', label: 'Neha' },
-            { value: 'yashpriya@distanceeducationschool.com', label: 'Yash_Priya' },
-            { value: 'kavitahaldar@distanceeducationschool.com', label: 'kavitahaldar' },
-            { value: 'ifla@distanceeducationschool.com', label: 'Ifla' },
-            { value: 'shalu@distanceeducationschool.com', label: 'Shalu' },
-            { value: 'zainubia@distanceeducationschool.com', label: 'zainbuia' },
-            { value: 'pallovi@distanceeducationschool.com', label: 'Pallovi' },
-            { value: 'kavitakumari@distanceeducationschool.com', label: 'Kavita_Kumari' },
-            { value: 'manshi@distanceeducationschool.com', label: 'Mansi' },
-            { value: 'Bhavya.manipal@gmail.com', label: 'Bhavya' },
-            { value: 'anurag@distanceeducationschool.com', label: 'Anuraj' },
-            { value: 'rupal@distanceeducationschool.com', label: 'Rupal' },
-            //B2B Team Email
-            { value: 'spuhelpdesk@gmail.com', label: 'Binny' },
-            { value: 'ruchika.spu@gmail.com', label: 'Ruchika' },
-            { value: 'lalit@distanceeducationschool.com', label: 'Lalit_DES' },
-            { value: 'lalit.spu@gmail.com', label: 'Lalit' },
-            { value: 'ramiz.spu@gmail.com', label: 'Ramiz' }
+              // DES - INTERNATIONAL email with name 
+              { value: 'zarin@distanceeducationschool.com', label: 'Zarin Badar' },
+
+              // HES team email with name 
+              { value: 'kanchan@highereducationschool.com', label: 'Kanchan Sharma' },
+              { value: 'kirti@highereducationschool.com', label: 'Kirti Dubey' },
+              { value: 'ramandeep@highereducationschool.com', label: 'Ramandeep Kaur' },
+              { value: 'kavita@highereducationschool.com', label: 'Kavita Yadav' },
+              { value: 'imra@highereducationschool.com', label: 'Imra Khan' },
+              { value: 'mahak@highereducationschool.com', label: 'Mahek' },
+              { value: 'abhay@highereducationschool.com', label: 'Abhay Dubey' },
+              { value: 'swati@highereducationschool.com', label: 'Swati' },
+              { value: 'gulshan@highereducationschool.com', label: 'Gulshan Nayyar' },
+              { value: 'isha@highereducationschool.com', label: 'Isha Jaiswal' },
+              { value: 'sakshi@highereducationschool.com', label: 'Sakshi Arora' },
+
+              // Jain team email with name 
+              { value: 'anitha@sode.co.in', label: 'A.Anitha' },
+              { value: 'vani@sode.co.in', label: 'Vani Ruckmani' },
+
+              // Manipal team email with name 
+              { value: 'SwatiRamani.manipal@gmail.com', label: 'Swati Ramani' },
+              { value: 'ankitakumar@sode.co.in', label: 'Ankita Kumari' },
+              { value: 'nidhi@sode.co.in', label: 'Nidhi' },
+              { value: 'amreen@sode.co.in', label: 'Amreen ALI Khan' },
+              { value: 'umar@sode.co.in', label: 'MD Umar' },
+              { value: 'nehagupta@sode.co.in', label: 'Neha Gupta' },
+              { value: 'pawankumar@sode.co.in', label: 'Pawan Kumar' },
+              { value: 'bhavya@sode.co.in', label: 'Bhavya' },
+
+              // ALL DES && HES team email with name 
+              { value: 'rajesh@distanceeducationschool.com', label: 'Rajesh Sir' },
+              { value: 'manisha@distanceeducationschool.com', label: 'Manisha Yadav' },
+              { value: 'admin@distanceeducationschool.com', label: 'Nouman Sir' },
+              { value: 'sandy@distanceeducationschool.com', label: 'Sandy' },
+              { value: 'neha@distanceeducationschool.com', label: 'Neha Raj' },
+              { value: 'yashpriya@distanceeducationschool.com', label: 'Yash Priya' },
+              { value: 'kavitahaldar@distanceeducationschool.com', label: 'Kavita Haldar' },
+              { value: 'ifla@distanceeducationschool.com', label: 'Ifla' },
+              { value: 'shalu@distanceeducationschool.com', label: 'Shalu' },
+              { value: 'zainubia@distanceeducationschool.com', label: 'Zainbuia' },
+              { value: 'pallovi@distanceeducationschool.com', label: 'Pallovi' },
+              { value: 'hansi@distanceeducationschool.com', label: 'Hansi' },
+              { value: 'shristi@distanceeducationschool.com', label: 'Shristi' },
+              { value: 'aashita@highereducationschool.com', label: 'Aashita' },
+              { value: 'pratibha@highereducationschool.com', label: 'Pratibha' },
+              { value: 'shreyashi@highereducationschool.com', label: 'Shreyashi' },
+              { value: 'spuhelpdesk@gmail.com', label: 'Binny' },
+              { value: 'ruchika.spu@gmail.com', label: 'Ruchika' },
+              { value: 'ramiz.spu@gmail.com', label: 'Ramiz' },
             ],
           },
           {
@@ -3108,7 +3166,7 @@ const formData = [
             id: 'status ',
             type: 'select',
             place: 'select status',
-            required: 'require',
+
             options: [
               { value: 'New', label: 'New' },
               { value: 'Cancel', label: 'Cancel' },
@@ -3131,6 +3189,13 @@ const formData = [
             place: 'Enter your remark',
             id: 'remark',
             type: 'textarea',
+          },
+          {
+            key: 'date',
+            label: 'Created At',
+            name: 'created',
+            id: 'created',
+            type: 'date',
           },
         ],
       },
@@ -3502,7 +3567,7 @@ const formData = [
             name: ['customfields', 'send_fee_receipt'],
             type: 'radio',
             options: ['yes', 'no'],
-            required: 'require'
+
           },
           {
             key: 'studentId',
@@ -3511,7 +3576,7 @@ const formData = [
             place: 'StudentID',
             id: 'StudentID',
             type: 'studentId',
-            required: 'require'
+
           },
           {
             key: 'text',
@@ -3520,7 +3585,7 @@ const formData = [
             place: 'Student Name',
             id: 'full_name',
             type: 'text',
-            required: 'require'
+
           },
           {
             key: 'email',
@@ -3529,7 +3594,7 @@ const formData = [
             name: ['contact', 'email'],
             id: 'EmailID',
             type: 'email',
-            required: 'require'
+
           },
           {
             key: 'tel',
@@ -3538,7 +3603,7 @@ const formData = [
             place: 'Enter Phone Number',
             id: 'phone',
             type: 'tel',
-            required: 'require'
+
           },
           {
             key: 'text',
@@ -3547,7 +3612,7 @@ const formData = [
             place: 'Enter Father Name',
             id: 'Father Name',
             type: 'text',
-            required: 'require'
+
           },
           {
             key: 'text',
@@ -3556,32 +3621,32 @@ const formData = [
             place: 'Enter Mother Name',
             id: 'mother_name',
             type: 'text',
-            required: 'require'
+
           },
           {
             key: 'select',
             label: 'Session',
             name: ['customfields', 'session'],
-            place: 'eg: jan 20',
+            place: 'eg: JAN_20',
             id: 'Session',
             type: 'select',
-            options: [{ value: 'jan 20', label: 'Jan 20' },
-            { value: 'july 20', label: 'July 20' },
-            { value: 'jan 21', label: 'Jan 21' },
-            { value: 'july 21', label: 'July 21' },
-            { value: 'jan 22', label: 'Jan 22' },
-            { value: 'july 22', label: 'July 22' },
-            { value: 'jan 23', label: 'Jan 23' },
-            { value: 'july 23', label: 'July 23' },
-            { value: 'jan 24', label: 'Jan 24' },
-            { value: 'july 24', label: 'July 24' },
-            { value: 'jan 25', label: 'Jan 25' },
-            { value: 'july 25', label: 'July 25' },
-            { value: 'mar 23', label: 'mar 23' },
-            { value: 'apr 23', label: 'apr 23' },
-            { value: 'oct 23', label: 'oct 23' },
-            { value: 'nov 23', label: 'nov 23' },],
-            required: 'require'
+            options: [{ value: 'JAN_20', label: 'JAN_20' },
+            { value: 'JULY_20', label: 'JULY_20' },
+            { value: 'JAN_21', label: 'JAN_21' },
+            { value: 'JULY_21', label: 'JULY_21' },
+            { value: 'JAN_22', label: 'JAN_22' },
+            { value: 'JULY_22', label: 'JULY_22' },
+            { value: 'JAN_23', label: 'JAN_23' },
+            { value: 'JULY_23', label: 'JULY_23' },
+            { value: 'JAN_24', label: 'JAN_24' },
+            { value: 'JULY_24', label: 'JULY_24' },
+            { value: 'JAN_25', label: 'JAN_25' },
+            { value: 'JULY_25', label: 'JULY_25' },
+            { value: 'MAR_23', label: 'MAR_23' },
+            { value: 'APR_23', label: 'APR_23' },
+            { value: 'OCT_23', label: 'OCT_23' },
+            { value: 'NOV_23', label: 'NOV_23' },],
+
           },
           {
             key: 'select',
@@ -3590,7 +3655,7 @@ const formData = [
             id: 'SessionType',
             place: 'Enter Admission Type',
             type: 'select',
-            options: [{ value: 'Fresh', label: 'Fresh' },
+            options: [{ value: 'FRESH', label: 'FRESH' },
             { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
           },
 
@@ -3601,7 +3666,7 @@ const formData = [
             place: 'Enter Date of Birth',
             id: 'dob',
             type: 'date',
-            required: 'require'
+
           },
           {
             key: 'select',
@@ -3621,7 +3686,7 @@ const formData = [
             name: ['customfields', 'installment_type'],
             place: 'Installment Type',
             type: 'select',
-            required: 'require',
+
             options: [
               { value: '1st Installment/ New Admission', label: '1st Installment/ New Admission' },
               { value: '2nd Installment', label: '2nd Installment' },
@@ -3642,8 +3707,9 @@ const formData = [
             id: 'PaymentMode ',
             type: 'select',
             place: 'Select Payment Mode',
-            required: 'require',
+
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
+            { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
             { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
@@ -3654,77 +3720,82 @@ const formData = [
             name: ['customfields', 'counselor_email'],
             id: 'email ',
             type: 'select',
-            place: 'select counselor email',
-            required: 'require',
-            options: [{ value: 'zarin@highereducationschool.com', label: 'Zarin' },
-            { value: 'kanchan@highereducationschool.com', label: 'Kanchan' },
-            { value: 'kirti@highereducationschool.com', label: 'Kirti' },
-            { value: 'ramandeep@highereducationschool.com', label: 'Raman' },
-            { value: 'kavita@highereducationschool.com', label: 'kavita' },
-            { value: 'imra@highereducationschool.com', label: 'Imra' },
-            { value: 'Mahak@highereducationschool.com', label: 'Mahek' },
-            { value: 'abhay@highereducationschool.com', label: 'abhay' },
-            { value: 'swati@highereducationschool.com', label: 'swati' },
-            { value: 'gulshan@highereducationschool.com', label: 'Gulshan' },
-            { value: 'isha@highereducationschool.com', label: 'Isha' },
-            { value: 'Sakshi@highereducationschool.com', label: 'Sakshi' },
-            { value: 'aashita@highereducationschool.com', label: 'aashita' },
-            { value: 'pratibha@highereducationschool.com', label: 'pratibha' },
-            { value: 'shreyashi@highereducationschool.com', label: 'Shreyashi ' },
-            { value: 'apoorvasrivastava@distanceeducationschool.com', label: 'Apoorva_DES' },
-            { value: 'asma@distanceeducationschool.com', label: 'Asma_DES' },
-            { value: 'nehaprashar@distanceeducationschool.com', label: 'Neha_Prasher_DES' },
-            { value: 'priya@distanceeducationschool.com', label: 'Priya_DES' },
-            { value: 'diksha@distanceeducationschool.com', label: 'Diksha_DES' },
-            { value: 'abhilasha@distanceeducationschool.com', label: 'Abhilasha_Gupta_DES' },
-            { value: 'saher@distanceeducationschool.com', label: 'Saher_Khan_DES' },
-            { value: 'fiza@distanceeducationschool.com', label: 'Fiza_DES' },
-            { value: 'muskan@distanceeducationschool.com', label: 'Muskaan_DES' },
-            { value: 'aniruddh@distanceeducationschool.com', label: 'Aniruddh_DES' },
-            { value: 'deva@distanceeducationschool.com', label: 'Devendra_DES' },
-            { value: 'amritpal@distanceeducationschool.com', label: 'Amritpal_DES' },
-            { value: 'Salman@distanceeducationschool.com:', label: 'Salman_DES' },
-            { value: 'tariq@distanceeducationschool.com', label: 'Traiq_DES' },
-            { value: 'shivam@distanceeducationschool.com', label: 'Shivam_sharma_DES' },
-            { value: 'pushpa@distanceeducationschool.com', label: 'Puspa_DES' },
-            { value: 'zarin@distanceeducationschool.com', label: 'Zarin_DES' },
-            { value: 'kanchan@distanceeducationschool.com', label: 'Kanchan_DES' },
-            { value: 'manu@distanceeducationschool.com', label: 'Manu_DES' },
+            place: 'select counselor name',
+            options: [
+              // DES External email with name
+              { value: 'apoorvasrivastava@sode.co.in', label: 'Apoorva Srivastava' },
+              { value: 'nehaprashar@sode.co.in', label: 'Neha Prasher' },
+              { value: 'priya@sode.co.in', label: 'Priya Anand' },
+              { value: 'diksha@sode.co.in', label: 'Diksha Singh' },
+              { value: 'abhilasha@sode.co.in', label: 'Abhilasha Gupta' },
+              { value: 'saher@sode.co.in', label: 'Saher Khan' },
 
-            // Jain Team Emails
-            { value: 'a.anitha.ju@gmail.com', label: 'Anita_JU' },
-            { value: 'vaniruckmani.ju@gmail.com', label: 'Vani_Ruckmani_JU' },
-            { value: 'priyankapalle.ju@gmail.com', label: 'Priyanka_JU' },
-            { value: 'SwatiRamani.manipal@gmail.com', label: 'Swati_JU' },
+              // DES Internal email with name 
+              { value: 'muskan@distanceeducationschool.com', label: 'Muskaan ' },
+              { value: 'aniruddh@distanceeducationschool.com', label: 'Aniruddh Prakash' },
+              { value: 'amritpal@sode.co.in', label: 'Amritpal Singh' },
+              { value: 'salman@sode.co.in', label: 'Salman' },
+              { value: 'tariq@sode.co.in', label: 'Tariq Hasan' },
+              { value: 'shivam@sode.co.in', label: 'Shivam sharma' },
+              { value: 'pushpa@sode.co.in', label: 'Pushpa Pramanik' },
 
-            // Manipal Team Email
-            { value: 'ankitakumari.manipal@gmail.com', label: 'Ankita_MU' },
-            { value: 'medhahandoo.manipal@gmail.com', label: 'Medha_MU' },
-            { value: 'amreen.manipal@gmail.com', label: 'Amreen_MU' },
+              // DES Internal email with name 
+              { value: 'anurag@distanceeducationschool.com', label: 'Anurag Yadav' },
+              { value: 'kavitakumari@sode.co.in', label: 'Kavita Kumari' },
+              { value: 'rupal@sode.co.in', label: 'Rupal Gautam' },
+              { value: 'deva@sode.co.in', label: 'Devendra' },
+              { value: 'manshi@sode.co.in', label: 'Manshi Kem' },
 
-            // Support Team Email
-            { value: 'rajesh@distanceeducationschool.com', label: 'Rajesh_sir' },
-            { value: 'manisha@distanceeducationschool.com', label: 'Manisha' },
-            { value: 'admin@distanceeducationschool.com', label: 'Nouman_sir' },
-            { value: 'sandy@distanceeducationschool.com', label: 'Sandy' },
-            { value: 'neha@distanceeducationschool.com', label: 'Neha' },
-            { value: 'yashpriya@distanceeducationschool.com', label: 'Yash_Priya' },
-            { value: 'kavitahaldar@distanceeducationschool.com', label: 'kavitahaldar' },
-            { value: 'ifla@distanceeducationschool.com', label: 'Ifla' },
-            { value: 'shalu@distanceeducationschool.com', label: 'Shalu' },
-            { value: 'zainubia@distanceeducationschool.com', label: 'zainbuia' },
-            { value: 'pallovi@distanceeducationschool.com', label: 'Pallovi' },
-            { value: 'kavitakumari@distanceeducationschool.com', label: 'Kavita_Kumari' },
-            { value: 'manshi@distanceeducationschool.com', label: 'Mansi' },
-            { value: 'Bhavya.manipal@gmail.com', label: 'Bhavya' },
-            { value: 'anurag@distanceeducationschool.com', label: 'Anuraj' },
-            { value: 'rupal@distanceeducationschool.com', label: 'Rupal' },
-            //B2B Team Email
-            { value: 'spuhelpdesk@gmail.com', label: 'Binny' },
-            { value: 'ruchika.spu@gmail.com', label: 'Ruchika' },
-            { value: 'lalit@distanceeducationschool.com', label: 'Lalit_DES' },
-            { value: 'lalit.spu@gmail.com', label: 'Lalit' },
-            { value: 'ramiz.spu@gmail.com', label: 'Ramiz' }
+              // DES - INTERNATIONAL email with name 
+              { value: 'zarin@distanceeducationschool.com', label: 'Zarin Badar' },
+
+              // HES team email with name 
+              { value: 'kanchan@highereducationschool.com', label: 'Kanchan Sharma' },
+              { value: 'kirti@highereducationschool.com', label: 'Kirti Dubey' },
+              { value: 'ramandeep@highereducationschool.com', label: 'Ramandeep Kaur' },
+              { value: 'kavita@highereducationschool.com', label: 'Kavita Yadav' },
+              { value: 'imra@highereducationschool.com', label: 'Imra Khan' },
+              { value: 'mahak@highereducationschool.com', label: 'Mahek' },
+              { value: 'abhay@highereducationschool.com', label: 'Abhay Dubey' },
+              { value: 'swati@highereducationschool.com', label: 'Swati' },
+              { value: 'gulshan@highereducationschool.com', label: 'Gulshan Nayyar' },
+              { value: 'isha@highereducationschool.com', label: 'Isha Jaiswal' },
+              { value: 'sakshi@highereducationschool.com', label: 'Sakshi Arora' },
+
+              // Jain team email with name 
+              { value: 'anitha@sode.co.in', label: 'A.Anitha' },
+              { value: 'vani@sode.co.in', label: 'Vani Ruckmani' },
+
+              // Manipal team email with name 
+              { value: 'SwatiRamani.manipal@gmail.com', label: 'Swati Ramani' },
+              { value: 'ankitakumar@sode.co.in', label: 'Ankita Kumari' },
+              { value: 'nidhi@sode.co.in', label: 'Nidhi' },
+              { value: 'amreen@sode.co.in', label: 'Amreen ALI Khan' },
+              { value: 'umar@sode.co.in', label: 'MD Umar' },
+              { value: 'nehagupta@sode.co.in', label: 'Neha Gupta' },
+              { value: 'pawankumar@sode.co.in', label: 'Pawan Kumar' },
+              { value: 'bhavya@sode.co.in', label: 'Bhavya' },
+
+              // ALL DES && HES team email with name 
+              { value: 'rajesh@distanceeducationschool.com', label: 'Rajesh Sir' },
+              { value: 'manisha@distanceeducationschool.com', label: 'Manisha Yadav' },
+              { value: 'admin@distanceeducationschool.com', label: 'Nouman Sir' },
+              { value: 'sandy@distanceeducationschool.com', label: 'Sandy' },
+              { value: 'neha@distanceeducationschool.com', label: 'Neha Raj' },
+              { value: 'yashpriya@distanceeducationschool.com', label: 'Yash Priya' },
+              { value: 'kavitahaldar@distanceeducationschool.com', label: 'Kavita Haldar' },
+              { value: 'ifla@distanceeducationschool.com', label: 'Ifla' },
+              { value: 'shalu@distanceeducationschool.com', label: 'Shalu' },
+              { value: 'zainubia@distanceeducationschool.com', label: 'Zainbuia' },
+              { value: 'pallovi@distanceeducationschool.com', label: 'Pallovi' },
+              { value: 'hansi@distanceeducationschool.com', label: 'Hansi' },
+              { value: 'shristi@distanceeducationschool.com', label: 'Shristi' },
+              { value: 'aashita@highereducationschool.com', label: 'Aashita' },
+              { value: 'pratibha@highereducationschool.com', label: 'Pratibha' },
+              { value: 'shreyashi@highereducationschool.com', label: 'Shreyashi' },
+              { value: 'spuhelpdesk@gmail.com', label: 'Binny' },
+              { value: 'ruchika.spu@gmail.com', label: 'Ruchika' },
+              { value: 'ramiz.spu@gmail.com', label: 'Ramiz' },
             ],
           },
           {
@@ -3734,7 +3805,7 @@ const formData = [
             id: 'status ',
             type: 'select',
             place: 'select status',
-            required: 'require',
+
             options: [
               { value: 'New', label: 'New' },
               { value: 'Cancel', label: 'Cancel' },
@@ -3757,6 +3828,13 @@ const formData = [
             place: 'Enter your remark',
             id: 'remark',
             type: 'textarea',
+          },
+          {
+            key: 'date',
+            label: 'Created At',
+            name: 'created',
+            id: 'created',
+            type: 'date',
           },
         ],
       },
@@ -4128,7 +4206,7 @@ const formData = [
             name: ['customfields', 'send_fee_receipt'],
             type: 'radio',
             options: ['yes', 'no'],
-            required: 'require'
+
           },
           {
             key: 'studentId',
@@ -4137,7 +4215,7 @@ const formData = [
             place: 'StudentID',
             id: 'StudentID',
             type: 'studentId',
-            required: 'require'
+
           },
           {
             key: 'text',
@@ -4146,7 +4224,7 @@ const formData = [
             place: 'Student Name',
             id: 'full_name',
             type: 'text',
-            required: 'require'
+
           },
           {
             key: 'email',
@@ -4155,7 +4233,7 @@ const formData = [
             name: ['contact', 'email'],
             id: 'EmailID',
             type: 'email',
-            required: 'require'
+
           },
           {
             key: 'tel',
@@ -4164,7 +4242,7 @@ const formData = [
             place: 'Enter Phone Number',
             id: 'phone',
             type: 'tel',
-            required: 'require'
+
           },
           {
             key: 'text',
@@ -4173,7 +4251,7 @@ const formData = [
             place: 'Enter Father Name',
             id: 'Father Name',
             type: 'text',
-            required: 'require'
+
           },
           {
             key: 'text',
@@ -4182,32 +4260,32 @@ const formData = [
             place: 'Enter Mother Name',
             id: 'mother_name',
             type: 'text',
-            required: 'require'
+
           },
           {
             key: 'select',
             label: 'Session',
             name: ['customfields', 'session'],
-            place: 'eg: jan 20',
+            place: 'eg: JAN_20',
             id: 'Session',
             type: 'select',
-            options: [{ value: 'jan 20', label: 'Jan 20' },
-            { value: 'july 20', label: 'July 20' },
-            { value: 'jan 21', label: 'Jan 21' },
-            { value: 'july 21', label: 'July 21' },
-            { value: 'jan 22', label: 'Jan 22' },
-            { value: 'july 22', label: 'July 22' },
-            { value: 'jan 23', label: 'Jan 23' },
-            { value: 'july 23', label: 'July 23' },
-            { value: 'jan 24', label: 'Jan 24' },
-            { value: 'july 24', label: 'July 24' },
-            { value: 'jan 25', label: 'Jan 25' },
-            { value: 'july 25', label: 'July 25' },
-            { value: 'mar 23', label: 'mar 23' },
-            { value: 'apr 23', label: 'apr 23' },
-            { value: 'oct 23', label: 'oct 23' },
-            { value: 'nov 23', label: 'nov 23' },],
-            required: 'require'
+            options: [{ value: 'JAN_20', label: 'JAN_20' },
+            { value: 'JULY_20', label: 'JULY_20' },
+            { value: 'JAN_21', label: 'JAN_21' },
+            { value: 'JULY_21', label: 'JULY_21' },
+            { value: 'JAN_22', label: 'JAN_22' },
+            { value: 'JULY_22', label: 'JULY_22' },
+            { value: 'JAN_23', label: 'JAN_23' },
+            { value: 'JULY_23', label: 'JULY_23' },
+            { value: 'JAN_24', label: 'JAN_24' },
+            { value: 'JULY_24', label: 'JULY_24' },
+            { value: 'JAN_25', label: 'JAN_25' },
+            { value: 'JULY_25', label: 'JULY_25' },
+            { value: 'MAR_23', label: 'MAR_23' },
+            { value: 'APR_23', label: 'APR_23' },
+            { value: 'OCT_23', label: 'OCT_23' },
+            { value: 'NOV_23', label: 'NOV_23' },],
+
           },
           {
             key: 'select',
@@ -4216,7 +4294,7 @@ const formData = [
             id: 'SessionType',
             place: 'Enter Admission Type',
             type: 'select',
-            options: [{ value: 'Fresh', label: 'Fresh' },
+            options: [{ value: 'FRESH', label: 'FRESH' },
             { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
           },
 
@@ -4227,7 +4305,7 @@ const formData = [
             place: 'Enter Date of Birth',
             id: 'dob',
             type: 'date',
-            required: 'require'
+
           },
           {
             key: 'select',
@@ -4247,7 +4325,7 @@ const formData = [
             name: ['customfields', 'installment_type'],
             place: 'Installment Type',
             type: 'select',
-            required: 'require',
+
             options: [
               { value: '1st Installment/ New Admission', label: '1st Installment/ New Admission' },
               { value: '2nd Installment', label: '2nd Installment' },
@@ -4268,8 +4346,9 @@ const formData = [
             id: 'PaymentMode ',
             type: 'select',
             place: 'Select Payment Mode',
-            required: 'require',
+
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
+            { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
             { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
@@ -4280,77 +4359,82 @@ const formData = [
             name: ['customfields', 'counselor_email'],
             id: 'email ',
             type: 'select',
-            place: 'select counselor email',
-            required: 'require',
-            options: [{ value: 'zarin@highereducationschool.com', label: 'Zarin' },
-            { value: 'kanchan@highereducationschool.com', label: 'Kanchan' },
-            { value: 'kirti@highereducationschool.com', label: 'Kirti' },
-            { value: 'ramandeep@highereducationschool.com', label: 'Raman' },
-            { value: 'kavita@highereducationschool.com', label: 'kavita' },
-            { value: 'imra@highereducationschool.com', label: 'Imra' },
-            { value: 'Mahak@highereducationschool.com', label: 'Mahek' },
-            { value: 'abhay@highereducationschool.com', label: 'abhay' },
-            { value: 'swati@highereducationschool.com', label: 'swati' },
-            { value: 'gulshan@highereducationschool.com', label: 'Gulshan' },
-            { value: 'isha@highereducationschool.com', label: 'Isha' },
-            { value: 'Sakshi@highereducationschool.com', label: 'Sakshi' },
-            { value: 'aashita@highereducationschool.com', label: 'aashita' },
-            { value: 'pratibha@highereducationschool.com', label: 'pratibha' },
-            { value: 'shreyashi@highereducationschool.com', label: 'Shreyashi ' },
-            { value: 'apoorvasrivastava@distanceeducationschool.com', label: 'Apoorva_DES' },
-            { value: 'asma@distanceeducationschool.com', label: 'Asma_DES' },
-            { value: 'nehaprashar@distanceeducationschool.com', label: 'Neha_Prasher_DES' },
-            { value: 'priya@distanceeducationschool.com', label: 'Priya_DES' },
-            { value: 'diksha@distanceeducationschool.com', label: 'Diksha_DES' },
-            { value: 'abhilasha@distanceeducationschool.com', label: 'Abhilasha_Gupta_DES' },
-            { value: 'saher@distanceeducationschool.com', label: 'Saher_Khan_DES' },
-            { value: 'fiza@distanceeducationschool.com', label: 'Fiza_DES' },
-            { value: 'muskan@distanceeducationschool.com', label: 'Muskaan_DES' },
-            { value: 'aniruddh@distanceeducationschool.com', label: 'Aniruddh_DES' },
-            { value: 'deva@distanceeducationschool.com', label: 'Devendra_DES' },
-            { value: 'amritpal@distanceeducationschool.com', label: 'Amritpal_DES' },
-            { value: 'Salman@distanceeducationschool.com:', label: 'Salman_DES' },
-            { value: 'tariq@distanceeducationschool.com', label: 'Traiq_DES' },
-            { value: 'shivam@distanceeducationschool.com', label: 'Shivam_sharma_DES' },
-            { value: 'pushpa@distanceeducationschool.com', label: 'Puspa_DES' },
-            { value: 'zarin@distanceeducationschool.com', label: 'Zarin_DES' },
-            { value: 'kanchan@distanceeducationschool.com', label: 'Kanchan_DES' },
-            { value: 'manu@distanceeducationschool.com', label: 'Manu_DES' },
+            place: 'select counselor name',
+            options: [
+              // DES External email with name
+              { value: 'apoorvasrivastava@sode.co.in', label: 'Apoorva Srivastava' },
+              { value: 'nehaprashar@sode.co.in', label: 'Neha Prasher' },
+              { value: 'priya@sode.co.in', label: 'Priya Anand' },
+              { value: 'diksha@sode.co.in', label: 'Diksha Singh' },
+              { value: 'abhilasha@sode.co.in', label: 'Abhilasha Gupta' },
+              { value: 'saher@sode.co.in', label: 'Saher Khan' },
 
-            // Jain Team Emails
-            { value: 'a.anitha.ju@gmail.com', label: 'Anita_JU' },
-            { value: 'vaniruckmani.ju@gmail.com', label: 'Vani_Ruckmani_JU' },
-            { value: 'priyankapalle.ju@gmail.com', label: 'Priyanka_JU' },
-            { value: 'SwatiRamani.manipal@gmail.com', label: 'Swati_JU' },
+              // DES Internal email with name 
+              { value: 'muskan@distanceeducationschool.com', label: 'Muskaan ' },
+              { value: 'aniruddh@distanceeducationschool.com', label: 'Aniruddh Prakash' },
+              { value: 'amritpal@sode.co.in', label: 'Amritpal Singh' },
+              { value: 'salman@sode.co.in', label: 'Salman' },
+              { value: 'tariq@sode.co.in', label: 'Tariq Hasan' },
+              { value: 'shivam@sode.co.in', label: 'Shivam sharma' },
+              { value: 'pushpa@sode.co.in', label: 'Pushpa Pramanik' },
 
-            // Manipal Team Email
-            { value: 'ankitakumari.manipal@gmail.com', label: 'Ankita_MU' },
-            { value: 'medhahandoo.manipal@gmail.com', label: 'Medha_MU' },
-            { value: 'amreen.manipal@gmail.com', label: 'Amreen_MU' },
+              // DES Internal email with name 
+              { value: 'anurag@distanceeducationschool.com', label: 'Anurag Yadav' },
+              { value: 'kavitakumari@sode.co.in', label: 'Kavita Kumari' },
+              { value: 'rupal@sode.co.in', label: 'Rupal Gautam' },
+              { value: 'deva@sode.co.in', label: 'Devendra' },
+              { value: 'manshi@sode.co.in', label: 'Manshi Kem' },
 
-            // Support Team Email
-            { value: 'rajesh@distanceeducationschool.com', label: 'Rajesh_sir' },
-            { value: 'manisha@distanceeducationschool.com', label: 'Manisha' },
-            { value: 'admin@distanceeducationschool.com', label: 'Nouman_sir' },
-            { value: 'sandy@distanceeducationschool.com', label: 'Sandy' },
-            { value: 'neha@distanceeducationschool.com', label: 'Neha' },
-            { value: 'yashpriya@distanceeducationschool.com', label: 'Yash_Priya' },
-            { value: 'kavitahaldar@distanceeducationschool.com', label: 'kavitahaldar' },
-            { value: 'ifla@distanceeducationschool.com', label: 'Ifla' },
-            { value: 'shalu@distanceeducationschool.com', label: 'Shalu' },
-            { value: 'zainubia@distanceeducationschool.com', label: 'zainbuia' },
-            { value: 'pallovi@distanceeducationschool.com', label: 'Pallovi' },
-            { value: 'kavitakumari@distanceeducationschool.com', label: 'Kavita_Kumari' },
-            { value: 'manshi@distanceeducationschool.com', label: 'Mansi' },
-            { value: 'Bhavya.manipal@gmail.com', label: 'Bhavya' },
-            { value: 'anurag@distanceeducationschool.com', label: 'Anuraj' },
-            { value: 'rupal@distanceeducationschool.com', label: 'Rupal' },
-            //B2B Team Email
-            { value: 'spuhelpdesk@gmail.com', label: 'Binny' },
-            { value: 'ruchika.spu@gmail.com', label: 'Ruchika' },
-            { value: 'lalit@distanceeducationschool.com', label: 'Lalit_DES' },
-            { value: 'lalit.spu@gmail.com', label: 'Lalit' },
-            { value: 'ramiz.spu@gmail.com', label: 'Ramiz' }
+              // DES - INTERNATIONAL email with name 
+              { value: 'zarin@distanceeducationschool.com', label: 'Zarin Badar' },
+
+              // HES team email with name 
+              { value: 'kanchan@highereducationschool.com', label: 'Kanchan Sharma' },
+              { value: 'kirti@highereducationschool.com', label: 'Kirti Dubey' },
+              { value: 'ramandeep@highereducationschool.com', label: 'Ramandeep Kaur' },
+              { value: 'kavita@highereducationschool.com', label: 'Kavita Yadav' },
+              { value: 'imra@highereducationschool.com', label: 'Imra Khan' },
+              { value: 'mahak@highereducationschool.com', label: 'Mahek' },
+              { value: 'abhay@highereducationschool.com', label: 'Abhay Dubey' },
+              { value: 'swati@highereducationschool.com', label: 'Swati' },
+              { value: 'gulshan@highereducationschool.com', label: 'Gulshan Nayyar' },
+              { value: 'isha@highereducationschool.com', label: 'Isha Jaiswal' },
+              { value: 'sakshi@highereducationschool.com', label: 'Sakshi Arora' },
+
+              // Jain team email with name 
+              { value: 'anitha@sode.co.in', label: 'A.Anitha' },
+              { value: 'vani@sode.co.in', label: 'Vani Ruckmani' },
+
+              // Manipal team email with name 
+              { value: 'SwatiRamani.manipal@gmail.com', label: 'Swati Ramani' },
+              { value: 'ankitakumar@sode.co.in', label: 'Ankita Kumari' },
+              { value: 'nidhi@sode.co.in', label: 'Nidhi' },
+              { value: 'amreen@sode.co.in', label: 'Amreen ALI Khan' },
+              { value: 'umar@sode.co.in', label: 'MD Umar' },
+              { value: 'nehagupta@sode.co.in', label: 'Neha Gupta' },
+              { value: 'pawankumar@sode.co.in', label: 'Pawan Kumar' },
+              { value: 'bhavya@sode.co.in', label: 'Bhavya' },
+
+              // ALL DES && HES team email with name 
+              { value: 'rajesh@distanceeducationschool.com', label: 'Rajesh Sir' },
+              { value: 'manisha@distanceeducationschool.com', label: 'Manisha Yadav' },
+              { value: 'admin@distanceeducationschool.com', label: 'Nouman Sir' },
+              { value: 'sandy@distanceeducationschool.com', label: 'Sandy' },
+              { value: 'neha@distanceeducationschool.com', label: 'Neha Raj' },
+              { value: 'yashpriya@distanceeducationschool.com', label: 'Yash Priya' },
+              { value: 'kavitahaldar@distanceeducationschool.com', label: 'Kavita Haldar' },
+              { value: 'ifla@distanceeducationschool.com', label: 'Ifla' },
+              { value: 'shalu@distanceeducationschool.com', label: 'Shalu' },
+              { value: 'zainubia@distanceeducationschool.com', label: 'Zainbuia' },
+              { value: 'pallovi@distanceeducationschool.com', label: 'Pallovi' },
+              { value: 'hansi@distanceeducationschool.com', label: 'Hansi' },
+              { value: 'shristi@distanceeducationschool.com', label: 'Shristi' },
+              { value: 'aashita@highereducationschool.com', label: 'Aashita' },
+              { value: 'pratibha@highereducationschool.com', label: 'Pratibha' },
+              { value: 'shreyashi@highereducationschool.com', label: 'Shreyashi' },
+              { value: 'spuhelpdesk@gmail.com', label: 'Binny' },
+              { value: 'ruchika.spu@gmail.com', label: 'Ruchika' },
+              { value: 'ramiz.spu@gmail.com', label: 'Ramiz' },
             ],
           },
           {
@@ -4360,7 +4444,7 @@ const formData = [
             id: 'status ',
             type: 'select',
             place: 'select status',
-            required: 'require',
+
             options: [
               { value: 'New', label: 'New' },
               { value: 'Cancel', label: 'Cancel' },
@@ -4383,6 +4467,13 @@ const formData = [
             place: 'Enter your remark',
             id: 'remark',
             type: 'textarea',
+          },
+          {
+            key: 'date',
+            label: 'Created At',
+            name: 'created',
+            id: 'created',
+            type: 'date',
           },
         ],
       },
@@ -4754,7 +4845,7 @@ const formData = [
             name: ['customfields', 'send_fee_receipt'],
             type: 'radio',
             options: ['yes', 'no'],
-            required: 'require'
+
           },
           {
             key: 'studentId',
@@ -4763,7 +4854,7 @@ const formData = [
             place: 'StudentID',
             id: 'StudentID',
             type: 'studentId',
-            required: 'require'
+
           },
           {
             key: 'text',
@@ -4772,7 +4863,7 @@ const formData = [
             place: 'Student Name',
             id: 'full_name',
             type: 'text',
-            required: 'require'
+
           },
           {
             key: 'email',
@@ -4781,7 +4872,7 @@ const formData = [
             name: ['contact', 'email'],
             id: 'EmailID',
             type: 'email',
-            required: 'require'
+
           },
           {
             key: 'tel',
@@ -4790,7 +4881,7 @@ const formData = [
             place: 'Enter Phone Number',
             id: 'phone',
             type: 'tel',
-            required: 'require'
+
           },
           {
             key: 'text',
@@ -4799,7 +4890,7 @@ const formData = [
             place: 'Enter Father Name',
             id: 'Father Name',
             type: 'text',
-            required: 'require'
+
           },
           {
             key: 'text',
@@ -4808,32 +4899,32 @@ const formData = [
             place: 'Enter Mother Name',
             id: 'mother_name',
             type: 'text',
-            required: 'require'
+
           },
           {
             key: 'select',
             label: 'Session',
             name: ['customfields', 'session'],
-            place: 'eg: jan 20',
+            place: 'eg: JAN_20',
             id: 'Session',
             type: 'select',
-            options: [{ value: 'jan 20', label: 'Jan 20' },
-            { value: 'july 20', label: 'July 20' },
-            { value: 'jan 21', label: 'Jan 21' },
-            { value: 'july 21', label: 'July 21' },
-            { value: 'jan 22', label: 'Jan 22' },
-            { value: 'july 22', label: 'July 22' },
-            { value: 'jan 23', label: 'Jan 23' },
-            { value: 'july 23', label: 'July 23' },
-            { value: 'jan 24', label: 'Jan 24' },
-            { value: 'july 24', label: 'July 24' },
-            { value: 'jan 25', label: 'Jan 25' },
-            { value: 'july 25', label: 'July 25' },
-            { value: 'mar 23', label: 'mar 23' },
-            { value: 'apr 23', label: 'apr 23' },
-            { value: 'oct 23', label: 'oct 23' },
-            { value: 'nov 23', label: 'nov 23' },],
-            required: 'require'
+            options: [{ value: 'JAN_20', label: 'JAN_20' },
+            { value: 'JULY_20', label: 'JULY_20' },
+            { value: 'JAN_21', label: 'JAN_21' },
+            { value: 'JULY_21', label: 'JULY_21' },
+            { value: 'JAN_22', label: 'JAN_22' },
+            { value: 'JULY_22', label: 'JULY_22' },
+            { value: 'JAN_23', label: 'JAN_23' },
+            { value: 'JULY_23', label: 'JULY_23' },
+            { value: 'JAN_24', label: 'JAN_24' },
+            { value: 'JULY_24', label: 'JULY_24' },
+            { value: 'JAN_25', label: 'JAN_25' },
+            { value: 'JULY_25', label: 'JULY_25' },
+            { value: 'MAR_23', label: 'MAR_23' },
+            { value: 'APR_23', label: 'APR_23' },
+            { value: 'OCT_23', label: 'OCT_23' },
+            { value: 'NOV_23', label: 'NOV_23' },],
+
           },
           {
             key: 'select',
@@ -4842,7 +4933,7 @@ const formData = [
             id: 'SessionType',
             place: 'Enter Admission Type',
             type: 'select',
-            options: [{ value: 'Fresh', label: 'Fresh' },
+            options: [{ value: 'FRESH', label: 'FRESH' },
             { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
           },
 
@@ -4853,7 +4944,7 @@ const formData = [
             place: 'Enter Date of Birth',
             id: 'dob',
             type: 'date',
-            required: 'require'
+
           },
           {
             key: 'select',
@@ -4873,7 +4964,7 @@ const formData = [
             name: ['customfields', 'installment_type'],
             place: 'Installment Type',
             type: 'select',
-            required: 'require',
+
             options: [
               { value: '1st Installment/ New Admission', label: '1st Installment/ New Admission' },
               { value: '2nd Installment', label: '2nd Installment' },
@@ -4894,8 +4985,9 @@ const formData = [
             id: 'PaymentMode ',
             type: 'select',
             place: 'Select Payment Mode',
-            required: 'require',
+
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
+            { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
             { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
@@ -4906,77 +4998,82 @@ const formData = [
             name: ['customfields', 'counselor_email'],
             id: 'email ',
             type: 'select',
-            place: 'select counselor email',
-            required: 'require',
-            options: [{ value: 'zarin@highereducationschool.com', label: 'Zarin' },
-            { value: 'kanchan@highereducationschool.com', label: 'Kanchan' },
-            { value: 'kirti@highereducationschool.com', label: 'Kirti' },
-            { value: 'ramandeep@highereducationschool.com', label: 'Raman' },
-            { value: 'kavita@highereducationschool.com', label: 'kavita' },
-            { value: 'imra@highereducationschool.com', label: 'Imra' },
-            { value: 'Mahak@highereducationschool.com', label: 'Mahek' },
-            { value: 'abhay@highereducationschool.com', label: 'abhay' },
-            { value: 'swati@highereducationschool.com', label: 'swati' },
-            { value: 'gulshan@highereducationschool.com', label: 'Gulshan' },
-            { value: 'isha@highereducationschool.com', label: 'Isha' },
-            { value: 'Sakshi@highereducationschool.com', label: 'Sakshi' },
-            { value: 'aashita@highereducationschool.com', label: 'aashita' },
-            { value: 'pratibha@highereducationschool.com', label: 'pratibha' },
-            { value: 'shreyashi@highereducationschool.com', label: 'Shreyashi ' },
-            { value: 'apoorvasrivastava@distanceeducationschool.com', label: 'Apoorva_DES' },
-            { value: 'asma@distanceeducationschool.com', label: 'Asma_DES' },
-            { value: 'nehaprashar@distanceeducationschool.com', label: 'Neha_Prasher_DES' },
-            { value: 'priya@distanceeducationschool.com', label: 'Priya_DES' },
-            { value: 'diksha@distanceeducationschool.com', label: 'Diksha_DES' },
-            { value: 'abhilasha@distanceeducationschool.com', label: 'Abhilasha_Gupta_DES' },
-            { value: 'saher@distanceeducationschool.com', label: 'Saher_Khan_DES' },
-            { value: 'fiza@distanceeducationschool.com', label: 'Fiza_DES' },
-            { value: 'muskan@distanceeducationschool.com', label: 'Muskaan_DES' },
-            { value: 'aniruddh@distanceeducationschool.com', label: 'Aniruddh_DES' },
-            { value: 'deva@distanceeducationschool.com', label: 'Devendra_DES' },
-            { value: 'amritpal@distanceeducationschool.com', label: 'Amritpal_DES' },
-            { value: 'Salman@distanceeducationschool.com:', label: 'Salman_DES' },
-            { value: 'tariq@distanceeducationschool.com', label: 'Traiq_DES' },
-            { value: 'shivam@distanceeducationschool.com', label: 'Shivam_sharma_DES' },
-            { value: 'pushpa@distanceeducationschool.com', label: 'Puspa_DES' },
-            { value: 'zarin@distanceeducationschool.com', label: 'Zarin_DES' },
-            { value: 'kanchan@distanceeducationschool.com', label: 'Kanchan_DES' },
-            { value: 'manu@distanceeducationschool.com', label: 'Manu_DES' },
+            place: 'select counselor name',
+            options: [
+              // DES External email with name
+              { value: 'apoorvasrivastava@sode.co.in', label: 'Apoorva Srivastava' },
+              { value: 'nehaprashar@sode.co.in', label: 'Neha Prasher' },
+              { value: 'priya@sode.co.in', label: 'Priya Anand' },
+              { value: 'diksha@sode.co.in', label: 'Diksha Singh' },
+              { value: 'abhilasha@sode.co.in', label: 'Abhilasha Gupta' },
+              { value: 'saher@sode.co.in', label: 'Saher Khan' },
 
-            // Jain Team Emails
-            { value: 'a.anitha.ju@gmail.com', label: 'Anita_JU' },
-            { value: 'vaniruckmani.ju@gmail.com', label: 'Vani_Ruckmani_JU' },
-            { value: 'priyankapalle.ju@gmail.com', label: 'Priyanka_JU' },
-            { value: 'SwatiRamani.manipal@gmail.com', label: 'Swati_JU' },
+              // DES Internal email with name 
+              { value: 'muskan@distanceeducationschool.com', label: 'Muskaan ' },
+              { value: 'aniruddh@distanceeducationschool.com', label: 'Aniruddh Prakash' },
+              { value: 'amritpal@sode.co.in', label: 'Amritpal Singh' },
+              { value: 'salman@sode.co.in', label: 'Salman' },
+              { value: 'tariq@sode.co.in', label: 'Tariq Hasan' },
+              { value: 'shivam@sode.co.in', label: 'Shivam sharma' },
+              { value: 'pushpa@sode.co.in', label: 'Pushpa Pramanik' },
 
-            // Manipal Team Email
-            { value: 'ankitakumari.manipal@gmail.com', label: 'Ankita_MU' },
-            { value: 'medhahandoo.manipal@gmail.com', label: 'Medha_MU' },
-            { value: 'amreen.manipal@gmail.com', label: 'Amreen_MU' },
+              // DES Internal email with name 
+              { value: 'anurag@distanceeducationschool.com', label: 'Anurag Yadav' },
+              { value: 'kavitakumari@sode.co.in', label: 'Kavita Kumari' },
+              { value: 'rupal@sode.co.in', label: 'Rupal Gautam' },
+              { value: 'deva@sode.co.in', label: 'Devendra' },
+              { value: 'manshi@sode.co.in', label: 'Manshi Kem' },
 
-            // Support Team Email
-            { value: 'rajesh@distanceeducationschool.com', label: 'Rajesh_sir' },
-            { value: 'manisha@distanceeducationschool.com', label: 'Manisha' },
-            { value: 'admin@distanceeducationschool.com', label: 'Nouman_sir' },
-            { value: 'sandy@distanceeducationschool.com', label: 'Sandy' },
-            { value: 'neha@distanceeducationschool.com', label: 'Neha' },
-            { value: 'yashpriya@distanceeducationschool.com', label: 'Yash_Priya' },
-            { value: 'kavitahaldar@distanceeducationschool.com', label: 'kavitahaldar' },
-            { value: 'ifla@distanceeducationschool.com', label: 'Ifla' },
-            { value: 'shalu@distanceeducationschool.com', label: 'Shalu' },
-            { value: 'zainubia@distanceeducationschool.com', label: 'zainbuia' },
-            { value: 'pallovi@distanceeducationschool.com', label: 'Pallovi' },
-            { value: 'kavitakumari@distanceeducationschool.com', label: 'Kavita_Kumari' },
-            { value: 'manshi@distanceeducationschool.com', label: 'Mansi' },
-            { value: 'Bhavya.manipal@gmail.com', label: 'Bhavya' },
-            { value: 'anurag@distanceeducationschool.com', label: 'Anuraj' },
-            { value: 'rupal@distanceeducationschool.com', label: 'Rupal' },
-            //B2B Team Email
-            { value: 'spuhelpdesk@gmail.com', label: 'Binny' },
-            { value: 'ruchika.spu@gmail.com', label: 'Ruchika' },
-            { value: 'lalit@distanceeducationschool.com', label: 'Lalit_DES' },
-            { value: 'lalit.spu@gmail.com', label: 'Lalit' },
-            { value: 'ramiz.spu@gmail.com', label: 'Ramiz' }
+              // DES - INTERNATIONAL email with name 
+              { value: 'zarin@distanceeducationschool.com', label: 'Zarin Badar' },
+
+              // HES team email with name 
+              { value: 'kanchan@highereducationschool.com', label: 'Kanchan Sharma' },
+              { value: 'kirti@highereducationschool.com', label: 'Kirti Dubey' },
+              { value: 'ramandeep@highereducationschool.com', label: 'Ramandeep Kaur' },
+              { value: 'kavita@highereducationschool.com', label: 'Kavita Yadav' },
+              { value: 'imra@highereducationschool.com', label: 'Imra Khan' },
+              { value: 'mahak@highereducationschool.com', label: 'Mahek' },
+              { value: 'abhay@highereducationschool.com', label: 'Abhay Dubey' },
+              { value: 'swati@highereducationschool.com', label: 'Swati' },
+              { value: 'gulshan@highereducationschool.com', label: 'Gulshan Nayyar' },
+              { value: 'isha@highereducationschool.com', label: 'Isha Jaiswal' },
+              { value: 'sakshi@highereducationschool.com', label: 'Sakshi Arora' },
+
+              // Jain team email with name 
+              { value: 'anitha@sode.co.in', label: 'A.Anitha' },
+              { value: 'vani@sode.co.in', label: 'Vani Ruckmani' },
+
+              // Manipal team email with name 
+              { value: 'SwatiRamani.manipal@gmail.com', label: 'Swati Ramani' },
+              { value: 'ankitakumar@sode.co.in', label: 'Ankita Kumari' },
+              { value: 'nidhi@sode.co.in', label: 'Nidhi' },
+              { value: 'amreen@sode.co.in', label: 'Amreen ALI Khan' },
+              { value: 'umar@sode.co.in', label: 'MD Umar' },
+              { value: 'nehagupta@sode.co.in', label: 'Neha Gupta' },
+              { value: 'pawankumar@sode.co.in', label: 'Pawan Kumar' },
+              { value: 'bhavya@sode.co.in', label: 'Bhavya' },
+
+              // ALL DES && HES team email with name 
+              { value: 'rajesh@distanceeducationschool.com', label: 'Rajesh Sir' },
+              { value: 'manisha@distanceeducationschool.com', label: 'Manisha Yadav' },
+              { value: 'admin@distanceeducationschool.com', label: 'Nouman Sir' },
+              { value: 'sandy@distanceeducationschool.com', label: 'Sandy' },
+              { value: 'neha@distanceeducationschool.com', label: 'Neha Raj' },
+              { value: 'yashpriya@distanceeducationschool.com', label: 'Yash Priya' },
+              { value: 'kavitahaldar@distanceeducationschool.com', label: 'Kavita Haldar' },
+              { value: 'ifla@distanceeducationschool.com', label: 'Ifla' },
+              { value: 'shalu@distanceeducationschool.com', label: 'Shalu' },
+              { value: 'zainubia@distanceeducationschool.com', label: 'Zainbuia' },
+              { value: 'pallovi@distanceeducationschool.com', label: 'Pallovi' },
+              { value: 'hansi@distanceeducationschool.com', label: 'Hansi' },
+              { value: 'shristi@distanceeducationschool.com', label: 'Shristi' },
+              { value: 'aashita@highereducationschool.com', label: 'Aashita' },
+              { value: 'pratibha@highereducationschool.com', label: 'Pratibha' },
+              { value: 'shreyashi@highereducationschool.com', label: 'Shreyashi' },
+              { value: 'spuhelpdesk@gmail.com', label: 'Binny' },
+              { value: 'ruchika.spu@gmail.com', label: 'Ruchika' },
+              { value: 'ramiz.spu@gmail.com', label: 'Ramiz' },
             ],
           },
           {
@@ -4986,7 +5083,7 @@ const formData = [
             id: 'status ',
             type: 'select',
             place: 'select status',
-            required: 'require',
+
             options: [
               { value: 'New', label: 'New' },
               { value: 'Cancel', label: 'Cancel' },
@@ -5009,6 +5106,13 @@ const formData = [
             place: 'Enter your remark',
             id: 'remark',
             type: 'textarea',
+          },
+          {
+            key: 'date',
+            label: 'Created At',
+            name: 'created',
+            id: 'created',
+            type: 'date',
           },
         ],
       },
@@ -5380,7 +5484,7 @@ const formData = [
             name: ['customfields', 'send_fee_receipt'],
             type: 'radio',
             options: ['yes', 'no'],
-            required: 'require'
+
           },
           {
             key: 'studentId',
@@ -5389,7 +5493,7 @@ const formData = [
             place: 'StudentID',
             id: 'StudentID',
             type: 'studentId',
-            required: 'require'
+
           },
           {
             key: 'text',
@@ -5398,7 +5502,7 @@ const formData = [
             place: 'Student Name',
             id: 'full_name',
             type: 'text',
-            required: 'require'
+
           },
           {
             key: 'email',
@@ -5407,7 +5511,7 @@ const formData = [
             name: ['contact', 'email'],
             id: 'EmailID',
             type: 'email',
-            required: 'require'
+
           },
           {
             key: 'tel',
@@ -5416,7 +5520,7 @@ const formData = [
             place: 'Enter Phone Number',
             id: 'phone',
             type: 'tel',
-            required: 'require'
+
           },
           {
             key: 'text',
@@ -5425,7 +5529,7 @@ const formData = [
             place: 'Enter Father Name',
             id: 'Father Name',
             type: 'text',
-            required: 'require'
+
           },
           {
             key: 'text',
@@ -5434,32 +5538,32 @@ const formData = [
             place: 'Enter Mother Name',
             id: 'mother_name',
             type: 'text',
-            required: 'require'
+
           },
           {
             key: 'select',
             label: 'Session',
             name: ['customfields', 'session'],
-            place: 'eg: jan 20',
+            place: 'eg: JAN_20',
             id: 'Session',
             type: 'select',
-            options: [{ value: 'jan 20', label: 'Jan 20' },
-            { value: 'july 20', label: 'July 20' },
-            { value: 'jan 21', label: 'Jan 21' },
-            { value: 'july 21', label: 'July 21' },
-            { value: 'jan 22', label: 'Jan 22' },
-            { value: 'july 22', label: 'July 22' },
-            { value: 'jan 23', label: 'Jan 23' },
-            { value: 'july 23', label: 'July 23' },
-            { value: 'jan 24', label: 'Jan 24' },
-            { value: 'july 24', label: 'July 24' },
-            { value: 'jan 25', label: 'Jan 25' },
-            { value: 'july 25', label: 'July 25' },
-            { value: 'mar 23', label: 'mar 23' },
-            { value: 'apr 23', label: 'apr 23' },
-            { value: 'oct 23', label: 'oct 23' },
-            { value: 'nov 23', label: 'nov 23' },],
-            required: 'require'
+            options: [{ value: 'JAN_20', label: 'JAN_20' },
+            { value: 'JULY_20', label: 'JULY_20' },
+            { value: 'JAN_21', label: 'JAN_21' },
+            { value: 'JULY_21', label: 'JULY_21' },
+            { value: 'JAN_22', label: 'JAN_22' },
+            { value: 'JULY_22', label: 'JULY_22' },
+            { value: 'JAN_23', label: 'JAN_23' },
+            { value: 'JULY_23', label: 'JULY_23' },
+            { value: 'JAN_24', label: 'JAN_24' },
+            { value: 'JULY_24', label: 'JULY_24' },
+            { value: 'JAN_25', label: 'JAN_25' },
+            { value: 'JULY_25', label: 'JULY_25' },
+            { value: 'MAR_23', label: 'MAR_23' },
+            { value: 'APR_23', label: 'APR_23' },
+            { value: 'OCT_23', label: 'OCT_23' },
+            { value: 'NOV_23', label: 'NOV_23' },],
+
           },
           {
             key: 'select',
@@ -5468,7 +5572,7 @@ const formData = [
             id: 'SessionType',
             place: 'Enter Admission Type',
             type: 'select',
-            options: [{ value: 'Fresh', label: 'Fresh' },
+            options: [{ value: 'FRESH', label: 'FRESH' },
             { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
           },
 
@@ -5479,7 +5583,7 @@ const formData = [
             place: 'Enter Date of Birth',
             id: 'dob',
             type: 'date',
-            required: 'require'
+
           },
           {
             key: 'select',
@@ -5499,7 +5603,7 @@ const formData = [
             name: ['customfields', 'installment_type'],
             place: 'Installment Type',
             type: 'select',
-            required: 'require',
+
             options: [
               { value: '1st Installment/ New Admission', label: '1st Installment/ New Admission' },
               { value: '2nd Installment', label: '2nd Installment' },
@@ -5520,8 +5624,9 @@ const formData = [
             id: 'PaymentMode ',
             type: 'select',
             place: 'Select Payment Mode',
-            required: 'require',
+
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
+            { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
             { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
@@ -5532,77 +5637,82 @@ const formData = [
             name: ['customfields', 'counselor_email'],
             id: 'email ',
             type: 'select',
-            place: 'select counselor email',
-            required: 'require',
-            options: [{ value: 'zarin@highereducationschool.com', label: 'Zarin' },
-            { value: 'kanchan@highereducationschool.com', label: 'Kanchan' },
-            { value: 'kirti@highereducationschool.com', label: 'Kirti' },
-            { value: 'ramandeep@highereducationschool.com', label: 'Raman' },
-            { value: 'kavita@highereducationschool.com', label: 'kavita' },
-            { value: 'imra@highereducationschool.com', label: 'Imra' },
-            { value: 'Mahak@highereducationschool.com', label: 'Mahek' },
-            { value: 'abhay@highereducationschool.com', label: 'abhay' },
-            { value: 'swati@highereducationschool.com', label: 'swati' },
-            { value: 'gulshan@highereducationschool.com', label: 'Gulshan' },
-            { value: 'isha@highereducationschool.com', label: 'Isha' },
-            { value: 'Sakshi@highereducationschool.com', label: 'Sakshi' },
-            { value: 'aashita@highereducationschool.com', label: 'aashita' },
-            { value: 'pratibha@highereducationschool.com', label: 'pratibha' },
-            { value: 'shreyashi@highereducationschool.com', label: 'Shreyashi ' },
-            { value: 'apoorvasrivastava@distanceeducationschool.com', label: 'Apoorva_DES' },
-            { value: 'asma@distanceeducationschool.com', label: 'Asma_DES' },
-            { value: 'nehaprashar@distanceeducationschool.com', label: 'Neha_Prasher_DES' },
-            { value: 'priya@distanceeducationschool.com', label: 'Priya_DES' },
-            { value: 'diksha@distanceeducationschool.com', label: 'Diksha_DES' },
-            { value: 'abhilasha@distanceeducationschool.com', label: 'Abhilasha_Gupta_DES' },
-            { value: 'saher@distanceeducationschool.com', label: 'Saher_Khan_DES' },
-            { value: 'fiza@distanceeducationschool.com', label: 'Fiza_DES' },
-            { value: 'muskan@distanceeducationschool.com', label: 'Muskaan_DES' },
-            { value: 'aniruddh@distanceeducationschool.com', label: 'Aniruddh_DES' },
-            { value: 'deva@distanceeducationschool.com', label: 'Devendra_DES' },
-            { value: 'amritpal@distanceeducationschool.com', label: 'Amritpal_DES' },
-            { value: 'Salman@distanceeducationschool.com:', label: 'Salman_DES' },
-            { value: 'tariq@distanceeducationschool.com', label: 'Traiq_DES' },
-            { value: 'shivam@distanceeducationschool.com', label: 'Shivam_sharma_DES' },
-            { value: 'pushpa@distanceeducationschool.com', label: 'Puspa_DES' },
-            { value: 'zarin@distanceeducationschool.com', label: 'Zarin_DES' },
-            { value: 'kanchan@distanceeducationschool.com', label: 'Kanchan_DES' },
-            { value: 'manu@distanceeducationschool.com', label: 'Manu_DES' },
+            place: 'select counselor name',
+            options: [
+              // DES External email with name
+              { value: 'apoorvasrivastava@sode.co.in', label: 'Apoorva Srivastava' },
+              { value: 'nehaprashar@sode.co.in', label: 'Neha Prasher' },
+              { value: 'priya@sode.co.in', label: 'Priya Anand' },
+              { value: 'diksha@sode.co.in', label: 'Diksha Singh' },
+              { value: 'abhilasha@sode.co.in', label: 'Abhilasha Gupta' },
+              { value: 'saher@sode.co.in', label: 'Saher Khan' },
 
-            // Jain Team Emails
-            { value: 'a.anitha.ju@gmail.com', label: 'Anita_JU' },
-            { value: 'vaniruckmani.ju@gmail.com', label: 'Vani_Ruckmani_JU' },
-            { value: 'priyankapalle.ju@gmail.com', label: 'Priyanka_JU' },
-            { value: 'SwatiRamani.manipal@gmail.com', label: 'Swati_JU' },
+              // DES Internal email with name 
+              { value: 'muskan@distanceeducationschool.com', label: 'Muskaan ' },
+              { value: 'aniruddh@distanceeducationschool.com', label: 'Aniruddh Prakash' },
+              { value: 'amritpal@sode.co.in', label: 'Amritpal Singh' },
+              { value: 'salman@sode.co.in', label: 'Salman' },
+              { value: 'tariq@sode.co.in', label: 'Tariq Hasan' },
+              { value: 'shivam@sode.co.in', label: 'Shivam sharma' },
+              { value: 'pushpa@sode.co.in', label: 'Pushpa Pramanik' },
 
-            // Manipal Team Email
-            { value: 'ankitakumari.manipal@gmail.com', label: 'Ankita_MU' },
-            { value: 'medhahandoo.manipal@gmail.com', label: 'Medha_MU' },
-            { value: 'amreen.manipal@gmail.com', label: 'Amreen_MU' },
+              // DES Internal email with name 
+              { value: 'anurag@distanceeducationschool.com', label: 'Anurag Yadav' },
+              { value: 'kavitakumari@sode.co.in', label: 'Kavita Kumari' },
+              { value: 'rupal@sode.co.in', label: 'Rupal Gautam' },
+              { value: 'deva@sode.co.in', label: 'Devendra' },
+              { value: 'manshi@sode.co.in', label: 'Manshi Kem' },
 
-            // Support Team Email
-            { value: 'rajesh@distanceeducationschool.com', label: 'Rajesh_sir' },
-            { value: 'manisha@distanceeducationschool.com', label: 'Manisha' },
-            { value: 'admin@distanceeducationschool.com', label: 'Nouman_sir' },
-            { value: 'sandy@distanceeducationschool.com', label: 'Sandy' },
-            { value: 'neha@distanceeducationschool.com', label: 'Neha' },
-            { value: 'yashpriya@distanceeducationschool.com', label: 'Yash_Priya' },
-            { value: 'kavitahaldar@distanceeducationschool.com', label: 'kavitahaldar' },
-            { value: 'ifla@distanceeducationschool.com', label: 'Ifla' },
-            { value: 'shalu@distanceeducationschool.com', label: 'Shalu' },
-            { value: 'zainubia@distanceeducationschool.com', label: 'zainbuia' },
-            { value: 'pallovi@distanceeducationschool.com', label: 'Pallovi' },
-            { value: 'kavitakumari@distanceeducationschool.com', label: 'Kavita_Kumari' },
-            { value: 'manshi@distanceeducationschool.com', label: 'Mansi' },
-            { value: 'Bhavya.manipal@gmail.com', label: 'Bhavya' },
-            { value: 'anurag@distanceeducationschool.com', label: 'Anuraj' },
-            { value: 'rupal@distanceeducationschool.com', label: 'Rupal' },
-            //B2B Team Email
-            { value: 'spuhelpdesk@gmail.com', label: 'Binny' },
-            { value: 'ruchika.spu@gmail.com', label: 'Ruchika' },
-            { value: 'lalit@distanceeducationschool.com', label: 'Lalit_DES' },
-            { value: 'lalit.spu@gmail.com', label: 'Lalit' },
-            { value: 'ramiz.spu@gmail.com', label: 'Ramiz' }
+              // DES - INTERNATIONAL email with name 
+              { value: 'zarin@distanceeducationschool.com', label: 'Zarin Badar' },
+
+              // HES team email with name 
+              { value: 'kanchan@highereducationschool.com', label: 'Kanchan Sharma' },
+              { value: 'kirti@highereducationschool.com', label: 'Kirti Dubey' },
+              { value: 'ramandeep@highereducationschool.com', label: 'Ramandeep Kaur' },
+              { value: 'kavita@highereducationschool.com', label: 'Kavita Yadav' },
+              { value: 'imra@highereducationschool.com', label: 'Imra Khan' },
+              { value: 'mahak@highereducationschool.com', label: 'Mahek' },
+              { value: 'abhay@highereducationschool.com', label: 'Abhay Dubey' },
+              { value: 'swati@highereducationschool.com', label: 'Swati' },
+              { value: 'gulshan@highereducationschool.com', label: 'Gulshan Nayyar' },
+              { value: 'isha@highereducationschool.com', label: 'Isha Jaiswal' },
+              { value: 'sakshi@highereducationschool.com', label: 'Sakshi Arora' },
+
+              // Jain team email with name 
+              { value: 'anitha@sode.co.in', label: 'A.Anitha' },
+              { value: 'vani@sode.co.in', label: 'Vani Ruckmani' },
+
+              // Manipal team email with name 
+              { value: 'SwatiRamani.manipal@gmail.com', label: 'Swati Ramani' },
+              { value: 'ankitakumar@sode.co.in', label: 'Ankita Kumari' },
+              { value: 'nidhi@sode.co.in', label: 'Nidhi' },
+              { value: 'amreen@sode.co.in', label: 'Amreen ALI Khan' },
+              { value: 'umar@sode.co.in', label: 'MD Umar' },
+              { value: 'nehagupta@sode.co.in', label: 'Neha Gupta' },
+              { value: 'pawankumar@sode.co.in', label: 'Pawan Kumar' },
+              { value: 'bhavya@sode.co.in', label: 'Bhavya' },
+
+              // ALL DES && HES team email with name 
+              { value: 'rajesh@distanceeducationschool.com', label: 'Rajesh Sir' },
+              { value: 'manisha@distanceeducationschool.com', label: 'Manisha Yadav' },
+              { value: 'admin@distanceeducationschool.com', label: 'Nouman Sir' },
+              { value: 'sandy@distanceeducationschool.com', label: 'Sandy' },
+              { value: 'neha@distanceeducationschool.com', label: 'Neha Raj' },
+              { value: 'yashpriya@distanceeducationschool.com', label: 'Yash Priya' },
+              { value: 'kavitahaldar@distanceeducationschool.com', label: 'Kavita Haldar' },
+              { value: 'ifla@distanceeducationschool.com', label: 'Ifla' },
+              { value: 'shalu@distanceeducationschool.com', label: 'Shalu' },
+              { value: 'zainubia@distanceeducationschool.com', label: 'Zainbuia' },
+              { value: 'pallovi@distanceeducationschool.com', label: 'Pallovi' },
+              { value: 'hansi@distanceeducationschool.com', label: 'Hansi' },
+              { value: 'shristi@distanceeducationschool.com', label: 'Shristi' },
+              { value: 'aashita@highereducationschool.com', label: 'Aashita' },
+              { value: 'pratibha@highereducationschool.com', label: 'Pratibha' },
+              { value: 'shreyashi@highereducationschool.com', label: 'Shreyashi' },
+              { value: 'spuhelpdesk@gmail.com', label: 'Binny' },
+              { value: 'ruchika.spu@gmail.com', label: 'Ruchika' },
+              { value: 'ramiz.spu@gmail.com', label: 'Ramiz' },
             ],
           },
           {
@@ -5612,7 +5722,7 @@ const formData = [
             id: 'status ',
             type: 'select',
             place: 'select status',
-            required: 'require',
+
             options: [
               { value: 'New', label: 'New' },
               { value: 'Cancel', label: 'Cancel' },
@@ -5635,6 +5745,652 @@ const formData = [
             place: 'Enter your remark',
             id: 'remark',
             type: 'textarea',
+          },
+          {
+            key: 'date',
+            label: 'Created At',
+            name: 'created',
+            id: 'created',
+            type: 'date',
+          },
+        ],
+      },
+      {
+        // First university complete date 
+        label: 'HINDUSTAN',
+        name: ['customfields', 'university_name'],
+        value: 'HINDUSTAN',
+        fields: [
+          {
+            courses: [
+              {
+                value: "10th",
+                label: '10th'
+              },
+              {
+                value: "12th",
+                label: '12th'
+              },
+              {
+                value: "BA",
+                label: "BA",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { "value": "Education", "label": "Education" },
+                  { "value": "English", "label": "English" },
+                  { "value": "Journlsim & Mass Communication", label: "Journlsim & Mass Communication" },
+                  { "value": "Economics", "label": "Economics" },
+                  { "value": "History", "label": "History" },
+                  { "value": "Political science", "label": "Political science" },
+                  { "value": "Sociology", "label": "Sociology" },
+                  { "value": "Journalism & Mass Communication", "label": "Journalism & Mass Communication" },
+                  { "value": "Public Administration", "label": "Public Administration" },
+                  { "value": "Psychology", "label": "Psychology" },
+                  { "value": "Hindi", "label": "Hindi" },
+                  { "value": "Mathematics", "label": "Mathematics" },
+                  { "value": 'Geography', label: 'Geography' },
+                ],
+              },
+              {
+                value: "BBA",
+                label: "BBA",
+                specializations: [
+                  { "value": "General", "label": "General" },
+                  { "value": "Education", "label": "Education" },
+                  { value: "Marketing", label: "Marketing" },
+                  { value: "Human Resource Management", label: "Human Resource Management" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "  Interntaional Business Management ", label: "  Interntaional Business Management " },
+                  { value: "Opreations", label: "Opreations" },
+                  { value: "Engineering & Project Management", label: "Engineering & Project Management" },
+                  { value: "IT & Systems Management", label: "IT & Systems Management" },
+                  { value: "Data Analytics", label: "Data Analytics" },
+                  { value: "Project Management & Operations", label: "Project Management & Operations" },
+                  { value: "Digital Marketing", label: "Digital Marketing" },
+                ],
+              },
+              {
+                value: "BCA",
+                label: "BCA",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Cloud and Security", label: "Cloud and Security" },
+                  { value: "Data Analytics", label: "Data Analytics" },
+                ],
+              },
+              {
+                value: "BTECH",
+                label: "BTECH",
+                specializations: [
+                  { value: "Mechanical", label: "Mechanical" },
+                  { value: "Computer science", label: "Computer science" },
+                  { value: "IT", label: "IT" },
+                ],
+              },
+              {
+                value: "BCOM",
+                label: "BCOM",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "Tax & Accounting", label: "Tax & Accounting" },
+                  { value: "Accounting & Finance", label: "Accounting & Finance" },
+                  { value: "Corporate Accounting (Benchmarked to CA-Ind: Foundation, Intermediate and Final Syllabus)", label: "Corporate Accounting (Benchmarked to CA-Ind: Foundation, Intermediate and Final Syllabus)" },
+                  { value: "International Finance & Accounting", label: "International Finance & Accounting" },
+                ],
+              },
+              {
+                value: "BSW",
+                label: "BSW",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BLIS",
+                label: "BLIS",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BSC",
+                label: "BSC",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "IT", label: "IT" },
+                  { value: "CS", label: "CS" },
+                  { value: "Chemistry", label: "Chemistry" },
+                  { value: "Phycics", label: "Phycics" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: "Microbiology", label: "Microbiology" },
+                  { value: 'Bio-Technology', label: "Bio-Technology" },
+                  { value: "Zoology", label: "Zoology" },
+                  { value: "Animation & Multimedia", label: "Animation & Multimedia" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
+                  { value: "Operation Theater Technology", label: "Operation Theater Technology" },
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                ],
+              },
+              {
+                value: "MA",
+                label: "MA",
+                specializations: [
+                  { value: "Economics", label: "Economics" },
+                  { value: "Buddhist Studies", label: "Buddhist Studies" },
+                  { value: "Home Science", label: "Home Science" },
+                  { value: "Public Administration", label: "Public Administration" },
+                  { value: "Psychology", label: "Psychology" },
+                  { value: "English", label: "English" },
+                  { value: "Hindi", label: "Hindi" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: "Geography", label: "Geography" },
+                  { value: "History", label: "History" },
+                  { value: "Political Science", label: "Political Science" },
+                  { value: "Sociology", label: "Sociology" },
+                  { value: "Education", label: "Education" },
+                  { value: "Journalism & Mass Communication", label: "Journalism & Mass Communication" }
+                ],
+              },
+              {
+                value: "MCA",
+                label: "MCA",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Computer Science & IT", label: "Computer Science & IT" },
+                  { value: "Cyber Security", label: "Cyber Security" },
+                  { value: "Data Analytics", label: "Data Analytics" },
+                  { value: "Data Science ", label: "Data Science" },
+                  { value: "Artificial Intelligence", label: "Artificial Intelligence" },
+                ],
+              },
+              {
+                value: "MCOM",
+                label: "MCOM",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Finance & Systems", label: "Finance & Systems" },
+                  { value: "Accounting & Finance", label: "Accounting & Finance" },
+                  { value: "International Finance", label: "International Finance" },
+                ],
+              },
+              {
+                value: "MSW",
+                label: "MSW",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MBA",
+                label: "MBA",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "International Business", label: "International Business" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "Operation and Production Management", label: "Operation and Production Management" },
+                  { value: "Project Management", label: "Project Management" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Tourism & Hospitality Management", label: "Tourism & Hospitality Management" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Hospital Management", label: "Hospital Management" },
+                  { value: "Financial Planning & Analysis", label: "Financial Planning & Analysis" },
+                  { value: "Health Care Management", label: "Health Care Management" },
+                  { value: "Business Analytics & Intelligence", label: "Business Analytics & Intelligence" },
+                  { value: "Branding & Advertising ", label: "Branding & Advertising " },
+                  { value: "Project Leadership Management", label: "Project Leadership Management" },
+                  { value: "Banking Management", label: "Banking Management" },
+                  { value: "E-commerce Marketing & Management", label: "E-commerce Marketing & Management" },
+                  { value: "Mass Communication", label: "Mass Communication" },
+                  { value: "Digital Marketing", label: "Digital Marketing" },
+                  { value: "Risk Management", label: "Risk Management" },
+                  { value: "Business Leadership", label: "Business Leadership" },
+                  { value: "Strategic Management", label: "Strategic Management" },
+                  { value: "Enterpreneurship", label: "Enterpreneurship" },
+                  { value: "Media & Entertainment Management", label: "Media & Entertainment Management" },
+                  { value: "Foreign Trade & Global Business Management", label: "Foreign Trade & Global Business Management" },
+                  { value: "Investment Banking & Wealth Management ", label: "Investment Banking & Wealth Management " },
+                  { value: "Analytics & Data Science", label: "Analytics & Data Science" },
+                  { value: "Operations Management", label: "Operations Management" },
+                  { value: "Banking, Financial Services & Insurance", label: "Banking, Financial Services & Insurance" },
+                  { value: "Retail Management", label: "Retail Management" },
+                  { value: "IT & FinTech", label: "IT & FinTech" },
+                  { value: "Business Analytics", label: "Business Analytics" },
+                  { value: "General Management", label: "General Management" },
+                  { value: "Systems & Operations Management", label: "Systems & Operations Management" },
+                  { value: "Logistics & Supply Chain Management", label: "Logistics & Supply Chain Management" },
+                  { value: "Finance & Marketing", label: "Finance & Marketing" },
+                  { value: "Information Technology Management", label: "Information Technology Management" },
+                  { value: "Marketing & Human Resource Management", label: "Marketing & Human Resource Management" },
+                  { value: "Healthcare & Hospital Management ", label: "Healthcare & Hospital Management " },
+                  { value: "Entrepreneurship & Leadership", label: "Entrepreneurship & Leadership" },
+                  { value: "Human Resource Management & Finance", label: "Human Resource Management & Finance" },
+                  { value: "International Finance(Syllabus Integrated & Accredited by ACCA, UK)", label: "International Finance(Syllabus Integrated & Accredited by ACCA, UK)" },
+                  { value: "Business Intelligence & Analytics(Accredited by IoA, UK)", label: "Business Intelligence & Analytics(Accredited by IoA, UK)" },
+                  { value: "Human Resource", label: "Human Resource" },
+                  { value: "Finance & Human Resource", label: "Finance & Human Resource" },
+                  { value: "Digital Business", label: "Digital Business" },
+                  { value: "Opreations", label: "Opreations" },
+                  { value: "Infrastructure Management", label: "Infrastructure Management" },
+                  { value: "Oil & Gas Management", label: "Oil & Gas Management" },
+                  { value: "Power Management ", label: "Power Management " },
+                  { value: "International Business Management", label: "International Business Management" },
+                  { value: "Fintech Management", label: "Fintech Management" },
+                  { value: "Artificial Intelligence & Machine Learning ", label: "Artificial Intelligence & Machine Learning " },
+                  { value: "Logistics, Materials & Supply Chain Management", label: "Logistics, Materials & Supply Chain Management" },
+                  { value: "Block Chain Management", label: "Block Chain Management" },
+                  { value: "Agribusiness Management", label: "Agribusiness Management" },
+                  { value: "Hospital Administration & Healthcare Management", label: "Hospital Administration & Healthcare Management" },
+                ],
+              },
+              {
+                value: "MSC",
+                label: "MSC",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Chemistry", label: "Chemistry" },
+                  { value: "Phycics", label: "Phycics" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: "Information Technology", label: "Information Technology" },
+                  { value: "Computer Science", label: "Computer Science" },
+                  { value: "Bio-Technology", label: "Bio-Technology" },
+                  { value: "Zoology", label: "Zoology" },
+                  { value: "IT", label: "IT" },
+                  { value: "CS", label: "CS" },
+                  { value: "Data science", label: "Data science" },
+                  { value: "Animation & Multimedia", label: "Animation & Multimedia" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
+                  { value: "Optometry", label: "Optometry" },
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                ],
+              },
+              {
+                value: "MLIS",
+                label: "MLIS",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+            ]
+          },
+          {
+            payments: [
+              {
+                value: "semester",
+                label: "Semester",
+                paymentType: [
+                  {
+                    key: 'number',
+                    label: 'Semester fees',
+                    name: ['customfields', 'total_course_fee'],
+                    place: 'eg: 20000',
+                    id: 'Total Course Fee',
+                    type: 'number',
+                    required: 'require'
+                  },
+                  {
+                    key: 'number',
+                    label: 'Total Paid amount',
+                    place: 'eg: 20000',
+                    name: ['customfields', 'total_paid_amount'],
+                    id: 'Total Paid Amount',
+                    type: 'number',
+                  },
+                  {
+                    key: 'number',
+                    label: 'Paid Amount',
+                    name: ['customfields', 'paid_amount'],
+                    place: 'eg: 20000',
+                    id: 'Paid Amount',
+                    type: 'number',
+                  },
+                ]
+              },
+              {
+                value: "yearly",
+                label: "Yearly",
+                paymentType: [
+                  {
+                    key: 'number',
+                    label: 'Yearly Fees',
+                    name: ['customfields', 'total_course_fee'],
+                    place: 'eg: 20000',
+                    id: 'Total Course Fee',
+                    type: 'number',
+                    required: 'require'
+                  },
+                  {
+                    key: 'number',
+                    label: 'Total Paid amount',
+                    place: 'eg: 20000',
+                    name: ['customfields', 'total_paid_amount'],
+                    id: 'Total Paid Amount',
+                    type: 'number',
+                  },
+                  {
+                    key: 'number',
+                    label: 'Paid Amount',
+                    name: ['customfields', 'paid_amount'],
+                    place: 'eg: 20000',
+                    id: 'Paid Amount',
+                    type: 'number',
+                  },
+                ]
+              },
+              {
+                value: "fullfees",
+                label: "Fullfees",
+                paymentType: [
+                  {
+                    key: 'number',
+                    label: 'Full fees',
+                    name: ['customfields', 'total_course_fee'],
+                    place: 'eg: 20000',
+                    id: 'Total Course Fee',
+                    type: 'number',
+                    required: 'require'
+                  },
+                  {
+                    key: 'number',
+                    label: 'Total Paid amount',
+                    place: 'eg: 20000',
+                    name: ['customfields', 'total_paid_amount'],
+                    id: 'Total Paid Amount',
+                    type: 'number',
+                  },
+                  {
+                    key: 'number',
+                    label: 'Paid Amount',
+                    name: ['customfields', 'paid_amount'],
+                    place: 'eg: 20000',
+                    id: 'Paid Amount',
+                    type: 'number',
+                  },
+                ]
+              }
+            ]
+          },
+          {
+            key: 'radio',
+            label: 'Want to send Fee Receipt',
+            id: 'Send',
+            name: ['customfields', 'send_fee_receipt'],
+            type: 'radio',
+            options: ['yes', 'no'],
+
+          },
+          {
+            key: 'studentId',
+            name: 'lead_id',
+            label: 'StudentID',
+            place: 'StudentID',
+            id: 'StudentID',
+            type: 'studentId',
+
+          },
+          {
+            key: 'text',
+            name: 'full_name',
+            label: 'Student Name',
+            place: 'Student Name',
+            id: 'full_name',
+            type: 'text',
+
+          },
+          {
+            key: 'email',
+            label: 'Email-id',
+            place: 'Enter Email-id',
+            name: ['contact', 'email'],
+            id: 'EmailID',
+            type: 'email',
+
+          },
+          {
+            key: 'tel',
+            label: 'phone',
+            name: ['contact', 'phone'],
+            place: 'Enter Phone Number',
+            id: 'phone',
+            type: 'tel',
+
+          },
+          {
+            key: 'text',
+            label: 'Father Name',
+            name: ['customfields', 'father_name'],
+            place: 'Enter Father Name',
+            id: 'Father Name',
+            type: 'text',
+
+          },
+          {
+            key: 'text',
+            label: 'Mother Name',
+            name: ['customfields', 'mother_name'],
+            place: 'Enter Mother Name',
+            id: 'mother_name',
+            type: 'text',
+
+          },
+          {
+            key: 'select',
+            label: 'Session',
+            name: ['customfields', 'session'],
+            place: 'eg: JAN_20',
+            id: 'Session',
+            type: 'select',
+            options: [{ value: 'JAN_20', label: 'JAN_20' },
+            { value: 'JULY_20', label: 'JULY_20' },
+            { value: 'JAN_21', label: 'JAN_21' },
+            { value: 'JULY_21', label: 'JULY_21' },
+            { value: 'JAN_22', label: 'JAN_22' },
+            { value: 'JULY_22', label: 'JULY_22' },
+            { value: 'JAN_23', label: 'JAN_23' },
+            { value: 'JULY_23', label: 'JULY_23' },
+            { value: 'JAN_24', label: 'JAN_24' },
+            { value: 'JULY_24', label: 'JULY_24' },
+            { value: 'JAN_25', label: 'JAN_25' },
+            { value: 'JULY_25', label: 'JULY_25' },
+            { value: 'MAR_23', label: 'MAR_23' },
+            { value: 'APR_23', label: 'APR_23' },
+            { value: 'OCT_23', label: 'OCT_23' },
+            { value: 'NOV_23', label: 'NOV_23' },],
+
+          },
+          {
+            key: 'select',
+            label: 'Admission Type',
+            name: ['customfields', 'admission_type'],
+            id: 'SessionType',
+            place: 'Enter Admission Type',
+            type: 'select',
+            options: [{ value: 'FRESH', label: 'FRESH' },
+            { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
+          },
+
+          {
+            key: 'date',
+            label: 'Date of Birth',
+            name: ['customfields', 'dob'],
+            place: 'Enter Date of Birth',
+            id: 'dob',
+            type: 'date',
+
+          },
+          {
+            key: 'select',
+            label: 'Gender',
+            name: ['customfields', 'gender'],
+            id: 'Gender',
+            place: 'Gender',
+            type: 'select',
+            options: [{ value: 'Male', label: 'Male' },
+            { value: 'Female', label: 'Female' },
+            { value: 'Other', label: 'Other' }],
+          },
+          {
+            key: 'select',
+            label: 'Installment Type',
+            id: 'InstallmentType',
+            name: ['customfields', 'installment_type'],
+            place: 'Installment Type',
+            type: 'select',
+
+            options: [
+              { value: '1st Installment/ New Admission', label: '1st Installment/ New Admission' },
+              { value: '2nd Installment', label: '2nd Installment' },
+              { value: '3rd Installment', label: '3rd Installment' },
+              { value: '4th Installment', label: '4th Installment' },
+              { value: '5th Installment', label: '5th Installment' },
+              { value: '6th Installment', label: '6th Installment' },
+              { value: '7th Installment', label: '7th Installment' },
+              { value: '8th Installment', label: '8th Installment' },
+              { value: '9th Installment', label: '9th Installment' },
+              { value: '10th Installment', label: '10th Installment' },
+            ],
+          },
+          {
+            key: 'select ',
+            label: 'Payment mode ',
+            name: ['customfields', 'payment_mode'],
+            id: 'PaymentMode ',
+            type: 'select',
+            place: 'Select Payment Mode',
+
+            options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
+            { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
+            { value: 'University Bank Account', label: 'University Bank Account' },
+            { value: 'Payment Gateway', label: 'Payment Gateway' },
+            { value: 'Cash/DD', label: 'Cash/DD' }],
+          },
+          {
+            key: 'select ',
+            label: 'Counselors',
+            name: ['customfields', 'counselor_email'],
+            id: 'email ',
+            type: 'select',
+            place: 'select counselor name',
+            options: [
+              // DES External email with name
+              { value: 'apoorvasrivastava@sode.co.in', label: 'Apoorva Srivastava' },
+              { value: 'nehaprashar@sode.co.in', label: 'Neha Prasher' },
+              { value: 'priya@sode.co.in', label: 'Priya Anand' },
+              { value: 'diksha@sode.co.in', label: 'Diksha Singh' },
+              { value: 'abhilasha@sode.co.in', label: 'Abhilasha Gupta' },
+              { value: 'saher@sode.co.in', label: 'Saher Khan' },
+
+              // DES Internal email with name 
+              { value: 'muskan@distanceeducationschool.com', label: 'Muskaan ' },
+              { value: 'aniruddh@distanceeducationschool.com', label: 'Aniruddh Prakash' },
+              { value: 'amritpal@sode.co.in', label: 'Amritpal Singh' },
+              { value: 'salman@sode.co.in', label: 'Salman' },
+              { value: 'tariq@sode.co.in', label: 'Tariq Hasan' },
+              { value: 'shivam@sode.co.in', label: 'Shivam sharma' },
+              { value: 'pushpa@sode.co.in', label: 'Pushpa Pramanik' },
+
+              // DES Internal email with name 
+              { value: 'anurag@distanceeducationschool.com', label: 'Anurag Yadav' },
+              { value: 'kavitakumari@sode.co.in', label: 'Kavita Kumari' },
+              { value: 'rupal@sode.co.in', label: 'Rupal Gautam' },
+              { value: 'deva@sode.co.in', label: 'Devendra' },
+              { value: 'manshi@sode.co.in', label: 'Manshi Kem' },
+
+              // DES - INTERNATIONAL email with name 
+              { value: 'zarin@distanceeducationschool.com', label: 'Zarin Badar' },
+
+              // HES team email with name 
+              { value: 'kanchan@highereducationschool.com', label: 'Kanchan Sharma' },
+              { value: 'kirti@highereducationschool.com', label: 'Kirti Dubey' },
+              { value: 'ramandeep@highereducationschool.com', label: 'Ramandeep Kaur' },
+              { value: 'kavita@highereducationschool.com', label: 'Kavita Yadav' },
+              { value: 'imra@highereducationschool.com', label: 'Imra Khan' },
+              { value: 'mahak@highereducationschool.com', label: 'Mahek' },
+              { value: 'abhay@highereducationschool.com', label: 'Abhay Dubey' },
+              { value: 'swati@highereducationschool.com', label: 'Swati' },
+              { value: 'gulshan@highereducationschool.com', label: 'Gulshan Nayyar' },
+              { value: 'isha@highereducationschool.com', label: 'Isha Jaiswal' },
+              { value: 'sakshi@highereducationschool.com', label: 'Sakshi Arora' },
+
+              // Jain team email with name 
+              { value: 'anitha@sode.co.in', label: 'A.Anitha' },
+              { value: 'vani@sode.co.in', label: 'Vani Ruckmani' },
+
+              // Manipal team email with name 
+              { value: 'SwatiRamani.manipal@gmail.com', label: 'Swati Ramani' },
+              { value: 'ankitakumar@sode.co.in', label: 'Ankita Kumari' },
+              { value: 'nidhi@sode.co.in', label: 'Nidhi' },
+              { value: 'amreen@sode.co.in', label: 'Amreen ALI Khan' },
+              { value: 'umar@sode.co.in', label: 'MD Umar' },
+              { value: 'nehagupta@sode.co.in', label: 'Neha Gupta' },
+              { value: 'pawankumar@sode.co.in', label: 'Pawan Kumar' },
+              { value: 'bhavya@sode.co.in', label: 'Bhavya' },
+
+              // ALL DES && HES team email with name 
+              { value: 'rajesh@distanceeducationschool.com', label: 'Rajesh Sir' },
+              { value: 'manisha@distanceeducationschool.com', label: 'Manisha Yadav' },
+              { value: 'admin@distanceeducationschool.com', label: 'Nouman Sir' },
+              { value: 'sandy@distanceeducationschool.com', label: 'Sandy' },
+              { value: 'neha@distanceeducationschool.com', label: 'Neha Raj' },
+              { value: 'yashpriya@distanceeducationschool.com', label: 'Yash Priya' },
+              { value: 'kavitahaldar@distanceeducationschool.com', label: 'Kavita Haldar' },
+              { value: 'ifla@distanceeducationschool.com', label: 'Ifla' },
+              { value: 'shalu@distanceeducationschool.com', label: 'Shalu' },
+              { value: 'zainubia@distanceeducationschool.com', label: 'Zainbuia' },
+              { value: 'pallovi@distanceeducationschool.com', label: 'Pallovi' },
+              { value: 'hansi@distanceeducationschool.com', label: 'Hansi' },
+              { value: 'shristi@distanceeducationschool.com', label: 'Shristi' },
+              { value: 'aashita@highereducationschool.com', label: 'Aashita' },
+              { value: 'pratibha@highereducationschool.com', label: 'Pratibha' },
+              { value: 'shreyashi@highereducationschool.com', label: 'Shreyashi' },
+              { value: 'spuhelpdesk@gmail.com', label: 'Binny' },
+              { value: 'ruchika.spu@gmail.com', label: 'Ruchika' },
+              { value: 'ramiz.spu@gmail.com', label: 'Ramiz' },
+            ],
+          },
+          {
+            key: 'select ',
+            label: 'Status',
+            name: ['customfields', 'status'],
+            id: 'status ',
+            type: 'select',
+            place: 'select status',
+
+            options: [
+              { value: 'New', label: 'New' },
+              { value: 'Cancel', label: 'Cancel' },
+              { value: 'Enrolled', label: 'Enrolled' },
+              { value: 'Alumini', label: 'Alumini' },
+            ],
+          },
+          {
+            key: 'text',
+            label: 'LMS',
+            name: ['customfields', 'lms'],
+            place: 'Enter LMS',
+            id: 'lms',
+            type: 'text',
+          },
+          {
+            key: 'textarea',
+            label: 'Remark',
+            name: ['customfields', 'remark'],
+            place: 'Enter your remark',
+            id: 'remark',
+            type: 'textarea',
+          },
+          {
+            key: 'date',
+            label: 'Created At',
+            name: 'created',
+            id: 'created',
+            type: 'date',
           },
         ],
       },
@@ -5643,7 +6399,7 @@ const formData = [
         label: 'MANIPAL',
         name: ['customfields', 'university_name'],
         value: 'MANIPAL',
-        fields: [
+      fields: [
           {
             courses: [
               {
@@ -6006,7 +6762,7 @@ const formData = [
             name: ['customfields', 'send_fee_receipt'],
             type: 'radio',
             options: ['yes', 'no'],
-            required: 'require'
+
           },
           {
             key: 'studentId',
@@ -6015,7 +6771,7 @@ const formData = [
             place: 'StudentID',
             id: 'StudentID',
             type: 'studentId',
-            required: 'require'
+
           },
           {
             key: 'text',
@@ -6024,7 +6780,7 @@ const formData = [
             place: 'Student Name',
             id: 'full_name',
             type: 'text',
-            required: 'require'
+
           },
           {
             key: 'email',
@@ -6033,7 +6789,7 @@ const formData = [
             name: ['contact', 'email'],
             id: 'EmailID',
             type: 'email',
-            required: 'require'
+
           },
           {
             key: 'tel',
@@ -6042,7 +6798,7 @@ const formData = [
             place: 'Enter Phone Number',
             id: 'phone',
             type: 'tel',
-            required: 'require'
+
           },
           {
             key: 'text',
@@ -6051,7 +6807,7 @@ const formData = [
             place: 'Enter Father Name',
             id: 'Father Name',
             type: 'text',
-            required: 'require'
+
           },
           {
             key: 'text',
@@ -6060,32 +6816,32 @@ const formData = [
             place: 'Enter Mother Name',
             id: 'mother_name',
             type: 'text',
-            required: 'require'
+
           },
           {
             key: 'select',
             label: 'Session',
             name: ['customfields', 'session'],
-            place: 'eg: jan 20',
+            place: 'eg: JAN_20',
             id: 'Session',
             type: 'select',
-            options: [{ value: 'jan 20', label: 'Jan 20' },
-            { value: 'july 20', label: 'July 20' },
-            { value: 'jan 21', label: 'Jan 21' },
-            { value: 'july 21', label: 'July 21' },
-            { value: 'jan 22', label: 'Jan 22' },
-            { value: 'july 22', label: 'July 22' },
-            { value: 'jan 23', label: 'Jan 23' },
-            { value: 'july 23', label: 'July 23' },
-            { value: 'jan 24', label: 'Jan 24' },
-            { value: 'july 24', label: 'July 24' },
-            { value: 'jan 25', label: 'Jan 25' },
-            { value: 'july 25', label: 'July 25' },
-            { value: 'mar 23', label: 'mar 23' },
-            { value: 'apr 23', label: 'apr 23' },
-            { value: 'oct 23', label: 'oct 23' },
-            { value: 'nov 23', label: 'nov 23' },],
-            required: 'require'
+            options: [{ value: 'JAN_20', label: 'JAN_20' },
+            { value: 'JULY_20', label: 'JULY_20' },
+            { value: 'JAN_21', label: 'JAN_21' },
+            { value: 'JULY_21', label: 'JULY_21' },
+            { value: 'JAN_22', label: 'JAN_22' },
+            { value: 'JULY_22', label: 'JULY_22' },
+            { value: 'JAN_23', label: 'JAN_23' },
+            { value: 'JULY_23', label: 'JULY_23' },
+            { value: 'JAN_24', label: 'JAN_24' },
+            { value: 'JULY_24', label: 'JULY_24' },
+            { value: 'JAN_25', label: 'JAN_25' },
+            { value: 'JULY_25', label: 'JULY_25' },
+            { value: 'MAR_23', label: 'MAR_23' },
+            { value: 'APR_23', label: 'APR_23' },
+            { value: 'OCT_23', label: 'OCT_23' },
+            { value: 'NOV_23', label: 'NOV_23' },],
+
           },
           {
             key: 'select',
@@ -6094,7 +6850,7 @@ const formData = [
             id: 'SessionType',
             place: 'Enter Admission Type',
             type: 'select',
-            options: [{ value: 'Fresh', label: 'Fresh' },
+            options: [{ value: 'FRESH', label: 'FRESH' },
             { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
           },
 
@@ -6105,7 +6861,7 @@ const formData = [
             place: 'Enter Date of Birth',
             id: 'dob',
             type: 'date',
-            required: 'require'
+
           },
           {
             key: 'select',
@@ -6125,7 +6881,7 @@ const formData = [
             name: ['customfields', 'installment_type'],
             place: 'Installment Type',
             type: 'select',
-            required: 'require',
+
             options: [
               { value: '1st Installment/ New Admission', label: '1st Installment/ New Admission' },
               { value: '2nd Installment', label: '2nd Installment' },
@@ -6146,8 +6902,9 @@ const formData = [
             id: 'PaymentMode ',
             type: 'select',
             place: 'Select Payment Mode',
-            required: 'require',
+
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
+            { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
             { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
@@ -6158,77 +6915,82 @@ const formData = [
             name: ['customfields', 'counselor_email'],
             id: 'email ',
             type: 'select',
-            place: 'select counselor email',
-            required: 'require',
-            options: [{ value: 'zarin@highereducationschool.com', label: 'Zarin' },
-            { value: 'kanchan@highereducationschool.com', label: 'Kanchan' },
-            { value: 'kirti@highereducationschool.com', label: 'Kirti' },
-            { value: 'ramandeep@highereducationschool.com', label: 'Raman' },
-            { value: 'kavita@highereducationschool.com', label: 'kavita' },
-            { value: 'imra@highereducationschool.com', label: 'Imra' },
-            { value: 'Mahak@highereducationschool.com', label: 'Mahek' },
-            { value: 'abhay@highereducationschool.com', label: 'abhay' },
-            { value: 'swati@highereducationschool.com', label: 'swati' },
-            { value: 'gulshan@highereducationschool.com', label: 'Gulshan' },
-            { value: 'isha@highereducationschool.com', label: 'Isha' },
-            { value: 'Sakshi@highereducationschool.com', label: 'Sakshi' },
-            { value: 'aashita@highereducationschool.com', label: 'aashita' },
-            { value: 'pratibha@highereducationschool.com', label: 'pratibha' },
-            { value: 'shreyashi@highereducationschool.com', label: 'Shreyashi ' },
-            { value: 'apoorvasrivastava@distanceeducationschool.com', label: 'Apoorva_DES' },
-            { value: 'asma@distanceeducationschool.com', label: 'Asma_DES' },
-            { value: 'nehaprashar@distanceeducationschool.com', label: 'Neha_Prasher_DES' },
-            { value: 'priya@distanceeducationschool.com', label: 'Priya_DES' },
-            { value: 'diksha@distanceeducationschool.com', label: 'Diksha_DES' },
-            { value: 'abhilasha@distanceeducationschool.com', label: 'Abhilasha_Gupta_DES' },
-            { value: 'saher@distanceeducationschool.com', label: 'Saher_Khan_DES' },
-            { value: 'fiza@distanceeducationschool.com', label: 'Fiza_DES' },
-            { value: 'muskan@distanceeducationschool.com', label: 'Muskaan_DES' },
-            { value: 'aniruddh@distanceeducationschool.com', label: 'Aniruddh_DES' },
-            { value: 'deva@distanceeducationschool.com', label: 'Devendra_DES' },
-            { value: 'amritpal@distanceeducationschool.com', label: 'Amritpal_DES' },
-            { value: 'Salman@distanceeducationschool.com:', label: 'Salman_DES' },
-            { value: 'tariq@distanceeducationschool.com', label: 'Traiq_DES' },
-            { value: 'shivam@distanceeducationschool.com', label: 'Shivam_sharma_DES' },
-            { value: 'pushpa@distanceeducationschool.com', label: 'Puspa_DES' },
-            { value: 'zarin@distanceeducationschool.com', label: 'Zarin_DES' },
-            { value: 'kanchan@distanceeducationschool.com', label: 'Kanchan_DES' },
-            { value: 'manu@distanceeducationschool.com', label: 'Manu_DES' },
+            place: 'select counselor name',
+            options: [
+              // DES External email with name
+              { value: 'apoorvasrivastava@sode.co.in', label: 'Apoorva Srivastava' },
+              { value: 'nehaprashar@sode.co.in', label: 'Neha Prasher' },
+              { value: 'priya@sode.co.in', label: 'Priya Anand' },
+              { value: 'diksha@sode.co.in', label: 'Diksha Singh' },
+              { value: 'abhilasha@sode.co.in', label: 'Abhilasha Gupta' },
+              { value: 'saher@sode.co.in', label: 'Saher Khan' },
 
-            // Jain Team Emails
-            { value: 'a.anitha.ju@gmail.com', label: 'Anita_JU' },
-            { value: 'vaniruckmani.ju@gmail.com', label: 'Vani_Ruckmani_JU' },
-            { value: 'priyankapalle.ju@gmail.com', label: 'Priyanka_JU' },
-            { value: 'SwatiRamani.manipal@gmail.com', label: 'Swati_JU' },
+              // DES Internal email with name 
+              { value: 'muskan@distanceeducationschool.com', label: 'Muskaan ' },
+              { value: 'aniruddh@distanceeducationschool.com', label: 'Aniruddh Prakash' },
+              { value: 'amritpal@sode.co.in', label: 'Amritpal Singh' },
+              { value: 'salman@sode.co.in', label: 'Salman' },
+              { value: 'tariq@sode.co.in', label: 'Tariq Hasan' },
+              { value: 'shivam@sode.co.in', label: 'Shivam sharma' },
+              { value: 'pushpa@sode.co.in', label: 'Pushpa Pramanik' },
 
-            // Manipal Team Email
-            { value: 'ankitakumari.manipal@gmail.com', label: 'Ankita_MU' },
-            { value: 'medhahandoo.manipal@gmail.com', label: 'Medha_MU' },
-            { value: 'amreen.manipal@gmail.com', label: 'Amreen_MU' },
+              // DES Internal email with name 
+              { value: 'anurag@distanceeducationschool.com', label: 'Anurag Yadav' },
+              { value: 'kavitakumari@sode.co.in', label: 'Kavita Kumari' },
+              { value: 'rupal@sode.co.in', label: 'Rupal Gautam' },
+              { value: 'deva@sode.co.in', label: 'Devendra' },
+              { value: 'manshi@sode.co.in', label: 'Manshi Kem' },
 
-            // Support Team Email
-            { value: 'rajesh@distanceeducationschool.com', label: 'Rajesh_sir' },
-            { value: 'manisha@distanceeducationschool.com', label: 'Manisha' },
-            { value: 'admin@distanceeducationschool.com', label: 'Nouman_sir' },
-            { value: 'sandy@distanceeducationschool.com', label: 'Sandy' },
-            { value: 'neha@distanceeducationschool.com', label: 'Neha' },
-            { value: 'yashpriya@distanceeducationschool.com', label: 'Yash_Priya' },
-            { value: 'kavitahaldar@distanceeducationschool.com', label: 'kavitahaldar' },
-            { value: 'ifla@distanceeducationschool.com', label: 'Ifla' },
-            { value: 'shalu@distanceeducationschool.com', label: 'Shalu' },
-            { value: 'zainubia@distanceeducationschool.com', label: 'zainbuia' },
-            { value: 'pallovi@distanceeducationschool.com', label: 'Pallovi' },
-            { value: 'kavitakumari@distanceeducationschool.com', label: 'Kavita_Kumari' },
-            { value: 'manshi@distanceeducationschool.com', label: 'Mansi' },
-            { value: 'Bhavya.manipal@gmail.com', label: 'Bhavya' },
-            { value: 'anurag@distanceeducationschool.com', label: 'Anuraj' },
-            { value: 'rupal@distanceeducationschool.com', label: 'Rupal' },
-            //B2B Team Email
-            { value: 'spuhelpdesk@gmail.com', label: 'Binny' },
-            { value: 'ruchika.spu@gmail.com', label: 'Ruchika' },
-            { value: 'lalit@distanceeducationschool.com', label: 'Lalit_DES' },
-            { value: 'lalit.spu@gmail.com', label: 'Lalit' },
-            { value: 'ramiz.spu@gmail.com', label: 'Ramiz' }
+              // DES - INTERNATIONAL email with name 
+              { value: 'zarin@distanceeducationschool.com', label: 'Zarin Badar' },
+
+              // HES team email with name 
+              { value: 'kanchan@highereducationschool.com', label: 'Kanchan Sharma' },
+              { value: 'kirti@highereducationschool.com', label: 'Kirti Dubey' },
+              { value: 'ramandeep@highereducationschool.com', label: 'Ramandeep Kaur' },
+              { value: 'kavita@highereducationschool.com', label: 'Kavita Yadav' },
+              { value: 'imra@highereducationschool.com', label: 'Imra Khan' },
+              { value: 'mahak@highereducationschool.com', label: 'Mahek' },
+              { value: 'abhay@highereducationschool.com', label: 'Abhay Dubey' },
+              { value: 'swati@highereducationschool.com', label: 'Swati' },
+              { value: 'gulshan@highereducationschool.com', label: 'Gulshan Nayyar' },
+              { value: 'isha@highereducationschool.com', label: 'Isha Jaiswal' },
+              { value: 'sakshi@highereducationschool.com', label: 'Sakshi Arora' },
+
+              // Jain team email with name 
+              { value: 'anitha@sode.co.in', label: 'A.Anitha' },
+              { value: 'vani@sode.co.in', label: 'Vani Ruckmani' },
+
+              // Manipal team email with name 
+              { value: 'SwatiRamani.manipal@gmail.com', label: 'Swati Ramani' },
+              { value: 'ankitakumar@sode.co.in', label: 'Ankita Kumari' },
+              { value: 'nidhi@sode.co.in', label: 'Nidhi' },
+              { value: 'amreen@sode.co.in', label: 'Amreen ALI Khan' },
+              { value: 'umar@sode.co.in', label: 'MD Umar' },
+              { value: 'nehagupta@sode.co.in', label: 'Neha Gupta' },
+              { value: 'pawankumar@sode.co.in', label: 'Pawan Kumar' },
+              { value: 'bhavya@sode.co.in', label: 'Bhavya' },
+
+              // ALL DES && HES team email with name 
+              { value: 'rajesh@distanceeducationschool.com', label: 'Rajesh Sir' },
+              { value: 'manisha@distanceeducationschool.com', label: 'Manisha Yadav' },
+              { value: 'admin@distanceeducationschool.com', label: 'Nouman Sir' },
+              { value: 'sandy@distanceeducationschool.com', label: 'Sandy' },
+              { value: 'neha@distanceeducationschool.com', label: 'Neha Raj' },
+              { value: 'yashpriya@distanceeducationschool.com', label: 'Yash Priya' },
+              { value: 'kavitahaldar@distanceeducationschool.com', label: 'Kavita Haldar' },
+              { value: 'ifla@distanceeducationschool.com', label: 'Ifla' },
+              { value: 'shalu@distanceeducationschool.com', label: 'Shalu' },
+              { value: 'zainubia@distanceeducationschool.com', label: 'Zainbuia' },
+              { value: 'pallovi@distanceeducationschool.com', label: 'Pallovi' },
+              { value: 'hansi@distanceeducationschool.com', label: 'Hansi' },
+              { value: 'shristi@distanceeducationschool.com', label: 'Shristi' },
+              { value: 'aashita@highereducationschool.com', label: 'Aashita' },
+              { value: 'pratibha@highereducationschool.com', label: 'Pratibha' },
+              { value: 'shreyashi@highereducationschool.com', label: 'Shreyashi' },
+              { value: 'spuhelpdesk@gmail.com', label: 'Binny' },
+              { value: 'ruchika.spu@gmail.com', label: 'Ruchika' },
+              { value: 'ramiz.spu@gmail.com', label: 'Ramiz' },
             ],
           },
           {
@@ -6238,7 +7000,7 @@ const formData = [
             id: 'status ',
             type: 'select',
             place: 'select status',
-            required: 'require',
+
             options: [
               { value: 'New', label: 'New' },
               { value: 'Cancel', label: 'Cancel' },
@@ -6262,631 +7024,12 @@ const formData = [
             id: 'remark',
             type: 'textarea',
           },
-        ],
-      },
-      {
-        // First university complete date 
-        label: 'SMU',
-        name: ['customfields', 'university_name'],
-        value: 'SMU',
-        fields: [
-          {
-            courses: [
-              {
-                value: "10th",
-                label: '10th'
-              },
-              {
-                value: "12th",
-                label: '12th'
-              },
-              {
-                value: "BA",
-                label: "BA",
-                specializations: [
-                  { value: "General", label: "General" },
-                  { "value": "Education", "label": "Education" },
-                  { "value": "English", "label": "English" },
-                  { "value": "Journlsim & Mass Communication", label: "Journlsim & Mass Communication" },
-                  { "value": "Economics", "label": "Economics" },
-                  { "value": "History", "label": "History" },
-                  { "value": "Political science", "label": "Political science" },
-                  { "value": "Sociology", "label": "Sociology" },
-                  { "value": "Journalism & Mass Communication", "label": "Journalism & Mass Communication" },
-                  { "value": "Public Administration", "label": "Public Administration" },
-                  { "value": "Psychology", "label": "Psychology" },
-                  { "value": "Hindi", "label": "Hindi" },
-                  { "value": "Mathematics", "label": "Mathematics" },
-                  { "value": 'Geography', label: 'Geography' },
-                ],
-              },
-              {
-                value: "BBA",
-                label: "BBA",
-                specializations: [
-                  { "value": "General", "label": "General" },
-                  { "value": "Education", "label": "Education" },
-                  { value: "Marketing", label: "Marketing" },
-                  { value: "Human Resource Management", label: "Human Resource Management" },
-                  { value: "Finance", label: "Finance" },
-                  { value: "  Interntaional Business Management ", label: "  Interntaional Business Management " },
-                  { value: "Opreations", label: "Opreations" },
-                  { value: "Engineering & Project Management", label: "Engineering & Project Management" },
-                  { value: "IT & Systems Management", label: "IT & Systems Management" },
-                  { value: "Data Analytics", label: "Data Analytics" },
-                  { value: "Project Management & Operations", label: "Project Management & Operations" },
-                  { value: "Digital Marketing", label: "Digital Marketing" },
-                ],
-              },
-              {
-                value: "BCA",
-                label: "BCA",
-                specializations: [
-                  { value: "General", label: "General" },
-                  { value: "Cloud and Security", label: "Cloud and Security" },
-                  { value: "Data Analytics", label: "Data Analytics" },
-                ],
-              },
-              {
-                value: "BTECH",
-                label: "BTECH",
-                specializations: [
-                  { value: "Mechanical", label: "Mechanical" },
-                  { value: "Computer science", label: "Computer science" },
-                  { value: "IT", label: "IT" },
-                ],
-              },
-              {
-                value: "BCOM",
-                label: "BCOM",
-                specializations: [
-                  { value: "General", label: "General" },
-                  { value: "Finance", label: "Finance" },
-                  { value: "Tax & Accounting", label: "Tax & Accounting" },
-                  { value: "Accounting & Finance", label: "Accounting & Finance" },
-                  { value: "Corporate Accounting (Benchmarked to CA-Ind: Foundation, Intermediate and Final Syllabus)", label: "Corporate Accounting (Benchmarked to CA-Ind: Foundation, Intermediate and Final Syllabus)" },
-                  { value: "International Finance & Accounting", label: "International Finance & Accounting" },
-                ],
-              },
-              {
-                value: "BSW",
-                label: "BSW",
-                specializations: [
-                  { value: "General", label: "General" },
-                ],
-              },
-              {
-                value: "BLIS",
-                label: "BLIS",
-                specializations: [
-                  { value: "General", label: "General" },
-                ],
-              },
-              {
-                value: "BSC",
-                label: "BSC",
-                specializations: [
-                  { value: "General", label: "General" },
-                  { value: "IT", label: "IT" },
-                  { value: "CS", label: "CS" },
-                  { value: "Chemistry", label: "Chemistry" },
-                  { value: "Phycics", label: "Phycics" },
-                  { value: "Mathematics", label: "Mathematics" },
-                  { value: "Microbiology", label: "Microbiology" },
-                  { value: 'Bio-Technology', label: "Bio-Technology" },
-                  { value: "Zoology", label: "Zoology" },
-                  { value: "Animation & Multimedia", label: "Animation & Multimedia" },
-                  { value: "Interior Designing", label: "Interior Designing" },
-                  { value: "Fashion Technology", label: "Fashion Technology" },
-                  { value: "Hotel Management", label: "Hotel Management" },
-                  { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
-                  { value: "Operation Theater Technology", label: "Operation Theater Technology" },
-                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
-                ],
-              },
-              {
-                value: "MA",
-                label: "MA",
-                specializations: [
-                  { value: "Economics", label: "Economics" },
-                  { value: "Buddhist Studies", label: "Buddhist Studies" },
-                  { value: "Home Science", label: "Home Science" },
-                  { value: "Public Administration", label: "Public Administration" },
-                  { value: "Psychology", label: "Psychology" },
-                  { value: "English", label: "English" },
-                  { value: "Hindi", label: "Hindi" },
-                  { value: "Mathematics", label: "Mathematics" },
-                  { value: "Geography", label: "Geography" },
-                  { value: "History", label: "History" },
-                  { value: "Political Science", label: "Political Science" },
-                  { value: "Sociology", label: "Sociology" },
-                  { value: "Education", label: "Education" },
-                  { value: "Journalism & Mass Communication", label: "Journalism & Mass Communication" }
-                ],
-              },
-              {
-                value: "MCA",
-                label: "MCA",
-                specializations: [
-                  { value: "General", label: "General" },
-                  { value: "Computer Science & IT", label: "Computer Science & IT" },
-                  { value: "Cyber Security", label: "Cyber Security" },
-                  { value: "Data Analytics", label: "Data Analytics" },
-                  { value: "Data Science ", label: "Data Science" },
-                  { value: "Artificial Intelligence", label: "Artificial Intelligence" },
-                ],
-              },
-              {
-                value: "MCOM",
-                label: "MCOM",
-                specializations: [
-                  { value: "General", label: "General" },
-                  { value: "Finance & Systems", label: "Finance & Systems" },
-                  { value: "Accounting & Finance", label: "Accounting & Finance" },
-                  { value: "International Finance", label: "International Finance" },
-                ],
-              },
-              {
-                value: "MSW",
-                label: "MSW",
-                specializations: [
-                  { value: "General", label: "General" },
-                ],
-              },
-              {
-                value: "MBA",
-                label: "MBA",
-                specializations: [
-                  { value: "General", label: "General" },
-                  { value: "Finance", label: "Finance" },
-                  { value: "International Business", label: "International Business" },
-                  { value: "Marketing Management", label: "Marketing Management" },
-                  { value: "Operation and Production Management", label: "Operation and Production Management" },
-                  { value: "Project Management", label: "Project Management" },
-                  { value: "Hotel Management", label: "Hotel Management" },
-                  { value: "Tourism & Hospitality Management", label: "Tourism & Hospitality Management" },
-                  { value: "Supply Chain Management", label: "Supply Chain Management" },
-                  { value: "Hospital Management", label: "Hospital Management" },
-                  { value: "Financial Planning & Analysis", label: "Financial Planning & Analysis" },
-                  { value: "Health Care Management", label: "Health Care Management" },
-                  { value: "Business Analytics & Intelligence", label: "Business Analytics & Intelligence" },
-                  { value: "Branding & Advertising ", label: "Branding & Advertising " },
-                  { value: "Project Leadership Management", label: "Project Leadership Management" },
-                  { value: "Banking Management", label: "Banking Management" },
-                  { value: "E-commerce Marketing & Management", label: "E-commerce Marketing & Management" },
-                  { value: "Mass Communication", label: "Mass Communication" },
-                  { value: "Digital Marketing", label: "Digital Marketing" },
-                  { value: "Risk Management", label: "Risk Management" },
-                  { value: "Business Leadership", label: "Business Leadership" },
-                  { value: "Strategic Management", label: "Strategic Management" },
-                  { value: "Enterpreneurship", label: "Enterpreneurship" },
-                  { value: "Media & Entertainment Management", label: "Media & Entertainment Management" },
-                  { value: "Foreign Trade & Global Business Management", label: "Foreign Trade & Global Business Management" },
-                  { value: "Investment Banking & Wealth Management ", label: "Investment Banking & Wealth Management " },
-                  { value: "Analytics & Data Science", label: "Analytics & Data Science" },
-                  { value: "Operations Management", label: "Operations Management" },
-                  { value: "Banking, Financial Services & Insurance", label: "Banking, Financial Services & Insurance" },
-                  { value: "Retail Management", label: "Retail Management" },
-                  { value: "IT & FinTech", label: "IT & FinTech" },
-                  { value: "Business Analytics", label: "Business Analytics" },
-                  { value: "General Management", label: "General Management" },
-                  { value: "Systems & Operations Management", label: "Systems & Operations Management" },
-                  { value: "Logistics & Supply Chain Management", label: "Logistics & Supply Chain Management" },
-                  { value: "Finance & Marketing", label: "Finance & Marketing" },
-                  { value: "Information Technology Management", label: "Information Technology Management" },
-                  { value: "Marketing & Human Resource Management", label: "Marketing & Human Resource Management" },
-                  { value: "Healthcare & Hospital Management ", label: "Healthcare & Hospital Management " },
-                  { value: "Entrepreneurship & Leadership", label: "Entrepreneurship & Leadership" },
-                  { value: "Human Resource Management & Finance", label: "Human Resource Management & Finance" },
-                  { value: "International Finance(Syllabus Integrated & Accredited by ACCA, UK)", label: "International Finance(Syllabus Integrated & Accredited by ACCA, UK)" },
-                  { value: "Business Intelligence & Analytics(Accredited by IoA, UK)", label: "Business Intelligence & Analytics(Accredited by IoA, UK)" },
-                  { value: "Human Resource", label: "Human Resource" },
-                  { value: "Finance & Human Resource", label: "Finance & Human Resource" },
-                  { value: "Digital Business", label: "Digital Business" },
-                  { value: "Opreations", label: "Opreations" },
-                  { value: "Infrastructure Management", label: "Infrastructure Management" },
-                  { value: "Oil & Gas Management", label: "Oil & Gas Management" },
-                  { value: "Power Management ", label: "Power Management " },
-                  { value: "International Business Management", label: "International Business Management" },
-                  { value: "Fintech Management", label: "Fintech Management" },
-                  { value: "Artificial Intelligence & Machine Learning ", label: "Artificial Intelligence & Machine Learning " },
-                  { value: "Logistics, Materials & Supply Chain Management", label: "Logistics, Materials & Supply Chain Management" },
-                  { value: "Block Chain Management", label: "Block Chain Management" },
-                  { value: "Agribusiness Management", label: "Agribusiness Management" },
-                  { value: "Hospital Administration & Healthcare Management", label: "Hospital Administration & Healthcare Management" },
-                ],
-              },
-              {
-                value: "MSC",
-                label: "MSC",
-                specializations: [
-                  { value: "General", label: "General" },
-                  { value: "Chemistry", label: "Chemistry" },
-                  { value: "Phycics", label: "Phycics" },
-                  { value: "Mathematics", label: "Mathematics" },
-                  { value: "Information Technology", label: "Information Technology" },
-                  { value: "Computer Science", label: "Computer Science" },
-                  { value: "Bio-Technology", label: "Bio-Technology" },
-                  { value: "Zoology", label: "Zoology" },
-                  { value: "IT", label: "IT" },
-                  { value: "CS", label: "CS" },
-                  { value: "Data science", label: "Data science" },
-                  { value: "Animation & Multimedia", label: "Animation & Multimedia" },
-                  { value: "Interior Designing", label: "Interior Designing" },
-                  { value: "Fashion Technology", label: "Fashion Technology" },
-                  { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
-                  { value: "Optometry", label: "Optometry" },
-                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
-                ],
-              },
-              {
-                value: "MLIS",
-                label: "MLIS",
-                specializations: [
-                  { value: "General", label: "General" },
-                ],
-              },
-            ]
-          },
-          {
-            payments: [
-              {
-                value: "semester",
-                label: "Semester",
-                paymentType: [
-                  {
-                    key: 'number',
-                    label: 'Semester fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'number',
-                    required: 'require'
-                  },
-                  {
-                    key: 'number',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'number',
-                  },
-                  {
-                    key: 'number',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'number',
-                  },
-                ]
-              },
-              {
-                value: "yearly",
-                label: "Yearly",
-                paymentType: [
-                  {
-                    key: 'number',
-                    label: 'Yearly Fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'number',
-                    required: 'require'
-                  },
-                  {
-                    key: 'number',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'number',
-                  },
-                  {
-                    key: 'number',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'number',
-                  },
-                ]
-              },
-              {
-                value: "fullfees",
-                label: "Fullfees",
-                paymentType: [
-                  {
-                    key: 'number',
-                    label: 'Full fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'number',
-                    required: 'require'
-                  },
-                  {
-                    key: 'number',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'number',
-                  },
-                  {
-                    key: 'number',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'number',
-                  },
-                ]
-              }
-            ]
-          },
-          {
-            key: 'radio',
-            label: 'Want to send Fee Receipt',
-            id: 'Send',
-            name: ['customfields', 'send_fee_receipt'],
-            type: 'radio',
-            options: ['yes', 'no'],
-            required: 'require'
-          },
-          {
-            key: 'studentId',
-            name: 'lead_id',
-            label: 'StudentID',
-            place: 'StudentID',
-            id: 'StudentID',
-            type: 'studentId',
-            required: 'require'
-          },
-          {
-            key: 'text',
-            name: 'full_name',
-            label: 'Student Name',
-            place: 'Student Name',
-            id: 'full_name',
-            type: 'text',
-            required: 'require'
-          },
-          {
-            key: 'email',
-            label: 'Email-id',
-            place: 'Enter Email-id',
-            name: ['contact', 'email'],
-            id: 'EmailID',
-            type: 'email',
-            required: 'require'
-          },
-          {
-            key: 'tel',
-            label: 'phone',
-            name: ['contact', 'phone'],
-            place: 'Enter Phone Number',
-            id: 'phone',
-            type: 'tel',
-            required: 'require'
-          },
-          {
-            key: 'text',
-            label: 'Father Name',
-            name: ['customfields', 'father_name'],
-            place: 'Enter Father Name',
-            id: 'Father Name',
-            type: 'text',
-            required: 'require'
-          },
-          {
-            key: 'text',
-            label: 'Mother Name',
-            name: ['customfields', 'mother_name'],
-            place: 'Enter Mother Name',
-            id: 'mother_name',
-            type: 'text',
-            required: 'require'
-          },
-          {
-            key: 'select',
-            label: 'Session',
-            name: ['customfields', 'session'],
-            place: 'eg: jan 20',
-            id: 'Session',
-            type: 'select',
-            options: [{ value: 'jan 20', label: 'Jan 20' },
-            { value: 'july 20', label: 'July 20' },
-            { value: 'jan 21', label: 'Jan 21' },
-            { value: 'july 21', label: 'July 21' },
-            { value: 'jan 22', label: 'Jan 22' },
-            { value: 'july 22', label: 'July 22' },
-            { value: 'jan 23', label: 'Jan 23' },
-            { value: 'july 23', label: 'July 23' },
-            { value: 'jan 24', label: 'Jan 24' },
-            { value: 'july 24', label: 'July 24' },
-            { value: 'jan 25', label: 'Jan 25' },
-            { value: 'july 25', label: 'July 25' },
-            { value: 'mar 23', label: 'mar 23' },
-            { value: 'apr 23', label: 'apr 23' },
-            { value: 'oct 23', label: 'oct 23' },
-            { value: 'nov 23', label: 'nov 23' },],
-            required: 'require'
-          },
-          {
-            key: 'select',
-            label: 'Admission Type',
-            name: ['customfields', 'admission_type'],
-            id: 'SessionType',
-            place: 'Enter Admission Type',
-            type: 'select',
-            options: [{ value: 'Fresh', label: 'Fresh' },
-            { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
-          },
-
           {
             key: 'date',
-            label: 'Date of Birth',
-            name: ['customfields', 'dob'],
-            place: 'Enter Date of Birth',
-            id: 'dob',
+            label: 'Created At',
+            name: 'created',
+            id: 'created',
             type: 'date',
-            required: 'require'
-          },
-          {
-            key: 'select',
-            label: 'Gender',
-            name: ['customfields', 'gender'],
-            id: 'Gender',
-            place: 'Gender',
-            type: 'select',
-            options: [{ value: 'Male', label: 'Male' },
-            { value: 'Female', label: 'Female' },
-            { value: 'Other', label: 'Other' }],
-          },
-          {
-            key: 'select',
-            label: 'Installment Type',
-            id: 'InstallmentType',
-            name: ['customfields', 'installment_type'],
-            place: 'Installment Type',
-            type: 'select',
-            required: 'require',
-            options: [
-              { value: '1st Installment/ New Admission', label: '1st Installment/ New Admission' },
-              { value: '2nd Installment', label: '2nd Installment' },
-              { value: '3rd Installment', label: '3rd Installment' },
-              { value: '4th Installment', label: '4th Installment' },
-              { value: '5th Installment', label: '5th Installment' },
-              { value: '6th Installment', label: '6th Installment' },
-              { value: '7th Installment', label: '7th Installment' },
-              { value: '8th Installment', label: '8th Installment' },
-              { value: '9th Installment', label: '9th Installment' },
-              { value: '10th Installment', label: '10th Installment' },
-            ],
-          },
-          {
-            key: 'select ',
-            label: 'Payment mode ',
-            name: ['customfields', 'payment_mode'],
-            id: 'PaymentMode ',
-            type: 'select',
-            place: 'Select Payment Mode',
-            required: 'require',
-            options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
-            { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Payment Gateway', label: 'Payment Gateway' },
-            { value: 'Cash/DD', label: 'Cash/DD' }],
-          },
-          {
-            key: 'select ',
-            label: 'Counselors',
-            name: ['customfields', 'counselor_email'],
-            id: 'email ',
-            type: 'select',
-            place: 'select counselor email',
-            required: 'require',
-            options: [{ value: 'zarin@highereducationschool.com', label: 'Zarin' },
-            { value: 'kanchan@highereducationschool.com', label: 'Kanchan' },
-            { value: 'kirti@highereducationschool.com', label: 'Kirti' },
-            { value: 'ramandeep@highereducationschool.com', label: 'Raman' },
-            { value: 'kavita@highereducationschool.com', label: 'kavita' },
-            { value: 'imra@highereducationschool.com', label: 'Imra' },
-            { value: 'Mahak@highereducationschool.com', label: 'Mahek' },
-            { value: 'abhay@highereducationschool.com', label: 'abhay' },
-            { value: 'swati@highereducationschool.com', label: 'swati' },
-            { value: 'gulshan@highereducationschool.com', label: 'Gulshan' },
-            { value: 'isha@highereducationschool.com', label: 'Isha' },
-            { value: 'Sakshi@highereducationschool.com', label: 'Sakshi' },
-            { value: 'aashita@highereducationschool.com', label: 'aashita' },
-            { value: 'pratibha@highereducationschool.com', label: 'pratibha' },
-            { value: 'shreyashi@highereducationschool.com', label: 'Shreyashi ' },
-            { value: 'apoorvasrivastava@distanceeducationschool.com', label: 'Apoorva_DES' },
-            { value: 'asma@distanceeducationschool.com', label: 'Asma_DES' },
-            { value: 'nehaprashar@distanceeducationschool.com', label: 'Neha_Prasher_DES' },
-            { value: 'priya@distanceeducationschool.com', label: 'Priya_DES' },
-            { value: 'diksha@distanceeducationschool.com', label: 'Diksha_DES' },
-            { value: 'abhilasha@distanceeducationschool.com', label: 'Abhilasha_Gupta_DES' },
-            { value: 'saher@distanceeducationschool.com', label: 'Saher_Khan_DES' },
-            { value: 'fiza@distanceeducationschool.com', label: 'Fiza_DES' },
-            { value: 'muskan@distanceeducationschool.com', label: 'Muskaan_DES' },
-            { value: 'aniruddh@distanceeducationschool.com', label: 'Aniruddh_DES' },
-            { value: 'deva@distanceeducationschool.com', label: 'Devendra_DES' },
-            { value: 'amritpal@distanceeducationschool.com', label: 'Amritpal_DES' },
-            { value: 'Salman@distanceeducationschool.com:', label: 'Salman_DES' },
-            { value: 'tariq@distanceeducationschool.com', label: 'Traiq_DES' },
-            { value: 'shivam@distanceeducationschool.com', label: 'Shivam_sharma_DES' },
-            { value: 'pushpa@distanceeducationschool.com', label: 'Puspa_DES' },
-            { value: 'zarin@distanceeducationschool.com', label: 'Zarin_DES' },
-            { value: 'kanchan@distanceeducationschool.com', label: 'Kanchan_DES' },
-            { value: 'manu@distanceeducationschool.com', label: 'Manu_DES' },
-
-            // Jain Team Emails
-            { value: 'a.anitha.ju@gmail.com', label: 'Anita_JU' },
-            { value: 'vaniruckmani.ju@gmail.com', label: 'Vani_Ruckmani_JU' },
-            { value: 'priyankapalle.ju@gmail.com', label: 'Priyanka_JU' },
-            { value: 'SwatiRamani.manipal@gmail.com', label: 'Swati_JU' },
-
-            // Manipal Team Email
-            { value: 'ankitakumari.manipal@gmail.com', label: 'Ankita_MU' },
-            { value: 'medhahandoo.manipal@gmail.com', label: 'Medha_MU' },
-            { value: 'amreen.manipal@gmail.com', label: 'Amreen_MU' },
-
-            // Support Team Email
-            { value: 'rajesh@distanceeducationschool.com', label: 'Rajesh_sir' },
-            { value: 'manisha@distanceeducationschool.com', label: 'Manisha' },
-            { value: 'admin@distanceeducationschool.com', label: 'Nouman_sir' },
-            { value: 'sandy@distanceeducationschool.com', label: 'Sandy' },
-            { value: 'neha@distanceeducationschool.com', label: 'Neha' },
-            { value: 'yashpriya@distanceeducationschool.com', label: 'Yash_Priya' },
-            { value: 'kavitahaldar@distanceeducationschool.com', label: 'kavitahaldar' },
-            { value: 'ifla@distanceeducationschool.com', label: 'Ifla' },
-            { value: 'shalu@distanceeducationschool.com', label: 'Shalu' },
-            { value: 'zainubia@distanceeducationschool.com', label: 'zainbuia' },
-            { value: 'pallovi@distanceeducationschool.com', label: 'Pallovi' },
-            { value: 'kavitakumari@distanceeducationschool.com', label: 'Kavita_Kumari' },
-            { value: 'manshi@distanceeducationschool.com', label: 'Mansi' },
-            { value: 'Bhavya.manipal@gmail.com', label: 'Bhavya' },
-            { value: 'anurag@distanceeducationschool.com', label: 'Anuraj' },
-            { value: 'rupal@distanceeducationschool.com', label: 'Rupal' },
-            //B2B Team Email
-            { value: 'spuhelpdesk@gmail.com', label: 'Binny' },
-            { value: 'ruchika.spu@gmail.com', label: 'Ruchika' },
-            { value: 'lalit@distanceeducationschool.com', label: 'Lalit_DES' },
-            { value: 'lalit.spu@gmail.com', label: 'Lalit' },
-            { value: 'ramiz.spu@gmail.com', label: 'Ramiz' }
-            ],
-          },
-          {
-            key: 'select ',
-            label: 'Status',
-            name: ['customfields', 'status'],
-            id: 'status ',
-            type: 'select',
-            place: 'select status',
-            required: 'require',
-            options: [
-              { value: 'New', label: 'New' },
-              { value: 'Cancel', label: 'Cancel' },
-              { value: 'Enrolled', label: 'Enrolled' },
-              { value: 'Alumini', label: 'Alumini' },
-            ],
-          },
-          {
-            key: 'text',
-            label: 'LMS',
-            name: ['customfields', 'lms'],
-            place: 'Enter LMS',
-            id: 'lms',
-            type: 'text',
-          },
-          {
-            key: 'textarea',
-            label: 'Remark',
-            name: ['customfields', 'remark'],
-            place: 'Enter your remark',
-            id: 'remark',
-            type: 'textarea',
           },
         ],
       },
@@ -6895,7 +7038,7 @@ const formData = [
         label: 'HU',
         name: ['customfields', 'university_name'],
         value: 'HU',
-        fields: [
+       fields: [
           {
             courses: [
               {
@@ -7258,7 +7401,7 @@ const formData = [
             name: ['customfields', 'send_fee_receipt'],
             type: 'radio',
             options: ['yes', 'no'],
-            required: 'require'
+
           },
           {
             key: 'studentId',
@@ -7267,7 +7410,7 @@ const formData = [
             place: 'StudentID',
             id: 'StudentID',
             type: 'studentId',
-            required: 'require'
+
           },
           {
             key: 'text',
@@ -7276,7 +7419,7 @@ const formData = [
             place: 'Student Name',
             id: 'full_name',
             type: 'text',
-            required: 'require'
+
           },
           {
             key: 'email',
@@ -7285,7 +7428,7 @@ const formData = [
             name: ['contact', 'email'],
             id: 'EmailID',
             type: 'email',
-            required: 'require'
+
           },
           {
             key: 'tel',
@@ -7294,7 +7437,7 @@ const formData = [
             place: 'Enter Phone Number',
             id: 'phone',
             type: 'tel',
-            required: 'require'
+
           },
           {
             key: 'text',
@@ -7303,7 +7446,7 @@ const formData = [
             place: 'Enter Father Name',
             id: 'Father Name',
             type: 'text',
-            required: 'require'
+
           },
           {
             key: 'text',
@@ -7312,32 +7455,32 @@ const formData = [
             place: 'Enter Mother Name',
             id: 'mother_name',
             type: 'text',
-            required: 'require'
+
           },
           {
             key: 'select',
             label: 'Session',
             name: ['customfields', 'session'],
-            place: 'eg: jan 20',
+            place: 'eg: JAN_20',
             id: 'Session',
             type: 'select',
-            options: [{ value: 'jan 20', label: 'Jan 20' },
-            { value: 'july 20', label: 'July 20' },
-            { value: 'jan 21', label: 'Jan 21' },
-            { value: 'july 21', label: 'July 21' },
-            { value: 'jan 22', label: 'Jan 22' },
-            { value: 'july 22', label: 'July 22' },
-            { value: 'jan 23', label: 'Jan 23' },
-            { value: 'july 23', label: 'July 23' },
-            { value: 'jan 24', label: 'Jan 24' },
-            { value: 'july 24', label: 'July 24' },
-            { value: 'jan 25', label: 'Jan 25' },
-            { value: 'july 25', label: 'July 25' },
-            { value: 'mar 23', label: 'mar 23' },
-            { value: 'apr 23', label: 'apr 23' },
-            { value: 'oct 23', label: 'oct 23' },
-            { value: 'nov 23', label: 'nov 23' },],
-            required: 'require'
+            options: [{ value: 'JAN_20', label: 'JAN_20' },
+            { value: 'JULY_20', label: 'JULY_20' },
+            { value: 'JAN_21', label: 'JAN_21' },
+            { value: 'JULY_21', label: 'JULY_21' },
+            { value: 'JAN_22', label: 'JAN_22' },
+            { value: 'JULY_22', label: 'JULY_22' },
+            { value: 'JAN_23', label: 'JAN_23' },
+            { value: 'JULY_23', label: 'JULY_23' },
+            { value: 'JAN_24', label: 'JAN_24' },
+            { value: 'JULY_24', label: 'JULY_24' },
+            { value: 'JAN_25', label: 'JAN_25' },
+            { value: 'JULY_25', label: 'JULY_25' },
+            { value: 'MAR_23', label: 'MAR_23' },
+            { value: 'APR_23', label: 'APR_23' },
+            { value: 'OCT_23', label: 'OCT_23' },
+            { value: 'NOV_23', label: 'NOV_23' },],
+
           },
           {
             key: 'select',
@@ -7346,7 +7489,7 @@ const formData = [
             id: 'SessionType',
             place: 'Enter Admission Type',
             type: 'select',
-            options: [{ value: 'Fresh', label: 'Fresh' },
+            options: [{ value: 'FRESH', label: 'FRESH' },
             { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
           },
 
@@ -7357,7 +7500,7 @@ const formData = [
             place: 'Enter Date of Birth',
             id: 'dob',
             type: 'date',
-            required: 'require'
+
           },
           {
             key: 'select',
@@ -7377,7 +7520,7 @@ const formData = [
             name: ['customfields', 'installment_type'],
             place: 'Installment Type',
             type: 'select',
-            required: 'require',
+
             options: [
               { value: '1st Installment/ New Admission', label: '1st Installment/ New Admission' },
               { value: '2nd Installment', label: '2nd Installment' },
@@ -7398,8 +7541,9 @@ const formData = [
             id: 'PaymentMode ',
             type: 'select',
             place: 'Select Payment Mode',
-            required: 'require',
+
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
+            { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
             { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
@@ -7410,77 +7554,82 @@ const formData = [
             name: ['customfields', 'counselor_email'],
             id: 'email ',
             type: 'select',
-            place: 'select counselor email',
-            required: 'require',
-            options: [{ value: 'zarin@highereducationschool.com', label: 'Zarin' },
-            { value: 'kanchan@highereducationschool.com', label: 'Kanchan' },
-            { value: 'kirti@highereducationschool.com', label: 'Kirti' },
-            { value: 'ramandeep@highereducationschool.com', label: 'Raman' },
-            { value: 'kavita@highereducationschool.com', label: 'kavita' },
-            { value: 'imra@highereducationschool.com', label: 'Imra' },
-            { value: 'Mahak@highereducationschool.com', label: 'Mahek' },
-            { value: 'abhay@highereducationschool.com', label: 'abhay' },
-            { value: 'swati@highereducationschool.com', label: 'swati' },
-            { value: 'gulshan@highereducationschool.com', label: 'Gulshan' },
-            { value: 'isha@highereducationschool.com', label: 'Isha' },
-            { value: 'Sakshi@highereducationschool.com', label: 'Sakshi' },
-            { value: 'aashita@highereducationschool.com', label: 'aashita' },
-            { value: 'pratibha@highereducationschool.com', label: 'pratibha' },
-            { value: 'shreyashi@highereducationschool.com', label: 'Shreyashi ' },
-            { value: 'apoorvasrivastava@distanceeducationschool.com', label: 'Apoorva_DES' },
-            { value: 'asma@distanceeducationschool.com', label: 'Asma_DES' },
-            { value: 'nehaprashar@distanceeducationschool.com', label: 'Neha_Prasher_DES' },
-            { value: 'priya@distanceeducationschool.com', label: 'Priya_DES' },
-            { value: 'diksha@distanceeducationschool.com', label: 'Diksha_DES' },
-            { value: 'abhilasha@distanceeducationschool.com', label: 'Abhilasha_Gupta_DES' },
-            { value: 'saher@distanceeducationschool.com', label: 'Saher_Khan_DES' },
-            { value: 'fiza@distanceeducationschool.com', label: 'Fiza_DES' },
-            { value: 'muskan@distanceeducationschool.com', label: 'Muskaan_DES' },
-            { value: 'aniruddh@distanceeducationschool.com', label: 'Aniruddh_DES' },
-            { value: 'deva@distanceeducationschool.com', label: 'Devendra_DES' },
-            { value: 'amritpal@distanceeducationschool.com', label: 'Amritpal_DES' },
-            { value: 'Salman@distanceeducationschool.com:', label: 'Salman_DES' },
-            { value: 'tariq@distanceeducationschool.com', label: 'Traiq_DES' },
-            { value: 'shivam@distanceeducationschool.com', label: 'Shivam_sharma_DES' },
-            { value: 'pushpa@distanceeducationschool.com', label: 'Puspa_DES' },
-            { value: 'zarin@distanceeducationschool.com', label: 'Zarin_DES' },
-            { value: 'kanchan@distanceeducationschool.com', label: 'Kanchan_DES' },
-            { value: 'manu@distanceeducationschool.com', label: 'Manu_DES' },
+            place: 'select counselor name',
+            options: [
+              // DES External email with name
+              { value: 'apoorvasrivastava@sode.co.in', label: 'Apoorva Srivastava' },
+              { value: 'nehaprashar@sode.co.in', label: 'Neha Prasher' },
+              { value: 'priya@sode.co.in', label: 'Priya Anand' },
+              { value: 'diksha@sode.co.in', label: 'Diksha Singh' },
+              { value: 'abhilasha@sode.co.in', label: 'Abhilasha Gupta' },
+              { value: 'saher@sode.co.in', label: 'Saher Khan' },
 
-            // Jain Team Emails
-            { value: 'a.anitha.ju@gmail.com', label: 'Anita_JU' },
-            { value: 'vaniruckmani.ju@gmail.com', label: 'Vani_Ruckmani_JU' },
-            { value: 'priyankapalle.ju@gmail.com', label: 'Priyanka_JU' },
-            { value: 'SwatiRamani.manipal@gmail.com', label: 'Swati_JU' },
+              // DES Internal email with name 
+              { value: 'muskan@distanceeducationschool.com', label: 'Muskaan ' },
+              { value: 'aniruddh@distanceeducationschool.com', label: 'Aniruddh Prakash' },
+              { value: 'amritpal@sode.co.in', label: 'Amritpal Singh' },
+              { value: 'salman@sode.co.in', label: 'Salman' },
+              { value: 'tariq@sode.co.in', label: 'Tariq Hasan' },
+              { value: 'shivam@sode.co.in', label: 'Shivam sharma' },
+              { value: 'pushpa@sode.co.in', label: 'Pushpa Pramanik' },
 
-            // Manipal Team Email
-            { value: 'ankitakumari.manipal@gmail.com', label: 'Ankita_MU' },
-            { value: 'medhahandoo.manipal@gmail.com', label: 'Medha_MU' },
-            { value: 'amreen.manipal@gmail.com', label: 'Amreen_MU' },
+              // DES Internal email with name 
+              { value: 'anurag@distanceeducationschool.com', label: 'Anurag Yadav' },
+              { value: 'kavitakumari@sode.co.in', label: 'Kavita Kumari' },
+              { value: 'rupal@sode.co.in', label: 'Rupal Gautam' },
+              { value: 'deva@sode.co.in', label: 'Devendra' },
+              { value: 'manshi@sode.co.in', label: 'Manshi Kem' },
 
-            // Support Team Email
-            { value: 'rajesh@distanceeducationschool.com', label: 'Rajesh_sir' },
-            { value: 'manisha@distanceeducationschool.com', label: 'Manisha' },
-            { value: 'admin@distanceeducationschool.com', label: 'Nouman_sir' },
-            { value: 'sandy@distanceeducationschool.com', label: 'Sandy' },
-            { value: 'neha@distanceeducationschool.com', label: 'Neha' },
-            { value: 'yashpriya@distanceeducationschool.com', label: 'Yash_Priya' },
-            { value: 'kavitahaldar@distanceeducationschool.com', label: 'kavitahaldar' },
-            { value: 'ifla@distanceeducationschool.com', label: 'Ifla' },
-            { value: 'shalu@distanceeducationschool.com', label: 'Shalu' },
-            { value: 'zainubia@distanceeducationschool.com', label: 'zainbuia' },
-            { value: 'pallovi@distanceeducationschool.com', label: 'Pallovi' },
-            { value: 'kavitakumari@distanceeducationschool.com', label: 'Kavita_Kumari' },
-            { value: 'manshi@distanceeducationschool.com', label: 'Mansi' },
-            { value: 'Bhavya.manipal@gmail.com', label: 'Bhavya' },
-            { value: 'anurag@distanceeducationschool.com', label: 'Anuraj' },
-            { value: 'rupal@distanceeducationschool.com', label: 'Rupal' },
-            //B2B Team Email
-            { value: 'spuhelpdesk@gmail.com', label: 'Binny' },
-            { value: 'ruchika.spu@gmail.com', label: 'Ruchika' },
-            { value: 'lalit@distanceeducationschool.com', label: 'Lalit_DES' },
-            { value: 'lalit.spu@gmail.com', label: 'Lalit' },
-            { value: 'ramiz.spu@gmail.com', label: 'Ramiz' }
+              // DES - INTERNATIONAL email with name 
+              { value: 'zarin@distanceeducationschool.com', label: 'Zarin Badar' },
+
+              // HES team email with name 
+              { value: 'kanchan@highereducationschool.com', label: 'Kanchan Sharma' },
+              { value: 'kirti@highereducationschool.com', label: 'Kirti Dubey' },
+              { value: 'ramandeep@highereducationschool.com', label: 'Ramandeep Kaur' },
+              { value: 'kavita@highereducationschool.com', label: 'Kavita Yadav' },
+              { value: 'imra@highereducationschool.com', label: 'Imra Khan' },
+              { value: 'mahak@highereducationschool.com', label: 'Mahek' },
+              { value: 'abhay@highereducationschool.com', label: 'Abhay Dubey' },
+              { value: 'swati@highereducationschool.com', label: 'Swati' },
+              { value: 'gulshan@highereducationschool.com', label: 'Gulshan Nayyar' },
+              { value: 'isha@highereducationschool.com', label: 'Isha Jaiswal' },
+              { value: 'sakshi@highereducationschool.com', label: 'Sakshi Arora' },
+
+              // Jain team email with name 
+              { value: 'anitha@sode.co.in', label: 'A.Anitha' },
+              { value: 'vani@sode.co.in', label: 'Vani Ruckmani' },
+
+              // Manipal team email with name 
+              { value: 'SwatiRamani.manipal@gmail.com', label: 'Swati Ramani' },
+              { value: 'ankitakumar@sode.co.in', label: 'Ankita Kumari' },
+              { value: 'nidhi@sode.co.in', label: 'Nidhi' },
+              { value: 'amreen@sode.co.in', label: 'Amreen ALI Khan' },
+              { value: 'umar@sode.co.in', label: 'MD Umar' },
+              { value: 'nehagupta@sode.co.in', label: 'Neha Gupta' },
+              { value: 'pawankumar@sode.co.in', label: 'Pawan Kumar' },
+              { value: 'bhavya@sode.co.in', label: 'Bhavya' },
+
+              // ALL DES && HES team email with name 
+              { value: 'rajesh@distanceeducationschool.com', label: 'Rajesh Sir' },
+              { value: 'manisha@distanceeducationschool.com', label: 'Manisha Yadav' },
+              { value: 'admin@distanceeducationschool.com', label: 'Nouman Sir' },
+              { value: 'sandy@distanceeducationschool.com', label: 'Sandy' },
+              { value: 'neha@distanceeducationschool.com', label: 'Neha Raj' },
+              { value: 'yashpriya@distanceeducationschool.com', label: 'Yash Priya' },
+              { value: 'kavitahaldar@distanceeducationschool.com', label: 'Kavita Haldar' },
+              { value: 'ifla@distanceeducationschool.com', label: 'Ifla' },
+              { value: 'shalu@distanceeducationschool.com', label: 'Shalu' },
+              { value: 'zainubia@distanceeducationschool.com', label: 'Zainbuia' },
+              { value: 'pallovi@distanceeducationschool.com', label: 'Pallovi' },
+              { value: 'hansi@distanceeducationschool.com', label: 'Hansi' },
+              { value: 'shristi@distanceeducationschool.com', label: 'Shristi' },
+              { value: 'aashita@highereducationschool.com', label: 'Aashita' },
+              { value: 'pratibha@highereducationschool.com', label: 'Pratibha' },
+              { value: 'shreyashi@highereducationschool.com', label: 'Shreyashi' },
+              { value: 'spuhelpdesk@gmail.com', label: 'Binny' },
+              { value: 'ruchika.spu@gmail.com', label: 'Ruchika' },
+              { value: 'ramiz.spu@gmail.com', label: 'Ramiz' },
             ],
           },
           {
@@ -7490,7 +7639,7 @@ const formData = [
             id: 'status ',
             type: 'select',
             place: 'select status',
-            required: 'require',
+
             options: [
               { value: 'New', label: 'New' },
               { value: 'Cancel', label: 'Cancel' },
@@ -7513,6 +7662,13 @@ const formData = [
             place: 'Enter your remark',
             id: 'remark',
             type: 'textarea',
+          },
+          {
+            key: 'date',
+            label: 'Created At',
+            name: 'created',
+            id: 'created',
+            type: 'date',
           },
         ],
       },
@@ -7884,7 +8040,7 @@ const formData = [
             name: ['customfields', 'send_fee_receipt'],
             type: 'radio',
             options: ['yes', 'no'],
-            required: 'require'
+
           },
           {
             key: 'studentId',
@@ -7893,7 +8049,7 @@ const formData = [
             place: 'StudentID',
             id: 'StudentID',
             type: 'studentId',
-            required: 'require'
+
           },
           {
             key: 'text',
@@ -7902,7 +8058,7 @@ const formData = [
             place: 'Student Name',
             id: 'full_name',
             type: 'text',
-            required: 'require'
+
           },
           {
             key: 'email',
@@ -7911,7 +8067,7 @@ const formData = [
             name: ['contact', 'email'],
             id: 'EmailID',
             type: 'email',
-            required: 'require'
+
           },
           {
             key: 'tel',
@@ -7920,7 +8076,7 @@ const formData = [
             place: 'Enter Phone Number',
             id: 'phone',
             type: 'tel',
-            required: 'require'
+
           },
           {
             key: 'text',
@@ -7929,7 +8085,7 @@ const formData = [
             place: 'Enter Father Name',
             id: 'Father Name',
             type: 'text',
-            required: 'require'
+
           },
           {
             key: 'text',
@@ -7938,32 +8094,32 @@ const formData = [
             place: 'Enter Mother Name',
             id: 'mother_name',
             type: 'text',
-            required: 'require'
+
           },
           {
             key: 'select',
             label: 'Session',
             name: ['customfields', 'session'],
-            place: 'eg: jan 20',
+            place: 'eg: JAN_20',
             id: 'Session',
             type: 'select',
-            options: [{ value: 'jan 20', label: 'Jan 20' },
-            { value: 'july 20', label: 'July 20' },
-            { value: 'jan 21', label: 'Jan 21' },
-            { value: 'july 21', label: 'July 21' },
-            { value: 'jan 22', label: 'Jan 22' },
-            { value: 'july 22', label: 'July 22' },
-            { value: 'jan 23', label: 'Jan 23' },
-            { value: 'july 23', label: 'July 23' },
-            { value: 'jan 24', label: 'Jan 24' },
-            { value: 'july 24', label: 'July 24' },
-            { value: 'jan 25', label: 'Jan 25' },
-            { value: 'july 25', label: 'July 25' },
-            { value: 'mar 23', label: 'mar 23' },
-            { value: 'apr 23', label: 'apr 23' },
-            { value: 'oct 23', label: 'oct 23' },
-            { value: 'nov 23', label: 'nov 23' },],
-            required: 'require'
+            options: [{ value: 'JAN_20', label: 'JAN_20' },
+            { value: 'JULY_20', label: 'JULY_20' },
+            { value: 'JAN_21', label: 'JAN_21' },
+            { value: 'JULY_21', label: 'JULY_21' },
+            { value: 'JAN_22', label: 'JAN_22' },
+            { value: 'JULY_22', label: 'JULY_22' },
+            { value: 'JAN_23', label: 'JAN_23' },
+            { value: 'JULY_23', label: 'JULY_23' },
+            { value: 'JAN_24', label: 'JAN_24' },
+            { value: 'JULY_24', label: 'JULY_24' },
+            { value: 'JAN_25', label: 'JAN_25' },
+            { value: 'JULY_25', label: 'JULY_25' },
+            { value: 'MAR_23', label: 'MAR_23' },
+            { value: 'APR_23', label: 'APR_23' },
+            { value: 'OCT_23', label: 'OCT_23' },
+            { value: 'NOV_23', label: 'NOV_23' },],
+
           },
           {
             key: 'select',
@@ -7972,7 +8128,7 @@ const formData = [
             id: 'SessionType',
             place: 'Enter Admission Type',
             type: 'select',
-            options: [{ value: 'Fresh', label: 'Fresh' },
+            options: [{ value: 'FRESH', label: 'FRESH' },
             { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
           },
 
@@ -7983,7 +8139,7 @@ const formData = [
             place: 'Enter Date of Birth',
             id: 'dob',
             type: 'date',
-            required: 'require'
+
           },
           {
             key: 'select',
@@ -8003,7 +8159,7 @@ const formData = [
             name: ['customfields', 'installment_type'],
             place: 'Installment Type',
             type: 'select',
-            required: 'require',
+
             options: [
               { value: '1st Installment/ New Admission', label: '1st Installment/ New Admission' },
               { value: '2nd Installment', label: '2nd Installment' },
@@ -8024,8 +8180,9 @@ const formData = [
             id: 'PaymentMode ',
             type: 'select',
             place: 'Select Payment Mode',
-            required: 'require',
+
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
+            { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
             { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
@@ -8036,77 +8193,82 @@ const formData = [
             name: ['customfields', 'counselor_email'],
             id: 'email ',
             type: 'select',
-            place: 'select counselor email',
-            required: 'require',
-            options: [{ value: 'zarin@highereducationschool.com', label: 'Zarin' },
-            { value: 'kanchan@highereducationschool.com', label: 'Kanchan' },
-            { value: 'kirti@highereducationschool.com', label: 'Kirti' },
-            { value: 'ramandeep@highereducationschool.com', label: 'Raman' },
-            { value: 'kavita@highereducationschool.com', label: 'kavita' },
-            { value: 'imra@highereducationschool.com', label: 'Imra' },
-            { value: 'Mahak@highereducationschool.com', label: 'Mahek' },
-            { value: 'abhay@highereducationschool.com', label: 'abhay' },
-            { value: 'swati@highereducationschool.com', label: 'swati' },
-            { value: 'gulshan@highereducationschool.com', label: 'Gulshan' },
-            { value: 'isha@highereducationschool.com', label: 'Isha' },
-            { value: 'Sakshi@highereducationschool.com', label: 'Sakshi' },
-            { value: 'aashita@highereducationschool.com', label: 'aashita' },
-            { value: 'pratibha@highereducationschool.com', label: 'pratibha' },
-            { value: 'shreyashi@highereducationschool.com', label: 'Shreyashi ' },
-            { value: 'apoorvasrivastava@distanceeducationschool.com', label: 'Apoorva_DES' },
-            { value: 'asma@distanceeducationschool.com', label: 'Asma_DES' },
-            { value: 'nehaprashar@distanceeducationschool.com', label: 'Neha_Prasher_DES' },
-            { value: 'priya@distanceeducationschool.com', label: 'Priya_DES' },
-            { value: 'diksha@distanceeducationschool.com', label: 'Diksha_DES' },
-            { value: 'abhilasha@distanceeducationschool.com', label: 'Abhilasha_Gupta_DES' },
-            { value: 'saher@distanceeducationschool.com', label: 'Saher_Khan_DES' },
-            { value: 'fiza@distanceeducationschool.com', label: 'Fiza_DES' },
-            { value: 'muskan@distanceeducationschool.com', label: 'Muskaan_DES' },
-            { value: 'aniruddh@distanceeducationschool.com', label: 'Aniruddh_DES' },
-            { value: 'deva@distanceeducationschool.com', label: 'Devendra_DES' },
-            { value: 'amritpal@distanceeducationschool.com', label: 'Amritpal_DES' },
-            { value: 'Salman@distanceeducationschool.com:', label: 'Salman_DES' },
-            { value: 'tariq@distanceeducationschool.com', label: 'Traiq_DES' },
-            { value: 'shivam@distanceeducationschool.com', label: 'Shivam_sharma_DES' },
-            { value: 'pushpa@distanceeducationschool.com', label: 'Puspa_DES' },
-            { value: 'zarin@distanceeducationschool.com', label: 'Zarin_DES' },
-            { value: 'kanchan@distanceeducationschool.com', label: 'Kanchan_DES' },
-            { value: 'manu@distanceeducationschool.com', label: 'Manu_DES' },
+            place: 'select counselor name',
+            options: [
+              // DES External email with name
+              { value: 'apoorvasrivastava@sode.co.in', label: 'Apoorva Srivastava' },
+              { value: 'nehaprashar@sode.co.in', label: 'Neha Prasher' },
+              { value: 'priya@sode.co.in', label: 'Priya Anand' },
+              { value: 'diksha@sode.co.in', label: 'Diksha Singh' },
+              { value: 'abhilasha@sode.co.in', label: 'Abhilasha Gupta' },
+              { value: 'saher@sode.co.in', label: 'Saher Khan' },
 
-            // Jain Team Emails
-            { value: 'a.anitha.ju@gmail.com', label: 'Anita_JU' },
-            { value: 'vaniruckmani.ju@gmail.com', label: 'Vani_Ruckmani_JU' },
-            { value: 'priyankapalle.ju@gmail.com', label: 'Priyanka_JU' },
-            { value: 'SwatiRamani.manipal@gmail.com', label: 'Swati_JU' },
+              // DES Internal email with name 
+              { value: 'muskan@distanceeducationschool.com', label: 'Muskaan ' },
+              { value: 'aniruddh@distanceeducationschool.com', label: 'Aniruddh Prakash' },
+              { value: 'amritpal@sode.co.in', label: 'Amritpal Singh' },
+              { value: 'salman@sode.co.in', label: 'Salman' },
+              { value: 'tariq@sode.co.in', label: 'Tariq Hasan' },
+              { value: 'shivam@sode.co.in', label: 'Shivam sharma' },
+              { value: 'pushpa@sode.co.in', label: 'Pushpa Pramanik' },
 
-            // Manipal Team Email
-            { value: 'ankitakumari.manipal@gmail.com', label: 'Ankita_MU' },
-            { value: 'medhahandoo.manipal@gmail.com', label: 'Medha_MU' },
-            { value: 'amreen.manipal@gmail.com', label: 'Amreen_MU' },
+              // DES Internal email with name 
+              { value: 'anurag@distanceeducationschool.com', label: 'Anurag Yadav' },
+              { value: 'kavitakumari@sode.co.in', label: 'Kavita Kumari' },
+              { value: 'rupal@sode.co.in', label: 'Rupal Gautam' },
+              { value: 'deva@sode.co.in', label: 'Devendra' },
+              { value: 'manshi@sode.co.in', label: 'Manshi Kem' },
 
-            // Support Team Email
-            { value: 'rajesh@distanceeducationschool.com', label: 'Rajesh_sir' },
-            { value: 'manisha@distanceeducationschool.com', label: 'Manisha' },
-            { value: 'admin@distanceeducationschool.com', label: 'Nouman_sir' },
-            { value: 'sandy@distanceeducationschool.com', label: 'Sandy' },
-            { value: 'neha@distanceeducationschool.com', label: 'Neha' },
-            { value: 'yashpriya@distanceeducationschool.com', label: 'Yash_Priya' },
-            { value: 'kavitahaldar@distanceeducationschool.com', label: 'kavitahaldar' },
-            { value: 'ifla@distanceeducationschool.com', label: 'Ifla' },
-            { value: 'shalu@distanceeducationschool.com', label: 'Shalu' },
-            { value: 'zainubia@distanceeducationschool.com', label: 'zainbuia' },
-            { value: 'pallovi@distanceeducationschool.com', label: 'Pallovi' },
-            { value: 'kavitakumari@distanceeducationschool.com', label: 'Kavita_Kumari' },
-            { value: 'manshi@distanceeducationschool.com', label: 'Mansi' },
-            { value: 'Bhavya.manipal@gmail.com', label: 'Bhavya' },
-            { value: 'anurag@distanceeducationschool.com', label: 'Anuraj' },
-            { value: 'rupal@distanceeducationschool.com', label: 'Rupal' },
-            //B2B Team Email
-            { value: 'spuhelpdesk@gmail.com', label: 'Binny' },
-            { value: 'ruchika.spu@gmail.com', label: 'Ruchika' },
-            { value: 'lalit@distanceeducationschool.com', label: 'Lalit_DES' },
-            { value: 'lalit.spu@gmail.com', label: 'Lalit' },
-            { value: 'ramiz.spu@gmail.com', label: 'Ramiz' }
+              // DES - INTERNATIONAL email with name 
+              { value: 'zarin@distanceeducationschool.com', label: 'Zarin Badar' },
+
+              // HES team email with name 
+              { value: 'kanchan@highereducationschool.com', label: 'Kanchan Sharma' },
+              { value: 'kirti@highereducationschool.com', label: 'Kirti Dubey' },
+              { value: 'ramandeep@highereducationschool.com', label: 'Ramandeep Kaur' },
+              { value: 'kavita@highereducationschool.com', label: 'Kavita Yadav' },
+              { value: 'imra@highereducationschool.com', label: 'Imra Khan' },
+              { value: 'mahak@highereducationschool.com', label: 'Mahek' },
+              { value: 'abhay@highereducationschool.com', label: 'Abhay Dubey' },
+              { value: 'swati@highereducationschool.com', label: 'Swati' },
+              { value: 'gulshan@highereducationschool.com', label: 'Gulshan Nayyar' },
+              { value: 'isha@highereducationschool.com', label: 'Isha Jaiswal' },
+              { value: 'sakshi@highereducationschool.com', label: 'Sakshi Arora' },
+
+              // Jain team email with name 
+              { value: 'anitha@sode.co.in', label: 'A.Anitha' },
+              { value: 'vani@sode.co.in', label: 'Vani Ruckmani' },
+
+              // Manipal team email with name 
+              { value: 'SwatiRamani.manipal@gmail.com', label: 'Swati Ramani' },
+              { value: 'ankitakumar@sode.co.in', label: 'Ankita Kumari' },
+              { value: 'nidhi@sode.co.in', label: 'Nidhi' },
+              { value: 'amreen@sode.co.in', label: 'Amreen ALI Khan' },
+              { value: 'umar@sode.co.in', label: 'MD Umar' },
+              { value: 'nehagupta@sode.co.in', label: 'Neha Gupta' },
+              { value: 'pawankumar@sode.co.in', label: 'Pawan Kumar' },
+              { value: 'bhavya@sode.co.in', label: 'Bhavya' },
+
+              // ALL DES && HES team email with name 
+              { value: 'rajesh@distanceeducationschool.com', label: 'Rajesh Sir' },
+              { value: 'manisha@distanceeducationschool.com', label: 'Manisha Yadav' },
+              { value: 'admin@distanceeducationschool.com', label: 'Nouman Sir' },
+              { value: 'sandy@distanceeducationschool.com', label: 'Sandy' },
+              { value: 'neha@distanceeducationschool.com', label: 'Neha Raj' },
+              { value: 'yashpriya@distanceeducationschool.com', label: 'Yash Priya' },
+              { value: 'kavitahaldar@distanceeducationschool.com', label: 'Kavita Haldar' },
+              { value: 'ifla@distanceeducationschool.com', label: 'Ifla' },
+              { value: 'shalu@distanceeducationschool.com', label: 'Shalu' },
+              { value: 'zainubia@distanceeducationschool.com', label: 'Zainbuia' },
+              { value: 'pallovi@distanceeducationschool.com', label: 'Pallovi' },
+              { value: 'hansi@distanceeducationschool.com', label: 'Hansi' },
+              { value: 'shristi@distanceeducationschool.com', label: 'Shristi' },
+              { value: 'aashita@highereducationschool.com', label: 'Aashita' },
+              { value: 'pratibha@highereducationschool.com', label: 'Pratibha' },
+              { value: 'shreyashi@highereducationschool.com', label: 'Shreyashi' },
+              { value: 'spuhelpdesk@gmail.com', label: 'Binny' },
+              { value: 'ruchika.spu@gmail.com', label: 'Ruchika' },
+              { value: 'ramiz.spu@gmail.com', label: 'Ramiz' },
             ],
           },
           {
@@ -8116,7 +8278,7 @@ const formData = [
             id: 'status ',
             type: 'select',
             place: 'select status',
-            required: 'require',
+
             options: [
               { value: 'New', label: 'New' },
               { value: 'Cancel', label: 'Cancel' },
@@ -8139,6 +8301,13 @@ const formData = [
             place: 'Enter your remark',
             id: 'remark',
             type: 'textarea',
+          },
+          {
+            key: 'date',
+            label: 'Created At',
+            name: 'created',
+            id: 'created',
+            type: 'date',
           },
         ],
       },
@@ -8510,7 +8679,7 @@ const formData = [
             name: ['customfields', 'send_fee_receipt'],
             type: 'radio',
             options: ['yes', 'no'],
-            required: 'require'
+
           },
           {
             key: 'studentId',
@@ -8519,7 +8688,7 @@ const formData = [
             place: 'StudentID',
             id: 'StudentID',
             type: 'studentId',
-            required: 'require'
+
           },
           {
             key: 'text',
@@ -8528,7 +8697,7 @@ const formData = [
             place: 'Student Name',
             id: 'full_name',
             type: 'text',
-            required: 'require'
+
           },
           {
             key: 'email',
@@ -8537,7 +8706,7 @@ const formData = [
             name: ['contact', 'email'],
             id: 'EmailID',
             type: 'email',
-            required: 'require'
+
           },
           {
             key: 'tel',
@@ -8546,7 +8715,7 @@ const formData = [
             place: 'Enter Phone Number',
             id: 'phone',
             type: 'tel',
-            required: 'require'
+
           },
           {
             key: 'text',
@@ -8555,7 +8724,7 @@ const formData = [
             place: 'Enter Father Name',
             id: 'Father Name',
             type: 'text',
-            required: 'require'
+
           },
           {
             key: 'text',
@@ -8564,32 +8733,32 @@ const formData = [
             place: 'Enter Mother Name',
             id: 'mother_name',
             type: 'text',
-            required: 'require'
+
           },
           {
             key: 'select',
             label: 'Session',
             name: ['customfields', 'session'],
-            place: 'eg: jan 20',
+            place: 'eg: JAN_20',
             id: 'Session',
             type: 'select',
-            options: [{ value: 'jan 20', label: 'Jan 20' },
-            { value: 'july 20', label: 'July 20' },
-            { value: 'jan 21', label: 'Jan 21' },
-            { value: 'july 21', label: 'July 21' },
-            { value: 'jan 22', label: 'Jan 22' },
-            { value: 'july 22', label: 'July 22' },
-            { value: 'jan 23', label: 'Jan 23' },
-            { value: 'july 23', label: 'July 23' },
-            { value: 'jan 24', label: 'Jan 24' },
-            { value: 'july 24', label: 'July 24' },
-            { value: 'jan 25', label: 'Jan 25' },
-            { value: 'july 25', label: 'July 25' },
-            { value: 'mar 23', label: 'mar 23' },
-            { value: 'apr 23', label: 'apr 23' },
-            { value: 'oct 23', label: 'oct 23' },
-            { value: 'nov 23', label: 'nov 23' },],
-            required: 'require'
+            options: [{ value: 'JAN_20', label: 'JAN_20' },
+            { value: 'JULY_20', label: 'JULY_20' },
+            { value: 'JAN_21', label: 'JAN_21' },
+            { value: 'JULY_21', label: 'JULY_21' },
+            { value: 'JAN_22', label: 'JAN_22' },
+            { value: 'JULY_22', label: 'JULY_22' },
+            { value: 'JAN_23', label: 'JAN_23' },
+            { value: 'JULY_23', label: 'JULY_23' },
+            { value: 'JAN_24', label: 'JAN_24' },
+            { value: 'JULY_24', label: 'JULY_24' },
+            { value: 'JAN_25', label: 'JAN_25' },
+            { value: 'JULY_25', label: 'JULY_25' },
+            { value: 'MAR_23', label: 'MAR_23' },
+            { value: 'APR_23', label: 'APR_23' },
+            { value: 'OCT_23', label: 'OCT_23' },
+            { value: 'NOV_23', label: 'NOV_23' },],
+
           },
           {
             key: 'select',
@@ -8598,7 +8767,7 @@ const formData = [
             id: 'SessionType',
             place: 'Enter Admission Type',
             type: 'select',
-            options: [{ value: 'Fresh', label: 'Fresh' },
+            options: [{ value: 'FRESH', label: 'FRESH' },
             { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
           },
 
@@ -8609,7 +8778,7 @@ const formData = [
             place: 'Enter Date of Birth',
             id: 'dob',
             type: 'date',
-            required: 'require'
+
           },
           {
             key: 'select',
@@ -8629,7 +8798,7 @@ const formData = [
             name: ['customfields', 'installment_type'],
             place: 'Installment Type',
             type: 'select',
-            required: 'require',
+
             options: [
               { value: '1st Installment/ New Admission', label: '1st Installment/ New Admission' },
               { value: '2nd Installment', label: '2nd Installment' },
@@ -8650,8 +8819,9 @@ const formData = [
             id: 'PaymentMode ',
             type: 'select',
             place: 'Select Payment Mode',
-            required: 'require',
+
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
+            { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
             { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
@@ -8662,77 +8832,82 @@ const formData = [
             name: ['customfields', 'counselor_email'],
             id: 'email ',
             type: 'select',
-            place: 'select counselor email',
-            required: 'require',
-            options: [{ value: 'zarin@highereducationschool.com', label: 'Zarin' },
-            { value: 'kanchan@highereducationschool.com', label: 'Kanchan' },
-            { value: 'kirti@highereducationschool.com', label: 'Kirti' },
-            { value: 'ramandeep@highereducationschool.com', label: 'Raman' },
-            { value: 'kavita@highereducationschool.com', label: 'kavita' },
-            { value: 'imra@highereducationschool.com', label: 'Imra' },
-            { value: 'Mahak@highereducationschool.com', label: 'Mahek' },
-            { value: 'abhay@highereducationschool.com', label: 'abhay' },
-            { value: 'swati@highereducationschool.com', label: 'swati' },
-            { value: 'gulshan@highereducationschool.com', label: 'Gulshan' },
-            { value: 'isha@highereducationschool.com', label: 'Isha' },
-            { value: 'Sakshi@highereducationschool.com', label: 'Sakshi' },
-            { value: 'aashita@highereducationschool.com', label: 'aashita' },
-            { value: 'pratibha@highereducationschool.com', label: 'pratibha' },
-            { value: 'shreyashi@highereducationschool.com', label: 'Shreyashi ' },
-            { value: 'apoorvasrivastava@distanceeducationschool.com', label: 'Apoorva_DES' },
-            { value: 'asma@distanceeducationschool.com', label: 'Asma_DES' },
-            { value: 'nehaprashar@distanceeducationschool.com', label: 'Neha_Prasher_DES' },
-            { value: 'priya@distanceeducationschool.com', label: 'Priya_DES' },
-            { value: 'diksha@distanceeducationschool.com', label: 'Diksha_DES' },
-            { value: 'abhilasha@distanceeducationschool.com', label: 'Abhilasha_Gupta_DES' },
-            { value: 'saher@distanceeducationschool.com', label: 'Saher_Khan_DES' },
-            { value: 'fiza@distanceeducationschool.com', label: 'Fiza_DES' },
-            { value: 'muskan@distanceeducationschool.com', label: 'Muskaan_DES' },
-            { value: 'aniruddh@distanceeducationschool.com', label: 'Aniruddh_DES' },
-            { value: 'deva@distanceeducationschool.com', label: 'Devendra_DES' },
-            { value: 'amritpal@distanceeducationschool.com', label: 'Amritpal_DES' },
-            { value: 'Salman@distanceeducationschool.com:', label: 'Salman_DES' },
-            { value: 'tariq@distanceeducationschool.com', label: 'Traiq_DES' },
-            { value: 'shivam@distanceeducationschool.com', label: 'Shivam_sharma_DES' },
-            { value: 'pushpa@distanceeducationschool.com', label: 'Puspa_DES' },
-            { value: 'zarin@distanceeducationschool.com', label: 'Zarin_DES' },
-            { value: 'kanchan@distanceeducationschool.com', label: 'Kanchan_DES' },
-            { value: 'manu@distanceeducationschool.com', label: 'Manu_DES' },
+            place: 'select counselor name',
+            options: [
+              // DES External email with name
+              { value: 'apoorvasrivastava@sode.co.in', label: 'Apoorva Srivastava' },
+              { value: 'nehaprashar@sode.co.in', label: 'Neha Prasher' },
+              { value: 'priya@sode.co.in', label: 'Priya Anand' },
+              { value: 'diksha@sode.co.in', label: 'Diksha Singh' },
+              { value: 'abhilasha@sode.co.in', label: 'Abhilasha Gupta' },
+              { value: 'saher@sode.co.in', label: 'Saher Khan' },
 
-            // Jain Team Emails
-            { value: 'a.anitha.ju@gmail.com', label: 'Anita_JU' },
-            { value: 'vaniruckmani.ju@gmail.com', label: 'Vani_Ruckmani_JU' },
-            { value: 'priyankapalle.ju@gmail.com', label: 'Priyanka_JU' },
-            { value: 'SwatiRamani.manipal@gmail.com', label: 'Swati_JU' },
+              // DES Internal email with name 
+              { value: 'muskan@distanceeducationschool.com', label: 'Muskaan ' },
+              { value: 'aniruddh@distanceeducationschool.com', label: 'Aniruddh Prakash' },
+              { value: 'amritpal@sode.co.in', label: 'Amritpal Singh' },
+              { value: 'salman@sode.co.in', label: 'Salman' },
+              { value: 'tariq@sode.co.in', label: 'Tariq Hasan' },
+              { value: 'shivam@sode.co.in', label: 'Shivam sharma' },
+              { value: 'pushpa@sode.co.in', label: 'Pushpa Pramanik' },
 
-            // Manipal Team Email
-            { value: 'ankitakumari.manipal@gmail.com', label: 'Ankita_MU' },
-            { value: 'medhahandoo.manipal@gmail.com', label: 'Medha_MU' },
-            { value: 'amreen.manipal@gmail.com', label: 'Amreen_MU' },
+              // DES Internal email with name 
+              { value: 'anurag@distanceeducationschool.com', label: 'Anurag Yadav' },
+              { value: 'kavitakumari@sode.co.in', label: 'Kavita Kumari' },
+              { value: 'rupal@sode.co.in', label: 'Rupal Gautam' },
+              { value: 'deva@sode.co.in', label: 'Devendra' },
+              { value: 'manshi@sode.co.in', label: 'Manshi Kem' },
 
-            // Support Team Email
-            { value: 'rajesh@distanceeducationschool.com', label: 'Rajesh_sir' },
-            { value: 'manisha@distanceeducationschool.com', label: 'Manisha' },
-            { value: 'admin@distanceeducationschool.com', label: 'Nouman_sir' },
-            { value: 'sandy@distanceeducationschool.com', label: 'Sandy' },
-            { value: 'neha@distanceeducationschool.com', label: 'Neha' },
-            { value: 'yashpriya@distanceeducationschool.com', label: 'Yash_Priya' },
-            { value: 'kavitahaldar@distanceeducationschool.com', label: 'kavitahaldar' },
-            { value: 'ifla@distanceeducationschool.com', label: 'Ifla' },
-            { value: 'shalu@distanceeducationschool.com', label: 'Shalu' },
-            { value: 'zainubia@distanceeducationschool.com', label: 'zainbuia' },
-            { value: 'pallovi@distanceeducationschool.com', label: 'Pallovi' },
-            { value: 'kavitakumari@distanceeducationschool.com', label: 'Kavita_Kumari' },
-            { value: 'manshi@distanceeducationschool.com', label: 'Mansi' },
-            { value: 'Bhavya.manipal@gmail.com', label: 'Bhavya' },
-            { value: 'anurag@distanceeducationschool.com', label: 'Anuraj' },
-            { value: 'rupal@distanceeducationschool.com', label: 'Rupal' },
-            //B2B Team Email
-            { value: 'spuhelpdesk@gmail.com', label: 'Binny' },
-            { value: 'ruchika.spu@gmail.com', label: 'Ruchika' },
-            { value: 'lalit@distanceeducationschool.com', label: 'Lalit_DES' },
-            { value: 'lalit.spu@gmail.com', label: 'Lalit' },
-            { value: 'ramiz.spu@gmail.com', label: 'Ramiz' }
+              // DES - INTERNATIONAL email with name 
+              { value: 'zarin@distanceeducationschool.com', label: 'Zarin Badar' },
+
+              // HES team email with name 
+              { value: 'kanchan@highereducationschool.com', label: 'Kanchan Sharma' },
+              { value: 'kirti@highereducationschool.com', label: 'Kirti Dubey' },
+              { value: 'ramandeep@highereducationschool.com', label: 'Ramandeep Kaur' },
+              { value: 'kavita@highereducationschool.com', label: 'Kavita Yadav' },
+              { value: 'imra@highereducationschool.com', label: 'Imra Khan' },
+              { value: 'mahak@highereducationschool.com', label: 'Mahek' },
+              { value: 'abhay@highereducationschool.com', label: 'Abhay Dubey' },
+              { value: 'swati@highereducationschool.com', label: 'Swati' },
+              { value: 'gulshan@highereducationschool.com', label: 'Gulshan Nayyar' },
+              { value: 'isha@highereducationschool.com', label: 'Isha Jaiswal' },
+              { value: 'sakshi@highereducationschool.com', label: 'Sakshi Arora' },
+
+              // Jain team email with name 
+              { value: 'anitha@sode.co.in', label: 'A.Anitha' },
+              { value: 'vani@sode.co.in', label: 'Vani Ruckmani' },
+
+              // Manipal team email with name 
+              { value: 'SwatiRamani.manipal@gmail.com', label: 'Swati Ramani' },
+              { value: 'ankitakumar@sode.co.in', label: 'Ankita Kumari' },
+              { value: 'nidhi@sode.co.in', label: 'Nidhi' },
+              { value: 'amreen@sode.co.in', label: 'Amreen ALI Khan' },
+              { value: 'umar@sode.co.in', label: 'MD Umar' },
+              { value: 'nehagupta@sode.co.in', label: 'Neha Gupta' },
+              { value: 'pawankumar@sode.co.in', label: 'Pawan Kumar' },
+              { value: 'bhavya@sode.co.in', label: 'Bhavya' },
+
+              // ALL DES && HES team email with name 
+              { value: 'rajesh@distanceeducationschool.com', label: 'Rajesh Sir' },
+              { value: 'manisha@distanceeducationschool.com', label: 'Manisha Yadav' },
+              { value: 'admin@distanceeducationschool.com', label: 'Nouman Sir' },
+              { value: 'sandy@distanceeducationschool.com', label: 'Sandy' },
+              { value: 'neha@distanceeducationschool.com', label: 'Neha Raj' },
+              { value: 'yashpriya@distanceeducationschool.com', label: 'Yash Priya' },
+              { value: 'kavitahaldar@distanceeducationschool.com', label: 'Kavita Haldar' },
+              { value: 'ifla@distanceeducationschool.com', label: 'Ifla' },
+              { value: 'shalu@distanceeducationschool.com', label: 'Shalu' },
+              { value: 'zainubia@distanceeducationschool.com', label: 'Zainbuia' },
+              { value: 'pallovi@distanceeducationschool.com', label: 'Pallovi' },
+              { value: 'hansi@distanceeducationschool.com', label: 'Hansi' },
+              { value: 'shristi@distanceeducationschool.com', label: 'Shristi' },
+              { value: 'aashita@highereducationschool.com', label: 'Aashita' },
+              { value: 'pratibha@highereducationschool.com', label: 'Pratibha' },
+              { value: 'shreyashi@highereducationschool.com', label: 'Shreyashi' },
+              { value: 'spuhelpdesk@gmail.com', label: 'Binny' },
+              { value: 'ruchika.spu@gmail.com', label: 'Ruchika' },
+              { value: 'ramiz.spu@gmail.com', label: 'Ramiz' },
             ],
           },
           {
@@ -8742,7 +8917,7 @@ const formData = [
             id: 'status ',
             type: 'select',
             place: 'select status',
-            required: 'require',
+
             options: [
               { value: 'New', label: 'New' },
               { value: 'Cancel', label: 'Cancel' },
@@ -8765,6 +8940,13 @@ const formData = [
             place: 'Enter your remark',
             id: 'remark',
             type: 'textarea',
+          },
+          {
+            key: 'date',
+            label: 'Created At',
+            name: 'created',
+            id: 'created',
+            type: 'date',
           },
         ],
       },
@@ -9136,7 +9318,7 @@ const formData = [
             name: ['customfields', 'send_fee_receipt'],
             type: 'radio',
             options: ['yes', 'no'],
-            required: 'require'
+
           },
           {
             key: 'studentId',
@@ -9145,7 +9327,7 @@ const formData = [
             place: 'StudentID',
             id: 'StudentID',
             type: 'studentId',
-            required: 'require'
+
           },
           {
             key: 'text',
@@ -9154,7 +9336,7 @@ const formData = [
             place: 'Student Name',
             id: 'full_name',
             type: 'text',
-            required: 'require'
+
           },
           {
             key: 'email',
@@ -9163,7 +9345,7 @@ const formData = [
             name: ['contact', 'email'],
             id: 'EmailID',
             type: 'email',
-            required: 'require'
+
           },
           {
             key: 'tel',
@@ -9172,7 +9354,7 @@ const formData = [
             place: 'Enter Phone Number',
             id: 'phone',
             type: 'tel',
-            required: 'require'
+
           },
           {
             key: 'text',
@@ -9181,7 +9363,7 @@ const formData = [
             place: 'Enter Father Name',
             id: 'Father Name',
             type: 'text',
-            required: 'require'
+
           },
           {
             key: 'text',
@@ -9190,32 +9372,32 @@ const formData = [
             place: 'Enter Mother Name',
             id: 'mother_name',
             type: 'text',
-            required: 'require'
+
           },
           {
             key: 'select',
             label: 'Session',
             name: ['customfields', 'session'],
-            place: 'eg: jan 20',
+            place: 'eg: JAN_20',
             id: 'Session',
             type: 'select',
-            options: [{ value: 'jan 20', label: 'Jan 20' },
-            { value: 'july 20', label: 'July 20' },
-            { value: 'jan 21', label: 'Jan 21' },
-            { value: 'july 21', label: 'July 21' },
-            { value: 'jan 22', label: 'Jan 22' },
-            { value: 'july 22', label: 'July 22' },
-            { value: 'jan 23', label: 'Jan 23' },
-            { value: 'july 23', label: 'July 23' },
-            { value: 'jan 24', label: 'Jan 24' },
-            { value: 'july 24', label: 'July 24' },
-            { value: 'jan 25', label: 'Jan 25' },
-            { value: 'july 25', label: 'July 25' },
-            { value: 'mar 23', label: 'mar 23' },
-            { value: 'apr 23', label: 'apr 23' },
-            { value: 'oct 23', label: 'oct 23' },
-            { value: 'nov 23', label: 'nov 23' },],
-            required: 'require'
+            options: [{ value: 'JAN_20', label: 'JAN_20' },
+            { value: 'JULY_20', label: 'JULY_20' },
+            { value: 'JAN_21', label: 'JAN_21' },
+            { value: 'JULY_21', label: 'JULY_21' },
+            { value: 'JAN_22', label: 'JAN_22' },
+            { value: 'JULY_22', label: 'JULY_22' },
+            { value: 'JAN_23', label: 'JAN_23' },
+            { value: 'JULY_23', label: 'JULY_23' },
+            { value: 'JAN_24', label: 'JAN_24' },
+            { value: 'JULY_24', label: 'JULY_24' },
+            { value: 'JAN_25', label: 'JAN_25' },
+            { value: 'JULY_25', label: 'JULY_25' },
+            { value: 'MAR_23', label: 'MAR_23' },
+            { value: 'APR_23', label: 'APR_23' },
+            { value: 'OCT_23', label: 'OCT_23' },
+            { value: 'NOV_23', label: 'NOV_23' },],
+
           },
           {
             key: 'select',
@@ -9224,7 +9406,7 @@ const formData = [
             id: 'SessionType',
             place: 'Enter Admission Type',
             type: 'select',
-            options: [{ value: 'Fresh', label: 'Fresh' },
+            options: [{ value: 'FRESH', label: 'FRESH' },
             { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
           },
 
@@ -9235,7 +9417,7 @@ const formData = [
             place: 'Enter Date of Birth',
             id: 'dob',
             type: 'date',
-            required: 'require'
+
           },
           {
             key: 'select',
@@ -9255,7 +9437,7 @@ const formData = [
             name: ['customfields', 'installment_type'],
             place: 'Installment Type',
             type: 'select',
-            required: 'require',
+
             options: [
               { value: '1st Installment/ New Admission', label: '1st Installment/ New Admission' },
               { value: '2nd Installment', label: '2nd Installment' },
@@ -9276,8 +9458,9 @@ const formData = [
             id: 'PaymentMode ',
             type: 'select',
             place: 'Select Payment Mode',
-            required: 'require',
+
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
+            { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
             { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
@@ -9288,77 +9471,82 @@ const formData = [
             name: ['customfields', 'counselor_email'],
             id: 'email ',
             type: 'select',
-            place: 'select counselor email',
-            required: 'require',
-            options: [{ value: 'zarin@highereducationschool.com', label: 'Zarin' },
-            { value: 'kanchan@highereducationschool.com', label: 'Kanchan' },
-            { value: 'kirti@highereducationschool.com', label: 'Kirti' },
-            { value: 'ramandeep@highereducationschool.com', label: 'Raman' },
-            { value: 'kavita@highereducationschool.com', label: 'kavita' },
-            { value: 'imra@highereducationschool.com', label: 'Imra' },
-            { value: 'Mahak@highereducationschool.com', label: 'Mahek' },
-            { value: 'abhay@highereducationschool.com', label: 'abhay' },
-            { value: 'swati@highereducationschool.com', label: 'swati' },
-            { value: 'gulshan@highereducationschool.com', label: 'Gulshan' },
-            { value: 'isha@highereducationschool.com', label: 'Isha' },
-            { value: 'Sakshi@highereducationschool.com', label: 'Sakshi' },
-            { value: 'aashita@highereducationschool.com', label: 'aashita' },
-            { value: 'pratibha@highereducationschool.com', label: 'pratibha' },
-            { value: 'shreyashi@highereducationschool.com', label: 'Shreyashi ' },
-            { value: 'apoorvasrivastava@distanceeducationschool.com', label: 'Apoorva_DES' },
-            { value: 'asma@distanceeducationschool.com', label: 'Asma_DES' },
-            { value: 'nehaprashar@distanceeducationschool.com', label: 'Neha_Prasher_DES' },
-            { value: 'priya@distanceeducationschool.com', label: 'Priya_DES' },
-            { value: 'diksha@distanceeducationschool.com', label: 'Diksha_DES' },
-            { value: 'abhilasha@distanceeducationschool.com', label: 'Abhilasha_Gupta_DES' },
-            { value: 'saher@distanceeducationschool.com', label: 'Saher_Khan_DES' },
-            { value: 'fiza@distanceeducationschool.com', label: 'Fiza_DES' },
-            { value: 'muskan@distanceeducationschool.com', label: 'Muskaan_DES' },
-            { value: 'aniruddh@distanceeducationschool.com', label: 'Aniruddh_DES' },
-            { value: 'deva@distanceeducationschool.com', label: 'Devendra_DES' },
-            { value: 'amritpal@distanceeducationschool.com', label: 'Amritpal_DES' },
-            { value: 'Salman@distanceeducationschool.com:', label: 'Salman_DES' },
-            { value: 'tariq@distanceeducationschool.com', label: 'Traiq_DES' },
-            { value: 'shivam@distanceeducationschool.com', label: 'Shivam_sharma_DES' },
-            { value: 'pushpa@distanceeducationschool.com', label: 'Puspa_DES' },
-            { value: 'zarin@distanceeducationschool.com', label: 'Zarin_DES' },
-            { value: 'kanchan@distanceeducationschool.com', label: 'Kanchan_DES' },
-            { value: 'manu@distanceeducationschool.com', label: 'Manu_DES' },
+            place: 'select counselor name',
+            options: [
+              // DES External email with name
+              { value: 'apoorvasrivastava@sode.co.in', label: 'Apoorva Srivastava' },
+              { value: 'nehaprashar@sode.co.in', label: 'Neha Prasher' },
+              { value: 'priya@sode.co.in', label: 'Priya Anand' },
+              { value: 'diksha@sode.co.in', label: 'Diksha Singh' },
+              { value: 'abhilasha@sode.co.in', label: 'Abhilasha Gupta' },
+              { value: 'saher@sode.co.in', label: 'Saher Khan' },
 
-            // Jain Team Emails
-            { value: 'a.anitha.ju@gmail.com', label: 'Anita_JU' },
-            { value: 'vaniruckmani.ju@gmail.com', label: 'Vani_Ruckmani_JU' },
-            { value: 'priyankapalle.ju@gmail.com', label: 'Priyanka_JU' },
-            { value: 'SwatiRamani.manipal@gmail.com', label: 'Swati_JU' },
+              // DES Internal email with name 
+              { value: 'muskan@distanceeducationschool.com', label: 'Muskaan ' },
+              { value: 'aniruddh@distanceeducationschool.com', label: 'Aniruddh Prakash' },
+              { value: 'amritpal@sode.co.in', label: 'Amritpal Singh' },
+              { value: 'salman@sode.co.in', label: 'Salman' },
+              { value: 'tariq@sode.co.in', label: 'Tariq Hasan' },
+              { value: 'shivam@sode.co.in', label: 'Shivam sharma' },
+              { value: 'pushpa@sode.co.in', label: 'Pushpa Pramanik' },
 
-            // Manipal Team Email
-            { value: 'ankitakumari.manipal@gmail.com', label: 'Ankita_MU' },
-            { value: 'medhahandoo.manipal@gmail.com', label: 'Medha_MU' },
-            { value: 'amreen.manipal@gmail.com', label: 'Amreen_MU' },
+              // DES Internal email with name 
+              { value: 'anurag@distanceeducationschool.com', label: 'Anurag Yadav' },
+              { value: 'kavitakumari@sode.co.in', label: 'Kavita Kumari' },
+              { value: 'rupal@sode.co.in', label: 'Rupal Gautam' },
+              { value: 'deva@sode.co.in', label: 'Devendra' },
+              { value: 'manshi@sode.co.in', label: 'Manshi Kem' },
 
-            // Support Team Email
-            { value: 'rajesh@distanceeducationschool.com', label: 'Rajesh_sir' },
-            { value: 'manisha@distanceeducationschool.com', label: 'Manisha' },
-            { value: 'admin@distanceeducationschool.com', label: 'Nouman_sir' },
-            { value: 'sandy@distanceeducationschool.com', label: 'Sandy' },
-            { value: 'neha@distanceeducationschool.com', label: 'Neha' },
-            { value: 'yashpriya@distanceeducationschool.com', label: 'Yash_Priya' },
-            { value: 'kavitahaldar@distanceeducationschool.com', label: 'kavitahaldar' },
-            { value: 'ifla@distanceeducationschool.com', label: 'Ifla' },
-            { value: 'shalu@distanceeducationschool.com', label: 'Shalu' },
-            { value: 'zainubia@distanceeducationschool.com', label: 'zainbuia' },
-            { value: 'pallovi@distanceeducationschool.com', label: 'Pallovi' },
-            { value: 'kavitakumari@distanceeducationschool.com', label: 'Kavita_Kumari' },
-            { value: 'manshi@distanceeducationschool.com', label: 'Mansi' },
-            { value: 'Bhavya.manipal@gmail.com', label: 'Bhavya' },
-            { value: 'anurag@distanceeducationschool.com', label: 'Anuraj' },
-            { value: 'rupal@distanceeducationschool.com', label: 'Rupal' },
-            //B2B Team Email
-            { value: 'spuhelpdesk@gmail.com', label: 'Binny' },
-            { value: 'ruchika.spu@gmail.com', label: 'Ruchika' },
-            { value: 'lalit@distanceeducationschool.com', label: 'Lalit_DES' },
-            { value: 'lalit.spu@gmail.com', label: 'Lalit' },
-            { value: 'ramiz.spu@gmail.com', label: 'Ramiz' }
+              // DES - INTERNATIONAL email with name 
+              { value: 'zarin@distanceeducationschool.com', label: 'Zarin Badar' },
+
+              // HES team email with name 
+              { value: 'kanchan@highereducationschool.com', label: 'Kanchan Sharma' },
+              { value: 'kirti@highereducationschool.com', label: 'Kirti Dubey' },
+              { value: 'ramandeep@highereducationschool.com', label: 'Ramandeep Kaur' },
+              { value: 'kavita@highereducationschool.com', label: 'Kavita Yadav' },
+              { value: 'imra@highereducationschool.com', label: 'Imra Khan' },
+              { value: 'mahak@highereducationschool.com', label: 'Mahek' },
+              { value: 'abhay@highereducationschool.com', label: 'Abhay Dubey' },
+              { value: 'swati@highereducationschool.com', label: 'Swati' },
+              { value: 'gulshan@highereducationschool.com', label: 'Gulshan Nayyar' },
+              { value: 'isha@highereducationschool.com', label: 'Isha Jaiswal' },
+              { value: 'sakshi@highereducationschool.com', label: 'Sakshi Arora' },
+
+              // Jain team email with name 
+              { value: 'anitha@sode.co.in', label: 'A.Anitha' },
+              { value: 'vani@sode.co.in', label: 'Vani Ruckmani' },
+
+              // Manipal team email with name 
+              { value: 'SwatiRamani.manipal@gmail.com', label: 'Swati Ramani' },
+              { value: 'ankitakumar@sode.co.in', label: 'Ankita Kumari' },
+              { value: 'nidhi@sode.co.in', label: 'Nidhi' },
+              { value: 'amreen@sode.co.in', label: 'Amreen ALI Khan' },
+              { value: 'umar@sode.co.in', label: 'MD Umar' },
+              { value: 'nehagupta@sode.co.in', label: 'Neha Gupta' },
+              { value: 'pawankumar@sode.co.in', label: 'Pawan Kumar' },
+              { value: 'bhavya@sode.co.in', label: 'Bhavya' },
+
+              // ALL DES && HES team email with name 
+              { value: 'rajesh@distanceeducationschool.com', label: 'Rajesh Sir' },
+              { value: 'manisha@distanceeducationschool.com', label: 'Manisha Yadav' },
+              { value: 'admin@distanceeducationschool.com', label: 'Nouman Sir' },
+              { value: 'sandy@distanceeducationschool.com', label: 'Sandy' },
+              { value: 'neha@distanceeducationschool.com', label: 'Neha Raj' },
+              { value: 'yashpriya@distanceeducationschool.com', label: 'Yash Priya' },
+              { value: 'kavitahaldar@distanceeducationschool.com', label: 'Kavita Haldar' },
+              { value: 'ifla@distanceeducationschool.com', label: 'Ifla' },
+              { value: 'shalu@distanceeducationschool.com', label: 'Shalu' },
+              { value: 'zainubia@distanceeducationschool.com', label: 'Zainbuia' },
+              { value: 'pallovi@distanceeducationschool.com', label: 'Pallovi' },
+              { value: 'hansi@distanceeducationschool.com', label: 'Hansi' },
+              { value: 'shristi@distanceeducationschool.com', label: 'Shristi' },
+              { value: 'aashita@highereducationschool.com', label: 'Aashita' },
+              { value: 'pratibha@highereducationschool.com', label: 'Pratibha' },
+              { value: 'shreyashi@highereducationschool.com', label: 'Shreyashi' },
+              { value: 'spuhelpdesk@gmail.com', label: 'Binny' },
+              { value: 'ruchika.spu@gmail.com', label: 'Ruchika' },
+              { value: 'ramiz.spu@gmail.com', label: 'Ramiz' },
             ],
           },
           {
@@ -9368,7 +9556,7 @@ const formData = [
             id: 'status ',
             type: 'select',
             place: 'select status',
-            required: 'require',
+
             options: [
               { value: 'New', label: 'New' },
               { value: 'Cancel', label: 'Cancel' },
@@ -9391,6 +9579,13 @@ const formData = [
             place: 'Enter your remark',
             id: 'remark',
             type: 'textarea',
+          },
+          {
+            key: 'date',
+            label: 'Created At',
+            name: 'created',
+            id: 'created',
+            type: 'date',
           },
         ],
       },
@@ -9762,7 +9957,7 @@ const formData = [
             name: ['customfields', 'send_fee_receipt'],
             type: 'radio',
             options: ['yes', 'no'],
-            required: 'require'
+
           },
           {
             key: 'studentId',
@@ -9771,7 +9966,7 @@ const formData = [
             place: 'StudentID',
             id: 'StudentID',
             type: 'studentId',
-            required: 'require'
+
           },
           {
             key: 'text',
@@ -9780,7 +9975,7 @@ const formData = [
             place: 'Student Name',
             id: 'full_name',
             type: 'text',
-            required: 'require'
+
           },
           {
             key: 'email',
@@ -9789,7 +9984,7 @@ const formData = [
             name: ['contact', 'email'],
             id: 'EmailID',
             type: 'email',
-            required: 'require'
+
           },
           {
             key: 'tel',
@@ -9798,7 +9993,7 @@ const formData = [
             place: 'Enter Phone Number',
             id: 'phone',
             type: 'tel',
-            required: 'require'
+
           },
           {
             key: 'text',
@@ -9807,7 +10002,7 @@ const formData = [
             place: 'Enter Father Name',
             id: 'Father Name',
             type: 'text',
-            required: 'require'
+
           },
           {
             key: 'text',
@@ -9816,32 +10011,32 @@ const formData = [
             place: 'Enter Mother Name',
             id: 'mother_name',
             type: 'text',
-            required: 'require'
+
           },
           {
             key: 'select',
             label: 'Session',
             name: ['customfields', 'session'],
-            place: 'eg: jan 20',
+            place: 'eg: JAN_20',
             id: 'Session',
             type: 'select',
-            options: [{ value: 'jan 20', label: 'Jan 20' },
-            { value: 'july 20', label: 'July 20' },
-            { value: 'jan 21', label: 'Jan 21' },
-            { value: 'july 21', label: 'July 21' },
-            { value: 'jan 22', label: 'Jan 22' },
-            { value: 'july 22', label: 'July 22' },
-            { value: 'jan 23', label: 'Jan 23' },
-            { value: 'july 23', label: 'July 23' },
-            { value: 'jan 24', label: 'Jan 24' },
-            { value: 'july 24', label: 'July 24' },
-            { value: 'jan 25', label: 'Jan 25' },
-            { value: 'july 25', label: 'July 25' },
-            { value: 'mar 23', label: 'mar 23' },
-            { value: 'apr 23', label: 'apr 23' },
-            { value: 'oct 23', label: 'oct 23' },
-            { value: 'nov 23', label: 'nov 23' },],
-            required: 'require'
+            options: [{ value: 'JAN_20', label: 'JAN_20' },
+            { value: 'JULY_20', label: 'JULY_20' },
+            { value: 'JAN_21', label: 'JAN_21' },
+            { value: 'JULY_21', label: 'JULY_21' },
+            { value: 'JAN_22', label: 'JAN_22' },
+            { value: 'JULY_22', label: 'JULY_22' },
+            { value: 'JAN_23', label: 'JAN_23' },
+            { value: 'JULY_23', label: 'JULY_23' },
+            { value: 'JAN_24', label: 'JAN_24' },
+            { value: 'JULY_24', label: 'JULY_24' },
+            { value: 'JAN_25', label: 'JAN_25' },
+            { value: 'JULY_25', label: 'JULY_25' },
+            { value: 'MAR_23', label: 'MAR_23' },
+            { value: 'APR_23', label: 'APR_23' },
+            { value: 'OCT_23', label: 'OCT_23' },
+            { value: 'NOV_23', label: 'NOV_23' },],
+
           },
           {
             key: 'select',
@@ -9850,7 +10045,7 @@ const formData = [
             id: 'SessionType',
             place: 'Enter Admission Type',
             type: 'select',
-            options: [{ value: 'Fresh', label: 'Fresh' },
+            options: [{ value: 'FRESH', label: 'FRESH' },
             { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
           },
 
@@ -9861,7 +10056,7 @@ const formData = [
             place: 'Enter Date of Birth',
             id: 'dob',
             type: 'date',
-            required: 'require'
+
           },
           {
             key: 'select',
@@ -9881,7 +10076,7 @@ const formData = [
             name: ['customfields', 'installment_type'],
             place: 'Installment Type',
             type: 'select',
-            required: 'require',
+
             options: [
               { value: '1st Installment/ New Admission', label: '1st Installment/ New Admission' },
               { value: '2nd Installment', label: '2nd Installment' },
@@ -9902,8 +10097,9 @@ const formData = [
             id: 'PaymentMode ',
             type: 'select',
             place: 'Select Payment Mode',
-            required: 'require',
+
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
+            { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
             { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
@@ -9914,77 +10110,82 @@ const formData = [
             name: ['customfields', 'counselor_email'],
             id: 'email ',
             type: 'select',
-            place: 'select counselor email',
-            required: 'require',
-            options: [{ value: 'zarin@highereducationschool.com', label: 'Zarin' },
-            { value: 'kanchan@highereducationschool.com', label: 'Kanchan' },
-            { value: 'kirti@highereducationschool.com', label: 'Kirti' },
-            { value: 'ramandeep@highereducationschool.com', label: 'Raman' },
-            { value: 'kavita@highereducationschool.com', label: 'kavita' },
-            { value: 'imra@highereducationschool.com', label: 'Imra' },
-            { value: 'Mahak@highereducationschool.com', label: 'Mahek' },
-            { value: 'abhay@highereducationschool.com', label: 'abhay' },
-            { value: 'swati@highereducationschool.com', label: 'swati' },
-            { value: 'gulshan@highereducationschool.com', label: 'Gulshan' },
-            { value: 'isha@highereducationschool.com', label: 'Isha' },
-            { value: 'Sakshi@highereducationschool.com', label: 'Sakshi' },
-            { value: 'aashita@highereducationschool.com', label: 'aashita' },
-            { value: 'pratibha@highereducationschool.com', label: 'pratibha' },
-            { value: 'shreyashi@highereducationschool.com', label: 'Shreyashi ' },
-            { value: 'apoorvasrivastava@distanceeducationschool.com', label: 'Apoorva_DES' },
-            { value: 'asma@distanceeducationschool.com', label: 'Asma_DES' },
-            { value: 'nehaprashar@distanceeducationschool.com', label: 'Neha_Prasher_DES' },
-            { value: 'priya@distanceeducationschool.com', label: 'Priya_DES' },
-            { value: 'diksha@distanceeducationschool.com', label: 'Diksha_DES' },
-            { value: 'abhilasha@distanceeducationschool.com', label: 'Abhilasha_Gupta_DES' },
-            { value: 'saher@distanceeducationschool.com', label: 'Saher_Khan_DES' },
-            { value: 'fiza@distanceeducationschool.com', label: 'Fiza_DES' },
-            { value: 'muskan@distanceeducationschool.com', label: 'Muskaan_DES' },
-            { value: 'aniruddh@distanceeducationschool.com', label: 'Aniruddh_DES' },
-            { value: 'deva@distanceeducationschool.com', label: 'Devendra_DES' },
-            { value: 'amritpal@distanceeducationschool.com', label: 'Amritpal_DES' },
-            { value: 'Salman@distanceeducationschool.com:', label: 'Salman_DES' },
-            { value: 'tariq@distanceeducationschool.com', label: 'Traiq_DES' },
-            { value: 'shivam@distanceeducationschool.com', label: 'Shivam_sharma_DES' },
-            { value: 'pushpa@distanceeducationschool.com', label: 'Puspa_DES' },
-            { value: 'zarin@distanceeducationschool.com', label: 'Zarin_DES' },
-            { value: 'kanchan@distanceeducationschool.com', label: 'Kanchan_DES' },
-            { value: 'manu@distanceeducationschool.com', label: 'Manu_DES' },
+            place: 'select counselor name',
+            options: [
+              // DES External email with name
+              { value: 'apoorvasrivastava@sode.co.in', label: 'Apoorva Srivastava' },
+              { value: 'nehaprashar@sode.co.in', label: 'Neha Prasher' },
+              { value: 'priya@sode.co.in', label: 'Priya Anand' },
+              { value: 'diksha@sode.co.in', label: 'Diksha Singh' },
+              { value: 'abhilasha@sode.co.in', label: 'Abhilasha Gupta' },
+              { value: 'saher@sode.co.in', label: 'Saher Khan' },
 
-            // Jain Team Emails
-            { value: 'a.anitha.ju@gmail.com', label: 'Anita_JU' },
-            { value: 'vaniruckmani.ju@gmail.com', label: 'Vani_Ruckmani_JU' },
-            { value: 'priyankapalle.ju@gmail.com', label: 'Priyanka_JU' },
-            { value: 'SwatiRamani.manipal@gmail.com', label: 'Swati_JU' },
+              // DES Internal email with name 
+              { value: 'muskan@distanceeducationschool.com', label: 'Muskaan ' },
+              { value: 'aniruddh@distanceeducationschool.com', label: 'Aniruddh Prakash' },
+              { value: 'amritpal@sode.co.in', label: 'Amritpal Singh' },
+              { value: 'salman@sode.co.in', label: 'Salman' },
+              { value: 'tariq@sode.co.in', label: 'Tariq Hasan' },
+              { value: 'shivam@sode.co.in', label: 'Shivam sharma' },
+              { value: 'pushpa@sode.co.in', label: 'Pushpa Pramanik' },
 
-            // Manipal Team Email
-            { value: 'ankitakumari.manipal@gmail.com', label: 'Ankita_MU' },
-            { value: 'medhahandoo.manipal@gmail.com', label: 'Medha_MU' },
-            { value: 'amreen.manipal@gmail.com', label: 'Amreen_MU' },
+              // DES Internal email with name 
+              { value: 'anurag@distanceeducationschool.com', label: 'Anurag Yadav' },
+              { value: 'kavitakumari@sode.co.in', label: 'Kavita Kumari' },
+              { value: 'rupal@sode.co.in', label: 'Rupal Gautam' },
+              { value: 'deva@sode.co.in', label: 'Devendra' },
+              { value: 'manshi@sode.co.in', label: 'Manshi Kem' },
 
-            // Support Team Email
-            { value: 'rajesh@distanceeducationschool.com', label: 'Rajesh_sir' },
-            { value: 'manisha@distanceeducationschool.com', label: 'Manisha' },
-            { value: 'admin@distanceeducationschool.com', label: 'Nouman_sir' },
-            { value: 'sandy@distanceeducationschool.com', label: 'Sandy' },
-            { value: 'neha@distanceeducationschool.com', label: 'Neha' },
-            { value: 'yashpriya@distanceeducationschool.com', label: 'Yash_Priya' },
-            { value: 'kavitahaldar@distanceeducationschool.com', label: 'kavitahaldar' },
-            { value: 'ifla@distanceeducationschool.com', label: 'Ifla' },
-            { value: 'shalu@distanceeducationschool.com', label: 'Shalu' },
-            { value: 'zainubia@distanceeducationschool.com', label: 'zainbuia' },
-            { value: 'pallovi@distanceeducationschool.com', label: 'Pallovi' },
-            { value: 'kavitakumari@distanceeducationschool.com', label: 'Kavita_Kumari' },
-            { value: 'manshi@distanceeducationschool.com', label: 'Mansi' },
-            { value: 'Bhavya.manipal@gmail.com', label: 'Bhavya' },
-            { value: 'anurag@distanceeducationschool.com', label: 'Anuraj' },
-            { value: 'rupal@distanceeducationschool.com', label: 'Rupal' },
-            //B2B Team Email
-            { value: 'spuhelpdesk@gmail.com', label: 'Binny' },
-            { value: 'ruchika.spu@gmail.com', label: 'Ruchika' },
-            { value: 'lalit@distanceeducationschool.com', label: 'Lalit_DES' },
-            { value: 'lalit.spu@gmail.com', label: 'Lalit' },
-            { value: 'ramiz.spu@gmail.com', label: 'Ramiz' }
+              // DES - INTERNATIONAL email with name 
+              { value: 'zarin@distanceeducationschool.com', label: 'Zarin Badar' },
+
+              // HES team email with name 
+              { value: 'kanchan@highereducationschool.com', label: 'Kanchan Sharma' },
+              { value: 'kirti@highereducationschool.com', label: 'Kirti Dubey' },
+              { value: 'ramandeep@highereducationschool.com', label: 'Ramandeep Kaur' },
+              { value: 'kavita@highereducationschool.com', label: 'Kavita Yadav' },
+              { value: 'imra@highereducationschool.com', label: 'Imra Khan' },
+              { value: 'mahak@highereducationschool.com', label: 'Mahek' },
+              { value: 'abhay@highereducationschool.com', label: 'Abhay Dubey' },
+              { value: 'swati@highereducationschool.com', label: 'Swati' },
+              { value: 'gulshan@highereducationschool.com', label: 'Gulshan Nayyar' },
+              { value: 'isha@highereducationschool.com', label: 'Isha Jaiswal' },
+              { value: 'sakshi@highereducationschool.com', label: 'Sakshi Arora' },
+
+              // Jain team email with name 
+              { value: 'anitha@sode.co.in', label: 'A.Anitha' },
+              { value: 'vani@sode.co.in', label: 'Vani Ruckmani' },
+
+              // Manipal team email with name 
+              { value: 'SwatiRamani.manipal@gmail.com', label: 'Swati Ramani' },
+              { value: 'ankitakumar@sode.co.in', label: 'Ankita Kumari' },
+              { value: 'nidhi@sode.co.in', label: 'Nidhi' },
+              { value: 'amreen@sode.co.in', label: 'Amreen ALI Khan' },
+              { value: 'umar@sode.co.in', label: 'MD Umar' },
+              { value: 'nehagupta@sode.co.in', label: 'Neha Gupta' },
+              { value: 'pawankumar@sode.co.in', label: 'Pawan Kumar' },
+              { value: 'bhavya@sode.co.in', label: 'Bhavya' },
+
+              // ALL DES && HES team email with name 
+              { value: 'rajesh@distanceeducationschool.com', label: 'Rajesh Sir' },
+              { value: 'manisha@distanceeducationschool.com', label: 'Manisha Yadav' },
+              { value: 'admin@distanceeducationschool.com', label: 'Nouman Sir' },
+              { value: 'sandy@distanceeducationschool.com', label: 'Sandy' },
+              { value: 'neha@distanceeducationschool.com', label: 'Neha Raj' },
+              { value: 'yashpriya@distanceeducationschool.com', label: 'Yash Priya' },
+              { value: 'kavitahaldar@distanceeducationschool.com', label: 'Kavita Haldar' },
+              { value: 'ifla@distanceeducationschool.com', label: 'Ifla' },
+              { value: 'shalu@distanceeducationschool.com', label: 'Shalu' },
+              { value: 'zainubia@distanceeducationschool.com', label: 'Zainbuia' },
+              { value: 'pallovi@distanceeducationschool.com', label: 'Pallovi' },
+              { value: 'hansi@distanceeducationschool.com', label: 'Hansi' },
+              { value: 'shristi@distanceeducationschool.com', label: 'Shristi' },
+              { value: 'aashita@highereducationschool.com', label: 'Aashita' },
+              { value: 'pratibha@highereducationschool.com', label: 'Pratibha' },
+              { value: 'shreyashi@highereducationschool.com', label: 'Shreyashi' },
+              { value: 'spuhelpdesk@gmail.com', label: 'Binny' },
+              { value: 'ruchika.spu@gmail.com', label: 'Ruchika' },
+              { value: 'ramiz.spu@gmail.com', label: 'Ramiz' },
             ],
           },
           {
@@ -9994,7 +10195,7 @@ const formData = [
             id: 'status ',
             type: 'select',
             place: 'select status',
-            required: 'require',
+
             options: [
               { value: 'New', label: 'New' },
               { value: 'Cancel', label: 'Cancel' },
@@ -10017,6 +10218,13 @@ const formData = [
             place: 'Enter your remark',
             id: 'remark',
             type: 'textarea',
+          },
+          {
+            key: 'date',
+            label: 'Created At',
+            name: 'created',
+            id: 'created',
+            type: 'date',
           },
         ],
       },
@@ -10507,7 +10715,7 @@ const formData = [
             name: ['customfields', 'installment_type'],
             place: 'Installment Type',
             type: 'select',
-            required: 'require',
+
             options: [
               { value: '1st Installment/ New Admission', label: '1st Installment/ New Admission' },
               { value: '2nd Installment', label: '2nd Installment' },
@@ -10528,7 +10736,7 @@ const formData = [
             id: 'PaymentMode ',
             type: 'select',
             place: 'Select Payment Mode',
-            required: 'require',
+
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
             { value: 'Payment Gateway', label: 'Payment Gateway' },
@@ -10541,7 +10749,7 @@ const formData = [
             id: 'email ',
             type: 'select',
             place: 'select counselor email',
-            required: 'require',
+
             options: [{ value: 'zarin@highereducationschool.com', label: 'Zarin' },
             { value: 'kanchan@highereducationschool.com', label: 'Kanchan' },
             { value: 'kirti@highereducationschool.com', label: 'Kirti' },
@@ -10620,7 +10828,7 @@ const formData = [
             id: 'status ',
             type: 'select',
             place: 'select status',
-            required: 'require',
+
             options: [
               { value: 'New', label: 'New' },
               { value: 'Cancel', label: 'Cancel' },
@@ -11014,7 +11222,7 @@ const formData = [
             name: ['customfields', 'send_fee_receipt'],
             type: 'radio',
             options: ['yes', 'no'],
-            required: 'require'
+
           },
           {
             key: 'studentId',
@@ -11023,7 +11231,7 @@ const formData = [
             place: 'StudentID',
             id: 'StudentID',
             type: 'studentId',
-            required: 'require'
+
           },
           {
             key: 'text',
@@ -11032,7 +11240,7 @@ const formData = [
             place: 'Student Name',
             id: 'full_name',
             type: 'text',
-            required: 'require'
+
           },
           {
             key: 'email',
@@ -11041,7 +11249,7 @@ const formData = [
             name: ['contact', 'email'],
             id: 'EmailID',
             type: 'email',
-            required: 'require'
+
           },
           {
             key: 'tel',
@@ -11050,7 +11258,7 @@ const formData = [
             place: 'Enter Phone Number',
             id: 'phone',
             type: 'tel',
-            required: 'require'
+
           },
           {
             key: 'text',
@@ -11059,7 +11267,7 @@ const formData = [
             place: 'Enter Father Name',
             id: 'Father Name',
             type: 'text',
-            required: 'require'
+
           },
           {
             key: 'text',
@@ -11068,32 +11276,32 @@ const formData = [
             place: 'Enter Mother Name',
             id: 'mother_name',
             type: 'text',
-            required: 'require'
+
           },
           {
             key: 'select',
             label: 'Session',
             name: ['customfields', 'session'],
-            place: 'eg: jan 20',
+            place: 'eg: JAN_20',
             id: 'Session',
             type: 'select',
-            options: [{ value: 'jan 20', label: 'Jan 20' },
-            { value: 'july 20', label: 'July 20' },
-            { value: 'jan 21', label: 'Jan 21' },
-            { value: 'july 21', label: 'July 21' },
-            { value: 'jan 22', label: 'Jan 22' },
-            { value: 'july 22', label: 'July 22' },
-            { value: 'jan 23', label: 'Jan 23' },
-            { value: 'july 23', label: 'July 23' },
-            { value: 'jan 24', label: 'Jan 24' },
-            { value: 'july 24', label: 'July 24' },
-            { value: 'jan 25', label: 'Jan 25' },
-            { value: 'july 25', label: 'July 25' },
-            { value: 'mar 23', label: 'mar 23' },
-            { value: 'apr 23', label: 'apr 23' },
-            { value: 'oct 23', label: 'oct 23' },
-            { value: 'nov 23', label: 'nov 23' },],
-            required: 'require'
+            options: [{ value: 'JAN_20', label: 'JAN_20' },
+            { value: 'JULY_20', label: 'JULY_20' },
+            { value: 'JAN_21', label: 'JAN_21' },
+            { value: 'JULY_21', label: 'JULY_21' },
+            { value: 'JAN_22', label: 'JAN_22' },
+            { value: 'JULY_22', label: 'JULY_22' },
+            { value: 'JAN_23', label: 'JAN_23' },
+            { value: 'JULY_23', label: 'JULY_23' },
+            { value: 'JAN_24', label: 'JAN_24' },
+            { value: 'JULY_24', label: 'JULY_24' },
+            { value: 'JAN_25', label: 'JAN_25' },
+            { value: 'JULY_25', label: 'JULY_25' },
+            { value: 'MAR_23', label: 'MAR_23' },
+            { value: 'APR_23', label: 'APR_23' },
+            { value: 'OCT_23', label: 'OCT_23' },
+            { value: 'NOV_23', label: 'NOV_23' },],
+
           },
           {
             key: 'select',
@@ -11102,7 +11310,7 @@ const formData = [
             id: 'SessionType',
             place: 'Enter Admission Type',
             type: 'select',
-            options: [{ value: 'Fresh', label: 'Fresh' },
+            options: [{ value: 'FRESH', label: 'FRESH' },
             { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
           },
 
@@ -11113,7 +11321,7 @@ const formData = [
             place: 'Enter Date of Birth',
             id: 'dob',
             type: 'date',
-            required: 'require'
+
           },
           {
             key: 'select',
@@ -11133,7 +11341,7 @@ const formData = [
             name: ['customfields', 'installment_type'],
             place: 'Installment Type',
             type: 'select',
-            required: 'require',
+
             options: [
               { value: '1st Installment/ New Admission', label: '1st Installment/ New Admission' },
               { value: '2nd Installment', label: '2nd Installment' },
@@ -11154,8 +11362,9 @@ const formData = [
             id: 'PaymentMode ',
             type: 'select',
             place: 'Select Payment Mode',
-            required: 'require',
+
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
+            { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
             { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
@@ -11166,77 +11375,82 @@ const formData = [
             name: ['customfields', 'counselor_email'],
             id: 'email ',
             type: 'select',
-            place: 'select counselor email',
-            required: 'require',
-            options: [{ value: 'zarin@highereducationschool.com', label: 'Zarin' },
-            { value: 'kanchan@highereducationschool.com', label: 'Kanchan' },
-            { value: 'kirti@highereducationschool.com', label: 'Kirti' },
-            { value: 'ramandeep@highereducationschool.com', label: 'Raman' },
-            { value: 'kavita@highereducationschool.com', label: 'kavita' },
-            { value: 'imra@highereducationschool.com', label: 'Imra' },
-            { value: 'Mahak@highereducationschool.com', label: 'Mahek' },
-            { value: 'abhay@highereducationschool.com', label: 'abhay' },
-            { value: 'swati@highereducationschool.com', label: 'swati' },
-            { value: 'gulshan@highereducationschool.com', label: 'Gulshan' },
-            { value: 'isha@highereducationschool.com', label: 'Isha' },
-            { value: 'Sakshi@highereducationschool.com', label: 'Sakshi' },
-            { value: 'aashita@highereducationschool.com', label: 'aashita' },
-            { value: 'pratibha@highereducationschool.com', label: 'pratibha' },
-            { value: 'shreyashi@highereducationschool.com', label: 'Shreyashi ' },
-            { value: 'apoorvasrivastava@distanceeducationschool.com', label: 'Apoorva_DES' },
-            { value: 'asma@distanceeducationschool.com', label: 'Asma_DES' },
-            { value: 'nehaprashar@distanceeducationschool.com', label: 'Neha_Prasher_DES' },
-            { value: 'priya@distanceeducationschool.com', label: 'Priya_DES' },
-            { value: 'diksha@distanceeducationschool.com', label: 'Diksha_DES' },
-            { value: 'abhilasha@distanceeducationschool.com', label: 'Abhilasha_Gupta_DES' },
-            { value: 'saher@distanceeducationschool.com', label: 'Saher_Khan_DES' },
-            { value: 'fiza@distanceeducationschool.com', label: 'Fiza_DES' },
-            { value: 'muskan@distanceeducationschool.com', label: 'Muskaan_DES' },
-            { value: 'aniruddh@distanceeducationschool.com', label: 'Aniruddh_DES' },
-            { value: 'deva@distanceeducationschool.com', label: 'Devendra_DES' },
-            { value: 'amritpal@distanceeducationschool.com', label: 'Amritpal_DES' },
-            { value: 'Salman@distanceeducationschool.com:', label: 'Salman_DES' },
-            { value: 'tariq@distanceeducationschool.com', label: 'Traiq_DES' },
-            { value: 'shivam@distanceeducationschool.com', label: 'Shivam_sharma_DES' },
-            { value: 'pushpa@distanceeducationschool.com', label: 'Puspa_DES' },
-            { value: 'zarin@distanceeducationschool.com', label: 'Zarin_DES' },
-            { value: 'kanchan@distanceeducationschool.com', label: 'Kanchan_DES' },
-            { value: 'manu@distanceeducationschool.com', label: 'Manu_DES' },
+            place: 'select counselor name',
+            options: [
+              // DES External email with name
+              { value: 'apoorvasrivastava@sode.co.in', label: 'Apoorva Srivastava' },
+              { value: 'nehaprashar@sode.co.in', label: 'Neha Prasher' },
+              { value: 'priya@sode.co.in', label: 'Priya Anand' },
+              { value: 'diksha@sode.co.in', label: 'Diksha Singh' },
+              { value: 'abhilasha@sode.co.in', label: 'Abhilasha Gupta' },
+              { value: 'saher@sode.co.in', label: 'Saher Khan' },
 
-            // Jain Team Emails
-            { value: 'a.anitha.ju@gmail.com', label: 'Anita_JU' },
-            { value: 'vaniruckmani.ju@gmail.com', label: 'Vani_Ruckmani_JU' },
-            { value: 'priyankapalle.ju@gmail.com', label: 'Priyanka_JU' },
-            { value: 'SwatiRamani.manipal@gmail.com', label: 'Swati_JU' },
+              // DES Internal email with name 
+              { value: 'muskan@distanceeducationschool.com', label: 'Muskaan ' },
+              { value: 'aniruddh@distanceeducationschool.com', label: 'Aniruddh Prakash' },
+              { value: 'amritpal@sode.co.in', label: 'Amritpal Singh' },
+              { value: 'salman@sode.co.in', label: 'Salman' },
+              { value: 'tariq@sode.co.in', label: 'Tariq Hasan' },
+              { value: 'shivam@sode.co.in', label: 'Shivam sharma' },
+              { value: 'pushpa@sode.co.in', label: 'Pushpa Pramanik' },
 
-            // Manipal Team Email
-            { value: 'ankitakumari.manipal@gmail.com', label: 'Ankita_MU' },
-            { value: 'medhahandoo.manipal@gmail.com', label: 'Medha_MU' },
-            { value: 'amreen.manipal@gmail.com', label: 'Amreen_MU' },
+              // DES Internal email with name 
+              { value: 'anurag@distanceeducationschool.com', label: 'Anurag Yadav' },
+              { value: 'kavitakumari@sode.co.in', label: 'Kavita Kumari' },
+              { value: 'rupal@sode.co.in', label: 'Rupal Gautam' },
+              { value: 'deva@sode.co.in', label: 'Devendra' },
+              { value: 'manshi@sode.co.in', label: 'Manshi Kem' },
 
-            // Support Team Email
-            { value: 'rajesh@distanceeducationschool.com', label: 'Rajesh_sir' },
-            { value: 'manisha@distanceeducationschool.com', label: 'Manisha' },
-            { value: 'admin@distanceeducationschool.com', label: 'Nouman_sir' },
-            { value: 'sandy@distanceeducationschool.com', label: 'Sandy' },
-            { value: 'neha@distanceeducationschool.com', label: 'Neha' },
-            { value: 'yashpriya@distanceeducationschool.com', label: 'Yash_Priya' },
-            { value: 'kavitahaldar@distanceeducationschool.com', label: 'kavitahaldar' },
-            { value: 'ifla@distanceeducationschool.com', label: 'Ifla' },
-            { value: 'shalu@distanceeducationschool.com', label: 'Shalu' },
-            { value: 'zainubia@distanceeducationschool.com', label: 'zainbuia' },
-            { value: 'pallovi@distanceeducationschool.com', label: 'Pallovi' },
-            { value: 'kavitakumari@distanceeducationschool.com', label: 'Kavita_Kumari' },
-            { value: 'manshi@distanceeducationschool.com', label: 'Mansi' },
-            { value: 'Bhavya.manipal@gmail.com', label: 'Bhavya' },
-            { value: 'anurag@distanceeducationschool.com', label: 'Anuraj' },
-            { value: 'rupal@distanceeducationschool.com', label: 'Rupal' },
-            //B2B Team Email
-            { value: 'spuhelpdesk@gmail.com', label: 'Binny' },
-            { value: 'ruchika.spu@gmail.com', label: 'Ruchika' },
-            { value: 'lalit@distanceeducationschool.com', label: 'Lalit_DES' },
-            { value: 'lalit.spu@gmail.com', label: 'Lalit' },
-            { value: 'ramiz.spu@gmail.com', label: 'Ramiz' }
+              // DES - INTERNATIONAL email with name 
+              { value: 'zarin@distanceeducationschool.com', label: 'Zarin Badar' },
+
+              // HES team email with name 
+              { value: 'kanchan@highereducationschool.com', label: 'Kanchan Sharma' },
+              { value: 'kirti@highereducationschool.com', label: 'Kirti Dubey' },
+              { value: 'ramandeep@highereducationschool.com', label: 'Ramandeep Kaur' },
+              { value: 'kavita@highereducationschool.com', label: 'Kavita Yadav' },
+              { value: 'imra@highereducationschool.com', label: 'Imra Khan' },
+              { value: 'mahak@highereducationschool.com', label: 'Mahek' },
+              { value: 'abhay@highereducationschool.com', label: 'Abhay Dubey' },
+              { value: 'swati@highereducationschool.com', label: 'Swati' },
+              { value: 'gulshan@highereducationschool.com', label: 'Gulshan Nayyar' },
+              { value: 'isha@highereducationschool.com', label: 'Isha Jaiswal' },
+              { value: 'sakshi@highereducationschool.com', label: 'Sakshi Arora' },
+
+              // Jain team email with name 
+              { value: 'anitha@sode.co.in', label: 'A.Anitha' },
+              { value: 'vani@sode.co.in', label: 'Vani Ruckmani' },
+
+              // Manipal team email with name 
+              { value: 'SwatiRamani.manipal@gmail.com', label: 'Swati Ramani' },
+              { value: 'ankitakumar@sode.co.in', label: 'Ankita Kumari' },
+              { value: 'nidhi@sode.co.in', label: 'Nidhi' },
+              { value: 'amreen@sode.co.in', label: 'Amreen ALI Khan' },
+              { value: 'umar@sode.co.in', label: 'MD Umar' },
+              { value: 'nehagupta@sode.co.in', label: 'Neha Gupta' },
+              { value: 'pawankumar@sode.co.in', label: 'Pawan Kumar' },
+              { value: 'bhavya@sode.co.in', label: 'Bhavya' },
+
+              // ALL DES && HES team email with name 
+              { value: 'rajesh@distanceeducationschool.com', label: 'Rajesh Sir' },
+              { value: 'manisha@distanceeducationschool.com', label: 'Manisha Yadav' },
+              { value: 'admin@distanceeducationschool.com', label: 'Nouman Sir' },
+              { value: 'sandy@distanceeducationschool.com', label: 'Sandy' },
+              { value: 'neha@distanceeducationschool.com', label: 'Neha Raj' },
+              { value: 'yashpriya@distanceeducationschool.com', label: 'Yash Priya' },
+              { value: 'kavitahaldar@distanceeducationschool.com', label: 'Kavita Haldar' },
+              { value: 'ifla@distanceeducationschool.com', label: 'Ifla' },
+              { value: 'shalu@distanceeducationschool.com', label: 'Shalu' },
+              { value: 'zainubia@distanceeducationschool.com', label: 'Zainbuia' },
+              { value: 'pallovi@distanceeducationschool.com', label: 'Pallovi' },
+              { value: 'hansi@distanceeducationschool.com', label: 'Hansi' },
+              { value: 'shristi@distanceeducationschool.com', label: 'Shristi' },
+              { value: 'aashita@highereducationschool.com', label: 'Aashita' },
+              { value: 'pratibha@highereducationschool.com', label: 'Pratibha' },
+              { value: 'shreyashi@highereducationschool.com', label: 'Shreyashi' },
+              { value: 'spuhelpdesk@gmail.com', label: 'Binny' },
+              { value: 'ruchika.spu@gmail.com', label: 'Ruchika' },
+              { value: 'ramiz.spu@gmail.com', label: 'Ramiz' },
             ],
           },
           {
@@ -11246,7 +11460,7 @@ const formData = [
             id: 'status ',
             type: 'select',
             place: 'select status',
-            required: 'require',
+
             options: [
               { value: 'New', label: 'New' },
               { value: 'Cancel', label: 'Cancel' },
@@ -11269,6 +11483,13 @@ const formData = [
             place: 'Enter your remark',
             id: 'remark',
             type: 'textarea',
+          },
+          {
+            key: 'date',
+            label: 'Created At',
+            name: 'created',
+            id: 'created',
+            type: 'date',
           },
         ],
       },
@@ -11639,7 +11860,7 @@ const formData = [
             name: ['customfields', 'send_fee_receipt'],
             type: 'radio',
             options: ['yes', 'no'],
-            required: 'require'
+
           },
           {
             key: 'studentId',
@@ -11648,7 +11869,7 @@ const formData = [
             place: 'StudentID',
             id: 'StudentID',
             type: 'studentId',
-            required: 'require'
+
           },
           {
             key: 'text',
@@ -11657,7 +11878,7 @@ const formData = [
             place: 'Student Name',
             id: 'full_name',
             type: 'text',
-            required: 'require'
+
           },
           {
             key: 'email',
@@ -11666,7 +11887,7 @@ const formData = [
             name: ['contact', 'email'],
             id: 'EmailID',
             type: 'email',
-            required: 'require'
+
           },
           {
             key: 'tel',
@@ -11675,7 +11896,7 @@ const formData = [
             place: 'Enter Phone Number',
             id: 'phone',
             type: 'tel',
-            required: 'require'
+
           },
           {
             key: 'text',
@@ -11684,7 +11905,7 @@ const formData = [
             place: 'Enter Father Name',
             id: 'Father Name',
             type: 'text',
-            required: 'require'
+
           },
           {
             key: 'text',
@@ -11693,32 +11914,32 @@ const formData = [
             place: 'Enter Mother Name',
             id: 'mother_name',
             type: 'text',
-            required: 'require'
+
           },
           {
             key: 'select',
             label: 'Session',
             name: ['customfields', 'session'],
-            place: 'eg: jan 20',
+            place: 'eg: JAN_20',
             id: 'Session',
             type: 'select',
-            options: [{ value: 'jan 20', label: 'Jan 20' },
-            { value: 'july 20', label: 'July 20' },
-            { value: 'jan 21', label: 'Jan 21' },
-            { value: 'july 21', label: 'July 21' },
-            { value: 'jan 22', label: 'Jan 22' },
-            { value: 'july 22', label: 'July 22' },
-            { value: 'jan 23', label: 'Jan 23' },
-            { value: 'july 23', label: 'July 23' },
-            { value: 'jan 24', label: 'Jan 24' },
-            { value: 'july 24', label: 'July 24' },
-            { value: 'jan 25', label: 'Jan 25' },
-            { value: 'july 25', label: 'July 25' },
-            { value: 'mar 23', label: 'mar 23' },
-            { value: 'apr 23', label: 'apr 23' },
-            { value: 'oct 23', label: 'oct 23' },
-            { value: 'nov 23', label: 'nov 23' },],
-            required: 'require'
+            options: [{ value: 'JAN_20', label: 'JAN_20' },
+            { value: 'JULY_20', label: 'JULY_20' },
+            { value: 'JAN_21', label: 'JAN_21' },
+            { value: 'JULY_21', label: 'JULY_21' },
+            { value: 'JAN_22', label: 'JAN_22' },
+            { value: 'JULY_22', label: 'JULY_22' },
+            { value: 'JAN_23', label: 'JAN_23' },
+            { value: 'JULY_23', label: 'JULY_23' },
+            { value: 'JAN_24', label: 'JAN_24' },
+            { value: 'JULY_24', label: 'JULY_24' },
+            { value: 'JAN_25', label: 'JAN_25' },
+            { value: 'JULY_25', label: 'JULY_25' },
+            { value: 'MAR_23', label: 'MAR_23' },
+            { value: 'APR_23', label: 'APR_23' },
+            { value: 'OCT_23', label: 'OCT_23' },
+            { value: 'NOV_23', label: 'NOV_23' },],
+
           },
           {
             key: 'select',
@@ -11727,7 +11948,7 @@ const formData = [
             id: 'SessionType',
             place: 'Enter Admission Type',
             type: 'select',
-            options: [{ value: 'Fresh', label: 'Fresh' },
+            options: [{ value: 'FRESH', label: 'FRESH' },
             { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
           },
 
@@ -11738,7 +11959,7 @@ const formData = [
             place: 'Enter Date of Birth',
             id: 'dob',
             type: 'date',
-            required: 'require'
+
           },
           {
             key: 'select',
@@ -11758,7 +11979,7 @@ const formData = [
             name: ['customfields', 'installment_type'],
             place: 'Installment Type',
             type: 'select',
-            required: 'require',
+
             options: [
               { value: '1st Installment/ New Admission', label: '1st Installment/ New Admission' },
               { value: '2nd Installment', label: '2nd Installment' },
@@ -11779,8 +12000,9 @@ const formData = [
             id: 'PaymentMode ',
             type: 'select',
             place: 'Select Payment Mode',
-            required: 'require',
+
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
+            { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
             { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
@@ -11791,77 +12013,82 @@ const formData = [
             name: ['customfields', 'counselor_email'],
             id: 'email ',
             type: 'select',
-            place: 'select counselor email',
-            required: 'require',
-            options: [{ value: 'zarin@highereducationschool.com', label: 'Zarin' },
-            { value: 'kanchan@highereducationschool.com', label: 'Kanchan' },
-            { value: 'kirti@highereducationschool.com', label: 'Kirti' },
-            { value: 'ramandeep@highereducationschool.com', label: 'Raman' },
-            { value: 'kavita@highereducationschool.com', label: 'kavita' },
-            { value: 'imra@highereducationschool.com', label: 'Imra' },
-            { value: 'Mahak@highereducationschool.com', label: 'Mahek' },
-            { value: 'abhay@highereducationschool.com', label: 'abhay' },
-            { value: 'swati@highereducationschool.com', label: 'swati' },
-            { value: 'gulshan@highereducationschool.com', label: 'Gulshan' },
-            { value: 'isha@highereducationschool.com', label: 'Isha' },
-            { value: 'Sakshi@highereducationschool.com', label: 'Sakshi' },
-            { value: 'aashita@highereducationschool.com', label: 'aashita' },
-            { value: 'pratibha@highereducationschool.com', label: 'pratibha' },
-            { value: 'shreyashi@highereducationschool.com', label: 'Shreyashi ' },
-            { value: 'apoorvasrivastava@distanceeducationschool.com', label: 'Apoorva_DES' },
-            { value: 'asma@distanceeducationschool.com', label: 'Asma_DES' },
-            { value: 'nehaprashar@distanceeducationschool.com', label: 'Neha_Prasher_DES' },
-            { value: 'priya@distanceeducationschool.com', label: 'Priya_DES' },
-            { value: 'diksha@distanceeducationschool.com', label: 'Diksha_DES' },
-            { value: 'abhilasha@distanceeducationschool.com', label: 'Abhilasha_Gupta_DES' },
-            { value: 'saher@distanceeducationschool.com', label: 'Saher_Khan_DES' },
-            { value: 'fiza@distanceeducationschool.com', label: 'Fiza_DES' },
-            { value: 'muskan@distanceeducationschool.com', label: 'Muskaan_DES' },
-            { value: 'aniruddh@distanceeducationschool.com', label: 'Aniruddh_DES' },
-            { value: 'deva@distanceeducationschool.com', label: 'Devendra_DES' },
-            { value: 'amritpal@distanceeducationschool.com', label: 'Amritpal_DES' },
-            { value: 'Salman@distanceeducationschool.com:', label: 'Salman_DES' },
-            { value: 'tariq@distanceeducationschool.com', label: 'Traiq_DES' },
-            { value: 'shivam@distanceeducationschool.com', label: 'Shivam_sharma_DES' },
-            { value: 'pushpa@distanceeducationschool.com', label: 'Puspa_DES' },
-            { value: 'zarin@distanceeducationschool.com', label: 'Zarin_DES' },
-            { value: 'kanchan@distanceeducationschool.com', label: 'Kanchan_DES' },
-            { value: 'manu@distanceeducationschool.com', label: 'Manu_DES' },
+            place: 'select counselor name',
+            options: [
+              // DES External email with name
+              { value: 'apoorvasrivastava@sode.co.in', label: 'Apoorva Srivastava' },
+              { value: 'nehaprashar@sode.co.in', label: 'Neha Prasher' },
+              { value: 'priya@sode.co.in', label: 'Priya Anand' },
+              { value: 'diksha@sode.co.in', label: 'Diksha Singh' },
+              { value: 'abhilasha@sode.co.in', label: 'Abhilasha Gupta' },
+              { value: 'saher@sode.co.in', label: 'Saher Khan' },
 
-            // Jain Team Emails
-            { value: 'a.anitha.ju@gmail.com', label: 'Anita_JU' },
-            { value: 'vaniruckmani.ju@gmail.com', label: 'Vani_Ruckmani_JU' },
-            { value: 'priyankapalle.ju@gmail.com', label: 'Priyanka_JU' },
-            { value: 'SwatiRamani.manipal@gmail.com', label: 'Swati_JU' },
+              // DES Internal email with name 
+              { value: 'muskan@distanceeducationschool.com', label: 'Muskaan ' },
+              { value: 'aniruddh@distanceeducationschool.com', label: 'Aniruddh Prakash' },
+              { value: 'amritpal@sode.co.in', label: 'Amritpal Singh' },
+              { value: 'salman@sode.co.in', label: 'Salman' },
+              { value: 'tariq@sode.co.in', label: 'Tariq Hasan' },
+              { value: 'shivam@sode.co.in', label: 'Shivam sharma' },
+              { value: 'pushpa@sode.co.in', label: 'Pushpa Pramanik' },
 
-            // Manipal Team Email
-            { value: 'ankitakumari.manipal@gmail.com', label: 'Ankita_MU' },
-            { value: 'medhahandoo.manipal@gmail.com', label: 'Medha_MU' },
-            { value: 'amreen.manipal@gmail.com', label: 'Amreen_MU' },
+              // DES Internal email with name 
+              { value: 'anurag@distanceeducationschool.com', label: 'Anurag Yadav' },
+              { value: 'kavitakumari@sode.co.in', label: 'Kavita Kumari' },
+              { value: 'rupal@sode.co.in', label: 'Rupal Gautam' },
+              { value: 'deva@sode.co.in', label: 'Devendra' },
+              { value: 'manshi@sode.co.in', label: 'Manshi Kem' },
 
-            // Support Team Email
-            { value: 'rajesh@distanceeducationschool.com', label: 'Rajesh_sir' },
-            { value: 'manisha@distanceeducationschool.com', label: 'Manisha' },
-            { value: 'admin@distanceeducationschool.com', label: 'Nouman_sir' },
-            { value: 'sandy@distanceeducationschool.com', label: 'Sandy' },
-            { value: 'neha@distanceeducationschool.com', label: 'Neha' },
-            { value: 'yashpriya@distanceeducationschool.com', label: 'Yash_Priya' },
-            { value: 'kavitahaldar@distanceeducationschool.com', label: 'kavitahaldar' },
-            { value: 'ifla@distanceeducationschool.com', label: 'Ifla' },
-            { value: 'shalu@distanceeducationschool.com', label: 'Shalu' },
-            { value: 'zainubia@distanceeducationschool.com', label: 'zainbuia' },
-            { value: 'pallovi@distanceeducationschool.com', label: 'Pallovi' },
-            { value: 'kavitakumari@distanceeducationschool.com', label: 'Kavita_Kumari' },
-            { value: 'manshi@distanceeducationschool.com', label: 'Mansi' },
-            { value: 'Bhavya.manipal@gmail.com', label: 'Bhavya' },
-            { value: 'anurag@distanceeducationschool.com', label: 'Anuraj' },
-            { value: 'rupal@distanceeducationschool.com', label: 'Rupal' },
-            //B2B Team Email
-            { value: 'spuhelpdesk@gmail.com', label: 'Binny' },
-            { value: 'ruchika.spu@gmail.com', label: 'Ruchika' },
-            { value: 'lalit@distanceeducationschool.com', label: 'Lalit_DES' },
-            { value: 'lalit.spu@gmail.com', label: 'Lalit' },
-            { value: 'ramiz.spu@gmail.com', label: 'Ramiz' }
+              // DES - INTERNATIONAL email with name 
+              { value: 'zarin@distanceeducationschool.com', label: 'Zarin Badar' },
+
+              // HES team email with name 
+              { value: 'kanchan@highereducationschool.com', label: 'Kanchan Sharma' },
+              { value: 'kirti@highereducationschool.com', label: 'Kirti Dubey' },
+              { value: 'ramandeep@highereducationschool.com', label: 'Ramandeep Kaur' },
+              { value: 'kavita@highereducationschool.com', label: 'Kavita Yadav' },
+              { value: 'imra@highereducationschool.com', label: 'Imra Khan' },
+              { value: 'mahak@highereducationschool.com', label: 'Mahek' },
+              { value: 'abhay@highereducationschool.com', label: 'Abhay Dubey' },
+              { value: 'swati@highereducationschool.com', label: 'Swati' },
+              { value: 'gulshan@highereducationschool.com', label: 'Gulshan Nayyar' },
+              { value: 'isha@highereducationschool.com', label: 'Isha Jaiswal' },
+              { value: 'sakshi@highereducationschool.com', label: 'Sakshi Arora' },
+
+              // Jain team email with name 
+              { value: 'anitha@sode.co.in', label: 'A.Anitha' },
+              { value: 'vani@sode.co.in', label: 'Vani Ruckmani' },
+
+              // Manipal team email with name 
+              { value: 'SwatiRamani.manipal@gmail.com', label: 'Swati Ramani' },
+              { value: 'ankitakumar@sode.co.in', label: 'Ankita Kumari' },
+              { value: 'nidhi@sode.co.in', label: 'Nidhi' },
+              { value: 'amreen@sode.co.in', label: 'Amreen ALI Khan' },
+              { value: 'umar@sode.co.in', label: 'MD Umar' },
+              { value: 'nehagupta@sode.co.in', label: 'Neha Gupta' },
+              { value: 'pawankumar@sode.co.in', label: 'Pawan Kumar' },
+              { value: 'bhavya@sode.co.in', label: 'Bhavya' },
+
+              // ALL DES && HES team email with name 
+              { value: 'rajesh@distanceeducationschool.com', label: 'Rajesh Sir' },
+              { value: 'manisha@distanceeducationschool.com', label: 'Manisha Yadav' },
+              { value: 'admin@distanceeducationschool.com', label: 'Nouman Sir' },
+              { value: 'sandy@distanceeducationschool.com', label: 'Sandy' },
+              { value: 'neha@distanceeducationschool.com', label: 'Neha Raj' },
+              { value: 'yashpriya@distanceeducationschool.com', label: 'Yash Priya' },
+              { value: 'kavitahaldar@distanceeducationschool.com', label: 'Kavita Haldar' },
+              { value: 'ifla@distanceeducationschool.com', label: 'Ifla' },
+              { value: 'shalu@distanceeducationschool.com', label: 'Shalu' },
+              { value: 'zainubia@distanceeducationschool.com', label: 'Zainbuia' },
+              { value: 'pallovi@distanceeducationschool.com', label: 'Pallovi' },
+              { value: 'hansi@distanceeducationschool.com', label: 'Hansi' },
+              { value: 'shristi@distanceeducationschool.com', label: 'Shristi' },
+              { value: 'aashita@highereducationschool.com', label: 'Aashita' },
+              { value: 'pratibha@highereducationschool.com', label: 'Pratibha' },
+              { value: 'shreyashi@highereducationschool.com', label: 'Shreyashi' },
+              { value: 'spuhelpdesk@gmail.com', label: 'Binny' },
+              { value: 'ruchika.spu@gmail.com', label: 'Ruchika' },
+              { value: 'ramiz.spu@gmail.com', label: 'Ramiz' },
             ],
           },
           {
@@ -11871,7 +12098,7 @@ const formData = [
             id: 'status ',
             type: 'select',
             place: 'select status',
-            required: 'require',
+
             options: [
               { value: 'New', label: 'New' },
               { value: 'Cancel', label: 'Cancel' },
@@ -11894,6 +12121,13 @@ const formData = [
             place: 'Enter your remark',
             id: 'remark',
             type: 'textarea',
+          },
+          {
+            key: 'date',
+            label: 'Created At',
+            name: 'created',
+            id: 'created',
+            type: 'date',
           },
         ],
       },
@@ -12274,7 +12508,7 @@ const formData = [
             name: ['customfields', 'send_fee_receipt'],
             type: 'radio',
             options: ['yes', 'no'],
-            required: 'require'
+
           },
           {
             key: 'studentId',
@@ -12283,7 +12517,7 @@ const formData = [
             place: 'StudentID',
             id: 'StudentID',
             type: 'studentId',
-            required: 'require'
+
           },
           {
             key: 'text',
@@ -12292,7 +12526,7 @@ const formData = [
             place: 'Student Name',
             id: 'full_name',
             type: 'text',
-            required: 'require'
+
           },
           {
             key: 'email',
@@ -12301,7 +12535,7 @@ const formData = [
             name: ['contact', 'email'],
             id: 'EmailID',
             type: 'email',
-            required: 'require'
+
           },
           {
             key: 'tel',
@@ -12310,7 +12544,7 @@ const formData = [
             place: 'Enter Phone Number',
             id: 'phone',
             type: 'tel',
-            required: 'require'
+
           },
           {
             key: 'text',
@@ -12319,7 +12553,7 @@ const formData = [
             place: 'Enter Father Name',
             id: 'Father Name',
             type: 'text',
-            required: 'require'
+
           },
           {
             key: 'text',
@@ -12328,32 +12562,32 @@ const formData = [
             place: 'Enter Mother Name',
             id: 'mother_name',
             type: 'text',
-            required: 'require'
+
           },
           {
             key: 'select',
             label: 'Session',
             name: ['customfields', 'session'],
-            place: 'eg: jan 20',
+            place: 'eg: JAN_20',
             id: 'Session',
             type: 'select',
-            options: [{ value: 'jan 20', label: 'Jan 20' },
-            { value: 'july 20', label: 'July 20' },
-            { value: 'jan 21', label: 'Jan 21' },
-            { value: 'july 21', label: 'July 21' },
-            { value: 'jan 22', label: 'Jan 22' },
-            { value: 'july 22', label: 'July 22' },
-            { value: 'jan 23', label: 'Jan 23' },
-            { value: 'july 23', label: 'July 23' },
-            { value: 'jan 24', label: 'Jan 24' },
-            { value: 'july 24', label: 'July 24' },
-            { value: 'jan 25', label: 'Jan 25' },
-            { value: 'july 25', label: 'July 25' },
-            { value: 'mar 23', label: 'mar 23' },
-            { value: 'apr 23', label: 'apr 23' },
-            { value: 'oct 23', label: 'oct 23' },
-            { value: 'nov 23', label: 'nov 23' },],
-            required: 'require'
+            options: [{ value: 'JAN_20', label: 'JAN_20' },
+            { value: 'JULY_20', label: 'JULY_20' },
+            { value: 'JAN_21', label: 'JAN_21' },
+            { value: 'JULY_21', label: 'JULY_21' },
+            { value: 'JAN_22', label: 'JAN_22' },
+            { value: 'JULY_22', label: 'JULY_22' },
+            { value: 'JAN_23', label: 'JAN_23' },
+            { value: 'JULY_23', label: 'JULY_23' },
+            { value: 'JAN_24', label: 'JAN_24' },
+            { value: 'JULY_24', label: 'JULY_24' },
+            { value: 'JAN_25', label: 'JAN_25' },
+            { value: 'JULY_25', label: 'JULY_25' },
+            { value: 'MAR_23', label: 'MAR_23' },
+            { value: 'APR_23', label: 'APR_23' },
+            { value: 'OCT_23', label: 'OCT_23' },
+            { value: 'NOV_23', label: 'NOV_23' },],
+
           },
           {
             key: 'select',
@@ -12362,7 +12596,7 @@ const formData = [
             id: 'SessionType',
             place: 'Enter Admission Type',
             type: 'select',
-            options: [{ value: 'Fresh', label: 'Fresh' },
+            options: [{ value: 'FRESH', label: 'FRESH' },
             { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
           },
 
@@ -12373,7 +12607,7 @@ const formData = [
             place: 'Enter Date of Birth',
             id: 'dob',
             type: 'date',
-            required: 'require'
+
           },
           {
             key: 'select',
@@ -12393,7 +12627,7 @@ const formData = [
             name: ['customfields', 'installment_type'],
             place: 'Installment Type',
             type: 'select',
-            required: 'require',
+
             options: [
               { value: '1st Installment/ New Admission', label: '1st Installment/ New Admission' },
               { value: '2nd Installment', label: '2nd Installment' },
@@ -12414,8 +12648,9 @@ const formData = [
             id: 'PaymentMode ',
             type: 'select',
             place: 'Select Payment Mode',
-            required: 'require',
+
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
+            { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
             { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
@@ -12426,77 +12661,82 @@ const formData = [
             name: ['customfields', 'counselor_email'],
             id: 'email ',
             type: 'select',
-            place: 'select counselor email',
-            required: 'require',
-            options: [{ value: 'zarin@highereducationschool.com', label: 'Zarin' },
-            { value: 'kanchan@highereducationschool.com', label: 'Kanchan' },
-            { value: 'kirti@highereducationschool.com', label: 'Kirti' },
-            { value: 'ramandeep@highereducationschool.com', label: 'Raman' },
-            { value: 'kavita@highereducationschool.com', label: 'kavita' },
-            { value: 'imra@highereducationschool.com', label: 'Imra' },
-            { value: 'Mahak@highereducationschool.com', label: 'Mahek' },
-            { value: 'abhay@highereducationschool.com', label: 'abhay' },
-            { value: 'swati@highereducationschool.com', label: 'swati' },
-            { value: 'gulshan@highereducationschool.com', label: 'Gulshan' },
-            { value: 'isha@highereducationschool.com', label: 'Isha' },
-            { value: 'Sakshi@highereducationschool.com', label: 'Sakshi' },
-            { value: 'aashita@highereducationschool.com', label: 'aashita' },
-            { value: 'pratibha@highereducationschool.com', label: 'pratibha' },
-            { value: 'shreyashi@highereducationschool.com', label: 'Shreyashi ' },
-            { value: 'apoorvasrivastava@distanceeducationschool.com', label: 'Apoorva_DES' },
-            { value: 'asma@distanceeducationschool.com', label: 'Asma_DES' },
-            { value: 'nehaprashar@distanceeducationschool.com', label: 'Neha_Prasher_DES' },
-            { value: 'priya@distanceeducationschool.com', label: 'Priya_DES' },
-            { value: 'diksha@distanceeducationschool.com', label: 'Diksha_DES' },
-            { value: 'abhilasha@distanceeducationschool.com', label: 'Abhilasha_Gupta_DES' },
-            { value: 'saher@distanceeducationschool.com', label: 'Saher_Khan_DES' },
-            { value: 'fiza@distanceeducationschool.com', label: 'Fiza_DES' },
-            { value: 'muskan@distanceeducationschool.com', label: 'Muskaan_DES' },
-            { value: 'aniruddh@distanceeducationschool.com', label: 'Aniruddh_DES' },
-            { value: 'deva@distanceeducationschool.com', label: 'Devendra_DES' },
-            { value: 'amritpal@distanceeducationschool.com', label: 'Amritpal_DES' },
-            { value: 'Salman@distanceeducationschool.com:', label: 'Salman_DES' },
-            { value: 'tariq@distanceeducationschool.com', label: 'Traiq_DES' },
-            { value: 'shivam@distanceeducationschool.com', label: 'Shivam_sharma_DES' },
-            { value: 'pushpa@distanceeducationschool.com', label: 'Puspa_DES' },
-            { value: 'zarin@distanceeducationschool.com', label: 'Zarin_DES' },
-            { value: 'kanchan@distanceeducationschool.com', label: 'Kanchan_DES' },
-            { value: 'manu@distanceeducationschool.com', label: 'Manu_DES' },
+            place: 'select counselor name',
+            options: [
+              // DES External email with name
+              { value: 'apoorvasrivastava@sode.co.in', label: 'Apoorva Srivastava' },
+              { value: 'nehaprashar@sode.co.in', label: 'Neha Prasher' },
+              { value: 'priya@sode.co.in', label: 'Priya Anand' },
+              { value: 'diksha@sode.co.in', label: 'Diksha Singh' },
+              { value: 'abhilasha@sode.co.in', label: 'Abhilasha Gupta' },
+              { value: 'saher@sode.co.in', label: 'Saher Khan' },
 
-            // Jain Team Emails
-            { value: 'a.anitha.ju@gmail.com', label: 'Anita_JU' },
-            { value: 'vaniruckmani.ju@gmail.com', label: 'Vani_Ruckmani_JU' },
-            { value: 'priyankapalle.ju@gmail.com', label: 'Priyanka_JU' },
-            { value: 'SwatiRamani.manipal@gmail.com', label: 'Swati_JU' },
+              // DES Internal email with name 
+              { value: 'muskan@distanceeducationschool.com', label: 'Muskaan ' },
+              { value: 'aniruddh@distanceeducationschool.com', label: 'Aniruddh Prakash' },
+              { value: 'amritpal@sode.co.in', label: 'Amritpal Singh' },
+              { value: 'salman@sode.co.in', label: 'Salman' },
+              { value: 'tariq@sode.co.in', label: 'Tariq Hasan' },
+              { value: 'shivam@sode.co.in', label: 'Shivam sharma' },
+              { value: 'pushpa@sode.co.in', label: 'Pushpa Pramanik' },
 
-            // Manipal Team Email
-            { value: 'ankitakumari.manipal@gmail.com', label: 'Ankita_MU' },
-            { value: 'medhahandoo.manipal@gmail.com', label: 'Medha_MU' },
-            { value: 'amreen.manipal@gmail.com', label: 'Amreen_MU' },
+              // DES Internal email with name 
+              { value: 'anurag@distanceeducationschool.com', label: 'Anurag Yadav' },
+              { value: 'kavitakumari@sode.co.in', label: 'Kavita Kumari' },
+              { value: 'rupal@sode.co.in', label: 'Rupal Gautam' },
+              { value: 'deva@sode.co.in', label: 'Devendra' },
+              { value: 'manshi@sode.co.in', label: 'Manshi Kem' },
 
-            // Support Team Email
-            { value: 'rajesh@distanceeducationschool.com', label: 'Rajesh_sir' },
-            { value: 'manisha@distanceeducationschool.com', label: 'Manisha' },
-            { value: 'admin@distanceeducationschool.com', label: 'Nouman_sir' },
-            { value: 'sandy@distanceeducationschool.com', label: 'Sandy' },
-            { value: 'neha@distanceeducationschool.com', label: 'Neha' },
-            { value: 'yashpriya@distanceeducationschool.com', label: 'Yash_Priya' },
-            { value: 'kavitahaldar@distanceeducationschool.com', label: 'kavitahaldar' },
-            { value: 'ifla@distanceeducationschool.com', label: 'Ifla' },
-            { value: 'shalu@distanceeducationschool.com', label: 'Shalu' },
-            { value: 'zainubia@distanceeducationschool.com', label: 'zainbuia' },
-            { value: 'pallovi@distanceeducationschool.com', label: 'Pallovi' },
-            { value: 'kavitakumari@distanceeducationschool.com', label: 'Kavita_Kumari' },
-            { value: 'manshi@distanceeducationschool.com', label: 'Mansi' },
-            { value: 'Bhavya.manipal@gmail.com', label: 'Bhavya' },
-            { value: 'anurag@distanceeducationschool.com', label: 'Anuraj' },
-            { value: 'rupal@distanceeducationschool.com', label: 'Rupal' },
-            //B2B Team Email
-            { value: 'spuhelpdesk@gmail.com', label: 'Binny' },
-            { value: 'ruchika.spu@gmail.com', label: 'Ruchika' },
-            { value: 'lalit@distanceeducationschool.com', label: 'Lalit_DES' },
-            { value: 'lalit.spu@gmail.com', label: 'Lalit' },
-            { value: 'ramiz.spu@gmail.com', label: 'Ramiz' }
+              // DES - INTERNATIONAL email with name 
+              { value: 'zarin@distanceeducationschool.com', label: 'Zarin Badar' },
+
+              // HES team email with name 
+              { value: 'kanchan@highereducationschool.com', label: 'Kanchan Sharma' },
+              { value: 'kirti@highereducationschool.com', label: 'Kirti Dubey' },
+              { value: 'ramandeep@highereducationschool.com', label: 'Ramandeep Kaur' },
+              { value: 'kavita@highereducationschool.com', label: 'Kavita Yadav' },
+              { value: 'imra@highereducationschool.com', label: 'Imra Khan' },
+              { value: 'mahak@highereducationschool.com', label: 'Mahek' },
+              { value: 'abhay@highereducationschool.com', label: 'Abhay Dubey' },
+              { value: 'swati@highereducationschool.com', label: 'Swati' },
+              { value: 'gulshan@highereducationschool.com', label: 'Gulshan Nayyar' },
+              { value: 'isha@highereducationschool.com', label: 'Isha Jaiswal' },
+              { value: 'sakshi@highereducationschool.com', label: 'Sakshi Arora' },
+
+              // Jain team email with name 
+              { value: 'anitha@sode.co.in', label: 'A.Anitha' },
+              { value: 'vani@sode.co.in', label: 'Vani Ruckmani' },
+
+              // Manipal team email with name 
+              { value: 'SwatiRamani.manipal@gmail.com', label: 'Swati Ramani' },
+              { value: 'ankitakumar@sode.co.in', label: 'Ankita Kumari' },
+              { value: 'nidhi@sode.co.in', label: 'Nidhi' },
+              { value: 'amreen@sode.co.in', label: 'Amreen ALI Khan' },
+              { value: 'umar@sode.co.in', label: 'MD Umar' },
+              { value: 'nehagupta@sode.co.in', label: 'Neha Gupta' },
+              { value: 'pawankumar@sode.co.in', label: 'Pawan Kumar' },
+              { value: 'bhavya@sode.co.in', label: 'Bhavya' },
+
+              // ALL DES && HES team email with name 
+              { value: 'rajesh@distanceeducationschool.com', label: 'Rajesh Sir' },
+              { value: 'manisha@distanceeducationschool.com', label: 'Manisha Yadav' },
+              { value: 'admin@distanceeducationschool.com', label: 'Nouman Sir' },
+              { value: 'sandy@distanceeducationschool.com', label: 'Sandy' },
+              { value: 'neha@distanceeducationschool.com', label: 'Neha Raj' },
+              { value: 'yashpriya@distanceeducationschool.com', label: 'Yash Priya' },
+              { value: 'kavitahaldar@distanceeducationschool.com', label: 'Kavita Haldar' },
+              { value: 'ifla@distanceeducationschool.com', label: 'Ifla' },
+              { value: 'shalu@distanceeducationschool.com', label: 'Shalu' },
+              { value: 'zainubia@distanceeducationschool.com', label: 'Zainbuia' },
+              { value: 'pallovi@distanceeducationschool.com', label: 'Pallovi' },
+              { value: 'hansi@distanceeducationschool.com', label: 'Hansi' },
+              { value: 'shristi@distanceeducationschool.com', label: 'Shristi' },
+              { value: 'aashita@highereducationschool.com', label: 'Aashita' },
+              { value: 'pratibha@highereducationschool.com', label: 'Pratibha' },
+              { value: 'shreyashi@highereducationschool.com', label: 'Shreyashi' },
+              { value: 'spuhelpdesk@gmail.com', label: 'Binny' },
+              { value: 'ruchika.spu@gmail.com', label: 'Ruchika' },
+              { value: 'ramiz.spu@gmail.com', label: 'Ramiz' },
             ],
           },
           {
@@ -12506,7 +12746,7 @@ const formData = [
             id: 'status ',
             type: 'select',
             place: 'select status',
-            required: 'require',
+
             options: [
               { value: 'New', label: 'New' },
               { value: 'Cancel', label: 'Cancel' },
@@ -12529,6 +12769,13 @@ const formData = [
             place: 'Enter your remark',
             id: 'remark',
             type: 'textarea',
+          },
+          {
+            key: 'date',
+            label: 'Created At',
+            name: 'created',
+            id: 'created',
+            type: 'date',
           },
         ],
       },
@@ -12900,7 +13147,7 @@ const formData = [
             name: ['customfields', 'send_fee_receipt'],
             type: 'radio',
             options: ['yes', 'no'],
-            required: 'require'
+
           },
           {
             key: 'studentId',
@@ -12909,7 +13156,7 @@ const formData = [
             place: 'StudentID',
             id: 'StudentID',
             type: 'studentId',
-            required: 'require'
+
           },
           {
             key: 'text',
@@ -12918,7 +13165,7 @@ const formData = [
             place: 'Student Name',
             id: 'full_name',
             type: 'text',
-            required: 'require'
+
           },
           {
             key: 'email',
@@ -12927,7 +13174,7 @@ const formData = [
             name: ['contact', 'email'],
             id: 'EmailID',
             type: 'email',
-            required: 'require'
+
           },
           {
             key: 'tel',
@@ -12936,7 +13183,7 @@ const formData = [
             place: 'Enter Phone Number',
             id: 'phone',
             type: 'tel',
-            required: 'require'
+
           },
           {
             key: 'text',
@@ -12945,7 +13192,7 @@ const formData = [
             place: 'Enter Father Name',
             id: 'Father Name',
             type: 'text',
-            required: 'require'
+
           },
           {
             key: 'text',
@@ -12954,32 +13201,32 @@ const formData = [
             place: 'Enter Mother Name',
             id: 'mother_name',
             type: 'text',
-            required: 'require'
+
           },
           {
             key: 'select',
             label: 'Session',
             name: ['customfields', 'session'],
-            place: 'eg: jan 20',
+            place: 'eg: JAN_20',
             id: 'Session',
             type: 'select',
-            options: [{ value: 'jan 20', label: 'Jan 20' },
-            { value: 'july 20', label: 'July 20' },
-            { value: 'jan 21', label: 'Jan 21' },
-            { value: 'july 21', label: 'July 21' },
-            { value: 'jan 22', label: 'Jan 22' },
-            { value: 'july 22', label: 'July 22' },
-            { value: 'jan 23', label: 'Jan 23' },
-            { value: 'july 23', label: 'July 23' },
-            { value: 'jan 24', label: 'Jan 24' },
-            { value: 'july 24', label: 'July 24' },
-            { value: 'jan 25', label: 'Jan 25' },
-            { value: 'july 25', label: 'July 25' },
-            { value: 'mar 23', label: 'mar 23' },
-            { value: 'apr 23', label: 'apr 23' },
-            { value: 'oct 23', label: 'oct 23' },
-            { value: 'nov 23', label: 'nov 23' },],
-            required: 'require'
+            options: [{ value: 'JAN_20', label: 'JAN_20' },
+            { value: 'JULY_20', label: 'JULY_20' },
+            { value: 'JAN_21', label: 'JAN_21' },
+            { value: 'JULY_21', label: 'JULY_21' },
+            { value: 'JAN_22', label: 'JAN_22' },
+            { value: 'JULY_22', label: 'JULY_22' },
+            { value: 'JAN_23', label: 'JAN_23' },
+            { value: 'JULY_23', label: 'JULY_23' },
+            { value: 'JAN_24', label: 'JAN_24' },
+            { value: 'JULY_24', label: 'JULY_24' },
+            { value: 'JAN_25', label: 'JAN_25' },
+            { value: 'JULY_25', label: 'JULY_25' },
+            { value: 'MAR_23', label: 'MAR_23' },
+            { value: 'APR_23', label: 'APR_23' },
+            { value: 'OCT_23', label: 'OCT_23' },
+            { value: 'NOV_23', label: 'NOV_23' },],
+
           },
           {
             key: 'select',
@@ -12988,7 +13235,7 @@ const formData = [
             id: 'SessionType',
             place: 'Enter Admission Type',
             type: 'select',
-            options: [{ value: 'Fresh', label: 'Fresh' },
+            options: [{ value: 'FRESH', label: 'FRESH' },
             { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
           },
 
@@ -12999,7 +13246,7 @@ const formData = [
             place: 'Enter Date of Birth',
             id: 'dob',
             type: 'date',
-            required: 'require'
+
           },
           {
             key: 'select',
@@ -13019,7 +13266,7 @@ const formData = [
             name: ['customfields', 'installment_type'],
             place: 'Installment Type',
             type: 'select',
-            required: 'require',
+
             options: [
               { value: '1st Installment/ New Admission', label: '1st Installment/ New Admission' },
               { value: '2nd Installment', label: '2nd Installment' },
@@ -13040,8 +13287,9 @@ const formData = [
             id: 'PaymentMode ',
             type: 'select',
             place: 'Select Payment Mode',
-            required: 'require',
+
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
+            { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
             { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
@@ -13052,77 +13300,82 @@ const formData = [
             name: ['customfields', 'counselor_email'],
             id: 'email ',
             type: 'select',
-            place: 'select counselor email',
-            required: 'require',
-            options: [{ value: 'zarin@highereducationschool.com', label: 'Zarin' },
-            { value: 'kanchan@highereducationschool.com', label: 'Kanchan' },
-            { value: 'kirti@highereducationschool.com', label: 'Kirti' },
-            { value: 'ramandeep@highereducationschool.com', label: 'Raman' },
-            { value: 'kavita@highereducationschool.com', label: 'kavita' },
-            { value: 'imra@highereducationschool.com', label: 'Imra' },
-            { value: 'Mahak@highereducationschool.com', label: 'Mahek' },
-            { value: 'abhay@highereducationschool.com', label: 'abhay' },
-            { value: 'swati@highereducationschool.com', label: 'swati' },
-            { value: 'gulshan@highereducationschool.com', label: 'Gulshan' },
-            { value: 'isha@highereducationschool.com', label: 'Isha' },
-            { value: 'Sakshi@highereducationschool.com', label: 'Sakshi' },
-            { value: 'aashita@highereducationschool.com', label: 'aashita' },
-            { value: 'pratibha@highereducationschool.com', label: 'pratibha' },
-            { value: 'shreyashi@highereducationschool.com', label: 'Shreyashi ' },
-            { value: 'apoorvasrivastava@distanceeducationschool.com', label: 'Apoorva_DES' },
-            { value: 'asma@distanceeducationschool.com', label: 'Asma_DES' },
-            { value: 'nehaprashar@distanceeducationschool.com', label: 'Neha_Prasher_DES' },
-            { value: 'priya@distanceeducationschool.com', label: 'Priya_DES' },
-            { value: 'diksha@distanceeducationschool.com', label: 'Diksha_DES' },
-            { value: 'abhilasha@distanceeducationschool.com', label: 'Abhilasha_Gupta_DES' },
-            { value: 'saher@distanceeducationschool.com', label: 'Saher_Khan_DES' },
-            { value: 'fiza@distanceeducationschool.com', label: 'Fiza_DES' },
-            { value: 'muskan@distanceeducationschool.com', label: 'Muskaan_DES' },
-            { value: 'aniruddh@distanceeducationschool.com', label: 'Aniruddh_DES' },
-            { value: 'deva@distanceeducationschool.com', label: 'Devendra_DES' },
-            { value: 'amritpal@distanceeducationschool.com', label: 'Amritpal_DES' },
-            { value: 'Salman@distanceeducationschool.com:', label: 'Salman_DES' },
-            { value: 'tariq@distanceeducationschool.com', label: 'Traiq_DES' },
-            { value: 'shivam@distanceeducationschool.com', label: 'Shivam_sharma_DES' },
-            { value: 'pushpa@distanceeducationschool.com', label: 'Puspa_DES' },
-            { value: 'zarin@distanceeducationschool.com', label: 'Zarin_DES' },
-            { value: 'kanchan@distanceeducationschool.com', label: 'Kanchan_DES' },
-            { value: 'manu@distanceeducationschool.com', label: 'Manu_DES' },
+            place: 'select counselor name',
+            options: [
+              // DES External email with name
+              { value: 'apoorvasrivastava@sode.co.in', label: 'Apoorva Srivastava' },
+              { value: 'nehaprashar@sode.co.in', label: 'Neha Prasher' },
+              { value: 'priya@sode.co.in', label: 'Priya Anand' },
+              { value: 'diksha@sode.co.in', label: 'Diksha Singh' },
+              { value: 'abhilasha@sode.co.in', label: 'Abhilasha Gupta' },
+              { value: 'saher@sode.co.in', label: 'Saher Khan' },
 
-            // Jain Team Emails
-            { value: 'a.anitha.ju@gmail.com', label: 'Anita_JU' },
-            { value: 'vaniruckmani.ju@gmail.com', label: 'Vani_Ruckmani_JU' },
-            { value: 'priyankapalle.ju@gmail.com', label: 'Priyanka_JU' },
-            { value: 'SwatiRamani.manipal@gmail.com', label: 'Swati_JU' },
+              // DES Internal email with name 
+              { value: 'muskan@distanceeducationschool.com', label: 'Muskaan ' },
+              { value: 'aniruddh@distanceeducationschool.com', label: 'Aniruddh Prakash' },
+              { value: 'amritpal@sode.co.in', label: 'Amritpal Singh' },
+              { value: 'salman@sode.co.in', label: 'Salman' },
+              { value: 'tariq@sode.co.in', label: 'Tariq Hasan' },
+              { value: 'shivam@sode.co.in', label: 'Shivam sharma' },
+              { value: 'pushpa@sode.co.in', label: 'Pushpa Pramanik' },
 
-            // Manipal Team Email
-            { value: 'ankitakumari.manipal@gmail.com', label: 'Ankita_MU' },
-            { value: 'medhahandoo.manipal@gmail.com', label: 'Medha_MU' },
-            { value: 'amreen.manipal@gmail.com', label: 'Amreen_MU' },
+              // DES Internal email with name 
+              { value: 'anurag@distanceeducationschool.com', label: 'Anurag Yadav' },
+              { value: 'kavitakumari@sode.co.in', label: 'Kavita Kumari' },
+              { value: 'rupal@sode.co.in', label: 'Rupal Gautam' },
+              { value: 'deva@sode.co.in', label: 'Devendra' },
+              { value: 'manshi@sode.co.in', label: 'Manshi Kem' },
 
-            // Support Team Email
-            { value: 'rajesh@distanceeducationschool.com', label: 'Rajesh_sir' },
-            { value: 'manisha@distanceeducationschool.com', label: 'Manisha' },
-            { value: 'admin@distanceeducationschool.com', label: 'Nouman_sir' },
-            { value: 'sandy@distanceeducationschool.com', label: 'Sandy' },
-            { value: 'neha@distanceeducationschool.com', label: 'Neha' },
-            { value: 'yashpriya@distanceeducationschool.com', label: 'Yash_Priya' },
-            { value: 'kavitahaldar@distanceeducationschool.com', label: 'kavitahaldar' },
-            { value: 'ifla@distanceeducationschool.com', label: 'Ifla' },
-            { value: 'shalu@distanceeducationschool.com', label: 'Shalu' },
-            { value: 'zainubia@distanceeducationschool.com', label: 'zainbuia' },
-            { value: 'pallovi@distanceeducationschool.com', label: 'Pallovi' },
-            { value: 'kavitakumari@distanceeducationschool.com', label: 'Kavita_Kumari' },
-            { value: 'manshi@distanceeducationschool.com', label: 'Mansi' },
-            { value: 'Bhavya.manipal@gmail.com', label: 'Bhavya' },
-            { value: 'anurag@distanceeducationschool.com', label: 'Anuraj' },
-            { value: 'rupal@distanceeducationschool.com', label: 'Rupal' },
-            //B2B Team Email
-            { value: 'spuhelpdesk@gmail.com', label: 'Binny' },
-            { value: 'ruchika.spu@gmail.com', label: 'Ruchika' },
-            { value: 'lalit@distanceeducationschool.com', label: 'Lalit_DES' },
-            { value: 'lalit.spu@gmail.com', label: 'Lalit' },
-            { value: 'ramiz.spu@gmail.com', label: 'Ramiz' }
+              // DES - INTERNATIONAL email with name 
+              { value: 'zarin@distanceeducationschool.com', label: 'Zarin Badar' },
+
+              // HES team email with name 
+              { value: 'kanchan@highereducationschool.com', label: 'Kanchan Sharma' },
+              { value: 'kirti@highereducationschool.com', label: 'Kirti Dubey' },
+              { value: 'ramandeep@highereducationschool.com', label: 'Ramandeep Kaur' },
+              { value: 'kavita@highereducationschool.com', label: 'Kavita Yadav' },
+              { value: 'imra@highereducationschool.com', label: 'Imra Khan' },
+              { value: 'mahak@highereducationschool.com', label: 'Mahek' },
+              { value: 'abhay@highereducationschool.com', label: 'Abhay Dubey' },
+              { value: 'swati@highereducationschool.com', label: 'Swati' },
+              { value: 'gulshan@highereducationschool.com', label: 'Gulshan Nayyar' },
+              { value: 'isha@highereducationschool.com', label: 'Isha Jaiswal' },
+              { value: 'sakshi@highereducationschool.com', label: 'Sakshi Arora' },
+
+              // Jain team email with name 
+              { value: 'anitha@sode.co.in', label: 'A.Anitha' },
+              { value: 'vani@sode.co.in', label: 'Vani Ruckmani' },
+
+              // Manipal team email with name 
+              { value: 'SwatiRamani.manipal@gmail.com', label: 'Swati Ramani' },
+              { value: 'ankitakumar@sode.co.in', label: 'Ankita Kumari' },
+              { value: 'nidhi@sode.co.in', label: 'Nidhi' },
+              { value: 'amreen@sode.co.in', label: 'Amreen ALI Khan' },
+              { value: 'umar@sode.co.in', label: 'MD Umar' },
+              { value: 'nehagupta@sode.co.in', label: 'Neha Gupta' },
+              { value: 'pawankumar@sode.co.in', label: 'Pawan Kumar' },
+              { value: 'bhavya@sode.co.in', label: 'Bhavya' },
+
+              // ALL DES && HES team email with name 
+              { value: 'rajesh@distanceeducationschool.com', label: 'Rajesh Sir' },
+              { value: 'manisha@distanceeducationschool.com', label: 'Manisha Yadav' },
+              { value: 'admin@distanceeducationschool.com', label: 'Nouman Sir' },
+              { value: 'sandy@distanceeducationschool.com', label: 'Sandy' },
+              { value: 'neha@distanceeducationschool.com', label: 'Neha Raj' },
+              { value: 'yashpriya@distanceeducationschool.com', label: 'Yash Priya' },
+              { value: 'kavitahaldar@distanceeducationschool.com', label: 'Kavita Haldar' },
+              { value: 'ifla@distanceeducationschool.com', label: 'Ifla' },
+              { value: 'shalu@distanceeducationschool.com', label: 'Shalu' },
+              { value: 'zainubia@distanceeducationschool.com', label: 'Zainbuia' },
+              { value: 'pallovi@distanceeducationschool.com', label: 'Pallovi' },
+              { value: 'hansi@distanceeducationschool.com', label: 'Hansi' },
+              { value: 'shristi@distanceeducationschool.com', label: 'Shristi' },
+              { value: 'aashita@highereducationschool.com', label: 'Aashita' },
+              { value: 'pratibha@highereducationschool.com', label: 'Pratibha' },
+              { value: 'shreyashi@highereducationschool.com', label: 'Shreyashi' },
+              { value: 'spuhelpdesk@gmail.com', label: 'Binny' },
+              { value: 'ruchika.spu@gmail.com', label: 'Ruchika' },
+              { value: 'ramiz.spu@gmail.com', label: 'Ramiz' },
             ],
           },
           {
@@ -13132,7 +13385,7 @@ const formData = [
             id: 'status ',
             type: 'select',
             place: 'select status',
-            required: 'require',
+
             options: [
               { value: 'New', label: 'New' },
               { value: 'Cancel', label: 'Cancel' },
@@ -13155,6 +13408,13 @@ const formData = [
             place: 'Enter your remark',
             id: 'remark',
             type: 'textarea',
+          },
+          {
+            key: 'date',
+            label: 'Created At',
+            name: 'created',
+            id: 'created',
+            type: 'date',
           },
         ],
       },
@@ -13526,7 +13786,7 @@ const formData = [
             name: ['customfields', 'send_fee_receipt'],
             type: 'radio',
             options: ['yes', 'no'],
-            required: 'require'
+
           },
           {
             key: 'studentId',
@@ -13535,7 +13795,7 @@ const formData = [
             place: 'StudentID',
             id: 'StudentID',
             type: 'studentId',
-            required: 'require'
+
           },
           {
             key: 'text',
@@ -13544,7 +13804,7 @@ const formData = [
             place: 'Student Name',
             id: 'full_name',
             type: 'text',
-            required: 'require'
+
           },
           {
             key: 'email',
@@ -13553,7 +13813,7 @@ const formData = [
             name: ['contact', 'email'],
             id: 'EmailID',
             type: 'email',
-            required: 'require'
+
           },
           {
             key: 'tel',
@@ -13562,7 +13822,7 @@ const formData = [
             place: 'Enter Phone Number',
             id: 'phone',
             type: 'tel',
-            required: 'require'
+
           },
           {
             key: 'text',
@@ -13571,7 +13831,7 @@ const formData = [
             place: 'Enter Father Name',
             id: 'Father Name',
             type: 'text',
-            required: 'require'
+
           },
           {
             key: 'text',
@@ -13580,32 +13840,32 @@ const formData = [
             place: 'Enter Mother Name',
             id: 'mother_name',
             type: 'text',
-            required: 'require'
+
           },
           {
             key: 'select',
             label: 'Session',
             name: ['customfields', 'session'],
-            place: 'eg: jan 20',
+            place: 'eg: JAN_20',
             id: 'Session',
             type: 'select',
-            options: [{ value: 'jan 20', label: 'Jan 20' },
-            { value: 'july 20', label: 'July 20' },
-            { value: 'jan 21', label: 'Jan 21' },
-            { value: 'july 21', label: 'July 21' },
-            { value: 'jan 22', label: 'Jan 22' },
-            { value: 'july 22', label: 'July 22' },
-            { value: 'jan 23', label: 'Jan 23' },
-            { value: 'july 23', label: 'July 23' },
-            { value: 'jan 24', label: 'Jan 24' },
-            { value: 'july 24', label: 'July 24' },
-            { value: 'jan 25', label: 'Jan 25' },
-            { value: 'july 25', label: 'July 25' },
-            { value: 'mar 23', label: 'mar 23' },
-            { value: 'apr 23', label: 'apr 23' },
-            { value: 'oct 23', label: 'oct 23' },
-            { value: 'nov 23', label: 'nov 23' },],
-            required: 'require'
+            options: [{ value: 'JAN_20', label: 'JAN_20' },
+            { value: 'JULY_20', label: 'JULY_20' },
+            { value: 'JAN_21', label: 'JAN_21' },
+            { value: 'JULY_21', label: 'JULY_21' },
+            { value: 'JAN_22', label: 'JAN_22' },
+            { value: 'JULY_22', label: 'JULY_22' },
+            { value: 'JAN_23', label: 'JAN_23' },
+            { value: 'JULY_23', label: 'JULY_23' },
+            { value: 'JAN_24', label: 'JAN_24' },
+            { value: 'JULY_24', label: 'JULY_24' },
+            { value: 'JAN_25', label: 'JAN_25' },
+            { value: 'JULY_25', label: 'JULY_25' },
+            { value: 'MAR_23', label: 'MAR_23' },
+            { value: 'APR_23', label: 'APR_23' },
+            { value: 'OCT_23', label: 'OCT_23' },
+            { value: 'NOV_23', label: 'NOV_23' },],
+
           },
           {
             key: 'select',
@@ -13614,7 +13874,7 @@ const formData = [
             id: 'SessionType',
             place: 'Enter Admission Type',
             type: 'select',
-            options: [{ value: 'Fresh', label: 'Fresh' },
+            options: [{ value: 'FRESH', label: 'FRESH' },
             { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
           },
 
@@ -13625,7 +13885,7 @@ const formData = [
             place: 'Enter Date of Birth',
             id: 'dob',
             type: 'date',
-            required: 'require'
+
           },
           {
             key: 'select',
@@ -13645,7 +13905,7 @@ const formData = [
             name: ['customfields', 'installment_type'],
             place: 'Installment Type',
             type: 'select',
-            required: 'require',
+
             options: [
               { value: '1st Installment/ New Admission', label: '1st Installment/ New Admission' },
               { value: '2nd Installment', label: '2nd Installment' },
@@ -13666,8 +13926,9 @@ const formData = [
             id: 'PaymentMode ',
             type: 'select',
             place: 'Select Payment Mode',
-            required: 'require',
+
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
+            { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
             { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
@@ -13678,77 +13939,82 @@ const formData = [
             name: ['customfields', 'counselor_email'],
             id: 'email ',
             type: 'select',
-            place: 'select counselor email',
-            required: 'require',
-            options: [{ value: 'zarin@highereducationschool.com', label: 'Zarin' },
-            { value: 'kanchan@highereducationschool.com', label: 'Kanchan' },
-            { value: 'kirti@highereducationschool.com', label: 'Kirti' },
-            { value: 'ramandeep@highereducationschool.com', label: 'Raman' },
-            { value: 'kavita@highereducationschool.com', label: 'kavita' },
-            { value: 'imra@highereducationschool.com', label: 'Imra' },
-            { value: 'Mahak@highereducationschool.com', label: 'Mahek' },
-            { value: 'abhay@highereducationschool.com', label: 'abhay' },
-            { value: 'swati@highereducationschool.com', label: 'swati' },
-            { value: 'gulshan@highereducationschool.com', label: 'Gulshan' },
-            { value: 'isha@highereducationschool.com', label: 'Isha' },
-            { value: 'Sakshi@highereducationschool.com', label: 'Sakshi' },
-            { value: 'aashita@highereducationschool.com', label: 'aashita' },
-            { value: 'pratibha@highereducationschool.com', label: 'pratibha' },
-            { value: 'shreyashi@highereducationschool.com', label: 'Shreyashi ' },
-            { value: 'apoorvasrivastava@distanceeducationschool.com', label: 'Apoorva_DES' },
-            { value: 'asma@distanceeducationschool.com', label: 'Asma_DES' },
-            { value: 'nehaprashar@distanceeducationschool.com', label: 'Neha_Prasher_DES' },
-            { value: 'priya@distanceeducationschool.com', label: 'Priya_DES' },
-            { value: 'diksha@distanceeducationschool.com', label: 'Diksha_DES' },
-            { value: 'abhilasha@distanceeducationschool.com', label: 'Abhilasha_Gupta_DES' },
-            { value: 'saher@distanceeducationschool.com', label: 'Saher_Khan_DES' },
-            { value: 'fiza@distanceeducationschool.com', label: 'Fiza_DES' },
-            { value: 'muskan@distanceeducationschool.com', label: 'Muskaan_DES' },
-            { value: 'aniruddh@distanceeducationschool.com', label: 'Aniruddh_DES' },
-            { value: 'deva@distanceeducationschool.com', label: 'Devendra_DES' },
-            { value: 'amritpal@distanceeducationschool.com', label: 'Amritpal_DES' },
-            { value: 'Salman@distanceeducationschool.com:', label: 'Salman_DES' },
-            { value: 'tariq@distanceeducationschool.com', label: 'Traiq_DES' },
-            { value: 'shivam@distanceeducationschool.com', label: 'Shivam_sharma_DES' },
-            { value: 'pushpa@distanceeducationschool.com', label: 'Puspa_DES' },
-            { value: 'zarin@distanceeducationschool.com', label: 'Zarin_DES' },
-            { value: 'kanchan@distanceeducationschool.com', label: 'Kanchan_DES' },
-            { value: 'manu@distanceeducationschool.com', label: 'Manu_DES' },
+            place: 'select counselor name',
+            options: [
+              // DES External email with name
+              { value: 'apoorvasrivastava@sode.co.in', label: 'Apoorva Srivastava' },
+              { value: 'nehaprashar@sode.co.in', label: 'Neha Prasher' },
+              { value: 'priya@sode.co.in', label: 'Priya Anand' },
+              { value: 'diksha@sode.co.in', label: 'Diksha Singh' },
+              { value: 'abhilasha@sode.co.in', label: 'Abhilasha Gupta' },
+              { value: 'saher@sode.co.in', label: 'Saher Khan' },
 
-            // Jain Team Emails
-            { value: 'a.anitha.ju@gmail.com', label: 'Anita_JU' },
-            { value: 'vaniruckmani.ju@gmail.com', label: 'Vani_Ruckmani_JU' },
-            { value: 'priyankapalle.ju@gmail.com', label: 'Priyanka_JU' },
-            { value: 'SwatiRamani.manipal@gmail.com', label: 'Swati_JU' },
+              // DES Internal email with name 
+              { value: 'muskan@distanceeducationschool.com', label: 'Muskaan ' },
+              { value: 'aniruddh@distanceeducationschool.com', label: 'Aniruddh Prakash' },
+              { value: 'amritpal@sode.co.in', label: 'Amritpal Singh' },
+              { value: 'salman@sode.co.in', label: 'Salman' },
+              { value: 'tariq@sode.co.in', label: 'Tariq Hasan' },
+              { value: 'shivam@sode.co.in', label: 'Shivam sharma' },
+              { value: 'pushpa@sode.co.in', label: 'Pushpa Pramanik' },
 
-            // Manipal Team Email
-            { value: 'ankitakumari.manipal@gmail.com', label: 'Ankita_MU' },
-            { value: 'medhahandoo.manipal@gmail.com', label: 'Medha_MU' },
-            { value: 'amreen.manipal@gmail.com', label: 'Amreen_MU' },
+              // DES Internal email with name 
+              { value: 'anurag@distanceeducationschool.com', label: 'Anurag Yadav' },
+              { value: 'kavitakumari@sode.co.in', label: 'Kavita Kumari' },
+              { value: 'rupal@sode.co.in', label: 'Rupal Gautam' },
+              { value: 'deva@sode.co.in', label: 'Devendra' },
+              { value: 'manshi@sode.co.in', label: 'Manshi Kem' },
 
-            // Support Team Email
-            { value: 'rajesh@distanceeducationschool.com', label: 'Rajesh_sir' },
-            { value: 'manisha@distanceeducationschool.com', label: 'Manisha' },
-            { value: 'admin@distanceeducationschool.com', label: 'Nouman_sir' },
-            { value: 'sandy@distanceeducationschool.com', label: 'Sandy' },
-            { value: 'neha@distanceeducationschool.com', label: 'Neha' },
-            { value: 'yashpriya@distanceeducationschool.com', label: 'Yash_Priya' },
-            { value: 'kavitahaldar@distanceeducationschool.com', label: 'kavitahaldar' },
-            { value: 'ifla@distanceeducationschool.com', label: 'Ifla' },
-            { value: 'shalu@distanceeducationschool.com', label: 'Shalu' },
-            { value: 'zainubia@distanceeducationschool.com', label: 'zainbuia' },
-            { value: 'pallovi@distanceeducationschool.com', label: 'Pallovi' },
-            { value: 'kavitakumari@distanceeducationschool.com', label: 'Kavita_Kumari' },
-            { value: 'manshi@distanceeducationschool.com', label: 'Mansi' },
-            { value: 'Bhavya.manipal@gmail.com', label: 'Bhavya' },
-            { value: 'anurag@distanceeducationschool.com', label: 'Anuraj' },
-            { value: 'rupal@distanceeducationschool.com', label: 'Rupal' },
-            //B2B Team Email
-            { value: 'spuhelpdesk@gmail.com', label: 'Binny' },
-            { value: 'ruchika.spu@gmail.com', label: 'Ruchika' },
-            { value: 'lalit@distanceeducationschool.com', label: 'Lalit_DES' },
-            { value: 'lalit.spu@gmail.com', label: 'Lalit' },
-            { value: 'ramiz.spu@gmail.com', label: 'Ramiz' }
+              // DES - INTERNATIONAL email with name 
+              { value: 'zarin@distanceeducationschool.com', label: 'Zarin Badar' },
+
+              // HES team email with name 
+              { value: 'kanchan@highereducationschool.com', label: 'Kanchan Sharma' },
+              { value: 'kirti@highereducationschool.com', label: 'Kirti Dubey' },
+              { value: 'ramandeep@highereducationschool.com', label: 'Ramandeep Kaur' },
+              { value: 'kavita@highereducationschool.com', label: 'Kavita Yadav' },
+              { value: 'imra@highereducationschool.com', label: 'Imra Khan' },
+              { value: 'mahak@highereducationschool.com', label: 'Mahek' },
+              { value: 'abhay@highereducationschool.com', label: 'Abhay Dubey' },
+              { value: 'swati@highereducationschool.com', label: 'Swati' },
+              { value: 'gulshan@highereducationschool.com', label: 'Gulshan Nayyar' },
+              { value: 'isha@highereducationschool.com', label: 'Isha Jaiswal' },
+              { value: 'sakshi@highereducationschool.com', label: 'Sakshi Arora' },
+
+              // Jain team email with name 
+              { value: 'anitha@sode.co.in', label: 'A.Anitha' },
+              { value: 'vani@sode.co.in', label: 'Vani Ruckmani' },
+
+              // Manipal team email with name 
+              { value: 'SwatiRamani.manipal@gmail.com', label: 'Swati Ramani' },
+              { value: 'ankitakumar@sode.co.in', label: 'Ankita Kumari' },
+              { value: 'nidhi@sode.co.in', label: 'Nidhi' },
+              { value: 'amreen@sode.co.in', label: 'Amreen ALI Khan' },
+              { value: 'umar@sode.co.in', label: 'MD Umar' },
+              { value: 'nehagupta@sode.co.in', label: 'Neha Gupta' },
+              { value: 'pawankumar@sode.co.in', label: 'Pawan Kumar' },
+              { value: 'bhavya@sode.co.in', label: 'Bhavya' },
+
+              // ALL DES && HES team email with name 
+              { value: 'rajesh@distanceeducationschool.com', label: 'Rajesh Sir' },
+              { value: 'manisha@distanceeducationschool.com', label: 'Manisha Yadav' },
+              { value: 'admin@distanceeducationschool.com', label: 'Nouman Sir' },
+              { value: 'sandy@distanceeducationschool.com', label: 'Sandy' },
+              { value: 'neha@distanceeducationschool.com', label: 'Neha Raj' },
+              { value: 'yashpriya@distanceeducationschool.com', label: 'Yash Priya' },
+              { value: 'kavitahaldar@distanceeducationschool.com', label: 'Kavita Haldar' },
+              { value: 'ifla@distanceeducationschool.com', label: 'Ifla' },
+              { value: 'shalu@distanceeducationschool.com', label: 'Shalu' },
+              { value: 'zainubia@distanceeducationschool.com', label: 'Zainbuia' },
+              { value: 'pallovi@distanceeducationschool.com', label: 'Pallovi' },
+              { value: 'hansi@distanceeducationschool.com', label: 'Hansi' },
+              { value: 'shristi@distanceeducationschool.com', label: 'Shristi' },
+              { value: 'aashita@highereducationschool.com', label: 'Aashita' },
+              { value: 'pratibha@highereducationschool.com', label: 'Pratibha' },
+              { value: 'shreyashi@highereducationschool.com', label: 'Shreyashi' },
+              { value: 'spuhelpdesk@gmail.com', label: 'Binny' },
+              { value: 'ruchika.spu@gmail.com', label: 'Ruchika' },
+              { value: 'ramiz.spu@gmail.com', label: 'Ramiz' },
             ],
           },
           {
@@ -13758,7 +14024,7 @@ const formData = [
             id: 'status ',
             type: 'select',
             place: 'select status',
-            required: 'require',
+
             options: [
               { value: 'New', label: 'New' },
               { value: 'Cancel', label: 'Cancel' },
@@ -13781,6 +14047,13 @@ const formData = [
             place: 'Enter your remark',
             id: 'remark',
             type: 'textarea',
+          },
+          {
+            key: 'date',
+            label: 'Created At',
+            name: 'created',
+            id: 'created',
+            type: 'date',
           },
         ],
       },
@@ -14152,7 +14425,7 @@ const formData = [
             name: ['customfields', 'send_fee_receipt'],
             type: 'radio',
             options: ['yes', 'no'],
-            required: 'require'
+
           },
           {
             key: 'studentId',
@@ -14161,7 +14434,7 @@ const formData = [
             place: 'StudentID',
             id: 'StudentID',
             type: 'studentId',
-            required: 'require'
+
           },
           {
             key: 'text',
@@ -14170,7 +14443,7 @@ const formData = [
             place: 'Student Name',
             id: 'full_name',
             type: 'text',
-            required: 'require'
+
           },
           {
             key: 'email',
@@ -14179,7 +14452,7 @@ const formData = [
             name: ['contact', 'email'],
             id: 'EmailID',
             type: 'email',
-            required: 'require'
+
           },
           {
             key: 'tel',
@@ -14188,7 +14461,7 @@ const formData = [
             place: 'Enter Phone Number',
             id: 'phone',
             type: 'tel',
-            required: 'require'
+
           },
           {
             key: 'text',
@@ -14197,7 +14470,7 @@ const formData = [
             place: 'Enter Father Name',
             id: 'Father Name',
             type: 'text',
-            required: 'require'
+
           },
           {
             key: 'text',
@@ -14206,32 +14479,32 @@ const formData = [
             place: 'Enter Mother Name',
             id: 'mother_name',
             type: 'text',
-            required: 'require'
+
           },
           {
             key: 'select',
             label: 'Session',
             name: ['customfields', 'session'],
-            place: 'eg: jan 20',
+            place: 'eg: JAN_20',
             id: 'Session',
             type: 'select',
-            options: [{ value: 'jan 20', label: 'Jan 20' },
-            { value: 'july 20', label: 'July 20' },
-            { value: 'jan 21', label: 'Jan 21' },
-            { value: 'july 21', label: 'July 21' },
-            { value: 'jan 22', label: 'Jan 22' },
-            { value: 'july 22', label: 'July 22' },
-            { value: 'jan 23', label: 'Jan 23' },
-            { value: 'july 23', label: 'July 23' },
-            { value: 'jan 24', label: 'Jan 24' },
-            { value: 'july 24', label: 'July 24' },
-            { value: 'jan 25', label: 'Jan 25' },
-            { value: 'july 25', label: 'July 25' },
-            { value: 'mar 23', label: 'mar 23' },
-            { value: 'apr 23', label: 'apr 23' },
-            { value: 'oct 23', label: 'oct 23' },
-            { value: 'nov 23', label: 'nov 23' },],
-            required: 'require'
+            options: [{ value: 'JAN_20', label: 'JAN_20' },
+            { value: 'JULY_20', label: 'JULY_20' },
+            { value: 'JAN_21', label: 'JAN_21' },
+            { value: 'JULY_21', label: 'JULY_21' },
+            { value: 'JAN_22', label: 'JAN_22' },
+            { value: 'JULY_22', label: 'JULY_22' },
+            { value: 'JAN_23', label: 'JAN_23' },
+            { value: 'JULY_23', label: 'JULY_23' },
+            { value: 'JAN_24', label: 'JAN_24' },
+            { value: 'JULY_24', label: 'JULY_24' },
+            { value: 'JAN_25', label: 'JAN_25' },
+            { value: 'JULY_25', label: 'JULY_25' },
+            { value: 'MAR_23', label: 'MAR_23' },
+            { value: 'APR_23', label: 'APR_23' },
+            { value: 'OCT_23', label: 'OCT_23' },
+            { value: 'NOV_23', label: 'NOV_23' },],
+
           },
           {
             key: 'select',
@@ -14240,7 +14513,7 @@ const formData = [
             id: 'SessionType',
             place: 'Enter Admission Type',
             type: 'select',
-            options: [{ value: 'Fresh', label: 'Fresh' },
+            options: [{ value: 'FRESH', label: 'FRESH' },
             { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
           },
 
@@ -14251,7 +14524,7 @@ const formData = [
             place: 'Enter Date of Birth',
             id: 'dob',
             type: 'date',
-            required: 'require'
+
           },
           {
             key: 'select',
@@ -14271,7 +14544,7 @@ const formData = [
             name: ['customfields', 'installment_type'],
             place: 'Installment Type',
             type: 'select',
-            required: 'require',
+
             options: [
               { value: '1st Installment/ New Admission', label: '1st Installment/ New Admission' },
               { value: '2nd Installment', label: '2nd Installment' },
@@ -14292,8 +14565,9 @@ const formData = [
             id: 'PaymentMode ',
             type: 'select',
             place: 'Select Payment Mode',
-            required: 'require',
+
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
+            { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
             { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
@@ -14304,77 +14578,82 @@ const formData = [
             name: ['customfields', 'counselor_email'],
             id: 'email ',
             type: 'select',
-            place: 'select counselor email',
-            required: 'require',
-            options: [{ value: 'zarin@highereducationschool.com', label: 'Zarin' },
-            { value: 'kanchan@highereducationschool.com', label: 'Kanchan' },
-            { value: 'kirti@highereducationschool.com', label: 'Kirti' },
-            { value: 'ramandeep@highereducationschool.com', label: 'Raman' },
-            { value: 'kavita@highereducationschool.com', label: 'kavita' },
-            { value: 'imra@highereducationschool.com', label: 'Imra' },
-            { value: 'Mahak@highereducationschool.com', label: 'Mahek' },
-            { value: 'abhay@highereducationschool.com', label: 'abhay' },
-            { value: 'swati@highereducationschool.com', label: 'swati' },
-            { value: 'gulshan@highereducationschool.com', label: 'Gulshan' },
-            { value: 'isha@highereducationschool.com', label: 'Isha' },
-            { value: 'Sakshi@highereducationschool.com', label: 'Sakshi' },
-            { value: 'aashita@highereducationschool.com', label: 'aashita' },
-            { value: 'pratibha@highereducationschool.com', label: 'pratibha' },
-            { value: 'shreyashi@highereducationschool.com', label: 'Shreyashi ' },
-            { value: 'apoorvasrivastava@distanceeducationschool.com', label: 'Apoorva_DES' },
-            { value: 'asma@distanceeducationschool.com', label: 'Asma_DES' },
-            { value: 'nehaprashar@distanceeducationschool.com', label: 'Neha_Prasher_DES' },
-            { value: 'priya@distanceeducationschool.com', label: 'Priya_DES' },
-            { value: 'diksha@distanceeducationschool.com', label: 'Diksha_DES' },
-            { value: 'abhilasha@distanceeducationschool.com', label: 'Abhilasha_Gupta_DES' },
-            { value: 'saher@distanceeducationschool.com', label: 'Saher_Khan_DES' },
-            { value: 'fiza@distanceeducationschool.com', label: 'Fiza_DES' },
-            { value: 'muskan@distanceeducationschool.com', label: 'Muskaan_DES' },
-            { value: 'aniruddh@distanceeducationschool.com', label: 'Aniruddh_DES' },
-            { value: 'deva@distanceeducationschool.com', label: 'Devendra_DES' },
-            { value: 'amritpal@distanceeducationschool.com', label: 'Amritpal_DES' },
-            { value: 'Salman@distanceeducationschool.com:', label: 'Salman_DES' },
-            { value: 'tariq@distanceeducationschool.com', label: 'Traiq_DES' },
-            { value: 'shivam@distanceeducationschool.com', label: 'Shivam_sharma_DES' },
-            { value: 'pushpa@distanceeducationschool.com', label: 'Puspa_DES' },
-            { value: 'zarin@distanceeducationschool.com', label: 'Zarin_DES' },
-            { value: 'kanchan@distanceeducationschool.com', label: 'Kanchan_DES' },
-            { value: 'manu@distanceeducationschool.com', label: 'Manu_DES' },
+            place: 'select counselor name',
+            options: [
+              // DES External email with name
+              { value: 'apoorvasrivastava@sode.co.in', label: 'Apoorva Srivastava' },
+              { value: 'nehaprashar@sode.co.in', label: 'Neha Prasher' },
+              { value: 'priya@sode.co.in', label: 'Priya Anand' },
+              { value: 'diksha@sode.co.in', label: 'Diksha Singh' },
+              { value: 'abhilasha@sode.co.in', label: 'Abhilasha Gupta' },
+              { value: 'saher@sode.co.in', label: 'Saher Khan' },
 
-            // Jain Team Emails
-            { value: 'a.anitha.ju@gmail.com', label: 'Anita_JU' },
-            { value: 'vaniruckmani.ju@gmail.com', label: 'Vani_Ruckmani_JU' },
-            { value: 'priyankapalle.ju@gmail.com', label: 'Priyanka_JU' },
-            { value: 'SwatiRamani.manipal@gmail.com', label: 'Swati_JU' },
+              // DES Internal email with name 
+              { value: 'muskan@distanceeducationschool.com', label: 'Muskaan ' },
+              { value: 'aniruddh@distanceeducationschool.com', label: 'Aniruddh Prakash' },
+              { value: 'amritpal@sode.co.in', label: 'Amritpal Singh' },
+              { value: 'salman@sode.co.in', label: 'Salman' },
+              { value: 'tariq@sode.co.in', label: 'Tariq Hasan' },
+              { value: 'shivam@sode.co.in', label: 'Shivam sharma' },
+              { value: 'pushpa@sode.co.in', label: 'Pushpa Pramanik' },
 
-            // Manipal Team Email
-            { value: 'ankitakumari.manipal@gmail.com', label: 'Ankita_MU' },
-            { value: 'medhahandoo.manipal@gmail.com', label: 'Medha_MU' },
-            { value: 'amreen.manipal@gmail.com', label: 'Amreen_MU' },
+              // DES Internal email with name 
+              { value: 'anurag@distanceeducationschool.com', label: 'Anurag Yadav' },
+              { value: 'kavitakumari@sode.co.in', label: 'Kavita Kumari' },
+              { value: 'rupal@sode.co.in', label: 'Rupal Gautam' },
+              { value: 'deva@sode.co.in', label: 'Devendra' },
+              { value: 'manshi@sode.co.in', label: 'Manshi Kem' },
 
-            // Support Team Email
-            { value: 'rajesh@distanceeducationschool.com', label: 'Rajesh_sir' },
-            { value: 'manisha@distanceeducationschool.com', label: 'Manisha' },
-            { value: 'admin@distanceeducationschool.com', label: 'Nouman_sir' },
-            { value: 'sandy@distanceeducationschool.com', label: 'Sandy' },
-            { value: 'neha@distanceeducationschool.com', label: 'Neha' },
-            { value: 'yashpriya@distanceeducationschool.com', label: 'Yash_Priya' },
-            { value: 'kavitahaldar@distanceeducationschool.com', label: 'kavitahaldar' },
-            { value: 'ifla@distanceeducationschool.com', label: 'Ifla' },
-            { value: 'shalu@distanceeducationschool.com', label: 'Shalu' },
-            { value: 'zainubia@distanceeducationschool.com', label: 'zainbuia' },
-            { value: 'pallovi@distanceeducationschool.com', label: 'Pallovi' },
-            { value: 'kavitakumari@distanceeducationschool.com', label: 'Kavita_Kumari' },
-            { value: 'manshi@distanceeducationschool.com', label: 'Mansi' },
-            { value: 'Bhavya.manipal@gmail.com', label: 'Bhavya' },
-            { value: 'anurag@distanceeducationschool.com', label: 'Anuraj' },
-            { value: 'rupal@distanceeducationschool.com', label: 'Rupal' },
-            //B2B Team Email
-            { value: 'spuhelpdesk@gmail.com', label: 'Binny' },
-            { value: 'ruchika.spu@gmail.com', label: 'Ruchika' },
-            { value: 'lalit@distanceeducationschool.com', label: 'Lalit_DES' },
-            { value: 'lalit.spu@gmail.com', label: 'Lalit' },
-            { value: 'ramiz.spu@gmail.com', label: 'Ramiz' }
+              // DES - INTERNATIONAL email with name 
+              { value: 'zarin@distanceeducationschool.com', label: 'Zarin Badar' },
+
+              // HES team email with name 
+              { value: 'kanchan@highereducationschool.com', label: 'Kanchan Sharma' },
+              { value: 'kirti@highereducationschool.com', label: 'Kirti Dubey' },
+              { value: 'ramandeep@highereducationschool.com', label: 'Ramandeep Kaur' },
+              { value: 'kavita@highereducationschool.com', label: 'Kavita Yadav' },
+              { value: 'imra@highereducationschool.com', label: 'Imra Khan' },
+              { value: 'mahak@highereducationschool.com', label: 'Mahek' },
+              { value: 'abhay@highereducationschool.com', label: 'Abhay Dubey' },
+              { value: 'swati@highereducationschool.com', label: 'Swati' },
+              { value: 'gulshan@highereducationschool.com', label: 'Gulshan Nayyar' },
+              { value: 'isha@highereducationschool.com', label: 'Isha Jaiswal' },
+              { value: 'sakshi@highereducationschool.com', label: 'Sakshi Arora' },
+
+              // Jain team email with name 
+              { value: 'anitha@sode.co.in', label: 'A.Anitha' },
+              { value: 'vani@sode.co.in', label: 'Vani Ruckmani' },
+
+              // Manipal team email with name 
+              { value: 'SwatiRamani.manipal@gmail.com', label: 'Swati Ramani' },
+              { value: 'ankitakumar@sode.co.in', label: 'Ankita Kumari' },
+              { value: 'nidhi@sode.co.in', label: 'Nidhi' },
+              { value: 'amreen@sode.co.in', label: 'Amreen ALI Khan' },
+              { value: 'umar@sode.co.in', label: 'MD Umar' },
+              { value: 'nehagupta@sode.co.in', label: 'Neha Gupta' },
+              { value: 'pawankumar@sode.co.in', label: 'Pawan Kumar' },
+              { value: 'bhavya@sode.co.in', label: 'Bhavya' },
+
+              // ALL DES && HES team email with name 
+              { value: 'rajesh@distanceeducationschool.com', label: 'Rajesh Sir' },
+              { value: 'manisha@distanceeducationschool.com', label: 'Manisha Yadav' },
+              { value: 'admin@distanceeducationschool.com', label: 'Nouman Sir' },
+              { value: 'sandy@distanceeducationschool.com', label: 'Sandy' },
+              { value: 'neha@distanceeducationschool.com', label: 'Neha Raj' },
+              { value: 'yashpriya@distanceeducationschool.com', label: 'Yash Priya' },
+              { value: 'kavitahaldar@distanceeducationschool.com', label: 'Kavita Haldar' },
+              { value: 'ifla@distanceeducationschool.com', label: 'Ifla' },
+              { value: 'shalu@distanceeducationschool.com', label: 'Shalu' },
+              { value: 'zainubia@distanceeducationschool.com', label: 'Zainbuia' },
+              { value: 'pallovi@distanceeducationschool.com', label: 'Pallovi' },
+              { value: 'hansi@distanceeducationschool.com', label: 'Hansi' },
+              { value: 'shristi@distanceeducationschool.com', label: 'Shristi' },
+              { value: 'aashita@highereducationschool.com', label: 'Aashita' },
+              { value: 'pratibha@highereducationschool.com', label: 'Pratibha' },
+              { value: 'shreyashi@highereducationschool.com', label: 'Shreyashi' },
+              { value: 'spuhelpdesk@gmail.com', label: 'Binny' },
+              { value: 'ruchika.spu@gmail.com', label: 'Ruchika' },
+              { value: 'ramiz.spu@gmail.com', label: 'Ramiz' },
             ],
           },
           {
@@ -14384,7 +14663,7 @@ const formData = [
             id: 'status ',
             type: 'select',
             place: 'select status',
-            required: 'require',
+
             options: [
               { value: 'New', label: 'New' },
               { value: 'Cancel', label: 'Cancel' },
@@ -14407,6 +14686,13 @@ const formData = [
             place: 'Enter your remark',
             id: 'remark',
             type: 'textarea',
+          },
+          {
+            key: 'date',
+            label: 'Created At',
+            name: 'created',
+            id: 'created',
+            type: 'date',
           },
         ],
       },
@@ -14778,7 +15064,7 @@ const formData = [
             name: ['customfields', 'send_fee_receipt'],
             type: 'radio',
             options: ['yes', 'no'],
-            required: 'require'
+
           },
           {
             key: 'studentId',
@@ -14787,7 +15073,7 @@ const formData = [
             place: 'StudentID',
             id: 'StudentID',
             type: 'studentId',
-            required: 'require'
+
           },
           {
             key: 'text',
@@ -14796,7 +15082,7 @@ const formData = [
             place: 'Student Name',
             id: 'full_name',
             type: 'text',
-            required: 'require'
+
           },
           {
             key: 'email',
@@ -14805,7 +15091,7 @@ const formData = [
             name: ['contact', 'email'],
             id: 'EmailID',
             type: 'email',
-            required: 'require'
+
           },
           {
             key: 'tel',
@@ -14814,7 +15100,7 @@ const formData = [
             place: 'Enter Phone Number',
             id: 'phone',
             type: 'tel',
-            required: 'require'
+
           },
           {
             key: 'text',
@@ -14823,7 +15109,7 @@ const formData = [
             place: 'Enter Father Name',
             id: 'Father Name',
             type: 'text',
-            required: 'require'
+
           },
           {
             key: 'text',
@@ -14832,32 +15118,32 @@ const formData = [
             place: 'Enter Mother Name',
             id: 'mother_name',
             type: 'text',
-            required: 'require'
+
           },
           {
             key: 'select',
             label: 'Session',
             name: ['customfields', 'session'],
-            place: 'eg: jan 20',
+            place: 'eg: JAN_20',
             id: 'Session',
             type: 'select',
-            options: [{ value: 'jan 20', label: 'Jan 20' },
-            { value: 'july 20', label: 'July 20' },
-            { value: 'jan 21', label: 'Jan 21' },
-            { value: 'july 21', label: 'July 21' },
-            { value: 'jan 22', label: 'Jan 22' },
-            { value: 'july 22', label: 'July 22' },
-            { value: 'jan 23', label: 'Jan 23' },
-            { value: 'july 23', label: 'July 23' },
-            { value: 'jan 24', label: 'Jan 24' },
-            { value: 'july 24', label: 'July 24' },
-            { value: 'jan 25', label: 'Jan 25' },
-            { value: 'july 25', label: 'July 25' },
-            { value: 'mar 23', label: 'mar 23' },
-            { value: 'apr 23', label: 'apr 23' },
-            { value: 'oct 23', label: 'oct 23' },
-            { value: 'nov 23', label: 'nov 23' },],
-            required: 'require'
+            options: [{ value: 'JAN_20', label: 'JAN_20' },
+            { value: 'JULY_20', label: 'JULY_20' },
+            { value: 'JAN_21', label: 'JAN_21' },
+            { value: 'JULY_21', label: 'JULY_21' },
+            { value: 'JAN_22', label: 'JAN_22' },
+            { value: 'JULY_22', label: 'JULY_22' },
+            { value: 'JAN_23', label: 'JAN_23' },
+            { value: 'JULY_23', label: 'JULY_23' },
+            { value: 'JAN_24', label: 'JAN_24' },
+            { value: 'JULY_24', label: 'JULY_24' },
+            { value: 'JAN_25', label: 'JAN_25' },
+            { value: 'JULY_25', label: 'JULY_25' },
+            { value: 'MAR_23', label: 'MAR_23' },
+            { value: 'APR_23', label: 'APR_23' },
+            { value: 'OCT_23', label: 'OCT_23' },
+            { value: 'NOV_23', label: 'NOV_23' },],
+
           },
           {
             key: 'select',
@@ -14866,7 +15152,7 @@ const formData = [
             id: 'SessionType',
             place: 'Enter Admission Type',
             type: 'select',
-            options: [{ value: 'Fresh', label: 'Fresh' },
+            options: [{ value: 'FRESH', label: 'FRESH' },
             { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
           },
 
@@ -14877,7 +15163,7 @@ const formData = [
             place: 'Enter Date of Birth',
             id: 'dob',
             type: 'date',
-            required: 'require'
+
           },
           {
             key: 'select',
@@ -14897,7 +15183,7 @@ const formData = [
             name: ['customfields', 'installment_type'],
             place: 'Installment Type',
             type: 'select',
-            required: 'require',
+
             options: [
               { value: '1st Installment/ New Admission', label: '1st Installment/ New Admission' },
               { value: '2nd Installment', label: '2nd Installment' },
@@ -14918,8 +15204,9 @@ const formData = [
             id: 'PaymentMode ',
             type: 'select',
             place: 'Select Payment Mode',
-            required: 'require',
+
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
+            { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
             { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
@@ -14930,77 +15217,82 @@ const formData = [
             name: ['customfields', 'counselor_email'],
             id: 'email ',
             type: 'select',
-            place: 'select counselor email',
-            required: 'require',
-            options: [{ value: 'zarin@highereducationschool.com', label: 'Zarin' },
-            { value: 'kanchan@highereducationschool.com', label: 'Kanchan' },
-            { value: 'kirti@highereducationschool.com', label: 'Kirti' },
-            { value: 'ramandeep@highereducationschool.com', label: 'Raman' },
-            { value: 'kavita@highereducationschool.com', label: 'kavita' },
-            { value: 'imra@highereducationschool.com', label: 'Imra' },
-            { value: 'Mahak@highereducationschool.com', label: 'Mahek' },
-            { value: 'abhay@highereducationschool.com', label: 'abhay' },
-            { value: 'swati@highereducationschool.com', label: 'swati' },
-            { value: 'gulshan@highereducationschool.com', label: 'Gulshan' },
-            { value: 'isha@highereducationschool.com', label: 'Isha' },
-            { value: 'Sakshi@highereducationschool.com', label: 'Sakshi' },
-            { value: 'aashita@highereducationschool.com', label: 'aashita' },
-            { value: 'pratibha@highereducationschool.com', label: 'pratibha' },
-            { value: 'shreyashi@highereducationschool.com', label: 'Shreyashi ' },
-            { value: 'apoorvasrivastava@distanceeducationschool.com', label: 'Apoorva_DES' },
-            { value: 'asma@distanceeducationschool.com', label: 'Asma_DES' },
-            { value: 'nehaprashar@distanceeducationschool.com', label: 'Neha_Prasher_DES' },
-            { value: 'priya@distanceeducationschool.com', label: 'Priya_DES' },
-            { value: 'diksha@distanceeducationschool.com', label: 'Diksha_DES' },
-            { value: 'abhilasha@distanceeducationschool.com', label: 'Abhilasha_Gupta_DES' },
-            { value: 'saher@distanceeducationschool.com', label: 'Saher_Khan_DES' },
-            { value: 'fiza@distanceeducationschool.com', label: 'Fiza_DES' },
-            { value: 'muskan@distanceeducationschool.com', label: 'Muskaan_DES' },
-            { value: 'aniruddh@distanceeducationschool.com', label: 'Aniruddh_DES' },
-            { value: 'deva@distanceeducationschool.com', label: 'Devendra_DES' },
-            { value: 'amritpal@distanceeducationschool.com', label: 'Amritpal_DES' },
-            { value: 'Salman@distanceeducationschool.com:', label: 'Salman_DES' },
-            { value: 'tariq@distanceeducationschool.com', label: 'Traiq_DES' },
-            { value: 'shivam@distanceeducationschool.com', label: 'Shivam_sharma_DES' },
-            { value: 'pushpa@distanceeducationschool.com', label: 'Puspa_DES' },
-            { value: 'zarin@distanceeducationschool.com', label: 'Zarin_DES' },
-            { value: 'kanchan@distanceeducationschool.com', label: 'Kanchan_DES' },
-            { value: 'manu@distanceeducationschool.com', label: 'Manu_DES' },
+            place: 'select counselor name',
+            options: [
+              // DES External email with name
+              { value: 'apoorvasrivastava@sode.co.in', label: 'Apoorva Srivastava' },
+              { value: 'nehaprashar@sode.co.in', label: 'Neha Prasher' },
+              { value: 'priya@sode.co.in', label: 'Priya Anand' },
+              { value: 'diksha@sode.co.in', label: 'Diksha Singh' },
+              { value: 'abhilasha@sode.co.in', label: 'Abhilasha Gupta' },
+              { value: 'saher@sode.co.in', label: 'Saher Khan' },
 
-            // Jain Team Emails
-            { value: 'a.anitha.ju@gmail.com', label: 'Anita_JU' },
-            { value: 'vaniruckmani.ju@gmail.com', label: 'Vani_Ruckmani_JU' },
-            { value: 'priyankapalle.ju@gmail.com', label: 'Priyanka_JU' },
-            { value: 'SwatiRamani.manipal@gmail.com', label: 'Swati_JU' },
+              // DES Internal email with name 
+              { value: 'muskan@distanceeducationschool.com', label: 'Muskaan ' },
+              { value: 'aniruddh@distanceeducationschool.com', label: 'Aniruddh Prakash' },
+              { value: 'amritpal@sode.co.in', label: 'Amritpal Singh' },
+              { value: 'salman@sode.co.in', label: 'Salman' },
+              { value: 'tariq@sode.co.in', label: 'Tariq Hasan' },
+              { value: 'shivam@sode.co.in', label: 'Shivam sharma' },
+              { value: 'pushpa@sode.co.in', label: 'Pushpa Pramanik' },
 
-            // Manipal Team Email
-            { value: 'ankitakumari.manipal@gmail.com', label: 'Ankita_MU' },
-            { value: 'medhahandoo.manipal@gmail.com', label: 'Medha_MU' },
-            { value: 'amreen.manipal@gmail.com', label: 'Amreen_MU' },
+              // DES Internal email with name 
+              { value: 'anurag@distanceeducationschool.com', label: 'Anurag Yadav' },
+              { value: 'kavitakumari@sode.co.in', label: 'Kavita Kumari' },
+              { value: 'rupal@sode.co.in', label: 'Rupal Gautam' },
+              { value: 'deva@sode.co.in', label: 'Devendra' },
+              { value: 'manshi@sode.co.in', label: 'Manshi Kem' },
 
-            // Support Team Email
-            { value: 'rajesh@distanceeducationschool.com', label: 'Rajesh_sir' },
-            { value: 'manisha@distanceeducationschool.com', label: 'Manisha' },
-            { value: 'admin@distanceeducationschool.com', label: 'Nouman_sir' },
-            { value: 'sandy@distanceeducationschool.com', label: 'Sandy' },
-            { value: 'neha@distanceeducationschool.com', label: 'Neha' },
-            { value: 'yashpriya@distanceeducationschool.com', label: 'Yash_Priya' },
-            { value: 'kavitahaldar@distanceeducationschool.com', label: 'kavitahaldar' },
-            { value: 'ifla@distanceeducationschool.com', label: 'Ifla' },
-            { value: 'shalu@distanceeducationschool.com', label: 'Shalu' },
-            { value: 'zainubia@distanceeducationschool.com', label: 'zainbuia' },
-            { value: 'pallovi@distanceeducationschool.com', label: 'Pallovi' },
-            { value: 'kavitakumari@distanceeducationschool.com', label: 'Kavita_Kumari' },
-            { value: 'manshi@distanceeducationschool.com', label: 'Mansi' },
-            { value: 'Bhavya.manipal@gmail.com', label: 'Bhavya' },
-            { value: 'anurag@distanceeducationschool.com', label: 'Anuraj' },
-            { value: 'rupal@distanceeducationschool.com', label: 'Rupal' },
-            //B2B Team Email
-            { value: 'spuhelpdesk@gmail.com', label: 'Binny' },
-            { value: 'ruchika.spu@gmail.com', label: 'Ruchika' },
-            { value: 'lalit@distanceeducationschool.com', label: 'Lalit_DES' },
-            { value: 'lalit.spu@gmail.com', label: 'Lalit' },
-            { value: 'ramiz.spu@gmail.com', label: 'Ramiz' }
+              // DES - INTERNATIONAL email with name 
+              { value: 'zarin@distanceeducationschool.com', label: 'Zarin Badar' },
+
+              // HES team email with name 
+              { value: 'kanchan@highereducationschool.com', label: 'Kanchan Sharma' },
+              { value: 'kirti@highereducationschool.com', label: 'Kirti Dubey' },
+              { value: 'ramandeep@highereducationschool.com', label: 'Ramandeep Kaur' },
+              { value: 'kavita@highereducationschool.com', label: 'Kavita Yadav' },
+              { value: 'imra@highereducationschool.com', label: 'Imra Khan' },
+              { value: 'mahak@highereducationschool.com', label: 'Mahek' },
+              { value: 'abhay@highereducationschool.com', label: 'Abhay Dubey' },
+              { value: 'swati@highereducationschool.com', label: 'Swati' },
+              { value: 'gulshan@highereducationschool.com', label: 'Gulshan Nayyar' },
+              { value: 'isha@highereducationschool.com', label: 'Isha Jaiswal' },
+              { value: 'sakshi@highereducationschool.com', label: 'Sakshi Arora' },
+
+              // Jain team email with name 
+              { value: 'anitha@sode.co.in', label: 'A.Anitha' },
+              { value: 'vani@sode.co.in', label: 'Vani Ruckmani' },
+
+              // Manipal team email with name 
+              { value: 'SwatiRamani.manipal@gmail.com', label: 'Swati Ramani' },
+              { value: 'ankitakumar@sode.co.in', label: 'Ankita Kumari' },
+              { value: 'nidhi@sode.co.in', label: 'Nidhi' },
+              { value: 'amreen@sode.co.in', label: 'Amreen ALI Khan' },
+              { value: 'umar@sode.co.in', label: 'MD Umar' },
+              { value: 'nehagupta@sode.co.in', label: 'Neha Gupta' },
+              { value: 'pawankumar@sode.co.in', label: 'Pawan Kumar' },
+              { value: 'bhavya@sode.co.in', label: 'Bhavya' },
+
+              // ALL DES && HES team email with name 
+              { value: 'rajesh@distanceeducationschool.com', label: 'Rajesh Sir' },
+              { value: 'manisha@distanceeducationschool.com', label: 'Manisha Yadav' },
+              { value: 'admin@distanceeducationschool.com', label: 'Nouman Sir' },
+              { value: 'sandy@distanceeducationschool.com', label: 'Sandy' },
+              { value: 'neha@distanceeducationschool.com', label: 'Neha Raj' },
+              { value: 'yashpriya@distanceeducationschool.com', label: 'Yash Priya' },
+              { value: 'kavitahaldar@distanceeducationschool.com', label: 'Kavita Haldar' },
+              { value: 'ifla@distanceeducationschool.com', label: 'Ifla' },
+              { value: 'shalu@distanceeducationschool.com', label: 'Shalu' },
+              { value: 'zainubia@distanceeducationschool.com', label: 'Zainbuia' },
+              { value: 'pallovi@distanceeducationschool.com', label: 'Pallovi' },
+              { value: 'hansi@distanceeducationschool.com', label: 'Hansi' },
+              { value: 'shristi@distanceeducationschool.com', label: 'Shristi' },
+              { value: 'aashita@highereducationschool.com', label: 'Aashita' },
+              { value: 'pratibha@highereducationschool.com', label: 'Pratibha' },
+              { value: 'shreyashi@highereducationschool.com', label: 'Shreyashi' },
+              { value: 'spuhelpdesk@gmail.com', label: 'Binny' },
+              { value: 'ruchika.spu@gmail.com', label: 'Ruchika' },
+              { value: 'ramiz.spu@gmail.com', label: 'Ramiz' },
             ],
           },
           {
@@ -15010,7 +15302,7 @@ const formData = [
             id: 'status ',
             type: 'select',
             place: 'select status',
-            required: 'require',
+
             options: [
               { value: 'New', label: 'New' },
               { value: 'Cancel', label: 'Cancel' },
@@ -15033,6 +15325,13 @@ const formData = [
             place: 'Enter your remark',
             id: 'remark',
             type: 'textarea',
+          },
+          {
+            key: 'date',
+            label: 'Created At',
+            name: 'created',
+            id: 'created',
+            type: 'date',
           },
         ],
       },
@@ -15404,7 +15703,7 @@ const formData = [
             name: ['customfields', 'send_fee_receipt'],
             type: 'radio',
             options: ['yes', 'no'],
-            required: 'require'
+
           },
           {
             key: 'studentId',
@@ -15413,7 +15712,7 @@ const formData = [
             place: 'StudentID',
             id: 'StudentID',
             type: 'studentId',
-            required: 'require'
+
           },
           {
             key: 'text',
@@ -15422,7 +15721,7 @@ const formData = [
             place: 'Student Name',
             id: 'full_name',
             type: 'text',
-            required: 'require'
+
           },
           {
             key: 'email',
@@ -15431,7 +15730,7 @@ const formData = [
             name: ['contact', 'email'],
             id: 'EmailID',
             type: 'email',
-            required: 'require'
+
           },
           {
             key: 'tel',
@@ -15440,7 +15739,7 @@ const formData = [
             place: 'Enter Phone Number',
             id: 'phone',
             type: 'tel',
-            required: 'require'
+
           },
           {
             key: 'text',
@@ -15449,7 +15748,7 @@ const formData = [
             place: 'Enter Father Name',
             id: 'Father Name',
             type: 'text',
-            required: 'require'
+
           },
           {
             key: 'text',
@@ -15458,32 +15757,32 @@ const formData = [
             place: 'Enter Mother Name',
             id: 'mother_name',
             type: 'text',
-            required: 'require'
+
           },
           {
             key: 'select',
             label: 'Session',
             name: ['customfields', 'session'],
-            place: 'eg: jan 20',
+            place: 'eg: JAN_20',
             id: 'Session',
             type: 'select',
-            options: [{ value: 'jan 20', label: 'Jan 20' },
-            { value: 'july 20', label: 'July 20' },
-            { value: 'jan 21', label: 'Jan 21' },
-            { value: 'july 21', label: 'July 21' },
-            { value: 'jan 22', label: 'Jan 22' },
-            { value: 'july 22', label: 'July 22' },
-            { value: 'jan 23', label: 'Jan 23' },
-            { value: 'july 23', label: 'July 23' },
-            { value: 'jan 24', label: 'Jan 24' },
-            { value: 'july 24', label: 'July 24' },
-            { value: 'jan 25', label: 'Jan 25' },
-            { value: 'july 25', label: 'July 25' },
-            { value: 'mar 23', label: 'mar 23' },
-            { value: 'apr 23', label: 'apr 23' },
-            { value: 'oct 23', label: 'oct 23' },
-            { value: 'nov 23', label: 'nov 23' },],
-            required: 'require'
+            options: [{ value: 'JAN_20', label: 'JAN_20' },
+            { value: 'JULY_20', label: 'JULY_20' },
+            { value: 'JAN_21', label: 'JAN_21' },
+            { value: 'JULY_21', label: 'JULY_21' },
+            { value: 'JAN_22', label: 'JAN_22' },
+            { value: 'JULY_22', label: 'JULY_22' },
+            { value: 'JAN_23', label: 'JAN_23' },
+            { value: 'JULY_23', label: 'JULY_23' },
+            { value: 'JAN_24', label: 'JAN_24' },
+            { value: 'JULY_24', label: 'JULY_24' },
+            { value: 'JAN_25', label: 'JAN_25' },
+            { value: 'JULY_25', label: 'JULY_25' },
+            { value: 'MAR_23', label: 'MAR_23' },
+            { value: 'APR_23', label: 'APR_23' },
+            { value: 'OCT_23', label: 'OCT_23' },
+            { value: 'NOV_23', label: 'NOV_23' },],
+
           },
           {
             key: 'select',
@@ -15492,7 +15791,7 @@ const formData = [
             id: 'SessionType',
             place: 'Enter Admission Type',
             type: 'select',
-            options: [{ value: 'Fresh', label: 'Fresh' },
+            options: [{ value: 'FRESH', label: 'FRESH' },
             { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
           },
 
@@ -15503,7 +15802,7 @@ const formData = [
             place: 'Enter Date of Birth',
             id: 'dob',
             type: 'date',
-            required: 'require'
+
           },
           {
             key: 'select',
@@ -15523,7 +15822,7 @@ const formData = [
             name: ['customfields', 'installment_type'],
             place: 'Installment Type',
             type: 'select',
-            required: 'require',
+
             options: [
               { value: '1st Installment/ New Admission', label: '1st Installment/ New Admission' },
               { value: '2nd Installment', label: '2nd Installment' },
@@ -15544,8 +15843,9 @@ const formData = [
             id: 'PaymentMode ',
             type: 'select',
             place: 'Select Payment Mode',
-            required: 'require',
+
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
+            { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
             { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
@@ -15556,77 +15856,82 @@ const formData = [
             name: ['customfields', 'counselor_email'],
             id: 'email ',
             type: 'select',
-            place: 'select counselor email',
-            required: 'require',
-            options: [{ value: 'zarin@highereducationschool.com', label: 'Zarin' },
-            { value: 'kanchan@highereducationschool.com', label: 'Kanchan' },
-            { value: 'kirti@highereducationschool.com', label: 'Kirti' },
-            { value: 'ramandeep@highereducationschool.com', label: 'Raman' },
-            { value: 'kavita@highereducationschool.com', label: 'kavita' },
-            { value: 'imra@highereducationschool.com', label: 'Imra' },
-            { value: 'Mahak@highereducationschool.com', label: 'Mahek' },
-            { value: 'abhay@highereducationschool.com', label: 'abhay' },
-            { value: 'swati@highereducationschool.com', label: 'swati' },
-            { value: 'gulshan@highereducationschool.com', label: 'Gulshan' },
-            { value: 'isha@highereducationschool.com', label: 'Isha' },
-            { value: 'Sakshi@highereducationschool.com', label: 'Sakshi' },
-            { value: 'aashita@highereducationschool.com', label: 'aashita' },
-            { value: 'pratibha@highereducationschool.com', label: 'pratibha' },
-            { value: 'shreyashi@highereducationschool.com', label: 'Shreyashi ' },
-            { value: 'apoorvasrivastava@distanceeducationschool.com', label: 'Apoorva_DES' },
-            { value: 'asma@distanceeducationschool.com', label: 'Asma_DES' },
-            { value: 'nehaprashar@distanceeducationschool.com', label: 'Neha_Prasher_DES' },
-            { value: 'priya@distanceeducationschool.com', label: 'Priya_DES' },
-            { value: 'diksha@distanceeducationschool.com', label: 'Diksha_DES' },
-            { value: 'abhilasha@distanceeducationschool.com', label: 'Abhilasha_Gupta_DES' },
-            { value: 'saher@distanceeducationschool.com', label: 'Saher_Khan_DES' },
-            { value: 'fiza@distanceeducationschool.com', label: 'Fiza_DES' },
-            { value: 'muskan@distanceeducationschool.com', label: 'Muskaan_DES' },
-            { value: 'aniruddh@distanceeducationschool.com', label: 'Aniruddh_DES' },
-            { value: 'deva@distanceeducationschool.com', label: 'Devendra_DES' },
-            { value: 'amritpal@distanceeducationschool.com', label: 'Amritpal_DES' },
-            { value: 'Salman@distanceeducationschool.com:', label: 'Salman_DES' },
-            { value: 'tariq@distanceeducationschool.com', label: 'Traiq_DES' },
-            { value: 'shivam@distanceeducationschool.com', label: 'Shivam_sharma_DES' },
-            { value: 'pushpa@distanceeducationschool.com', label: 'Puspa_DES' },
-            { value: 'zarin@distanceeducationschool.com', label: 'Zarin_DES' },
-            { value: 'kanchan@distanceeducationschool.com', label: 'Kanchan_DES' },
-            { value: 'manu@distanceeducationschool.com', label: 'Manu_DES' },
+            place: 'select counselor name',
+            options: [
+              // DES External email with name
+              { value: 'apoorvasrivastava@sode.co.in', label: 'Apoorva Srivastava' },
+              { value: 'nehaprashar@sode.co.in', label: 'Neha Prasher' },
+              { value: 'priya@sode.co.in', label: 'Priya Anand' },
+              { value: 'diksha@sode.co.in', label: 'Diksha Singh' },
+              { value: 'abhilasha@sode.co.in', label: 'Abhilasha Gupta' },
+              { value: 'saher@sode.co.in', label: 'Saher Khan' },
 
-            // Jain Team Emails
-            { value: 'a.anitha.ju@gmail.com', label: 'Anita_JU' },
-            { value: 'vaniruckmani.ju@gmail.com', label: 'Vani_Ruckmani_JU' },
-            { value: 'priyankapalle.ju@gmail.com', label: 'Priyanka_JU' },
-            { value: 'SwatiRamani.manipal@gmail.com', label: 'Swati_JU' },
+              // DES Internal email with name 
+              { value: 'muskan@distanceeducationschool.com', label: 'Muskaan ' },
+              { value: 'aniruddh@distanceeducationschool.com', label: 'Aniruddh Prakash' },
+              { value: 'amritpal@sode.co.in', label: 'Amritpal Singh' },
+              { value: 'salman@sode.co.in', label: 'Salman' },
+              { value: 'tariq@sode.co.in', label: 'Tariq Hasan' },
+              { value: 'shivam@sode.co.in', label: 'Shivam sharma' },
+              { value: 'pushpa@sode.co.in', label: 'Pushpa Pramanik' },
 
-            // Manipal Team Email
-            { value: 'ankitakumari.manipal@gmail.com', label: 'Ankita_MU' },
-            { value: 'medhahandoo.manipal@gmail.com', label: 'Medha_MU' },
-            { value: 'amreen.manipal@gmail.com', label: 'Amreen_MU' },
+              // DES Internal email with name 
+              { value: 'anurag@distanceeducationschool.com', label: 'Anurag Yadav' },
+              { value: 'kavitakumari@sode.co.in', label: 'Kavita Kumari' },
+              { value: 'rupal@sode.co.in', label: 'Rupal Gautam' },
+              { value: 'deva@sode.co.in', label: 'Devendra' },
+              { value: 'manshi@sode.co.in', label: 'Manshi Kem' },
 
-            // Support Team Email
-            { value: 'rajesh@distanceeducationschool.com', label: 'Rajesh_sir' },
-            { value: 'manisha@distanceeducationschool.com', label: 'Manisha' },
-            { value: 'admin@distanceeducationschool.com', label: 'Nouman_sir' },
-            { value: 'sandy@distanceeducationschool.com', label: 'Sandy' },
-            { value: 'neha@distanceeducationschool.com', label: 'Neha' },
-            { value: 'yashpriya@distanceeducationschool.com', label: 'Yash_Priya' },
-            { value: 'kavitahaldar@distanceeducationschool.com', label: 'kavitahaldar' },
-            { value: 'ifla@distanceeducationschool.com', label: 'Ifla' },
-            { value: 'shalu@distanceeducationschool.com', label: 'Shalu' },
-            { value: 'zainubia@distanceeducationschool.com', label: 'zainbuia' },
-            { value: 'pallovi@distanceeducationschool.com', label: 'Pallovi' },
-            { value: 'kavitakumari@distanceeducationschool.com', label: 'Kavita_Kumari' },
-            { value: 'manshi@distanceeducationschool.com', label: 'Mansi' },
-            { value: 'Bhavya.manipal@gmail.com', label: 'Bhavya' },
-            { value: 'anurag@distanceeducationschool.com', label: 'Anuraj' },
-            { value: 'rupal@distanceeducationschool.com', label: 'Rupal' },
-            //B2B Team Email
-            { value: 'spuhelpdesk@gmail.com', label: 'Binny' },
-            { value: 'ruchika.spu@gmail.com', label: 'Ruchika' },
-            { value: 'lalit@distanceeducationschool.com', label: 'Lalit_DES' },
-            { value: 'lalit.spu@gmail.com', label: 'Lalit' },
-            { value: 'ramiz.spu@gmail.com', label: 'Ramiz' }
+              // DES - INTERNATIONAL email with name 
+              { value: 'zarin@distanceeducationschool.com', label: 'Zarin Badar' },
+
+              // HES team email with name 
+              { value: 'kanchan@highereducationschool.com', label: 'Kanchan Sharma' },
+              { value: 'kirti@highereducationschool.com', label: 'Kirti Dubey' },
+              { value: 'ramandeep@highereducationschool.com', label: 'Ramandeep Kaur' },
+              { value: 'kavita@highereducationschool.com', label: 'Kavita Yadav' },
+              { value: 'imra@highereducationschool.com', label: 'Imra Khan' },
+              { value: 'mahak@highereducationschool.com', label: 'Mahek' },
+              { value: 'abhay@highereducationschool.com', label: 'Abhay Dubey' },
+              { value: 'swati@highereducationschool.com', label: 'Swati' },
+              { value: 'gulshan@highereducationschool.com', label: 'Gulshan Nayyar' },
+              { value: 'isha@highereducationschool.com', label: 'Isha Jaiswal' },
+              { value: 'sakshi@highereducationschool.com', label: 'Sakshi Arora' },
+
+              // Jain team email with name 
+              { value: 'anitha@sode.co.in', label: 'A.Anitha' },
+              { value: 'vani@sode.co.in', label: 'Vani Ruckmani' },
+
+              // Manipal team email with name 
+              { value: 'SwatiRamani.manipal@gmail.com', label: 'Swati Ramani' },
+              { value: 'ankitakumar@sode.co.in', label: 'Ankita Kumari' },
+              { value: 'nidhi@sode.co.in', label: 'Nidhi' },
+              { value: 'amreen@sode.co.in', label: 'Amreen ALI Khan' },
+              { value: 'umar@sode.co.in', label: 'MD Umar' },
+              { value: 'nehagupta@sode.co.in', label: 'Neha Gupta' },
+              { value: 'pawankumar@sode.co.in', label: 'Pawan Kumar' },
+              { value: 'bhavya@sode.co.in', label: 'Bhavya' },
+
+              // ALL DES && HES team email with name 
+              { value: 'rajesh@distanceeducationschool.com', label: 'Rajesh Sir' },
+              { value: 'manisha@distanceeducationschool.com', label: 'Manisha Yadav' },
+              { value: 'admin@distanceeducationschool.com', label: 'Nouman Sir' },
+              { value: 'sandy@distanceeducationschool.com', label: 'Sandy' },
+              { value: 'neha@distanceeducationschool.com', label: 'Neha Raj' },
+              { value: 'yashpriya@distanceeducationschool.com', label: 'Yash Priya' },
+              { value: 'kavitahaldar@distanceeducationschool.com', label: 'Kavita Haldar' },
+              { value: 'ifla@distanceeducationschool.com', label: 'Ifla' },
+              { value: 'shalu@distanceeducationschool.com', label: 'Shalu' },
+              { value: 'zainubia@distanceeducationschool.com', label: 'Zainbuia' },
+              { value: 'pallovi@distanceeducationschool.com', label: 'Pallovi' },
+              { value: 'hansi@distanceeducationschool.com', label: 'Hansi' },
+              { value: 'shristi@distanceeducationschool.com', label: 'Shristi' },
+              { value: 'aashita@highereducationschool.com', label: 'Aashita' },
+              { value: 'pratibha@highereducationschool.com', label: 'Pratibha' },
+              { value: 'shreyashi@highereducationschool.com', label: 'Shreyashi' },
+              { value: 'spuhelpdesk@gmail.com', label: 'Binny' },
+              { value: 'ruchika.spu@gmail.com', label: 'Ruchika' },
+              { value: 'ramiz.spu@gmail.com', label: 'Ramiz' },
             ],
           },
           {
@@ -15636,7 +15941,7 @@ const formData = [
             id: 'status ',
             type: 'select',
             place: 'select status',
-            required: 'require',
+
             options: [
               { value: 'New', label: 'New' },
               { value: 'Cancel', label: 'Cancel' },
@@ -15659,6 +15964,13 @@ const formData = [
             place: 'Enter your remark',
             id: 'remark',
             type: 'textarea',
+          },
+          {
+            key: 'date',
+            label: 'Created At',
+            name: 'created',
+            id: 'created',
+            type: 'date',
           },
         ],
       },
@@ -16030,7 +16342,7 @@ const formData = [
             name: ['customfields', 'send_fee_receipt'],
             type: 'radio',
             options: ['yes', 'no'],
-            required: 'require'
+
           },
           {
             key: 'studentId',
@@ -16039,7 +16351,7 @@ const formData = [
             place: 'StudentID',
             id: 'StudentID',
             type: 'studentId',
-            required: 'require'
+
           },
           {
             key: 'text',
@@ -16048,7 +16360,7 @@ const formData = [
             place: 'Student Name',
             id: 'full_name',
             type: 'text',
-            required: 'require'
+
           },
           {
             key: 'email',
@@ -16057,7 +16369,7 @@ const formData = [
             name: ['contact', 'email'],
             id: 'EmailID',
             type: 'email',
-            required: 'require'
+
           },
           {
             key: 'tel',
@@ -16066,7 +16378,7 @@ const formData = [
             place: 'Enter Phone Number',
             id: 'phone',
             type: 'tel',
-            required: 'require'
+
           },
           {
             key: 'text',
@@ -16075,7 +16387,7 @@ const formData = [
             place: 'Enter Father Name',
             id: 'Father Name',
             type: 'text',
-            required: 'require'
+
           },
           {
             key: 'text',
@@ -16084,32 +16396,32 @@ const formData = [
             place: 'Enter Mother Name',
             id: 'mother_name',
             type: 'text',
-            required: 'require'
+
           },
           {
             key: 'select',
             label: 'Session',
             name: ['customfields', 'session'],
-            place: 'eg: jan 20',
+            place: 'eg: JAN_20',
             id: 'Session',
             type: 'select',
-            options: [{ value: 'jan 20', label: 'Jan 20' },
-            { value: 'july 20', label: 'July 20' },
-            { value: 'jan 21', label: 'Jan 21' },
-            { value: 'july 21', label: 'July 21' },
-            { value: 'jan 22', label: 'Jan 22' },
-            { value: 'july 22', label: 'July 22' },
-            { value: 'jan 23', label: 'Jan 23' },
-            { value: 'july 23', label: 'July 23' },
-            { value: 'jan 24', label: 'Jan 24' },
-            { value: 'july 24', label: 'July 24' },
-            { value: 'jan 25', label: 'Jan 25' },
-            { value: 'july 25', label: 'July 25' },
-            { value: 'mar 23', label: 'mar 23' },
-            { value: 'apr 23', label: 'apr 23' },
-            { value: 'oct 23', label: 'oct 23' },
-            { value: 'nov 23', label: 'nov 23' },],
-            required: 'require'
+            options: [{ value: 'JAN_20', label: 'JAN_20' },
+            { value: 'JULY_20', label: 'JULY_20' },
+            { value: 'JAN_21', label: 'JAN_21' },
+            { value: 'JULY_21', label: 'JULY_21' },
+            { value: 'JAN_22', label: 'JAN_22' },
+            { value: 'JULY_22', label: 'JULY_22' },
+            { value: 'JAN_23', label: 'JAN_23' },
+            { value: 'JULY_23', label: 'JULY_23' },
+            { value: 'JAN_24', label: 'JAN_24' },
+            { value: 'JULY_24', label: 'JULY_24' },
+            { value: 'JAN_25', label: 'JAN_25' },
+            { value: 'JULY_25', label: 'JULY_25' },
+            { value: 'MAR_23', label: 'MAR_23' },
+            { value: 'APR_23', label: 'APR_23' },
+            { value: 'OCT_23', label: 'OCT_23' },
+            { value: 'NOV_23', label: 'NOV_23' },],
+
           },
           {
             key: 'select',
@@ -16118,7 +16430,7 @@ const formData = [
             id: 'SessionType',
             place: 'Enter Admission Type',
             type: 'select',
-            options: [{ value: 'Fresh', label: 'Fresh' },
+            options: [{ value: 'FRESH', label: 'FRESH' },
             { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
           },
 
@@ -16129,7 +16441,7 @@ const formData = [
             place: 'Enter Date of Birth',
             id: 'dob',
             type: 'date',
-            required: 'require'
+
           },
           {
             key: 'select',
@@ -16149,7 +16461,7 @@ const formData = [
             name: ['customfields', 'installment_type'],
             place: 'Installment Type',
             type: 'select',
-            required: 'require',
+
             options: [
               { value: '1st Installment/ New Admission', label: '1st Installment/ New Admission' },
               { value: '2nd Installment', label: '2nd Installment' },
@@ -16170,8 +16482,9 @@ const formData = [
             id: 'PaymentMode ',
             type: 'select',
             place: 'Select Payment Mode',
-            required: 'require',
+
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
+            { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
             { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
@@ -16182,77 +16495,82 @@ const formData = [
             name: ['customfields', 'counselor_email'],
             id: 'email ',
             type: 'select',
-            place: 'select counselor email',
-            required: 'require',
-            options: [{ value: 'zarin@highereducationschool.com', label: 'Zarin' },
-            { value: 'kanchan@highereducationschool.com', label: 'Kanchan' },
-            { value: 'kirti@highereducationschool.com', label: 'Kirti' },
-            { value: 'ramandeep@highereducationschool.com', label: 'Raman' },
-            { value: 'kavita@highereducationschool.com', label: 'kavita' },
-            { value: 'imra@highereducationschool.com', label: 'Imra' },
-            { value: 'Mahak@highereducationschool.com', label: 'Mahek' },
-            { value: 'abhay@highereducationschool.com', label: 'abhay' },
-            { value: 'swati@highereducationschool.com', label: 'swati' },
-            { value: 'gulshan@highereducationschool.com', label: 'Gulshan' },
-            { value: 'isha@highereducationschool.com', label: 'Isha' },
-            { value: 'Sakshi@highereducationschool.com', label: 'Sakshi' },
-            { value: 'aashita@highereducationschool.com', label: 'aashita' },
-            { value: 'pratibha@highereducationschool.com', label: 'pratibha' },
-            { value: 'shreyashi@highereducationschool.com', label: 'Shreyashi ' },
-            { value: 'apoorvasrivastava@distanceeducationschool.com', label: 'Apoorva_DES' },
-            { value: 'asma@distanceeducationschool.com', label: 'Asma_DES' },
-            { value: 'nehaprashar@distanceeducationschool.com', label: 'Neha_Prasher_DES' },
-            { value: 'priya@distanceeducationschool.com', label: 'Priya_DES' },
-            { value: 'diksha@distanceeducationschool.com', label: 'Diksha_DES' },
-            { value: 'abhilasha@distanceeducationschool.com', label: 'Abhilasha_Gupta_DES' },
-            { value: 'saher@distanceeducationschool.com', label: 'Saher_Khan_DES' },
-            { value: 'fiza@distanceeducationschool.com', label: 'Fiza_DES' },
-            { value: 'muskan@distanceeducationschool.com', label: 'Muskaan_DES' },
-            { value: 'aniruddh@distanceeducationschool.com', label: 'Aniruddh_DES' },
-            { value: 'deva@distanceeducationschool.com', label: 'Devendra_DES' },
-            { value: 'amritpal@distanceeducationschool.com', label: 'Amritpal_DES' },
-            { value: 'Salman@distanceeducationschool.com:', label: 'Salman_DES' },
-            { value: 'tariq@distanceeducationschool.com', label: 'Traiq_DES' },
-            { value: 'shivam@distanceeducationschool.com', label: 'Shivam_sharma_DES' },
-            { value: 'pushpa@distanceeducationschool.com', label: 'Puspa_DES' },
-            { value: 'zarin@distanceeducationschool.com', label: 'Zarin_DES' },
-            { value: 'kanchan@distanceeducationschool.com', label: 'Kanchan_DES' },
-            { value: 'manu@distanceeducationschool.com', label: 'Manu_DES' },
+            place: 'select counselor name',
+            options: [
+              // DES External email with name
+              { value: 'apoorvasrivastava@sode.co.in', label: 'Apoorva Srivastava' },
+              { value: 'nehaprashar@sode.co.in', label: 'Neha Prasher' },
+              { value: 'priya@sode.co.in', label: 'Priya Anand' },
+              { value: 'diksha@sode.co.in', label: 'Diksha Singh' },
+              { value: 'abhilasha@sode.co.in', label: 'Abhilasha Gupta' },
+              { value: 'saher@sode.co.in', label: 'Saher Khan' },
 
-            // Jain Team Emails
-            { value: 'a.anitha.ju@gmail.com', label: 'Anita_JU' },
-            { value: 'vaniruckmani.ju@gmail.com', label: 'Vani_Ruckmani_JU' },
-            { value: 'priyankapalle.ju@gmail.com', label: 'Priyanka_JU' },
-            { value: 'SwatiRamani.manipal@gmail.com', label: 'Swati_JU' },
+              // DES Internal email with name 
+              { value: 'muskan@distanceeducationschool.com', label: 'Muskaan ' },
+              { value: 'aniruddh@distanceeducationschool.com', label: 'Aniruddh Prakash' },
+              { value: 'amritpal@sode.co.in', label: 'Amritpal Singh' },
+              { value: 'salman@sode.co.in', label: 'Salman' },
+              { value: 'tariq@sode.co.in', label: 'Tariq Hasan' },
+              { value: 'shivam@sode.co.in', label: 'Shivam sharma' },
+              { value: 'pushpa@sode.co.in', label: 'Pushpa Pramanik' },
 
-            // Manipal Team Email
-            { value: 'ankitakumari.manipal@gmail.com', label: 'Ankita_MU' },
-            { value: 'medhahandoo.manipal@gmail.com', label: 'Medha_MU' },
-            { value: 'amreen.manipal@gmail.com', label: 'Amreen_MU' },
+              // DES Internal email with name 
+              { value: 'anurag@distanceeducationschool.com', label: 'Anurag Yadav' },
+              { value: 'kavitakumari@sode.co.in', label: 'Kavita Kumari' },
+              { value: 'rupal@sode.co.in', label: 'Rupal Gautam' },
+              { value: 'deva@sode.co.in', label: 'Devendra' },
+              { value: 'manshi@sode.co.in', label: 'Manshi Kem' },
 
-            // Support Team Email
-            { value: 'rajesh@distanceeducationschool.com', label: 'Rajesh_sir' },
-            { value: 'manisha@distanceeducationschool.com', label: 'Manisha' },
-            { value: 'admin@distanceeducationschool.com', label: 'Nouman_sir' },
-            { value: 'sandy@distanceeducationschool.com', label: 'Sandy' },
-            { value: 'neha@distanceeducationschool.com', label: 'Neha' },
-            { value: 'yashpriya@distanceeducationschool.com', label: 'Yash_Priya' },
-            { value: 'kavitahaldar@distanceeducationschool.com', label: 'kavitahaldar' },
-            { value: 'ifla@distanceeducationschool.com', label: 'Ifla' },
-            { value: 'shalu@distanceeducationschool.com', label: 'Shalu' },
-            { value: 'zainubia@distanceeducationschool.com', label: 'zainbuia' },
-            { value: 'pallovi@distanceeducationschool.com', label: 'Pallovi' },
-            { value: 'kavitakumari@distanceeducationschool.com', label: 'Kavita_Kumari' },
-            { value: 'manshi@distanceeducationschool.com', label: 'Mansi' },
-            { value: 'Bhavya.manipal@gmail.com', label: 'Bhavya' },
-            { value: 'anurag@distanceeducationschool.com', label: 'Anuraj' },
-            { value: 'rupal@distanceeducationschool.com', label: 'Rupal' },
-            //B2B Team Email
-            { value: 'spuhelpdesk@gmail.com', label: 'Binny' },
-            { value: 'ruchika.spu@gmail.com', label: 'Ruchika' },
-            { value: 'lalit@distanceeducationschool.com', label: 'Lalit_DES' },
-            { value: 'lalit.spu@gmail.com', label: 'Lalit' },
-            { value: 'ramiz.spu@gmail.com', label: 'Ramiz' }
+              // DES - INTERNATIONAL email with name 
+              { value: 'zarin@distanceeducationschool.com', label: 'Zarin Badar' },
+
+              // HES team email with name 
+              { value: 'kanchan@highereducationschool.com', label: 'Kanchan Sharma' },
+              { value: 'kirti@highereducationschool.com', label: 'Kirti Dubey' },
+              { value: 'ramandeep@highereducationschool.com', label: 'Ramandeep Kaur' },
+              { value: 'kavita@highereducationschool.com', label: 'Kavita Yadav' },
+              { value: 'imra@highereducationschool.com', label: 'Imra Khan' },
+              { value: 'mahak@highereducationschool.com', label: 'Mahek' },
+              { value: 'abhay@highereducationschool.com', label: 'Abhay Dubey' },
+              { value: 'swati@highereducationschool.com', label: 'Swati' },
+              { value: 'gulshan@highereducationschool.com', label: 'Gulshan Nayyar' },
+              { value: 'isha@highereducationschool.com', label: 'Isha Jaiswal' },
+              { value: 'sakshi@highereducationschool.com', label: 'Sakshi Arora' },
+
+              // Jain team email with name 
+              { value: 'anitha@sode.co.in', label: 'A.Anitha' },
+              { value: 'vani@sode.co.in', label: 'Vani Ruckmani' },
+
+              // Manipal team email with name 
+              { value: 'SwatiRamani.manipal@gmail.com', label: 'Swati Ramani' },
+              { value: 'ankitakumar@sode.co.in', label: 'Ankita Kumari' },
+              { value: 'nidhi@sode.co.in', label: 'Nidhi' },
+              { value: 'amreen@sode.co.in', label: 'Amreen ALI Khan' },
+              { value: 'umar@sode.co.in', label: 'MD Umar' },
+              { value: 'nehagupta@sode.co.in', label: 'Neha Gupta' },
+              { value: 'pawankumar@sode.co.in', label: 'Pawan Kumar' },
+              { value: 'bhavya@sode.co.in', label: 'Bhavya' },
+
+              // ALL DES && HES team email with name 
+              { value: 'rajesh@distanceeducationschool.com', label: 'Rajesh Sir' },
+              { value: 'manisha@distanceeducationschool.com', label: 'Manisha Yadav' },
+              { value: 'admin@distanceeducationschool.com', label: 'Nouman Sir' },
+              { value: 'sandy@distanceeducationschool.com', label: 'Sandy' },
+              { value: 'neha@distanceeducationschool.com', label: 'Neha Raj' },
+              { value: 'yashpriya@distanceeducationschool.com', label: 'Yash Priya' },
+              { value: 'kavitahaldar@distanceeducationschool.com', label: 'Kavita Haldar' },
+              { value: 'ifla@distanceeducationschool.com', label: 'Ifla' },
+              { value: 'shalu@distanceeducationschool.com', label: 'Shalu' },
+              { value: 'zainubia@distanceeducationschool.com', label: 'Zainbuia' },
+              { value: 'pallovi@distanceeducationschool.com', label: 'Pallovi' },
+              { value: 'hansi@distanceeducationschool.com', label: 'Hansi' },
+              { value: 'shristi@distanceeducationschool.com', label: 'Shristi' },
+              { value: 'aashita@highereducationschool.com', label: 'Aashita' },
+              { value: 'pratibha@highereducationschool.com', label: 'Pratibha' },
+              { value: 'shreyashi@highereducationschool.com', label: 'Shreyashi' },
+              { value: 'spuhelpdesk@gmail.com', label: 'Binny' },
+              { value: 'ruchika.spu@gmail.com', label: 'Ruchika' },
+              { value: 'ramiz.spu@gmail.com', label: 'Ramiz' },
             ],
           },
           {
@@ -16262,7 +16580,7 @@ const formData = [
             id: 'status ',
             type: 'select',
             place: 'select status',
-            required: 'require',
+
             options: [
               { value: 'New', label: 'New' },
               { value: 'Cancel', label: 'Cancel' },
@@ -16285,6 +16603,13 @@ const formData = [
             place: 'Enter your remark',
             id: 'remark',
             type: 'textarea',
+          },
+          {
+            key: 'date',
+            label: 'Created At',
+            name: 'created',
+            id: 'created',
+            type: 'date',
           },
         ],
       },
@@ -16656,7 +16981,7 @@ const formData = [
             name: ['customfields', 'send_fee_receipt'],
             type: 'radio',
             options: ['yes', 'no'],
-            required: 'require'
+
           },
           {
             key: 'studentId',
@@ -16665,7 +16990,7 @@ const formData = [
             place: 'StudentID',
             id: 'StudentID',
             type: 'studentId',
-            required: 'require'
+
           },
           {
             key: 'text',
@@ -16674,7 +16999,7 @@ const formData = [
             place: 'Student Name',
             id: 'full_name',
             type: 'text',
-            required: 'require'
+
           },
           {
             key: 'email',
@@ -16683,7 +17008,7 @@ const formData = [
             name: ['contact', 'email'],
             id: 'EmailID',
             type: 'email',
-            required: 'require'
+
           },
           {
             key: 'tel',
@@ -16692,7 +17017,7 @@ const formData = [
             place: 'Enter Phone Number',
             id: 'phone',
             type: 'tel',
-            required: 'require'
+
           },
           {
             key: 'text',
@@ -16701,7 +17026,7 @@ const formData = [
             place: 'Enter Father Name',
             id: 'Father Name',
             type: 'text',
-            required: 'require'
+
           },
           {
             key: 'text',
@@ -16710,32 +17035,32 @@ const formData = [
             place: 'Enter Mother Name',
             id: 'mother_name',
             type: 'text',
-            required: 'require'
+
           },
           {
             key: 'select',
             label: 'Session',
             name: ['customfields', 'session'],
-            place: 'eg: jan 20',
+            place: 'eg: JAN_20',
             id: 'Session',
             type: 'select',
-            options: [{ value: 'jan 20', label: 'Jan 20' },
-            { value: 'july 20', label: 'July 20' },
-            { value: 'jan 21', label: 'Jan 21' },
-            { value: 'july 21', label: 'July 21' },
-            { value: 'jan 22', label: 'Jan 22' },
-            { value: 'july 22', label: 'July 22' },
-            { value: 'jan 23', label: 'Jan 23' },
-            { value: 'july 23', label: 'July 23' },
-            { value: 'jan 24', label: 'Jan 24' },
-            { value: 'july 24', label: 'July 24' },
-            { value: 'jan 25', label: 'Jan 25' },
-            { value: 'july 25', label: 'July 25' },
-            { value: 'mar 23', label: 'mar 23' },
-            { value: 'apr 23', label: 'apr 23' },
-            { value: 'oct 23', label: 'oct 23' },
-            { value: 'nov 23', label: 'nov 23' },],
-            required: 'require'
+            options: [{ value: 'JAN_20', label: 'JAN_20' },
+            { value: 'JULY_20', label: 'JULY_20' },
+            { value: 'JAN_21', label: 'JAN_21' },
+            { value: 'JULY_21', label: 'JULY_21' },
+            { value: 'JAN_22', label: 'JAN_22' },
+            { value: 'JULY_22', label: 'JULY_22' },
+            { value: 'JAN_23', label: 'JAN_23' },
+            { value: 'JULY_23', label: 'JULY_23' },
+            { value: 'JAN_24', label: 'JAN_24' },
+            { value: 'JULY_24', label: 'JULY_24' },
+            { value: 'JAN_25', label: 'JAN_25' },
+            { value: 'JULY_25', label: 'JULY_25' },
+            { value: 'MAR_23', label: 'MAR_23' },
+            { value: 'APR_23', label: 'APR_23' },
+            { value: 'OCT_23', label: 'OCT_23' },
+            { value: 'NOV_23', label: 'NOV_23' },],
+
           },
           {
             key: 'select',
@@ -16744,7 +17069,7 @@ const formData = [
             id: 'SessionType',
             place: 'Enter Admission Type',
             type: 'select',
-            options: [{ value: 'Fresh', label: 'Fresh' },
+            options: [{ value: 'FRESH', label: 'FRESH' },
             { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
           },
 
@@ -16755,7 +17080,7 @@ const formData = [
             place: 'Enter Date of Birth',
             id: 'dob',
             type: 'date',
-            required: 'require'
+
           },
           {
             key: 'select',
@@ -16775,7 +17100,7 @@ const formData = [
             name: ['customfields', 'installment_type'],
             place: 'Installment Type',
             type: 'select',
-            required: 'require',
+
             options: [
               { value: '1st Installment/ New Admission', label: '1st Installment/ New Admission' },
               { value: '2nd Installment', label: '2nd Installment' },
@@ -16796,8 +17121,9 @@ const formData = [
             id: 'PaymentMode ',
             type: 'select',
             place: 'Select Payment Mode',
-            required: 'require',
+
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
+            { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
             { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
@@ -16808,77 +17134,82 @@ const formData = [
             name: ['customfields', 'counselor_email'],
             id: 'email ',
             type: 'select',
-            place: 'select counselor email',
-            required: 'require',
-            options: [{ value: 'zarin@highereducationschool.com', label: 'Zarin' },
-            { value: 'kanchan@highereducationschool.com', label: 'Kanchan' },
-            { value: 'kirti@highereducationschool.com', label: 'Kirti' },
-            { value: 'ramandeep@highereducationschool.com', label: 'Raman' },
-            { value: 'kavita@highereducationschool.com', label: 'kavita' },
-            { value: 'imra@highereducationschool.com', label: 'Imra' },
-            { value: 'Mahak@highereducationschool.com', label: 'Mahek' },
-            { value: 'abhay@highereducationschool.com', label: 'abhay' },
-            { value: 'swati@highereducationschool.com', label: 'swati' },
-            { value: 'gulshan@highereducationschool.com', label: 'Gulshan' },
-            { value: 'isha@highereducationschool.com', label: 'Isha' },
-            { value: 'Sakshi@highereducationschool.com', label: 'Sakshi' },
-            { value: 'aashita@highereducationschool.com', label: 'aashita' },
-            { value: 'pratibha@highereducationschool.com', label: 'pratibha' },
-            { value: 'shreyashi@highereducationschool.com', label: 'Shreyashi ' },
-            { value: 'apoorvasrivastava@distanceeducationschool.com', label: 'Apoorva_DES' },
-            { value: 'asma@distanceeducationschool.com', label: 'Asma_DES' },
-            { value: 'nehaprashar@distanceeducationschool.com', label: 'Neha_Prasher_DES' },
-            { value: 'priya@distanceeducationschool.com', label: 'Priya_DES' },
-            { value: 'diksha@distanceeducationschool.com', label: 'Diksha_DES' },
-            { value: 'abhilasha@distanceeducationschool.com', label: 'Abhilasha_Gupta_DES' },
-            { value: 'saher@distanceeducationschool.com', label: 'Saher_Khan_DES' },
-            { value: 'fiza@distanceeducationschool.com', label: 'Fiza_DES' },
-            { value: 'muskan@distanceeducationschool.com', label: 'Muskaan_DES' },
-            { value: 'aniruddh@distanceeducationschool.com', label: 'Aniruddh_DES' },
-            { value: 'deva@distanceeducationschool.com', label: 'Devendra_DES' },
-            { value: 'amritpal@distanceeducationschool.com', label: 'Amritpal_DES' },
-            { value: 'Salman@distanceeducationschool.com:', label: 'Salman_DES' },
-            { value: 'tariq@distanceeducationschool.com', label: 'Traiq_DES' },
-            { value: 'shivam@distanceeducationschool.com', label: 'Shivam_sharma_DES' },
-            { value: 'pushpa@distanceeducationschool.com', label: 'Puspa_DES' },
-            { value: 'zarin@distanceeducationschool.com', label: 'Zarin_DES' },
-            { value: 'kanchan@distanceeducationschool.com', label: 'Kanchan_DES' },
-            { value: 'manu@distanceeducationschool.com', label: 'Manu_DES' },
+            place: 'select counselor name',
+            options: [
+              // DES External email with name
+              { value: 'apoorvasrivastava@sode.co.in', label: 'Apoorva Srivastava' },
+              { value: 'nehaprashar@sode.co.in', label: 'Neha Prasher' },
+              { value: 'priya@sode.co.in', label: 'Priya Anand' },
+              { value: 'diksha@sode.co.in', label: 'Diksha Singh' },
+              { value: 'abhilasha@sode.co.in', label: 'Abhilasha Gupta' },
+              { value: 'saher@sode.co.in', label: 'Saher Khan' },
 
-            // Jain Team Emails
-            { value: 'a.anitha.ju@gmail.com', label: 'Anita_JU' },
-            { value: 'vaniruckmani.ju@gmail.com', label: 'Vani_Ruckmani_JU' },
-            { value: 'priyankapalle.ju@gmail.com', label: 'Priyanka_JU' },
-            { value: 'SwatiRamani.manipal@gmail.com', label: 'Swati_JU' },
+              // DES Internal email with name 
+              { value: 'muskan@distanceeducationschool.com', label: 'Muskaan ' },
+              { value: 'aniruddh@distanceeducationschool.com', label: 'Aniruddh Prakash' },
+              { value: 'amritpal@sode.co.in', label: 'Amritpal Singh' },
+              { value: 'salman@sode.co.in', label: 'Salman' },
+              { value: 'tariq@sode.co.in', label: 'Tariq Hasan' },
+              { value: 'shivam@sode.co.in', label: 'Shivam sharma' },
+              { value: 'pushpa@sode.co.in', label: 'Pushpa Pramanik' },
 
-            // Manipal Team Email
-            { value: 'ankitakumari.manipal@gmail.com', label: 'Ankita_MU' },
-            { value: 'medhahandoo.manipal@gmail.com', label: 'Medha_MU' },
-            { value: 'amreen.manipal@gmail.com', label: 'Amreen_MU' },
+              // DES Internal email with name 
+              { value: 'anurag@distanceeducationschool.com', label: 'Anurag Yadav' },
+              { value: 'kavitakumari@sode.co.in', label: 'Kavita Kumari' },
+              { value: 'rupal@sode.co.in', label: 'Rupal Gautam' },
+              { value: 'deva@sode.co.in', label: 'Devendra' },
+              { value: 'manshi@sode.co.in', label: 'Manshi Kem' },
 
-            // Support Team Email
-            { value: 'rajesh@distanceeducationschool.com', label: 'Rajesh_sir' },
-            { value: 'manisha@distanceeducationschool.com', label: 'Manisha' },
-            { value: 'admin@distanceeducationschool.com', label: 'Nouman_sir' },
-            { value: 'sandy@distanceeducationschool.com', label: 'Sandy' },
-            { value: 'neha@distanceeducationschool.com', label: 'Neha' },
-            { value: 'yashpriya@distanceeducationschool.com', label: 'Yash_Priya' },
-            { value: 'kavitahaldar@distanceeducationschool.com', label: 'kavitahaldar' },
-            { value: 'ifla@distanceeducationschool.com', label: 'Ifla' },
-            { value: 'shalu@distanceeducationschool.com', label: 'Shalu' },
-            { value: 'zainubia@distanceeducationschool.com', label: 'zainbuia' },
-            { value: 'pallovi@distanceeducationschool.com', label: 'Pallovi' },
-            { value: 'kavitakumari@distanceeducationschool.com', label: 'Kavita_Kumari' },
-            { value: 'manshi@distanceeducationschool.com', label: 'Mansi' },
-            { value: 'Bhavya.manipal@gmail.com', label: 'Bhavya' },
-            { value: 'anurag@distanceeducationschool.com', label: 'Anuraj' },
-            { value: 'rupal@distanceeducationschool.com', label: 'Rupal' },
-            //B2B Team Email
-            { value: 'spuhelpdesk@gmail.com', label: 'Binny' },
-            { value: 'ruchika.spu@gmail.com', label: 'Ruchika' },
-            { value: 'lalit@distanceeducationschool.com', label: 'Lalit_DES' },
-            { value: 'lalit.spu@gmail.com', label: 'Lalit' },
-            { value: 'ramiz.spu@gmail.com', label: 'Ramiz' }
+              // DES - INTERNATIONAL email with name 
+              { value: 'zarin@distanceeducationschool.com', label: 'Zarin Badar' },
+
+              // HES team email with name 
+              { value: 'kanchan@highereducationschool.com', label: 'Kanchan Sharma' },
+              { value: 'kirti@highereducationschool.com', label: 'Kirti Dubey' },
+              { value: 'ramandeep@highereducationschool.com', label: 'Ramandeep Kaur' },
+              { value: 'kavita@highereducationschool.com', label: 'Kavita Yadav' },
+              { value: 'imra@highereducationschool.com', label: 'Imra Khan' },
+              { value: 'mahak@highereducationschool.com', label: 'Mahek' },
+              { value: 'abhay@highereducationschool.com', label: 'Abhay Dubey' },
+              { value: 'swati@highereducationschool.com', label: 'Swati' },
+              { value: 'gulshan@highereducationschool.com', label: 'Gulshan Nayyar' },
+              { value: 'isha@highereducationschool.com', label: 'Isha Jaiswal' },
+              { value: 'sakshi@highereducationschool.com', label: 'Sakshi Arora' },
+
+              // Jain team email with name 
+              { value: 'anitha@sode.co.in', label: 'A.Anitha' },
+              { value: 'vani@sode.co.in', label: 'Vani Ruckmani' },
+
+              // Manipal team email with name 
+              { value: 'SwatiRamani.manipal@gmail.com', label: 'Swati Ramani' },
+              { value: 'ankitakumar@sode.co.in', label: 'Ankita Kumari' },
+              { value: 'nidhi@sode.co.in', label: 'Nidhi' },
+              { value: 'amreen@sode.co.in', label: 'Amreen ALI Khan' },
+              { value: 'umar@sode.co.in', label: 'MD Umar' },
+              { value: 'nehagupta@sode.co.in', label: 'Neha Gupta' },
+              { value: 'pawankumar@sode.co.in', label: 'Pawan Kumar' },
+              { value: 'bhavya@sode.co.in', label: 'Bhavya' },
+
+              // ALL DES && HES team email with name 
+              { value: 'rajesh@distanceeducationschool.com', label: 'Rajesh Sir' },
+              { value: 'manisha@distanceeducationschool.com', label: 'Manisha Yadav' },
+              { value: 'admin@distanceeducationschool.com', label: 'Nouman Sir' },
+              { value: 'sandy@distanceeducationschool.com', label: 'Sandy' },
+              { value: 'neha@distanceeducationschool.com', label: 'Neha Raj' },
+              { value: 'yashpriya@distanceeducationschool.com', label: 'Yash Priya' },
+              { value: 'kavitahaldar@distanceeducationschool.com', label: 'Kavita Haldar' },
+              { value: 'ifla@distanceeducationschool.com', label: 'Ifla' },
+              { value: 'shalu@distanceeducationschool.com', label: 'Shalu' },
+              { value: 'zainubia@distanceeducationschool.com', label: 'Zainbuia' },
+              { value: 'pallovi@distanceeducationschool.com', label: 'Pallovi' },
+              { value: 'hansi@distanceeducationschool.com', label: 'Hansi' },
+              { value: 'shristi@distanceeducationschool.com', label: 'Shristi' },
+              { value: 'aashita@highereducationschool.com', label: 'Aashita' },
+              { value: 'pratibha@highereducationschool.com', label: 'Pratibha' },
+              { value: 'shreyashi@highereducationschool.com', label: 'Shreyashi' },
+              { value: 'spuhelpdesk@gmail.com', label: 'Binny' },
+              { value: 'ruchika.spu@gmail.com', label: 'Ruchika' },
+              { value: 'ramiz.spu@gmail.com', label: 'Ramiz' },
             ],
           },
           {
@@ -16888,7 +17219,7 @@ const formData = [
             id: 'status ',
             type: 'select',
             place: 'select status',
-            required: 'require',
+
             options: [
               { value: 'New', label: 'New' },
               { value: 'Cancel', label: 'Cancel' },
@@ -16911,6 +17242,13 @@ const formData = [
             place: 'Enter your remark',
             id: 'remark',
             type: 'textarea',
+          },
+          {
+            key: 'date',
+            label: 'Created At',
+            name: 'created',
+            id: 'created',
+            type: 'date',
           },
         ],
       },
@@ -17282,7 +17620,7 @@ const formData = [
             name: ['customfields', 'send_fee_receipt'],
             type: 'radio',
             options: ['yes', 'no'],
-            required: 'require'
+
           },
           {
             key: 'studentId',
@@ -17291,7 +17629,7 @@ const formData = [
             place: 'StudentID',
             id: 'StudentID',
             type: 'studentId',
-            required: 'require'
+
           },
           {
             key: 'text',
@@ -17300,7 +17638,7 @@ const formData = [
             place: 'Student Name',
             id: 'full_name',
             type: 'text',
-            required: 'require'
+
           },
           {
             key: 'email',
@@ -17309,7 +17647,7 @@ const formData = [
             name: ['contact', 'email'],
             id: 'EmailID',
             type: 'email',
-            required: 'require'
+
           },
           {
             key: 'tel',
@@ -17318,7 +17656,7 @@ const formData = [
             place: 'Enter Phone Number',
             id: 'phone',
             type: 'tel',
-            required: 'require'
+
           },
           {
             key: 'text',
@@ -17327,7 +17665,7 @@ const formData = [
             place: 'Enter Father Name',
             id: 'Father Name',
             type: 'text',
-            required: 'require'
+
           },
           {
             key: 'text',
@@ -17336,32 +17674,32 @@ const formData = [
             place: 'Enter Mother Name',
             id: 'mother_name',
             type: 'text',
-            required: 'require'
+
           },
           {
             key: 'select',
             label: 'Session',
             name: ['customfields', 'session'],
-            place: 'eg: jan 20',
+            place: 'eg: JAN_20',
             id: 'Session',
             type: 'select',
-            options: [{ value: 'jan 20', label: 'Jan 20' },
-            { value: 'july 20', label: 'July 20' },
-            { value: 'jan 21', label: 'Jan 21' },
-            { value: 'july 21', label: 'July 21' },
-            { value: 'jan 22', label: 'Jan 22' },
-            { value: 'july 22', label: 'July 22' },
-            { value: 'jan 23', label: 'Jan 23' },
-            { value: 'july 23', label: 'July 23' },
-            { value: 'jan 24', label: 'Jan 24' },
-            { value: 'july 24', label: 'July 24' },
-            { value: 'jan 25', label: 'Jan 25' },
-            { value: 'july 25', label: 'July 25' },
-            { value: 'mar 23', label: 'mar 23' },
-            { value: 'apr 23', label: 'apr 23' },
-            { value: 'oct 23', label: 'oct 23' },
-            { value: 'nov 23', label: 'nov 23' },],
-            required: 'require'
+            options: [{ value: 'JAN_20', label: 'JAN_20' },
+            { value: 'JULY_20', label: 'JULY_20' },
+            { value: 'JAN_21', label: 'JAN_21' },
+            { value: 'JULY_21', label: 'JULY_21' },
+            { value: 'JAN_22', label: 'JAN_22' },
+            { value: 'JULY_22', label: 'JULY_22' },
+            { value: 'JAN_23', label: 'JAN_23' },
+            { value: 'JULY_23', label: 'JULY_23' },
+            { value: 'JAN_24', label: 'JAN_24' },
+            { value: 'JULY_24', label: 'JULY_24' },
+            { value: 'JAN_25', label: 'JAN_25' },
+            { value: 'JULY_25', label: 'JULY_25' },
+            { value: 'MAR_23', label: 'MAR_23' },
+            { value: 'APR_23', label: 'APR_23' },
+            { value: 'OCT_23', label: 'OCT_23' },
+            { value: 'NOV_23', label: 'NOV_23' },],
+
           },
           {
             key: 'select',
@@ -17370,7 +17708,7 @@ const formData = [
             id: 'SessionType',
             place: 'Enter Admission Type',
             type: 'select',
-            options: [{ value: 'Fresh', label: 'Fresh' },
+            options: [{ value: 'FRESH', label: 'FRESH' },
             { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
           },
 
@@ -17381,7 +17719,7 @@ const formData = [
             place: 'Enter Date of Birth',
             id: 'dob',
             type: 'date',
-            required: 'require'
+
           },
           {
             key: 'select',
@@ -17401,7 +17739,7 @@ const formData = [
             name: ['customfields', 'installment_type'],
             place: 'Installment Type',
             type: 'select',
-            required: 'require',
+
             options: [
               { value: '1st Installment/ New Admission', label: '1st Installment/ New Admission' },
               { value: '2nd Installment', label: '2nd Installment' },
@@ -17422,8 +17760,9 @@ const formData = [
             id: 'PaymentMode ',
             type: 'select',
             place: 'Select Payment Mode',
-            required: 'require',
+
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
+            { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
             { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
@@ -17434,77 +17773,82 @@ const formData = [
             name: ['customfields', 'counselor_email'],
             id: 'email ',
             type: 'select',
-            place: 'select counselor email',
-            required: 'require',
-            options: [{ value: 'zarin@highereducationschool.com', label: 'Zarin' },
-            { value: 'kanchan@highereducationschool.com', label: 'Kanchan' },
-            { value: 'kirti@highereducationschool.com', label: 'Kirti' },
-            { value: 'ramandeep@highereducationschool.com', label: 'Raman' },
-            { value: 'kavita@highereducationschool.com', label: 'kavita' },
-            { value: 'imra@highereducationschool.com', label: 'Imra' },
-            { value: 'Mahak@highereducationschool.com', label: 'Mahek' },
-            { value: 'abhay@highereducationschool.com', label: 'abhay' },
-            { value: 'swati@highereducationschool.com', label: 'swati' },
-            { value: 'gulshan@highereducationschool.com', label: 'Gulshan' },
-            { value: 'isha@highereducationschool.com', label: 'Isha' },
-            { value: 'Sakshi@highereducationschool.com', label: 'Sakshi' },
-            { value: 'aashita@highereducationschool.com', label: 'aashita' },
-            { value: 'pratibha@highereducationschool.com', label: 'pratibha' },
-            { value: 'shreyashi@highereducationschool.com', label: 'Shreyashi ' },
-            { value: 'apoorvasrivastava@distanceeducationschool.com', label: 'Apoorva_DES' },
-            { value: 'asma@distanceeducationschool.com', label: 'Asma_DES' },
-            { value: 'nehaprashar@distanceeducationschool.com', label: 'Neha_Prasher_DES' },
-            { value: 'priya@distanceeducationschool.com', label: 'Priya_DES' },
-            { value: 'diksha@distanceeducationschool.com', label: 'Diksha_DES' },
-            { value: 'abhilasha@distanceeducationschool.com', label: 'Abhilasha_Gupta_DES' },
-            { value: 'saher@distanceeducationschool.com', label: 'Saher_Khan_DES' },
-            { value: 'fiza@distanceeducationschool.com', label: 'Fiza_DES' },
-            { value: 'muskan@distanceeducationschool.com', label: 'Muskaan_DES' },
-            { value: 'aniruddh@distanceeducationschool.com', label: 'Aniruddh_DES' },
-            { value: 'deva@distanceeducationschool.com', label: 'Devendra_DES' },
-            { value: 'amritpal@distanceeducationschool.com', label: 'Amritpal_DES' },
-            { value: 'Salman@distanceeducationschool.com:', label: 'Salman_DES' },
-            { value: 'tariq@distanceeducationschool.com', label: 'Traiq_DES' },
-            { value: 'shivam@distanceeducationschool.com', label: 'Shivam_sharma_DES' },
-            { value: 'pushpa@distanceeducationschool.com', label: 'Puspa_DES' },
-            { value: 'zarin@distanceeducationschool.com', label: 'Zarin_DES' },
-            { value: 'kanchan@distanceeducationschool.com', label: 'Kanchan_DES' },
-            { value: 'manu@distanceeducationschool.com', label: 'Manu_DES' },
+            place: 'select counselor name',
+            options: [
+              // DES External email with name
+              { value: 'apoorvasrivastava@sode.co.in', label: 'Apoorva Srivastava' },
+              { value: 'nehaprashar@sode.co.in', label: 'Neha Prasher' },
+              { value: 'priya@sode.co.in', label: 'Priya Anand' },
+              { value: 'diksha@sode.co.in', label: 'Diksha Singh' },
+              { value: 'abhilasha@sode.co.in', label: 'Abhilasha Gupta' },
+              { value: 'saher@sode.co.in', label: 'Saher Khan' },
 
-            // Jain Team Emails
-            { value: 'a.anitha.ju@gmail.com', label: 'Anita_JU' },
-            { value: 'vaniruckmani.ju@gmail.com', label: 'Vani_Ruckmani_JU' },
-            { value: 'priyankapalle.ju@gmail.com', label: 'Priyanka_JU' },
-            { value: 'SwatiRamani.manipal@gmail.com', label: 'Swati_JU' },
+              // DES Internal email with name 
+              { value: 'muskan@distanceeducationschool.com', label: 'Muskaan ' },
+              { value: 'aniruddh@distanceeducationschool.com', label: 'Aniruddh Prakash' },
+              { value: 'amritpal@sode.co.in', label: 'Amritpal Singh' },
+              { value: 'salman@sode.co.in', label: 'Salman' },
+              { value: 'tariq@sode.co.in', label: 'Tariq Hasan' },
+              { value: 'shivam@sode.co.in', label: 'Shivam sharma' },
+              { value: 'pushpa@sode.co.in', label: 'Pushpa Pramanik' },
 
-            // Manipal Team Email
-            { value: 'ankitakumari.manipal@gmail.com', label: 'Ankita_MU' },
-            { value: 'medhahandoo.manipal@gmail.com', label: 'Medha_MU' },
-            { value: 'amreen.manipal@gmail.com', label: 'Amreen_MU' },
+              // DES Internal email with name 
+              { value: 'anurag@distanceeducationschool.com', label: 'Anurag Yadav' },
+              { value: 'kavitakumari@sode.co.in', label: 'Kavita Kumari' },
+              { value: 'rupal@sode.co.in', label: 'Rupal Gautam' },
+              { value: 'deva@sode.co.in', label: 'Devendra' },
+              { value: 'manshi@sode.co.in', label: 'Manshi Kem' },
 
-            // Support Team Email
-            { value: 'rajesh@distanceeducationschool.com', label: 'Rajesh_sir' },
-            { value: 'manisha@distanceeducationschool.com', label: 'Manisha' },
-            { value: 'admin@distanceeducationschool.com', label: 'Nouman_sir' },
-            { value: 'sandy@distanceeducationschool.com', label: 'Sandy' },
-            { value: 'neha@distanceeducationschool.com', label: 'Neha' },
-            { value: 'yashpriya@distanceeducationschool.com', label: 'Yash_Priya' },
-            { value: 'kavitahaldar@distanceeducationschool.com', label: 'kavitahaldar' },
-            { value: 'ifla@distanceeducationschool.com', label: 'Ifla' },
-            { value: 'shalu@distanceeducationschool.com', label: 'Shalu' },
-            { value: 'zainubia@distanceeducationschool.com', label: 'zainbuia' },
-            { value: 'pallovi@distanceeducationschool.com', label: 'Pallovi' },
-            { value: 'kavitakumari@distanceeducationschool.com', label: 'Kavita_Kumari' },
-            { value: 'manshi@distanceeducationschool.com', label: 'Mansi' },
-            { value: 'Bhavya.manipal@gmail.com', label: 'Bhavya' },
-            { value: 'anurag@distanceeducationschool.com', label: 'Anuraj' },
-            { value: 'rupal@distanceeducationschool.com', label: 'Rupal' },
-            //B2B Team Email
-            { value: 'spuhelpdesk@gmail.com', label: 'Binny' },
-            { value: 'ruchika.spu@gmail.com', label: 'Ruchika' },
-            { value: 'lalit@distanceeducationschool.com', label: 'Lalit_DES' },
-            { value: 'lalit.spu@gmail.com', label: 'Lalit' },
-            { value: 'ramiz.spu@gmail.com', label: 'Ramiz' }
+              // DES - INTERNATIONAL email with name 
+              { value: 'zarin@distanceeducationschool.com', label: 'Zarin Badar' },
+
+              // HES team email with name 
+              { value: 'kanchan@highereducationschool.com', label: 'Kanchan Sharma' },
+              { value: 'kirti@highereducationschool.com', label: 'Kirti Dubey' },
+              { value: 'ramandeep@highereducationschool.com', label: 'Ramandeep Kaur' },
+              { value: 'kavita@highereducationschool.com', label: 'Kavita Yadav' },
+              { value: 'imra@highereducationschool.com', label: 'Imra Khan' },
+              { value: 'mahak@highereducationschool.com', label: 'Mahek' },
+              { value: 'abhay@highereducationschool.com', label: 'Abhay Dubey' },
+              { value: 'swati@highereducationschool.com', label: 'Swati' },
+              { value: 'gulshan@highereducationschool.com', label: 'Gulshan Nayyar' },
+              { value: 'isha@highereducationschool.com', label: 'Isha Jaiswal' },
+              { value: 'sakshi@highereducationschool.com', label: 'Sakshi Arora' },
+
+              // Jain team email with name 
+              { value: 'anitha@sode.co.in', label: 'A.Anitha' },
+              { value: 'vani@sode.co.in', label: 'Vani Ruckmani' },
+
+              // Manipal team email with name 
+              { value: 'SwatiRamani.manipal@gmail.com', label: 'Swati Ramani' },
+              { value: 'ankitakumar@sode.co.in', label: 'Ankita Kumari' },
+              { value: 'nidhi@sode.co.in', label: 'Nidhi' },
+              { value: 'amreen@sode.co.in', label: 'Amreen ALI Khan' },
+              { value: 'umar@sode.co.in', label: 'MD Umar' },
+              { value: 'nehagupta@sode.co.in', label: 'Neha Gupta' },
+              { value: 'pawankumar@sode.co.in', label: 'Pawan Kumar' },
+              { value: 'bhavya@sode.co.in', label: 'Bhavya' },
+
+              // ALL DES && HES team email with name 
+              { value: 'rajesh@distanceeducationschool.com', label: 'Rajesh Sir' },
+              { value: 'manisha@distanceeducationschool.com', label: 'Manisha Yadav' },
+              { value: 'admin@distanceeducationschool.com', label: 'Nouman Sir' },
+              { value: 'sandy@distanceeducationschool.com', label: 'Sandy' },
+              { value: 'neha@distanceeducationschool.com', label: 'Neha Raj' },
+              { value: 'yashpriya@distanceeducationschool.com', label: 'Yash Priya' },
+              { value: 'kavitahaldar@distanceeducationschool.com', label: 'Kavita Haldar' },
+              { value: 'ifla@distanceeducationschool.com', label: 'Ifla' },
+              { value: 'shalu@distanceeducationschool.com', label: 'Shalu' },
+              { value: 'zainubia@distanceeducationschool.com', label: 'Zainbuia' },
+              { value: 'pallovi@distanceeducationschool.com', label: 'Pallovi' },
+              { value: 'hansi@distanceeducationschool.com', label: 'Hansi' },
+              { value: 'shristi@distanceeducationschool.com', label: 'Shristi' },
+              { value: 'aashita@highereducationschool.com', label: 'Aashita' },
+              { value: 'pratibha@highereducationschool.com', label: 'Pratibha' },
+              { value: 'shreyashi@highereducationschool.com', label: 'Shreyashi' },
+              { value: 'spuhelpdesk@gmail.com', label: 'Binny' },
+              { value: 'ruchika.spu@gmail.com', label: 'Ruchika' },
+              { value: 'ramiz.spu@gmail.com', label: 'Ramiz' },
             ],
           },
           {
@@ -17514,7 +17858,7 @@ const formData = [
             id: 'status ',
             type: 'select',
             place: 'select status',
-            required: 'require',
+
             options: [
               { value: 'New', label: 'New' },
               { value: 'Cancel', label: 'Cancel' },
@@ -17537,6 +17881,652 @@ const formData = [
             place: 'Enter your remark',
             id: 'remark',
             type: 'textarea',
+          },
+          {
+            key: 'date',
+            label: 'Created At',
+            name: 'created',
+            id: 'created',
+            type: 'date',
+          },
+        ],
+      },
+      {
+        // First university complete date 
+        label: 'HINDUSTAN',
+        name: ['customfields', 'university_name'],
+        value: 'HINDUSTAN',
+        fields: [
+          {
+            courses: [
+              {
+                value: "10th",
+                label: '10th'
+              },
+              {
+                value: "12th",
+                label: '12th'
+              },
+              {
+                value: "BA",
+                label: "BA",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { "value": "Education", "label": "Education" },
+                  { "value": "English", "label": "English" },
+                  { "value": "Journlsim & Mass Communication", label: "Journlsim & Mass Communication" },
+                  { "value": "Economics", "label": "Economics" },
+                  { "value": "History", "label": "History" },
+                  { "value": "Political science", "label": "Political science" },
+                  { "value": "Sociology", "label": "Sociology" },
+                  { "value": "Journalism & Mass Communication", "label": "Journalism & Mass Communication" },
+                  { "value": "Public Administration", "label": "Public Administration" },
+                  { "value": "Psychology", "label": "Psychology" },
+                  { "value": "Hindi", "label": "Hindi" },
+                  { "value": "Mathematics", "label": "Mathematics" },
+                  { "value": 'Geography', label: 'Geography' },
+                ],
+              },
+              {
+                value: "BBA",
+                label: "BBA",
+                specializations: [
+                  { "value": "General", "label": "General" },
+                  { "value": "Education", "label": "Education" },
+                  { value: "Marketing", label: "Marketing" },
+                  { value: "Human Resource Management", label: "Human Resource Management" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "  Interntaional Business Management ", label: "  Interntaional Business Management " },
+                  { value: "Opreations", label: "Opreations" },
+                  { value: "Engineering & Project Management", label: "Engineering & Project Management" },
+                  { value: "IT & Systems Management", label: "IT & Systems Management" },
+                  { value: "Data Analytics", label: "Data Analytics" },
+                  { value: "Project Management & Operations", label: "Project Management & Operations" },
+                  { value: "Digital Marketing", label: "Digital Marketing" },
+                ],
+              },
+              {
+                value: "BCA",
+                label: "BCA",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Cloud and Security", label: "Cloud and Security" },
+                  { value: "Data Analytics", label: "Data Analytics" },
+                ],
+              },
+              {
+                value: "BTECH",
+                label: "BTECH",
+                specializations: [
+                  { value: "Mechanical", label: "Mechanical" },
+                  { value: "Computer science", label: "Computer science" },
+                  { value: "IT", label: "IT" },
+                ],
+              },
+              {
+                value: "BCOM",
+                label: "BCOM",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "Tax & Accounting", label: "Tax & Accounting" },
+                  { value: "Accounting & Finance", label: "Accounting & Finance" },
+                  { value: "Corporate Accounting (Benchmarked to CA-Ind: Foundation, Intermediate and Final Syllabus)", label: "Corporate Accounting (Benchmarked to CA-Ind: Foundation, Intermediate and Final Syllabus)" },
+                  { value: "International Finance & Accounting", label: "International Finance & Accounting" },
+                ],
+              },
+              {
+                value: "BSW",
+                label: "BSW",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BLIS",
+                label: "BLIS",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BSC",
+                label: "BSC",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "IT", label: "IT" },
+                  { value: "CS", label: "CS" },
+                  { value: "Chemistry", label: "Chemistry" },
+                  { value: "Phycics", label: "Phycics" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: "Microbiology", label: "Microbiology" },
+                  { value: 'Bio-Technology', label: "Bio-Technology" },
+                  { value: "Zoology", label: "Zoology" },
+                  { value: "Animation & Multimedia", label: "Animation & Multimedia" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
+                  { value: "Operation Theater Technology", label: "Operation Theater Technology" },
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                ],
+              },
+              {
+                value: "MA",
+                label: "MA",
+                specializations: [
+                  { value: "Economics", label: "Economics" },
+                  { value: "Buddhist Studies", label: "Buddhist Studies" },
+                  { value: "Home Science", label: "Home Science" },
+                  { value: "Public Administration", label: "Public Administration" },
+                  { value: "Psychology", label: "Psychology" },
+                  { value: "English", label: "English" },
+                  { value: "Hindi", label: "Hindi" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: "Geography", label: "Geography" },
+                  { value: "History", label: "History" },
+                  { value: "Political Science", label: "Political Science" },
+                  { value: "Sociology", label: "Sociology" },
+                  { value: "Education", label: "Education" },
+                  { value: "Journalism & Mass Communication", label: "Journalism & Mass Communication" }
+                ],
+              },
+              {
+                value: "MCA",
+                label: "MCA",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Computer Science & IT", label: "Computer Science & IT" },
+                  { value: "Cyber Security", label: "Cyber Security" },
+                  { value: "Data Analytics", label: "Data Analytics" },
+                  { value: "Data Science ", label: "Data Science" },
+                  { value: "Artificial Intelligence", label: "Artificial Intelligence" },
+                ],
+              },
+              {
+                value: "MCOM",
+                label: "MCOM",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Finance & Systems", label: "Finance & Systems" },
+                  { value: "Accounting & Finance", label: "Accounting & Finance" },
+                  { value: "International Finance", label: "International Finance" },
+                ],
+              },
+              {
+                value: "MSW",
+                label: "MSW",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "MBA",
+                label: "MBA",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Finance", label: "Finance" },
+                  { value: "International Business", label: "International Business" },
+                  { value: "Marketing Management", label: "Marketing Management" },
+                  { value: "Operation and Production Management", label: "Operation and Production Management" },
+                  { value: "Project Management", label: "Project Management" },
+                  { value: "Hotel Management", label: "Hotel Management" },
+                  { value: "Tourism & Hospitality Management", label: "Tourism & Hospitality Management" },
+                  { value: "Supply Chain Management", label: "Supply Chain Management" },
+                  { value: "Hospital Management", label: "Hospital Management" },
+                  { value: "Financial Planning & Analysis", label: "Financial Planning & Analysis" },
+                  { value: "Health Care Management", label: "Health Care Management" },
+                  { value: "Business Analytics & Intelligence", label: "Business Analytics & Intelligence" },
+                  { value: "Branding & Advertising ", label: "Branding & Advertising " },
+                  { value: "Project Leadership Management", label: "Project Leadership Management" },
+                  { value: "Banking Management", label: "Banking Management" },
+                  { value: "E-commerce Marketing & Management", label: "E-commerce Marketing & Management" },
+                  { value: "Mass Communication", label: "Mass Communication" },
+                  { value: "Digital Marketing", label: "Digital Marketing" },
+                  { value: "Risk Management", label: "Risk Management" },
+                  { value: "Business Leadership", label: "Business Leadership" },
+                  { value: "Strategic Management", label: "Strategic Management" },
+                  { value: "Enterpreneurship", label: "Enterpreneurship" },
+                  { value: "Media & Entertainment Management", label: "Media & Entertainment Management" },
+                  { value: "Foreign Trade & Global Business Management", label: "Foreign Trade & Global Business Management" },
+                  { value: "Investment Banking & Wealth Management ", label: "Investment Banking & Wealth Management " },
+                  { value: "Analytics & Data Science", label: "Analytics & Data Science" },
+                  { value: "Operations Management", label: "Operations Management" },
+                  { value: "Banking, Financial Services & Insurance", label: "Banking, Financial Services & Insurance" },
+                  { value: "Retail Management", label: "Retail Management" },
+                  { value: "IT & FinTech", label: "IT & FinTech" },
+                  { value: "Business Analytics", label: "Business Analytics" },
+                  { value: "General Management", label: "General Management" },
+                  { value: "Systems & Operations Management", label: "Systems & Operations Management" },
+                  { value: "Logistics & Supply Chain Management", label: "Logistics & Supply Chain Management" },
+                  { value: "Finance & Marketing", label: "Finance & Marketing" },
+                  { value: "Information Technology Management", label: "Information Technology Management" },
+                  { value: "Marketing & Human Resource Management", label: "Marketing & Human Resource Management" },
+                  { value: "Healthcare & Hospital Management ", label: "Healthcare & Hospital Management " },
+                  { value: "Entrepreneurship & Leadership", label: "Entrepreneurship & Leadership" },
+                  { value: "Human Resource Management & Finance", label: "Human Resource Management & Finance" },
+                  { value: "International Finance(Syllabus Integrated & Accredited by ACCA, UK)", label: "International Finance(Syllabus Integrated & Accredited by ACCA, UK)" },
+                  { value: "Business Intelligence & Analytics(Accredited by IoA, UK)", label: "Business Intelligence & Analytics(Accredited by IoA, UK)" },
+                  { value: "Human Resource", label: "Human Resource" },
+                  { value: "Finance & Human Resource", label: "Finance & Human Resource" },
+                  { value: "Digital Business", label: "Digital Business" },
+                  { value: "Opreations", label: "Opreations" },
+                  { value: "Infrastructure Management", label: "Infrastructure Management" },
+                  { value: "Oil & Gas Management", label: "Oil & Gas Management" },
+                  { value: "Power Management ", label: "Power Management " },
+                  { value: "International Business Management", label: "International Business Management" },
+                  { value: "Fintech Management", label: "Fintech Management" },
+                  { value: "Artificial Intelligence & Machine Learning ", label: "Artificial Intelligence & Machine Learning " },
+                  { value: "Logistics, Materials & Supply Chain Management", label: "Logistics, Materials & Supply Chain Management" },
+                  { value: "Block Chain Management", label: "Block Chain Management" },
+                  { value: "Agribusiness Management", label: "Agribusiness Management" },
+                  { value: "Hospital Administration & Healthcare Management", label: "Hospital Administration & Healthcare Management" },
+                ],
+              },
+              {
+                value: "MSC",
+                label: "MSC",
+                specializations: [
+                  { value: "General", label: "General" },
+                  { value: "Chemistry", label: "Chemistry" },
+                  { value: "Phycics", label: "Phycics" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: "Information Technology", label: "Information Technology" },
+                  { value: "Computer Science", label: "Computer Science" },
+                  { value: "Bio-Technology", label: "Bio-Technology" },
+                  { value: "Zoology", label: "Zoology" },
+                  { value: "IT", label: "IT" },
+                  { value: "CS", label: "CS" },
+                  { value: "Data science", label: "Data science" },
+                  { value: "Animation & Multimedia", label: "Animation & Multimedia" },
+                  { value: "Interior Designing", label: "Interior Designing" },
+                  { value: "Fashion Technology", label: "Fashion Technology" },
+                  { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
+                  { value: "Optometry", label: "Optometry" },
+                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
+                ],
+              },
+              {
+                value: "MLIS",
+                label: "MLIS",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+            ]
+          },
+          {
+            payments: [
+              {
+                value: "semester",
+                label: "Semester",
+                paymentType: [
+                  {
+                    key: 'number',
+                    label: 'Semester fees',
+                    name: ['customfields', 'total_course_fee'],
+                    place: 'eg: 20000',
+                    id: 'Total Course Fee',
+                    type: 'number',
+                    required: 'require'
+                  },
+                  {
+                    key: 'number',
+                    label: 'Total Paid amount',
+                    place: 'eg: 20000',
+                    name: ['customfields', 'total_paid_amount'],
+                    id: 'Total Paid Amount',
+                    type: 'number',
+                  },
+                  {
+                    key: 'number',
+                    label: 'Paid Amount',
+                    name: ['customfields', 'paid_amount'],
+                    place: 'eg: 20000',
+                    id: 'Paid Amount',
+                    type: 'number',
+                  },
+                ]
+              },
+              {
+                value: "yearly",
+                label: "Yearly",
+                paymentType: [
+                  {
+                    key: 'number',
+                    label: 'Yearly Fees',
+                    name: ['customfields', 'total_course_fee'],
+                    place: 'eg: 20000',
+                    id: 'Total Course Fee',
+                    type: 'number',
+                    required: 'require'
+                  },
+                  {
+                    key: 'number',
+                    label: 'Total Paid amount',
+                    place: 'eg: 20000',
+                    name: ['customfields', 'total_paid_amount'],
+                    id: 'Total Paid Amount',
+                    type: 'number',
+                  },
+                  {
+                    key: 'number',
+                    label: 'Paid Amount',
+                    name: ['customfields', 'paid_amount'],
+                    place: 'eg: 20000',
+                    id: 'Paid Amount',
+                    type: 'number',
+                  },
+                ]
+              },
+              {
+                value: "fullfees",
+                label: "Fullfees",
+                paymentType: [
+                  {
+                    key: 'number',
+                    label: 'Full fees',
+                    name: ['customfields', 'total_course_fee'],
+                    place: 'eg: 20000',
+                    id: 'Total Course Fee',
+                    type: 'number',
+                    required: 'require'
+                  },
+                  {
+                    key: 'number',
+                    label: 'Total Paid amount',
+                    place: 'eg: 20000',
+                    name: ['customfields', 'total_paid_amount'],
+                    id: 'Total Paid Amount',
+                    type: 'number',
+                  },
+                  {
+                    key: 'number',
+                    label: 'Paid Amount',
+                    name: ['customfields', 'paid_amount'],
+                    place: 'eg: 20000',
+                    id: 'Paid Amount',
+                    type: 'number',
+                  },
+                ]
+              }
+            ]
+          },
+          {
+            key: 'radio',
+            label: 'Want to send Fee Receipt',
+            id: 'Send',
+            name: ['customfields', 'send_fee_receipt'],
+            type: 'radio',
+            options: ['yes', 'no'],
+
+          },
+          {
+            key: 'studentId',
+            name: 'lead_id',
+            label: 'StudentID',
+            place: 'StudentID',
+            id: 'StudentID',
+            type: 'studentId',
+
+          },
+          {
+            key: 'text',
+            name: 'full_name',
+            label: 'Student Name',
+            place: 'Student Name',
+            id: 'full_name',
+            type: 'text',
+
+          },
+          {
+            key: 'email',
+            label: 'Email-id',
+            place: 'Enter Email-id',
+            name: ['contact', 'email'],
+            id: 'EmailID',
+            type: 'email',
+
+          },
+          {
+            key: 'tel',
+            label: 'phone',
+            name: ['contact', 'phone'],
+            place: 'Enter Phone Number',
+            id: 'phone',
+            type: 'tel',
+
+          },
+          {
+            key: 'text',
+            label: 'Father Name',
+            name: ['customfields', 'father_name'],
+            place: 'Enter Father Name',
+            id: 'Father Name',
+            type: 'text',
+
+          },
+          {
+            key: 'text',
+            label: 'Mother Name',
+            name: ['customfields', 'mother_name'],
+            place: 'Enter Mother Name',
+            id: 'mother_name',
+            type: 'text',
+
+          },
+          {
+            key: 'select',
+            label: 'Session',
+            name: ['customfields', 'session'],
+            place: 'eg: JAN_20',
+            id: 'Session',
+            type: 'select',
+            options: [{ value: 'JAN_20', label: 'JAN_20' },
+            { value: 'JULY_20', label: 'JULY_20' },
+            { value: 'JAN_21', label: 'JAN_21' },
+            { value: 'JULY_21', label: 'JULY_21' },
+            { value: 'JAN_22', label: 'JAN_22' },
+            { value: 'JULY_22', label: 'JULY_22' },
+            { value: 'JAN_23', label: 'JAN_23' },
+            { value: 'JULY_23', label: 'JULY_23' },
+            { value: 'JAN_24', label: 'JAN_24' },
+            { value: 'JULY_24', label: 'JULY_24' },
+            { value: 'JAN_25', label: 'JAN_25' },
+            { value: 'JULY_25', label: 'JULY_25' },
+            { value: 'MAR_23', label: 'MAR_23' },
+            { value: 'APR_23', label: 'APR_23' },
+            { value: 'OCT_23', label: 'OCT_23' },
+            { value: 'NOV_23', label: 'NOV_23' },],
+
+          },
+          {
+            key: 'select',
+            label: 'Admission Type',
+            name: ['customfields', 'admission_type'],
+            id: 'SessionType',
+            place: 'Enter Admission Type',
+            type: 'select',
+            options: [{ value: 'FRESH', label: 'FRESH' },
+            { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
+          },
+
+          {
+            key: 'date',
+            label: 'Date of Birth',
+            name: ['customfields', 'dob'],
+            place: 'Enter Date of Birth',
+            id: 'dob',
+            type: 'date',
+
+          },
+          {
+            key: 'select',
+            label: 'Gender',
+            name: ['customfields', 'gender'],
+            id: 'Gender',
+            place: 'Gender',
+            type: 'select',
+            options: [{ value: 'Male', label: 'Male' },
+            { value: 'Female', label: 'Female' },
+            { value: 'Other', label: 'Other' }],
+          },
+          {
+            key: 'select',
+            label: 'Installment Type',
+            id: 'InstallmentType',
+            name: ['customfields', 'installment_type'],
+            place: 'Installment Type',
+            type: 'select',
+
+            options: [
+              { value: '1st Installment/ New Admission', label: '1st Installment/ New Admission' },
+              { value: '2nd Installment', label: '2nd Installment' },
+              { value: '3rd Installment', label: '3rd Installment' },
+              { value: '4th Installment', label: '4th Installment' },
+              { value: '5th Installment', label: '5th Installment' },
+              { value: '6th Installment', label: '6th Installment' },
+              { value: '7th Installment', label: '7th Installment' },
+              { value: '8th Installment', label: '8th Installment' },
+              { value: '9th Installment', label: '9th Installment' },
+              { value: '10th Installment', label: '10th Installment' },
+            ],
+          },
+          {
+            key: 'select ',
+            label: 'Payment mode ',
+            name: ['customfields', 'payment_mode'],
+            id: 'PaymentMode ',
+            type: 'select',
+            place: 'Select Payment Mode',
+
+            options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
+            { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
+            { value: 'University Bank Account', label: 'University Bank Account' },
+            { value: 'Payment Gateway', label: 'Payment Gateway' },
+            { value: 'Cash/DD', label: 'Cash/DD' }],
+          },
+          {
+            key: 'select ',
+            label: 'Counselors',
+            name: ['customfields', 'counselor_email'],
+            id: 'email ',
+            type: 'select',
+            place: 'select counselor name',
+            options: [
+              // DES External email with name
+              { value: 'apoorvasrivastava@sode.co.in', label: 'Apoorva Srivastava' },
+              { value: 'nehaprashar@sode.co.in', label: 'Neha Prasher' },
+              { value: 'priya@sode.co.in', label: 'Priya Anand' },
+              { value: 'diksha@sode.co.in', label: 'Diksha Singh' },
+              { value: 'abhilasha@sode.co.in', label: 'Abhilasha Gupta' },
+              { value: 'saher@sode.co.in', label: 'Saher Khan' },
+
+              // DES Internal email with name 
+              { value: 'muskan@distanceeducationschool.com', label: 'Muskaan ' },
+              { value: 'aniruddh@distanceeducationschool.com', label: 'Aniruddh Prakash' },
+              { value: 'amritpal@sode.co.in', label: 'Amritpal Singh' },
+              { value: 'salman@sode.co.in', label: 'Salman' },
+              { value: 'tariq@sode.co.in', label: 'Tariq Hasan' },
+              { value: 'shivam@sode.co.in', label: 'Shivam sharma' },
+              { value: 'pushpa@sode.co.in', label: 'Pushpa Pramanik' },
+
+              // DES Internal email with name 
+              { value: 'anurag@distanceeducationschool.com', label: 'Anurag Yadav' },
+              { value: 'kavitakumari@sode.co.in', label: 'Kavita Kumari' },
+              { value: 'rupal@sode.co.in', label: 'Rupal Gautam' },
+              { value: 'deva@sode.co.in', label: 'Devendra' },
+              { value: 'manshi@sode.co.in', label: 'Manshi Kem' },
+
+              // DES - INTERNATIONAL email with name 
+              { value: 'zarin@distanceeducationschool.com', label: 'Zarin Badar' },
+
+              // HES team email with name 
+              { value: 'kanchan@highereducationschool.com', label: 'Kanchan Sharma' },
+              { value: 'kirti@highereducationschool.com', label: 'Kirti Dubey' },
+              { value: 'ramandeep@highereducationschool.com', label: 'Ramandeep Kaur' },
+              { value: 'kavita@highereducationschool.com', label: 'Kavita Yadav' },
+              { value: 'imra@highereducationschool.com', label: 'Imra Khan' },
+              { value: 'mahak@highereducationschool.com', label: 'Mahek' },
+              { value: 'abhay@highereducationschool.com', label: 'Abhay Dubey' },
+              { value: 'swati@highereducationschool.com', label: 'Swati' },
+              { value: 'gulshan@highereducationschool.com', label: 'Gulshan Nayyar' },
+              { value: 'isha@highereducationschool.com', label: 'Isha Jaiswal' },
+              { value: 'sakshi@highereducationschool.com', label: 'Sakshi Arora' },
+
+              // Jain team email with name 
+              { value: 'anitha@sode.co.in', label: 'A.Anitha' },
+              { value: 'vani@sode.co.in', label: 'Vani Ruckmani' },
+
+              // Manipal team email with name 
+              { value: 'SwatiRamani.manipal@gmail.com', label: 'Swati Ramani' },
+              { value: 'ankitakumar@sode.co.in', label: 'Ankita Kumari' },
+              { value: 'nidhi@sode.co.in', label: 'Nidhi' },
+              { value: 'amreen@sode.co.in', label: 'Amreen ALI Khan' },
+              { value: 'umar@sode.co.in', label: 'MD Umar' },
+              { value: 'nehagupta@sode.co.in', label: 'Neha Gupta' },
+              { value: 'pawankumar@sode.co.in', label: 'Pawan Kumar' },
+              { value: 'bhavya@sode.co.in', label: 'Bhavya' },
+
+              // ALL DES && HES team email with name 
+              { value: 'rajesh@distanceeducationschool.com', label: 'Rajesh Sir' },
+              { value: 'manisha@distanceeducationschool.com', label: 'Manisha Yadav' },
+              { value: 'admin@distanceeducationschool.com', label: 'Nouman Sir' },
+              { value: 'sandy@distanceeducationschool.com', label: 'Sandy' },
+              { value: 'neha@distanceeducationschool.com', label: 'Neha Raj' },
+              { value: 'yashpriya@distanceeducationschool.com', label: 'Yash Priya' },
+              { value: 'kavitahaldar@distanceeducationschool.com', label: 'Kavita Haldar' },
+              { value: 'ifla@distanceeducationschool.com', label: 'Ifla' },
+              { value: 'shalu@distanceeducationschool.com', label: 'Shalu' },
+              { value: 'zainubia@distanceeducationschool.com', label: 'Zainbuia' },
+              { value: 'pallovi@distanceeducationschool.com', label: 'Pallovi' },
+              { value: 'hansi@distanceeducationschool.com', label: 'Hansi' },
+              { value: 'shristi@distanceeducationschool.com', label: 'Shristi' },
+              { value: 'aashita@highereducationschool.com', label: 'Aashita' },
+              { value: 'pratibha@highereducationschool.com', label: 'Pratibha' },
+              { value: 'shreyashi@highereducationschool.com', label: 'Shreyashi' },
+              { value: 'spuhelpdesk@gmail.com', label: 'Binny' },
+              { value: 'ruchika.spu@gmail.com', label: 'Ruchika' },
+              { value: 'ramiz.spu@gmail.com', label: 'Ramiz' },
+            ],
+          },
+          {
+            key: 'select ',
+            label: 'Status',
+            name: ['customfields', 'status'],
+            id: 'status ',
+            type: 'select',
+            place: 'select status',
+
+            options: [
+              { value: 'New', label: 'New' },
+              { value: 'Cancel', label: 'Cancel' },
+              { value: 'Enrolled', label: 'Enrolled' },
+              { value: 'Alumini', label: 'Alumini' },
+            ],
+          },
+          {
+            key: 'text',
+            label: 'LMS',
+            name: ['customfields', 'lms'],
+            place: 'Enter LMS',
+            id: 'lms',
+            type: 'text',
+          },
+          {
+            key: 'textarea',
+            label: 'Remark',
+            name: ['customfields', 'remark'],
+            place: 'Enter your remark',
+            id: 'remark',
+            type: 'textarea',
+          },
+          {
+            key: 'date',
+            label: 'Created At',
+            name: 'created',
+            id: 'created',
+            type: 'date',
           },
         ],
       },
@@ -17908,7 +18898,7 @@ const formData = [
             name: ['customfields', 'send_fee_receipt'],
             type: 'radio',
             options: ['yes', 'no'],
-            required: 'require'
+
           },
           {
             key: 'studentId',
@@ -17917,7 +18907,7 @@ const formData = [
             place: 'StudentID',
             id: 'StudentID',
             type: 'studentId',
-            required: 'require'
+
           },
           {
             key: 'text',
@@ -17926,7 +18916,7 @@ const formData = [
             place: 'Student Name',
             id: 'full_name',
             type: 'text',
-            required: 'require'
+
           },
           {
             key: 'email',
@@ -17935,7 +18925,7 @@ const formData = [
             name: ['contact', 'email'],
             id: 'EmailID',
             type: 'email',
-            required: 'require'
+
           },
           {
             key: 'tel',
@@ -17944,7 +18934,7 @@ const formData = [
             place: 'Enter Phone Number',
             id: 'phone',
             type: 'tel',
-            required: 'require'
+
           },
           {
             key: 'text',
@@ -17953,7 +18943,7 @@ const formData = [
             place: 'Enter Father Name',
             id: 'Father Name',
             type: 'text',
-            required: 'require'
+
           },
           {
             key: 'text',
@@ -17962,32 +18952,32 @@ const formData = [
             place: 'Enter Mother Name',
             id: 'mother_name',
             type: 'text',
-            required: 'require'
+
           },
           {
             key: 'select',
             label: 'Session',
             name: ['customfields', 'session'],
-            place: 'eg: jan 20',
+            place: 'eg: JAN_20',
             id: 'Session',
             type: 'select',
-            options: [{ value: 'jan 20', label: 'Jan 20' },
-            { value: 'july 20', label: 'July 20' },
-            { value: 'jan 21', label: 'Jan 21' },
-            { value: 'july 21', label: 'July 21' },
-            { value: 'jan 22', label: 'Jan 22' },
-            { value: 'july 22', label: 'July 22' },
-            { value: 'jan 23', label: 'Jan 23' },
-            { value: 'july 23', label: 'July 23' },
-            { value: 'jan 24', label: 'Jan 24' },
-            { value: 'july 24', label: 'July 24' },
-            { value: 'jan 25', label: 'Jan 25' },
-            { value: 'july 25', label: 'July 25' },
-            { value: 'mar 23', label: 'mar 23' },
-            { value: 'apr 23', label: 'apr 23' },
-            { value: 'oct 23', label: 'oct 23' },
-            { value: 'nov 23', label: 'nov 23' },],
-            required: 'require'
+            options: [{ value: 'JAN_20', label: 'JAN_20' },
+            { value: 'JULY_20', label: 'JULY_20' },
+            { value: 'JAN_21', label: 'JAN_21' },
+            { value: 'JULY_21', label: 'JULY_21' },
+            { value: 'JAN_22', label: 'JAN_22' },
+            { value: 'JULY_22', label: 'JULY_22' },
+            { value: 'JAN_23', label: 'JAN_23' },
+            { value: 'JULY_23', label: 'JULY_23' },
+            { value: 'JAN_24', label: 'JAN_24' },
+            { value: 'JULY_24', label: 'JULY_24' },
+            { value: 'JAN_25', label: 'JAN_25' },
+            { value: 'JULY_25', label: 'JULY_25' },
+            { value: 'MAR_23', label: 'MAR_23' },
+            { value: 'APR_23', label: 'APR_23' },
+            { value: 'OCT_23', label: 'OCT_23' },
+            { value: 'NOV_23', label: 'NOV_23' },],
+
           },
           {
             key: 'select',
@@ -17996,7 +18986,7 @@ const formData = [
             id: 'SessionType',
             place: 'Enter Admission Type',
             type: 'select',
-            options: [{ value: 'Fresh', label: 'Fresh' },
+            options: [{ value: 'FRESH', label: 'FRESH' },
             { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
           },
 
@@ -18007,7 +18997,7 @@ const formData = [
             place: 'Enter Date of Birth',
             id: 'dob',
             type: 'date',
-            required: 'require'
+
           },
           {
             key: 'select',
@@ -18027,7 +19017,7 @@ const formData = [
             name: ['customfields', 'installment_type'],
             place: 'Installment Type',
             type: 'select',
-            required: 'require',
+
             options: [
               { value: '1st Installment/ New Admission', label: '1st Installment/ New Admission' },
               { value: '2nd Installment', label: '2nd Installment' },
@@ -18048,8 +19038,9 @@ const formData = [
             id: 'PaymentMode ',
             type: 'select',
             place: 'Select Payment Mode',
-            required: 'require',
+
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
+            { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
             { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
@@ -18060,77 +19051,82 @@ const formData = [
             name: ['customfields', 'counselor_email'],
             id: 'email ',
             type: 'select',
-            place: 'select counselor email',
-            required: 'require',
-            options: [{ value: 'zarin@highereducationschool.com', label: 'Zarin' },
-            { value: 'kanchan@highereducationschool.com', label: 'Kanchan' },
-            { value: 'kirti@highereducationschool.com', label: 'Kirti' },
-            { value: 'ramandeep@highereducationschool.com', label: 'Raman' },
-            { value: 'kavita@highereducationschool.com', label: 'kavita' },
-            { value: 'imra@highereducationschool.com', label: 'Imra' },
-            { value: 'Mahak@highereducationschool.com', label: 'Mahek' },
-            { value: 'abhay@highereducationschool.com', label: 'abhay' },
-            { value: 'swati@highereducationschool.com', label: 'swati' },
-            { value: 'gulshan@highereducationschool.com', label: 'Gulshan' },
-            { value: 'isha@highereducationschool.com', label: 'Isha' },
-            { value: 'Sakshi@highereducationschool.com', label: 'Sakshi' },
-            { value: 'aashita@highereducationschool.com', label: 'aashita' },
-            { value: 'pratibha@highereducationschool.com', label: 'pratibha' },
-            { value: 'shreyashi@highereducationschool.com', label: 'Shreyashi ' },
-            { value: 'apoorvasrivastava@distanceeducationschool.com', label: 'Apoorva_DES' },
-            { value: 'asma@distanceeducationschool.com', label: 'Asma_DES' },
-            { value: 'nehaprashar@distanceeducationschool.com', label: 'Neha_Prasher_DES' },
-            { value: 'priya@distanceeducationschool.com', label: 'Priya_DES' },
-            { value: 'diksha@distanceeducationschool.com', label: 'Diksha_DES' },
-            { value: 'abhilasha@distanceeducationschool.com', label: 'Abhilasha_Gupta_DES' },
-            { value: 'saher@distanceeducationschool.com', label: 'Saher_Khan_DES' },
-            { value: 'fiza@distanceeducationschool.com', label: 'Fiza_DES' },
-            { value: 'muskan@distanceeducationschool.com', label: 'Muskaan_DES' },
-            { value: 'aniruddh@distanceeducationschool.com', label: 'Aniruddh_DES' },
-            { value: 'deva@distanceeducationschool.com', label: 'Devendra_DES' },
-            { value: 'amritpal@distanceeducationschool.com', label: 'Amritpal_DES' },
-            { value: 'Salman@distanceeducationschool.com:', label: 'Salman_DES' },
-            { value: 'tariq@distanceeducationschool.com', label: 'Traiq_DES' },
-            { value: 'shivam@distanceeducationschool.com', label: 'Shivam_sharma_DES' },
-            { value: 'pushpa@distanceeducationschool.com', label: 'Puspa_DES' },
-            { value: 'zarin@distanceeducationschool.com', label: 'Zarin_DES' },
-            { value: 'kanchan@distanceeducationschool.com', label: 'Kanchan_DES' },
-            { value: 'manu@distanceeducationschool.com', label: 'Manu_DES' },
+            place: 'select counselor name',
+            options: [
+              // DES External email with name
+              { value: 'apoorvasrivastava@sode.co.in', label: 'Apoorva Srivastava' },
+              { value: 'nehaprashar@sode.co.in', label: 'Neha Prasher' },
+              { value: 'priya@sode.co.in', label: 'Priya Anand' },
+              { value: 'diksha@sode.co.in', label: 'Diksha Singh' },
+              { value: 'abhilasha@sode.co.in', label: 'Abhilasha Gupta' },
+              { value: 'saher@sode.co.in', label: 'Saher Khan' },
 
-            // Jain Team Emails
-            { value: 'a.anitha.ju@gmail.com', label: 'Anita_JU' },
-            { value: 'vaniruckmani.ju@gmail.com', label: 'Vani_Ruckmani_JU' },
-            { value: 'priyankapalle.ju@gmail.com', label: 'Priyanka_JU' },
-            { value: 'SwatiRamani.manipal@gmail.com', label: 'Swati_JU' },
+              // DES Internal email with name 
+              { value: 'muskan@distanceeducationschool.com', label: 'Muskaan ' },
+              { value: 'aniruddh@distanceeducationschool.com', label: 'Aniruddh Prakash' },
+              { value: 'amritpal@sode.co.in', label: 'Amritpal Singh' },
+              { value: 'salman@sode.co.in', label: 'Salman' },
+              { value: 'tariq@sode.co.in', label: 'Tariq Hasan' },
+              { value: 'shivam@sode.co.in', label: 'Shivam sharma' },
+              { value: 'pushpa@sode.co.in', label: 'Pushpa Pramanik' },
 
-            // Manipal Team Email
-            { value: 'ankitakumari.manipal@gmail.com', label: 'Ankita_MU' },
-            { value: 'medhahandoo.manipal@gmail.com', label: 'Medha_MU' },
-            { value: 'amreen.manipal@gmail.com', label: 'Amreen_MU' },
+              // DES Internal email with name 
+              { value: 'anurag@distanceeducationschool.com', label: 'Anurag Yadav' },
+              { value: 'kavitakumari@sode.co.in', label: 'Kavita Kumari' },
+              { value: 'rupal@sode.co.in', label: 'Rupal Gautam' },
+              { value: 'deva@sode.co.in', label: 'Devendra' },
+              { value: 'manshi@sode.co.in', label: 'Manshi Kem' },
 
-            // Support Team Email
-            { value: 'rajesh@distanceeducationschool.com', label: 'Rajesh_sir' },
-            { value: 'manisha@distanceeducationschool.com', label: 'Manisha' },
-            { value: 'admin@distanceeducationschool.com', label: 'Nouman_sir' },
-            { value: 'sandy@distanceeducationschool.com', label: 'Sandy' },
-            { value: 'neha@distanceeducationschool.com', label: 'Neha' },
-            { value: 'yashpriya@distanceeducationschool.com', label: 'Yash_Priya' },
-            { value: 'kavitahaldar@distanceeducationschool.com', label: 'kavitahaldar' },
-            { value: 'ifla@distanceeducationschool.com', label: 'Ifla' },
-            { value: 'shalu@distanceeducationschool.com', label: 'Shalu' },
-            { value: 'zainubia@distanceeducationschool.com', label: 'zainbuia' },
-            { value: 'pallovi@distanceeducationschool.com', label: 'Pallovi' },
-            { value: 'kavitakumari@distanceeducationschool.com', label: 'Kavita_Kumari' },
-            { value: 'manshi@distanceeducationschool.com', label: 'Mansi' },
-            { value: 'Bhavya.manipal@gmail.com', label: 'Bhavya' },
-            { value: 'anurag@distanceeducationschool.com', label: 'Anuraj' },
-            { value: 'rupal@distanceeducationschool.com', label: 'Rupal' },
-            //B2B Team Email
-            { value: 'spuhelpdesk@gmail.com', label: 'Binny' },
-            { value: 'ruchika.spu@gmail.com', label: 'Ruchika' },
-            { value: 'lalit@distanceeducationschool.com', label: 'Lalit_DES' },
-            { value: 'lalit.spu@gmail.com', label: 'Lalit' },
-            { value: 'ramiz.spu@gmail.com', label: 'Ramiz' }
+              // DES - INTERNATIONAL email with name 
+              { value: 'zarin@distanceeducationschool.com', label: 'Zarin Badar' },
+
+              // HES team email with name 
+              { value: 'kanchan@highereducationschool.com', label: 'Kanchan Sharma' },
+              { value: 'kirti@highereducationschool.com', label: 'Kirti Dubey' },
+              { value: 'ramandeep@highereducationschool.com', label: 'Ramandeep Kaur' },
+              { value: 'kavita@highereducationschool.com', label: 'Kavita Yadav' },
+              { value: 'imra@highereducationschool.com', label: 'Imra Khan' },
+              { value: 'mahak@highereducationschool.com', label: 'Mahek' },
+              { value: 'abhay@highereducationschool.com', label: 'Abhay Dubey' },
+              { value: 'swati@highereducationschool.com', label: 'Swati' },
+              { value: 'gulshan@highereducationschool.com', label: 'Gulshan Nayyar' },
+              { value: 'isha@highereducationschool.com', label: 'Isha Jaiswal' },
+              { value: 'sakshi@highereducationschool.com', label: 'Sakshi Arora' },
+
+              // Jain team email with name 
+              { value: 'anitha@sode.co.in', label: 'A.Anitha' },
+              { value: 'vani@sode.co.in', label: 'Vani Ruckmani' },
+
+              // Manipal team email with name 
+              { value: 'SwatiRamani.manipal@gmail.com', label: 'Swati Ramani' },
+              { value: 'ankitakumar@sode.co.in', label: 'Ankita Kumari' },
+              { value: 'nidhi@sode.co.in', label: 'Nidhi' },
+              { value: 'amreen@sode.co.in', label: 'Amreen ALI Khan' },
+              { value: 'umar@sode.co.in', label: 'MD Umar' },
+              { value: 'nehagupta@sode.co.in', label: 'Neha Gupta' },
+              { value: 'pawankumar@sode.co.in', label: 'Pawan Kumar' },
+              { value: 'bhavya@sode.co.in', label: 'Bhavya' },
+
+              // ALL DES && HES team email with name 
+              { value: 'rajesh@distanceeducationschool.com', label: 'Rajesh Sir' },
+              { value: 'manisha@distanceeducationschool.com', label: 'Manisha Yadav' },
+              { value: 'admin@distanceeducationschool.com', label: 'Nouman Sir' },
+              { value: 'sandy@distanceeducationschool.com', label: 'Sandy' },
+              { value: 'neha@distanceeducationschool.com', label: 'Neha Raj' },
+              { value: 'yashpriya@distanceeducationschool.com', label: 'Yash Priya' },
+              { value: 'kavitahaldar@distanceeducationschool.com', label: 'Kavita Haldar' },
+              { value: 'ifla@distanceeducationschool.com', label: 'Ifla' },
+              { value: 'shalu@distanceeducationschool.com', label: 'Shalu' },
+              { value: 'zainubia@distanceeducationschool.com', label: 'Zainbuia' },
+              { value: 'pallovi@distanceeducationschool.com', label: 'Pallovi' },
+              { value: 'hansi@distanceeducationschool.com', label: 'Hansi' },
+              { value: 'shristi@distanceeducationschool.com', label: 'Shristi' },
+              { value: 'aashita@highereducationschool.com', label: 'Aashita' },
+              { value: 'pratibha@highereducationschool.com', label: 'Pratibha' },
+              { value: 'shreyashi@highereducationschool.com', label: 'Shreyashi' },
+              { value: 'spuhelpdesk@gmail.com', label: 'Binny' },
+              { value: 'ruchika.spu@gmail.com', label: 'Ruchika' },
+              { value: 'ramiz.spu@gmail.com', label: 'Ramiz' },
             ],
           },
           {
@@ -18140,7 +19136,7 @@ const formData = [
             id: 'status ',
             type: 'select',
             place: 'select status',
-            required: 'require',
+
             options: [
               { value: 'New', label: 'New' },
               { value: 'Cancel', label: 'Cancel' },
@@ -18164,631 +19160,12 @@ const formData = [
             id: 'remark',
             type: 'textarea',
           },
-        ],
-      },
-      {
-        // First university complete date 
-        label: 'SMU',
-        name: ['customfields', 'university_name'],
-        value: 'SMU',
-        fields: [
-          {
-            courses: [
-              {
-                value: "10th",
-                label: '10th'
-              },
-              {
-                value: "12th",
-                label: '12th'
-              },
-              {
-                value: "BA",
-                label: "BA",
-                specializations: [
-                  { value: "General", label: "General" },
-                  { "value": "Education", "label": "Education" },
-                  { "value": "English", "label": "English" },
-                  { "value": "Journlsim & Mass Communication", label: "Journlsim & Mass Communication" },
-                  { "value": "Economics", "label": "Economics" },
-                  { "value": "History", "label": "History" },
-                  { "value": "Political science", "label": "Political science" },
-                  { "value": "Sociology", "label": "Sociology" },
-                  { "value": "Journalism & Mass Communication", "label": "Journalism & Mass Communication" },
-                  { "value": "Public Administration", "label": "Public Administration" },
-                  { "value": "Psychology", "label": "Psychology" },
-                  { "value": "Hindi", "label": "Hindi" },
-                  { "value": "Mathematics", "label": "Mathematics" },
-                  { "value": 'Geography', label: 'Geography' },
-                ],
-              },
-              {
-                value: "BBA",
-                label: "BBA",
-                specializations: [
-                  { "value": "General", "label": "General" },
-                  { "value": "Education", "label": "Education" },
-                  { value: "Marketing", label: "Marketing" },
-                  { value: "Human Resource Management", label: "Human Resource Management" },
-                  { value: "Finance", label: "Finance" },
-                  { value: "  Interntaional Business Management ", label: "  Interntaional Business Management " },
-                  { value: "Opreations", label: "Opreations" },
-                  { value: "Engineering & Project Management", label: "Engineering & Project Management" },
-                  { value: "IT & Systems Management", label: "IT & Systems Management" },
-                  { value: "Data Analytics", label: "Data Analytics" },
-                  { value: "Project Management & Operations", label: "Project Management & Operations" },
-                  { value: "Digital Marketing", label: "Digital Marketing" },
-                ],
-              },
-              {
-                value: "BCA",
-                label: "BCA",
-                specializations: [
-                  { value: "General", label: "General" },
-                  { value: "Cloud and Security", label: "Cloud and Security" },
-                  { value: "Data Analytics", label: "Data Analytics" },
-                ],
-              },
-              {
-                value: "BTECH",
-                label: "BTECH",
-                specializations: [
-                  { value: "Mechanical", label: "Mechanical" },
-                  { value: "Computer science", label: "Computer science" },
-                  { value: "IT", label: "IT" },
-                ],
-              },
-              {
-                value: "BCOM",
-                label: "BCOM",
-                specializations: [
-                  { value: "General", label: "General" },
-                  { value: "Finance", label: "Finance" },
-                  { value: "Tax & Accounting", label: "Tax & Accounting" },
-                  { value: "Accounting & Finance", label: "Accounting & Finance" },
-                  { value: "Corporate Accounting (Benchmarked to CA-Ind: Foundation, Intermediate and Final Syllabus)", label: "Corporate Accounting (Benchmarked to CA-Ind: Foundation, Intermediate and Final Syllabus)" },
-                  { value: "International Finance & Accounting", label: "International Finance & Accounting" },
-                ],
-              },
-              {
-                value: "BSW",
-                label: "BSW",
-                specializations: [
-                  { value: "General", label: "General" },
-                ],
-              },
-              {
-                value: "BLIS",
-                label: "BLIS",
-                specializations: [
-                  { value: "General", label: "General" },
-                ],
-              },
-              {
-                value: "BSC",
-                label: "BSC",
-                specializations: [
-                  { value: "General", label: "General" },
-                  { value: "IT", label: "IT" },
-                  { value: "CS", label: "CS" },
-                  { value: "Chemistry", label: "Chemistry" },
-                  { value: "Phycics", label: "Phycics" },
-                  { value: "Mathematics", label: "Mathematics" },
-                  { value: "Microbiology", label: "Microbiology" },
-                  { value: 'Bio-Technology', label: "Bio-Technology" },
-                  { value: "Zoology", label: "Zoology" },
-                  { value: "Animation & Multimedia", label: "Animation & Multimedia" },
-                  { value: "Interior Designing", label: "Interior Designing" },
-                  { value: "Fashion Technology", label: "Fashion Technology" },
-                  { value: "Hotel Management", label: "Hotel Management" },
-                  { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
-                  { value: "Operation Theater Technology", label: "Operation Theater Technology" },
-                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
-                ],
-              },
-              {
-                value: "MA",
-                label: "MA",
-                specializations: [
-                  { value: "Economics", label: "Economics" },
-                  { value: "Buddhist Studies", label: "Buddhist Studies" },
-                  { value: "Home Science", label: "Home Science" },
-                  { value: "Public Administration", label: "Public Administration" },
-                  { value: "Psychology", label: "Psychology" },
-                  { value: "English", label: "English" },
-                  { value: "Hindi", label: "Hindi" },
-                  { value: "Mathematics", label: "Mathematics" },
-                  { value: "Geography", label: "Geography" },
-                  { value: "History", label: "History" },
-                  { value: "Political Science", label: "Political Science" },
-                  { value: "Sociology", label: "Sociology" },
-                  { value: "Education", label: "Education" },
-                  { value: "Journalism & Mass Communication", label: "Journalism & Mass Communication" }
-                ],
-              },
-              {
-                value: "MCA",
-                label: "MCA",
-                specializations: [
-                  { value: "General", label: "General" },
-                  { value: "Computer Science & IT", label: "Computer Science & IT" },
-                  { value: "Cyber Security", label: "Cyber Security" },
-                  { value: "Data Analytics", label: "Data Analytics" },
-                  { value: "Data Science ", label: "Data Science" },
-                  { value: "Artificial Intelligence", label: "Artificial Intelligence" },
-                ],
-              },
-              {
-                value: "MCOM",
-                label: "MCOM",
-                specializations: [
-                  { value: "General", label: "General" },
-                  { value: "Finance & Systems", label: "Finance & Systems" },
-                  { value: "Accounting & Finance", label: "Accounting & Finance" },
-                  { value: "International Finance", label: "International Finance" },
-                ],
-              },
-              {
-                value: "MSW",
-                label: "MSW",
-                specializations: [
-                  { value: "General", label: "General" },
-                ],
-              },
-              {
-                value: "MBA",
-                label: "MBA",
-                specializations: [
-                  { value: "General", label: "General" },
-                  { value: "Finance", label: "Finance" },
-                  { value: "International Business", label: "International Business" },
-                  { value: "Marketing Management", label: "Marketing Management" },
-                  { value: "Operation and Production Management", label: "Operation and Production Management" },
-                  { value: "Project Management", label: "Project Management" },
-                  { value: "Hotel Management", label: "Hotel Management" },
-                  { value: "Tourism & Hospitality Management", label: "Tourism & Hospitality Management" },
-                  { value: "Supply Chain Management", label: "Supply Chain Management" },
-                  { value: "Hospital Management", label: "Hospital Management" },
-                  { value: "Financial Planning & Analysis", label: "Financial Planning & Analysis" },
-                  { value: "Health Care Management", label: "Health Care Management" },
-                  { value: "Business Analytics & Intelligence", label: "Business Analytics & Intelligence" },
-                  { value: "Branding & Advertising ", label: "Branding & Advertising " },
-                  { value: "Project Leadership Management", label: "Project Leadership Management" },
-                  { value: "Banking Management", label: "Banking Management" },
-                  { value: "E-commerce Marketing & Management", label: "E-commerce Marketing & Management" },
-                  { value: "Mass Communication", label: "Mass Communication" },
-                  { value: "Digital Marketing", label: "Digital Marketing" },
-                  { value: "Risk Management", label: "Risk Management" },
-                  { value: "Business Leadership", label: "Business Leadership" },
-                  { value: "Strategic Management", label: "Strategic Management" },
-                  { value: "Enterpreneurship", label: "Enterpreneurship" },
-                  { value: "Media & Entertainment Management", label: "Media & Entertainment Management" },
-                  { value: "Foreign Trade & Global Business Management", label: "Foreign Trade & Global Business Management" },
-                  { value: "Investment Banking & Wealth Management ", label: "Investment Banking & Wealth Management " },
-                  { value: "Analytics & Data Science", label: "Analytics & Data Science" },
-                  { value: "Operations Management", label: "Operations Management" },
-                  { value: "Banking, Financial Services & Insurance", label: "Banking, Financial Services & Insurance" },
-                  { value: "Retail Management", label: "Retail Management" },
-                  { value: "IT & FinTech", label: "IT & FinTech" },
-                  { value: "Business Analytics", label: "Business Analytics" },
-                  { value: "General Management", label: "General Management" },
-                  { value: "Systems & Operations Management", label: "Systems & Operations Management" },
-                  { value: "Logistics & Supply Chain Management", label: "Logistics & Supply Chain Management" },
-                  { value: "Finance & Marketing", label: "Finance & Marketing" },
-                  { value: "Information Technology Management", label: "Information Technology Management" },
-                  { value: "Marketing & Human Resource Management", label: "Marketing & Human Resource Management" },
-                  { value: "Healthcare & Hospital Management ", label: "Healthcare & Hospital Management " },
-                  { value: "Entrepreneurship & Leadership", label: "Entrepreneurship & Leadership" },
-                  { value: "Human Resource Management & Finance", label: "Human Resource Management & Finance" },
-                  { value: "International Finance(Syllabus Integrated & Accredited by ACCA, UK)", label: "International Finance(Syllabus Integrated & Accredited by ACCA, UK)" },
-                  { value: "Business Intelligence & Analytics(Accredited by IoA, UK)", label: "Business Intelligence & Analytics(Accredited by IoA, UK)" },
-                  { value: "Human Resource", label: "Human Resource" },
-                  { value: "Finance & Human Resource", label: "Finance & Human Resource" },
-                  { value: "Digital Business", label: "Digital Business" },
-                  { value: "Opreations", label: "Opreations" },
-                  { value: "Infrastructure Management", label: "Infrastructure Management" },
-                  { value: "Oil & Gas Management", label: "Oil & Gas Management" },
-                  { value: "Power Management ", label: "Power Management " },
-                  { value: "International Business Management", label: "International Business Management" },
-                  { value: "Fintech Management", label: "Fintech Management" },
-                  { value: "Artificial Intelligence & Machine Learning ", label: "Artificial Intelligence & Machine Learning " },
-                  { value: "Logistics, Materials & Supply Chain Management", label: "Logistics, Materials & Supply Chain Management" },
-                  { value: "Block Chain Management", label: "Block Chain Management" },
-                  { value: "Agribusiness Management", label: "Agribusiness Management" },
-                  { value: "Hospital Administration & Healthcare Management", label: "Hospital Administration & Healthcare Management" },
-                ],
-              },
-              {
-                value: "MSC",
-                label: "MSC",
-                specializations: [
-                  { value: "General", label: "General" },
-                  { value: "Chemistry", label: "Chemistry" },
-                  { value: "Phycics", label: "Phycics" },
-                  { value: "Mathematics", label: "Mathematics" },
-                  { value: "Information Technology", label: "Information Technology" },
-                  { value: "Computer Science", label: "Computer Science" },
-                  { value: "Bio-Technology", label: "Bio-Technology" },
-                  { value: "Zoology", label: "Zoology" },
-                  { value: "IT", label: "IT" },
-                  { value: "CS", label: "CS" },
-                  { value: "Data science", label: "Data science" },
-                  { value: "Animation & Multimedia", label: "Animation & Multimedia" },
-                  { value: "Interior Designing", label: "Interior Designing" },
-                  { value: "Fashion Technology", label: "Fashion Technology" },
-                  { value: "Medical Laboratory Technology", label: "Medical Laboratory Technology" },
-                  { value: "Optometry", label: "Optometry" },
-                  { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
-                ],
-              },
-              {
-                value: "MLIS",
-                label: "MLIS",
-                specializations: [
-                  { value: "General", label: "General" },
-                ],
-              },
-            ]
-          },
-          {
-            payments: [
-              {
-                value: "semester",
-                label: "Semester",
-                paymentType: [
-                  {
-                    key: 'number',
-                    label: 'Semester fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'number',
-                    required: 'require'
-                  },
-                  {
-                    key: 'number',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'number',
-                  },
-                  {
-                    key: 'number',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'number',
-                  },
-                ]
-              },
-              {
-                value: "yearly",
-                label: "Yearly",
-                paymentType: [
-                  {
-                    key: 'number',
-                    label: 'Yearly Fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'number',
-                    required: 'require'
-                  },
-                  {
-                    key: 'number',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'number',
-                  },
-                  {
-                    key: 'number',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'number',
-                  },
-                ]
-              },
-              {
-                value: "fullfees",
-                label: "Fullfees",
-                paymentType: [
-                  {
-                    key: 'number',
-                    label: 'Full fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'number',
-                    required: 'require'
-                  },
-                  {
-                    key: 'number',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'number',
-                  },
-                  {
-                    key: 'number',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'number',
-                  },
-                ]
-              }
-            ]
-          },
-          {
-            key: 'radio',
-            label: 'Want to send Fee Receipt',
-            id: 'Send',
-            name: ['customfields', 'send_fee_receipt'],
-            type: 'radio',
-            options: ['yes', 'no'],
-            required: 'require'
-          },
-          {
-            key: 'studentId',
-            name: 'lead_id',
-            label: 'StudentID',
-            place: 'StudentID',
-            id: 'StudentID',
-            type: 'studentId',
-            required: 'require'
-          },
-          {
-            key: 'text',
-            name: 'full_name',
-            label: 'Student Name',
-            place: 'Student Name',
-            id: 'full_name',
-            type: 'text',
-            required: 'require'
-          },
-          {
-            key: 'email',
-            label: 'Email-id',
-            place: 'Enter Email-id',
-            name: ['contact', 'email'],
-            id: 'EmailID',
-            type: 'email',
-            required: 'require'
-          },
-          {
-            key: 'tel',
-            label: 'phone',
-            name: ['contact', 'phone'],
-            place: 'Enter Phone Number',
-            id: 'phone',
-            type: 'tel',
-            required: 'require'
-          },
-          {
-            key: 'text',
-            label: 'Father Name',
-            name: ['customfields', 'father_name'],
-            place: 'Enter Father Name',
-            id: 'Father Name',
-            type: 'text',
-            required: 'require'
-          },
-          {
-            key: 'text',
-            label: 'Mother Name',
-            name: ['customfields', 'mother_name'],
-            place: 'Enter Mother Name',
-            id: 'mother_name',
-            type: 'text',
-            required: 'require'
-          },
-          {
-            key: 'select',
-            label: 'Session',
-            name: ['customfields', 'session'],
-            place: 'eg: jan 20',
-            id: 'Session',
-            type: 'select',
-            options: [{ value: 'jan 20', label: 'Jan 20' },
-            { value: 'july 20', label: 'July 20' },
-            { value: 'jan 21', label: 'Jan 21' },
-            { value: 'july 21', label: 'July 21' },
-            { value: 'jan 22', label: 'Jan 22' },
-            { value: 'july 22', label: 'July 22' },
-            { value: 'jan 23', label: 'Jan 23' },
-            { value: 'july 23', label: 'July 23' },
-            { value: 'jan 24', label: 'Jan 24' },
-            { value: 'july 24', label: 'July 24' },
-            { value: 'jan 25', label: 'Jan 25' },
-            { value: 'july 25', label: 'July 25' },
-            { value: 'mar 23', label: 'mar 23' },
-            { value: 'apr 23', label: 'apr 23' },
-            { value: 'oct 23', label: 'oct 23' },
-            { value: 'nov 23', label: 'nov 23' },],
-            required: 'require'
-          },
-          {
-            key: 'select',
-            label: 'Admission Type',
-            name: ['customfields', 'admission_type'],
-            id: 'SessionType',
-            place: 'Enter Admission Type',
-            type: 'select',
-            options: [{ value: 'Fresh', label: 'Fresh' },
-            { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
-          },
-
           {
             key: 'date',
-            label: 'Date of Birth',
-            name: ['customfields', 'dob'],
-            place: 'Enter Date of Birth',
-            id: 'dob',
+            label: 'Created At',
+            name: 'created',
+            id: 'created',
             type: 'date',
-            required: 'require'
-          },
-          {
-            key: 'select',
-            label: 'Gender',
-            name: ['customfields', 'gender'],
-            id: 'Gender',
-            place: 'Gender',
-            type: 'select',
-            options: [{ value: 'Male', label: 'Male' },
-            { value: 'Female', label: 'Female' },
-            { value: 'Other', label: 'Other' }],
-          },
-          {
-            key: 'select',
-            label: 'Installment Type',
-            id: 'InstallmentType',
-            name: ['customfields', 'installment_type'],
-            place: 'Installment Type',
-            type: 'select',
-            required: 'require',
-            options: [
-              { value: '1st Installment/ New Admission', label: '1st Installment/ New Admission' },
-              { value: '2nd Installment', label: '2nd Installment' },
-              { value: '3rd Installment', label: '3rd Installment' },
-              { value: '4th Installment', label: '4th Installment' },
-              { value: '5th Installment', label: '5th Installment' },
-              { value: '6th Installment', label: '6th Installment' },
-              { value: '7th Installment', label: '7th Installment' },
-              { value: '8th Installment', label: '8th Installment' },
-              { value: '9th Installment', label: '9th Installment' },
-              { value: '10th Installment', label: '10th Installment' },
-            ],
-          },
-          {
-            key: 'select ',
-            label: 'Payment mode ',
-            name: ['customfields', 'payment_mode'],
-            id: 'PaymentMode ',
-            type: 'select',
-            place: 'Select Payment Mode',
-            required: 'require',
-            options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
-            { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Payment Gateway', label: 'Payment Gateway' },
-            { value: 'Cash/DD', label: 'Cash/DD' }],
-          },
-          {
-            key: 'select ',
-            label: 'Counselors',
-            name: ['customfields', 'counselor_email'],
-            id: 'email ',
-            type: 'select',
-            place: 'select counselor email',
-            required: 'require',
-            options: [{ value: 'zarin@highereducationschool.com', label: 'Zarin' },
-            { value: 'kanchan@highereducationschool.com', label: 'Kanchan' },
-            { value: 'kirti@highereducationschool.com', label: 'Kirti' },
-            { value: 'ramandeep@highereducationschool.com', label: 'Raman' },
-            { value: 'kavita@highereducationschool.com', label: 'kavita' },
-            { value: 'imra@highereducationschool.com', label: 'Imra' },
-            { value: 'Mahak@highereducationschool.com', label: 'Mahek' },
-            { value: 'abhay@highereducationschool.com', label: 'abhay' },
-            { value: 'swati@highereducationschool.com', label: 'swati' },
-            { value: 'gulshan@highereducationschool.com', label: 'Gulshan' },
-            { value: 'isha@highereducationschool.com', label: 'Isha' },
-            { value: 'Sakshi@highereducationschool.com', label: 'Sakshi' },
-            { value: 'aashita@highereducationschool.com', label: 'aashita' },
-            { value: 'pratibha@highereducationschool.com', label: 'pratibha' },
-            { value: 'shreyashi@highereducationschool.com', label: 'Shreyashi ' },
-            { value: 'apoorvasrivastava@distanceeducationschool.com', label: 'Apoorva_DES' },
-            { value: 'asma@distanceeducationschool.com', label: 'Asma_DES' },
-            { value: 'nehaprashar@distanceeducationschool.com', label: 'Neha_Prasher_DES' },
-            { value: 'priya@distanceeducationschool.com', label: 'Priya_DES' },
-            { value: 'diksha@distanceeducationschool.com', label: 'Diksha_DES' },
-            { value: 'abhilasha@distanceeducationschool.com', label: 'Abhilasha_Gupta_DES' },
-            { value: 'saher@distanceeducationschool.com', label: 'Saher_Khan_DES' },
-            { value: 'fiza@distanceeducationschool.com', label: 'Fiza_DES' },
-            { value: 'muskan@distanceeducationschool.com', label: 'Muskaan_DES' },
-            { value: 'aniruddh@distanceeducationschool.com', label: 'Aniruddh_DES' },
-            { value: 'deva@distanceeducationschool.com', label: 'Devendra_DES' },
-            { value: 'amritpal@distanceeducationschool.com', label: 'Amritpal_DES' },
-            { value: 'Salman@distanceeducationschool.com:', label: 'Salman_DES' },
-            { value: 'tariq@distanceeducationschool.com', label: 'Traiq_DES' },
-            { value: 'shivam@distanceeducationschool.com', label: 'Shivam_sharma_DES' },
-            { value: 'pushpa@distanceeducationschool.com', label: 'Puspa_DES' },
-            { value: 'zarin@distanceeducationschool.com', label: 'Zarin_DES' },
-            { value: 'kanchan@distanceeducationschool.com', label: 'Kanchan_DES' },
-            { value: 'manu@distanceeducationschool.com', label: 'Manu_DES' },
-
-            // Jain Team Emails
-            { value: 'a.anitha.ju@gmail.com', label: 'Anita_JU' },
-            { value: 'vaniruckmani.ju@gmail.com', label: 'Vani_Ruckmani_JU' },
-            { value: 'priyankapalle.ju@gmail.com', label: 'Priyanka_JU' },
-            { value: 'SwatiRamani.manipal@gmail.com', label: 'Swati_JU' },
-
-            // Manipal Team Email
-            { value: 'ankitakumari.manipal@gmail.com', label: 'Ankita_MU' },
-            { value: 'medhahandoo.manipal@gmail.com', label: 'Medha_MU' },
-            { value: 'amreen.manipal@gmail.com', label: 'Amreen_MU' },
-
-            // Support Team Email
-            { value: 'rajesh@distanceeducationschool.com', label: 'Rajesh_sir' },
-            { value: 'manisha@distanceeducationschool.com', label: 'Manisha' },
-            { value: 'admin@distanceeducationschool.com', label: 'Nouman_sir' },
-            { value: 'sandy@distanceeducationschool.com', label: 'Sandy' },
-            { value: 'neha@distanceeducationschool.com', label: 'Neha' },
-            { value: 'yashpriya@distanceeducationschool.com', label: 'Yash_Priya' },
-            { value: 'kavitahaldar@distanceeducationschool.com', label: 'kavitahaldar' },
-            { value: 'ifla@distanceeducationschool.com', label: 'Ifla' },
-            { value: 'shalu@distanceeducationschool.com', label: 'Shalu' },
-            { value: 'zainubia@distanceeducationschool.com', label: 'zainbuia' },
-            { value: 'pallovi@distanceeducationschool.com', label: 'Pallovi' },
-            { value: 'kavitakumari@distanceeducationschool.com', label: 'Kavita_Kumari' },
-            { value: 'manshi@distanceeducationschool.com', label: 'Mansi' },
-            { value: 'Bhavya.manipal@gmail.com', label: 'Bhavya' },
-            { value: 'anurag@distanceeducationschool.com', label: 'Anuraj' },
-            { value: 'rupal@distanceeducationschool.com', label: 'Rupal' },
-            //B2B Team Email
-            { value: 'spuhelpdesk@gmail.com', label: 'Binny' },
-            { value: 'ruchika.spu@gmail.com', label: 'Ruchika' },
-            { value: 'lalit@distanceeducationschool.com', label: 'Lalit_DES' },
-            { value: 'lalit.spu@gmail.com', label: 'Lalit' },
-            { value: 'ramiz.spu@gmail.com', label: 'Ramiz' }
-            ],
-          },
-          {
-            key: 'select ',
-            label: 'Status',
-            name: ['customfields', 'status'],
-            id: 'status ',
-            type: 'select',
-            place: 'select status',
-            required: 'require',
-            options: [
-              { value: 'New', label: 'New' },
-              { value: 'Cancel', label: 'Cancel' },
-              { value: 'Enrolled', label: 'Enrolled' },
-              { value: 'Alumini', label: 'Alumini' },
-            ],
-          },
-          {
-            key: 'text',
-            label: 'LMS',
-            name: ['customfields', 'lms'],
-            place: 'Enter LMS',
-            id: 'lms',
-            type: 'text',
-          },
-          {
-            key: 'textarea',
-            label: 'Remark',
-            name: ['customfields', 'remark'],
-            place: 'Enter your remark',
-            id: 'remark',
-            type: 'textarea',
           },
         ],
       },
@@ -19160,7 +19537,7 @@ const formData = [
             name: ['customfields', 'send_fee_receipt'],
             type: 'radio',
             options: ['yes', 'no'],
-            required: 'require'
+
           },
           {
             key: 'studentId',
@@ -19169,7 +19546,7 @@ const formData = [
             place: 'StudentID',
             id: 'StudentID',
             type: 'studentId',
-            required: 'require'
+
           },
           {
             key: 'text',
@@ -19178,7 +19555,7 @@ const formData = [
             place: 'Student Name',
             id: 'full_name',
             type: 'text',
-            required: 'require'
+
           },
           {
             key: 'email',
@@ -19187,7 +19564,7 @@ const formData = [
             name: ['contact', 'email'],
             id: 'EmailID',
             type: 'email',
-            required: 'require'
+
           },
           {
             key: 'tel',
@@ -19196,7 +19573,7 @@ const formData = [
             place: 'Enter Phone Number',
             id: 'phone',
             type: 'tel',
-            required: 'require'
+
           },
           {
             key: 'text',
@@ -19205,7 +19582,7 @@ const formData = [
             place: 'Enter Father Name',
             id: 'Father Name',
             type: 'text',
-            required: 'require'
+
           },
           {
             key: 'text',
@@ -19214,32 +19591,32 @@ const formData = [
             place: 'Enter Mother Name',
             id: 'mother_name',
             type: 'text',
-            required: 'require'
+
           },
           {
             key: 'select',
             label: 'Session',
             name: ['customfields', 'session'],
-            place: 'eg: jan 20',
+            place: 'eg: JAN_20',
             id: 'Session',
             type: 'select',
-            options: [{ value: 'jan 20', label: 'Jan 20' },
-            { value: 'july 20', label: 'July 20' },
-            { value: 'jan 21', label: 'Jan 21' },
-            { value: 'july 21', label: 'July 21' },
-            { value: 'jan 22', label: 'Jan 22' },
-            { value: 'july 22', label: 'July 22' },
-            { value: 'jan 23', label: 'Jan 23' },
-            { value: 'july 23', label: 'July 23' },
-            { value: 'jan 24', label: 'Jan 24' },
-            { value: 'july 24', label: 'July 24' },
-            { value: 'jan 25', label: 'Jan 25' },
-            { value: 'july 25', label: 'July 25' },
-            { value: 'mar 23', label: 'mar 23' },
-            { value: 'apr 23', label: 'apr 23' },
-            { value: 'oct 23', label: 'oct 23' },
-            { value: 'nov 23', label: 'nov 23' },],
-            required: 'require'
+            options: [{ value: 'JAN_20', label: 'JAN_20' },
+            { value: 'JULY_20', label: 'JULY_20' },
+            { value: 'JAN_21', label: 'JAN_21' },
+            { value: 'JULY_21', label: 'JULY_21' },
+            { value: 'JAN_22', label: 'JAN_22' },
+            { value: 'JULY_22', label: 'JULY_22' },
+            { value: 'JAN_23', label: 'JAN_23' },
+            { value: 'JULY_23', label: 'JULY_23' },
+            { value: 'JAN_24', label: 'JAN_24' },
+            { value: 'JULY_24', label: 'JULY_24' },
+            { value: 'JAN_25', label: 'JAN_25' },
+            { value: 'JULY_25', label: 'JULY_25' },
+            { value: 'MAR_23', label: 'MAR_23' },
+            { value: 'APR_23', label: 'APR_23' },
+            { value: 'OCT_23', label: 'OCT_23' },
+            { value: 'NOV_23', label: 'NOV_23' },],
+
           },
           {
             key: 'select',
@@ -19248,7 +19625,7 @@ const formData = [
             id: 'SessionType',
             place: 'Enter Admission Type',
             type: 'select',
-            options: [{ value: 'Fresh', label: 'Fresh' },
+            options: [{ value: 'FRESH', label: 'FRESH' },
             { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
           },
 
@@ -19259,7 +19636,7 @@ const formData = [
             place: 'Enter Date of Birth',
             id: 'dob',
             type: 'date',
-            required: 'require'
+
           },
           {
             key: 'select',
@@ -19279,7 +19656,7 @@ const formData = [
             name: ['customfields', 'installment_type'],
             place: 'Installment Type',
             type: 'select',
-            required: 'require',
+
             options: [
               { value: '1st Installment/ New Admission', label: '1st Installment/ New Admission' },
               { value: '2nd Installment', label: '2nd Installment' },
@@ -19300,8 +19677,9 @@ const formData = [
             id: 'PaymentMode ',
             type: 'select',
             place: 'Select Payment Mode',
-            required: 'require',
+
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
+            { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
             { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
@@ -19312,77 +19690,82 @@ const formData = [
             name: ['customfields', 'counselor_email'],
             id: 'email ',
             type: 'select',
-            place: 'select counselor email',
-            required: 'require',
-            options: [{ value: 'zarin@highereducationschool.com', label: 'Zarin' },
-            { value: 'kanchan@highereducationschool.com', label: 'Kanchan' },
-            { value: 'kirti@highereducationschool.com', label: 'Kirti' },
-            { value: 'ramandeep@highereducationschool.com', label: 'Raman' },
-            { value: 'kavita@highereducationschool.com', label: 'kavita' },
-            { value: 'imra@highereducationschool.com', label: 'Imra' },
-            { value: 'Mahak@highereducationschool.com', label: 'Mahek' },
-            { value: 'abhay@highereducationschool.com', label: 'abhay' },
-            { value: 'swati@highereducationschool.com', label: 'swati' },
-            { value: 'gulshan@highereducationschool.com', label: 'Gulshan' },
-            { value: 'isha@highereducationschool.com', label: 'Isha' },
-            { value: 'Sakshi@highereducationschool.com', label: 'Sakshi' },
-            { value: 'aashita@highereducationschool.com', label: 'aashita' },
-            { value: 'pratibha@highereducationschool.com', label: 'pratibha' },
-            { value: 'shreyashi@highereducationschool.com', label: 'Shreyashi ' },
-            { value: 'apoorvasrivastava@distanceeducationschool.com', label: 'Apoorva_DES' },
-            { value: 'asma@distanceeducationschool.com', label: 'Asma_DES' },
-            { value: 'nehaprashar@distanceeducationschool.com', label: 'Neha_Prasher_DES' },
-            { value: 'priya@distanceeducationschool.com', label: 'Priya_DES' },
-            { value: 'diksha@distanceeducationschool.com', label: 'Diksha_DES' },
-            { value: 'abhilasha@distanceeducationschool.com', label: 'Abhilasha_Gupta_DES' },
-            { value: 'saher@distanceeducationschool.com', label: 'Saher_Khan_DES' },
-            { value: 'fiza@distanceeducationschool.com', label: 'Fiza_DES' },
-            { value: 'muskan@distanceeducationschool.com', label: 'Muskaan_DES' },
-            { value: 'aniruddh@distanceeducationschool.com', label: 'Aniruddh_DES' },
-            { value: 'deva@distanceeducationschool.com', label: 'Devendra_DES' },
-            { value: 'amritpal@distanceeducationschool.com', label: 'Amritpal_DES' },
-            { value: 'Salman@distanceeducationschool.com:', label: 'Salman_DES' },
-            { value: 'tariq@distanceeducationschool.com', label: 'Traiq_DES' },
-            { value: 'shivam@distanceeducationschool.com', label: 'Shivam_sharma_DES' },
-            { value: 'pushpa@distanceeducationschool.com', label: 'Puspa_DES' },
-            { value: 'zarin@distanceeducationschool.com', label: 'Zarin_DES' },
-            { value: 'kanchan@distanceeducationschool.com', label: 'Kanchan_DES' },
-            { value: 'manu@distanceeducationschool.com', label: 'Manu_DES' },
+            place: 'select counselor name',
+            options: [
+              // DES External email with name
+              { value: 'apoorvasrivastava@sode.co.in', label: 'Apoorva Srivastava' },
+              { value: 'nehaprashar@sode.co.in', label: 'Neha Prasher' },
+              { value: 'priya@sode.co.in', label: 'Priya Anand' },
+              { value: 'diksha@sode.co.in', label: 'Diksha Singh' },
+              { value: 'abhilasha@sode.co.in', label: 'Abhilasha Gupta' },
+              { value: 'saher@sode.co.in', label: 'Saher Khan' },
 
-            // Jain Team Emails
-            { value: 'a.anitha.ju@gmail.com', label: 'Anita_JU' },
-            { value: 'vaniruckmani.ju@gmail.com', label: 'Vani_Ruckmani_JU' },
-            { value: 'priyankapalle.ju@gmail.com', label: 'Priyanka_JU' },
-            { value: 'SwatiRamani.manipal@gmail.com', label: 'Swati_JU' },
+              // DES Internal email with name 
+              { value: 'muskan@distanceeducationschool.com', label: 'Muskaan ' },
+              { value: 'aniruddh@distanceeducationschool.com', label: 'Aniruddh Prakash' },
+              { value: 'amritpal@sode.co.in', label: 'Amritpal Singh' },
+              { value: 'salman@sode.co.in', label: 'Salman' },
+              { value: 'tariq@sode.co.in', label: 'Tariq Hasan' },
+              { value: 'shivam@sode.co.in', label: 'Shivam sharma' },
+              { value: 'pushpa@sode.co.in', label: 'Pushpa Pramanik' },
 
-            // Manipal Team Email
-            { value: 'ankitakumari.manipal@gmail.com', label: 'Ankita_MU' },
-            { value: 'medhahandoo.manipal@gmail.com', label: 'Medha_MU' },
-            { value: 'amreen.manipal@gmail.com', label: 'Amreen_MU' },
+              // DES Internal email with name 
+              { value: 'anurag@distanceeducationschool.com', label: 'Anurag Yadav' },
+              { value: 'kavitakumari@sode.co.in', label: 'Kavita Kumari' },
+              { value: 'rupal@sode.co.in', label: 'Rupal Gautam' },
+              { value: 'deva@sode.co.in', label: 'Devendra' },
+              { value: 'manshi@sode.co.in', label: 'Manshi Kem' },
 
-            // Support Team Email
-            { value: 'rajesh@distanceeducationschool.com', label: 'Rajesh_sir' },
-            { value: 'manisha@distanceeducationschool.com', label: 'Manisha' },
-            { value: 'admin@distanceeducationschool.com', label: 'Nouman_sir' },
-            { value: 'sandy@distanceeducationschool.com', label: 'Sandy' },
-            { value: 'neha@distanceeducationschool.com', label: 'Neha' },
-            { value: 'yashpriya@distanceeducationschool.com', label: 'Yash_Priya' },
-            { value: 'kavitahaldar@distanceeducationschool.com', label: 'kavitahaldar' },
-            { value: 'ifla@distanceeducationschool.com', label: 'Ifla' },
-            { value: 'shalu@distanceeducationschool.com', label: 'Shalu' },
-            { value: 'zainubia@distanceeducationschool.com', label: 'zainbuia' },
-            { value: 'pallovi@distanceeducationschool.com', label: 'Pallovi' },
-            { value: 'kavitakumari@distanceeducationschool.com', label: 'Kavita_Kumari' },
-            { value: 'manshi@distanceeducationschool.com', label: 'Mansi' },
-            { value: 'Bhavya.manipal@gmail.com', label: 'Bhavya' },
-            { value: 'anurag@distanceeducationschool.com', label: 'Anuraj' },
-            { value: 'rupal@distanceeducationschool.com', label: 'Rupal' },
-            //B2B Team Email
-            { value: 'spuhelpdesk@gmail.com', label: 'Binny' },
-            { value: 'ruchika.spu@gmail.com', label: 'Ruchika' },
-            { value: 'lalit@distanceeducationschool.com', label: 'Lalit_DES' },
-            { value: 'lalit.spu@gmail.com', label: 'Lalit' },
-            { value: 'ramiz.spu@gmail.com', label: 'Ramiz' }
+              // DES - INTERNATIONAL email with name 
+              { value: 'zarin@distanceeducationschool.com', label: 'Zarin Badar' },
+
+              // HES team email with name 
+              { value: 'kanchan@highereducationschool.com', label: 'Kanchan Sharma' },
+              { value: 'kirti@highereducationschool.com', label: 'Kirti Dubey' },
+              { value: 'ramandeep@highereducationschool.com', label: 'Ramandeep Kaur' },
+              { value: 'kavita@highereducationschool.com', label: 'Kavita Yadav' },
+              { value: 'imra@highereducationschool.com', label: 'Imra Khan' },
+              { value: 'mahak@highereducationschool.com', label: 'Mahek' },
+              { value: 'abhay@highereducationschool.com', label: 'Abhay Dubey' },
+              { value: 'swati@highereducationschool.com', label: 'Swati' },
+              { value: 'gulshan@highereducationschool.com', label: 'Gulshan Nayyar' },
+              { value: 'isha@highereducationschool.com', label: 'Isha Jaiswal' },
+              { value: 'sakshi@highereducationschool.com', label: 'Sakshi Arora' },
+
+              // Jain team email with name 
+              { value: 'anitha@sode.co.in', label: 'A.Anitha' },
+              { value: 'vani@sode.co.in', label: 'Vani Ruckmani' },
+
+              // Manipal team email with name 
+              { value: 'SwatiRamani.manipal@gmail.com', label: 'Swati Ramani' },
+              { value: 'ankitakumar@sode.co.in', label: 'Ankita Kumari' },
+              { value: 'nidhi@sode.co.in', label: 'Nidhi' },
+              { value: 'amreen@sode.co.in', label: 'Amreen ALI Khan' },
+              { value: 'umar@sode.co.in', label: 'MD Umar' },
+              { value: 'nehagupta@sode.co.in', label: 'Neha Gupta' },
+              { value: 'pawankumar@sode.co.in', label: 'Pawan Kumar' },
+              { value: 'bhavya@sode.co.in', label: 'Bhavya' },
+
+              // ALL DES && HES team email with name 
+              { value: 'rajesh@distanceeducationschool.com', label: 'Rajesh Sir' },
+              { value: 'manisha@distanceeducationschool.com', label: 'Manisha Yadav' },
+              { value: 'admin@distanceeducationschool.com', label: 'Nouman Sir' },
+              { value: 'sandy@distanceeducationschool.com', label: 'Sandy' },
+              { value: 'neha@distanceeducationschool.com', label: 'Neha Raj' },
+              { value: 'yashpriya@distanceeducationschool.com', label: 'Yash Priya' },
+              { value: 'kavitahaldar@distanceeducationschool.com', label: 'Kavita Haldar' },
+              { value: 'ifla@distanceeducationschool.com', label: 'Ifla' },
+              { value: 'shalu@distanceeducationschool.com', label: 'Shalu' },
+              { value: 'zainubia@distanceeducationschool.com', label: 'Zainbuia' },
+              { value: 'pallovi@distanceeducationschool.com', label: 'Pallovi' },
+              { value: 'hansi@distanceeducationschool.com', label: 'Hansi' },
+              { value: 'shristi@distanceeducationschool.com', label: 'Shristi' },
+              { value: 'aashita@highereducationschool.com', label: 'Aashita' },
+              { value: 'pratibha@highereducationschool.com', label: 'Pratibha' },
+              { value: 'shreyashi@highereducationschool.com', label: 'Shreyashi' },
+              { value: 'spuhelpdesk@gmail.com', label: 'Binny' },
+              { value: 'ruchika.spu@gmail.com', label: 'Ruchika' },
+              { value: 'ramiz.spu@gmail.com', label: 'Ramiz' },
             ],
           },
           {
@@ -19392,7 +19775,7 @@ const formData = [
             id: 'status ',
             type: 'select',
             place: 'select status',
-            required: 'require',
+
             options: [
               { value: 'New', label: 'New' },
               { value: 'Cancel', label: 'Cancel' },
@@ -19415,6 +19798,13 @@ const formData = [
             place: 'Enter your remark',
             id: 'remark',
             type: 'textarea',
+          },
+          {
+            key: 'date',
+            label: 'Created At',
+            name: 'created',
+            id: 'created',
+            type: 'date',
           },
         ],
       },
@@ -19786,7 +20176,7 @@ const formData = [
             name: ['customfields', 'send_fee_receipt'],
             type: 'radio',
             options: ['yes', 'no'],
-            required: 'require'
+
           },
           {
             key: 'studentId',
@@ -19795,7 +20185,7 @@ const formData = [
             place: 'StudentID',
             id: 'StudentID',
             type: 'studentId',
-            required: 'require'
+
           },
           {
             key: 'text',
@@ -19804,7 +20194,7 @@ const formData = [
             place: 'Student Name',
             id: 'full_name',
             type: 'text',
-            required: 'require'
+
           },
           {
             key: 'email',
@@ -19813,7 +20203,7 @@ const formData = [
             name: ['contact', 'email'],
             id: 'EmailID',
             type: 'email',
-            required: 'require'
+
           },
           {
             key: 'tel',
@@ -19822,7 +20212,7 @@ const formData = [
             place: 'Enter Phone Number',
             id: 'phone',
             type: 'tel',
-            required: 'require'
+
           },
           {
             key: 'text',
@@ -19831,7 +20221,7 @@ const formData = [
             place: 'Enter Father Name',
             id: 'Father Name',
             type: 'text',
-            required: 'require'
+
           },
           {
             key: 'text',
@@ -19840,32 +20230,32 @@ const formData = [
             place: 'Enter Mother Name',
             id: 'mother_name',
             type: 'text',
-            required: 'require'
+
           },
           {
             key: 'select',
             label: 'Session',
             name: ['customfields', 'session'],
-            place: 'eg: jan 20',
+            place: 'eg: JAN_20',
             id: 'Session',
             type: 'select',
-            options: [{ value: 'jan 20', label: 'Jan 20' },
-            { value: 'july 20', label: 'July 20' },
-            { value: 'jan 21', label: 'Jan 21' },
-            { value: 'july 21', label: 'July 21' },
-            { value: 'jan 22', label: 'Jan 22' },
-            { value: 'july 22', label: 'July 22' },
-            { value: 'jan 23', label: 'Jan 23' },
-            { value: 'july 23', label: 'July 23' },
-            { value: 'jan 24', label: 'Jan 24' },
-            { value: 'july 24', label: 'July 24' },
-            { value: 'jan 25', label: 'Jan 25' },
-            { value: 'july 25', label: 'July 25' },
-            { value: 'mar 23', label: 'mar 23' },
-            { value: 'apr 23', label: 'apr 23' },
-            { value: 'oct 23', label: 'oct 23' },
-            { value: 'nov 23', label: 'nov 23' },],
-            required: 'require'
+            options: [{ value: 'JAN_20', label: 'JAN_20' },
+            { value: 'JULY_20', label: 'JULY_20' },
+            { value: 'JAN_21', label: 'JAN_21' },
+            { value: 'JULY_21', label: 'JULY_21' },
+            { value: 'JAN_22', label: 'JAN_22' },
+            { value: 'JULY_22', label: 'JULY_22' },
+            { value: 'JAN_23', label: 'JAN_23' },
+            { value: 'JULY_23', label: 'JULY_23' },
+            { value: 'JAN_24', label: 'JAN_24' },
+            { value: 'JULY_24', label: 'JULY_24' },
+            { value: 'JAN_25', label: 'JAN_25' },
+            { value: 'JULY_25', label: 'JULY_25' },
+            { value: 'MAR_23', label: 'MAR_23' },
+            { value: 'APR_23', label: 'APR_23' },
+            { value: 'OCT_23', label: 'OCT_23' },
+            { value: 'NOV_23', label: 'NOV_23' },],
+
           },
           {
             key: 'select',
@@ -19874,7 +20264,7 @@ const formData = [
             id: 'SessionType',
             place: 'Enter Admission Type',
             type: 'select',
-            options: [{ value: 'Fresh', label: 'Fresh' },
+            options: [{ value: 'FRESH', label: 'FRESH' },
             { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
           },
 
@@ -19885,7 +20275,7 @@ const formData = [
             place: 'Enter Date of Birth',
             id: 'dob',
             type: 'date',
-            required: 'require'
+
           },
           {
             key: 'select',
@@ -19905,7 +20295,7 @@ const formData = [
             name: ['customfields', 'installment_type'],
             place: 'Installment Type',
             type: 'select',
-            required: 'require',
+
             options: [
               { value: '1st Installment/ New Admission', label: '1st Installment/ New Admission' },
               { value: '2nd Installment', label: '2nd Installment' },
@@ -19926,8 +20316,9 @@ const formData = [
             id: 'PaymentMode ',
             type: 'select',
             place: 'Select Payment Mode',
-            required: 'require',
+
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
+            { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
             { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
@@ -19938,77 +20329,82 @@ const formData = [
             name: ['customfields', 'counselor_email'],
             id: 'email ',
             type: 'select',
-            place: 'select counselor email',
-            required: 'require',
-            options: [{ value: 'zarin@highereducationschool.com', label: 'Zarin' },
-            { value: 'kanchan@highereducationschool.com', label: 'Kanchan' },
-            { value: 'kirti@highereducationschool.com', label: 'Kirti' },
-            { value: 'ramandeep@highereducationschool.com', label: 'Raman' },
-            { value: 'kavita@highereducationschool.com', label: 'kavita' },
-            { value: 'imra@highereducationschool.com', label: 'Imra' },
-            { value: 'Mahak@highereducationschool.com', label: 'Mahek' },
-            { value: 'abhay@highereducationschool.com', label: 'abhay' },
-            { value: 'swati@highereducationschool.com', label: 'swati' },
-            { value: 'gulshan@highereducationschool.com', label: 'Gulshan' },
-            { value: 'isha@highereducationschool.com', label: 'Isha' },
-            { value: 'Sakshi@highereducationschool.com', label: 'Sakshi' },
-            { value: 'aashita@highereducationschool.com', label: 'aashita' },
-            { value: 'pratibha@highereducationschool.com', label: 'pratibha' },
-            { value: 'shreyashi@highereducationschool.com', label: 'Shreyashi ' },
-            { value: 'apoorvasrivastava@distanceeducationschool.com', label: 'Apoorva_DES' },
-            { value: 'asma@distanceeducationschool.com', label: 'Asma_DES' },
-            { value: 'nehaprashar@distanceeducationschool.com', label: 'Neha_Prasher_DES' },
-            { value: 'priya@distanceeducationschool.com', label: 'Priya_DES' },
-            { value: 'diksha@distanceeducationschool.com', label: 'Diksha_DES' },
-            { value: 'abhilasha@distanceeducationschool.com', label: 'Abhilasha_Gupta_DES' },
-            { value: 'saher@distanceeducationschool.com', label: 'Saher_Khan_DES' },
-            { value: 'fiza@distanceeducationschool.com', label: 'Fiza_DES' },
-            { value: 'muskan@distanceeducationschool.com', label: 'Muskaan_DES' },
-            { value: 'aniruddh@distanceeducationschool.com', label: 'Aniruddh_DES' },
-            { value: 'deva@distanceeducationschool.com', label: 'Devendra_DES' },
-            { value: 'amritpal@distanceeducationschool.com', label: 'Amritpal_DES' },
-            { value: 'Salman@distanceeducationschool.com:', label: 'Salman_DES' },
-            { value: 'tariq@distanceeducationschool.com', label: 'Traiq_DES' },
-            { value: 'shivam@distanceeducationschool.com', label: 'Shivam_sharma_DES' },
-            { value: 'pushpa@distanceeducationschool.com', label: 'Puspa_DES' },
-            { value: 'zarin@distanceeducationschool.com', label: 'Zarin_DES' },
-            { value: 'kanchan@distanceeducationschool.com', label: 'Kanchan_DES' },
-            { value: 'manu@distanceeducationschool.com', label: 'Manu_DES' },
+            place: 'select counselor name',
+            options: [
+              // DES External email with name
+              { value: 'apoorvasrivastava@sode.co.in', label: 'Apoorva Srivastava' },
+              { value: 'nehaprashar@sode.co.in', label: 'Neha Prasher' },
+              { value: 'priya@sode.co.in', label: 'Priya Anand' },
+              { value: 'diksha@sode.co.in', label: 'Diksha Singh' },
+              { value: 'abhilasha@sode.co.in', label: 'Abhilasha Gupta' },
+              { value: 'saher@sode.co.in', label: 'Saher Khan' },
 
-            // Jain Team Emails
-            { value: 'a.anitha.ju@gmail.com', label: 'Anita_JU' },
-            { value: 'vaniruckmani.ju@gmail.com', label: 'Vani_Ruckmani_JU' },
-            { value: 'priyankapalle.ju@gmail.com', label: 'Priyanka_JU' },
-            { value: 'SwatiRamani.manipal@gmail.com', label: 'Swati_JU' },
+              // DES Internal email with name 
+              { value: 'muskan@distanceeducationschool.com', label: 'Muskaan ' },
+              { value: 'aniruddh@distanceeducationschool.com', label: 'Aniruddh Prakash' },
+              { value: 'amritpal@sode.co.in', label: 'Amritpal Singh' },
+              { value: 'salman@sode.co.in', label: 'Salman' },
+              { value: 'tariq@sode.co.in', label: 'Tariq Hasan' },
+              { value: 'shivam@sode.co.in', label: 'Shivam sharma' },
+              { value: 'pushpa@sode.co.in', label: 'Pushpa Pramanik' },
 
-            // Manipal Team Email
-            { value: 'ankitakumari.manipal@gmail.com', label: 'Ankita_MU' },
-            { value: 'medhahandoo.manipal@gmail.com', label: 'Medha_MU' },
-            { value: 'amreen.manipal@gmail.com', label: 'Amreen_MU' },
+              // DES Internal email with name 
+              { value: 'anurag@distanceeducationschool.com', label: 'Anurag Yadav' },
+              { value: 'kavitakumari@sode.co.in', label: 'Kavita Kumari' },
+              { value: 'rupal@sode.co.in', label: 'Rupal Gautam' },
+              { value: 'deva@sode.co.in', label: 'Devendra' },
+              { value: 'manshi@sode.co.in', label: 'Manshi Kem' },
 
-            // Support Team Email
-            { value: 'rajesh@distanceeducationschool.com', label: 'Rajesh_sir' },
-            { value: 'manisha@distanceeducationschool.com', label: 'Manisha' },
-            { value: 'admin@distanceeducationschool.com', label: 'Nouman_sir' },
-            { value: 'sandy@distanceeducationschool.com', label: 'Sandy' },
-            { value: 'neha@distanceeducationschool.com', label: 'Neha' },
-            { value: 'yashpriya@distanceeducationschool.com', label: 'Yash_Priya' },
-            { value: 'kavitahaldar@distanceeducationschool.com', label: 'kavitahaldar' },
-            { value: 'ifla@distanceeducationschool.com', label: 'Ifla' },
-            { value: 'shalu@distanceeducationschool.com', label: 'Shalu' },
-            { value: 'zainubia@distanceeducationschool.com', label: 'zainbuia' },
-            { value: 'pallovi@distanceeducationschool.com', label: 'Pallovi' },
-            { value: 'kavitakumari@distanceeducationschool.com', label: 'Kavita_Kumari' },
-            { value: 'manshi@distanceeducationschool.com', label: 'Mansi' },
-            { value: 'Bhavya.manipal@gmail.com', label: 'Bhavya' },
-            { value: 'anurag@distanceeducationschool.com', label: 'Anuraj' },
-            { value: 'rupal@distanceeducationschool.com', label: 'Rupal' },
-            //B2B Team Email
-            { value: 'spuhelpdesk@gmail.com', label: 'Binny' },
-            { value: 'ruchika.spu@gmail.com', label: 'Ruchika' },
-            { value: 'lalit@distanceeducationschool.com', label: 'Lalit_DES' },
-            { value: 'lalit.spu@gmail.com', label: 'Lalit' },
-            { value: 'ramiz.spu@gmail.com', label: 'Ramiz' }
+              // DES - INTERNATIONAL email with name 
+              { value: 'zarin@distanceeducationschool.com', label: 'Zarin Badar' },
+
+              // HES team email with name 
+              { value: 'kanchan@highereducationschool.com', label: 'Kanchan Sharma' },
+              { value: 'kirti@highereducationschool.com', label: 'Kirti Dubey' },
+              { value: 'ramandeep@highereducationschool.com', label: 'Ramandeep Kaur' },
+              { value: 'kavita@highereducationschool.com', label: 'Kavita Yadav' },
+              { value: 'imra@highereducationschool.com', label: 'Imra Khan' },
+              { value: 'mahak@highereducationschool.com', label: 'Mahek' },
+              { value: 'abhay@highereducationschool.com', label: 'Abhay Dubey' },
+              { value: 'swati@highereducationschool.com', label: 'Swati' },
+              { value: 'gulshan@highereducationschool.com', label: 'Gulshan Nayyar' },
+              { value: 'isha@highereducationschool.com', label: 'Isha Jaiswal' },
+              { value: 'sakshi@highereducationschool.com', label: 'Sakshi Arora' },
+
+              // Jain team email with name 
+              { value: 'anitha@sode.co.in', label: 'A.Anitha' },
+              { value: 'vani@sode.co.in', label: 'Vani Ruckmani' },
+
+              // Manipal team email with name 
+              { value: 'SwatiRamani.manipal@gmail.com', label: 'Swati Ramani' },
+              { value: 'ankitakumar@sode.co.in', label: 'Ankita Kumari' },
+              { value: 'nidhi@sode.co.in', label: 'Nidhi' },
+              { value: 'amreen@sode.co.in', label: 'Amreen ALI Khan' },
+              { value: 'umar@sode.co.in', label: 'MD Umar' },
+              { value: 'nehagupta@sode.co.in', label: 'Neha Gupta' },
+              { value: 'pawankumar@sode.co.in', label: 'Pawan Kumar' },
+              { value: 'bhavya@sode.co.in', label: 'Bhavya' },
+
+              // ALL DES && HES team email with name 
+              { value: 'rajesh@distanceeducationschool.com', label: 'Rajesh Sir' },
+              { value: 'manisha@distanceeducationschool.com', label: 'Manisha Yadav' },
+              { value: 'admin@distanceeducationschool.com', label: 'Nouman Sir' },
+              { value: 'sandy@distanceeducationschool.com', label: 'Sandy' },
+              { value: 'neha@distanceeducationschool.com', label: 'Neha Raj' },
+              { value: 'yashpriya@distanceeducationschool.com', label: 'Yash Priya' },
+              { value: 'kavitahaldar@distanceeducationschool.com', label: 'Kavita Haldar' },
+              { value: 'ifla@distanceeducationschool.com', label: 'Ifla' },
+              { value: 'shalu@distanceeducationschool.com', label: 'Shalu' },
+              { value: 'zainubia@distanceeducationschool.com', label: 'Zainbuia' },
+              { value: 'pallovi@distanceeducationschool.com', label: 'Pallovi' },
+              { value: 'hansi@distanceeducationschool.com', label: 'Hansi' },
+              { value: 'shristi@distanceeducationschool.com', label: 'Shristi' },
+              { value: 'aashita@highereducationschool.com', label: 'Aashita' },
+              { value: 'pratibha@highereducationschool.com', label: 'Pratibha' },
+              { value: 'shreyashi@highereducationschool.com', label: 'Shreyashi' },
+              { value: 'spuhelpdesk@gmail.com', label: 'Binny' },
+              { value: 'ruchika.spu@gmail.com', label: 'Ruchika' },
+              { value: 'ramiz.spu@gmail.com', label: 'Ramiz' },
             ],
           },
           {
@@ -20018,7 +20414,7 @@ const formData = [
             id: 'status ',
             type: 'select',
             place: 'select status',
-            required: 'require',
+
             options: [
               { value: 'New', label: 'New' },
               { value: 'Cancel', label: 'Cancel' },
@@ -20041,6 +20437,13 @@ const formData = [
             place: 'Enter your remark',
             id: 'remark',
             type: 'textarea',
+          },
+          {
+            key: 'date',
+            label: 'Created At',
+            name: 'created',
+            id: 'created',
+            type: 'date',
           },
         ],
       },
@@ -20412,7 +20815,7 @@ const formData = [
             name: ['customfields', 'send_fee_receipt'],
             type: 'radio',
             options: ['yes', 'no'],
-            required: 'require'
+
           },
           {
             key: 'studentId',
@@ -20421,7 +20824,7 @@ const formData = [
             place: 'StudentID',
             id: 'StudentID',
             type: 'studentId',
-            required: 'require'
+
           },
           {
             key: 'text',
@@ -20430,7 +20833,7 @@ const formData = [
             place: 'Student Name',
             id: 'full_name',
             type: 'text',
-            required: 'require'
+
           },
           {
             key: 'email',
@@ -20439,7 +20842,7 @@ const formData = [
             name: ['contact', 'email'],
             id: 'EmailID',
             type: 'email',
-            required: 'require'
+
           },
           {
             key: 'tel',
@@ -20448,7 +20851,7 @@ const formData = [
             place: 'Enter Phone Number',
             id: 'phone',
             type: 'tel',
-            required: 'require'
+
           },
           {
             key: 'text',
@@ -20457,7 +20860,7 @@ const formData = [
             place: 'Enter Father Name',
             id: 'Father Name',
             type: 'text',
-            required: 'require'
+
           },
           {
             key: 'text',
@@ -20466,32 +20869,32 @@ const formData = [
             place: 'Enter Mother Name',
             id: 'mother_name',
             type: 'text',
-            required: 'require'
+
           },
           {
             key: 'select',
             label: 'Session',
             name: ['customfields', 'session'],
-            place: 'eg: jan 20',
+            place: 'eg: JAN_20',
             id: 'Session',
             type: 'select',
-            options: [{ value: 'jan 20', label: 'Jan 20' },
-            { value: 'july 20', label: 'July 20' },
-            { value: 'jan 21', label: 'Jan 21' },
-            { value: 'july 21', label: 'July 21' },
-            { value: 'jan 22', label: 'Jan 22' },
-            { value: 'july 22', label: 'July 22' },
-            { value: 'jan 23', label: 'Jan 23' },
-            { value: 'july 23', label: 'July 23' },
-            { value: 'jan 24', label: 'Jan 24' },
-            { value: 'july 24', label: 'July 24' },
-            { value: 'jan 25', label: 'Jan 25' },
-            { value: 'july 25', label: 'July 25' },
-            { value: 'mar 23', label: 'mar 23' },
-            { value: 'apr 23', label: 'apr 23' },
-            { value: 'oct 23', label: 'oct 23' },
-            { value: 'nov 23', label: 'nov 23' },],
-            required: 'require'
+            options: [{ value: 'JAN_20', label: 'JAN_20' },
+            { value: 'JULY_20', label: 'JULY_20' },
+            { value: 'JAN_21', label: 'JAN_21' },
+            { value: 'JULY_21', label: 'JULY_21' },
+            { value: 'JAN_22', label: 'JAN_22' },
+            { value: 'JULY_22', label: 'JULY_22' },
+            { value: 'JAN_23', label: 'JAN_23' },
+            { value: 'JULY_23', label: 'JULY_23' },
+            { value: 'JAN_24', label: 'JAN_24' },
+            { value: 'JULY_24', label: 'JULY_24' },
+            { value: 'JAN_25', label: 'JAN_25' },
+            { value: 'JULY_25', label: 'JULY_25' },
+            { value: 'MAR_23', label: 'MAR_23' },
+            { value: 'APR_23', label: 'APR_23' },
+            { value: 'OCT_23', label: 'OCT_23' },
+            { value: 'NOV_23', label: 'NOV_23' },],
+
           },
           {
             key: 'select',
@@ -20500,7 +20903,7 @@ const formData = [
             id: 'SessionType',
             place: 'Enter Admission Type',
             type: 'select',
-            options: [{ value: 'Fresh', label: 'Fresh' },
+            options: [{ value: 'FRESH', label: 'FRESH' },
             { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
           },
 
@@ -20511,7 +20914,7 @@ const formData = [
             place: 'Enter Date of Birth',
             id: 'dob',
             type: 'date',
-            required: 'require'
+
           },
           {
             key: 'select',
@@ -20531,7 +20934,7 @@ const formData = [
             name: ['customfields', 'installment_type'],
             place: 'Installment Type',
             type: 'select',
-            required: 'require',
+
             options: [
               { value: '1st Installment/ New Admission', label: '1st Installment/ New Admission' },
               { value: '2nd Installment', label: '2nd Installment' },
@@ -20552,8 +20955,9 @@ const formData = [
             id: 'PaymentMode ',
             type: 'select',
             place: 'Select Payment Mode',
-            required: 'require',
+
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
+            { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
             { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
@@ -20564,77 +20968,82 @@ const formData = [
             name: ['customfields', 'counselor_email'],
             id: 'email ',
             type: 'select',
-            place: 'select counselor email',
-            required: 'require',
-            options: [{ value: 'zarin@highereducationschool.com', label: 'Zarin' },
-            { value: 'kanchan@highereducationschool.com', label: 'Kanchan' },
-            { value: 'kirti@highereducationschool.com', label: 'Kirti' },
-            { value: 'ramandeep@highereducationschool.com', label: 'Raman' },
-            { value: 'kavita@highereducationschool.com', label: 'kavita' },
-            { value: 'imra@highereducationschool.com', label: 'Imra' },
-            { value: 'Mahak@highereducationschool.com', label: 'Mahek' },
-            { value: 'abhay@highereducationschool.com', label: 'abhay' },
-            { value: 'swati@highereducationschool.com', label: 'swati' },
-            { value: 'gulshan@highereducationschool.com', label: 'Gulshan' },
-            { value: 'isha@highereducationschool.com', label: 'Isha' },
-            { value: 'Sakshi@highereducationschool.com', label: 'Sakshi' },
-            { value: 'aashita@highereducationschool.com', label: 'aashita' },
-            { value: 'pratibha@highereducationschool.com', label: 'pratibha' },
-            { value: 'shreyashi@highereducationschool.com', label: 'Shreyashi ' },
-            { value: 'apoorvasrivastava@distanceeducationschool.com', label: 'Apoorva_DES' },
-            { value: 'asma@distanceeducationschool.com', label: 'Asma_DES' },
-            { value: 'nehaprashar@distanceeducationschool.com', label: 'Neha_Prasher_DES' },
-            { value: 'priya@distanceeducationschool.com', label: 'Priya_DES' },
-            { value: 'diksha@distanceeducationschool.com', label: 'Diksha_DES' },
-            { value: 'abhilasha@distanceeducationschool.com', label: 'Abhilasha_Gupta_DES' },
-            { value: 'saher@distanceeducationschool.com', label: 'Saher_Khan_DES' },
-            { value: 'fiza@distanceeducationschool.com', label: 'Fiza_DES' },
-            { value: 'muskan@distanceeducationschool.com', label: 'Muskaan_DES' },
-            { value: 'aniruddh@distanceeducationschool.com', label: 'Aniruddh_DES' },
-            { value: 'deva@distanceeducationschool.com', label: 'Devendra_DES' },
-            { value: 'amritpal@distanceeducationschool.com', label: 'Amritpal_DES' },
-            { value: 'Salman@distanceeducationschool.com:', label: 'Salman_DES' },
-            { value: 'tariq@distanceeducationschool.com', label: 'Traiq_DES' },
-            { value: 'shivam@distanceeducationschool.com', label: 'Shivam_sharma_DES' },
-            { value: 'pushpa@distanceeducationschool.com', label: 'Puspa_DES' },
-            { value: 'zarin@distanceeducationschool.com', label: 'Zarin_DES' },
-            { value: 'kanchan@distanceeducationschool.com', label: 'Kanchan_DES' },
-            { value: 'manu@distanceeducationschool.com', label: 'Manu_DES' },
+            place: 'select counselor name',
+            options: [
+              // DES External email with name
+              { value: 'apoorvasrivastava@sode.co.in', label: 'Apoorva Srivastava' },
+              { value: 'nehaprashar@sode.co.in', label: 'Neha Prasher' },
+              { value: 'priya@sode.co.in', label: 'Priya Anand' },
+              { value: 'diksha@sode.co.in', label: 'Diksha Singh' },
+              { value: 'abhilasha@sode.co.in', label: 'Abhilasha Gupta' },
+              { value: 'saher@sode.co.in', label: 'Saher Khan' },
 
-            // Jain Team Emails
-            { value: 'a.anitha.ju@gmail.com', label: 'Anita_JU' },
-            { value: 'vaniruckmani.ju@gmail.com', label: 'Vani_Ruckmani_JU' },
-            { value: 'priyankapalle.ju@gmail.com', label: 'Priyanka_JU' },
-            { value: 'SwatiRamani.manipal@gmail.com', label: 'Swati_JU' },
+              // DES Internal email with name 
+              { value: 'muskan@distanceeducationschool.com', label: 'Muskaan ' },
+              { value: 'aniruddh@distanceeducationschool.com', label: 'Aniruddh Prakash' },
+              { value: 'amritpal@sode.co.in', label: 'Amritpal Singh' },
+              { value: 'salman@sode.co.in', label: 'Salman' },
+              { value: 'tariq@sode.co.in', label: 'Tariq Hasan' },
+              { value: 'shivam@sode.co.in', label: 'Shivam sharma' },
+              { value: 'pushpa@sode.co.in', label: 'Pushpa Pramanik' },
 
-            // Manipal Team Email
-            { value: 'ankitakumari.manipal@gmail.com', label: 'Ankita_MU' },
-            { value: 'medhahandoo.manipal@gmail.com', label: 'Medha_MU' },
-            { value: 'amreen.manipal@gmail.com', label: 'Amreen_MU' },
+              // DES Internal email with name 
+              { value: 'anurag@distanceeducationschool.com', label: 'Anurag Yadav' },
+              { value: 'kavitakumari@sode.co.in', label: 'Kavita Kumari' },
+              { value: 'rupal@sode.co.in', label: 'Rupal Gautam' },
+              { value: 'deva@sode.co.in', label: 'Devendra' },
+              { value: 'manshi@sode.co.in', label: 'Manshi Kem' },
 
-            // Support Team Email
-            { value: 'rajesh@distanceeducationschool.com', label: 'Rajesh_sir' },
-            { value: 'manisha@distanceeducationschool.com', label: 'Manisha' },
-            { value: 'admin@distanceeducationschool.com', label: 'Nouman_sir' },
-            { value: 'sandy@distanceeducationschool.com', label: 'Sandy' },
-            { value: 'neha@distanceeducationschool.com', label: 'Neha' },
-            { value: 'yashpriya@distanceeducationschool.com', label: 'Yash_Priya' },
-            { value: 'kavitahaldar@distanceeducationschool.com', label: 'kavitahaldar' },
-            { value: 'ifla@distanceeducationschool.com', label: 'Ifla' },
-            { value: 'shalu@distanceeducationschool.com', label: 'Shalu' },
-            { value: 'zainubia@distanceeducationschool.com', label: 'zainbuia' },
-            { value: 'pallovi@distanceeducationschool.com', label: 'Pallovi' },
-            { value: 'kavitakumari@distanceeducationschool.com', label: 'Kavita_Kumari' },
-            { value: 'manshi@distanceeducationschool.com', label: 'Mansi' },
-            { value: 'Bhavya.manipal@gmail.com', label: 'Bhavya' },
-            { value: 'anurag@distanceeducationschool.com', label: 'Anuraj' },
-            { value: 'rupal@distanceeducationschool.com', label: 'Rupal' },
-            //B2B Team Email
-            { value: 'spuhelpdesk@gmail.com', label: 'Binny' },
-            { value: 'ruchika.spu@gmail.com', label: 'Ruchika' },
-            { value: 'lalit@distanceeducationschool.com', label: 'Lalit_DES' },
-            { value: 'lalit.spu@gmail.com', label: 'Lalit' },
-            { value: 'ramiz.spu@gmail.com', label: 'Ramiz' }
+              // DES - INTERNATIONAL email with name 
+              { value: 'zarin@distanceeducationschool.com', label: 'Zarin Badar' },
+
+              // HES team email with name 
+              { value: 'kanchan@highereducationschool.com', label: 'Kanchan Sharma' },
+              { value: 'kirti@highereducationschool.com', label: 'Kirti Dubey' },
+              { value: 'ramandeep@highereducationschool.com', label: 'Ramandeep Kaur' },
+              { value: 'kavita@highereducationschool.com', label: 'Kavita Yadav' },
+              { value: 'imra@highereducationschool.com', label: 'Imra Khan' },
+              { value: 'mahak@highereducationschool.com', label: 'Mahek' },
+              { value: 'abhay@highereducationschool.com', label: 'Abhay Dubey' },
+              { value: 'swati@highereducationschool.com', label: 'Swati' },
+              { value: 'gulshan@highereducationschool.com', label: 'Gulshan Nayyar' },
+              { value: 'isha@highereducationschool.com', label: 'Isha Jaiswal' },
+              { value: 'sakshi@highereducationschool.com', label: 'Sakshi Arora' },
+
+              // Jain team email with name 
+              { value: 'anitha@sode.co.in', label: 'A.Anitha' },
+              { value: 'vani@sode.co.in', label: 'Vani Ruckmani' },
+
+              // Manipal team email with name 
+              { value: 'SwatiRamani.manipal@gmail.com', label: 'Swati Ramani' },
+              { value: 'ankitakumar@sode.co.in', label: 'Ankita Kumari' },
+              { value: 'nidhi@sode.co.in', label: 'Nidhi' },
+              { value: 'amreen@sode.co.in', label: 'Amreen ALI Khan' },
+              { value: 'umar@sode.co.in', label: 'MD Umar' },
+              { value: 'nehagupta@sode.co.in', label: 'Neha Gupta' },
+              { value: 'pawankumar@sode.co.in', label: 'Pawan Kumar' },
+              { value: 'bhavya@sode.co.in', label: 'Bhavya' },
+
+              // ALL DES && HES team email with name 
+              { value: 'rajesh@distanceeducationschool.com', label: 'Rajesh Sir' },
+              { value: 'manisha@distanceeducationschool.com', label: 'Manisha Yadav' },
+              { value: 'admin@distanceeducationschool.com', label: 'Nouman Sir' },
+              { value: 'sandy@distanceeducationschool.com', label: 'Sandy' },
+              { value: 'neha@distanceeducationschool.com', label: 'Neha Raj' },
+              { value: 'yashpriya@distanceeducationschool.com', label: 'Yash Priya' },
+              { value: 'kavitahaldar@distanceeducationschool.com', label: 'Kavita Haldar' },
+              { value: 'ifla@distanceeducationschool.com', label: 'Ifla' },
+              { value: 'shalu@distanceeducationschool.com', label: 'Shalu' },
+              { value: 'zainubia@distanceeducationschool.com', label: 'Zainbuia' },
+              { value: 'pallovi@distanceeducationschool.com', label: 'Pallovi' },
+              { value: 'hansi@distanceeducationschool.com', label: 'Hansi' },
+              { value: 'shristi@distanceeducationschool.com', label: 'Shristi' },
+              { value: 'aashita@highereducationschool.com', label: 'Aashita' },
+              { value: 'pratibha@highereducationschool.com', label: 'Pratibha' },
+              { value: 'shreyashi@highereducationschool.com', label: 'Shreyashi' },
+              { value: 'spuhelpdesk@gmail.com', label: 'Binny' },
+              { value: 'ruchika.spu@gmail.com', label: 'Ruchika' },
+              { value: 'ramiz.spu@gmail.com', label: 'Ramiz' },
             ],
           },
           {
@@ -20644,7 +21053,7 @@ const formData = [
             id: 'status ',
             type: 'select',
             place: 'select status',
-            required: 'require',
+
             options: [
               { value: 'New', label: 'New' },
               { value: 'Cancel', label: 'Cancel' },
@@ -20667,6 +21076,13 @@ const formData = [
             place: 'Enter your remark',
             id: 'remark',
             type: 'textarea',
+          },
+          {
+            key: 'date',
+            label: 'Created At',
+            name: 'created',
+            id: 'created',
+            type: 'date',
           },
         ],
       },
@@ -21038,7 +21454,7 @@ const formData = [
             name: ['customfields', 'send_fee_receipt'],
             type: 'radio',
             options: ['yes', 'no'],
-            required: 'require'
+
           },
           {
             key: 'studentId',
@@ -21047,7 +21463,7 @@ const formData = [
             place: 'StudentID',
             id: 'StudentID',
             type: 'studentId',
-            required: 'require'
+
           },
           {
             key: 'text',
@@ -21056,7 +21472,7 @@ const formData = [
             place: 'Student Name',
             id: 'full_name',
             type: 'text',
-            required: 'require'
+
           },
           {
             key: 'email',
@@ -21065,7 +21481,7 @@ const formData = [
             name: ['contact', 'email'],
             id: 'EmailID',
             type: 'email',
-            required: 'require'
+
           },
           {
             key: 'tel',
@@ -21074,7 +21490,7 @@ const formData = [
             place: 'Enter Phone Number',
             id: 'phone',
             type: 'tel',
-            required: 'require'
+
           },
           {
             key: 'text',
@@ -21083,7 +21499,7 @@ const formData = [
             place: 'Enter Father Name',
             id: 'Father Name',
             type: 'text',
-            required: 'require'
+
           },
           {
             key: 'text',
@@ -21092,32 +21508,32 @@ const formData = [
             place: 'Enter Mother Name',
             id: 'mother_name',
             type: 'text',
-            required: 'require'
+
           },
           {
             key: 'select',
             label: 'Session',
             name: ['customfields', 'session'],
-            place: 'eg: jan 20',
+            place: 'eg: JAN_20',
             id: 'Session',
             type: 'select',
-            options: [{ value: 'jan 20', label: 'Jan 20' },
-            { value: 'july 20', label: 'July 20' },
-            { value: 'jan 21', label: 'Jan 21' },
-            { value: 'july 21', label: 'July 21' },
-            { value: 'jan 22', label: 'Jan 22' },
-            { value: 'july 22', label: 'July 22' },
-            { value: 'jan 23', label: 'Jan 23' },
-            { value: 'july 23', label: 'July 23' },
-            { value: 'jan 24', label: 'Jan 24' },
-            { value: 'july 24', label: 'July 24' },
-            { value: 'jan 25', label: 'Jan 25' },
-            { value: 'july 25', label: 'July 25' },
-            { value: 'mar 23', label: 'mar 23' },
-            { value: 'apr 23', label: 'apr 23' },
-            { value: 'oct 23', label: 'oct 23' },
-            { value: 'nov 23', label: 'nov 23' },],
-            required: 'require'
+            options: [{ value: 'JAN_20', label: 'JAN_20' },
+            { value: 'JULY_20', label: 'JULY_20' },
+            { value: 'JAN_21', label: 'JAN_21' },
+            { value: 'JULY_21', label: 'JULY_21' },
+            { value: 'JAN_22', label: 'JAN_22' },
+            { value: 'JULY_22', label: 'JULY_22' },
+            { value: 'JAN_23', label: 'JAN_23' },
+            { value: 'JULY_23', label: 'JULY_23' },
+            { value: 'JAN_24', label: 'JAN_24' },
+            { value: 'JULY_24', label: 'JULY_24' },
+            { value: 'JAN_25', label: 'JAN_25' },
+            { value: 'JULY_25', label: 'JULY_25' },
+            { value: 'MAR_23', label: 'MAR_23' },
+            { value: 'APR_23', label: 'APR_23' },
+            { value: 'OCT_23', label: 'OCT_23' },
+            { value: 'NOV_23', label: 'NOV_23' },],
+
           },
           {
             key: 'select',
@@ -21126,7 +21542,7 @@ const formData = [
             id: 'SessionType',
             place: 'Enter Admission Type',
             type: 'select',
-            options: [{ value: 'Fresh', label: 'Fresh' },
+            options: [{ value: 'FRESH', label: 'FRESH' },
             { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
           },
 
@@ -21137,7 +21553,7 @@ const formData = [
             place: 'Enter Date of Birth',
             id: 'dob',
             type: 'date',
-            required: 'require'
+
           },
           {
             key: 'select',
@@ -21157,7 +21573,7 @@ const formData = [
             name: ['customfields', 'installment_type'],
             place: 'Installment Type',
             type: 'select',
-            required: 'require',
+
             options: [
               { value: '1st Installment/ New Admission', label: '1st Installment/ New Admission' },
               { value: '2nd Installment', label: '2nd Installment' },
@@ -21178,8 +21594,9 @@ const formData = [
             id: 'PaymentMode ',
             type: 'select',
             place: 'Select Payment Mode',
-            required: 'require',
+
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
+            { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
             { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
@@ -21190,77 +21607,82 @@ const formData = [
             name: ['customfields', 'counselor_email'],
             id: 'email ',
             type: 'select',
-            place: 'select counselor email',
-            required: 'require',
-            options: [{ value: 'zarin@highereducationschool.com', label: 'Zarin' },
-            { value: 'kanchan@highereducationschool.com', label: 'Kanchan' },
-            { value: 'kirti@highereducationschool.com', label: 'Kirti' },
-            { value: 'ramandeep@highereducationschool.com', label: 'Raman' },
-            { value: 'kavita@highereducationschool.com', label: 'kavita' },
-            { value: 'imra@highereducationschool.com', label: 'Imra' },
-            { value: 'Mahak@highereducationschool.com', label: 'Mahek' },
-            { value: 'abhay@highereducationschool.com', label: 'abhay' },
-            { value: 'swati@highereducationschool.com', label: 'swati' },
-            { value: 'gulshan@highereducationschool.com', label: 'Gulshan' },
-            { value: 'isha@highereducationschool.com', label: 'Isha' },
-            { value: 'Sakshi@highereducationschool.com', label: 'Sakshi' },
-            { value: 'aashita@highereducationschool.com', label: 'aashita' },
-            { value: 'pratibha@highereducationschool.com', label: 'pratibha' },
-            { value: 'shreyashi@highereducationschool.com', label: 'Shreyashi ' },
-            { value: 'apoorvasrivastava@distanceeducationschool.com', label: 'Apoorva_DES' },
-            { value: 'asma@distanceeducationschool.com', label: 'Asma_DES' },
-            { value: 'nehaprashar@distanceeducationschool.com', label: 'Neha_Prasher_DES' },
-            { value: 'priya@distanceeducationschool.com', label: 'Priya_DES' },
-            { value: 'diksha@distanceeducationschool.com', label: 'Diksha_DES' },
-            { value: 'abhilasha@distanceeducationschool.com', label: 'Abhilasha_Gupta_DES' },
-            { value: 'saher@distanceeducationschool.com', label: 'Saher_Khan_DES' },
-            { value: 'fiza@distanceeducationschool.com', label: 'Fiza_DES' },
-            { value: 'muskan@distanceeducationschool.com', label: 'Muskaan_DES' },
-            { value: 'aniruddh@distanceeducationschool.com', label: 'Aniruddh_DES' },
-            { value: 'deva@distanceeducationschool.com', label: 'Devendra_DES' },
-            { value: 'amritpal@distanceeducationschool.com', label: 'Amritpal_DES' },
-            { value: 'Salman@distanceeducationschool.com:', label: 'Salman_DES' },
-            { value: 'tariq@distanceeducationschool.com', label: 'Traiq_DES' },
-            { value: 'shivam@distanceeducationschool.com', label: 'Shivam_sharma_DES' },
-            { value: 'pushpa@distanceeducationschool.com', label: 'Puspa_DES' },
-            { value: 'zarin@distanceeducationschool.com', label: 'Zarin_DES' },
-            { value: 'kanchan@distanceeducationschool.com', label: 'Kanchan_DES' },
-            { value: 'manu@distanceeducationschool.com', label: 'Manu_DES' },
+            place: 'select counselor name',
+            options: [
+              // DES External email with name
+              { value: 'apoorvasrivastava@sode.co.in', label: 'Apoorva Srivastava' },
+              { value: 'nehaprashar@sode.co.in', label: 'Neha Prasher' },
+              { value: 'priya@sode.co.in', label: 'Priya Anand' },
+              { value: 'diksha@sode.co.in', label: 'Diksha Singh' },
+              { value: 'abhilasha@sode.co.in', label: 'Abhilasha Gupta' },
+              { value: 'saher@sode.co.in', label: 'Saher Khan' },
 
-            // Jain Team Emails
-            { value: 'a.anitha.ju@gmail.com', label: 'Anita_JU' },
-            { value: 'vaniruckmani.ju@gmail.com', label: 'Vani_Ruckmani_JU' },
-            { value: 'priyankapalle.ju@gmail.com', label: 'Priyanka_JU' },
-            { value: 'SwatiRamani.manipal@gmail.com', label: 'Swati_JU' },
+              // DES Internal email with name 
+              { value: 'muskan@distanceeducationschool.com', label: 'Muskaan ' },
+              { value: 'aniruddh@distanceeducationschool.com', label: 'Aniruddh Prakash' },
+              { value: 'amritpal@sode.co.in', label: 'Amritpal Singh' },
+              { value: 'salman@sode.co.in', label: 'Salman' },
+              { value: 'tariq@sode.co.in', label: 'Tariq Hasan' },
+              { value: 'shivam@sode.co.in', label: 'Shivam sharma' },
+              { value: 'pushpa@sode.co.in', label: 'Pushpa Pramanik' },
 
-            // Manipal Team Email
-            { value: 'ankitakumari.manipal@gmail.com', label: 'Ankita_MU' },
-            { value: 'medhahandoo.manipal@gmail.com', label: 'Medha_MU' },
-            { value: 'amreen.manipal@gmail.com', label: 'Amreen_MU' },
+              // DES Internal email with name 
+              { value: 'anurag@distanceeducationschool.com', label: 'Anurag Yadav' },
+              { value: 'kavitakumari@sode.co.in', label: 'Kavita Kumari' },
+              { value: 'rupal@sode.co.in', label: 'Rupal Gautam' },
+              { value: 'deva@sode.co.in', label: 'Devendra' },
+              { value: 'manshi@sode.co.in', label: 'Manshi Kem' },
 
-            // Support Team Email
-            { value: 'rajesh@distanceeducationschool.com', label: 'Rajesh_sir' },
-            { value: 'manisha@distanceeducationschool.com', label: 'Manisha' },
-            { value: 'admin@distanceeducationschool.com', label: 'Nouman_sir' },
-            { value: 'sandy@distanceeducationschool.com', label: 'Sandy' },
-            { value: 'neha@distanceeducationschool.com', label: 'Neha' },
-            { value: 'yashpriya@distanceeducationschool.com', label: 'Yash_Priya' },
-            { value: 'kavitahaldar@distanceeducationschool.com', label: 'kavitahaldar' },
-            { value: 'ifla@distanceeducationschool.com', label: 'Ifla' },
-            { value: 'shalu@distanceeducationschool.com', label: 'Shalu' },
-            { value: 'zainubia@distanceeducationschool.com', label: 'zainbuia' },
-            { value: 'pallovi@distanceeducationschool.com', label: 'Pallovi' },
-            { value: 'kavitakumari@distanceeducationschool.com', label: 'Kavita_Kumari' },
-            { value: 'manshi@distanceeducationschool.com', label: 'Mansi' },
-            { value: 'Bhavya.manipal@gmail.com', label: 'Bhavya' },
-            { value: 'anurag@distanceeducationschool.com', label: 'Anuraj' },
-            { value: 'rupal@distanceeducationschool.com', label: 'Rupal' },
-            //B2B Team Email
-            { value: 'spuhelpdesk@gmail.com', label: 'Binny' },
-            { value: 'ruchika.spu@gmail.com', label: 'Ruchika' },
-            { value: 'lalit@distanceeducationschool.com', label: 'Lalit_DES' },
-            { value: 'lalit.spu@gmail.com', label: 'Lalit' },
-            { value: 'ramiz.spu@gmail.com', label: 'Ramiz' }
+              // DES - INTERNATIONAL email with name 
+              { value: 'zarin@distanceeducationschool.com', label: 'Zarin Badar' },
+
+              // HES team email with name 
+              { value: 'kanchan@highereducationschool.com', label: 'Kanchan Sharma' },
+              { value: 'kirti@highereducationschool.com', label: 'Kirti Dubey' },
+              { value: 'ramandeep@highereducationschool.com', label: 'Ramandeep Kaur' },
+              { value: 'kavita@highereducationschool.com', label: 'Kavita Yadav' },
+              { value: 'imra@highereducationschool.com', label: 'Imra Khan' },
+              { value: 'mahak@highereducationschool.com', label: 'Mahek' },
+              { value: 'abhay@highereducationschool.com', label: 'Abhay Dubey' },
+              { value: 'swati@highereducationschool.com', label: 'Swati' },
+              { value: 'gulshan@highereducationschool.com', label: 'Gulshan Nayyar' },
+              { value: 'isha@highereducationschool.com', label: 'Isha Jaiswal' },
+              { value: 'sakshi@highereducationschool.com', label: 'Sakshi Arora' },
+
+              // Jain team email with name 
+              { value: 'anitha@sode.co.in', label: 'A.Anitha' },
+              { value: 'vani@sode.co.in', label: 'Vani Ruckmani' },
+
+              // Manipal team email with name 
+              { value: 'SwatiRamani.manipal@gmail.com', label: 'Swati Ramani' },
+              { value: 'ankitakumar@sode.co.in', label: 'Ankita Kumari' },
+              { value: 'nidhi@sode.co.in', label: 'Nidhi' },
+              { value: 'amreen@sode.co.in', label: 'Amreen ALI Khan' },
+              { value: 'umar@sode.co.in', label: 'MD Umar' },
+              { value: 'nehagupta@sode.co.in', label: 'Neha Gupta' },
+              { value: 'pawankumar@sode.co.in', label: 'Pawan Kumar' },
+              { value: 'bhavya@sode.co.in', label: 'Bhavya' },
+
+              // ALL DES && HES team email with name 
+              { value: 'rajesh@distanceeducationschool.com', label: 'Rajesh Sir' },
+              { value: 'manisha@distanceeducationschool.com', label: 'Manisha Yadav' },
+              { value: 'admin@distanceeducationschool.com', label: 'Nouman Sir' },
+              { value: 'sandy@distanceeducationschool.com', label: 'Sandy' },
+              { value: 'neha@distanceeducationschool.com', label: 'Neha Raj' },
+              { value: 'yashpriya@distanceeducationschool.com', label: 'Yash Priya' },
+              { value: 'kavitahaldar@distanceeducationschool.com', label: 'Kavita Haldar' },
+              { value: 'ifla@distanceeducationschool.com', label: 'Ifla' },
+              { value: 'shalu@distanceeducationschool.com', label: 'Shalu' },
+              { value: 'zainubia@distanceeducationschool.com', label: 'Zainbuia' },
+              { value: 'pallovi@distanceeducationschool.com', label: 'Pallovi' },
+              { value: 'hansi@distanceeducationschool.com', label: 'Hansi' },
+              { value: 'shristi@distanceeducationschool.com', label: 'Shristi' },
+              { value: 'aashita@highereducationschool.com', label: 'Aashita' },
+              { value: 'pratibha@highereducationschool.com', label: 'Pratibha' },
+              { value: 'shreyashi@highereducationschool.com', label: 'Shreyashi' },
+              { value: 'spuhelpdesk@gmail.com', label: 'Binny' },
+              { value: 'ruchika.spu@gmail.com', label: 'Ruchika' },
+              { value: 'ramiz.spu@gmail.com', label: 'Ramiz' },
             ],
           },
           {
@@ -21270,7 +21692,7 @@ const formData = [
             id: 'status ',
             type: 'select',
             place: 'select status',
-            required: 'require',
+
             options: [
               { value: 'New', label: 'New' },
               { value: 'Cancel', label: 'Cancel' },
@@ -21293,6 +21715,13 @@ const formData = [
             place: 'Enter your remark',
             id: 'remark',
             type: 'textarea',
+          },
+          {
+            key: 'date',
+            label: 'Created At',
+            name: 'created',
+            id: 'created',
+            type: 'date',
           },
         ],
       },
@@ -21664,7 +22093,7 @@ const formData = [
             name: ['customfields', 'send_fee_receipt'],
             type: 'radio',
             options: ['yes', 'no'],
-            required: 'require'
+
           },
           {
             key: 'studentId',
@@ -21673,7 +22102,7 @@ const formData = [
             place: 'StudentID',
             id: 'StudentID',
             type: 'studentId',
-            required: 'require'
+
           },
           {
             key: 'text',
@@ -21682,7 +22111,7 @@ const formData = [
             place: 'Student Name',
             id: 'full_name',
             type: 'text',
-            required: 'require'
+
           },
           {
             key: 'email',
@@ -21691,7 +22120,7 @@ const formData = [
             name: ['contact', 'email'],
             id: 'EmailID',
             type: 'email',
-            required: 'require'
+
           },
           {
             key: 'tel',
@@ -21700,7 +22129,7 @@ const formData = [
             place: 'Enter Phone Number',
             id: 'phone',
             type: 'tel',
-            required: 'require'
+
           },
           {
             key: 'text',
@@ -21709,7 +22138,7 @@ const formData = [
             place: 'Enter Father Name',
             id: 'Father Name',
             type: 'text',
-            required: 'require'
+
           },
           {
             key: 'text',
@@ -21718,32 +22147,32 @@ const formData = [
             place: 'Enter Mother Name',
             id: 'mother_name',
             type: 'text',
-            required: 'require'
+
           },
           {
             key: 'select',
             label: 'Session',
             name: ['customfields', 'session'],
-            place: 'eg: jan 20',
+            place: 'eg: JAN_20',
             id: 'Session',
             type: 'select',
-            options: [{ value: 'jan 20', label: 'Jan 20' },
-            { value: 'july 20', label: 'July 20' },
-            { value: 'jan 21', label: 'Jan 21' },
-            { value: 'july 21', label: 'July 21' },
-            { value: 'jan 22', label: 'Jan 22' },
-            { value: 'july 22', label: 'July 22' },
-            { value: 'jan 23', label: 'Jan 23' },
-            { value: 'july 23', label: 'July 23' },
-            { value: 'jan 24', label: 'Jan 24' },
-            { value: 'july 24', label: 'July 24' },
-            { value: 'jan 25', label: 'Jan 25' },
-            { value: 'july 25', label: 'July 25' },
-            { value: 'mar 23', label: 'mar 23' },
-            { value: 'apr 23', label: 'apr 23' },
-            { value: 'oct 23', label: 'oct 23' },
-            { value: 'nov 23', label: 'nov 23' },],
-            required: 'require'
+            options: [{ value: 'JAN_20', label: 'JAN_20' },
+            { value: 'JULY_20', label: 'JULY_20' },
+            { value: 'JAN_21', label: 'JAN_21' },
+            { value: 'JULY_21', label: 'JULY_21' },
+            { value: 'JAN_22', label: 'JAN_22' },
+            { value: 'JULY_22', label: 'JULY_22' },
+            { value: 'JAN_23', label: 'JAN_23' },
+            { value: 'JULY_23', label: 'JULY_23' },
+            { value: 'JAN_24', label: 'JAN_24' },
+            { value: 'JULY_24', label: 'JULY_24' },
+            { value: 'JAN_25', label: 'JAN_25' },
+            { value: 'JULY_25', label: 'JULY_25' },
+            { value: 'MAR_23', label: 'MAR_23' },
+            { value: 'APR_23', label: 'APR_23' },
+            { value: 'OCT_23', label: 'OCT_23' },
+            { value: 'NOV_23', label: 'NOV_23' },],
+
           },
           {
             key: 'select',
@@ -21752,7 +22181,7 @@ const formData = [
             id: 'SessionType',
             place: 'Enter Admission Type',
             type: 'select',
-            options: [{ value: 'Fresh', label: 'Fresh' },
+            options: [{ value: 'FRESH', label: 'FRESH' },
             { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
           },
 
@@ -21763,7 +22192,7 @@ const formData = [
             place: 'Enter Date of Birth',
             id: 'dob',
             type: 'date',
-            required: 'require'
+
           },
           {
             key: 'select',
@@ -21783,7 +22212,7 @@ const formData = [
             name: ['customfields', 'installment_type'],
             place: 'Installment Type',
             type: 'select',
-            required: 'require',
+
             options: [
               { value: '1st Installment/ New Admission', label: '1st Installment/ New Admission' },
               { value: '2nd Installment', label: '2nd Installment' },
@@ -21804,8 +22233,9 @@ const formData = [
             id: 'PaymentMode ',
             type: 'select',
             place: 'Select Payment Mode',
-            required: 'require',
+
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
+            { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
             { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
@@ -21816,77 +22246,82 @@ const formData = [
             name: ['customfields', 'counselor_email'],
             id: 'email ',
             type: 'select',
-            place: 'select counselor email',
-            required: 'require',
-            options: [{ value: 'zarin@highereducationschool.com', label: 'Zarin' },
-            { value: 'kanchan@highereducationschool.com', label: 'Kanchan' },
-            { value: 'kirti@highereducationschool.com', label: 'Kirti' },
-            { value: 'ramandeep@highereducationschool.com', label: 'Raman' },
-            { value: 'kavita@highereducationschool.com', label: 'kavita' },
-            { value: 'imra@highereducationschool.com', label: 'Imra' },
-            { value: 'Mahak@highereducationschool.com', label: 'Mahek' },
-            { value: 'abhay@highereducationschool.com', label: 'abhay' },
-            { value: 'swati@highereducationschool.com', label: 'swati' },
-            { value: 'gulshan@highereducationschool.com', label: 'Gulshan' },
-            { value: 'isha@highereducationschool.com', label: 'Isha' },
-            { value: 'Sakshi@highereducationschool.com', label: 'Sakshi' },
-            { value: 'aashita@highereducationschool.com', label: 'aashita' },
-            { value: 'pratibha@highereducationschool.com', label: 'pratibha' },
-            { value: 'shreyashi@highereducationschool.com', label: 'Shreyashi ' },
-            { value: 'apoorvasrivastava@distanceeducationschool.com', label: 'Apoorva_DES' },
-            { value: 'asma@distanceeducationschool.com', label: 'Asma_DES' },
-            { value: 'nehaprashar@distanceeducationschool.com', label: 'Neha_Prasher_DES' },
-            { value: 'priya@distanceeducationschool.com', label: 'Priya_DES' },
-            { value: 'diksha@distanceeducationschool.com', label: 'Diksha_DES' },
-            { value: 'abhilasha@distanceeducationschool.com', label: 'Abhilasha_Gupta_DES' },
-            { value: 'saher@distanceeducationschool.com', label: 'Saher_Khan_DES' },
-            { value: 'fiza@distanceeducationschool.com', label: 'Fiza_DES' },
-            { value: 'muskan@distanceeducationschool.com', label: 'Muskaan_DES' },
-            { value: 'aniruddh@distanceeducationschool.com', label: 'Aniruddh_DES' },
-            { value: 'deva@distanceeducationschool.com', label: 'Devendra_DES' },
-            { value: 'amritpal@distanceeducationschool.com', label: 'Amritpal_DES' },
-            { value: 'Salman@distanceeducationschool.com:', label: 'Salman_DES' },
-            { value: 'tariq@distanceeducationschool.com', label: 'Traiq_DES' },
-            { value: 'shivam@distanceeducationschool.com', label: 'Shivam_sharma_DES' },
-            { value: 'pushpa@distanceeducationschool.com', label: 'Puspa_DES' },
-            { value: 'zarin@distanceeducationschool.com', label: 'Zarin_DES' },
-            { value: 'kanchan@distanceeducationschool.com', label: 'Kanchan_DES' },
-            { value: 'manu@distanceeducationschool.com', label: 'Manu_DES' },
+            place: 'select counselor name',
+            options: [
+              // DES External email with name
+              { value: 'apoorvasrivastava@sode.co.in', label: 'Apoorva Srivastava' },
+              { value: 'nehaprashar@sode.co.in', label: 'Neha Prasher' },
+              { value: 'priya@sode.co.in', label: 'Priya Anand' },
+              { value: 'diksha@sode.co.in', label: 'Diksha Singh' },
+              { value: 'abhilasha@sode.co.in', label: 'Abhilasha Gupta' },
+              { value: 'saher@sode.co.in', label: 'Saher Khan' },
 
-            // Jain Team Emails
-            { value: 'a.anitha.ju@gmail.com', label: 'Anita_JU' },
-            { value: 'vaniruckmani.ju@gmail.com', label: 'Vani_Ruckmani_JU' },
-            { value: 'priyankapalle.ju@gmail.com', label: 'Priyanka_JU' },
-            { value: 'SwatiRamani.manipal@gmail.com', label: 'Swati_JU' },
+              // DES Internal email with name 
+              { value: 'muskan@distanceeducationschool.com', label: 'Muskaan ' },
+              { value: 'aniruddh@distanceeducationschool.com', label: 'Aniruddh Prakash' },
+              { value: 'amritpal@sode.co.in', label: 'Amritpal Singh' },
+              { value: 'salman@sode.co.in', label: 'Salman' },
+              { value: 'tariq@sode.co.in', label: 'Tariq Hasan' },
+              { value: 'shivam@sode.co.in', label: 'Shivam sharma' },
+              { value: 'pushpa@sode.co.in', label: 'Pushpa Pramanik' },
 
-            // Manipal Team Email
-            { value: 'ankitakumari.manipal@gmail.com', label: 'Ankita_MU' },
-            { value: 'medhahandoo.manipal@gmail.com', label: 'Medha_MU' },
-            { value: 'amreen.manipal@gmail.com', label: 'Amreen_MU' },
+              // DES Internal email with name 
+              { value: 'anurag@distanceeducationschool.com', label: 'Anurag Yadav' },
+              { value: 'kavitakumari@sode.co.in', label: 'Kavita Kumari' },
+              { value: 'rupal@sode.co.in', label: 'Rupal Gautam' },
+              { value: 'deva@sode.co.in', label: 'Devendra' },
+              { value: 'manshi@sode.co.in', label: 'Manshi Kem' },
 
-            // Support Team Email
-            { value: 'rajesh@distanceeducationschool.com', label: 'Rajesh_sir' },
-            { value: 'manisha@distanceeducationschool.com', label: 'Manisha' },
-            { value: 'admin@distanceeducationschool.com', label: 'Nouman_sir' },
-            { value: 'sandy@distanceeducationschool.com', label: 'Sandy' },
-            { value: 'neha@distanceeducationschool.com', label: 'Neha' },
-            { value: 'yashpriya@distanceeducationschool.com', label: 'Yash_Priya' },
-            { value: 'kavitahaldar@distanceeducationschool.com', label: 'kavitahaldar' },
-            { value: 'ifla@distanceeducationschool.com', label: 'Ifla' },
-            { value: 'shalu@distanceeducationschool.com', label: 'Shalu' },
-            { value: 'zainubia@distanceeducationschool.com', label: 'zainbuia' },
-            { value: 'pallovi@distanceeducationschool.com', label: 'Pallovi' },
-            { value: 'kavitakumari@distanceeducationschool.com', label: 'Kavita_Kumari' },
-            { value: 'manshi@distanceeducationschool.com', label: 'Mansi' },
-            { value: 'Bhavya.manipal@gmail.com', label: 'Bhavya' },
-            { value: 'anurag@distanceeducationschool.com', label: 'Anuraj' },
-            { value: 'rupal@distanceeducationschool.com', label: 'Rupal' },
-            //B2B Team Email
-            { value: 'spuhelpdesk@gmail.com', label: 'Binny' },
-            { value: 'ruchika.spu@gmail.com', label: 'Ruchika' },
-            { value: 'lalit@distanceeducationschool.com', label: 'Lalit_DES' },
-            { value: 'lalit.spu@gmail.com', label: 'Lalit' },
-            { value: 'ramiz.spu@gmail.com', label: 'Ramiz' }
+              // DES - INTERNATIONAL email with name 
+              { value: 'zarin@distanceeducationschool.com', label: 'Zarin Badar' },
+
+              // HES team email with name 
+              { value: 'kanchan@highereducationschool.com', label: 'Kanchan Sharma' },
+              { value: 'kirti@highereducationschool.com', label: 'Kirti Dubey' },
+              { value: 'ramandeep@highereducationschool.com', label: 'Ramandeep Kaur' },
+              { value: 'kavita@highereducationschool.com', label: 'Kavita Yadav' },
+              { value: 'imra@highereducationschool.com', label: 'Imra Khan' },
+              { value: 'mahak@highereducationschool.com', label: 'Mahek' },
+              { value: 'abhay@highereducationschool.com', label: 'Abhay Dubey' },
+              { value: 'swati@highereducationschool.com', label: 'Swati' },
+              { value: 'gulshan@highereducationschool.com', label: 'Gulshan Nayyar' },
+              { value: 'isha@highereducationschool.com', label: 'Isha Jaiswal' },
+              { value: 'sakshi@highereducationschool.com', label: 'Sakshi Arora' },
+
+              // Jain team email with name 
+              { value: 'anitha@sode.co.in', label: 'A.Anitha' },
+              { value: 'vani@sode.co.in', label: 'Vani Ruckmani' },
+
+              // Manipal team email with name 
+              { value: 'SwatiRamani.manipal@gmail.com', label: 'Swati Ramani' },
+              { value: 'ankitakumar@sode.co.in', label: 'Ankita Kumari' },
+              { value: 'nidhi@sode.co.in', label: 'Nidhi' },
+              { value: 'amreen@sode.co.in', label: 'Amreen ALI Khan' },
+              { value: 'umar@sode.co.in', label: 'MD Umar' },
+              { value: 'nehagupta@sode.co.in', label: 'Neha Gupta' },
+              { value: 'pawankumar@sode.co.in', label: 'Pawan Kumar' },
+              { value: 'bhavya@sode.co.in', label: 'Bhavya' },
+
+              // ALL DES && HES team email with name 
+              { value: 'rajesh@distanceeducationschool.com', label: 'Rajesh Sir' },
+              { value: 'manisha@distanceeducationschool.com', label: 'Manisha Yadav' },
+              { value: 'admin@distanceeducationschool.com', label: 'Nouman Sir' },
+              { value: 'sandy@distanceeducationschool.com', label: 'Sandy' },
+              { value: 'neha@distanceeducationschool.com', label: 'Neha Raj' },
+              { value: 'yashpriya@distanceeducationschool.com', label: 'Yash Priya' },
+              { value: 'kavitahaldar@distanceeducationschool.com', label: 'Kavita Haldar' },
+              { value: 'ifla@distanceeducationschool.com', label: 'Ifla' },
+              { value: 'shalu@distanceeducationschool.com', label: 'Shalu' },
+              { value: 'zainubia@distanceeducationschool.com', label: 'Zainbuia' },
+              { value: 'pallovi@distanceeducationschool.com', label: 'Pallovi' },
+              { value: 'hansi@distanceeducationschool.com', label: 'Hansi' },
+              { value: 'shristi@distanceeducationschool.com', label: 'Shristi' },
+              { value: 'aashita@highereducationschool.com', label: 'Aashita' },
+              { value: 'pratibha@highereducationschool.com', label: 'Pratibha' },
+              { value: 'shreyashi@highereducationschool.com', label: 'Shreyashi' },
+              { value: 'spuhelpdesk@gmail.com', label: 'Binny' },
+              { value: 'ruchika.spu@gmail.com', label: 'Ruchika' },
+              { value: 'ramiz.spu@gmail.com', label: 'Ramiz' },
             ],
           },
           {
@@ -21896,7 +22331,7 @@ const formData = [
             id: 'status ',
             type: 'select',
             place: 'select status',
-            required: 'require',
+
             options: [
               { value: 'New', label: 'New' },
               { value: 'Cancel', label: 'Cancel' },
@@ -21919,6 +22354,13 @@ const formData = [
             place: 'Enter your remark',
             id: 'remark',
             type: 'textarea',
+          },
+          {
+            key: 'date',
+            label: 'Created At',
+            name: 'created',
+            id: 'created',
+            type: 'date',
           },
         ],
       },
@@ -22409,7 +22851,7 @@ const formData = [
             name: ['customfields', 'installment_type'],
             place: 'Installment Type',
             type: 'select',
-            required: 'require',
+
             options: [
               { value: '1st Installment/ New Admission', label: '1st Installment/ New Admission' },
               { value: '2nd Installment', label: '2nd Installment' },
@@ -22430,7 +22872,7 @@ const formData = [
             id: 'PaymentMode ',
             type: 'select',
             place: 'Select Payment Mode',
-            required: 'require',
+
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
             { value: 'Payment Gateway', label: 'Payment Gateway' },
@@ -22443,7 +22885,7 @@ const formData = [
             id: 'email ',
             type: 'select',
             place: 'select counselor email',
-            required: 'require',
+
             options: [{ value: 'zarin@highereducationschool.com', label: 'Zarin' },
             { value: 'kanchan@highereducationschool.com', label: 'Kanchan' },
             { value: 'kirti@highereducationschool.com', label: 'Kirti' },
@@ -22522,7 +22964,7 @@ const formData = [
             id: 'status ',
             type: 'select',
             place: 'select status',
-            required: 'require',
+
             options: [
               { value: 'New', label: 'New' },
               { value: 'Cancel', label: 'Cancel' },
@@ -22916,7 +23358,7 @@ const formData = [
             name: ['customfields', 'send_fee_receipt'],
             type: 'radio',
             options: ['yes', 'no'],
-            required: 'require'
+
           },
           {
             key: 'studentId',
@@ -22925,7 +23367,7 @@ const formData = [
             place: 'StudentID',
             id: 'StudentID',
             type: 'studentId',
-            required: 'require'
+
           },
           {
             key: 'text',
@@ -22934,7 +23376,7 @@ const formData = [
             place: 'Student Name',
             id: 'full_name',
             type: 'text',
-            required: 'require'
+
           },
           {
             key: 'email',
@@ -22943,7 +23385,7 @@ const formData = [
             name: ['contact', 'email'],
             id: 'EmailID',
             type: 'email',
-            required: 'require'
+
           },
           {
             key: 'tel',
@@ -22952,7 +23394,7 @@ const formData = [
             place: 'Enter Phone Number',
             id: 'phone',
             type: 'tel',
-            required: 'require'
+
           },
           {
             key: 'text',
@@ -22961,7 +23403,7 @@ const formData = [
             place: 'Enter Father Name',
             id: 'Father Name',
             type: 'text',
-            required: 'require'
+
           },
           {
             key: 'text',
@@ -22970,32 +23412,32 @@ const formData = [
             place: 'Enter Mother Name',
             id: 'mother_name',
             type: 'text',
-            required: 'require'
+
           },
           {
             key: 'select',
             label: 'Session',
             name: ['customfields', 'session'],
-            place: 'eg: jan 20',
+            place: 'eg: JAN_20',
             id: 'Session',
             type: 'select',
-            options: [{ value: 'jan 20', label: 'Jan 20' },
-            { value: 'july 20', label: 'July 20' },
-            { value: 'jan 21', label: 'Jan 21' },
-            { value: 'july 21', label: 'July 21' },
-            { value: 'jan 22', label: 'Jan 22' },
-            { value: 'july 22', label: 'July 22' },
-            { value: 'jan 23', label: 'Jan 23' },
-            { value: 'july 23', label: 'July 23' },
-            { value: 'jan 24', label: 'Jan 24' },
-            { value: 'july 24', label: 'July 24' },
-            { value: 'jan 25', label: 'Jan 25' },
-            { value: 'july 25', label: 'July 25' },
-            { value: 'mar 23', label: 'mar 23' },
-            { value: 'apr 23', label: 'apr 23' },
-            { value: 'oct 23', label: 'oct 23' },
-            { value: 'nov 23', label: 'nov 23' },],
-            required: 'require'
+            options: [{ value: 'JAN_20', label: 'JAN_20' },
+            { value: 'JULY_20', label: 'JULY_20' },
+            { value: 'JAN_21', label: 'JAN_21' },
+            { value: 'JULY_21', label: 'JULY_21' },
+            { value: 'JAN_22', label: 'JAN_22' },
+            { value: 'JULY_22', label: 'JULY_22' },
+            { value: 'JAN_23', label: 'JAN_23' },
+            { value: 'JULY_23', label: 'JULY_23' },
+            { value: 'JAN_24', label: 'JAN_24' },
+            { value: 'JULY_24', label: 'JULY_24' },
+            { value: 'JAN_25', label: 'JAN_25' },
+            { value: 'JULY_25', label: 'JULY_25' },
+            { value: 'MAR_23', label: 'MAR_23' },
+            { value: 'APR_23', label: 'APR_23' },
+            { value: 'OCT_23', label: 'OCT_23' },
+            { value: 'NOV_23', label: 'NOV_23' },],
+
           },
           {
             key: 'select',
@@ -23004,7 +23446,7 @@ const formData = [
             id: 'SessionType',
             place: 'Enter Admission Type',
             type: 'select',
-            options: [{ value: 'Fresh', label: 'Fresh' },
+            options: [{ value: 'FRESH', label: 'FRESH' },
             { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
           },
 
@@ -23015,7 +23457,7 @@ const formData = [
             place: 'Enter Date of Birth',
             id: 'dob',
             type: 'date',
-            required: 'require'
+
           },
           {
             key: 'select',
@@ -23035,7 +23477,7 @@ const formData = [
             name: ['customfields', 'installment_type'],
             place: 'Installment Type',
             type: 'select',
-            required: 'require',
+
             options: [
               { value: '1st Installment/ New Admission', label: '1st Installment/ New Admission' },
               { value: '2nd Installment', label: '2nd Installment' },
@@ -23056,8 +23498,9 @@ const formData = [
             id: 'PaymentMode ',
             type: 'select',
             place: 'Select Payment Mode',
-            required: 'require',
+
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
+            { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
             { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
@@ -23068,77 +23511,82 @@ const formData = [
             name: ['customfields', 'counselor_email'],
             id: 'email ',
             type: 'select',
-            place: 'select counselor email',
-            required: 'require',
-            options: [{ value: 'zarin@highereducationschool.com', label: 'Zarin' },
-            { value: 'kanchan@highereducationschool.com', label: 'Kanchan' },
-            { value: 'kirti@highereducationschool.com', label: 'Kirti' },
-            { value: 'ramandeep@highereducationschool.com', label: 'Raman' },
-            { value: 'kavita@highereducationschool.com', label: 'kavita' },
-            { value: 'imra@highereducationschool.com', label: 'Imra' },
-            { value: 'Mahak@highereducationschool.com', label: 'Mahek' },
-            { value: 'abhay@highereducationschool.com', label: 'abhay' },
-            { value: 'swati@highereducationschool.com', label: 'swati' },
-            { value: 'gulshan@highereducationschool.com', label: 'Gulshan' },
-            { value: 'isha@highereducationschool.com', label: 'Isha' },
-            { value: 'Sakshi@highereducationschool.com', label: 'Sakshi' },
-            { value: 'aashita@highereducationschool.com', label: 'aashita' },
-            { value: 'pratibha@highereducationschool.com', label: 'pratibha' },
-            { value: 'shreyashi@highereducationschool.com', label: 'Shreyashi ' },
-            { value: 'apoorvasrivastava@distanceeducationschool.com', label: 'Apoorva_DES' },
-            { value: 'asma@distanceeducationschool.com', label: 'Asma_DES' },
-            { value: 'nehaprashar@distanceeducationschool.com', label: 'Neha_Prasher_DES' },
-            { value: 'priya@distanceeducationschool.com', label: 'Priya_DES' },
-            { value: 'diksha@distanceeducationschool.com', label: 'Diksha_DES' },
-            { value: 'abhilasha@distanceeducationschool.com', label: 'Abhilasha_Gupta_DES' },
-            { value: 'saher@distanceeducationschool.com', label: 'Saher_Khan_DES' },
-            { value: 'fiza@distanceeducationschool.com', label: 'Fiza_DES' },
-            { value: 'muskan@distanceeducationschool.com', label: 'Muskaan_DES' },
-            { value: 'aniruddh@distanceeducationschool.com', label: 'Aniruddh_DES' },
-            { value: 'deva@distanceeducationschool.com', label: 'Devendra_DES' },
-            { value: 'amritpal@distanceeducationschool.com', label: 'Amritpal_DES' },
-            { value: 'Salman@distanceeducationschool.com:', label: 'Salman_DES' },
-            { value: 'tariq@distanceeducationschool.com', label: 'Traiq_DES' },
-            { value: 'shivam@distanceeducationschool.com', label: 'Shivam_sharma_DES' },
-            { value: 'pushpa@distanceeducationschool.com', label: 'Puspa_DES' },
-            { value: 'zarin@distanceeducationschool.com', label: 'Zarin_DES' },
-            { value: 'kanchan@distanceeducationschool.com', label: 'Kanchan_DES' },
-            { value: 'manu@distanceeducationschool.com', label: 'Manu_DES' },
+            place: 'select counselor name',
+            options: [
+              // DES External email with name
+              { value: 'apoorvasrivastava@sode.co.in', label: 'Apoorva Srivastava' },
+              { value: 'nehaprashar@sode.co.in', label: 'Neha Prasher' },
+              { value: 'priya@sode.co.in', label: 'Priya Anand' },
+              { value: 'diksha@sode.co.in', label: 'Diksha Singh' },
+              { value: 'abhilasha@sode.co.in', label: 'Abhilasha Gupta' },
+              { value: 'saher@sode.co.in', label: 'Saher Khan' },
 
-            // Jain Team Emails
-            { value: 'a.anitha.ju@gmail.com', label: 'Anita_JU' },
-            { value: 'vaniruckmani.ju@gmail.com', label: 'Vani_Ruckmani_JU' },
-            { value: 'priyankapalle.ju@gmail.com', label: 'Priyanka_JU' },
-            { value: 'SwatiRamani.manipal@gmail.com', label: 'Swati_JU' },
+              // DES Internal email with name 
+              { value: 'muskan@distanceeducationschool.com', label: 'Muskaan ' },
+              { value: 'aniruddh@distanceeducationschool.com', label: 'Aniruddh Prakash' },
+              { value: 'amritpal@sode.co.in', label: 'Amritpal Singh' },
+              { value: 'salman@sode.co.in', label: 'Salman' },
+              { value: 'tariq@sode.co.in', label: 'Tariq Hasan' },
+              { value: 'shivam@sode.co.in', label: 'Shivam sharma' },
+              { value: 'pushpa@sode.co.in', label: 'Pushpa Pramanik' },
 
-            // Manipal Team Email
-            { value: 'ankitakumari.manipal@gmail.com', label: 'Ankita_MU' },
-            { value: 'medhahandoo.manipal@gmail.com', label: 'Medha_MU' },
-            { value: 'amreen.manipal@gmail.com', label: 'Amreen_MU' },
+              // DES Internal email with name 
+              { value: 'anurag@distanceeducationschool.com', label: 'Anurag Yadav' },
+              { value: 'kavitakumari@sode.co.in', label: 'Kavita Kumari' },
+              { value: 'rupal@sode.co.in', label: 'Rupal Gautam' },
+              { value: 'deva@sode.co.in', label: 'Devendra' },
+              { value: 'manshi@sode.co.in', label: 'Manshi Kem' },
 
-            // Support Team Email
-            { value: 'rajesh@distanceeducationschool.com', label: 'Rajesh_sir' },
-            { value: 'manisha@distanceeducationschool.com', label: 'Manisha' },
-            { value: 'admin@distanceeducationschool.com', label: 'Nouman_sir' },
-            { value: 'sandy@distanceeducationschool.com', label: 'Sandy' },
-            { value: 'neha@distanceeducationschool.com', label: 'Neha' },
-            { value: 'yashpriya@distanceeducationschool.com', label: 'Yash_Priya' },
-            { value: 'kavitahaldar@distanceeducationschool.com', label: 'kavitahaldar' },
-            { value: 'ifla@distanceeducationschool.com', label: 'Ifla' },
-            { value: 'shalu@distanceeducationschool.com', label: 'Shalu' },
-            { value: 'zainubia@distanceeducationschool.com', label: 'zainbuia' },
-            { value: 'pallovi@distanceeducationschool.com', label: 'Pallovi' },
-            { value: 'kavitakumari@distanceeducationschool.com', label: 'Kavita_Kumari' },
-            { value: 'manshi@distanceeducationschool.com', label: 'Mansi' },
-            { value: 'Bhavya.manipal@gmail.com', label: 'Bhavya' },
-            { value: 'anurag@distanceeducationschool.com', label: 'Anuraj' },
-            { value: 'rupal@distanceeducationschool.com', label: 'Rupal' },
-            //B2B Team Email
-            { value: 'spuhelpdesk@gmail.com', label: 'Binny' },
-            { value: 'ruchika.spu@gmail.com', label: 'Ruchika' },
-            { value: 'lalit@distanceeducationschool.com', label: 'Lalit_DES' },
-            { value: 'lalit.spu@gmail.com', label: 'Lalit' },
-            { value: 'ramiz.spu@gmail.com', label: 'Ramiz' }
+              // DES - INTERNATIONAL email with name 
+              { value: 'zarin@distanceeducationschool.com', label: 'Zarin Badar' },
+
+              // HES team email with name 
+              { value: 'kanchan@highereducationschool.com', label: 'Kanchan Sharma' },
+              { value: 'kirti@highereducationschool.com', label: 'Kirti Dubey' },
+              { value: 'ramandeep@highereducationschool.com', label: 'Ramandeep Kaur' },
+              { value: 'kavita@highereducationschool.com', label: 'Kavita Yadav' },
+              { value: 'imra@highereducationschool.com', label: 'Imra Khan' },
+              { value: 'mahak@highereducationschool.com', label: 'Mahek' },
+              { value: 'abhay@highereducationschool.com', label: 'Abhay Dubey' },
+              { value: 'swati@highereducationschool.com', label: 'Swati' },
+              { value: 'gulshan@highereducationschool.com', label: 'Gulshan Nayyar' },
+              { value: 'isha@highereducationschool.com', label: 'Isha Jaiswal' },
+              { value: 'sakshi@highereducationschool.com', label: 'Sakshi Arora' },
+
+              // Jain team email with name 
+              { value: 'anitha@sode.co.in', label: 'A.Anitha' },
+              { value: 'vani@sode.co.in', label: 'Vani Ruckmani' },
+
+              // Manipal team email with name 
+              { value: 'SwatiRamani.manipal@gmail.com', label: 'Swati Ramani' },
+              { value: 'ankitakumar@sode.co.in', label: 'Ankita Kumari' },
+              { value: 'nidhi@sode.co.in', label: 'Nidhi' },
+              { value: 'amreen@sode.co.in', label: 'Amreen ALI Khan' },
+              { value: 'umar@sode.co.in', label: 'MD Umar' },
+              { value: 'nehagupta@sode.co.in', label: 'Neha Gupta' },
+              { value: 'pawankumar@sode.co.in', label: 'Pawan Kumar' },
+              { value: 'bhavya@sode.co.in', label: 'Bhavya' },
+
+              // ALL DES && HES team email with name 
+              { value: 'rajesh@distanceeducationschool.com', label: 'Rajesh Sir' },
+              { value: 'manisha@distanceeducationschool.com', label: 'Manisha Yadav' },
+              { value: 'admin@distanceeducationschool.com', label: 'Nouman Sir' },
+              { value: 'sandy@distanceeducationschool.com', label: 'Sandy' },
+              { value: 'neha@distanceeducationschool.com', label: 'Neha Raj' },
+              { value: 'yashpriya@distanceeducationschool.com', label: 'Yash Priya' },
+              { value: 'kavitahaldar@distanceeducationschool.com', label: 'Kavita Haldar' },
+              { value: 'ifla@distanceeducationschool.com', label: 'Ifla' },
+              { value: 'shalu@distanceeducationschool.com', label: 'Shalu' },
+              { value: 'zainubia@distanceeducationschool.com', label: 'Zainbuia' },
+              { value: 'pallovi@distanceeducationschool.com', label: 'Pallovi' },
+              { value: 'hansi@distanceeducationschool.com', label: 'Hansi' },
+              { value: 'shristi@distanceeducationschool.com', label: 'Shristi' },
+              { value: 'aashita@highereducationschool.com', label: 'Aashita' },
+              { value: 'pratibha@highereducationschool.com', label: 'Pratibha' },
+              { value: 'shreyashi@highereducationschool.com', label: 'Shreyashi' },
+              { value: 'spuhelpdesk@gmail.com', label: 'Binny' },
+              { value: 'ruchika.spu@gmail.com', label: 'Ruchika' },
+              { value: 'ramiz.spu@gmail.com', label: 'Ramiz' },
             ],
           },
           {
@@ -23148,7 +23596,7 @@ const formData = [
             id: 'status ',
             type: 'select',
             place: 'select status',
-            required: 'require',
+
             options: [
               { value: 'New', label: 'New' },
               { value: 'Cancel', label: 'Cancel' },
@@ -23171,6 +23619,13 @@ const formData = [
             place: 'Enter your remark',
             id: 'remark',
             type: 'textarea',
+          },
+          {
+            key: 'date',
+            label: 'Created At',
+            name: 'created',
+            id: 'created',
+            type: 'date',
           },
         ],
       },
@@ -23541,7 +23996,7 @@ const formData = [
             name: ['customfields', 'send_fee_receipt'],
             type: 'radio',
             options: ['yes', 'no'],
-            required: 'require'
+
           },
           {
             key: 'studentId',
@@ -23550,7 +24005,7 @@ const formData = [
             place: 'StudentID',
             id: 'StudentID',
             type: 'studentId',
-            required: 'require'
+
           },
           {
             key: 'text',
@@ -23559,7 +24014,7 @@ const formData = [
             place: 'Student Name',
             id: 'full_name',
             type: 'text',
-            required: 'require'
+
           },
           {
             key: 'email',
@@ -23568,7 +24023,7 @@ const formData = [
             name: ['contact', 'email'],
             id: 'EmailID',
             type: 'email',
-            required: 'require'
+
           },
           {
             key: 'tel',
@@ -23577,7 +24032,7 @@ const formData = [
             place: 'Enter Phone Number',
             id: 'phone',
             type: 'tel',
-            required: 'require'
+
           },
           {
             key: 'text',
@@ -23586,7 +24041,7 @@ const formData = [
             place: 'Enter Father Name',
             id: 'Father Name',
             type: 'text',
-            required: 'require'
+
           },
           {
             key: 'text',
@@ -23595,32 +24050,32 @@ const formData = [
             place: 'Enter Mother Name',
             id: 'mother_name',
             type: 'text',
-            required: 'require'
+
           },
           {
             key: 'select',
             label: 'Session',
             name: ['customfields', 'session'],
-            place: 'eg: jan 20',
+            place: 'eg: JAN_20',
             id: 'Session',
             type: 'select',
-            options: [{ value: 'jan 20', label: 'Jan 20' },
-            { value: 'july 20', label: 'July 20' },
-            { value: 'jan 21', label: 'Jan 21' },
-            { value: 'july 21', label: 'July 21' },
-            { value: 'jan 22', label: 'Jan 22' },
-            { value: 'july 22', label: 'July 22' },
-            { value: 'jan 23', label: 'Jan 23' },
-            { value: 'july 23', label: 'July 23' },
-            { value: 'jan 24', label: 'Jan 24' },
-            { value: 'july 24', label: 'July 24' },
-            { value: 'jan 25', label: 'Jan 25' },
-            { value: 'july 25', label: 'July 25' },
-            { value: 'mar 23', label: 'mar 23' },
-            { value: 'apr 23', label: 'apr 23' },
-            { value: 'oct 23', label: 'oct 23' },
-            { value: 'nov 23', label: 'nov 23' },],
-            required: 'require'
+            options: [{ value: 'JAN_20', label: 'JAN_20' },
+            { value: 'JULY_20', label: 'JULY_20' },
+            { value: 'JAN_21', label: 'JAN_21' },
+            { value: 'JULY_21', label: 'JULY_21' },
+            { value: 'JAN_22', label: 'JAN_22' },
+            { value: 'JULY_22', label: 'JULY_22' },
+            { value: 'JAN_23', label: 'JAN_23' },
+            { value: 'JULY_23', label: 'JULY_23' },
+            { value: 'JAN_24', label: 'JAN_24' },
+            { value: 'JULY_24', label: 'JULY_24' },
+            { value: 'JAN_25', label: 'JAN_25' },
+            { value: 'JULY_25', label: 'JULY_25' },
+            { value: 'MAR_23', label: 'MAR_23' },
+            { value: 'APR_23', label: 'APR_23' },
+            { value: 'OCT_23', label: 'OCT_23' },
+            { value: 'NOV_23', label: 'NOV_23' },],
+
           },
           {
             key: 'select',
@@ -23629,7 +24084,7 @@ const formData = [
             id: 'SessionType',
             place: 'Enter Admission Type',
             type: 'select',
-            options: [{ value: 'Fresh', label: 'Fresh' },
+            options: [{ value: 'FRESH', label: 'FRESH' },
             { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
           },
 
@@ -23640,7 +24095,7 @@ const formData = [
             place: 'Enter Date of Birth',
             id: 'dob',
             type: 'date',
-            required: 'require'
+
           },
           {
             key: 'select',
@@ -23660,7 +24115,7 @@ const formData = [
             name: ['customfields', 'installment_type'],
             place: 'Installment Type',
             type: 'select',
-            required: 'require',
+
             options: [
               { value: '1st Installment/ New Admission', label: '1st Installment/ New Admission' },
               { value: '2nd Installment', label: '2nd Installment' },
@@ -23681,8 +24136,9 @@ const formData = [
             id: 'PaymentMode ',
             type: 'select',
             place: 'Select Payment Mode',
-            required: 'require',
+
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
+            { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
             { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
@@ -23693,77 +24149,82 @@ const formData = [
             name: ['customfields', 'counselor_email'],
             id: 'email ',
             type: 'select',
-            place: 'select counselor email',
-            required: 'require',
-            options: [{ value: 'zarin@highereducationschool.com', label: 'Zarin' },
-            { value: 'kanchan@highereducationschool.com', label: 'Kanchan' },
-            { value: 'kirti@highereducationschool.com', label: 'Kirti' },
-            { value: 'ramandeep@highereducationschool.com', label: 'Raman' },
-            { value: 'kavita@highereducationschool.com', label: 'kavita' },
-            { value: 'imra@highereducationschool.com', label: 'Imra' },
-            { value: 'Mahak@highereducationschool.com', label: 'Mahek' },
-            { value: 'abhay@highereducationschool.com', label: 'abhay' },
-            { value: 'swati@highereducationschool.com', label: 'swati' },
-            { value: 'gulshan@highereducationschool.com', label: 'Gulshan' },
-            { value: 'isha@highereducationschool.com', label: 'Isha' },
-            { value: 'Sakshi@highereducationschool.com', label: 'Sakshi' },
-            { value: 'aashita@highereducationschool.com', label: 'aashita' },
-            { value: 'pratibha@highereducationschool.com', label: 'pratibha' },
-            { value: 'shreyashi@highereducationschool.com', label: 'Shreyashi ' },
-            { value: 'apoorvasrivastava@distanceeducationschool.com', label: 'Apoorva_DES' },
-            { value: 'asma@distanceeducationschool.com', label: 'Asma_DES' },
-            { value: 'nehaprashar@distanceeducationschool.com', label: 'Neha_Prasher_DES' },
-            { value: 'priya@distanceeducationschool.com', label: 'Priya_DES' },
-            { value: 'diksha@distanceeducationschool.com', label: 'Diksha_DES' },
-            { value: 'abhilasha@distanceeducationschool.com', label: 'Abhilasha_Gupta_DES' },
-            { value: 'saher@distanceeducationschool.com', label: 'Saher_Khan_DES' },
-            { value: 'fiza@distanceeducationschool.com', label: 'Fiza_DES' },
-            { value: 'muskan@distanceeducationschool.com', label: 'Muskaan_DES' },
-            { value: 'aniruddh@distanceeducationschool.com', label: 'Aniruddh_DES' },
-            { value: 'deva@distanceeducationschool.com', label: 'Devendra_DES' },
-            { value: 'amritpal@distanceeducationschool.com', label: 'Amritpal_DES' },
-            { value: 'Salman@distanceeducationschool.com:', label: 'Salman_DES' },
-            { value: 'tariq@distanceeducationschool.com', label: 'Traiq_DES' },
-            { value: 'shivam@distanceeducationschool.com', label: 'Shivam_sharma_DES' },
-            { value: 'pushpa@distanceeducationschool.com', label: 'Puspa_DES' },
-            { value: 'zarin@distanceeducationschool.com', label: 'Zarin_DES' },
-            { value: 'kanchan@distanceeducationschool.com', label: 'Kanchan_DES' },
-            { value: 'manu@distanceeducationschool.com', label: 'Manu_DES' },
+            place: 'select counselor name',
+            options: [
+              // DES External email with name
+              { value: 'apoorvasrivastava@sode.co.in', label: 'Apoorva Srivastava' },
+              { value: 'nehaprashar@sode.co.in', label: 'Neha Prasher' },
+              { value: 'priya@sode.co.in', label: 'Priya Anand' },
+              { value: 'diksha@sode.co.in', label: 'Diksha Singh' },
+              { value: 'abhilasha@sode.co.in', label: 'Abhilasha Gupta' },
+              { value: 'saher@sode.co.in', label: 'Saher Khan' },
 
-            // Jain Team Emails
-            { value: 'a.anitha.ju@gmail.com', label: 'Anita_JU' },
-            { value: 'vaniruckmani.ju@gmail.com', label: 'Vani_Ruckmani_JU' },
-            { value: 'priyankapalle.ju@gmail.com', label: 'Priyanka_JU' },
-            { value: 'SwatiRamani.manipal@gmail.com', label: 'Swati_JU' },
+              // DES Internal email with name 
+              { value: 'muskan@distanceeducationschool.com', label: 'Muskaan ' },
+              { value: 'aniruddh@distanceeducationschool.com', label: 'Aniruddh Prakash' },
+              { value: 'amritpal@sode.co.in', label: 'Amritpal Singh' },
+              { value: 'salman@sode.co.in', label: 'Salman' },
+              { value: 'tariq@sode.co.in', label: 'Tariq Hasan' },
+              { value: 'shivam@sode.co.in', label: 'Shivam sharma' },
+              { value: 'pushpa@sode.co.in', label: 'Pushpa Pramanik' },
 
-            // Manipal Team Email
-            { value: 'ankitakumari.manipal@gmail.com', label: 'Ankita_MU' },
-            { value: 'medhahandoo.manipal@gmail.com', label: 'Medha_MU' },
-            { value: 'amreen.manipal@gmail.com', label: 'Amreen_MU' },
+              // DES Internal email with name 
+              { value: 'anurag@distanceeducationschool.com', label: 'Anurag Yadav' },
+              { value: 'kavitakumari@sode.co.in', label: 'Kavita Kumari' },
+              { value: 'rupal@sode.co.in', label: 'Rupal Gautam' },
+              { value: 'deva@sode.co.in', label: 'Devendra' },
+              { value: 'manshi@sode.co.in', label: 'Manshi Kem' },
 
-            // Support Team Email
-            { value: 'rajesh@distanceeducationschool.com', label: 'Rajesh_sir' },
-            { value: 'manisha@distanceeducationschool.com', label: 'Manisha' },
-            { value: 'admin@distanceeducationschool.com', label: 'Nouman_sir' },
-            { value: 'sandy@distanceeducationschool.com', label: 'Sandy' },
-            { value: 'neha@distanceeducationschool.com', label: 'Neha' },
-            { value: 'yashpriya@distanceeducationschool.com', label: 'Yash_Priya' },
-            { value: 'kavitahaldar@distanceeducationschool.com', label: 'kavitahaldar' },
-            { value: 'ifla@distanceeducationschool.com', label: 'Ifla' },
-            { value: 'shalu@distanceeducationschool.com', label: 'Shalu' },
-            { value: 'zainubia@distanceeducationschool.com', label: 'zainbuia' },
-            { value: 'pallovi@distanceeducationschool.com', label: 'Pallovi' },
-            { value: 'kavitakumari@distanceeducationschool.com', label: 'Kavita_Kumari' },
-            { value: 'manshi@distanceeducationschool.com', label: 'Mansi' },
-            { value: 'Bhavya.manipal@gmail.com', label: 'Bhavya' },
-            { value: 'anurag@distanceeducationschool.com', label: 'Anuraj' },
-            { value: 'rupal@distanceeducationschool.com', label: 'Rupal' },
-            //B2B Team Email
-            { value: 'spuhelpdesk@gmail.com', label: 'Binny' },
-            { value: 'ruchika.spu@gmail.com', label: 'Ruchika' },
-            { value: 'lalit@distanceeducationschool.com', label: 'Lalit_DES' },
-            { value: 'lalit.spu@gmail.com', label: 'Lalit' },
-            { value: 'ramiz.spu@gmail.com', label: 'Ramiz' }
+              // DES - INTERNATIONAL email with name 
+              { value: 'zarin@distanceeducationschool.com', label: 'Zarin Badar' },
+
+              // HES team email with name 
+              { value: 'kanchan@highereducationschool.com', label: 'Kanchan Sharma' },
+              { value: 'kirti@highereducationschool.com', label: 'Kirti Dubey' },
+              { value: 'ramandeep@highereducationschool.com', label: 'Ramandeep Kaur' },
+              { value: 'kavita@highereducationschool.com', label: 'Kavita Yadav' },
+              { value: 'imra@highereducationschool.com', label: 'Imra Khan' },
+              { value: 'mahak@highereducationschool.com', label: 'Mahek' },
+              { value: 'abhay@highereducationschool.com', label: 'Abhay Dubey' },
+              { value: 'swati@highereducationschool.com', label: 'Swati' },
+              { value: 'gulshan@highereducationschool.com', label: 'Gulshan Nayyar' },
+              { value: 'isha@highereducationschool.com', label: 'Isha Jaiswal' },
+              { value: 'sakshi@highereducationschool.com', label: 'Sakshi Arora' },
+
+              // Jain team email with name 
+              { value: 'anitha@sode.co.in', label: 'A.Anitha' },
+              { value: 'vani@sode.co.in', label: 'Vani Ruckmani' },
+
+              // Manipal team email with name 
+              { value: 'SwatiRamani.manipal@gmail.com', label: 'Swati Ramani' },
+              { value: 'ankitakumar@sode.co.in', label: 'Ankita Kumari' },
+              { value: 'nidhi@sode.co.in', label: 'Nidhi' },
+              { value: 'amreen@sode.co.in', label: 'Amreen ALI Khan' },
+              { value: 'umar@sode.co.in', label: 'MD Umar' },
+              { value: 'nehagupta@sode.co.in', label: 'Neha Gupta' },
+              { value: 'pawankumar@sode.co.in', label: 'Pawan Kumar' },
+              { value: 'bhavya@sode.co.in', label: 'Bhavya' },
+
+              // ALL DES && HES team email with name 
+              { value: 'rajesh@distanceeducationschool.com', label: 'Rajesh Sir' },
+              { value: 'manisha@distanceeducationschool.com', label: 'Manisha Yadav' },
+              { value: 'admin@distanceeducationschool.com', label: 'Nouman Sir' },
+              { value: 'sandy@distanceeducationschool.com', label: 'Sandy' },
+              { value: 'neha@distanceeducationschool.com', label: 'Neha Raj' },
+              { value: 'yashpriya@distanceeducationschool.com', label: 'Yash Priya' },
+              { value: 'kavitahaldar@distanceeducationschool.com', label: 'Kavita Haldar' },
+              { value: 'ifla@distanceeducationschool.com', label: 'Ifla' },
+              { value: 'shalu@distanceeducationschool.com', label: 'Shalu' },
+              { value: 'zainubia@distanceeducationschool.com', label: 'Zainbuia' },
+              { value: 'pallovi@distanceeducationschool.com', label: 'Pallovi' },
+              { value: 'hansi@distanceeducationschool.com', label: 'Hansi' },
+              { value: 'shristi@distanceeducationschool.com', label: 'Shristi' },
+              { value: 'aashita@highereducationschool.com', label: 'Aashita' },
+              { value: 'pratibha@highereducationschool.com', label: 'Pratibha' },
+              { value: 'shreyashi@highereducationschool.com', label: 'Shreyashi' },
+              { value: 'spuhelpdesk@gmail.com', label: 'Binny' },
+              { value: 'ruchika.spu@gmail.com', label: 'Ruchika' },
+              { value: 'ramiz.spu@gmail.com', label: 'Ramiz' },
             ],
           },
           {
@@ -23773,7 +24234,7 @@ const formData = [
             id: 'status ',
             type: 'select',
             place: 'select status',
-            required: 'require',
+
             options: [
               { value: 'New', label: 'New' },
               { value: 'Cancel', label: 'Cancel' },
@@ -23796,6 +24257,13 @@ const formData = [
             place: 'Enter your remark',
             id: 'remark',
             type: 'textarea',
+          },
+          {
+            key: 'date',
+            label: 'Created At',
+            name: 'created',
+            id: 'created',
+            type: 'date',
           },
         ],
       },

@@ -67,7 +67,7 @@ const BarsDataset = () => {
   const valueFormatter = (value) => `${value}`;
 
   return (
-    <BarChart
+    <BarChart className='bg-slate-600'
       dataset={dataset}
       xAxis={[{ scaleType: 'band', dataKey: 'month' }]}
       series={[{ dataKey: 'count', valueFormatter }]}

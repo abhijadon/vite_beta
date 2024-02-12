@@ -120,7 +120,11 @@ export default function DashboardModule() {
             }
             message.success(successMessage);
           } else {
-            setFilteredPaymentData({ total_course_fee: 0 }); // Set payment to 0
+            setFilteredPaymentData({
+              total_course_fee: 0,
+              total_paid_amount: 0,
+              due_amount: 0,
+            });
             let errorMessage = 'No data found based on the specified filters.';
             if (selectedUniversity) {
               errorMessage = `No data found for the specified filters and university: ${selectedUniversity}.`;
@@ -338,7 +342,9 @@ export default function DashboardModule() {
               <CardContent orientation="horizontal">
                 <CardContent>
                   <Typography className="text-gray-500">Total Course Fee</Typography>
-                  <Typography level="h3" className="text-green-500">₹ {filteredPaymentData.total_course_fee || paymentResult?.total_course_fee}</Typography>
+                  <Typography level="h3" className="text-green-500">
+                    ₹ {filteredPaymentData.total_course_fee !== undefined ? filteredPaymentData.total_course_fee : 0 || paymentResult?.total_course_fee}
+                  </Typography>
                 </CardContent>
               </CardContent>
             </div>
@@ -373,7 +379,9 @@ export default function DashboardModule() {
               <CardContent orientation="horizontal">
                 <CardContent>
                   <Typography className="text-gray-500">Total Paid Amount</Typography>
-                  <Typography level="h3" className="text-red-500">₹  {filteredPaymentData.total_paid_amount || paymentResult?.total_paid_amount}</Typography>
+                  <Typography level="h3" className="text-blue-500">
+                    ₹ {filteredPaymentData.total_paid_amount !== undefined ? filteredPaymentData.total_paid_amount : 0 || paymentResult?.total_paid_amount}
+                  </Typography>
 
                 </CardContent>
               </CardContent>
@@ -409,7 +417,9 @@ export default function DashboardModule() {
               <CardContent orientation="horizontal">
                 <CardContent>
                   <Typography className="text-gray-500">Due Amount</Typography>
-                  <Typography level="h3" className="text-blue-500">₹ {filteredPaymentData.due_amount || paymentResult?.due_amount}</Typography>
+                  <Typography level="h3" className="text-red-500">
+                    ₹ {filteredPaymentData.due_amount !== undefined ? filteredPaymentData.due_amount : 0 || paymentResult?.due_amount}
+                  </Typography>
                 </CardContent>
               </CardContent>
             </div>
@@ -459,11 +469,10 @@ export default function DashboardModule() {
       </Row><div className="space30"></div>
       <Row gutter={[32, 32]}>
         <Col className="gutter-row w-full" sm={{ span: 24 }} lg={{ span: 12 }}>
-          <div className="whiteBox shadow pad20" style={{ height: '100%' }}>
-            <h3 style={{ color: '#22075e', marginBottom: 5, padding: '0 20px 20px' }}>
+          <div>
+            <h3 className='text-center mb-4 font-thin text-lg border-b-2'>
               {translate('Recent Data')}
             </h3>
-
             <RecentTable entity={'invoice'} dataTableColumns={dataTableColumns} />
           </div>
         </Col>

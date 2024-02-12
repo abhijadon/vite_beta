@@ -40,6 +40,7 @@ export default function DataTable({ config, extra = [] }) {
   const [downloadCount, setDownloadCount] = useState(0); // Start with 0 to indicate dynamic count
   const [exportFormat, setExportFormat] = useState('xlsx'); // Default export format is XLSX
   const [exportModalVisible, setExportModalVisible] = useState(false);
+  const [totalCount, setTotalCount] = useState(0); // State to hold the total count of data
   const [selectOptions, setSelectOptions] = useState({
     instituteNames: [],
     universityNames: [],
@@ -68,7 +69,7 @@ export default function DataTable({ config, extra = [] }) {
         counselor_email: item.customfields.counselor_email,
         status: item.customfields.status,
       }));
-
+      setTotalCount(apiData.result.length);
       const uniqueInstituteNames = [...new Set(filteredData.map((item) => item.institute_name))];
       const uniqueUniversityNames = [...new Set(filteredData.map((item) => item.university_name))];
       const uniqueSessions = [...new Set(filteredData.map((item) => item.session))];
@@ -200,9 +201,7 @@ export default function DataTable({ config, extra = [] }) {
   ];
 
   const { result: listResult, isLoading: listIsLoading } = useSelector(selectListItems);
-
   const { pagination, items: dataSource } = listResult;
-
   const dispatch = useDispatch();
 
   const handelDataTableLoad = useCallback(
@@ -212,7 +211,7 @@ export default function DataTable({ config, extra = [] }) {
         items: pagination.pageSize || 10,
         filter: {
           ...selectedFilters,
-          q: searchQuery, // Include search query in the filter
+          q: searchQuery,
         },
       };
 
@@ -226,7 +225,6 @@ export default function DataTable({ config, extra = [] }) {
     dispatch(crud.list({ entity }));
   };
 
-
   useEffect(() => {
     const controller = new AbortController();
     dispatcher();
@@ -234,13 +232,8 @@ export default function DataTable({ config, extra = [] }) {
     return () => {
       controller.abort();
     };
-  }, [entity, searchQuery]);
-
-
-  const { tableColumns, tableHeader } = useResponsiveTable(
-    dataTableColumns,
-    items
-  );
+  }, [entity, searchQuery, selectedFilters]);
+  const { tableColumns, tableHeader } = useResponsiveTable(dataTableColumns, items);
 
   const handleSelectChange = (fieldName, selectedValue) => {
     setSelectedFilters((prevFilters) => ({
@@ -264,13 +257,13 @@ export default function DataTable({ config, extra = [] }) {
 
     return value;
   };
+
   const handleSearch = (value) => {
     setSearchQuery(value);
-
-    // Trigger data loading with the updated search query
     handelDataTableLoad({ current: 1, pageSize: pagination.pageSize }, value);
+    console.log('Selected Filters:', selectedFilters);
+    console.log('Filtered Data Source:', filteredDataSource);
   };
-
   const exportToExcel = async () => {
     try {
       setExportModalVisible(false);
@@ -332,6 +325,36 @@ export default function DataTable({ config, extra = [] }) {
     const parts = email.split('@');
     return parts[0];
   };
+  const filteredDataSource = dataSource
+    .filter((item) => {
+      return (
+        (!selectedFilters.institute_name || item.customfields.institute_name === selectedFilters.institute_name) &&
+        (!selectedFilters.university_name || item.customfields.university_name === selectedFilters.university_name) &&
+        (!selectedFilters.session || item.customfields.session === selectedFilters.session) &&
+        (!selectedFilters.counselor_email || item.customfields.counselor_email === selectedFilters.counselor_email) &&
+        (!selectedFilters.status || item.customfields.status === selectedFilters.status)
+      );
+    })
+    .filter((item) => {
+      if (!searchQuery) {
+        return true;
+      }
+      const searchFields = ['lead_id', 'contact.phone', 'contact.email'];
+
+      return searchFields.some((field) => {
+        const fieldParts = field.split('.');
+        let fieldValue = item;
+
+        for (const part of fieldParts) {
+          fieldValue = fieldValue[part];
+        }
+        return (
+          fieldValue &&
+          String(fieldValue).toLowerCase().includes(searchQuery.toLowerCase())
+        );
+      });
+    });
+
   return (
     <>
       {entity === 'lead' && (
@@ -479,6 +502,9 @@ export default function DataTable({ config, extra = [] }) {
             <div>
               <div className='flex justify-between mb-5'>
                 <div>
+                  <div className='mt-2 text-red-600 text-xs mb-2 font-thin'>
+                    {`Showing ${filteredDataSource.length} of ${totalCount} items`}
+                  </div>
                   <Input.Search className='w-64'
                     placeholder="Search"
                     onSearch={handleSearch}
@@ -500,42 +526,12 @@ export default function DataTable({ config, extra = [] }) {
         <Table
           columns={tableColumns}
           rowKey={(item) => item._id}
-          dataSource={dataSource
-            .filter((item) => {
-              // Apply filter conditions based on selected filters
-              return (
-                (!selectedFilters.institute_name || item.customfields.institute_name === selectedFilters.institute_name) &&
-                (!selectedFilters.university_name || item.customfields.university_name === selectedFilters.university_name) &&
-                (!selectedFilters.session || item.customfields.session === selectedFilters.session) &&
-                (!selectedFilters.counselor_email || item.customfields.counselor_email === selectedFilters.counselor_email) &&
-                (!selectedFilters.status || item.customfields.status === selectedFilters.status)
-              );
-            })
-            .filter((item) => {
-              // Apply search filter
-              if (!searchQuery) {
-                return true; // If no search query, include all items
-              }
-              const searchFields = ['lead_id', 'contact.phone', 'contact.email'];
-
-              return searchFields.some((field) => {
-                // Handle nested fields like 'contact.phone'
-                const fieldParts = field.split('.');
-                let fieldValue = item;
-
-                for (const part of fieldParts) {
-                  fieldValue = fieldValue[part];
-                }
-                return (
-                  fieldValue &&
-                  String(fieldValue).toLowerCase().includes(searchQuery.toLowerCase())
-                );
-              });
-            })}
-          pagination={pagination}
+          dataSource={filteredDataSource}
+          pagination={false}
           loading={listIsLoading}
           onChange={handelDataTableLoad}
         />
+
       </div>
     </>
   );
