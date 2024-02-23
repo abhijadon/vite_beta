@@ -29,7 +29,7 @@ export default function UpdateForm({ config, formElements, withUpload = false })
 
   const onSubmit = (fieldsValue) => {
     const id = current._id;
-
+    console.log('Received values:', fieldsValue);
     if (fieldsValue.file && withUpload) {
       fieldsValue.file = fieldsValue.file[0].originFileObj;
     }
@@ -94,7 +94,7 @@ export default function UpdateForm({ config, formElements, withUpload = false })
   return (
     <div style={show}>
       <Loading isLoading={isLoading}>
-        <Form form={form} layout="vertical" onFinish={onSubmit}>
+        <Form form={form} layout="vertical" onFinish={onSubmit} initialValues={{ user: { role: 'user' }, teamMembers: [{}] }}>
           {formElements}
           <Form.Item
             style={{

@@ -1,23 +1,31 @@
+import { Badge } from 'antd';
 import useLanguage from '@/locale/useLanguage';
 import AdminCrudModule from '@/modules/AdminCrudModule';
 import AdminForm from '@/forms/AdminForm';
+import RolesForm from '@/forms/AdminForm';
 
 export default function Admin() {
   const translate = useLanguage();
   const entity = 'admin';
   const searchConfig = {
-    displayLabels: ['name', 'surname'],
-    searchFields: 'email,name,surname',
-    outputValue: '_id',
+    displayLabels: ['fullname', 'username'],
+    searchFields: 'username',
+    outputValue: 'usename',
   };
 
-  const entityDisplayLabels = ['email'];
+  const entityDisplayLabels = ['username'];
 
   const readColumns = [
-    { title: translate('first name'), dataIndex: 'name' },
-    { title: translate('last name'), dataIndex: 'surname' },
-    { title: translate('Email'), dataIndex: 'email' },
+    { title: translate('full_name'), dataIndex: 'fullname' },
+    { title: translate('username'), dataIndex: 'username' },
     { title: translate('role'), dataIndex: 'role' },
+    {
+      title: translate('status'),
+      dataIndex: 'status',
+      render: (status) => (
+        <Badge color={status === 'online' ? 'green' : 'red'} text={translate(status)} />
+      ),
+    },
   ];
 
   const dataTableColumns = [
@@ -26,10 +34,16 @@ export default function Admin() {
       dataIndex: '',
       render: (text, record, index) => index + 1,
     },
-    { title: translate('first name'), dataIndex: 'name' },
-    { title: translate('last name'), dataIndex: 'surname' },
-    { title: translate('Email'), dataIndex: 'email' },
+    { title: translate('fullname'), dataIndex: 'fullname' },
+    { title: translate('username'), dataIndex: 'username' },
     { title: translate('role'), dataIndex: 'role' },
+    {
+      title: translate('status'),
+      dataIndex: 'status',
+      render: (status) => (
+        <Badge color={status === 'online' ? 'green' : 'red'} text={translate(status)} />
+      ),
+    },
   ];
 
   const Labels = {
@@ -53,10 +67,11 @@ export default function Admin() {
     searchConfig,
     entityDisplayLabels,
   };
+
   return (
     <AdminCrudModule
       createForm={<AdminForm />}
-      updateForm={<AdminForm isUpdateForm={true} />}
+      updateForm={<RolesForm isUpdateForm={true} />}
       config={config}
     />
   );

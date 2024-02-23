@@ -8,8 +8,8 @@ export default function LoginForm() {
   return (
     <>
       <Form.Item
-        label={translate('email')}
-        name="email"
+        label={translate('username')}
+        name="username"
         rules={[
           {
             required: true,

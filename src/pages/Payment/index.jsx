@@ -30,6 +30,10 @@ export default function Payment() {
       dataIndex: 'email',
     },
     {
+      title: translate('payment_mode'),
+      dataIndex: 'payment_mode',
+    },
+    {
       title: translate('phone number'),
       dataIndex: 'phone',
     },

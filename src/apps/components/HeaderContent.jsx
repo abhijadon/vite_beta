@@ -19,7 +19,7 @@ export default function HeaderContent() {
   const currentAdmin = useSelector(selectCurrentAdmin);
   const translate = useLanguage();
   const [hasPhotoprofile, setHasPhotoprofile] = useState(false);
-  const [notificationCount, setNotificationCount] = useState(0);
+  const [notification, setNotificationCount] = useState(0);
   const [darkMode, setDarkMode] = useState(false);
   const [activeKey, setActiveKey] = useState(null);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -66,13 +66,13 @@ export default function HeaderContent() {
           src={srcImgProfile}
           style={{ color: '#f56a00', backgroundColor: !hasPhotoprofile ? '#fde3cf' : '#f9fafc' }}
         >
-          {currentAdmin?.name.charAt(0).toUpperCase()}
+          {currentAdmin?.fullname && currentAdmin?.fullname.charAt(0).toUpperCase()}
         </Avatar>
         <div className="profileDropdownInfo">
-          <p>
-            {currentAdmin?.name} {currentAdmin?.surname}
+          <p className='capitalize font-thin text-sm text-blue-600'>
+            {currentAdmin?.fullname}
           </p>
-          <p>{currentAdmin?.email}</p>
+          <p className='font-mono text-[11px] text-sm text-red-600 font-thin'>{currentAdmin?.username}</p>
         </div>
       </div>
     );
@@ -153,7 +153,7 @@ export default function HeaderContent() {
           key={item.key}
           onClick={() => handleItemClick(item.key)}
           style={{ display: 'flex', alignItems: 'center' }}
-        ><div className='flex items-center gap-2.5'>
+        ><div className='flex items-center gap-2.5' onClick={toggleTheme}>
             {item.icon} <span>{item.label}</span>
           </div>
         </Menu.Item>
@@ -194,7 +194,7 @@ export default function HeaderContent() {
             }}
             size="large"
           >
-            {currentAdmin?.name.charAt(0).toUpperCase()}
+            {currentAdmin?.fullname && currentAdmin?.fullname.charAt(0).toUpperCase()}
           </Avatar>
         </Dropdown>
         <Notifications setNotificationCount={setNotificationCount} />

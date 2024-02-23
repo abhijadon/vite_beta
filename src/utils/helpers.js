@@ -39,12 +39,12 @@ export function has(obj, key) {
 /* 
  convert indexes to properties
 */
-export function valueByString(obj, string, devider) {
-  if (devider === undefined) {
-    devider = '|';
+export function valueByString(obj, string, divider) {
+  if (divider === undefined) {
+    divider = '|';
   }
   return string
-    .split(devider)
+    .split(divider)  // Fix the typo here
     .map(function (key) {
       return get(obj, key);
     })

@@ -12,6 +12,7 @@ import { updateProfile } from '@/redux/auth/actions';
 import { selectCurrentAdmin } from '@/redux/auth/selectors';
 
 import useLanguage from '@/locale/useLanguage';
+import Roleform from '@/forms/Roleform';
 
 const UpdateAdmin = ({ config }) => {
   const translate = useLanguage();
@@ -86,7 +87,8 @@ const UpdateAdmin = ({ config }) => {
             labelCol={{ span: 4 }}
             wrapperCol={{ span: 12 }}
           >
-            <AdminForm isUpdateForm={true} />
+            <AdminForm />
+            <Roleform isUpdateForm={true} />
           </Form>
         </Col>
       </Row>

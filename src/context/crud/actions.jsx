@@ -26,6 +26,14 @@ const contextActions = (dispatch) => {
         dispatch({ type: actionTypes.CLOSE_EDIT_BOX });
       },
     },
+    addBox: {
+      open: () => {
+        dispatch({ type: actionTypes.OPEN_ADD_BOX });
+      },
+      close: () => {
+        dispatch({ type: actionTypes.CLOSE_ADD_BOX });
+      },
+    },
     panel: {
       open: () => {
         dispatch({ type: actionTypes.OPEN_PANEL });

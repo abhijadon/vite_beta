@@ -14,7 +14,6 @@ import {
   SettingOutlined,
   FileTextOutlined,
   DashboardOutlined,
-  TeamOutlined,
   UserOutlined,
   CreditCardOutlined,
   MenuOutlined,
@@ -103,7 +102,7 @@ function Sidebar({ collapsible, onPathChange }) {
     {
       key: 'permissions',
       icon: <BsPersonCheck className='text-[18px]' />,
-      label: <Link to={'/permissions'}>{translate('permissions')}</Link>,
+      label: <Link to={'/permissions'}>{translate('Users_list')}</Link>,
     },
 
   ];
@@ -111,7 +110,7 @@ function Sidebar({ collapsible, onPathChange }) {
 
   const rolesSection = isAdmin
     ? {
-      label: 'Roles & Permissions',
+      label: 'Roles & Users',
       key: 'rolesSection',
       icon: <MdLockOpen />,
       children: rolesPermission,
@@ -145,11 +144,6 @@ function Sidebar({ collapsible, onPathChange }) {
           key: 'employee',
           icon: <UserOutlined />,
           label: <Link to={'/employee'}>{translate('employee')}</Link>,
-        },
-        {
-          key: 'admin',
-          icon: <TeamOutlined />,
-          label: <Link to={'/admin'}>{translate('admin')}</Link>,
         },
       ]
       : []),

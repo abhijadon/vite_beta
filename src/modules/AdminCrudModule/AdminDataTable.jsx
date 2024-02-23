@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { EyeOutlined } from '@ant-design/icons';
 import DataTable from '@/components/DataTable/DataTable';
 

@@ -2,7 +2,7 @@ import { DatePicker, Form, Input, Select } from 'antd';
 import useLanguage from '@/locale/useLanguage';
 
 const { TextArea } = Input;
-export default function LeadForm() {
+export default function EditForm() {
     const translate = useLanguage();
 
     return (
@@ -62,22 +62,22 @@ export default function LeadForm() {
                     <Select
                         showSearch
                         placeholder='select session' options={[
-                            { value: 'JAN_20', label: 'JAN_20' },
-                            { value: 'JULY_20', label: 'JULY_20' },
-                            { value: 'JAN_21', label: 'JAN_21' },
-                            { value: 'JULY_21', label: 'JULY_21' },
-                            { value: 'JAN_22', label: 'JAN_22' },
-                            { value: 'JULY_22', label: 'JULY_22' },
-                            { value: 'JAN_23', label: 'JAN_23' },
-                            { value: 'JULY_23', label: 'JULY_23' },
-                            { value: 'JAN_24', label: 'JAN_24' },
-                            { value: 'JULY_24', label: 'JULY_24' },
-                            { value: 'JAN_25', label: 'JAN_25' },
-                            { value: 'JULY_25', label: 'JULY_25' },
-                            { value: 'MAR_23', label: 'MAR_23' },
-                            { value: 'APR_23', label: 'APR_23' },
-                            { value: 'OCT_23', label: 'OCT_23' },
-                            { value: 'NOV_23', label: 'NOV_23' },
+                            { value: 'JAN 20', label: 'JAN 20' },
+                            { value: 'JULY 20', label: 'JULY 20' },
+                            { value: 'JAN 21', label: 'JAN 21' },
+                            { value: 'JULY 21', label: 'JULY 21' },
+                            { value: 'JAN 22', label: 'JAN 22' },
+                            { value: 'JULY 22', label: 'JULY 22' },
+                            { value: 'JAN 23', label: 'JAN 23' },
+                            { value: 'JULY 23', label: 'JULY 23' },
+                            { value: 'JAN 24', label: 'JAN 24' },
+                            { value: 'JULY 24', label: 'JULY 24' },
+                            { value: 'JAN 25', label: 'JAN 25' },
+                            { value: 'JULY 25', label: 'JULY 25' },
+                            { value: 'MAR 23', label: 'MAR 23' },
+                            { value: 'APR 23', label: 'APR 23' },
+                            { value: 'OCT 23', label: 'OCT 23' },
+                            { value: 'NOV 23', label: 'NOV 23' },
                         ]}>
 
                     </Select>
@@ -99,14 +99,42 @@ export default function LeadForm() {
                     label={translate('Institute name')}
                     name={['customfields', 'institute_name']}
                 >
-                    <Input />
+                    <Select
+                        showSearch
+                        optionFilterProp='children'
+                        options={[
+                            { value: 'HES', label: 'HES' },
+                            { value: 'DES', label: 'DES' },
+                        ]}
+                    ></Select>
                 </Form.Item>
 
                 <Form.Item
                     label={translate('university name')}
                     name={['customfields', 'university_name']}
                 >
-                    <Input />
+                    <Select
+                        showSearch
+                        optionFilterProp='children'
+                        options={[
+                            { value: 'SGVU', label: 'SGVU' },
+                            { value: 'CU', label: 'CU' },
+                            { value: 'SPU', label: 'SPU' },
+                            { value: 'LPU', label: 'LPU' },
+                            { value: 'DPU', label: 'DPU' },
+                            { value: 'JAIN', label: 'JAIN' },
+                            { value: 'SVSU', label: 'SVSU' },
+                            { value: 'VIGNAN', label: 'VIGNAN' },
+                            { value: 'MANIPAL', label: 'MANIPAL' },
+                            { value: 'SMU', label: 'SMU' },
+                            { value: 'HU', label: 'HU' },
+                            { value: 'BOSSSE', label: 'BOSSSE' },
+                            { value: 'UU', label: 'UU' },
+                            { value: 'UPES', label: 'UPES' },
+                            { value: 'MANGALAYATAN', label: 'MANGALAYATAN' },
+                            { value: 'MANGALAYATAN ONLINE', label: 'MANGALAYATAN ONLINE' },
+                        ]}
+                    ></Select>
                 </Form.Item>
 
                 <Form.Item
@@ -139,6 +167,7 @@ export default function LeadForm() {
                             { value: 'rupal@sode.co.in', label: 'Rupal Gautam' },
                             { value: 'deva@sode.co.in', label: 'Devendra' },
                             { value: 'manshi@sode.co.in', label: 'Manshi Kem' },
+                            { value: 'medha@distanceeducationschool.com', label: 'Medha' },
 
                             // DES - INTERNATIONAL email with name 
                             { value: 'zarin@distanceeducationschool.com', label: 'Zarin Badar' },
@@ -161,7 +190,7 @@ export default function LeadForm() {
                             { value: 'vani@sode.co.in', label: 'Vani Ruckmani' },
 
                             // Manipal team email with name 
-                            { value: 'SwatiRamani.manipal@gmail.com', label: 'Swati Ramani' },
+                            { value: 'swatiramani.manipal@gmail.com', label: 'Swati Ramani' },
                             { value: 'ankitakumar@sode.co.in', label: 'Ankita Kumari' },
                             { value: 'nidhi@sode.co.in', label: 'Nidhi' },
                             { value: 'amreen@sode.co.in', label: 'Amreen ALI Khan' },
@@ -270,9 +299,9 @@ export default function LeadForm() {
                     <Select
                         showSearch
                         options={[
-                            { value: 'semester', label: translate('semester') },
-                            { value: 'yearly', label: 'yearly' },
-                            { value: 'fullfees', label: 'fullfees' },
+                            { value: 'Semester', label: translate('semester') },
+                            { value: 'Yearly', label: translate('Yearly') },
+                            { value: 'Fullfees', label: translate('Fullfees') },
                         ]}
                     ></Select>
                 </Form.Item>

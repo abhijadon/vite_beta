@@ -7,6 +7,7 @@ export const initialState = {
   isReadBoxOpen: false,
   isAdvancedBoxOpen: false,
   isEditBoxOpen: false,
+  isAddBoxOpen: false,
 };
 
 export function contextReducer(state, action) {
@@ -57,6 +58,7 @@ export function contextReducer(state, action) {
         ...state,
         isAdvancedBoxOpen: false,
         isEditBoxOpen: false,
+        isAddBoxOpen: false,
         isReadBoxOpen: true,
       };
     case actionTypes.CLOSE_READ_BOX:
@@ -69,6 +71,7 @@ export function contextReducer(state, action) {
         ...state,
         isReadBoxOpen: false,
         isEditBoxOpen: false,
+        isAddBoxOpen: false,
         isAdvancedBoxOpen: true,
       };
     case actionTypes.CLOSE_ADVANCED_BOX:
@@ -82,11 +85,25 @@ export function contextReducer(state, action) {
         isReadBoxOpen: false,
         isAdvancedBoxOpen: false,
         isEditBoxOpen: true,
+        isAddBoxOpen: false,
+      };
+    case actionTypes.OPEN_ADD_BOX:
+      return {
+        ...state,
+        isReadBoxOpen: false,
+        isAdvancedBoxOpen: false,
+        isEditBoxOpen: false,
+        isAddBoxOpen: true,
       };
     case actionTypes.CLOSE_EDIT_BOX:
       return {
         ...state,
         isEditBoxOpen: false,
+      };
+    case actionTypes.CLOSE_ADD_BOX:
+      return {
+        ...state,
+        isAddBoxOpen: false,
       };
     case actionTypes.COLLAPSE_READ_BOX:
       return {

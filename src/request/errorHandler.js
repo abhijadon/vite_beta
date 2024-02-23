@@ -1,4 +1,5 @@
 import { notification } from 'antd';
+import { Navigate } from 'react-router-dom';
 
 import codeMessage from './codeMessage';
 
@@ -17,9 +18,9 @@ const errorHandler = (error) => {
       message: `Request error ${status}`,
       description: errorText,
     });
-    // if (response.data && response.data.jwtExpired) {
-    //   navigate('/logout');
-    // }
+   if (response.data && response.data.jwtExpired) {
+    Navigate('/logout');
+     }
     return response.data;
   } else {
     notification.config({

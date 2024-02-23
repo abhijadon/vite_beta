@@ -29,3 +29,11 @@
   background-color: #e2e8f0;
   border-radius: 20px;
 }
+
+.truncate-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100px; /* Set your desired max-width */
+  cursor: pointer;
+}

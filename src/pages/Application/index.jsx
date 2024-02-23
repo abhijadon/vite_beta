@@ -1,10 +1,12 @@
 // import { DownloadOutlined, LeftOutlined, RightOutlined, PrinterOutlined } from '@ant-design/icons';
-import { Tag, Space } from 'antd';
+import { Tag, Space, Tooltip } from 'antd';
 import dayjs from 'dayjs'; // Import dayjs if not already imported
 import CrudModule from '@/modules/CrudModule/CrudModule';
 import LeadForm from '@/forms/LeadForm';
 import useLanguage from '@/locale/useLanguage';
+import '@/style/tailwind.css'
 import EditForm from '../../forms/EdtiForm';
+import AddForm from '../../forms/AddPayment';
 export default function Lead() {
   const translate = useLanguage();
   const entity = 'lead';
@@ -14,77 +16,78 @@ export default function Lead() {
     outputValue: '_id',
   };
   const counselorEmailToName = {
-    // HES Team email 
-    'zarin@highereducationschool.com': 'Zarin_HES',
-    'kanchan@highereducationschool.com': 'Kanchan_HES',
-    'kirti@highereducationschool.com': 'Kirti_HES',
-    'ramandeep@highereducationschool.com': 'Raman_HES',
-    'kavita@highereducationschool.com': 'Kavita_HES',
-    'imra@highereducationschool.com': 'Imra_HES',
-    'mahak@highereducationschool.com': 'Mahek-HES',
-    'abhay@highereducationschool.com': 'Abhay_HES',
-    'swati@highereducationschool.com': 'Swati_HES',
-    'gulshan@highereducationschool.com': 'Gulshan_HES',
-    'isha@highereducationschool.com': 'Isha_HES',
-    'sakshi@highereducationschool.com': 'Sakshi_HES',
-    'aashita@highereducationschool.com': 'Ashita_HES',
-    'pratibha@highereducationschool.com': 'Pratibha_HES',
-    'shreyashi@highereducationschool.com': 'Shreyashi_HES',
+    'apoorvasrivastava@sode.co.in': 'Apoorva Srivastava',
+    'nehaprashar@sode.co.in': 'Neha Prasher',
+    'priya@sode.co.in': 'Priya Anand',
+    'diksha@sode.co.in': 'Diksha Singh',
+    'abhilasha@sode.co.in': 'Abhilasha Gupta',
+    'saher@sode.co.in': 'Saher Khan',
 
-    // DES Team Email 
-    'apoorvasrivastava@distanceeducationschool.com': 'Apoorva_DES',
-    'asma@distanceeducationschool.com': 'Asma_DES',
-    'nehaprashar@distanceeducationschool.com': 'Neha_Prasher_DES',
-    'priya@distanceeducationschool.com': 'Priya_DES',
-    'diksha@distanceeducationschool.com': 'Diksha_DES',
-    'abhilasha@distanceeducationschool.com': 'Abhilasha_Gupta_DES',
-    'saher@distanceeducationschool.com': 'Saher_Khan_DES',
-    'fiza@distanceeducationschool.com': 'Fiza_DES',
-    'muskan@distanceeducationschool.com': 'Muskaan_DES',
-    'aniruddh@distanceeducationschool.com': 'Aniruddh_DES',
-    'deva@distanceeducationschool.com': 'Devendra_DES',
-    'amritpal@distanceeducationschool.com': 'Amritpal_DES',
-    'Salman@distanceeducationschool.com:': 'Salman_DES',
-    'tariq@distanceeducationschool.com': 'Traiq_DES',
-    'shivam@distanceeducationschool.com': 'Shivam_sharma_DES',
-    'pushpa@distanceeducationschool.com': 'Puspa_DES',
-    'zarin@distanceeducationschool.com': 'Zarin_DES',
-    'kanchan@distanceeducationschool.com': 'Kanchan_DES',
-    'manu@distanceeducationschool.com': 'Manu_DES',
+    // DES Internal email with name 
+    'muskan@distanceeducationschool.com': 'Muskaan ',
+    'aniruddh@distanceeducationschool.com': 'Aniruddh Prakash',
+    'amritpal@sode.co.in': 'Amritpal Singh',
+    'salman@sode.co.in': 'Salman',
+    'tariq@sode.co.in': 'Tariq Hasan',
+    'shivam@sode.co.in': 'Shivam sharma',
+    'pushpa@sode.co.in': 'Pushpa Pramanik',
+    'medha@distanceeducationschool.com': 'Medha',
+    // DES Internal email with name 
+    'anurag@distanceeducationschool.com': 'Anurag Yadav',
+    'kavitakumari@sode.co.in': 'Kavita Kumari',
+    'rupal@sode.co.in': 'Rupal Gautam',
+    'deva@sode.co.in': 'Devendra',
+    'manshi@sode.co.in': 'Manshi Kem',
 
-    // Jain Team Emails
-    'a.anitha.ju@gmail.com': 'Anita_JU',
-    'vaniruckmani.ju@gmail.com': 'Vani_Ruckmani_JU',
-    'priyankapalle.ju@gmail.com': 'Priyanka_JU',
-    'SwatiRamani.manipal@gmail.com': 'Swati_JU',
+    // DES - INTERNATIONAL email with name 
+    'zarin@distanceeducationschool.com': 'Zarin Badar',
 
-    // Manipal Team Email
-    'ankitakumari.manipal@gmail.com': 'Ankita_MU',
-    'medhahandoo.manipal@gmail.com': 'Medha_MU',
-    'amreen.manipal@gmail.com': 'Amreen_MU',
+    // HES team email with name 
+    'kanchan@highereducationschool.com': 'Kanchan Sharma',
+    'kirti@highereducationschool.com': 'Kirti Dubey',
+    'ramandeep@highereducationschool.com': 'Ramandeep Kaur',
+    'kavita@highereducationschool.com': 'Kavita Yadav',
+    'imra@highereducationschool.com': 'Imra Khan',
+    'mahak@highereducationschool.com': 'Mahek',
+    'abhay@highereducationschool.com': 'Abhay Dubey',
+    'swati@highereducationschool.com': 'Swati',
+    'gulshan@highereducationschool.com': 'Gulshan Nayyar',
+    'isha@highereducationschool.com': 'Isha Jaiswal',
+    'sakshi@highereducationschool.com': 'Sakshi Arora',
 
-    // Support Team Email
-    'rajesh@distanceeducationschool.com': 'Rajesh_sir',
-    'manisha@distanceeducationschool.com': 'Manisha',
-    'admin@distanceeducationschool.com': 'Nouman_sir',
+    // Jain team email with name 
+    'anitha@sode.co.in': 'A.Anitha',
+    'vani@sode.co.in': 'Vani Ruckmani',
+
+    // Manipal team email with name
+    'swatiramani.manipal@gmail.com': 'Swati Ramani',
+    'ankitakumar@sode.co.in': 'Ankita Kumari',
+    'nidhi@sode.co.in': 'Nidhi',
+    'amreen@sode.co.in': 'Amreen ALI Khan',
+    'umar@sode.co.in': 'MD Umar',
+    'nehagupta@sode.co.in': 'Neha Gupta',
+    'pawankumar@sode.co.in': 'Pawan Kumar',
+    'bhavya@sode.co.in': 'Bhavya',
+
+    // ALL DES && HES team email with name 
+    'rajesh@distanceeducationschool.com': 'Rajesh Sir',
+    'manisha@distanceeducationschool.com': 'Manisha Yadav',
+    'admin@distanceeducationschool.com': 'Nouman Sir',
     'sandy@distanceeducationschool.com': 'Sandy',
-    'neha@distanceeducationschool.com': 'Neha',
-    'yashpriya@distanceeducationschool.com': 'Yash_Priya',
-    'kavitahaldar@distanceeducationschool.com': 'kavitahaldar',
+    'neha@distanceeducationschool.com': 'Neha Raj',
+    'yashpriya@distanceeducationschool.com': 'Yash Priya',
+    'kavitahaldar@distanceeducationschool.com': 'Kavita Haldar',
     'ifla@distanceeducationschool.com': 'Ifla',
     'shalu@distanceeducationschool.com': 'Shalu',
-    'zainubia@distanceeducationschool.com': 'zainbuia',
+    'zainubia@distanceeducationschool.com': 'Zainbuia',
     'pallovi@distanceeducationschool.com': 'Pallovi',
-    'kavitakumari@distanceeducationschool.com': 'Kavita_Kumari',
-    'manshi@distanceeducationschool.com': 'Mansi',
-    'Bhavya.manipal@gmail.com': 'Bhavya',
-    'anurag@distanceeducationschool.com': 'Anuraj',
-    'rupal@distanceeducationschool.com': 'Rupal',
-    //B2B Team Email
-    'spuhelpdesk@gmail.com': 'BINNY',
+    'hansi@distanceeducationschool.com': 'Hansi',
+    'shristi@distanceeducationschool.com': 'Shristi',
+    'aashita@highereducationschool.com': 'Aashita',
+    'pratibha@highereducationschool.com': 'Pratibha',
+    'shreyashi@highereducationschool.com': 'Shreyashi',
+    'spuhelpdesk@gmail.com': 'Binny',
     'ruchika.spu@gmail.com': 'Ruchika',
-    'lalit@distanceeducationschool.com': 'Lalit_DES',
-    'lalit.spu@gmail.com': 'Lalit',
     'ramiz.spu@gmail.com': 'Ramiz'
   };
   const toTitleCase = (str) => {
@@ -385,6 +388,9 @@ export default function Lead() {
       title: 'Remark',
       dataIndex: ['customfields', 'remark'],
       key: 'remark',
+      render: text => <Tooltip title={text}>
+         <div className="truncate-text">{text}</div>
+      </Tooltip>,
     },
     {
       title: translate('Created'),
@@ -418,9 +424,9 @@ export default function Lead() {
   };
   return (
     <>
-
       <CrudModule
         createForm={<LeadForm />}
+        addForm={<AddForm isUpdateForm={true} />}
         updateForm={<EditForm isUpdateForm={true} />}
         config={config}
       />

@@ -22,10 +22,12 @@ export default function DashboardModule() {
   const [universities, setUniversities] = useState([]);
   const [counselors, setCounselors] = useState([]);
   const [paymentType, setpaymentType] = useState([]);
+  const [paymentMode, setpaymentMode] = useState([]);
   const [selectedInstitute, setSelectedInstitute] = useState('');
   const [selectedUniversity, setSelectedUniversity] = useState('');
   const [selectedCounselor, setSelectedCounselor] = useState('');
   const [selectedPayment, setSelectedPayment] = useState('');
+  const [selectedpaymentMode, setSelectedpaymentMode] = useState('');
   const [selectedDate, setSelectedDate] = useState('');
   const [filteredPaymentData, setFilteredPaymentData] = useState({});
   const [universityExistenceMessage, setUniversityExistenceMessage] = useState('');
@@ -56,6 +58,11 @@ export default function DashboardModule() {
     setSelectedPayment(value);
   };
 
+  const handlePaymentModeChange = (value) => {
+    setSelectedpaymentMode(value);
+  };
+
+
   const handleDateChange = (e) => {
     setSelectedDate(e.target.value);
   };
@@ -65,6 +72,7 @@ export default function DashboardModule() {
     setSelectedUniversity('');
     setSelectedCounselor('');
     setSelectedPayment('');
+    setSelectedpaymentMode('');
     setSelectedDate('');
     setFilteredPaymentData({});
     setUniversityExistenceMessage('');
@@ -79,11 +87,13 @@ export default function DashboardModule() {
         const uniqueUniversities = Array.isArray(data.result) ? [...new Set(data.result.map((item) => item.university_name))] : [];
         const uniqueCounselors = Array.isArray(data.result) ? [...new Set(data.result.map((item) => item.counselor_email))] : [];
         const uniquePayment = Array.isArray(data.result) ? [...new Set(data.result.map((item) => item.payment_type))] : [];
+        const uniquePaymentMode = Array.isArray(data.result) ? [...new Set(data.result.map((item) => item.payment_mode))] : [];
 
         setInstitutes(uniqueInstitutes);
         setUniversities(uniqueUniversities);
         setCounselors(uniqueCounselors);
         setpaymentType(uniquePayment);
+        setpaymentMode(uniquePaymentMode);
       }
     } catch (error) {
       console.error('Error fetching data:', error);
@@ -96,10 +106,10 @@ export default function DashboardModule() {
 
   useEffect(() => {
     const fetchData = async () => {
-      if (selectedInstitute || selectedUniversity || selectedCounselor || selectedDate || selectedPayment) {
+      if (selectedInstitute || selectedUniversity || selectedCounselor || selectedDate || selectedPayment || selectedpaymentMode) {
         try {
           const response = await fetch(
-            `${import.meta.env.VITE_BACKEND_SERVER}api/payment/summary?institute_name=${selectedInstitute}&university_name=${selectedUniversity}&counselor_email=${selectedCounselor}&date=${selectedDate}&payment_type=${selectedPayment}`
+            `${import.meta.env.VITE_BACKEND_SERVER}api/payment/summary?institute_name=${selectedInstitute}&university_name=${selectedUniversity}&counselor_email=${selectedCounselor}&date=${selectedDate}&payment_type=${selectedPayment}&payment_mode=${selectedpaymentMode}`
           );
           const data = await response.json();
           if (data.success && data.result !== null) {
@@ -117,6 +127,9 @@ export default function DashboardModule() {
             }
             else if (selectedPayment) {
               successMessage = `Data fetched successfully for the specified date: ${selectedPayment}.`;
+            }
+            else if (selectedpaymentMode) {
+              successMessage = `Data fetched successfully for the specified date: ${selectedpaymentMode}.`;
             }
             message.success(successMessage);
           } else {
@@ -138,6 +151,9 @@ export default function DashboardModule() {
             else if (selectedPayment) {
               errorMessage = `No data found for the specified filters and date: ${selectedPayment}.`;
             }
+            else if (selectedpaymentMode) {
+              errorMessage = `No data found for the specified filters and date: ${selectedpaymentMode}.`;
+            }
             message.error(errorMessage);
           }
         } catch (error) {
@@ -153,7 +169,7 @@ export default function DashboardModule() {
       return parts[0];
     };
     fetchData();
-  }, [selectedInstitute, selectedUniversity, selectedCounselor, selectedDate, selectedPayment]);
+  }, [selectedInstitute, selectedUniversity, selectedCounselor, selectedDate, selectedPayment, selectedpaymentMode]);
 
   const { result: invoiceResult, isLoading: invoiceLoading } = useFetch(() =>
     request.summary({ entity: 'invoice' })
@@ -322,6 +338,17 @@ export default function DashboardModule() {
             </Select.Option>
           ))}
         </Select>
+        <Select className='w-72 h-10'
+          value={selectedpaymentMode}
+          onChange={handlePaymentModeChange}
+        >
+          <Select.Option value=''>Select Payment Mode</Select.Option>
+          {paymentMode.map((mode) => (
+            <Select.Option key={mode} value={mode}>
+              {mode}
+            </Select.Option>
+          ))}
+        </Select>
         <Input className='text-sm font-thin h-10'
           type='date'
           onChange={handleDateChange}
@@ -470,18 +497,12 @@ export default function DashboardModule() {
       <Row gutter={[32, 32]}>
         <Col className="gutter-row w-full" sm={{ span: 24 }} lg={{ span: 12 }}>
           <div>
-            <h3 className='text-center mb-4 font-thin text-lg border-b-2'>
-              {translate('Recent Data')}
-            </h3>
             <RecentTable entity={'invoice'} dataTableColumns={dataTableColumns} />
           </div>
         </Col>
 
-        <Col className="gutter-row w-full" sm={{ span: 24 }} lg={{ span: 12 }}>
-          <div className="whiteBox shadow pad20" style={{ height: '100%' }}>
-            <h3 style={{ color: '#22075e', marginBottom: 5, padding: '0 20px 20px' }}>
-              {translate('Recent Quotes')}
-            </h3>
+        <Col sm={{ span: 24 }} lg={{ span: 12 }}>
+          <div className="whiteBox shadow-md rounded-xl pad20" style={{ height: '100%' }}>
             <DataYear entity={'payment'} dataTableColumns={dataTableColumns} />
           </div>
         </Col>

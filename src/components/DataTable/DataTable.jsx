@@ -4,6 +4,7 @@ import { Dropdown, Table, Button, Select, Input, Modal, Radio } from 'antd';
 import { PageHeader } from '@ant-design/pro-layout';
 import { useSelector, useDispatch } from 'react-redux';
 import { crud } from '@/redux/crud/actions';
+import { LiaRupeeSignSolid } from "react-icons/lia";
 import { GrPowerReset } from "react-icons/gr";
 import { selectListItems } from '@/redux/crud/selectors';
 import useLanguage from '@/locale/useLanguage';
@@ -12,6 +13,7 @@ import { AiOutlineExport } from "react-icons/ai";
 import { useCrudContext } from '@/context/crud';
 import ExcelJS from 'exceljs';
 import '@/style/tailwind.css'
+import AutoCompleteAsync from '../AutoCompleteAsync';
 const { Option } = Select;
 
 function AddNewItem({ config }) {
@@ -30,12 +32,10 @@ function AddNewItem({ config }) {
     </Button>
   );
 }
-export default function DataTable({ config, extra = [] }) {
-
-
+export default function DataTable({ config, extra = [], setActiveForm }) {
   let { entity, dataTableColumns } = config;
   const { crudContextAction } = useCrudContext();
-  const { panel, collapsedBox, modal, readBox, editBox, advancedBox } = crudContextAction;
+  const { panel, collapsedBox, modal, readBox, editBox, addBox, advancedBox } = crudContextAction;
   const translate = useLanguage();
   const [downloadCount, setDownloadCount] = useState(0); // Start with 0 to indicate dynamic count
   const [exportFormat, setExportFormat] = useState('xlsx'); // Default export format is XLSX
@@ -119,6 +119,11 @@ export default function DataTable({ config, extra = [] }) {
       key: 'edit',
       icon: <EditOutlined />,
     },
+    {
+      label: translate('Add_payment'),
+      key: 'add',
+      icon: <LiaRupeeSignSolid className='text-base' />,
+    },
     ...extra,
     {
       type: 'divider',
@@ -137,13 +142,25 @@ export default function DataTable({ config, extra = [] }) {
     collapsedBox.open();
     readBox.open();
   };
+
   function handleEdit(record) {
     dispatch(crud.currentItem({ data: record }));
     dispatch(crud.currentAction({ actionType: 'update', data: record }));
-    editBox.open();
+    editBox.open(); // Open the edit form
     panel.open();
     collapsedBox.open();
+    setActiveForm('updateForm');
   }
+
+  function handleAddpayment(record) {
+    dispatch(crud.currentItem({ data: record }));
+    dispatch(crud.currentAction({ actionType: 'update', data: record }));
+    addBox.open(); // Open the add payment form
+    panel.open();
+    collapsedBox.open();
+    setActiveForm('addForm');
+  }
+
   function handleDelete(record) {
     dispatch(crud.currentAction({ actionType: 'delete', data: record }));
     modal.open();
@@ -175,7 +192,9 @@ export default function DataTable({ config, extra = [] }) {
                 case 'edit':
                   handleEdit(record);
                   break;
-
+                case 'add':
+                  handleAddpayment(record);
+                  break;
                 case 'delete':
                   handleDelete(record);
                   break;
@@ -472,6 +491,12 @@ export default function DataTable({ config, extra = [] }) {
             <Button onClick={resetAllFilters} className='text-xs gap-2 bg-transparent text-gray-500 hover:text-blue-500 font-thin cursor-pointer flex items-center' title='Reset All' >
               <GrPowerReset /> Reset
             </Button>
+            <AutoCompleteAsync
+              entity={'lead'}
+              displayLabels={['company']}
+              searchFields={'company'}
+            // onUpdateValue={autoCompleteUpdate}
+            />
           </div>
           {/* Other filters... */}
         </div >
@@ -517,10 +542,41 @@ export default function DataTable({ config, extra = [] }) {
                   </Button>
                   <AddNewItem key="addNewItem" config={config} />
                 </div>
-
               </div >
             </div>
           )}
+          {/* amdin entity show this button for add users  */}
+          {entity === 'admin' && (
+            <div>
+              <div className='flex justify-between items-center mb-5'>
+                <AutoCompleteAsync
+                  entity={'admin'}
+                  displayLabels={['admin']}
+                  searchFields={'username'}
+                // onUpdateValue={autoCompleteUpdate}
+                />
+                <div className='space-x-2 flex items-center'>
+                  <AddNewItem key="addNewItem" config={config} />
+                </div>
+              </div >
+            </div>
+          )}
+          {entity === 'teams' && (
+            <div>
+              <div className='flex justify-between items-center mb-5'>
+                <AutoCompleteAsync
+                  entity={'teams'}
+                  displayLabels={['teams']}
+                  searchFields={'username'}
+                // onUpdateValue={autoCompleteUpdate}
+                />
+                <div className='space-x-2 flex items-center'>
+                  <AddNewItem key="addNewItem" config={config} />
+                </div>
+              </div >
+            </div>
+          )}
+          {/* amdin entity show this button for add users  */}
         </div>
         {/* Table component */}
         <Table

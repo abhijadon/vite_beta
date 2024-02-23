@@ -275,7 +275,9 @@ export default function DataTable({ config, extra = [] }) {
   const calculatePercentage = (currentAmount, targetAmount) => {
     return (currentAmount / targetAmount) * 100;
   };
-  const percentage1 = paymentSummary && paymentSummary.result && paymentSummary.result.total_course_fee ? calculatePercentage(paymentSummary.result.total_course_fee, 3000000) : 0;
+  const percentage1 = paymentSummary && paymentSummary.result && paymentSummary.result.total_course_fee !== undefined
+    ? calculatePercentage(paymentSummary.result.total_course_fee, 3000000)
+    : 0;
   const percentage2 = paymentSummary && paymentSummary.result && paymentSummary.result.total_paid_amount ? calculatePercentage(paymentSummary.result.total_paid_amount, 2000000) : 0;
   const percentage3 = paymentSummary && paymentSummary.result && paymentSummary.result.due_amount ? calculatePercentage(paymentSummary.result.due_amount, 1000000) : 0;
 
@@ -393,7 +395,8 @@ export default function DataTable({ config, extra = [] }) {
                     <CardContent orientation="horizontal">
                       <CardContent>
                         <Typography className="text-gray-500">Total Course Fee</Typography>
-                        <Typography level="h3" className="text-green-500">₹ {paymentSummary.result.total_course_fee}</Typography>
+                        <Typography level="h3" className="text-green-500">₹ {paymentSummary?.result?.total_course_fee}</Typography>
+
                       </CardContent>
                     </CardContent>
                   </div>
@@ -428,7 +431,7 @@ export default function DataTable({ config, extra = [] }) {
                     <CardContent orientation="horizontal">
                       <CardContent>
                         <Typography className="text-gray-500 ">Total Paid Amount</Typography>
-                        <Typography level="h3" className="text-blue-500">₹ {paymentSummary.result.total_paid_amount}</Typography>
+                        <Typography level="h3" className="text-blue-500">₹ {paymentSummary?.result?.total_paid_amount}</Typography>
                       </CardContent>
                     </CardContent>
                   </div>
@@ -464,7 +467,7 @@ export default function DataTable({ config, extra = [] }) {
                     <CardContent orientation="horizontal">
                       <CardContent>
                         <Typography className="text-gray-500 ">Due Amount</Typography>
-                        <Typography level="h3" className="text-red-500">₹ {paymentSummary.result.due_amount}</Typography>
+                        <Typography level="h3" className="text-red-500">₹ {paymentSummary?.result?.due_amount}</Typography>
                       </CardContent>
                     </CardContent>
                   </div>

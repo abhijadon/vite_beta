@@ -33,18 +33,18 @@ function SidePanelTopContent({ config, formElements }) {
   const translate = useLanguage();
   const { crudContextAction, state } = useCrudContext();
   const { entityDisplayLabels } = config;
-  const { panel, advancedBox, modal, readBox, editBox } = crudContextAction;
+  const { advancedBox, modal, editBox, addBox } = crudContextAction;
 
-  const { isReadBoxOpen, isEditBoxOpen, isAdvancedBoxOpen } = state;
+  const { isReadBoxOpen, isEditBoxOpen, isAddBoxOpen, isAdvancedBoxOpen } = state;
   const { result: currentItem } = useSelector(selectCurrentItem);
   const dispatch = useDispatch();
-
   const [labels, setLabels] = useState('');
+
   useEffect(() => {
     if (currentItem) {
       const currentlabels = entityDisplayLabels.map((x) => currentItem[x]).join(' ');
 
-      setLabels(currentlabels);
+      setLabels(currentlabels); // Update the state using setLabels
     }
   }, [currentItem]);
 
@@ -56,13 +56,17 @@ function SidePanelTopContent({ config, formElements }) {
     dispatch(crud.currentAction({ actionType: 'update', data: currentItem }));
     editBox.open();
   };
+  const addItem = () => {
+    dispatch(crud.currentAction({ actionType: 'update', data: currentItem }));
+    addBox.open();
+  };
   const updatePassword = () => {
     dispatch(crud.currentAction({ actionType: 'update', data: currentItem }));
     advancedBox.open();
   };
 
   const show =
-    isReadBoxOpen || isEditBoxOpen || isAdvancedBoxOpen ? { opacity: 1 } : { opacity: 0 };
+    isReadBoxOpen || isEditBoxOpen || isAddBoxOpen || isAdvancedBoxOpen ? { opacity: 1 } : { opacity: 0 };
   return (
     <>
       <Row style={show}>
@@ -91,6 +95,15 @@ function SidePanelTopContent({ config, formElements }) {
             style={{ float: 'left', marginRight: '5px' }}
           >
             {translate('edit')}
+          </Button>
+          <Button
+            onClick={addItem}
+            type="text"
+            icon={<EditOutlined />}
+            size="small"
+            style={{ float: 'left', marginRight: '5px' }}
+          >
+            {translate('add_payment')}
           </Button>
           <Button
             onClick={updatePassword}

@@ -1,15 +1,12 @@
-import React from 'react';
 import { Form, Input } from 'antd';
 import { UserOutlined, LockOutlined, MailOutlined } from '@ant-design/icons';
 
-import useLanguage from '@/locale/useLanguage';
 
 export default function RegisterForm() {
-  const translate = useLanguage();
   return (
     <>
       <Form.Item
-        name="name"
+        name="full_name"
         rules={[
           {
             required: true,
@@ -23,7 +20,7 @@ export default function RegisterForm() {
         />
       </Form.Item>
       <Form.Item
-        name="email"
+        name="username"
         rules={[
           {
             required: true,
