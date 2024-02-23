@@ -65,7 +65,7 @@ export default function Roleform({ isUpdateForm = false }) {
                     <div>
                         <label htmlFor="fullname" className='font-thin font-mono text-base capitalize'>Fullname</label><span className='text-red-500'>*</span>
                         <Form.Item
-                            name={['user', 'fullname']}
+                            name="user"
                             rules={[
                                 {
                                     required: true,
@@ -79,14 +79,11 @@ export default function Roleform({ isUpdateForm = false }) {
                     <div>
                         <label htmlFor="username" className='font-thin font-mono text-base capitalize'>username</label><span className='text-red-500'>*</span>
                         <Form.Item
-                            name={['user', 'username']}
+                            name="teamName"
                             rules={[
                                 {
                                     required: true,
                                 },
-                                {
-                                    type: 'email'
-                                }
                             ]}
                         >
                             <Input autoComplete="off" placeholder='Enter your email' />

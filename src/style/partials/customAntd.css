@@ -133,7 +133,7 @@
 :where(.css-dev-only-do-not-override-2i2tap).ant-col-xl-24.ant-form-item-label {
   margin-top: 20px;
 }
-.ant-table-thead > tr > th {
+/* .ant-table-thead > tr > th {
   font-weight: 700;
   background-color: #efefef !important;
 }
@@ -153,7 +153,7 @@
   scrollbar-width: thin;
   scroll-behavior: smooth;
   border-radius: 999px;
-}
+} */
 
 
 .ant-typography strong {

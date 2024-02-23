@@ -1,7 +1,7 @@
-{/* scrool behavoiur header */}
+/* Scroll behavior for the header */
 .scrolled {
   padding: 30px !important;
-   margin-bottom: -16px;
+  margin-bottom: -16px;
   background-color: #ffffff;
   border-top-right-radius: 0px !important;
   background-clip: padding-box;
@@ -10,11 +10,11 @@
   outline: none;
   box-shadow: 0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 9px 28px 8px rgba(0, 0, 0, 0.05);
 }
-{/* scrool behavoiur header */}
+
 /* Custom scrollbar styling */
 .scrollbar-custom {
   scrollbar-width: none;
-  }
+}
 
 .scrollbar-custom::-webkit-scrollbar {
   width: 8px;
@@ -30,10 +30,55 @@
   border-radius: 20px;
 }
 
+/* Truncate text with ellipsis */
 .truncate-text {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   max-width: 100px; /* Set your desired max-width */
   cursor: pointer;
+}
+
+/* Custom table styling */
+.custom-table {
+  margin-top: 20px; /* Adjust the margin as needed */
+  border-collapse: collapse; /* Collapse borders to avoid double borders */
+  width: 100%;
+}
+
+/* Table header styles */
+.custom-table thead th {
+  background-color: #1890ff; /* Set the background color for the header */
+  border-top: 2px solid rgba(219, 224, 229, 0.65) !important;
+  border-bottom: 2px solid rgba(219, 224, 229, 0.65) !important;
+  color: #fff; /* Set the text color for the header */
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  border: 0px solid #ddd; /* Add border to header cells */
+  padding: 8px; /* Add padding for better styling */
+}
+
+/* Table body row styles */
+.custom-table tbody tr {
+  border: 1px solid #ddd;
+  cursor: pointer;
+  
+}
+
+/* Alternate background color for even rows */
+.custom-table tbody tr:nth-child(even) {
+  background-color: #f0f0f0; /* Set background color for even rows */
+}
+
+/* Hover effect for table rows */
+.custom-table tbody tr:hover  {
+  background-color: #efefef; /* Set background color for hovered rows */
+}
+
+/* Styles for table cells */
+.custom-table th,
+.custom-table td {
+  white-space: nowrap; /* Prevent text wrapping in cells */
+  padding: 8px; /* Add padding for better styling */
 }
