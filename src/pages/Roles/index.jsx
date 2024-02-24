@@ -27,7 +27,7 @@ const DashboardModule = () => {
 
     const statisticCards = teamsResult?.map((team, index) => (
         <div key={index}>
-            <div className="whiteBox shadow-gray-400 mb-5 shadow-lg w-96 overflow-hidden h-40 p-3.5 rounded-lg space-y-14">
+            <div className="whiteBox shadow-gray-400 mb-5 shadow-lg w-96 overflow-hidden h-40 p-3.5 rounded-sm space-y-14">
                 <div className='flex justify-between items-center '>
                     <h3 className='font-mono font-thin text-start text-blue-500 underline underline-offset-1 text-base capitalize'>{team.teamName}</h3>
                     <AvatarGroup max={4}>

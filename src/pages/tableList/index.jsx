@@ -1,8 +1,7 @@
 import useLanguage from '@/locale/useLanguage';
 import AdminCrudModule from '@/modules/AdminCrudModule';
-import AdminForm from '@/forms/AdminForm';
 import Roleform from '@/forms/Roleform';
-
+import AddRoleform from "@/forms/AddRoleform"
 export default function Admin() {
     const translate = useLanguage();
     const entity = 'teams';
@@ -64,11 +63,10 @@ export default function Admin() {
     ];
 
     const Labels = {
-        ADD_NEW_ENTITY: translate('add_new_admin'),
-        ENTITY_NAME: translate('admin'),
+        ADD_NEW_ENTITY: translate('add_new_role'),
+        ENTITY_NAME: translate('role'),
         CREATE_ENTITY: translate('save'),
         UPDATE_ENTITY: translate('update'),
-        RECORD_ENTITY: translate('record_payment'),
     };
 
     const configPage = {
@@ -86,7 +84,7 @@ export default function Admin() {
     return (
         <>
             <AdminCrudModule
-                createForm={<AdminForm />}
+                createForm={<AddRoleform />}
                 updateForm={<Roleform isUpdateForm={true} />}
                 config={config}
             />
