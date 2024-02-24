@@ -1,6 +1,7 @@
 import { Row, Col } from 'antd';
 import useLanguage from '@/locale/useLanguage';
 import Card from '@mui/joy/Card';
+import FilterComponent from '@/components/Filter';
 import CardContent from '@mui/joy/CardContent';
 import Typography from '@mui/joy/Typography';
 import { request } from '@/request';
@@ -49,6 +50,9 @@ export default function DashboardModule() {
 
   return (
     <>
+      <div>
+        <FilterComponent />
+      </div>
       <div className='mb-10 flex gap-4'>
         <Card className="w-1/3 shadow-lg">
           <div className='flex justify-between'>

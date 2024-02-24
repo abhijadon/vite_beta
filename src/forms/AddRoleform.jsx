@@ -12,7 +12,7 @@ const App = () => {
     const [users, setUsers] = useState([]);
 
     useEffect(() => {
-        axios.get(`${import.meta.env.VITE_BACKEND_SERVER}api/admin/list`)
+        axios.get('http://localhost:5000/api/admin/list')
             .then(response => setUsers(response.data.result || []))
             .catch(error => console.error(error));
     }, []);
@@ -32,7 +32,7 @@ const App = () => {
                 <Select onChange={value => setuserId(value)}>
                     <option value="" disabled>Select Team Leader</option>
                     {Array.isArray(users) && users
-                        .filter(user => user.role === 'teamleader')
+                        .filter(user => user.role === 'teamleader' && user.role === 'subadmin')
                         .map(user => (
                             <Select.Option key={user._id} value={user._id}>{user.fullname}</Select.Option>
                         ))}
