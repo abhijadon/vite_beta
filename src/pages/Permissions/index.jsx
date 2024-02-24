@@ -109,7 +109,6 @@ export default function Admin() {
 
     return (
         <>
-
             <AdminCrudModule createForm={<AdminForm />}
                 updateForm={<AdminForm isUpdateForm={true} />}
                 config={config}

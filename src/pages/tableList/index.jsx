@@ -2,7 +2,7 @@ import useLanguage from '@/locale/useLanguage';
 import AdminCrudModule from '@/modules/AdminCrudModule';
 import Roleform from '@/forms/Roleform';
 import AddRoleform from "@/forms/AddRoleform"
-export default function Admin() {
+export default function Role() {
     const translate = useLanguage();
     const entity = 'teams';
     const searchConfig = {

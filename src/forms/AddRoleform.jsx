@@ -5,24 +5,31 @@ import { Input, Select, Form } from 'antd';
 
 const App = () => {
     const [teamName, setTeamName] = useState('');
-    const [teamLeaderId, setTeamLeaderId] = useState('');
-    const [memberIds, setMemberIds] = useState([]);
+    const [institute, setInstitute] = useState('');
+    const [university, setUniversity] = useState('');
+    const [userId, setuserId] = useState('');
+    const [teamMembers, setteamMembers] = useState([]);
     const [users, setUsers] = useState([]);
 
     useEffect(() => {
-        // Fetch users with role 'user' (or adjust the condition based on your needs)
-        axios.get('http://localhost:5000/api/admin/list')
+        axios.get(`${import.meta.env.VITE_BACKEND_SERVER}api/admin/list`)
             .then(response => setUsers(response.data.result || []))
             .catch(error => console.error(error));
     }, []);
 
     return (
         <>
+            <Form.Item label="Institute" name="institute" initialValue={institute}>
+                <Input onChange={e => setInstitute(e.target.value)} />
+            </Form.Item>
+            <Form.Item label="University" name="university" initialValue={university}>
+                <Input onChange={e => setUniversity(e.target.value)} />
+            </Form.Item>
             <Form.Item label="Team Name" name="teamName" initialValue={teamName}>
                 <Input onChange={e => setTeamName(e.target.value)} />
             </Form.Item>
-            <Form.Item label="Team Leader" name="teamLeaderId" initialValue={teamLeaderId}>
-                <Select onChange={value => setTeamLeaderId(value)}>
+            <Form.Item label="Team Leader" name="user" initialValue={userId}>
+                <Select onChange={value => setuserId(value)}>
                     <option value="" disabled>Select Team Leader</option>
                     {Array.isArray(users) && users
                         .filter(user => user.role === 'teamleader')
@@ -31,8 +38,8 @@ const App = () => {
                         ))}
                 </Select>
             </Form.Item>
-            <Form.Item label="Team Members" name="memberIds" initialValue={memberIds}>
-                <Select mode="multiple" onChange={values => setMemberIds(values)}>
+            <Form.Item label="Team Members" name="teamMembers" initialValue={teamMembers}>
+                <Select mode="multiple" onChange={values => setteamMembers(values)}>
                     {Array.isArray(users) && users
                         .filter(user => user.role === 'user')
                         .map(user => (

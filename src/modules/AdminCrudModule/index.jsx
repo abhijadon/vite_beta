@@ -38,13 +38,13 @@ function SidePanelTopContent({ config, formElements }) {
   const { isReadBoxOpen, isEditBoxOpen, isAddBoxOpen, isAdvancedBoxOpen } = state;
   const { result: currentItem } = useSelector(selectCurrentItem);
   const dispatch = useDispatch();
-  const [labels, setLabels] = useState('');
 
+  const [setLabels] = useState('');
   useEffect(() => {
     if (currentItem) {
       const currentlabels = entityDisplayLabels.map((x) => currentItem[x]).join(' ');
 
-      setLabels(currentlabels); // Update the state using setLabels
+      setLabels(currentlabels);
     }
   }, [currentItem]);
 
