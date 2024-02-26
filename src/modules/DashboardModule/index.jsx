@@ -1,7 +1,6 @@
-import { Row, Col, Progress, Button, Modal, Input, Select } from 'antd';
+import { Row, Col, Progress, Button, Select } from 'antd';
 import useLanguage from '@/locale/useLanguage';
 import Card from '@mui/joy/Card';
-import dayjs from 'dayjs';
 import { request } from '@/request';
 import RecentTable from './components/RecentTable';
 import PreviewCard from './components/PreviewCard';
@@ -10,93 +9,55 @@ import DataYear from './components/DataYear'
 import { FcBearish, FcBullish, FcSalesPerformance } from "react-icons/fc";
 import { useEffect, useState } from 'react';
 import { BiReset } from 'react-icons/bi';
-import { LocalizationProvider, StaticDateRangePicker } from '@mui/x-date-pickers-pro';
-import { CalendarOutlined } from '@ant-design/icons';
-import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
-
-
-const shortcutsItems = [
-  {
-    label: 'This Week',
-    getValue: () => {
-      const today = dayjs();
-      return [today.startOf('week'), today.endOf('week')];
-    },
-  },
-  {
-    label: 'Last Week',
-    getValue: () => {
-      const today = dayjs();
-      const prevWeek = today.subtract(7, 'day');
-      return [prevWeek.startOf('week'), prevWeek.endOf('week')];
-    },
-  },
-  {
-    label: 'Last 7 Days',
-    getValue: () => {
-      const today = dayjs();
-      return [today.subtract(7, 'day'), today];
-    },
-  },
-  {
-    label: 'Current Month',
-    getValue: () => {
-      const today = dayjs();
-      return [today.startOf('month'), today.endOf('month')];
-    },
-  },
-  {
-    label: 'Next Month',
-    getValue: () => {
-      const today = dayjs();
-      const startOfNextMonth = today.endOf('month').add(1, 'day');
-      return [startOfNextMonth, startOfNextMonth.endOf('month')];
-    },
-  },
-  { label: 'Reset', getValue: () => [null, null] },
-];
 
 
 export default function DashboardModule() {
   const translate = useLanguage();
-  const [selectedRange, setSelectedRange] = useState([null, null]);
-  const [isDatePickerVisible, setIsDatePickerVisible] = useState(false);
   const [selectedInstitute, setSelectedInstitute] = useState(null);
+  const [selectedPaymentMode, setSelectedPaymentMode] = useState(null);
+  const [selectedPaymentType, setSelectedPaymentType] = useState(null);
   const [selectedUniversity, setSelectedUniversity] = useState(null);
   const [selectedCounselor, setSelectedCounselor] = useState(null);
   const [selectedUserId, setSelectedUserId] = useState(null);
   const [selectedStatus, setSelectedStatus] = useState(null);
   const [counselors, setCounselors] = useState([]);
   const [statuses, setStatuses] = useState([]);
+  const [paymentMode, setPaymentMode] = useState([]);
+  const [paymentType, setPaymentType] = useState([]);
   const [institutes, setInstitutes] = useState([]);
   const [universities, setUniversities] = useState([]);
   const [userNames, setUserNames] = useState([]);
   // Use state to store payment data
   const [paymentData, setPaymentData] = useState({ result: null, isLoading: false });
 
+
+
+  const fetchData = async () => {
+    try {
+      const { result, isLoading } = await request.summary({
+        entity: 'payment',
+        params: {
+          institute_name: selectedInstitute,
+          university_name: selectedUniversity,
+          counselor_email: selectedCounselor,
+          status: selectedStatus,
+          payment_mode: selectedPaymentMode,
+          payment_type: selectedPaymentType,
+        },
+      });
+
+      // Update the payment data state
+      setPaymentData({ result, isLoading });
+      console.log('Selected userId:', selectedUserId);
+    } catch (error) {
+      // Handle errors
+      console.error('Error fetching data:', error);
+    }
+  };
+
   useEffect(() => {
-    const fetchData = async () => {
-      // Check if a university is selected
-      if (selectedUniversity || selectedInstitute || selectedCounselor) {
-        const { result, isLoading } = await request.summary({
-          entity: 'payment',
-          params: {
-            institute_name: selectedInstitute,
-            university_name: selectedUniversity,
-            counselor_email: selectedCounselor,
-          },
-        });
-
-        // Update the payment data state
-        setPaymentData({ result, isLoading });
-      } else {
-        // If no university is selected, set payment data to null
-        setPaymentData({ result: null, isLoading: false });
-      }
-    };
-
     fetchData();
-  }, [selectedUniversity, selectedInstitute, selectedCounselor]);
+  }, [selectedUniversity, selectedInstitute, selectedCounselor, selectedStatus, selectedPaymentMode, selectedPaymentType]);
 
 
   useEffect(() => {
@@ -105,6 +66,8 @@ export default function DashboardModule() {
       if (result) {
         // Extract unique values for counselors, statuses, institutes, universities, and user IDs
         const uniqueCounselors = [...new Set(result.map(item => item.counselor_email))];
+        const uniquePaymentMode = [...new Set(result.map(item => item.payment_mode))];
+        const uniquePaymentType = [...new Set(result.map(item => item.payment_type))];
         const uniqueStatuses = [...new Set(result.map(item => item.status))];
         const uniqueInstitutes = [...new Set(result.map(item => item.institute_name))];
         const uniqueUniversities = [...new Set(result.map(item => item.university_name))];
@@ -112,25 +75,17 @@ export default function DashboardModule() {
 
         setCounselors(uniqueCounselors);
         setStatuses(uniqueStatuses);
+        setPaymentType(uniquePaymentType);
         setInstitutes(uniqueInstitutes);
+        setPaymentMode(uniquePaymentMode);
         setUniversities(uniqueUniversities);
         setUserNames(uniqueUserNames); // New state for unique user names
       }
     };
 
     fetchData();
-  }, [selectedUniversity]);
-  const handleDateChange = (date) => {
-    setSelectedRange(date);
-  };
+  }, []);
 
-  const openDatePicker = () => {
-    setIsDatePickerVisible(true);
-  };
-
-  const closeDatePicker = () => {
-    setIsDatePickerVisible(false);
-  };
 
   // Function to extract counselor name from email
   const getCounselorName = (email) => {
@@ -138,14 +93,17 @@ export default function DashboardModule() {
     return email ? email.split('@')[0] : '';
   };
 
+
+
   // Function to reset all values
   const resetValues = () => {
-    setSelectedRange([null, null]);
     setSelectedInstitute(null);
     setSelectedUniversity(null);
     setSelectedCounselor(null);
     setSelectedStatus(null);
     setSelectedUserId(null);
+    setSelectedPaymentMode(null)
+    setSelectedPaymentType(null)
   };
 
   const amountCardsData = [
@@ -291,6 +249,35 @@ export default function DashboardModule() {
         {/* Select for User Full Name */}
         <div>
           <Select
+            placeholder="Select payment mode"
+            className='w-60 h-10 capitalize'
+            value={selectedPaymentMode}
+            onChange={(value) => setSelectedPaymentMode(value)}
+          >
+            {paymentMode.map((paymentmode) => (
+              <Select.Option className="capitalize font-thin font-mono" key={paymentmode}>
+                {paymentmode}
+              </Select.Option>
+            ))}
+          </Select>
+        </div>
+        <div>
+          <Select
+            placeholder="Select payment type"
+            className='w-60 h-10 capitalize'
+            value={selectedPaymentType}
+            onChange={(value) => setSelectedPaymentType(value)}
+          >
+            {paymentType.map((paymenttype) => (
+              <Select.Option className="capitalize font-thin font-mono" key={paymenttype}>
+                {paymenttype}
+              </Select.Option>
+            ))}
+          </Select>
+        </div>
+        {/* Date Range Picker */}
+        <div>
+          <Select
             placeholder="Select user full name"
             className='w-60 h-10 capitalize'
             value={selectedUserId}
@@ -302,40 +289,6 @@ export default function DashboardModule() {
               </Select.Option>
             ))}
           </Select>
-        </div>
-        {/* Date Range Picker */}
-        <div>
-          {/* Input for Date Range */}
-          <Input
-            className='w-52 h-10'
-            value={`${selectedRange[0]?.format('YYYY-MM-DD')} - ${selectedRange[1]?.format('YYYY-MM-DD')}`}
-            placeholder='Select Date Range'
-            onClick={openDatePicker}
-            suffix={<CalendarOutlined />}
-          />
-          {/* Modal for Date Range Picker */}
-          <Modal
-            visible={isDatePickerVisible}
-            onCancel={() => {
-              closeDatePicker();
-              resetValues(); // Reset values when closing the modal
-            }}
-            footer={null}
-            destroyOnClose={true}
-          >
-            <LocalizationProvider dateAdapter={AdapterDayjs}>
-              <StaticDateRangePicker
-                value={selectedRange}
-                onChange={handleDateChange}
-                slotProps={{
-                  shortcuts: {
-                    items: shortcutsItems,
-                  },
-                }}
-                calendars={1}
-              />
-            </LocalizationProvider>
-          </Modal>
         </div>
         <div>
           <Button title='Reset All Filters' onClick={resetValues} className='bg-transparent text-red-500 font-thin text-lg h-10 hover:text-red-600'>
