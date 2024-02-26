@@ -211,10 +211,12 @@ const request = {
     return source;
   },
 
-  summary: async ({ entity, options = {} }) => {
+  summary: async ({ entity, params = {}, options = {} }) => {
     try {
-      const response = await axios.get(entity + '/summary');
-
+       const response = await axios.get(`${entity}/summary`, {
+      params: params,
+    });
+    
       successHandler(response, {
         notifyOnSuccess: false,
         notifyOnFailed: false,

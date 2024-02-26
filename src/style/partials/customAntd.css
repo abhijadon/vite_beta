@@ -133,16 +133,25 @@
 :where(.css-dev-only-do-not-override-2i2tap).ant-col-xl-24.ant-form-item-label {
   margin-top: 20px;
 }
-/* .ant-table-thead > tr > th {
-  font-weight: 700;
-  background-color: #efefef !important;
+
+.ant-card-head-title{
+  color: blue;
+  font-style: italic;
+  font-weight: 200;
+  text-shadow: #1677ff;
+  text-align: center;
 }
 
 .ant-table-thead > tr > th {
-  border: 1px solid #ddd;
+  font-weight: 700;
+  background-color: #efefef !important;
+  position: sticky !important; /* Use 'sticky' instead of 'fixed' */
+  top: 0;
+  z-index: 10 !important; /* Add z-index to ensure it appears above other elements */
 }
+
 .ant-table-tbody > tr > td {
-  border: 1px solid #ddd;
+  border: 0.5px solid #ddd;
 }
 .ant-table {
   display: block;
@@ -153,7 +162,7 @@
   scrollbar-width: thin;
   scroll-behavior: smooth;
   border-radius: 999px;
-} */
+}
 
 
 .ant-typography strong {

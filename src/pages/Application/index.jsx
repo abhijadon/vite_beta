@@ -203,6 +203,11 @@ export default function Lead() {
       render: (text, record, index) => index + 1,
     },
     {
+      title: 'User',
+      key: 'user', // Add a unique key for the column
+      render: (_, record) => record.full_name, // Access 'full_name' property here
+    },
+    {
       title: translate('StudentID'),
       dataIndex: ['lead_id'],
     },
@@ -389,7 +394,7 @@ export default function Lead() {
       dataIndex: ['customfields', 'remark'],
       key: 'remark',
       render: text => <Tooltip title={text}>
-         <div className="truncate-text">{text}</div>
+        <div className="truncate-text">{text}</div>
       </Tooltip>,
     },
     {

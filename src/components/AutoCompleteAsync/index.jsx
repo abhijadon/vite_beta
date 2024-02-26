@@ -9,7 +9,7 @@ export default function AutoCompleteAsync({
   entity,
   displayLabels,
   searchFields,
-  outputValue = 'username',
+  outputValue = '_id',
   value, /// this is for update
   onChange, /// this is for update
 }) {
@@ -91,7 +91,7 @@ export default function AutoCompleteAsync({
   }, [value]);
 
   return (
-    <Select className='w-60'
+    <Select
       loading={isLoading}
       showSearch
       allowClear

@@ -51,39 +51,42 @@ const shortcutsItems = [
 
 
 export default function BasicRangeShortcuts() {
+
   const [selectedRange, setSelectedRange] = useState([null, null]);
   const [isDatePickerVisible, setIsDatePickerVisible] = useState(false);
   const [selectedInstitute, setSelectedInstitute] = useState(null);
   const [selectedUniversity, setSelectedUniversity] = useState(null);
   const [selectedCounselor, setSelectedCounselor] = useState(null);
+  const [selectedUserId, setSelectedUserId] = useState(null);
   const [selectedStatus, setSelectedStatus] = useState(null);
   const [counselors, setCounselors] = useState([]);
   const [statuses, setStatuses] = useState([]);
   const [institutes, setInstitutes] = useState([]);
   const [universities, setUniversities] = useState([]);
+  const [userNames, setUserNames] = useState([]);
 
   useEffect(() => {
-    // Fetch teams data
     const fetchData = async () => {
       const { success, result } = await request.filter({ entity: 'payment' });
 
       if (success) {
-        // Extract unique values for counselors, statuses, institutes, and universities
+        // Extract unique values for counselors, statuses, institutes, universities, and user IDs
         const uniqueCounselors = [...new Set(result.map(item => item.counselor_email))];
         const uniqueStatuses = [...new Set(result.map(item => item.status))];
         const uniqueInstitutes = [...new Set(result.map(item => item.institute_name))];
         const uniqueUniversities = [...new Set(result.map(item => item.university_name))];
+        const uniqueUserNames = [...new Set(result.map(item => item.userId?.fullname))];
 
         setCounselors(uniqueCounselors);
         setStatuses(uniqueStatuses);
         setInstitutes(uniqueInstitutes);
         setUniversities(uniqueUniversities);
+        setUserNames(uniqueUserNames); // New state for unique user names
       }
     };
 
     fetchData();
   }, []);
-
   const handleDateChange = (date) => {
     setSelectedRange(date);
   };
@@ -109,17 +112,20 @@ export default function BasicRangeShortcuts() {
     setSelectedUniversity(null);
     setSelectedCounselor(null);
     setSelectedStatus(null);
+    setSelectedUserId(null);
+
   };
+
 
   return (
     <>
       <div className='flex items-center justify-start mb-10 gap-3'>
-        <div className='flex items-center justify-start gap-3'>
+        <div className='grid grid-cols-5 gap-3'>
           <div>
             {/* Select for Institute */}
             <Select
               placeholder="Select institute"
-              className='w-60 h-10 shadow capitalize'
+              className='w-60 h-10 capitalize'
               value={selectedInstitute}
               onChange={(value) => setSelectedInstitute(value)}
             >
@@ -132,7 +138,7 @@ export default function BasicRangeShortcuts() {
             {/* Select for University */}
             <Select
               placeholder="Select university"
-              className='w-60 h-10 shadow capitalize'
+              className='w-60 h-10 capitalize'
               value={selectedUniversity}
               onChange={(value) => setSelectedUniversity(value)}
             >
@@ -145,7 +151,7 @@ export default function BasicRangeShortcuts() {
             {/* Select for Counselor Name */}
             <Select
               placeholder="Select counselor name"
-              className='w-60 h-10 shadow capitalize'
+              className='w-60 h-10 capitalize'
               value={selectedCounselor}
               onChange={(value) => setSelectedCounselor(value)}
             >
@@ -160,7 +166,7 @@ export default function BasicRangeShortcuts() {
             {/* Select for Status */}
             <Select
               placeholder="Select status"
-              className='w-60 h-10 shadow capitalize'
+              className='w-60 h-10 capitalize'
               value={selectedStatus}
               onChange={(value) => setSelectedStatus(value)}
             >
@@ -169,45 +175,62 @@ export default function BasicRangeShortcuts() {
               ))}
             </Select>
           </div>
+          {/* Select for User Full Name */}
+          <div>
+            <Select
+              placeholder="Select user full name"
+              className='w-60 h-10 capitalize'
+              value={selectedUserId}
+              onChange={(value) => setSelectedUserId(value)}
+            >
+              {userNames.map((userName) => (
+                <Select.Option className="capitalize font-thin font-mono" key={userName}>
+                  {userName}
+                </Select.Option>
+              ))}
+            </Select>
+          </div>
+          {/* Date Range Picker */}
+          <div>
+            {/* Input for Date Range */}
+            <Input
+              className='w-52 h-10'
+              value={`${selectedRange[0]?.format('YYYY-MM-DD')} - ${selectedRange[1]?.format('YYYY-MM-DD')}`}
+              placeholder='Select Date Range'
+              onClick={openDatePicker}
+              suffix={<CalendarOutlined />}
+            />
+            {/* Modal for Date Range Picker */}
+            <Modal
+              visible={isDatePickerVisible}
+              onCancel={() => {
+                closeDatePicker();
+                resetValues(); // Reset values when closing the modal
+              }}
+              footer={null}
+              destroyOnClose={true}
+            >
+              <LocalizationProvider dateAdapter={AdapterDayjs}>
+                <StaticDateRangePicker
+                  value={selectedRange}
+                  onChange={handleDateChange}
+                  slotProps={{
+                    shortcuts: {
+                      items: shortcutsItems,
+                    },
+                  }}
+                  calendars={1}
+                />
+              </LocalizationProvider>
+            </Modal>
+          </div>
+          <div>
+            <Button title='Reset All Filters' onClick={resetValues} className='bg-transparent text-red-500 font-thin text-lg h-10 hover:text-red-600'>
+              <BiReset />
+            </Button>
+          </div>
         </div>
 
-        {/* Date Range Picker */}
-        <div>
-          {/* Input for Date Range */}
-          <Input
-            className='w-52 h-10'
-            value={`${selectedRange[0]?.format('YYYY-MM-DD')} - ${selectedRange[1]?.format('YYYY-MM-DD')}`}
-            placeholder='Select Date Range'
-            onClick={openDatePicker}
-            suffix={<CalendarOutlined />}
-          />
-          {/* Modal for Date Range Picker */}
-          <Modal
-            visible={isDatePickerVisible}
-            onCancel={() => {
-              closeDatePicker();
-              resetValues(); // Reset values when closing the modal
-            }}
-            footer={null}
-            destroyOnClose={true}
-          >
-            <LocalizationProvider dateAdapter={AdapterDayjs}>
-              <StaticDateRangePicker
-                value={selectedRange}
-                onChange={handleDateChange}
-                slotProps={{
-                  shortcuts: {
-                    items: shortcutsItems,
-                  },
-                }}
-                calendars={1}
-              />
-            </LocalizationProvider>
-          </Modal>
-        </div>
-        <Button title='Reset All Filters' onClick={resetValues} className='bg-transparent text-red-500 font-thin text-lg h-10 hover:text-red-600'>
-          <BiReset />
-        </Button>
       </div>
     </>
   );
