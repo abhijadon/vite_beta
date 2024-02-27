@@ -147,7 +147,7 @@ export default function DashboardModule() {
               </div>
             </div>
             <div className="mt-2">
-              <Progress percent={Math.floor(percentage)} status="active" strokeColor={{
+              <Progress percent={paymentData?.result?.total_course_fee_total} status="active" strokeColor={{
                 from: 'green',
                 to: 'blue',
               }} className='mt-3' />
@@ -158,35 +158,6 @@ export default function DashboardModule() {
     );
   });
 
-  //  this is api 
-  const entityData = [
-    {
-      result: paymentData,
-      isLoading: paymentData,
-      entity: 'payment',
-      title: translate('Status preview'),
-    },
-  ];
-
-  const statisticCards = entityData.map((data, index) => {
-    const { result, entity, isLoading, title } = data;
-    return (
-      <PreviewCard
-        key={index}
-        title={title}
-        isLoading={isLoading}
-        entity={entity}
-        statistics={
-          !isLoading &&
-          result?.performance?.map((item) => ({
-            tag: item?.status,
-            color: 'blue',
-            value: item?.percentage,
-          }))
-        }
-      />
-    );
-  });
 
 
   const filterRender = () => (
@@ -317,9 +288,9 @@ export default function DashboardModule() {
       <div className="space30"></div>
       <Row gutter={[32, 32]}>
         <Col className="gutter-row w-full" sm={{ span: 24 }} md={{ span: 24 }} lg={{ span: 18 }}>
-          <div className="whiteBox shadow" style={{ height: 458 }}>
-            <Row className="pad20" gutter={[0, 0]}>
-              {statisticCards}
+          <div>
+            <Row>
+              <PreviewCard />
             </Row>
           </div>
         </Col>

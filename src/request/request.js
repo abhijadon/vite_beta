@@ -216,7 +216,7 @@ const request = {
        const response = await axios.get(`${entity}/summary`, {
       params: params,
     });
-    
+    console.log("consofosdf:", response)
       successHandler(response, {
         notifyOnSuccess: false,
         notifyOnFailed: false,

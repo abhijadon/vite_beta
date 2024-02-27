@@ -10,7 +10,7 @@ function useFetchData(fetchFunction) {
     async function fetchData() {
       try {
         const data = await fetchFunction();
-        setData(data.result);
+        setData(data);
         setSuccess(true);
       } catch (error) {
         setError(error);
@@ -28,5 +28,5 @@ function useFetchData(fetchFunction) {
 export default function useFetch(fetchFunction) {
   const { data, isLoading, isSuccess, error } = useFetchData(fetchFunction);
 
-  return { result: data, isLoading, isSuccess, error };
+  return { data, isLoading, isSuccess, error };
 }

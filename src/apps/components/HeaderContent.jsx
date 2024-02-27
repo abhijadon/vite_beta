@@ -165,7 +165,7 @@ export default function HeaderContent() {
 
   return (
     <Header
-      className={`sticky top-0 z-[9999] ${isScrolled ? 'scrolled' : 'bg-white w-[100%] scroll-smooth'}`}
+      className={`sticky top-0 z-50 ${isScrolled ? 'scrolled' : 'bg-white w-[100%] scroll-smooth'}`}
       style={{
         display: 'flex',
         justifyContent: 'space-between',
