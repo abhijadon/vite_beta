@@ -1,9 +1,16 @@
 import { DatePicker, Form, Input, Select } from 'antd';
 import useLanguage from '@/locale/useLanguage';
-
+import { request } from '@/request';
+import useFetch from '@/hooks/useFetch';
+const { Option } = Select;
 const { TextArea } = Input;
 export default function EditForm() {
     const translate = useLanguage();
+
+    const { data: userList, isLoading: userLoading } = useFetch(() =>
+        request.list({ entity: 'admin' })
+    );
+
 
     return (
         <>
@@ -138,92 +145,6 @@ export default function EditForm() {
                 </Form.Item>
 
                 <Form.Item
-                    label={translate('Counselor Email')}
-                    name={['customfields', 'counselor_email']}
-                >
-                    <Select
-                        showSearch
-                        options={[
-                            // DES External email with name
-                            { value: 'apoorvasrivastava@sode.co.in', label: 'Apoorva Srivastava' },
-                            { value: 'nehaprashar@sode.co.in', label: 'Neha Prasher' },
-                            { value: 'priya@sode.co.in', label: 'Priya Anand' },
-                            { value: 'diksha@sode.co.in', label: 'Diksha Singh' },
-                            { value: 'abhilasha@sode.co.in', label: 'Abhilasha Gupta' },
-                            { value: 'saher@sode.co.in', label: 'Saher Khan' },
-
-                            // DES Internal email with name 
-                            { value: 'muskan@distanceeducationschool.com', label: 'Muskaan ' },
-                            { value: 'aniruddh@distanceeducationschool.com', label: 'Aniruddh Prakash' },
-                            { value: 'amritpal@sode.co.in', label: 'Amritpal Singh' },
-                            { value: 'salman@sode.co.in', label: 'Salman' },
-                            { value: 'tariq@sode.co.in', label: 'Tariq Hasan' },
-                            { value: 'shivam@sode.co.in', label: 'Shivam sharma' },
-                            { value: 'pushpa@sode.co.in', label: 'Pushpa Pramanik' },
-
-                            // DES Internal email with name 
-                            { value: 'anurag@distanceeducationschool.com', label: 'Anurag Yadav' },
-                            { value: 'kavitakumari@sode.co.in', label: 'Kavita Kumari' },
-                            { value: 'rupal@sode.co.in', label: 'Rupal Gautam' },
-                            { value: 'deva@sode.co.in', label: 'Devendra' },
-                            { value: 'manshi@sode.co.in', label: 'Manshi Kem' },
-                            { value: 'medha@distanceeducationschool.com', label: 'Medha' },
-
-                            // DES - INTERNATIONAL email with name 
-                            { value: 'zarin@distanceeducationschool.com', label: 'Zarin Badar' },
-
-                            // HES team email with name 
-                            { value: 'kanchan@highereducationschool.com', label: 'Kanchan Sharma' },
-                            { value: 'kirti@highereducationschool.com', label: 'Kirti Dubey' },
-                            { value: 'ramandeep@highereducationschool.com', label: 'Ramandeep Kaur' },
-                            { value: 'kavita@highereducationschool.com', label: 'Kavita Yadav' },
-                            { value: 'imra@highereducationschool.com', label: 'Imra Khan' },
-                            { value: 'mahak@highereducationschool.com', label: 'Mahek' },
-                            { value: 'abhay@highereducationschool.com', label: 'Abhay Dubey' },
-                            { value: 'swati@highereducationschool.com', label: 'Swati' },
-                            { value: 'gulshan@highereducationschool.com', label: 'Gulshan Nayyar' },
-                            { value: 'isha@highereducationschool.com', label: 'Isha Jaiswal' },
-                            { value: 'sakshi@highereducationschool.com', label: 'Sakshi Arora' },
-
-                            // Jain team email with name 
-                            { value: 'anitha@sode.co.in', label: 'A.Anitha' },
-                            { value: 'vani@sode.co.in', label: 'Vani Ruckmani' },
-
-                            // Manipal team email with name 
-                            { value: 'swatiramani.manipal@gmail.com', label: 'Swati Ramani' },
-                            { value: 'ankitakumar@sode.co.in', label: 'Ankita Kumari' },
-                            { value: 'nidhi@sode.co.in', label: 'Nidhi' },
-                            { value: 'amreen@sode.co.in', label: 'Amreen ALI Khan' },
-                            { value: 'umar@sode.co.in', label: 'MD Umar' },
-                            { value: 'nehagupta@sode.co.in', label: 'Neha Gupta' },
-                            { value: 'pawankumar@sode.co.in', label: 'Pawan Kumar' },
-                            { value: 'bhavya@sode.co.in', label: 'Bhavya' },
-
-                            // ALL DES && HES team email with name 
-                            { value: 'rajesh@distanceeducationschool.com', label: 'Rajesh Sir' },
-                            { value: 'manisha@distanceeducationschool.com', label: 'Manisha Yadav' },
-                            { value: 'admin@distanceeducationschool.com', label: 'Nouman Sir' },
-                            { value: 'sandy@distanceeducationschool.com', label: 'Sandy' },
-                            { value: 'neha@distanceeducationschool.com', label: 'Neha Raj' },
-                            { value: 'yashpriya@distanceeducationschool.com', label: 'Yash Priya' },
-                            { value: 'kavitahaldar@distanceeducationschool.com', label: 'Kavita Haldar' },
-                            { value: 'ifla@distanceeducationschool.com', label: 'Ifla' },
-                            { value: 'shalu@distanceeducationschool.com', label: 'Shalu' },
-                            { value: 'zainubia@distanceeducationschool.com', label: 'Zainbuia' },
-                            { value: 'pallovi@distanceeducationschool.com', label: 'Pallovi' },
-                            { value: 'hansi@distanceeducationschool.com', label: 'Hansi' },
-                            { value: 'shristi@distanceeducationschool.com', label: 'Shristi' },
-                            { value: 'aashita@highereducationschool.com', label: 'Aashita' },
-                            { value: 'pratibha@highereducationschool.com', label: 'Pratibha' },
-                            { value: 'shreyashi@highereducationschool.com', label: 'Shreyashi' },
-                            { value: 'spuhelpdesk@gmail.com', label: 'Binny' },
-                            { value: 'ruchika.spu@gmail.com', label: 'Ruchika' },
-                            { value: 'ramiz.spu@gmail.com', label: 'Ramiz' },
-                        ]}>
-
-                    </Select>
-                </Form.Item>
-                <Form.Item
                     label={translate('father name')}
                     name={['customfields', 'father_name']}
                 >
@@ -255,7 +176,13 @@ export default function EditForm() {
                         ]}
                     ></Select>
                 </Form.Item>
-
+                <Form.Item label="Users" name="userId">
+                    <Select placeholder="select user">
+                        {userList && userList.result.map(user => (
+                            <Option key={user._id} value={user._id}>{user.fullname}</Option>
+                        ))}
+                    </Select>
+                </Form.Item>
                 <Form.Item
                     label={translate('Installment Type')}
                     name={['customfields', 'installment_type']}

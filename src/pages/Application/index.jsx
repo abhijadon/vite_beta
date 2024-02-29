@@ -140,12 +140,6 @@ export default function Lead() {
       title: translate('University name'),
       dataIndex: 'customfields.university_name',
     },
-
-    {
-      title: translate('counselor email'),
-      dataIndex: 'customfields.counselor_email',
-    },
-
     {
       title: translate('Father Name'),
       dataIndex: 'customfields.father_name',

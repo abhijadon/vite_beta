@@ -58,7 +58,7 @@ export default function DashboardModule() {
     const fetchData = async () => {
       const { result } = await request.filter({ entity: 'payment' });
       if (result) {
-        // Extract unique values for counselors, statuses, institutes, universities, and user IDs
+        // Extract unique values for  statuses, institutes, universities, and user IDs
 
         const uniquePaymentMode = [...new Set(result.map(item => item.payment_mode))];
         const uniquePaymentType = [...new Set(result.map(item => item.payment_type))];
