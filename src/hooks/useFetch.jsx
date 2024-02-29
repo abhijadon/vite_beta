@@ -9,8 +9,8 @@ function useFetchData(fetchFunction) {
   useEffect(() => {
     async function fetchData() {
       try {
-        const data = await fetchFunction();
-        setData(data);
+        const result = await fetchFunction();
+        setData(result);
         setSuccess(true);
       } catch (error) {
         setError(error);
@@ -20,13 +20,15 @@ function useFetchData(fetchFunction) {
     }
 
     fetchData();
-  }, [isLoading]);
+  }, [fetchFunction]); // Corrected dependency array
 
   return { data, isLoading, isSuccess, error };
 }
 
-export default function useFetch(fetchFunction) {
+export const useFetch = (fetchFunction) => {
   const { data, isLoading, isSuccess, error } = useFetchData(fetchFunction);
 
   return { data, isLoading, isSuccess, error };
 }
+
+export default useFetch;

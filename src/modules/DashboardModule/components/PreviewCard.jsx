@@ -7,7 +7,7 @@ import { FcExpand } from "react-icons/fc";
 export default function PreviewCard() {
   const [modalType, setModalType] = useState(null);
   const [isModalVisible, setIsModalVisible] = useState(false);
-  const [itemsToShow, setItemsToShow] = useState(3);
+
 
   const { data: paymentResult, isLoading: paymentLoading } = useFetch(() =>
     request.summary({ entity: 'payment' })
@@ -54,16 +54,16 @@ export default function PreviewCard() {
       <div key={index}>
         {item[0] && item[0]._id && (
           <>
-            <label htmlFor={item[0]._id} className='text-sm font-thin font-serif'>
+            <label htmlFor={item[0]._id} className='text-sm font-thin'>
               {item[0]._id}
             </label>
             <Progress
-              className='w-72 mb-5'
-              percent={item[0]?.count || 0}
-              format={(percent) => `${percent}`}
+              className='mb-5'
+              percent={Math.min(item[0]?.count || 0, 3000) / 3000 * 100}
+              format={() => `${Math.min(item[0]?.count || 0, 3000)}`} // Show count and total
               status="active"
               strokeColor={getColorForId(item[0]._id)}
-              style={{ borderRadius: '8px', border: '1px solid #ccc', padding: '4px' }}
+              style={{ padding: '4px' }}
             />
           </>
         )}
@@ -71,10 +71,11 @@ export default function PreviewCard() {
     ));
   };
 
+  // Modify this line to handle the undefined case
   const renderModalContent = () => {
     switch (modalType) {
       case 'university':
-        return renderProgressItems(paymentResult?.universitySpecificData || []);
+        return renderProgressItems(paymentResult?.universitySpecificData?.slice(0, 9) || []); // Handle the undefined case
       case 'institute':
         return renderProgressItems(paymentResult?.instituteSpecificData || []);
       case 'status':
@@ -83,42 +84,37 @@ export default function PreviewCard() {
         return null;
     }
   };
-
   return (
-    <Card className='shadow-md drop-shadow-lg'>
+    <Card className='shadow-md drop-shadow-lg w-full h-[360px]'>
       <div className='grid grid-cols-3 gap-2'>
         {paymentLoading ? (
           <div><Spin /></div>
         ) : (
           <>
             <div>
-              <div className='mb-8 text-base font-thin font-serif'>University Specific Data</div>
-              {renderProgressItems(paymentResult?.universitySpecificData.slice(0, itemsToShow) || [])}
-              {itemsToShow !== Number.MAX_SAFE_INTEGER && (
-                <div className='flex justify-center items-center'>
-                  <FcExpand title='Show More' className='bg-neutral-50 text-[30px] cursor-pointer' onClick={() => handleShowMore('university')} />
-                </div>
-              )}
-            </div>
-
-            <div>
-              <div className='mb-8 text-base font-thin font-serif'>Institute Specific Data</div>
+              <div className='mb-8 text-base font-thin'>Institute Specific Data</div>
               {renderProgressItems(paymentResult?.instituteSpecificData || [])}
-              {itemsToShow !== Number.MAX_SAFE_INTEGER && (
-                <div className='flex justify-center items-center'>
-                  <FcExpand title='Show More' className='bg-neutral-50 text-[30px] cursor-pointer' onClick={() => handleShowMore('institute')} />
-                </div>
-              )}
-            </div>
 
+              <div className='flex justify-center items-center'>
+                <FcExpand title='Show More' className='text-2xl cursor-pointer' onClick={() => handleShowMore('institute')} />
+              </div>
+
+            </div>
             <div>
-              <div className='mb-8 text-base font-thin font-serif'>Status Specific Data</div>
-              {renderProgressItems(paymentResult?.statusSpecificData || [])}
-              {itemsToShow !== Number.MAX_SAFE_INTEGER && (
-                <div className='flex justify-center items-center'>
-                  <FcExpand title='Show More' className='bg-neutral-50 text-[30px] cursor-pointer' onClick={() => handleShowMore('status')} />
-                </div>
-              )}
+              <div className='mb-8 text-base font-thin'>University Specific Data</div>
+              {renderProgressItems(paymentResult?.universitySpecificData?.slice(0, 6))}
+              <div className='flex justify-center items-center'>
+                <FcExpand title='Show More' className='text-2xl cursor-pointer' onClick={() => handleShowMore('university')} />
+              </div>
+            </div>
+            <div>
+              <div className='mb-8 text-base font-thin'>Status Specific Data</div>
+              {renderProgressItems(paymentResult?.statusSpecificData?.slice(0, 3))}
+
+              <div className='flex justify-center items-center'>
+                <FcExpand title='Show More' className='text-2xl cursor-pointer ' onClick={() => handleShowMore('status')} />
+              </div>
+
             </div>
           </>
         )}

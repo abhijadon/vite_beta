@@ -7,7 +7,7 @@ const CollapseBoxButton = ({ onChange, title }) => {
     </div>
   );
 };
-
+ 
 const TopCollapseBox = ({ isOpen, children }) => {
   const show = isOpen ? { display: 'block', opacity: 1 } : { display: 'none', opacity: 0 };
   return (

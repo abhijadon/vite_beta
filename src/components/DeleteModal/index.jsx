@@ -32,7 +32,7 @@ export default function DeleteModal({ config }) {
     if (isSuccess) {
       modal.close();
       dispatch(crud.list({ entity }));
-      // dispatch(crud.resetAction({actionType:"delete"})); // check here maybe it wrong
+    dispatch(crud.resetAction({actionType:"delete"}));
     }
     if (current) {
       let labels = entityDisplayLabels.map((x) => valueByString(current, x)).join(' ');

@@ -33,7 +33,7 @@ function SidePanelTopContent({ config, formElements }) {
   const translate = useLanguage();
   const { crudContextAction, state } = useCrudContext();
   const { entityDisplayLabels } = config;
-  const { advancedBox, modal, editBox, addBox } = crudContextAction;
+  const { advancedBox, modal, editBox } = crudContextAction;
 
   const { isReadBoxOpen, isEditBoxOpen, isAddBoxOpen, isAdvancedBoxOpen } = state;
   const { result: currentItem } = useSelector(selectCurrentItem);
@@ -55,10 +55,6 @@ function SidePanelTopContent({ config, formElements }) {
   const editItem = () => {
     dispatch(crud.currentAction({ actionType: 'update', data: currentItem }));
     editBox.open();
-  };
-  const addItem = () => {
-    dispatch(crud.currentAction({ actionType: 'update', data: currentItem }));
-    addBox.open();
   };
   const updatePassword = () => {
     dispatch(crud.currentAction({ actionType: 'update', data: currentItem }));
@@ -95,15 +91,6 @@ function SidePanelTopContent({ config, formElements }) {
             style={{ float: 'left', marginRight: '5px' }}
           >
             {translate('edit')}
-          </Button>
-          <Button
-            onClick={addItem}
-            type="text"
-            icon={<EditOutlined />}
-            size="small"
-            style={{ float: 'left', marginRight: '5px' }}
-          >
-            {translate('add_payment')}
           </Button>
           <Button
             onClick={updatePassword}

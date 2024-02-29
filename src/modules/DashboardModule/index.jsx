@@ -1,5 +1,4 @@
 import { Row, Col, Progress, Button, Select } from 'antd';
-import useLanguage from '@/locale/useLanguage';
 import Card from '@mui/joy/Card';
 import { request } from '@/request';
 import RecentTable from './components/RecentTable';
@@ -12,15 +11,12 @@ import { BiReset } from 'react-icons/bi';
 
 
 export default function DashboardModule() {
-  const translate = useLanguage();
   const [selectedInstitute, setSelectedInstitute] = useState(null);
   const [selectedPaymentMode, setSelectedPaymentMode] = useState(null);
   const [selectedPaymentType, setSelectedPaymentType] = useState(null);
   const [selectedUniversity, setSelectedUniversity] = useState(null);
-  const [selectedCounselor, setSelectedCounselor] = useState(null);
   const [selectedUserId, setSelectedUserId] = useState(null);
   const [selectedStatus, setSelectedStatus] = useState(null);
-  const [counselors, setCounselors] = useState([]);
   const [statuses, setStatuses] = useState([]);
   const [paymentMode, setPaymentMode] = useState([]);
   const [paymentType, setPaymentType] = useState([]);
@@ -39,7 +35,6 @@ export default function DashboardModule() {
         params: {
           institute_name: selectedInstitute,
           university_name: selectedUniversity,
-          counselor_email: selectedCounselor,
           status: selectedStatus,
           payment_mode: selectedPaymentMode,
           payment_type: selectedPaymentType,
@@ -48,7 +43,6 @@ export default function DashboardModule() {
 
       // Update the payment data state
       setPaymentData({ result, isLoading });
-      console.log('Selected userId:', selectedUserId);
     } catch (error) {
       // Handle errors
       console.error('Error fetching data:', error);
@@ -57,7 +51,7 @@ export default function DashboardModule() {
 
   useEffect(() => {
     fetchData();
-  }, [selectedUniversity, selectedInstitute, selectedCounselor, selectedStatus, selectedPaymentMode, selectedPaymentType]);
+  }, [selectedUniversity, selectedInstitute, selectedStatus, selectedPaymentMode, selectedPaymentType]);
 
 
   useEffect(() => {
@@ -65,7 +59,7 @@ export default function DashboardModule() {
       const { result } = await request.filter({ entity: 'payment' });
       if (result) {
         // Extract unique values for counselors, statuses, institutes, universities, and user IDs
-        const uniqueCounselors = [...new Set(result.map(item => item.counselor_email))];
+
         const uniquePaymentMode = [...new Set(result.map(item => item.payment_mode))];
         const uniquePaymentType = [...new Set(result.map(item => item.payment_type))];
         const uniqueStatuses = [...new Set(result.map(item => item.status))];
@@ -73,7 +67,7 @@ export default function DashboardModule() {
         const uniqueUniversities = [...new Set(result.map(item => item.university_name))];
         const uniqueUserNames = [...new Set(result.map(item => item.userId?.fullname))];
 
-        setCounselors(uniqueCounselors);
+
         setStatuses(uniqueStatuses);
         setPaymentType(uniquePaymentType);
         setInstitutes(uniqueInstitutes);
@@ -82,24 +76,13 @@ export default function DashboardModule() {
         setUserNames(uniqueUserNames); // New state for unique user names
       }
     };
-
     fetchData();
   }, []);
-
-
-  // Function to extract counselor name from email
-  const getCounselorName = (email) => {
-    // Check if email is defined before splitting
-    return email ? email.split('@')[0] : '';
-  };
-
-
 
   // Function to reset all values
   const resetValues = () => {
     setSelectedInstitute(null);
     setSelectedUniversity(null);
-    setSelectedCounselor(null);
     setSelectedStatus(null);
     setSelectedUserId(null);
     setSelectedPaymentMode(null)
@@ -131,34 +114,36 @@ export default function DashboardModule() {
   ];
 
   const amountCards = amountCardsData.map((card, index) => {
-    const percentage = card.total ? (card.value / card.total) * 100 : 0;
-
     return (
-      <Card className="w-1/3 shadow-lg" key={index}>
+      <Card className="w-1/3 shadow drop-shadow-lg" key={index}>
         <div>
           <div>
             <div className="flex gap-10 justify-between items-center">
               <div>{card.icon}</div>
               <div>
-                <div className={`text-${card.color}-500 mb-2 text-sm font-normal font-serif`}>
+                <div className={`text-${card.color}-500 mb-2 text-sm font-normal`}>
                   {card.title}
                 </div>
                 <div className={`text-${card.color}-500 text-2xl`}>₹ {card.value}</div>
               </div>
             </div>
             <div className="mt-2">
-              <Progress percent={paymentData?.result?.total_course_fee_total} status="active" strokeColor={{
-                from: 'green',
-                to: 'blue',
-              }} className='mt-3' />
+              <Progress
+                percent={Math.min(Math.round((card.value / 50000000) * 100), 100)}
+                status="active"
+                strokeColor={{
+                  '0%': 'red',
+                  '40%': 'blue',
+                  '100%': 'green',
+                }}
+                className='mt-3'
+              />
             </div>
           </div>
         </div>
       </Card>
     );
   });
-
-
 
   const filterRender = () => (
     <div className='flex items-center justify-start mb-10 gap-3'>
@@ -186,21 +171,6 @@ export default function DashboardModule() {
           >
             {universities.map(university => (
               <Select.Option key={university}>{university}</Select.Option>
-            ))}
-          </Select>
-        </div>
-        <div>
-          {/* Select for Counselor Name */}
-          <Select
-            placeholder="Select counselor name"
-            className='w-60 h-10 capitalize'
-            value={selectedCounselor}
-            onChange={(value) => setSelectedCounselor(value)}
-          >
-            {counselors.map(counselorEmail => (
-              <Select.Option className="capitalize" key={counselorEmail}>
-                {getCounselorName(counselorEmail)}
-              </Select.Option>
             ))}
           </Select>
         </div>
@@ -272,43 +242,44 @@ export default function DashboardModule() {
   )
 
 
-
-
-
   return (
     <>
       <div>
-        <Card className="custom-card mb-5">
+        <Card className="custom-card shadow drop-shadow-md">
           {filterRender()}
         </Card>
+        <div className="space30"></div>
       </div>
-      <div className='mb-10 flex gap-4'>
+      <div className='flex gap-4'>
         {amountCards}
       </div>
       <div className="space30"></div>
       <Row gutter={[32, 32]}>
-        <Col className="gutter-row w-full" sm={{ span: 24 }} md={{ span: 24 }} lg={{ span: 18 }}>
+        <Col className="gutter-row" sm={{ span: 24 }} md={{ span: 24 }} lg={{ span: 14 }}>
           <div>
             <Row>
               <PreviewCard />
             </Row>
           </div>
         </Col>
-        <Col className="gutter-row w-full" sm={{ span: 24 }} md={{ span: 24 }} lg={{ span: 6 }}>
-          <CustomerPreviewCard />
+        <Col className="gutter-row" sm={{ span: 24 }} md={{ span: 24 }} lg={{ span: 10 }}>
+          <div>
+            <Card className="shadow drop-shadow-lg w-full h-[355px]">
+              <RecentTable />
+            </Card>
+          </div>
         </Col>
       </Row><div className="space30"></div>
       <Row gutter={[32, 32]}>
-        <Col className="gutter-row w-full" sm={{ span: 24 }} lg={{ span: 12 }}>
-          <div>
-            <RecentTable />
-          </div>
-        </Col>
-
-        <Col sm={{ span: 24 }} lg={{ span: 12 }}>
-          <div className="whiteBox shadow-md rounded-xl pad20" style={{ height: '100%' }}>
+        <Col className="gutter-row" sm={{ span: 24 }} md={{ span: 24 }} lg={{ span: 14 }}>
+          <Card className="shadow drop-shadow-lg" >
             <DataYear />
-          </div>
+          </Card>
+        </Col>
+        <Col className="gutter-row" sm={{ span: 24 }} md={{ span: 24 }} lg={{ span: 10 }}>
+          <Card className="shadow drop-shadow-lg w-full h-full" >
+            <CustomerPreviewCard />
+          </Card>
         </Col>
       </Row>
     </>

@@ -1,103 +1,94 @@
 import dayjs from 'dayjs';
-import { Tag } from 'antd';
 import useLanguage from '@/locale/useLanguage';
-import { useMoney } from '@/settings';
 import InvoiceDataTableModule from '@/modules/InvoiceModule/InvoiceDataTableModule';
 
 export default function Invoice() {
   const translate = useLanguage();
   const entity = 'invoice';
-  const { moneyFormatter } = useMoney();
 
   const searchConfig = {
-    displayLabels: ['name', 'surname'],
-    searchFields: 'name,surname,birthday',
+    displayLabels: ['full_name', 'username'],
+    searchFields: 'full_name,username,phone',
   };
-  const entityDisplayLabels = ['number', 'client.company'];
+  const entityDisplayLabels = ['full_nmae'];
   const dataTableColumns = [
     {
-      title: translate('Number'),
-      dataIndex: 'number',
+      title: 'S.No.',
+      dataIndex: '',
+      render: (text, record, index) => index + 1,
     },
     {
-      title: translate('Client'),
-      dataIndex: ['client', 'company'],
+      title: translate('studentID'),
+      dataIndex: 'lead_id',
     },
     {
-      title: translate('Date'),
-      dataIndex: 'date',
-      render: (date) => {
-        return dayjs(date).format('DD/MM/YYYY');
-      },
+      title: translate('student name'),
+      dataIndex: 'student_name',
     },
     {
-      title: translate('expired Date'),
-      dataIndex: 'expiredDate',
-      render: (date) => {
-        return dayjs(date).format('DD/MM/YYYY');
-      },
+      title: translate('email'),
+      dataIndex: 'email',
     },
     {
-      title: translate('Total'),
+      title: translate('payment_mode'),
+      dataIndex: 'payment_mode',
+    },
+    {
+      title: translate('phone number'),
+      dataIndex: 'phone',
+    },
+    {
+      title: translate('Total course fee'),
       dataIndex: 'total_course_fee',
-      onCell: () => {
-        return {
-          style: {
-            textAlign: 'right',
-            whiteSpace: 'nowrap',
-          },
-        };
-      },
-      render: (total_course_fee) => moneyFormatter({ amount: total_course_fee }),
     },
     {
-      title: translate('credit'),
-      dataIndex: 'credit',
-      onCell: () => {
-        return {
-          style: {
-            textAlign: 'right',
-            whiteSpace: 'nowrap',
-          },
-        };
-      },
-      render: (credit) => moneyFormatter({ amount: credit }),
+      title: translate('Total paid amount'),
+      dataIndex: 'total_paid_amount',
     },
     {
-      title: translate('Status'),
-      dataIndex: 'status',
-      render: (status) => {
-        let color = status === 'draft' ? 'cyan' : status === 'sent' ? 'magenta' : 'gold';
-
-        return <Tag color={color}>{status && translate(status)}</Tag>;
+      title: translate('paid amount'),
+      dataIndex: 'paid_amount',
+    },
+    {
+      title: translate('Due amount'),
+      dataIndex: 'customfields',
+      render: (customfields, record) => {
+        const totalCourseFee = parseFloat(record.total_course_fee) || 0;
+        const paidAmount = parseFloat(record.paid_amount) || 0;
+        const dueAmount = totalCourseFee - paidAmount;
+        return <span>{dueAmount.toFixed(2)}</span>;
       },
     },
     {
-      title: translate('Payment'),
-      dataIndex: 'paymentStatus',
-      render: (paymentStatus) => {
-        let color =
-          paymentStatus === 'unpaid'
-            ? 'volcano'
-            : paymentStatus === 'paid'
-              ? 'green'
-              : paymentStatus === 'overdue'
-                ? 'red'
-                : 'purple';
-
-        return <Tag color={color}>{paymentStatus && translate(paymentStatus)}</Tag>;
+      title: translate('Create date'),
+      dataIndex: 'created',
+      render: (date) => {
+        return dayjs(date).format('DD/MM/YYYY');
       },
     },
     {
-      title: translate('Created By'),
-      dataIndex: ['createdBy', 'name'],
-      // render: (name) => {
-      //   console.log('🚀 ~ file: index.jsx:81 ~ Invoice ~ name:', name);
-      //   let color = name !== '' ? 'blue' : 'gray';
-      //   return <Tag color={color}>{name ? name : 'Administrator'}</Tag>;
-      // },
+      title: translate('Update date'),
+      dataIndex: 'updatedAt',
+      render: (date) => {
+        return dayjs(date).format('DD/MM/YYYY');
+      },
+    },
+    {
+      title: translate('Create time'),
+      dataIndex: 'creationTime',
+      render: (date) => {
+        return dayjs(date).format('hh:mm:ss a');
+      },
+    },
+    {
+      title: translate('Update TIme'),
+      dataIndex: 'updatedAt',
+      render: (date) => {
+        return dayjs(date).format('hh:mm:ss a');
+      },
     },
   ];
+
 
   const Labels = {
     PANEL_TITLE: translate('invoice'),

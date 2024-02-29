@@ -1,176 +1,144 @@
-// src/components/FilteredList.js
-import { useState, useEffect } from 'react';
-import { Menu, MenuItem, IconButton, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Dialog, DialogTitle, DialogContent, DialogActions, Button } from '@mui/material';
-import { MoreVert } from '@mui/icons-material';
-import { Dropdown } from 'antd';
-import { CiFilter } from 'react-icons/ci';
+import { useEffect, useState } from 'react';
+import { Table, Space, Typography, Spin, Pagination, Avatar, Collapse } from 'antd';
+import { request } from '@/request';
+import useFetch from '@/hooks/useFetch';
 
-const FilteredList = () => {
-    const [filter, setFilter] = useState('All');
-    const [anchorEl, setAnchorEl] = useState(null);
-    const [selectedItem, setSelectedItem] = useState(null);
-    const [isHistoryModalOpen, setIsHistoryModalOpen] = useState(false);
-    const [data, setData] = useState([]);
+const { Text } = Typography;
+const { Panel } = Collapse;
 
-    useEffect(() => {
-        // Fetch data from the API
-        const fetchData = async () => {
-            try {
-                const response = await fetch('http://localhost:5000/api/lead/list');
-                const result = await response.json();
-                if (result.success) {
-                    setData(result.result);
-                } else {
-                    console.error('Error fetching data:', result.error);
-                }
-            } catch (error) {
-                console.error('Error fetching data:', error.message);
-            }
-        };
-
-        fetchData();
-    }, []);
-
-    const filteredData = filter === 'All' ? data : data.filter(item => item.customfields.status === filter);
-
-    const handleIconClick = (event, item) => {
-        setAnchorEl(event.currentTarget);
-        setSelectedItem(item);
-    };
-
-    const handleCloseMenu = () => {
-        setAnchorEl(null);
-        setSelectedItem(null);
-    };
-
-    const handleHistoryClick = () => {
-        handleCloseMenu();
-        setIsHistoryModalOpen(true);
-    };
-
-    const handleCloseHistoryModal = () => {
-        setIsHistoryModalOpen(false);
-    };
-
-    const menu = (
-        <Menu>
-            <Menu.Item key="all" >
-                All
-            </Menu.Item>
-            <Menu.Item key="today" >
-                Today
-            </Menu.Item>
-            <Menu.Item key="week" >
-                Week
-            </Menu.Item>
-            <Menu.Item key="tomorrow" >
-                Tomorrow
-            </Menu.Item>
-            <Menu.Item key="month">
-                Month
-            </Menu.Item>
-        </Menu>
+const Index = () => {
+    const { data: paymentResult, isLoading: paymentLoading } = useFetch(() =>
+        request.filter({ entity: 'payment' })
     );
 
-    return (
-        <div className="filtered-list-container">
-            <div className='flex justify-between items-center'>
-                <h3 className='text-base font-thin'>Transactions</h3>
-                <div>
-                    <Dropdown overlay={menu} trigger={['click']}>
-                        <div className='mb-2'>
-                            <CiFilter className='cursor-pointer text-xl font-thin text-blue-500' title='Filter' />
-                        </div>
-                    </Dropdown>
-                </div>
-            </div>
-           
-            <div className="filter-buttons">
-                <button
-                    className={`${filter === 'All' ? 'bg-transparent text-blue-500 border-b-2 border-blue-500' : 'text-blue-500 bg-transparent '
-                        } py-2 px-4 rounded-l`}
-                    onClick={() => setFilter('All')}
-                >
-                    All
-                </button>
-                <button
-                    className={`${filter === 'Aproved' ? 'text-green-500 bg-transparent border-b-2 border-green-500' : 'text-green-500 bg-transparent'
-                        } py-2 px-4`}
-                    onClick={() => setFilter('Aproved')}
-                >
-                    Aproved
-                </button>
-                <button
-                    className={`${filter === 'Reject' ? 'text-red-500  bg-transparent  border-b-2 border-red-500' : 'text-red-500 bg-transparent'
-                        } py-2 px-4`}
-                    onClick={() => setFilter('Reject')}
-                >
-                    Reject
-                </button>
-                {/* Add more filter buttons as needed */}
-            </div>
-            <div className="table-container" style={{ maxHeight: '300px', overflowY: 'auto' }}>
-                <TableContainer component={Paper}>
-                    <Table>
-                        <TableHead>
-                            <TableRow>
-                                <TableCell>Name</TableCell>
-                                <TableCell>Email</TableCell>
-                                <TableCell>Status</TableCell>
-                                <TableCell>Actions</TableCell>
-                            </TableRow>
-                        </TableHead>
-                        <TableBody>
-                            {filteredData.map(item => (
-                                <TableRow key={item._id}>
-                                    <TableCell>{item.full_name}</TableCell>
-                                    <TableCell>{item.contact.email}</TableCell>
-                                    <TableCell>{item.customfields.status}</TableCell>
-                                    <TableCell>
-                                        <IconButton
-                                            onClick={(event) => handleIconClick(event, item)}
-                                        >
-                                            <MoreVert />
-                                        </IconButton>
-                                        <Menu
-                                            anchorEl={anchorEl}
-                                            open={Boolean(anchorEl) && selectedItem === item}
-                                            onClose={handleCloseMenu}
-                                        >
-                                            <MenuItem onClick={handleHistoryClick}>History</MenuItem>
-                                        </Menu>
-                                    </TableCell>
-                                </TableRow>
-                            ))}
-                        </TableBody>
-                    </Table>
-                </TableContainer>
-            </div>
+    const [currentPage, setCurrentPage] = useState(1);
+    const pageSize = 6; // Number of items per page
+    const [isHeaderSticky, setIsHeaderSticky] = useState(false);
 
-            {/* History Modal */}
-            <Dialog open={isHistoryModalOpen} onClose={handleCloseHistoryModal}>
-                <DialogTitle>Payment History</DialogTitle>
-                <DialogContent>
-                    {selectedItem && selectedItem.customfields && selectedItem.customfields.payment_history && selectedItem.customfields.payment_history.length > 0 ? (
-                        <ul>
-                            {selectedItem.customfields.payment_history.map(payment => (
-                                <li key={payment._id}>
-                                    Paid Amount: {payment.paid_amount}, Timestamp: {new Date(payment.timestamp).toLocaleString()}
-                                </li>
-                            ))}
-                        </ul>
-                    ) : (
-                        <p>No payment history available.</p>
-                    )}
-                </DialogContent>
-                <DialogActions>
-                    <Button onClick={handleCloseHistoryModal} color="primary">
-                        Close
-                    </Button>
-                </DialogActions>
-            </Dialog>
+    const formatDate = (dateString) => {
+        const options = { day: '2-digit', month: '2-digit', year: 'numeric' };
+        const date = new Date(dateString);
+        return date.toLocaleDateString('en-US', options);
+    };
+
+    const formatTime = (timeString) => {
+        const options = { hour: '2-digit', minute: '2-digit' };
+        const time = new Date(timeString);
+        return time.toLocaleTimeString('en-US', options);
+    };
+
+    const sortDataByDateTime = (data) => {
+        return data.sort((a, b) => {
+            const dateA = new Date(a.date + 'T' + a.time);
+            const dateB = new Date(b.date + 'T' + b.time);
+            return dateB - dateA;
+        });
+    };
+
+    const handleChangePage = (page) => {
+        setCurrentPage(page);
+    };
+
+    const handleScroll = () => {
+        const scrollPosition = window.scrollY;
+        setIsHeaderSticky(scrollPosition > 100);
+    };
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
+    const generateColor = (input) => {
+        const hash = input
+            .split('')
+            .reduce((acc, char) => char.charCodeAt(0) + (acc << 6) + (acc << 16) - acc, 0);
+        const color = `hsl(${hash % 360}, 70%, 80%)`;
+        return color;
+    };
+
+    if (paymentLoading) {
+        return <Spin size="large" />;
+    }
+
+    const sortedData = sortDataByDateTime(paymentResult?.result || []);
+    const paginatedData = sortedData.slice((currentPage - 1) * pageSize, currentPage * pageSize);
+
+    const columns = [
+        {
+            title: 'Avatar',
+            key: 'avatar',
+            render: (text, record) => (
+                <Avatar style={{ backgroundColor: generateColor(record.student_name) }}>
+                    {record.student_name.charAt(0)}
+                </Avatar>
+            ),
+        },
+        {
+            title: 'Full Name',
+            dataIndex: 'student_name',
+            key: 'student_name',
+            render: (text) => <Text>{text}</Text>,
+        },
+        {
+            title: 'Amount',
+            dataIndex: 'total_paid_amount',
+            key: 'total_paid_amount',
+        },
+        {
+            title: 'Date',
+            dataIndex: 'date',
+            key: 'date',
+            render: (text) => formatDate(text),
+        },
+        {
+            title: 'Time',
+            dataIndex: 'time',
+            key: 'time',
+            render: (text) => formatTime(text),
+        },
+        {
+            title: 'Details',
+            key: 'details',
+            render: (text, record) => (
+                <Collapse>
+                    <Panel header={`Details for ${record.userId.fullname}`} key="1">
+                        <Space>
+                            <Text>{`Full Name: ${record.userId.fullname}`}</Text>
+                            <Text>{`Username: ${record.userId.username}`}</Text>
+                        </Space>
+                    </Panel>
+                </Collapse>
+            ),
+        },
+    ];
+
+
+    return (
+        <div className="space-y-4" >
+            <div className={`capitalize text-center text-blue-500 text-base ${isHeaderSticky ? 'sticky-header' : ''}`}>
+                <p className="font-thin border-b-2">Recent Transactions</p>
+            </div>
+            <div className="custom-scrollbar">
+                <Table
+                    dataSource={paginatedData}
+                    columns={columns}
+                    pagination={false}
+
+                />
+            </div>
+            <Pagination
+                current={currentPage}
+                pageSize={pageSize}
+                total={sortedData.length}
+                onChange={handleChangePage}
+                className="text-center"
+            />
         </div>
     );
 };
 
-export default FilteredList;
+export default Index;

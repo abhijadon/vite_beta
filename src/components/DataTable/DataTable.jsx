@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from 'react';
 import { EyeOutlined, EditOutlined, DeleteOutlined, EllipsisOutlined } from '@ant-design/icons';
-import { Dropdown, Table, Button, Card, Select } from 'antd';
+import { Dropdown, Table, Button, Card, Select, Input } from 'antd';
 import { useSelector, useDispatch } from 'react-redux';
 import { crud } from '@/redux/crud/actions';
 import { LiaRupeeSignSolid } from "react-icons/lia";
@@ -8,9 +8,13 @@ import { selectListItems } from '@/redux/crud/selectors';
 import useLanguage from '@/locale/useLanguage';
 import useResponsiveTable from '@/hooks/useResponsiveTable';
 import { useCrudContext } from '@/context/crud';
-import AutoCompleteAsync from '../AutoCompleteAsync';
+import * as XLSX from 'xlsx';
 import { request } from '@/request';
 import { BiReset } from 'react-icons/bi';
+import { LiaFileDownloadSolid } from "react-icons/lia";
+import { debounce } from 'lodash';
+
+const { Search } = Input;
 
 function AddNewItem({ config }) {
   const { crudContextAction } = useCrudContext();
@@ -37,53 +41,52 @@ export default function DataTable({ config, extra = [], setActiveForm }) {
   const translate = useLanguage();
   const [selectedInstitute, setSelectedInstitute] = useState(null);
   const [selectedUniversity, setSelectedUniversity] = useState(null);
-  const [selectedCounselor, setSelectedCounselor] = useState(null);
+  const [selectedSession, setSelectedSession] = useState(null);
   const [selectedUserId, setSelectedUserId] = useState(null);
   const [selectedStatus, setSelectedStatus] = useState(null);
-  const [counselors, setCounselors] = useState([]);
   const [statuses, setStatuses] = useState([]);
   const [institutes, setInstitutes] = useState([]);
   const [universities, setUniversities] = useState([]);
+  const [session, setSession] = useState([]);
   const [userNames, setUserNames] = useState([]);
   const [totalCount, setTotalCount] = useState(0);
+  const [filteredCount, setFilteredCount] = useState(0);
+  const [searchQuery, setSearchQuery] = useState('');
+
   useEffect(() => {
     const fetchData = async () => {
       const { success, result } = await request.filter({ entity: 'payment' });
       if (success) {
-        // Extract unique values for counselors, statuses, institutes, universities, and user IDs
-        const uniqueCounselors = [...new Set(result.map(item => item.counselor_email))];
         const uniqueStatuses = [...new Set(result.map(item => item.status))];
         const uniqueInstitutes = [...new Set(result.map(item => item.institute_name))];
+        const uniqueSession = [...new Set(result.map(item => item.session))];
         const uniqueUniversities = [...new Set(result.map(item => item.university_name))];
         const uniqueUserNames = [...new Set(result.map(item => item.userId?.fullname))];
 
-        setCounselors(uniqueCounselors);
+
         setStatuses(uniqueStatuses);
         setInstitutes(uniqueInstitutes);
+        setSession(uniqueSession);
         setUniversities(uniqueUniversities);
-        setUserNames(uniqueUserNames); // New state for unique user names
-        setTotalCount(result.length);
+        setUserNames(uniqueUserNames);
+        setTotalCount(result.length); // Set total count initially
+        setFilteredCount(result.length); // Set filtered count initially
       }
     };
 
     fetchData();
   }, []);
 
-  // Function to extract counselor name from email
-  const getCounselorName = (email) => {
-    // Check if email is defined before splitting
-    return email ? email.split('@')[0] : '';
-  };
 
-  // Function to reset all values
   const resetValues = () => {
     setSelectedInstitute(null);
     setSelectedUniversity(null);
-    setSelectedCounselor(null);
+    setSelectedSession(null);
     setSelectedStatus(null);
     setSelectedUserId(null);
-
+    setSearchQuery('')
   };
+
   const items = [
     {
       label: translate('Show'),
@@ -104,7 +107,6 @@ export default function DataTable({ config, extra = [], setActiveForm }) {
     {
       type: 'divider',
     },
-
     {
       label: translate('Delete'),
       key: 'delete',
@@ -122,7 +124,7 @@ export default function DataTable({ config, extra = [], setActiveForm }) {
   function handleEdit(record) {
     dispatch(crud.currentItem({ data: record }));
     dispatch(crud.currentAction({ actionType: 'update', data: record }));
-    editBox.open(); // Open the edit form
+    editBox.open();
     panel.open();
     collapsedBox.open();
     setActiveForm('updateForm');
@@ -131,7 +133,7 @@ export default function DataTable({ config, extra = [], setActiveForm }) {
   function handleAddpayment(record) {
     dispatch(crud.currentItem({ data: record }));
     dispatch(crud.currentAction({ actionType: 'update', data: record }));
-    addBox.open(); // Open the add payment form
+    addBox.open();
     panel.open();
     collapsedBox.open();
     setActiveForm('addForm');
@@ -177,11 +179,9 @@ export default function DataTable({ config, extra = [], setActiveForm }) {
                 case 'updatePassword':
                   handleUpdatePassword(record);
                   break;
-
                 default:
                   break;
               }
-              // else if (key === '2')handleCloseTask
             },
           }}
           trigger={['click']}
@@ -197,17 +197,16 @@ export default function DataTable({ config, extra = [], setActiveForm }) {
 
   const { result: listResult, isLoading: listIsLoading } = useSelector(selectListItems);
   const { items: dataSource } = listResult;
-  // Function to handle data table load
   const handelDataTableLoad = useCallback(
-    async (pagination, searchQuery = '') => {
+    async (pagination, newSearchQuery = '') => {
       const options = {
         page: pagination.current || 1,
         items: pagination.pageSize || 10,
         filter: {
-          q: searchQuery,
+          q: newSearchQuery,
           institute: selectedInstitute,
           university: selectedUniversity,
-          counselor: selectedCounselor,
+          session: selectedSession,
           status: selectedStatus,
           userId: selectedUserId,
         },
@@ -215,12 +214,18 @@ export default function DataTable({ config, extra = [], setActiveForm }) {
 
       const { success, result } = await dispatch(crud.list({ entity, options }));
       if (success) {
-        setTotalCount(result.length); // Update filtered count based on the filtered data
+        const filteredData = filterDataSource(result);
+        setFilteredCount(filteredData.length); // Update filtered count
       }
     },
-    [entity, selectedInstitute, selectedUniversity, selectedCounselor, selectedStatus, selectedUserId]
+    [entity, selectedInstitute, selectedUniversity, selectedStatus, selectedUserId, selectedSession]
   );
 
+  const handleSearch = debounce((value) => {
+    console.log('Search Value:', value);
+    setSearchQuery(value);
+    handelDataTableLoad({}, value); // Trigger search on each keystroke
+  }, 500);
   const dispatcher = () => {
     dispatch(crud.list({ entity }));
   };
@@ -239,21 +244,74 @@ export default function DataTable({ config, extra = [], setActiveForm }) {
     return data.filter(item => {
       const instituteMatch = !selectedInstitute || item.customfields.institute_name === selectedInstitute;
       const universityMatch = !selectedUniversity || item.customfields.university_name === selectedUniversity;
-      const counselorMatch = !selectedCounselor || item.customfields.counselor_email === selectedCounselor;
+      const sessionMatch = !selectedSession || item.customfields.session === selectedSession;
       const statusMatch = !selectedStatus || item.customfields.status === selectedStatus;
-      const userMatch = !selectedUserId || item.customfields.userId?.fullname === selectedUserId;
+      const userMatch = !selectedUserId || item.userId?.fullname === selectedUserId;
 
-      return instituteMatch && universityMatch && counselorMatch && statusMatch && userMatch;
+      const phoneAsString = item.contact?.phone?.toString();
+      const emailLowerCase = item.contact?.email?.toLowerCase();
+
+      const searchMatch = !searchQuery || (
+        item.lead_id.includes(searchQuery) ||
+        (emailLowerCase && emailLowerCase.includes(searchQuery.toLowerCase())) ||
+        (typeof phoneAsString === 'string' && phoneAsString.includes(searchQuery)) ||
+        item.full_name.includes(searchQuery)
+      );
+      return instituteMatch && universityMatch && statusMatch && userMatch && searchMatch && sessionMatch;
     });
+
+  };
+
+  const handleExportToExcel = () => {
+    if (dataSource.length === 0) {
+      return;
+    }
+    const fileName = 'data.xlsx';
+
+    const exportData = [
+      dataTableColumns.map(column => column.title),
+      ...dataSource.map(item => dataTableColumns.map(column => {
+        let value = item;
+        const dataIndex = column.dataIndex;
+        const keys = dataIndex ? (Array.isArray(dataIndex) ? dataIndex : dataIndex.split('.')) : [];
+        keys.forEach(key => {
+          value = value?.[key];
+        });
+        return value;
+      })),
+    ];
+
+    const ws = XLSX.utils.aoa_to_sheet(exportData);
+    const wb = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, ws, 'Lead Data');
+
+    try {
+      XLSX.writeFile(wb, fileName);
+    } catch (error) {
+      console.error('Error exporting data to Excel:', error);
+    }
   };
 
   const renderTable = () => (
     <>
       <Card className='mt-8'>
         <div className='flex justify-between items-center mb-3'>
-          <AutoCompleteAsync entity={'lead'} displayLabels={['lead']} searchFields={'email'} />
+          {entity === 'lead' && (
+            <div className='flex items-center gap-2'>
+              <span className='text-red-500 font-thin'>{`${searchQuery ? filteredCount : totalCount}`}</span>
+              <Search
+                placeholder="Search by email"
+                onSearch={handleSearch} // Remove this line
+                onChange={(e) => handleSearch(e.target.value)} // Add this line
+                className='w-full'
+              />
+            </div>
+          )}
           <div className='space-x-2 flex items-center'>
             <AddNewItem key="addNewItem" config={config} />
+            <div className='font-thin'>
+              <LiaFileDownloadSolid title='Export excel' onClick={handleExportToExcel} className='text-3xl text-blue-500 hover:text-blue-700 cursor-pointer' />
+            </div>
           </div>
         </div>
         <Table
@@ -275,7 +333,6 @@ export default function DataTable({ config, extra = [], setActiveForm }) {
           <div className='flex items-center justify-start mb-10 gap-3'>
             <div className='grid grid-cols-5 gap-3'>
               <div>
-                {/* Select for Institute */}
                 <Select
                   placeholder="Select institute"
                   className='w-60 h-10 capitalize'
@@ -288,7 +345,6 @@ export default function DataTable({ config, extra = [], setActiveForm }) {
                 </Select>
               </div>
               <div>
-                {/* Select for University */}
                 <Select
                   placeholder="Select university"
                   className='w-60 h-10 capitalize'
@@ -301,22 +357,6 @@ export default function DataTable({ config, extra = [], setActiveForm }) {
                 </Select>
               </div>
               <div>
-                {/* Select for Counselor Name */}
-                <Select
-                  placeholder="Select counselor name"
-                  className='w-60 h-10 capitalize'
-                  value={selectedCounselor}
-                  onChange={(value) => setSelectedCounselor(value)}
-                >
-                  {counselors.map(counselorEmail => (
-                    <Select.Option className="capitalize" key={counselorEmail}>
-                      {getCounselorName(counselorEmail)}
-                    </Select.Option>
-                  ))}
-                </Select>
-              </div>
-              <div>
-                {/* Select for Status */}
                 <Select
                   placeholder="Select status"
                   className='w-60 h-10 capitalize'
@@ -328,7 +368,6 @@ export default function DataTable({ config, extra = [], setActiveForm }) {
                   ))}
                 </Select>
               </div>
-              {/* Select for User Full Name */}
               <div>
                 <Select
                   placeholder="Select user full name"
@@ -344,6 +383,20 @@ export default function DataTable({ config, extra = [], setActiveForm }) {
                 </Select>
               </div>
               <div>
+                <Select
+                  placeholder="Select session"
+                  className='w-60 h-10 capitalize'
+                  value={selectedSession}
+                  onChange={(value) => setSelectedSession(value)}
+                >
+                  {session.map((session) => (
+                    <Select.Option className="capitalize font-thin font-mono" key={session}>
+                      {session}
+                    </Select.Option>
+                  ))}
+                </Select>
+              </div>
+              <div>
                 <Button title='Reset All Filters' onClick={resetValues} className='bg-transparent text-red-500 font-thin text-lg h-10 hover:text-red-600'>
                   <BiReset />
                 </Button>
@@ -354,7 +407,6 @@ export default function DataTable({ config, extra = [], setActiveForm }) {
       );
     }
 
-    // Add more conditions for other entities as needed
     return null;
   };
 
@@ -363,11 +415,8 @@ export default function DataTable({ config, extra = [], setActiveForm }) {
       <div>
         {renderFilters()}
       </div>
-      <div>
-        {/* Wrap the Table component with a div for styling */}
-        <div className="table-container">
-          {renderTable()}
-        </div>
+      <div className="table-container">
+        {renderTable()}
       </div>
     </>
   );

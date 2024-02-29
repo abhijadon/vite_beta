@@ -1,16 +1,6 @@
-
-
-import { Layout } from 'antd';
-
-const { Content } = Layout;
-
 export default function DashboardLayout({ children }) {
   return (
-    <div
-      style={{
-        marginLeft: 140,
-      }}
-    >
+    <div>
       {children}
     </div>
   );

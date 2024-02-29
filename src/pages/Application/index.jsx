@@ -15,81 +15,81 @@ export default function Lead() {
     searchFields: ['full_name', 'company', 'contact.email'],
     outputValue: '_id',
   };
-  const counselorEmailToName = {
-    'apoorvasrivastava@sode.co.in': 'Apoorva Srivastava',
-    'nehaprashar@sode.co.in': 'Neha Prasher',
-    'priya@sode.co.in': 'Priya Anand',
-    'diksha@sode.co.in': 'Diksha Singh',
-    'abhilasha@sode.co.in': 'Abhilasha Gupta',
-    'saher@sode.co.in': 'Saher Khan',
+  // const counselorEmailToName = {
+  //   'apoorvasrivastava@sode.co.in': 'Apoorva Srivastava',
+  //   'nehaprashar@sode.co.in': 'Neha Prasher',
+  //   'priya@sode.co.in': 'Priya Anand',
+  //   'diksha@sode.co.in': 'Diksha Singh',
+  //   'abhilasha@sode.co.in': 'Abhilasha Gupta',
+  //   'saher@sode.co.in': 'Saher Khan',
 
-    // DES Internal email with name 
-    'muskan@distanceeducationschool.com': 'Muskaan ',
-    'aniruddh@distanceeducationschool.com': 'Aniruddh Prakash',
-    'amritpal@sode.co.in': 'Amritpal Singh',
-    'salman@sode.co.in': 'Salman',
-    'tariq@sode.co.in': 'Tariq Hasan',
-    'shivam@sode.co.in': 'Shivam sharma',
-    'pushpa@sode.co.in': 'Pushpa Pramanik',
-    'medha@distanceeducationschool.com': 'Medha',
-    // DES Internal email with name 
-    'anurag@distanceeducationschool.com': 'Anurag Yadav',
-    'kavitakumari@sode.co.in': 'Kavita Kumari',
-    'rupal@sode.co.in': 'Rupal Gautam',
-    'deva@sode.co.in': 'Devendra',
-    'manshi@sode.co.in': 'Manshi Kem',
+  //   // DES Internal email with name 
+  //   'muskan@distanceeducationschool.com': 'Muskaan ',
+  //   'aniruddh@distanceeducationschool.com': 'Aniruddh Prakash',
+  //   'amritpal@sode.co.in': 'Amritpal Singh',
+  //   'salman@sode.co.in': 'Salman',
+  //   'tariq@sode.co.in': 'Tariq Hasan',
+  //   'shivam@sode.co.in': 'Shivam sharma',
+  //   'pushpa@sode.co.in': 'Pushpa Pramanik',
+  //   'medha@distanceeducationschool.com': 'Medha',
+  //   // DES Internal email with name 
+  //   'anurag@distanceeducationschool.com': 'Anurag Yadav',
+  //   'kavitakumari@sode.co.in': 'Kavita Kumari',
+  //   'rupal@sode.co.in': 'Rupal Gautam',
+  //   'deva@sode.co.in': 'Devendra',
+  //   'manshi@sode.co.in': 'Manshi Kem',
 
-    // DES - INTERNATIONAL email with name 
-    'zarin@distanceeducationschool.com': 'Zarin Badar',
+  //   // DES - INTERNATIONAL email with name 
+  //   'zarin@distanceeducationschool.com': 'Zarin Badar',
 
-    // HES team email with name 
-    'kanchan@highereducationschool.com': 'Kanchan Sharma',
-    'kirti@highereducationschool.com': 'Kirti Dubey',
-    'ramandeep@highereducationschool.com': 'Ramandeep Kaur',
-    'kavita@highereducationschool.com': 'Kavita Yadav',
-    'imra@highereducationschool.com': 'Imra Khan',
-    'mahak@highereducationschool.com': 'Mahek',
-    'abhay@highereducationschool.com': 'Abhay Dubey',
-    'swati@highereducationschool.com': 'Swati',
-    'gulshan@highereducationschool.com': 'Gulshan Nayyar',
-    'isha@highereducationschool.com': 'Isha Jaiswal',
-    'sakshi@highereducationschool.com': 'Sakshi Arora',
+  //   // HES team email with name 
+  //   'kanchan@highereducationschool.com': 'Kanchan Sharma',
+  //   'kirti@highereducationschool.com': 'Kirti Dubey',
+  //   'ramandeep@highereducationschool.com': 'Ramandeep Kaur',
+  //   'kavita@highereducationschool.com': 'Kavita Yadav',
+  //   'imra@highereducationschool.com': 'Imra Khan',
+  //   'mahak@highereducationschool.com': 'Mahek',
+  //   'abhay@highereducationschool.com': 'Abhay Dubey',
+  //   'swati@highereducationschool.com': 'Swati',
+  //   'gulshan@highereducationschool.com': 'Gulshan Nayyar',
+  //   'isha@highereducationschool.com': 'Isha Jaiswal',
+  //   'sakshi@highereducationschool.com': 'Sakshi Arora',
 
-    // Jain team email with name 
-    'anitha@sode.co.in': 'A.Anitha',
-    'vani@sode.co.in': 'Vani Ruckmani',
+  //   // Jain team email with name 
+  //   'anitha@sode.co.in': 'A.Anitha',
+  //   'vani@sode.co.in': 'Vani Ruckmani',
 
-    // Manipal team email with name
-    'swatiramani.manipal@gmail.com': 'Swati Ramani',
-    'ankitakumar@sode.co.in': 'Ankita Kumari',
-    'nidhi@sode.co.in': 'Nidhi',
-    'amreen@sode.co.in': 'Amreen ALI Khan',
-    'umar@sode.co.in': 'MD Umar',
-    'nehagupta@sode.co.in': 'Neha Gupta',
-    'pawankumar@sode.co.in': 'Pawan Kumar',
-    'bhavya@sode.co.in': 'Bhavya',
+  //   // Manipal team email with name
+  //   'swatiramani.manipal@gmail.com': 'Swati Ramani',
+  //   'ankitakumar@sode.co.in': 'Ankita Kumari',
+  //   'nidhi@sode.co.in': 'Nidhi',
+  //   'amreen@sode.co.in': 'Amreen ALI Khan',
+  //   'umar@sode.co.in': 'MD Umar',
+  //   'nehagupta@sode.co.in': 'Neha Gupta',
+  //   'pawankumar@sode.co.in': 'Pawan Kumar',
+  //   'bhavya@sode.co.in': 'Bhavya',
 
-    // ALL DES && HES team email with name 
-    'rajesh@distanceeducationschool.com': 'Rajesh Sir',
-    'manisha@distanceeducationschool.com': 'Manisha Yadav',
-    'admin@distanceeducationschool.com': 'Nouman Sir',
-    'sandy@distanceeducationschool.com': 'Sandy',
-    'neha@distanceeducationschool.com': 'Neha Raj',
-    'yashpriya@distanceeducationschool.com': 'Yash Priya',
-    'kavitahaldar@distanceeducationschool.com': 'Kavita Haldar',
-    'ifla@distanceeducationschool.com': 'Ifla',
-    'shalu@distanceeducationschool.com': 'Shalu',
-    'zainubia@distanceeducationschool.com': 'Zainbuia',
-    'pallovi@distanceeducationschool.com': 'Pallovi',
-    'hansi@distanceeducationschool.com': 'Hansi',
-    'shristi@distanceeducationschool.com': 'Shristi',
-    'aashita@highereducationschool.com': 'Aashita',
-    'pratibha@highereducationschool.com': 'Pratibha',
-    'shreyashi@highereducationschool.com': 'Shreyashi',
-    'spuhelpdesk@gmail.com': 'Binny',
-    'ruchika.spu@gmail.com': 'Ruchika',
-    'ramiz.spu@gmail.com': 'Ramiz'
-  };
+  //   // ALL DES && HES team email with name 
+  //   'rajesh@distanceeducationschool.com': 'Rajesh Sir',
+  //   'manisha@distanceeducationschool.com': 'Manisha Yadav',
+  //   'admin@distanceeducationschool.com': 'Nouman Sir',
+  //   'sandy@distanceeducationschool.com': 'Sandy',
+  //   'neha@distanceeducationschool.com': 'Neha Raj',
+  //   'yashpriya@distanceeducationschool.com': 'Yash Priya',
+  //   'kavitahaldar@distanceeducationschool.com': 'Kavita Haldar',
+  //   'ifla@distanceeducationschool.com': 'Ifla',
+  //   'shalu@distanceeducationschool.com': 'Shalu',
+  //   'zainubia@distanceeducationschool.com': 'Zainbuia',
+  //   'pallovi@distanceeducationschool.com': 'Pallovi',
+  //   'hansi@distanceeducationschool.com': 'Hansi',
+  //   'shristi@distanceeducationschool.com': 'Shristi',
+  //   'aashita@highereducationschool.com': 'Aashita',
+  //   'pratibha@highereducationschool.com': 'Pratibha',
+  //   'shreyashi@highereducationschool.com': 'Shreyashi',
+  //   'spuhelpdesk@gmail.com': 'Binny',
+  //   'ruchika.spu@gmail.com': 'Ruchika',
+  //   'ramiz.spu@gmail.com': 'Ramiz'
+  // };
   const toTitleCase = (str) => {
     if (!str) return ''; // Check for undefined or null
     return str.toLowerCase().replace(/(?:^|\s)\w/g, function (match) {
@@ -203,11 +203,6 @@ export default function Lead() {
       render: (text, record, index) => index + 1,
     },
     {
-      title: 'User',
-      key: 'user', // Add a unique key for the column
-      render: (_, record) => record.full_name, // Access 'full_name' property here
-    },
-    {
       title: translate('StudentID'),
       dataIndex: ['lead_id'],
     },
@@ -258,13 +253,17 @@ export default function Lead() {
       dataIndex: ['customfields', 'university_name'],
       key: 'university_name',
     },
+    // {
+    //   title: translate('Counselor Name'),
+    //   dataIndex: ['customfields', 'counselor_email'],
+    //   key: 'counselor_email',
+    //   render: (email) => toTitleCase(counselorEmailToName[email] || email),
+    // },
     {
-      title: translate('Counselor Name'),
-      dataIndex: ['customfields', 'counselor_email'],
-      key: 'counselor_email',
-      render: (email) => toTitleCase(counselorEmailToName[email] || email),
+      title: 'User',
+      dataIndex: ['userId', 'fullname'],
+      key: 'userId', // Add a unique key for the column
     },
-
     {
       title: translate('Father Name'),
       dataIndex: ['customfields', 'father_name'],

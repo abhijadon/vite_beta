@@ -1,12 +1,5 @@
-import { useEffect, useState } from 'react';
-import Card from '@mui/joy/Card';
-import CardContent from '@mui/joy/CardContent';
-import Typography from '@mui/joy/Typography';
-import { Progress, Select } from 'antd';
-import CircularProgress from '@mui/joy/CircularProgress';
-import { GrPowerReset } from "react-icons/gr";
-import { AiOutlineExport } from "react-icons/ai";
-import SvgIcon from '@mui/joy/SvgIcon';
+import { useCallback, useEffect, useState } from 'react';
+import * as XLSX from 'xlsx';
 import {
   EyeOutlined,
   EditOutlined,
@@ -15,9 +8,7 @@ import {
   PlusOutlined,
   EllipsisOutlined,
 } from '@ant-design/icons';
-import { Dropdown, Table, Button, Input } from 'antd';
-import { PageHeader } from '@ant-design/pro-layout';
-
+import { Dropdown, Table, Button, Input, Select, Card } from 'antd';
 import { useSelector, useDispatch } from 'react-redux';
 import useLanguage from '@/locale/useLanguage';
 import { erp } from '@/redux/erp/actions';
@@ -27,9 +18,12 @@ import { generate as uniqueId } from 'shortid';
 import { useNavigate } from 'react-router-dom';
 import useResponsiveTable from '@/hooks/useResponsiveTable';
 import { DOWNLOAD_BASE_URL } from '@/config/serverApiConfig';
+import { request } from '@/request';
+import { BiReset } from 'react-icons/bi';
+import { FcBearish, FcBullish, FcSalesPerformance } from 'react-icons/fc';
+import { LiaFileDownloadSolid } from 'react-icons/lia';
+
 const { Search } = Input;
-
-
 
 
 function AddNewItem({ config, hasCreate = true }) {
@@ -50,112 +44,155 @@ function AddNewItem({ config, hasCreate = true }) {
 }
 export default function DataTable({ config, extra = [] }) {
   const translate = useLanguage();
-  const [paymentSummary, setPaymentSummary] = useState(null);
-  const [totalCount, setTotalCount] = useState(0); // State to hold the total count of data
-  const [filteredCount, setFilteredCount] = useState(0);
   let { entity, dataTableColumns, create = true } = config;
   const { result: listResult, isLoading: listIsLoading } = useSelector(selectListItems);
   const { items: dataSource } = listResult;
   const { erpContextAction } = useErpContext();
   const { modal } = erpContextAction;
-  {/* filters code  */ }
+  const [selectedInstitute, setSelectedInstitute] = useState(null);
+  const [selectedPaymentMode, setSelectedPaymentMode] = useState(null);
+  const [selectedPaymentType, setSelectedPaymentType] = useState(null);
+  const [selectedUniversity, setSelectedUniversity] = useState(null);
+  const [selectedUserId, setSelectedUserId] = useState(null);
+  const [selectedStatus, setSelectedStatus] = useState(null);
+  const [statuses, setStatuses] = useState([]);
+  const [paymentMode, setPaymentMode] = useState([]);
+  const [paymentType, setPaymentType] = useState([]);
   const [institutes, setInstitutes] = useState([]);
   const [universities, setUniversities] = useState([]);
-  const [counselors, setCounselors] = useState([]);
-  const [paymentType, setpaymentType] = useState([]);
-  const [filters, setFilters] = useState({
-    selectedInstitute: '',
-    selectedUniversity: '',
-    selectedCounselor: '',
-    selectedPayment: '',
-  });
-  const handleFilterChange = (key, value) => {
-    setFilters({ ...filters, [key]: value });
+  const [userNames, setUserNames] = useState([]);
+  const [paymentData, setPaymentData] = useState({ result: null, isLoading: false });
+  const [searchQuery, setSearchQuery] = useState('');
+  const [totalCount, setTotalCount] = useState(0);
+  const [filteredCount, setFilteredCount] = useState(0);
 
-    // Calculate and update the filtered count
-    const filteredData = dataSource.filter(item => {
-      const { selectedInstitute, selectedUniversity, selectedCounselor, selectedPayment } = filters;
-      return (
-        (!selectedInstitute || item.institute_name === selectedInstitute) &&
-        (!selectedUniversity || item.university_name === selectedUniversity) &&
-        (!selectedCounselor || item.counselor_email === selectedCounselor) &&
-        (!selectedPayment || item.payment_type === selectedPayment)
-      );
-    });
 
-    setFilteredCount(filteredData.length);
+
+  const handelDataTableLoad = useCallback(
+    async (pagination, newSearchQuery = '') => {
+      const options = {
+        page: pagination.current || 1,
+        items: pagination.pageSize || 10,
+        filter: {
+          q: newSearchQuery,
+          institute: selectedInstitute,
+          university: selectedUniversity,
+          status: selectedStatus,
+          userId: selectedUserId,
+        },
+      };
+
+      const { success, result } = await dispatch(erp.list({ entity, options }));
+      if (success) {
+        const filteredData = filterDataSource(result);
+        setFilteredCount(filteredData.length); // Update filtered count
+      }
+    },
+    [entity, selectedInstitute, selectedUniversity, selectedStatus, selectedUserId]
+  );
+
+  const handleExportToExcel = () => {
+    if (dataSource.length === 0) {
+      return;
+    }
+    const fileName = 'data.xlsx';
+
+    const exportData = [
+      dataTableColumns.map(column => column.title),
+      ...dataSource.map(item => dataTableColumns.map(column => {
+        let value = item;
+        const dataIndex = column.dataIndex;
+        const keys = dataIndex ? (Array.isArray(dataIndex) ? dataIndex : dataIndex.split('.')) : [];
+        keys.forEach(key => {
+          value = value?.[key];
+        });
+        return value;
+      })),
+    ];
+
+    const ws = XLSX.utils.aoa_to_sheet(exportData);
+    const wb = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, ws, 'Lead Data');
+
+    try {
+      XLSX.writeFile(wb, fileName);
+    } catch (error) {
+      console.error('Error exporting data to Excel:', error);
+    }
   };
 
-  const handleResetFilters = () => {
-    setFilters({
-      selectedInstitute: '',
-      selectedUniversity: '',
-      selectedCounselor: '',
-      selectedPayment: '',
-    });
 
-    // Reset filtered count to total count
-    setFilteredCount(totalCount);
-  };
-
-  {/* filters code  */ }
-
-  /*api fetch */
   const fetchData = async () => {
     try {
-      const response = await fetch(`${import.meta.env.VITE_BACKEND_SERVER}api/payment/filter`);
-      const data = await response.json();
+      const { result, isLoading } = await request.summary({
+        entity: 'payment',
+        params: {
+          institute_name: selectedInstitute,
+          university_name: selectedUniversity,
+          status: selectedStatus,
+          payment_mode: selectedPaymentMode,
+          payment_type: selectedPaymentType,
+        },
+      });
 
-      if (data.success && data.result !== null) {
-        // Update the totalCount state with the count received from the API
-        setTotalCount(data.count);
-        setFilteredCount(data.count)
-        const uniqueInstitutes = Array.isArray(data.result) ? [...new Set(data.result.map((item) => item.institute_name))] : [];
-        const uniqueUniversities = Array.isArray(data.result) ? [...new Set(data.result.map((item) => item.university_name))] : [];
-        const uniqueCounselors = Array.isArray(data.result) ? [...new Set(data.result.map((item) => item.counselor_email))] : [];
-        const uniquePayment = Array.isArray(data.result) ? [...new Set(data.result.map((item) => item.payment_type))] : [];
-
-        setInstitutes(uniqueInstitutes);
-        setUniversities(uniqueUniversities);
-        setCounselors(uniqueCounselors);
-        setpaymentType(uniquePayment);
-      }
+      // Update the payment data state
+      setPaymentData({ result, isLoading });
     } catch (error) {
+      // Handle errors
       console.error('Error fetching data:', error);
     }
   };
 
   useEffect(() => {
     fetchData();
-  }, []);
-  useEffect(() => {
-    const controller = new AbortController();
+  }, [selectedUniversity, selectedInstitute, selectedStatus, selectedPaymentMode, selectedPaymentType]);
 
-    const fetchPaymentSummary = async () => {
-      try {
-        const { selectedInstitute, selectedUniversity, selectedCounselor, selectedPayment } = filters;
-        const queryParams = new URLSearchParams({
-          institute_name: selectedInstitute,
-          university_name: selectedUniversity,
-          counselor_email: selectedCounselor,
-          payment_type: selectedPayment
-        });
-        const response = await fetch(`${import.meta.env.VITE_BACKEND_SERVER}api/payment/summary?${queryParams}`, { signal: controller.signal });
-        const data = await response.json();
-        setPaymentSummary(data);
-      } catch (error) {
-        console.error('Error fetching payment summary:', error);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const { result } = await request.filter({ entity: 'payment' });
+      if (result) {
+        const uniquePaymentMode = [...new Set(result.map(item => item.payment_mode))];
+        const uniquePaymentType = [...new Set(result.map(item => item.payment_type))];
+        const uniqueStatuses = [...new Set(result.map(item => item.status))];
+        const uniqueInstitutes = [...new Set(result.map(item => item.institute_name))];
+        const uniqueUniversities = [...new Set(result.map(item => item.university_name))];
+        const uniqueUserNames = [...new Set(result.map(item => item.userId?.fullname))];
+        setStatuses(uniqueStatuses);
+        setPaymentType(uniquePaymentType);
+        setInstitutes(uniqueInstitutes);
+        setPaymentMode(uniquePaymentMode);
+        setUniversities(uniqueUniversities);
+        setUserNames(uniqueUserNames); // New state for unique user names
+        setTotalCount(result.length); // Set total count initially
+        setFilteredCount(result.length); // Set filtered count initially
       }
     };
 
-    fetchPaymentSummary();
+    fetchData();
+    handelDataTableLoad({}, searchQuery); // Include searchQuery here
+  }, [searchQuery, handelDataTableLoad]);
 
+
+
+
+
+  // Function to reset all values
+  const resetValues = () => {
+    setSelectedInstitute(null);
+    setSelectedUniversity(null);
+    setSelectedStatus(null);
+    setSelectedUserId(null);
+    setSelectedPaymentMode(null)
+    setSelectedPaymentType(null)
+  };
+
+  useEffect(() => {
+    const controller = new AbortController();
     return () => {
       controller.abort();
     };
-  }, [filters]);
-
-  {/*api fetch */ }
+  }, []);
 
 
   const items = [
@@ -249,10 +286,32 @@ export default function DataTable({ config, extra = [] }) {
 
   const dispatch = useDispatch();
 
-  const handelDataTableLoad = (pagination) => {
-    const options = { page: pagination.current || 1, items: pagination.pageSize || 10 };
-    dispatch(erp.list({ entity, options }));
+  // const handelDataTableLoad = (pagination) => {
+  //   const options = { page: pagination.current || 1, items: pagination.pageSize || 10 };
+  //   dispatch(erp.list({ entity, options }));
+  // }; 
+
+  const filterDataSource = (data) => {
+    return data.filter(item => {
+      const instituteMatch = !selectedInstitute || (item && item.institute_name === selectedInstitute);
+      const universityMatch = !selectedUniversity || (item && item.university_name === selectedUniversity);
+      const statusMatch = !selectedStatus || (item && item.status === selectedStatus);
+      const userMatch = !selectedUserId || (item && item.userId?.fullname === selectedUserId);
+
+      const phoneAsString = item && item.phone?.toString();
+      const emailLowerCase = item && item.email?.toLowerCase();
+
+      const searchMatch = !searchQuery || (
+        (item && item.lead_id && item.lead_id.includes(searchQuery)) ||
+        (emailLowerCase && emailLowerCase.includes(searchQuery.toLowerCase())) ||
+        (typeof phoneAsString === 'string' && phoneAsString.includes(searchQuery)) ||
+        (item && item.full_name && item.full_name.includes(searchQuery))
+      );
+      return instituteMatch && universityMatch && statusMatch && userMatch && searchMatch;
+    });
   };
+
+
 
   const dispatcher = () => {
     dispatch(erp.list({ entity }));
@@ -270,270 +329,209 @@ export default function DataTable({ config, extra = [] }) {
     dataTableColumns,
     items
   );
-
-  {/* progrsh bar */ }
-  const calculatePercentage = (currentAmount, targetAmount) => {
-    return (currentAmount / targetAmount) * 100;
+  const handleSearch = (value) => {
+    setSearchQuery(value);
+    handelDataTableLoad({}, value); // Trigger search on each keystroke
   };
-  const percentage1 = paymentSummary && paymentSummary.result && paymentSummary.result.total_course_fee !== undefined
-    ? calculatePercentage(paymentSummary.result.total_course_fee, 3000000)
-    : 0;
-  const percentage2 = paymentSummary && paymentSummary.result && paymentSummary.result.total_paid_amount ? calculatePercentage(paymentSummary.result.total_paid_amount, 2000000) : 0;
-  const percentage3 = paymentSummary && paymentSummary.result && paymentSummary.result.due_amount ? calculatePercentage(paymentSummary.result.due_amount, 1000000) : 0;
-
-
-  {/* progrsh bar */ }
-
-  {/* email split code onlye show name */ }
-
-  const getEmailName = (email) => {
-    if (!email) return '';
-    const parts = email.split('@');
-    return parts[0];
-  };
-
-
-  useEffect(() => {
-    const filteredData = dataSource.filter(item => {
-      const { selectedInstitute, selectedUniversity, selectedCounselor, selectedPayment } = filters;
-      return (
-        (!selectedInstitute || item.institute_name === selectedInstitute) &&
-        (!selectedUniversity || item.university_name === selectedUniversity) &&
-        (!selectedCounselor || item.counselor_email === selectedCounselor) &&
-        (!selectedPayment || item.payment_type === selectedPayment)
-      );
-    });
-
-    setFilteredCount(filteredData.length);
-  }, [filters]);
-
-  const filteredData = dataSource.filter(item => {
-    const { selectedInstitute, selectedUniversity, selectedCounselor, selectedPayment } = filters;
+  const renderTable = () => {
     return (
-      (!selectedInstitute || item.institute_name === selectedInstitute) &&
-      (!selectedUniversity || item.university_name === selectedUniversity) &&
-      (!selectedCounselor || item.counselor_email === selectedCounselor) &&
-      (!selectedPayment || item.payment_type === selectedPayment)
-    );
-  });
-
-  return (
-    <>
-      {entity === 'payment' && (
-        <div>
-          <div className='mb-10 mt-4 relative'>
-            <div>
-              <GrPowerReset onClick={handleResetFilters} className='float-right ml-5 text-xl font-thin text-red-600 cursor-pointer' title='Reset All ' />
-
-            </div>
-          </div>
-          <div className='flex justify-center items-center mb-10 gap-3 -mt-20'>
-            <Select
-              className='w-72 shadow h-10'
-              value={filters.selectedInstitute}
-              onChange={value => handleFilterChange('selectedInstitute', value)}
-              placeholder="Select Institute Name"
-            >
-              <Select.Option value=''>Select Institute Name</Select.Option>
-              {institutes.map((option) => (
-                <Select.Option key={option} value={option}>
-                  {option}
-                </Select.Option>
-              ))}
-            </Select>
-
-            <Select
-              className='w-72 shadow h-10'
-              value={filters.selectedUniversity}
-              onChange={value => handleFilterChange('selectedUniversity', value)}
-              placeholder="Select University Name"
-            ><Select.Option value=''>Select University Name</Select.Option>
-              {universities.map((option) => (
-                <Select.Option key={option} value={option}>
-                  {option}
-                </Select.Option>
-              ))}
-            </Select>
-
-            <Select
-              className='w-72 shadow h-10'
-              value={filters.selectedCounselor}
-              onChange={value => handleFilterChange('selectedCounselor', value)}
-              placeholder="Select Counselor Name"
-            >
-              <Select.Option value=''>Select Counselor</Select.Option>
-              {counselors.map((email) => (
-                <Select.Option key={email} value={email}>
-                  {getEmailName(email)}
-                </Select.Option>
-              ))}
-            </Select>
-            <Select
-              className='w-72 shadow h-10'
-              value={filters.selectedPayment}
-              onChange={value => handleFilterChange('selectedPayment', value)}
-              placeholder="Select Payment_type"
-            >
-              <Select.Option value=''>Select Payment Type</Select.Option>
-              {paymentType.map((payment) => (
-                <Select.Option key={payment} value={payment}>
-                  {payment}
-                </Select.Option>
-              ))}
-            </Select>
-          </div>
-        </div>
-      )}
-
-      <div ref={tableHeader}>
-        <div className='mb-24'>
-          {paymentSummary && entity === 'payment' && (
-            <div className='mb-10 flex gap-4'>
-              <Card className="w-1/3 shadow-lg">
-                <div className='flex justify-between'>
-                  <div>
-                    <CardContent orientation="horizontal">
-                      <CardContent>
-                        <Typography className="text-gray-500">Total Course Fee</Typography>
-                        <Typography level="h3" className="text-green-500">₹ {paymentSummary?.result?.total_course_fee}</Typography>
-
-                      </CardContent>
-                    </CardContent>
-                  </div>
-                  <div>
-                    <CircularProgress size="lg" determinate value={percentage1}>
-                      <SvgIcon>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          strokeWidth={1.5}
-                          stroke="currentColor"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941"
-                          />
-                        </svg>
-                      </SvgIcon>
-                    </CircularProgress>
-                  </div>
-                </div>
-                <Progress percent={Math.floor(percentage1)} status="active" strokeColor={{
-                  from: 'green',
-                  to: 'blue',
-                }} className='mt-3' />
-              </Card>
-              <Card className="w-1/3 shadow-lg">
-                <div className='flex justify-between'>
-                  <div>
-                    <CardContent orientation="horizontal">
-                      <CardContent>
-                        <Typography className="text-gray-500 ">Total Paid Amount</Typography>
-                        <Typography level="h3" className="text-blue-500">₹ {paymentSummary?.result?.total_paid_amount}</Typography>
-                      </CardContent>
-                    </CardContent>
-                  </div>
-                  <div>
-                    <CircularProgress size="lg" determinate value={percentage2}>
-                      <SvgIcon>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          strokeWidth={1.5}
-                          stroke="currentColor"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941"
-                          />
-                        </svg>
-                      </SvgIcon>
-                    </CircularProgress>
-                  </div>
-                </div>
-
-                <Progress percent={Math.floor(percentage2)} status="active" strokeColor={{
-                  from: 'blue',
-                  to: 'black',
-                }} className='mt-3' />
-              </Card>
-              <Card className="w-1/3 shadow-lg">
-                <div className='flex justify-between'>
-                  <div>
-                    <CardContent orientation="horizontal">
-                      <CardContent>
-                        <Typography className="text-gray-500 ">Due Amount</Typography>
-                        <Typography level="h3" className="text-red-500">₹ {paymentSummary?.result?.due_amount}</Typography>
-                      </CardContent>
-                    </CardContent>
-                  </div>
-                  <div>
-                    <CircularProgress size="lg" determinate value={percentage3}>
-                      <SvgIcon>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          strokeWidth={1.5}
-                          stroke="currentColor"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941"
-                          />
-                        </svg>
-                      </SvgIcon>
-                    </CircularProgress>
-                  </div>
-                </div>
-                <Progress percent={Math.floor(percentage3)} status="active" strokeColor={{
-                  from: 'red',
-                  to: 'green',
-                }} className='mt-3' />
-              </Card>
-            </div>
-          )}
-        </div>
-
-        <PageHeader
-          ghost={true}
-          style={{
-            padding: '20px 0px',
-          }}
-        >
-          {entity === 'payment' && (
+      <>
+        <Card>
+          <div ref={tableHeader}>
             <div>
               <div className='flex justify-between items-center'>
                 <div className='grid grid-rows-1 gap-1 font-thin text-xs text-red-500 '>
-                  <p>Showing {totalCount} to {filteredCount}</p>
-                  <Search placeholder="input search text" allowClear style={{ width: 200 }} />
+                  {entity === 'payment' && (
+                    <Search
+                      placeholder="Search by email"
+                      onSearch={handleSearch} // Remove this line
+                      onChange={(e) => handleSearch(e.target.value)} // Add this line
+                      className='w-full'
+                    />
+                  )}
                 </div>
-                <div className='flex items-center gap-4'>
-                  <Button onClick={handelDataTableLoad} key={`${uniqueId()}`} icon={<AiOutlineExport />} className='flex items-center bg-transparent text-gray-500 hover:text-black p-4 h-6'>
-                    {translate('Export')}
-                  </Button>
+                <div className='flex items-center gap-1'>
                   <AddNewItem config={config} key={`${uniqueId()}`} hasCreate={create} />
+                  <div>
+                    <LiaFileDownloadSolid title='Export excel' onClick={handleExportToExcel} className='text-3xl text-blue-500 hover:text-blue-700 cursor-pointer font-thin' />
+                  </div>
                 </div>
-
               </div>
             </div>
-          )}
-        </PageHeader>
-      </div>
-      <Table
-        columns={tableColumns}
-        rowKey={(item) => item._id}
-        dataSource={filteredData}
-        pagination={false}
-        loading={listIsLoading}
-        onChange={handelDataTableLoad}
-      />
 
+          </div>
+          <div className='space30'></div>
+          <Table
+            columns={tableColumns}
+            rowKey={(item) => item._id}
+            dataSource={filterDataSource(dataSource)}
+            pagination={false}
+            loading={listIsLoading}
+            onChange={handelDataTableLoad}
+          />
+        </Card>
+      </>
+    )
+  }
+
+
+
+
+
+  const amountCardsData = [
+    {
+      title: 'Total Course Fee',
+      color: 'green',
+      value: paymentData.result?.total_course_fee,
+      total: paymentData.result?.total_course_fee_total,
+      icon: <FcSalesPerformance style={{ fontSize: 48, color: 'green' }} />,
+    },
+    {
+      title: 'Total Paid Amount',
+      color: 'blue',
+      value: paymentData.result?.total_paid_amount,
+      total: paymentData.result?.total_paid_amount_total,
+      icon: <FcBullish style={{ fontSize: 48, color: 'blue' }} />,
+    },
+    {
+      title: 'Due Amount',
+      color: 'red',
+      value: paymentData.result?.due_amount,
+      total: paymentData.result?.due_amount_total,
+      icon: <FcBearish style={{ fontSize: 48, color: 'blue' }} />,
+    },
+  ];
+
+  const amountCards = amountCardsData.map((card, index) => {
+    return (
+      <Card className="w-1/3 shadow drop-shadow-lg" key={index}>
+        <div>
+          <div>
+            <div className="flex gap-10 justify-between items-center">
+              <div>{card.icon}</div>
+              <div>
+                <div className={`text-${card.color}-500 mb-2 text-sm font-normal font-serif`}>
+                  {card.title}
+                </div>
+                <div className={`text-${card.color}-500 text-2xl`}>₹ {card.value}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </Card>
+    );
+  });
+
+  const filterRender = () => (
+    <Card className='flex items-center justify-start gap-3'>
+      <div className='grid grid-cols-5 gap-3'>
+        <div>
+          {/* Select for Institute */}
+          <Select
+            placeholder="Select institute"
+            className='w-60 h-10 capitalize'
+            value={selectedInstitute}
+            onChange={(value) => setSelectedInstitute(value)}
+          >
+            {institutes.map(institute => (
+              <Select.Option key={institute}>{institute}</Select.Option>
+            ))}
+          </Select>
+        </div>
+        <div>
+          {/* Select for University */}
+          <Select
+            placeholder="Select university"
+            className='w-60 h-10 capitalize'
+            value={selectedUniversity}
+            onChange={(value) => setSelectedUniversity(value)}
+          >
+            {universities.map(university => (
+              <Select.Option key={university}>{university}</Select.Option>
+            ))}
+          </Select>
+        </div>
+
+        <div>
+          {/* Select for Status */}
+          <Select
+            placeholder="Select status"
+            className='w-60 h-10 capitalize'
+            value={selectedStatus}
+            onChange={(value) => setSelectedStatus(value)}
+          >
+            {statuses.map(status => (
+              <Select.Option key={status}>{status}</Select.Option>
+            ))}
+          </Select>
+        </div>
+        {/* Select for User Full Name */}
+        <div>
+          <Select
+            placeholder="Select payment mode"
+            className='w-60 h-10 capitalize'
+            value={selectedPaymentMode}
+            onChange={(value) => setSelectedPaymentMode(value)}
+          >
+            {paymentMode.map((paymentmode) => (
+              <Select.Option className="capitalize font-thin font-mono" key={paymentmode}>
+                {paymentmode}
+              </Select.Option>
+            ))}
+          </Select>
+        </div>
+        <div>
+          <Select
+            placeholder="Select payment type"
+            className='w-60 h-10 capitalize'
+            value={selectedPaymentType}
+            onChange={(value) => setSelectedPaymentType(value)}
+          >
+            {paymentType.map((paymenttype) => (
+              <Select.Option className="capitalize font-thin font-mono" key={paymenttype}>
+                {paymenttype}
+              </Select.Option>
+            ))}
+          </Select>
+        </div>
+        {/* Date Range Picker */}
+        <div>
+          <Select
+            placeholder="Select user full name"
+            className='w-60 h-10 capitalize'
+            value={selectedUserId}
+            onChange={(value) => setSelectedUserId(value)}
+          >
+            {userNames.map((userName) => (
+              <Select.Option className="capitalize font-thin font-mono" key={userName}>
+                {userName}
+              </Select.Option>
+            ))}
+          </Select>
+        </div>
+        <div>
+          <Button title='Reset All Filters' onClick={resetValues} className='bg-transparent text-red-500 font-thin text-lg h-10 hover:text-red-600'>
+            <BiReset />
+          </Button>
+        </div>
+      </div>
+
+    </Card>
+  )
+
+  return (
+    <>
+      <div>
+        {filterRender()}
+      </div>
+      <div className='space30'></div>
+      <div className='flex gap-4'>
+        {amountCards}
+      </div>
+      <div className='space30'></div>
+      <div>
+        {renderTable()}
+      </div>
     </>
   );
 }

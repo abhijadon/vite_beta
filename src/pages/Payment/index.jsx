@@ -112,9 +112,7 @@ export default function Payment() {
   };
   return (
     <>
-
       <PaymentDataTableModule config={config} />
-
     </>
   )
 }

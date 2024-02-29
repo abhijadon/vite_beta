@@ -1,10 +1,7 @@
 import { useState, useEffect } from 'react';
-
 import { Button, Tag, Form, Divider } from 'antd';
 import { PageHeader } from '@ant-design/pro-layout';
-
 import { useSelector, useDispatch } from 'react-redux';
-
 import useLanguage from '@/locale/useLanguage';
 
 import { settingsAction } from '@/redux/settings/actions';
@@ -38,7 +35,7 @@ export default function CreateItem({ config, CreateForm }) {
   const navigate = useNavigate();
 
   useEffect(() => {
-    dispatch(settingsAction.list({ entity: 'setting' }));
+    dispatch(settingsAction.list({ entity: 'payment' }));
   }, []);
   let { entity } = config;
 
@@ -78,7 +75,7 @@ export default function CreateItem({ config, CreateForm }) {
       setOfferSubTotal(0);
       navigate(`/${entity.toLowerCase()}/read/${result._id}`);
     }
-    return () => {};
+    return () => { };
   }, [isSuccess]);
 
   const onSubmit = (fieldsValue) => {

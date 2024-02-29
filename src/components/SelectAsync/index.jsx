@@ -26,6 +26,7 @@ export default function SelectAsync({
     return request.list({ entity });
   };
   const { result, isLoading: fetchIsLoading, isSuccess } = useFetch(asyncList);
+
   useEffect(() => {
     isSuccess && setOptions(result);
   }, [isSuccess]);
@@ -33,20 +34,18 @@ export default function SelectAsync({
   const labels = (optionField) => {
     return displayLabels.map((x) => optionField[x]).join(' ');
   };
+
   useEffect(() => {
-    // this for update Form , it's for setField
     if (value) {
-      setCurrentValue(value[outputValue] || value); // set nested value or value
+      setCurrentValue(value[outputValue] || value);
       onChange(value[outputValue] || value);
     }
   }, [value]);
 
   const handleSelectChange = (newValue) => {
     if (newValue === 'redirectURL') {
-      // Navigate to another page when "Add payment" is selected
       navigate(urlToRedirect);
     } else {
-      // Handle other select options
       if (onChange) {
         onChange(newValue[outputValue] || newValue);
       }
@@ -54,7 +53,7 @@ export default function SelectAsync({
   };
 
   useEffect(() => {
-    if(loadDefault) {
+    if (loadDefault && selectOptions) {
       const elem = selectOptions.find((option) => {
         return option[defaultField] === true;
       });
@@ -63,7 +62,7 @@ export default function SelectAsync({
         onChange(elem[outputValue] || elem);
       }
     }
-  }, [selectOptions]);
+  }, [selectOptions, loadDefault]);
 
   return (
     <Select
@@ -72,12 +71,12 @@ export default function SelectAsync({
       value={currentValue}
       onChange={handleSelectChange}
     >
-      {selectOptions.length === 0 && withRedirect && (
+      {(selectOptions && selectOptions.length === 0 && withRedirect) && (
         <Select.Option key="redirectURL" value="redirectURL">
           <PlusCircleOutlined /> {redirectLabel}
         </Select.Option>
       )}
-      {selectOptions.map((optionField) => (
+      {(selectOptions || []).map((optionField) => (
         <Select.Option
           key={optionField[outputValue] || optionField}
           value={optionField[outputValue] || optionField}

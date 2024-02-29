@@ -1,10 +1,9 @@
-import React from 'react';
 import { Layout } from 'antd';
 
 const { Footer } = Layout;
 
 const FooterContent = () => (
-  <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
+  <Footer style={{ textAlign: 'center' }}>Copyright &#169;2024</Footer>
 );
 
 export default FooterContent;

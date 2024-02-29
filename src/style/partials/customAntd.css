@@ -133,7 +133,45 @@
 :where(.css-dev-only-do-not-override-2i2tap).ant-col-xl-24.ant-form-item-label {
   margin-top: 20px;
 }
+/* Add these styles to your CSS file */
+.custom-scrollbar {
+    overflow-y: auto;
+    max-height: 400px; /* Adjust the max-height as needed */
+}
 
+.custom-scrollbar::-webkit-scrollbar {
+    width: 1px !important; /* Adjust the width of the scrollbar */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: #3498db; /* Change the background color of the scrollbar thumb */
+    border-radius: 5px; /* Add rounded corners to the scrollbar thumb */
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+    background-color: #f1f1f1; /* Change the background color of the scrollbar track */
+}
+/* Add this to your CSS */
+.sticky-header {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background-color: #fff; /* Change this to your desired background color */
+}
+
+.sticky-header-background {
+  position: sticky;
+  top: 0;
+  z-index: 998;
+  background-color: #f0f0f0; /* Change this to your desired sticky header background color */
+}
+
+
+
+/* Customize the scrollbar corner */
+.custom-scrollbar::-webkit-scrollbar-corner {
+  background-color: #fff; /* Set the background color of the scrollbar corner */
+}
 .ant-card-head-title{
   color: blue;
   font-style: italic;
@@ -151,17 +189,16 @@
 }
 
 .ant-table-tbody > tr > td {
-  border: 0.5px solid #ddd;
+  border: 0.1px solid #efefef;
+  padding: 10px 16px !important;
 }
 .ant-table {
   display: block;
-  max-height: 400px;
+  max-height: 500px;
   overflow: auto;
-  border-radius: 999px;
   white-space: nowrap;
-  scrollbar-width: thin;
+  scrollbar-width: none;
   scroll-behavior: smooth;
-  border-radius: 999px;
 }
 
 

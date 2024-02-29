@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import { Form, Select, Input, Checkbox, Radio, notification, Upload, message } from 'antd';
 import { InboxOutlined } from '@ant-design/icons';
 import formData from './formData';
+import useFetch from '@/hooks/useFetch';
+import { request } from '@/request';
 
 const { Option } = Select;
 const { Dragger } = Upload;
@@ -38,6 +40,9 @@ export default function LeadForm() {
   const [selectedSpecialization, setSelectedSpecialization] = useState(null);
   /* useState, useEffect uses condition */
 
+  const { data: userList, isLoading: userLoading } = useFetch(() =>
+    request.list({ entity: 'admin' })
+  );
   /* student id generate automatica */
   useEffect(() => {
     if (selectedInstitute && selectedUniversity) {
@@ -447,6 +452,13 @@ export default function LeadForm() {
                   ))}
               </Select>
             </Form.Item>
+            <Form.Item label="Users" name="userId">
+              <Select placeholder="select user">
+                {userList && userList.result.map(user => (
+                  <Option key={user._id} value={user._id}>{user.fullname}</Option>
+                ))}
+              </Select>
+            </Form.Item>
             {/* selectedcourse and then show specialization */}
             {selectedUniversity && (
               <>
@@ -468,6 +480,7 @@ export default function LeadForm() {
                         ))}
                     </Select>
                   </Form.Item>
+
                 ) : null}
                 {selectedCourse && (
                   <div>
@@ -562,7 +575,6 @@ export default function LeadForm() {
           </form>
         </div>
       )}
-
     </div>
   );
 }

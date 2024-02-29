@@ -7,16 +7,7 @@ const { Content } = Layout;
 
 const TopCard = ({ title, cardContent }) => {
   return (
-    <div
-      className="whiteBox shadow"
-      style={{
-        color: '#595959',
-        fontSize: 13,
-        height: '70px',
-        minHeight: 'auto',
-        marginBottom: '24px',
-      }}
-    >
+    <div className="whiteBox shadow" >
       <div className="pad20 strong" style={{ textAlign: 'center', justifyContent: 'center' }}>
         <h2 style={{ color: '#22075e', marginBottom: 0, marginTop: 0 }}>{title}</h2>
       </div>
