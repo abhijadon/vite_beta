@@ -22,7 +22,7 @@ const Index = () => {
   }
 
   // Convert userDataCount object into an array for PieChart data
-  const data = Object.keys(userDataCount).map((userName, index) => ({
+  const data = Object.keys(userDataCount).map((userName) => ({
     name: userName,
     count: userDataCount[userName],
   }));
