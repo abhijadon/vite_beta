@@ -1,14 +1,12 @@
-import { Row, Col, Progress, Button, Select } from 'antd';
-import Card from '@mui/joy/Card';
+import React, { useEffect, useState } from 'react';
+import { Row, Col, Progress, Button, Select, Card } from 'antd';
 import { request } from '@/request';
 import RecentTable from './components/RecentTable';
 import PreviewCard from './components/PreviewCard';
 import CustomerPreviewCard from './components/CustomerPreviewCard';
-import DataYear from './components/DataYear'
+import DataYear from './components/DataYear';
 import { FcBearish, FcBullish, FcSalesPerformance } from "react-icons/fc";
-import { useEffect, useState } from 'react';
 import { BiReset } from 'react-icons/bi';
-
 
 export default function DashboardModule() {
   const [selectedInstitute, setSelectedInstitute] = useState(null);
@@ -23,43 +21,57 @@ export default function DashboardModule() {
   const [institutes, setInstitutes] = useState([]);
   const [universities, setUniversities] = useState([]);
   const [userNames, setUserNames] = useState([]);
-  // Use state to store payment data
-  const [paymentData, setPaymentData] = useState({ result: null, isLoading: false });
-
-
-
-  const fetchData = async () => {
-    try {
-      const { result, isLoading } = await request.summary({
-        entity: 'payment',
-        params: {
-          institute_name: selectedInstitute,
-          university_name: selectedUniversity,
-          status: selectedStatus,
-          payment_mode: selectedPaymentMode,
-          payment_type: selectedPaymentType,
-        },
-      });
-
-      // Update the payment data state
-      setPaymentData({ result, isLoading });
-    } catch (error) {
-      // Handle errors
-      console.error('Error fetching data:', error);
-    }
-  };
+  const [paymentData, setPaymentData] = useState({ result: null });
 
   useEffect(() => {
     fetchData();
   }, [selectedUniversity, selectedInstitute, selectedStatus, selectedPaymentMode, selectedPaymentType]);
 
+  useEffect(() => {
+    fetchData();
+  }, []);
+  // Modify fetchData to accept a callback
+  const fetchData = async (callback) => {
+    try {
+      setPaymentData({ result: null });
+
+      const params = {
+        institute_name: selectedInstitute,
+        university_name: selectedUniversity,
+        status: selectedStatus,
+        payment_mode: selectedPaymentMode,
+        payment_type: selectedPaymentType,
+      };
+
+      const { result } = await request.summary({ entity: 'payment', params });
+
+      setPaymentData({ result }, () => {
+        if (callback) {
+          callback();
+        }
+      });
+    } catch (error) {
+      setPaymentData({ result: null });
+      console.error('Error fetching data:', error);
+    }
+  };
+
+  const resetValues = async () => {
+    setSelectedInstitute(null);
+    setSelectedUniversity(null);
+    setSelectedStatus(null);
+    setSelectedUserId(null);
+    setSelectedPaymentMode(null);
+    setSelectedPaymentType(null);
+
+    // Use the callback function to ensure the state is updated before fetching data
+    await fetchData();
+  };
 
   useEffect(() => {
     const fetchData = async () => {
       const { result } = await request.filter({ entity: 'payment' });
       if (result) {
-        // Extract unique values for  statuses, institutes, universities, and user IDs
-
         const uniquePaymentMode = [...new Set(result.map(item => item.payment_mode))];
         const uniquePaymentType = [...new Set(result.map(item => item.payment_type))];
         const uniqueStatuses = [...new Set(result.map(item => item.status))];
@@ -67,27 +79,16 @@ export default function DashboardModule() {
         const uniqueUniversities = [...new Set(result.map(item => item.university_name))];
         const uniqueUserNames = [...new Set(result.map(item => item.userId?.fullname))];
 
-
         setStatuses(uniqueStatuses);
         setPaymentType(uniquePaymentType);
         setInstitutes(uniqueInstitutes);
         setPaymentMode(uniquePaymentMode);
         setUniversities(uniqueUniversities);
-        setUserNames(uniqueUserNames); // New state for unique user names
+        setUserNames(uniqueUserNames);
       }
     };
     fetchData();
   }, []);
-
-  // Function to reset all values
-  const resetValues = () => {
-    setSelectedInstitute(null);
-    setSelectedUniversity(null);
-    setSelectedStatus(null);
-    setSelectedUserId(null);
-    setSelectedPaymentMode(null)
-    setSelectedPaymentType(null)
-  };
 
   const amountCardsData = [
     {
@@ -145,11 +146,13 @@ export default function DashboardModule() {
     );
   });
 
+  const SelectOption = React.memo(({ value }) => (
+    <Select.Option>{value}</Select.Option>
+  ));
   const filterRender = () => (
     <div className='flex items-center justify-start mb-10 gap-3'>
       <div className='grid grid-cols-5 gap-3'>
         <div>
-          {/* Select for Institute */}
           <Select
             placeholder="Select institute"
             className='w-60 h-10 capitalize'
@@ -157,12 +160,11 @@ export default function DashboardModule() {
             onChange={(value) => setSelectedInstitute(value)}
           >
             {institutes.map(institute => (
-              <Select.Option key={institute}>{institute}</Select.Option>
+              <SelectOption key={institute} value={institute} />
             ))}
           </Select>
         </div>
         <div>
-          {/* Select for University */}
           <Select
             placeholder="Select university"
             className='w-60 h-10 capitalize'
@@ -170,12 +172,11 @@ export default function DashboardModule() {
             onChange={(value) => setSelectedUniversity(value)}
           >
             {universities.map(university => (
-              <Select.Option key={university}>{university}</Select.Option>
+              <SelectOption key={university} value={university} />
             ))}
           </Select>
         </div>
         <div>
-          {/* Select for Status */}
           <Select
             placeholder="Select status"
             className='w-60 h-10 capitalize'
@@ -183,11 +184,10 @@ export default function DashboardModule() {
             onChange={(value) => setSelectedStatus(value)}
           >
             {statuses.map(status => (
-              <Select.Option key={status}>{status}</Select.Option>
+              <SelectOption key={status} value={status} />
             ))}
           </Select>
         </div>
-        {/* Select for User Full Name */}
         <div>
           <Select
             placeholder="Select payment mode"
@@ -196,9 +196,7 @@ export default function DashboardModule() {
             onChange={(value) => setSelectedPaymentMode(value)}
           >
             {paymentMode.map((paymentmode) => (
-              <Select.Option className="capitalize font-thin font-mono" key={paymentmode}>
-                {paymentmode}
-              </Select.Option>
+              <SelectOption key={paymentmode} value={paymentmode} />
             ))}
           </Select>
         </div>
@@ -210,13 +208,10 @@ export default function DashboardModule() {
             onChange={(value) => setSelectedPaymentType(value)}
           >
             {paymentType.map((paymenttype) => (
-              <Select.Option className="capitalize font-thin font-mono" key={paymenttype}>
-                {paymenttype}
-              </Select.Option>
+              <SelectOption key={paymenttype} value={paymenttype} />
             ))}
           </Select>
         </div>
-        {/* Date Range Picker */}
         <div>
           <Select
             placeholder="Select user full name"
@@ -225,9 +220,7 @@ export default function DashboardModule() {
             onChange={(value) => setSelectedUserId(value)}
           >
             {userNames.map((userName) => (
-              <Select.Option className="capitalize font-thin font-mono" key={userName}>
-                {userName}
-              </Select.Option>
+              <SelectOption key={userName} value={userName} />
             ))}
           </Select>
         </div>
@@ -237,10 +230,8 @@ export default function DashboardModule() {
           </Button>
         </div>
       </div>
-
     </div>
-  )
-
+  );
 
   return (
     <>
@@ -269,7 +260,8 @@ export default function DashboardModule() {
             </Card>
           </div>
         </Col>
-      </Row><div className="space30"></div>
+      </Row>
+      <div className="space30"></div>
       <Row gutter={[32, 32]}>
         <Col className="gutter-row" sm={{ span: 24 }} md={{ span: 24 }} lg={{ span: 14 }}>
           <Card className="shadow drop-shadow-lg" >

@@ -7,7 +7,7 @@ const { Text } = Typography;
 const { Panel } = Collapse;
 
 const Index = () => {
-    const { data: paymentResult, isLoading: paymentLoading } = useFetch(() =>
+    const { data: paymentResult } = useFetch(() =>
         request.filter({ entity: 'payment' })
     );
 
@@ -60,9 +60,6 @@ const Index = () => {
         return color;
     };
 
-    if (paymentLoading) {
-        return <Spin size="large" />;
-    }
 
     const sortedData = sortDataByDateTime(paymentResult?.result || []);
     const paginatedData = sortedData.slice((currentPage - 1) * pageSize, currentPage * pageSize);
@@ -115,7 +112,6 @@ const Index = () => {
             ),
         },
     ];
-
 
     return (
         <div className="space-y-4" >

@@ -1,14 +1,13 @@
 import { Tag, Divider, Row, Col, Spin, Tooltip } from 'antd';
-import {useMoney} from "@/settings";
+import { useMoney } from "@/settings";
 
 export default function AnalyticSummaryCard({
   title,
   tagContent,
   tagColor,
   prefix,
-  isLoading = false,
 }) {
-    const { moneyFormatter } = useMoney();
+  const { moneyFormatter } = useMoney();
   return (
     <Col
       className="gutter-row"

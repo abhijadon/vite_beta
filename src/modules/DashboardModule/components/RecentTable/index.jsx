@@ -1,11 +1,11 @@
 import useFetch from '@/hooks/useFetch';
 import { request } from '@/request';
 import { Spin } from 'antd';
-import { AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer, Dot } from 'recharts';
+import { AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer, Scatter, Dot } from 'recharts';
 
 const Index = () => {
-  const { data: paymentResult, isLoading: paymentLoading } = useFetch(() =>
-    request.filter({ entity: 'payment' })
+  const { data: paymentResult } = useFetch(() =>
+    request.filter({ entity: 'lead' })
   );
 
   // Define the static data with initial count values
@@ -26,34 +26,44 @@ const Index = () => {
 
   // Process paymentResult data to update count values dynamically
   if (paymentResult?.result) {
-    paymentResult.result.forEach((payment) => {
-      const month = new Date(payment.date).toLocaleString('en-US', { month: 'short' });
-      const monthIndex = data.findIndex((item) => item.name === month);
+    // Sort the data based on the 'created' date
+    const sortedPayments = paymentResult.result.slice().sort((a, b) => new Date(a.created) - new Date(b.created));
+
+    sortedPayments.forEach((payment) => {
+      const createdMonth = new Date(payment.created).toLocaleString('en-US', { month: 'short' });
+      const monthIndex = data.findIndex((item) => item.name === createdMonth);
       if (monthIndex !== -1) {
         data[monthIndex].count += 1;
       }
     });
   }
 
+  // Sort the data based on months
+  const sortedData = data.slice().sort((a, b) => new Date(a.name + ' 1, 2000') - new Date(b.name + ' 1, 2000'));
+
   return (
-    <div style={{ marginLeft: '-45px', height: 380, fontFamily: 'Arial, sans-serif' }}>
+    <div style={{ marginLeft: '-45px', height: 300, fontFamily: 'Arial, sans-serif' }}>
       <ResponsiveContainer>
-        {paymentLoading ? (
-          <Spin />
-        ) : (
-          <AreaChart data={data}>
-            <XAxis
-              dataKey="name"
-              tick={{ fill: '#1677ff', fontSize: 13 }}
-            />
-            <YAxis
-              tick={{ fill: '#1677ff', fontSize: 13 }}
-            />
-            <Tooltip contentStyle={{ backgroundColor: '#a79fff', color: 'red', fontFamily: 'serif', textDecorationColor: 'ActiveBorder' }} />
-            <Area type="natural" dataKey="count" stroke="blue" fill="#8A8AFF" fillOpacity={0.3} />
-            <Dot dataKey="count" fill="red" />
-          </AreaChart>
-        )}
+        <AreaChart data={sortedData}>
+          <XAxis
+            dataKey="name"
+            tick={{ fill: '#1677ff', fontSize: 13 }}
+            axisLine={false} // hide the axis line
+            tickLine={false} // hide the tick lines
+          />
+          <YAxis
+            tick={{ fill: '#1677ff', fontSize: 13 }}
+            axisLine={false} // hide the axis line
+            tickLine={false}
+          />
+          <Tooltip contentStyle={{ backgroundColor: '#a79fff', color: 'red', fontFamily: 'serif', textDecorationColor: 'activeborder' }} />
+          <Area type="natural" dataKey="count" stroke="#1677ff" fill="#1677ff" fillOpacity={0.1} />
+          <Scatter dataKey="count" fill="red" isAnimationActive={true}>
+            {sortedData.map((entry, index) => (
+              <Dot key={`dot-${index}`} cx={index * 20} cy={entry.count} r={4} fill="red" />
+            ))}
+          </Scatter>
+        </AreaChart>
       </ResponsiveContainer>
     </div>
   );

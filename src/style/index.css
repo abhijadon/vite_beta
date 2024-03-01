@@ -28,3 +28,16 @@ button,
   align-items: center;
   justify-content: center;
 }
+.ant-modal-close{
+    color: red !important;
+}
+
+.ant-modal-close:hover{
+    color: white !important;
+    background-color: red !important;
+}
+
+.ant-btn.ant-btn-block:hover{
+    background-color: darkblue !important;
+    color: white !important; 
+}

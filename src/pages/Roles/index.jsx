@@ -1,8 +1,7 @@
-import { Modal, Spin, Table } from 'antd';
+import { Modal, Spin, Table, Avatar } from 'antd';
 import { request } from '@/request';
 import useFetch from '@/hooks/useFetch';
 import Tablelist from '../tableList';
-import { Avatar, AvatarGroup } from '@mui/joy';
 import { useState } from 'react';
 import "@/style/tailwind.css"
 

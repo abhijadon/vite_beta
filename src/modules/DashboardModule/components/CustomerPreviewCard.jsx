@@ -6,13 +6,11 @@ import { scaleOrdinal } from 'd3-scale';
 import { schemeCategory10 } from 'd3-scale-chromatic';
 
 const Index = () => {
-  const { data: paymentResult, isLoading: paymentLoading } = useFetch(() =>
+  const { data: paymentResult } = useFetch(() =>
     request.filter({ entity: 'payment' })
   );
-
   // Initialize an empty object to store user data and counts
   const userDataCount = {};
-
   // Process paymentResult data to update user count values dynamically
   if (paymentResult?.result) {
     paymentResult.result.forEach((payment) => {
@@ -33,27 +31,24 @@ const Index = () => {
   return (
     <div style={{ height: 400, fontFamily: 'Arial, sans-serif' }}>
       <ResponsiveContainer>
-        {paymentLoading ? (
-          <Spin />
-        ) : (
-          <PieChart>
-            <Tooltip />
-            <Pie
-              data={data}
-              dataKey="count"
-              nameKey="name"
-              cx="50%"
-              cy="50%"
-              outerRadius={100}
-              label
-            >
-              {data.map((entry, index) => (
-                <Cell key={`cell-${index}`} fill={colorScale(index)} />
-              ))}
-            </Pie>
-            <Legend layout="vertical" verticalAlign="top" align="right" />
-          </PieChart>
-        )}
+        <PieChart>
+          <Tooltip />
+          <Pie
+            data={data}
+            dataKey="count"
+            nameKey="name"
+            cx="50%"
+            cy="50%"
+            outerRadius={100}
+            label
+          >
+            {data.map((entry, index) => (
+              <Cell key={`cell-${index}`} fill={colorScale(index)} />
+            ))}
+          </Pie>
+          <Legend layout="vertical" verticalAlign="top" align="right" />
+        </PieChart>
+
       </ResponsiveContainer>
     </div>
   );
