@@ -99,7 +99,7 @@ export default function PreviewCard() {
           <div className='mb-8 text-base font-thin'>University Specific Data</div>
           {renderProgressItems(paymentResult?.universitySpecificData?.slice(0, 6) || [])}
           <div className='flex justify-center items-center'>
-            <FcExpand title='Show More' className='text-2xl cursor-pointer' onClick={() => handleShowMore('university')} />
+            <FcExpand title='Show More' className='text-2xl cursor-pointer' onClick={() => handleShowMore('university')}/>
           </div>
         </div>
         <div>

@@ -1,6 +1,5 @@
 import useFetch from '@/hooks/useFetch';
 import { request } from '@/request';
-import { Spin } from 'antd';
 import { ResponsiveContainer, PieChart, Pie, Tooltip, Legend, Cell } from 'recharts';
 import { scaleOrdinal } from 'd3-scale';
 import { schemeCategory10 } from 'd3-scale-chromatic';
@@ -14,16 +13,21 @@ const Index = () => {
   // Process paymentResult data to update user count values dynamically
   if (paymentResult?.result) {
     paymentResult.result.forEach((payment) => {
-      const userName = payment.userId.fullname;
+      const userName = payment.userId?.fullname;
       userDataCount[userName] = (userDataCount[userName] || 0) + 1;
     });
   }
+  const capitalizeWords = (str) => {
+    return str.replace(/\b\w/g, (match) => match.toUpperCase());
+  };
 
-  // Convert userDataCount object into an array for PieChart data
-  const data = Object.keys(userDataCount).map((userName) => ({
-    name: userName,
-    count: userDataCount[userName],
-  }));
+  const data = Object.keys(userDataCount)
+    .map((userName) => ({
+      name: capitalizeWords(userName),  // Capitalize the first letter of each word
+      count: userDataCount[userName],
+    }))
+    .sort((a, b) => b.count - a.count);
+
 
   // Generate a color scale using d3
   const colorScale = scaleOrdinal(schemeCategory10);
@@ -46,7 +50,7 @@ const Index = () => {
               <Cell key={`cell-${index}`} fill={colorScale(index)} />
             ))}
           </Pie>
-          <Legend layout="vertical" verticalAlign="top" align="right" />
+          <Legend layout="vertical" verticalAlign="top" align="right" wrapperStyle={{ columnCount: 4, maxWidth: '400px' }} />
         </PieChart>
 
       </ResponsiveContainer>

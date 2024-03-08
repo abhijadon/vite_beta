@@ -61,7 +61,7 @@ export default function DataTable({ config, extra = [] }) {
   const [institutes, setInstitutes] = useState([]);
   const [universities, setUniversities] = useState([]);
   const [userNames, setUserNames] = useState([]);
-  const [paymentData, setPaymentData] = useState({ result: null, isLoading: false });
+  const [paymentData, setPaymentData] = useState({ result: null});
   const [searchQuery, setSearchQuery] = useState('');
   const [totalCount, setTotalCount] = useState(0);
   const [filteredCount, setFilteredCount] = useState(0);
@@ -124,7 +124,7 @@ export default function DataTable({ config, extra = [] }) {
 
   const fetchData = async () => {
     try {
-      const { result, isLoading } = await request.summary({
+      const { result } = await request.summary({
         entity: 'payment',
         params: {
           institute_name: selectedInstitute,
@@ -136,7 +136,7 @@ export default function DataTable({ config, extra = [] }) {
       });
 
       // Update the payment data state
-      setPaymentData({ result, isLoading });
+      setPaymentData({ result });
     } catch (error) {
       // Handle errors
       console.error('Error fetching data:', error);
@@ -172,10 +172,6 @@ export default function DataTable({ config, extra = [] }) {
     fetchData();
     handelDataTableLoad({}, searchQuery); // Include searchQuery here
   }, [searchQuery, handelDataTableLoad]);
-
-
-
-
 
   // Function to reset all values
   const resetValues = () => {

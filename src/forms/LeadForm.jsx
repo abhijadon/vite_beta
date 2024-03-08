@@ -455,7 +455,7 @@ export default function LeadForm() {
             <Form.Item label="Users" name="userId">
               <Select placeholder="select user">
                 {userList && userList.result.map(user => (
-                  <Option key={user._id} value={user._id}>{user.fullname}</Option>
+                  <Option className="capitalize" key={user._id} value={user._id}>{user.fullname}</Option>
                 ))}
               </Select>
             </Form.Item>

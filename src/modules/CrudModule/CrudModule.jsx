@@ -29,8 +29,9 @@ function SidePanelTopContent({ config, formElements, withUpload }) {
   const dispatch = useDispatch();
 
   const [labels, setLabels] = useState('');
+
   useEffect(() => {
-    if (currentItem) {
+    if (currentItem && entityDisplayLabels) {
       const currentLabels = entityDisplayLabels.map((x) => currentItem[x]).join(' ');
       setLabels(currentLabels);
     }

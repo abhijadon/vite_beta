@@ -102,10 +102,10 @@ const Index = () => {
             key: 'details',
             render: (text, record) => (
                 <Collapse>
-                    <Panel header={`Details for ${record.userId.fullname}`} key="1">
+                    <Panel header={`Details for ${record.userId?.fullname}`} key="1">
                         <Space>
-                            <Text>{`Full Name: ${record.userId.fullname}`}</Text>
-                            <Text>{`Username: ${record.userId.username}`}</Text>
+                            <Text>{`Full Name: ${record.userId?.fullname}`}</Text>
+                            <Text>{`Username: ${record.userId?.username}`}</Text>
                         </Space>
                     </Panel>
                 </Collapse>

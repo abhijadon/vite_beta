@@ -63,7 +63,6 @@ export default function DataTable({ config, extra = [], setActiveForm }) {
         const uniqueUniversities = [...new Set(result.map(item => item.university_name))];
         const uniqueUserNames = [...new Set(result.map(item => item.userId?.fullname))];
 
-
         setStatuses(uniqueStatuses);
         setInstitutes(uniqueInstitutes);
         setSession(uniqueSession);
@@ -76,7 +75,6 @@ export default function DataTable({ config, extra = [], setActiveForm }) {
 
     fetchData();
   }, []);
-
 
   const resetValues = () => {
     setSelectedInstitute(null);
