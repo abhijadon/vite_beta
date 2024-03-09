@@ -49,8 +49,6 @@ export default function DataTable({ config, extra = [], setActiveForm }) {
   const [universities, setUniversities] = useState([]);
   const [session, setSession] = useState([]);
   const [userNames, setUserNames] = useState([]);
-  const [totalCount, setTotalCount] = useState(0);
-  const [filteredCount, setFilteredCount] = useState(0);
   const [searchQuery, setSearchQuery] = useState('');
 
   useEffect(() => {
@@ -68,8 +66,7 @@ export default function DataTable({ config, extra = [], setActiveForm }) {
         setSession(uniqueSession);
         setUniversities(uniqueUniversities);
         setUserNames(uniqueUserNames);
-        setTotalCount(result.length); // Set total count initially
-        setFilteredCount(result.length); // Set filtered count initially
+
       }
     };
 
@@ -200,6 +197,7 @@ export default function DataTable({ config, extra = [], setActiveForm }) {
       const options = {
         page: pagination.current || 1,
         items: pagination.pageSize || 10,
+        total: pagination.total || 0,
         filter: {
           q: newSearchQuery,
           institute: selectedInstitute,
@@ -213,14 +211,12 @@ export default function DataTable({ config, extra = [], setActiveForm }) {
       const { success, result } = await dispatch(crud.list({ entity, options }));
       if (success) {
         const filteredData = filterDataSource(result);
-        setFilteredCount(filteredData.length); // Update filtered count
       }
     },
     [entity, selectedInstitute, selectedUniversity, selectedStatus, selectedUserId, selectedSession]
   );
 
   const handleSearch = debounce((value) => {
-    console.log('Search Value:', value);
     setSearchQuery(value);
     handelDataTableLoad({}, value); // Trigger search on each keystroke
   }, 500);
@@ -290,44 +286,56 @@ export default function DataTable({ config, extra = [], setActiveForm }) {
     }
   };
 
-  const renderTable = () => (
-    <>
-      <Card className='mt-8'>
-        <div className='flex justify-between items-center mb-3'>
-          {entity === 'lead' && (
-            <div className='flex items-center gap-2'>
-              <span className='text-red-500 font-thin'>{`${searchQuery ? filteredCount : totalCount}`}</span>
-              <Search
-                placeholder="Search by email"
-                onSearch={handleSearch} // Remove this line
-                onChange={(e) => handleSearch(e.target.value)} // Add this line
-                className='w-full'
-              />
-            </div>
-          )}
-          <div className='space-x-2 flex items-center'>
-            <AddNewItem key="addNewItem" config={config} />
-            <div className='font-thin'>
-              <LiaFileDownloadSolid title='Export excel' onClick={handleExportToExcel} className='text-3xl text-blue-500 hover:text-blue-700 cursor-pointer' />
+  const renderTable = () => {
+    const filteredData = filterDataSource(dataSource);
+
+    return (
+      <>
+        <Card className='mt-8'>
+          <div className='flex justify-between items-center mb-3'>
+            {entity === 'lead' && (
+              <div className='flex items-center gap-2'>
+                <div className="flex justify-center items-center text-red-500">
+                  <span className='font-thin text-sm'>Total:</span> <span className='font-thin text-sm'> {filteredData.length}</span>
+                </div>
+                <Search
+                  placeholder="Search by email"
+                  onSearch={handleSearch}
+                  onChange={(e) => handleSearch(e.target.value)}
+                  className='w-full'
+                />
+              </div>
+            )}
+            {entity === 'admin' && (
+              <div className='flex items-center gap-2'>
+                <div className="flex justify-center items-center text-red-500">
+                  <span className='font-thin text-sm'>Total:</span> <span className='font-thin text-sm'> {filteredData.length}</span>
+                </div>
+              </div>
+            )}
+            <div className='space-x-2 flex items-center'>
+              <AddNewItem key="addNewItem" config={config} />
+              <div className='font-thin'>
+                <LiaFileDownloadSolid title='Export excel' onClick={handleExportToExcel} className='text-3xl text-blue-500 hover:text-blue-700 cursor-pointer' />
+              </div>
             </div>
           </div>
-        </div>
-        <Table
-          columns={tableColumns}
-          rowKey={(item) => item._id}
-          dataSource={filterDataSource(dataSource)}
-          pagination={false}
-          loading={listIsLoading}
-          onChange={handelDataTableLoad}
-        />
-      </Card>
-    </>
-  );
-
+          <Table
+            columns={tableColumns}
+            rowKey={(item) => item._id}
+            dataSource={filteredData}
+            pagination={true}
+            loading={listIsLoading}
+            onChange={handelDataTableLoad}
+          />
+        </Card>
+      </>
+    );
+  };
   const renderFilters = () => {
     if (entity === 'lead') {
       return (
-        <Card title="Filters" className="custom-card">
+        <Card className="custom-card">
           <div className='flex items-center justify-start mb-10 gap-3'>
             <div className='grid grid-cols-5 gap-3'>
               <div>

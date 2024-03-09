@@ -1,12 +1,11 @@
-import { lazy, Suspense } from 'react';
+import { Suspense } from 'react';
 import { useSelector } from 'react-redux';
 import { selectAuth } from '@/redux/auth/selectors';
 import { AppContextProvider } from '@/context/appContext';
 import PageLoader from '@/components/PageLoader';
 import Localization from '@/locale/Localization';
 import AuthRouter from '@/router/AuthRouter';
-
-const ErpApp = lazy(() => import('./ErpApp'));
+import ErpApp from '@/apps/ErpApp';
 
 export default function ERP_SODEOs() {
   const { isLoggedIn } = useSelector(selectAuth);

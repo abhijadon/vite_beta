@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
-import { Table, Space, Typography, Spin, Pagination, Avatar, Collapse } from 'antd';
+import React, { useEffect, useState, useCallback } from 'react';
+import { Table, Space, Typography, Pagination, Avatar, Collapse } from 'antd';
 import { request } from '@/request';
 import useFetch from '@/hooks/useFetch';
 
@@ -7,9 +7,9 @@ const { Text } = Typography;
 const { Panel } = Collapse;
 
 const Index = () => {
-    const { data: paymentResult } = useFetch(() =>
-        request.filter({ entity: 'payment' })
-    );
+    const fetchPaymentData = useCallback(() => request.filter({ entity: 'payment' }), []);
+
+    const { data: paymentResult } = useFetch(fetchPaymentData);
 
     const [currentPage, setCurrentPage] = useState(1);
     const pageSize = 6; // Number of items per page
@@ -28,7 +28,7 @@ const Index = () => {
     };
 
     const sortDataByDateTime = (data) => {
-        return data.sort((a, b) => {
+        return data.slice().sort((a, b) => {
             const dateA = new Date(a.date + 'T' + a.time);
             const dateB = new Date(b.date + 'T' + b.time);
             return dateB - dateA;
@@ -59,7 +59,6 @@ const Index = () => {
         const color = `hsl(${hash % 360}, 70%, 80%)`;
         return color;
     };
-
 
     const sortedData = sortDataByDateTime(paymentResult?.result || []);
     const paginatedData = sortedData.slice((currentPage - 1) * pageSize, currentPage * pageSize);
@@ -113,17 +112,14 @@ const Index = () => {
         },
     ];
 
+
     return (
-        <div className="space-y-4" >
-            <div className={`capitalize text-center text-blue-500 text-base ${isHeaderSticky ? 'sticky-header' : ''}`}>
-                <p className="font-thin border-b-2">Recent Transactions</p>
-            </div>
+        <div className="space-y-4">
             <div className="custom-scrollbar">
                 <Table
                     dataSource={paginatedData}
                     columns={columns}
                     pagination={false}
-
                 />
             </div>
             <Pagination

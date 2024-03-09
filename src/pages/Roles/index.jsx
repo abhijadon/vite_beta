@@ -3,7 +3,6 @@ import LeadForm from '@/forms/LeadForm';
 import useLanguage from '@/locale/useLanguage';
 import '@/style/tailwind.css'
 import AddForm from '@/forms/AddRoleform';
-import EditRole from '@/forms/EditRole';
 export default function Lead() {
 
     const translate = useLanguage();
@@ -94,7 +93,7 @@ export default function Lead() {
         <>
             <CrudModule
                 createForm={<AddForm />}
-                updateForm={<EditRole isUpdateForm={true} />}
+                updateForm={<AddForm isUpdateForm={true} />}
                 config={config}
             />
         </>

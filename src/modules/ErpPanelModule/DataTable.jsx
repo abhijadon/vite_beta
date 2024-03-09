@@ -61,10 +61,9 @@ export default function DataTable({ config, extra = [] }) {
   const [institutes, setInstitutes] = useState([]);
   const [universities, setUniversities] = useState([]);
   const [userNames, setUserNames] = useState([]);
-  const [paymentData, setPaymentData] = useState({ result: null});
+  const [paymentData, setPaymentData] = useState({ result: null });
   const [searchQuery, setSearchQuery] = useState('');
-  const [totalCount, setTotalCount] = useState(0);
-  const [filteredCount, setFilteredCount] = useState(0);
+
 
 
 
@@ -85,7 +84,7 @@ export default function DataTable({ config, extra = [] }) {
       const { success, result } = await dispatch(erp.list({ entity, options }));
       if (success) {
         const filteredData = filterDataSource(result);
-        setFilteredCount(filteredData.length); // Update filtered count
+        // Update filtered count
       }
     },
     [entity, selectedInstitute, selectedUniversity, selectedStatus, selectedUserId]
@@ -164,8 +163,6 @@ export default function DataTable({ config, extra = [] }) {
         setPaymentMode(uniquePaymentMode);
         setUniversities(uniqueUniversities);
         setUserNames(uniqueUserNames); // New state for unique user names
-        setTotalCount(result.length); // Set total count initially
-        setFilteredCount(result.length); // Set filtered count initially
       }
     };
 
@@ -282,11 +279,6 @@ export default function DataTable({ config, extra = [] }) {
 
   const dispatch = useDispatch();
 
-  // const handelDataTableLoad = (pagination) => {
-  //   const options = { page: pagination.current || 1, items: pagination.pageSize || 10 };
-  //   dispatch(erp.list({ entity, options }));
-  // }; 
-
   const filterDataSource = (data) => {
     return data.filter(item => {
       const instituteMatch = !selectedInstitute || (item && item.institute_name === selectedInstitute);
@@ -330,6 +322,7 @@ export default function DataTable({ config, extra = [] }) {
     handelDataTableLoad({}, value); // Trigger search on each keystroke
   };
   const renderTable = () => {
+    const filteredData = filterDataSource(dataSource);
     return (
       <>
         <Card>
@@ -338,12 +331,17 @@ export default function DataTable({ config, extra = [] }) {
               <div className='flex justify-between items-center'>
                 <div className='grid grid-rows-1 gap-1 font-thin text-xs text-red-500 '>
                   {entity === 'payment' && (
-                    <Search
-                      placeholder="Search by email"
-                      onSearch={handleSearch} // Remove this line
-                      onChange={(e) => handleSearch(e.target.value)} // Add this line
-                      className='w-full'
-                    />
+                    <div className='flex items-center gap-2'>
+                      <div className="flex justify-center items-center text-red-500">
+                        <span className='font-thin text-sm'>Total:</span> <span className='font-thin text-sm'> {filteredData.length}</span>
+                      </div>
+                      <Search
+                        placeholder="Search by email"
+                        onSearch={handleSearch} // Remove this line
+                        onChange={(e) => handleSearch(e.target.value)} // Add this line
+                        className='w-full'
+                      />
+                    </div>
                   )}
                 </div>
                 <div className='flex items-center gap-1'>

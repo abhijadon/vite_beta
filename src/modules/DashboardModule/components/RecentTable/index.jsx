@@ -1,14 +1,15 @@
-import useFetch from '@/hooks/useFetch';
-import { request } from '@/request';
+import React, { useEffect, useState, useCallback } from 'react';
 import { Spin } from 'antd';
 import { AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer, Scatter, Dot } from 'recharts';
+import useFetch from '@/hooks/useFetch';  // Adjust the path based on your project structure
+import { request } from '@/request';
 
 const Index = () => {
-  const { data: paymentResult } = useFetch(() =>
-    request.filter({ entity: 'lead' })
-  );
+  const fetchLeadData = useCallback(() =>
+    request.filter({ entity: 'lead' }), []);
 
-  // Define the static data with initial count values
+  const { data: paymentResult } = useFetch(fetchLeadData);
+
   const data = [
     { name: 'Jan', count: 0 },
     { name: 'Feb', count: 0 },
@@ -24,9 +25,7 @@ const Index = () => {
     { name: 'Dec', count: 0 },
   ];
 
-  // Process paymentResult data to update count values dynamically
   if (paymentResult?.result) {
-    // Sort the data based on the 'created' date
     const sortedPayments = paymentResult.result.slice().sort((a, b) => new Date(a.created) - new Date(b.created));
 
     sortedPayments.forEach((payment) => {
@@ -38,7 +37,6 @@ const Index = () => {
     });
   }
 
-  // Sort the data based on months
   const sortedData = data.slice().sort((a, b) => new Date(a.name + ' 1, 2000') - new Date(b.name + ' 1, 2000'));
 
   return (
@@ -48,12 +46,12 @@ const Index = () => {
           <XAxis
             dataKey="name"
             tick={{ fill: '#1677ff', fontSize: 13 }}
-            axisLine={false} // hide the axis line
-            tickLine={false} // hide the tick lines
+            axisLine={false}
+            tickLine={false}
           />
           <YAxis
             tick={{ fill: '#1677ff', fontSize: 13 }}
-            axisLine={false} // hide the axis line
+            axisLine={false}
             tickLine={false}
           />
           <Tooltip contentStyle={{ backgroundColor: '#a79fff', color: 'red', fontFamily: 'serif', textDecorationColor: 'activeborder' }} />

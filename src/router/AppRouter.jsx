@@ -1,43 +1,41 @@
-import { lazy } from 'react';
 import { useRoutes } from 'react-router-dom';
 import PublicRoute from './PublicRoute';
+import Logout from '@/pages/Logout';
+import NotFound from '@/pages/NotFound.jsx';
 
-const Logout = lazy(() => import('@/pages/Logout.jsx'));
-const NotFound = lazy(() => import('@/pages/NotFound.jsx'));
+import Dashboard from '@/pages/Dashboard';
+import Customer from '@/pages/Customer';
+import Inventory from '@/pages/Inventory';
+import Order from '@/pages/Order';
+import Invoice from '@/pages/Invoice';
+import InvoiceCreate from '@/pages/Invoice/InvoiceCreate';
 
-const Dashboard = lazy(() => import('@/pages/Dashboard'));
-const Customer = lazy(() => import('@/pages/Customer'));
-const Inventory = lazy(() => import('@/pages/Inventory'));
-const Order = lazy(() => import('@/pages/Order'));
-const Invoice = lazy(() => import('@/pages/Invoice'));
-const InvoiceCreate = lazy(() => import('@/pages/Invoice/InvoiceCreate'));
-
-const InvoiceRead = lazy(() => import('@/pages/Invoice/InvoiceRead'));
-const InvoiceUpdate = lazy(() => import('@/pages/Invoice/InvoiceUpdate'));
-const InvoiceRecordPayment = lazy(() => import('@/pages/Invoice/InvoiceRecordPayment'));
-const Quote = lazy(() => import('@/pages/Quote/index'));
-const QuoteCreate = lazy(() => import('@/pages/Quote/QuoteCreate'));
-const QuoteRead = lazy(() => import('@/pages/Quote/QuoteRead'));
-const QuoteUpdate = lazy(() => import('@/pages/Quote/QuoteUpdate'));
-const Payment = lazy(() => import('@/pages/Payment/index'));
-const PaymentRead = lazy(() => import('@/pages/Payment/PaymentRead'));
-const PaymentUpdate = lazy(() => import('@/pages/Payment/PaymentUpdate'));
-const Employee = lazy(() => import('@/pages/Employee'));
-const Admin = lazy(() => import('@/pages/Admin'));
-const Settings = lazy(() => import('@/pages/Settings/Settings'));
-const PaymentMode = lazy(() => import('@/pages/PaymentMode'));
-const Roles = lazy(() => import('@/pages/Roles'));
-const Permissions = lazy(() => import('@/pages/Permissions'));
-const Email = lazy(() => import('@/pages/Email/index'));
-const EmailRead = lazy(() => import('@/pages/Email/EmailRead'));
-const EmailUpdate = lazy(() => import('@/pages/Email/EmailUpdate'));
-const AdvancedSettings = lazy(() => import('@/pages/AdvancedSettings'));
-const Profile = lazy(() => import('@/pages/Profile'));
-const Application = lazy(() => import('@/pages/Application/index'));
-const Offer = lazy(() => import('@/pages/Offer/index'));
-const OfferCreate = lazy(() => import('@/pages/Offer/OfferCreate'));
-const OfferRead = lazy(() => import('@/pages/Offer/OfferRead'));
-const OfferUpdate = lazy(() => import('@/pages/Offer/OfferUpdate'));
+import InvoiceRead from '@/pages/Invoice/InvoiceRead';
+import InvoiceUpdate from '@/pages/Invoice/InvoiceUpdate';
+import InvoiceRecordPayment from '@/pages/Invoice/InvoiceRecordPayment';
+import Quote from '@/pages/Quote/index';
+import QuoteCreate from '@/pages/Quote/QuoteCreate';
+import QuoteRead from '@/pages/Quote/QuoteRead';
+import QuoteUpdate from '@/pages/Quote/QuoteUpdate';
+import Payment from '@/pages/Payment/index';
+import PaymentRead from '@/pages/Payment/PaymentRead';
+import PaymentUpdate from '@/pages/Payment/PaymentUpdate';
+import Employee from '@/pages/Employee';
+import Admin from '@/pages/Admin';
+import Settings from '@/pages/Settings/Settings';
+import PaymentMode from '@/pages/PaymentMode';
+import Roles from '@/pages/Roles';
+import Permissions from '@/pages/Permissions';
+import Email from '@/pages/Email/index';
+import EmailRead from '@/pages/Email/EmailRead';
+import EmailUpdate from '@/pages/Email/EmailUpdate';
+import AdvancedSettings from '@/pages/AdvancedSettings';
+import Profile from '@/pages/Profile';
+import Application from '@/pages/Application/index';
+import Offer from '@/pages/Offer/index';
+import OfferCreate from '@/pages/Offer/OfferCreate';
+import OfferRead from '@/pages/Offer/OfferRead';
+import OfferUpdate from '@/pages/Offer/OfferUpdate';
 
 export default function AppRouter() {
   let element = useRoutes([
