@@ -97,7 +97,8 @@ export default function AdminForm({ isUpdateForm = false }) {
                 <Select.Option value="admin">{translate("admin_super_admin")}</Select.Option>
                 <Select.Option value="subadmin">{translate("subadmin")}</Select.Option>
                 <Select.Option value="manager">{translate("manager")}</Select.Option>
-                <Select.Option value="teamleader">{translate("teamleader")}</Select.Option>
+                <Select.Option value="manager">{translate("manager")}</Select.Option>
+                <Select.Option value="supportiveassociate">{translate("supportive_associate")}</Select.Option>
                 <Select.Option value="user">{translate("user")}</Select.Option>
               </Select>
             </Form.Item>

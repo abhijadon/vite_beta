@@ -37,6 +37,7 @@ export default function DashboardModule() {
           status: selectedStatus,
           payment_mode: selectedPaymentMode,
           payment_type: selectedPaymentType,
+          userId: selectedUserId,
         },
       });
 
@@ -50,7 +51,7 @@ export default function DashboardModule() {
 
   useEffect(() => {
     fetchData();
-  }, [selectedUniversity, selectedInstitute, selectedStatus, selectedPaymentMode, selectedPaymentType]);
+  }, [selectedUniversity, selectedInstitute, selectedStatus, selectedPaymentMode, selectedPaymentType, selectedUserId]);
 
 
   useEffect(() => {
@@ -64,7 +65,11 @@ export default function DashboardModule() {
         const uniqueStatuses = [...new Set(result.map(item => item.status))];
         const uniqueInstitutes = [...new Set(result.map(item => item.institute_name))];
         const uniqueUniversities = [...new Set(result.map(item => item.university_name))];
-        const uniqueUserNames = [...new Set(result.map(item => item.userId?.fullname))];
+        // Inside the fetchData useEffect for uniqueUserNames
+        const uniqueUserNames = result.map(item => ({
+          label: item.userId?.fullname,
+          value: item.userId?._id,
+        }));
 
 
         setStatuses(uniqueStatuses);
@@ -223,10 +228,8 @@ export default function DashboardModule() {
             value={selectedUserId}
             onChange={(value) => setSelectedUserId(value)}
           >
-            {userNames.map((userName) => (
-              <Select.Option className="capitalize font-thin font-mono" key={userName}>
-                {userName}
-              </Select.Option>
+            {userNames.map((user) => (
+              <Select.Option className="capitalize" key={user.value}>{user.label}</Select.Option>
             ))}
           </Select>
         </div>

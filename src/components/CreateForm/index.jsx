@@ -19,8 +19,6 @@ export default function CreateForm({ config, formElements, withUpload = false })
   const [form] = Form.useForm();
   const translate = useLanguage();
   const onSubmit = (fieldsValue) => {
-    // Manually trim values before submission
-    console.log('console value padd:', fieldsValue)
     if (fieldsValue.file && withUpload) {
       fieldsValue.file = fieldsValue.file[0].originFileObj;
     }

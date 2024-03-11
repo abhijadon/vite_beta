@@ -72,7 +72,7 @@ export default function PreviewCard() {
   const renderModalContent = () => {
     switch (modalType) {
       case 'university':
-        return renderProgressItems(paymentResult?.universitySpecificData?.slice(0, 9) || []);
+        return renderProgressItems(paymentResult?.universitySpecificData || []);
       case 'institute':
         return renderProgressItems(paymentResult?.instituteSpecificData || []);
       case 'status':
@@ -95,7 +95,7 @@ export default function PreviewCard() {
         </div>
         <div>
           <div className='mb-8 text-base font-thin'>University Specific Data</div>
-          {renderProgressItems(paymentResult?.universitySpecificData?.slice(0, 6) || [])}
+          {renderProgressItems(paymentResult?.universitySpecificData?.slice(0, 3) || [])}
           <div className='flex justify-center items-center'>
             <FcExpand title='Show More' className='text-2xl cursor-pointer' onClick={() => handleShowMore('university')} />
           </div>

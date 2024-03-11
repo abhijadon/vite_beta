@@ -41,3 +41,12 @@ button,
     background-color: darkblue !important;
     color: white !important; 
 }
+
+.ant-pagination-item-link{
+  color: #1677ff !important;
+}
+
+.ant-pagination-item-link:hover{
+  color: #ffffff !important;
+background-color: #1677ff !important;
+}

@@ -6,8 +6,6 @@ import { useCrudContext } from '@/context/crud';
 import { selectUpdatedItem } from '@/redux/crud/selectors';
 
 import { Button, Form, Input } from 'antd';
-
-import Loading from '@/components/Loading';
 import useOnFetch from '@/hooks/useOnFetch';
 import { request } from '@/request';
 
@@ -54,42 +52,41 @@ export default function UpdatePassword({ config }) {
 
   return (
     <div style={show}>
-      <Loading isLoading={isLoading}>
-        <h3>{translate('Update Password')}</h3>
-        <div className="space10"></div>
-        <Form form={form} layout="vertical" onFinish={handelSubmit}>
-          <Form.Item
-            label={translate('New Password')}
-            name="password"
-            rules={[
-              {
-                required: true,
-                len: 8,
-              },
-            ]}
-          >
-            <Input.Password autoComplete="new-password" />
-          </Form.Item>
-          <Form.Item
-            style={{
-              display: 'inline-block',
-              paddingRight: '5px',
-            }}
-          >
-            <Button type="primary" htmlType="submit">
-              {translate('Save')}
-            </Button>
-          </Form.Item>
-          <Form.Item
-            style={{
-              display: 'inline-block',
-              paddingLeft: '5px',
-            }}
-          >
-            <Button onClick={showCurrentRecord}>{translate('Cancel')}</Button>
-          </Form.Item>
-        </Form>
-      </Loading>
+      <h3>{translate('Update Password')}</h3>
+      <div className="space10"></div>
+      <Form form={form} layout="vertical" onFinish={handelSubmit}>
+        <Form.Item
+          label={translate('New Password')}
+          name="password"
+          rules={[
+            {
+              required: true,
+              len: 8,
+            },
+          ]}
+        >
+          <Input.Password autoComplete="new-password" />
+        </Form.Item>
+        <Form.Item
+          style={{
+            display: 'inline-block',
+            paddingRight: '5px',
+          }}
+        >
+          <Button type="primary" htmlType="submit">
+            {translate('Save')}
+          </Button>
+        </Form.Item>
+        <Form.Item
+          style={{
+            display: 'inline-block',
+            paddingLeft: '5px',
+          }}
+        >
+          <Button onClick={showCurrentRecord}>{translate('Cancel')}</Button>
+        </Form.Item>
+      </Form>
+
     </div>
   );
 }

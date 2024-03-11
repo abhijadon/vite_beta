@@ -359,8 +359,7 @@ export default function DataTable({ config, extra = [] }) {
             columns={tableColumns}
             rowKey={(item) => item._id}
             dataSource={filterDataSource(dataSource)}
-            pagination={false}
-            loading={listIsLoading}
+            pagination={true}
             onChange={handelDataTableLoad}
           />
         </Card>

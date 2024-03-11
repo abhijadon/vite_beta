@@ -190,7 +190,7 @@ export default function DataTable({ config, extra = [], setActiveForm }) {
     },
   ];
 
-  const { result: listResult, isLoading: listIsLoading } = useSelector(selectListItems);
+  const { result: listResult } = useSelector(selectListItems);
   const { items: dataSource } = listResult;
   const handelDataTableLoad = useCallback(
     async (pagination, newSearchQuery = '') => {
@@ -325,7 +325,6 @@ export default function DataTable({ config, extra = [], setActiveForm }) {
             rowKey={(item) => item._id}
             dataSource={filteredData}
             pagination={true}
-            loading={listIsLoading}
             onChange={handelDataTableLoad}
           />
         </Card>

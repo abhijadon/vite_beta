@@ -39,7 +39,7 @@ function SidePanelTopContent({ config, formElements }) {
   const { result: currentItem } = useSelector(selectCurrentItem);
   const dispatch = useDispatch();
 
-  const [setLabels] = useState('');
+  const [label, setLabels] = useState('');
   useEffect(() => {
     if (currentItem) {
       const currentlabels = entityDisplayLabels.map((x) => currentItem[x]).join(' ');
