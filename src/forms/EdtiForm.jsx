@@ -177,7 +177,9 @@ export default function EditForm() {
                     ></Select>
                 </Form.Item>
                 <Form.Item label="Users" name="userId">
-                    <Select placeholder="select user">
+                    <Select placeholder="Select user" showSearch optionFilterProp="children" filterOption={(input, option) =>
+                        option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+                    }>
                         {userList && userList.result.map(user => (
                             <Option className="capitalize" key={user._id} value={user._id}>{user.fullname}</Option>
                         ))}
@@ -236,13 +238,13 @@ export default function EditForm() {
                     label={translate('Total Course Fee')}
                     name={['customfields', 'total_course_fee']}
                 >
-                    <Input disabled />
+                    <Input />
                 </Form.Item>
                 <Form.Item
                     label={translate('Total Paid Amount')}
                     name={['customfields', 'total_paid_amount']}
                 >
-                    <Input disabled />
+                    <Input />
                 </Form.Item>
                 <Form.Item
                     label={translate('Paid Amount')}

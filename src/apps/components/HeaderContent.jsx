@@ -23,7 +23,7 @@ export default function HeaderContent() {
   const [darkMode, setDarkMode] = useState(false);
   const [activeKey, setActiveKey] = useState(null);
   const [isScrolled, setIsScrolled] = useState(false);
-
+  const isAdmin = currentAdmin?.role === 'admin';
   useEffect(() => {
     function handleScroll() {
       const scrollPosition = window.scrollY;
@@ -82,38 +82,45 @@ export default function HeaderContent() {
     return <span style={{}}>{text}</span>;
   };
 
-  const items = [
-    {
-      label: <ProfileDropdown className="headerDropDownMenu" />,
-      key: 'ProfileDropdown',
-    },
-    {
-      type: 'divider',
-    },
-    {
-      icon: <SettingOutlined />,
-      key: 'settingProfile',
-      label: (
-        <Link to={'/profile'}>
-          <DropdownMenu text={translate('profile_settings')} />
-        </Link>
-      ),
-    },
-    {
-      icon: <SettingOutlined />,
-      key: 'settingApp',
-      label: <Link to={'/settings'}>{translate('app_settings')}</Link>,
-    },
-    {
-      type: 'divider',
-    },
-    {
-      icon: <LogoutOutlined />,
-      key: 'logout',
-      label: <Link to={'/logout'}>{translate('logout')}</Link>,
-    },
-  ];
-
+  const items = isAdmin
+    ? [
+      {
+        label: <ProfileDropdown className="headerDropDownMenu" />,
+        key: 'ProfileDropdown',
+      },
+      {
+        type: 'divider',
+      },
+      {
+        icon: <SettingOutlined />,
+        key: 'settingProfile',
+        label: (
+          <Link to={'/profile'}>
+            <DropdownMenu text={translate('profile_settings')} />
+          </Link>
+        ),
+      },
+      {
+        icon: <SettingOutlined />,
+        key: 'settingApp',
+        label: <Link to={'/settings'}>{translate('app_settings')}</Link>,
+      },
+      {
+        type: 'divider',
+      },
+      {
+        icon: <LogoutOutlined />,
+        key: 'logout',
+        label: <Link to={'/logout'}>{translate('logout')}</Link>,
+      }
+    ]
+    : [
+      {
+        icon: <LogoutOutlined />,
+        key: 'logout',
+        label: <Link to={'/logout'}>{translate('logout')}</Link>,
+      }
+    ];
 
 
   {/*dark mode function */ }

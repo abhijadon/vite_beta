@@ -4,16 +4,11 @@ import { EditOutlined, LockOutlined, LogoutOutlined } from '@ant-design/icons';
 import { Avatar, Button, Col, Descriptions, Divider, Row } from 'antd';
 import { PageHeader } from '@ant-design/pro-layout';
 import { useSelector } from 'react-redux';
-
 import { useNavigate } from 'react-router-dom';
-
 import { selectCurrentAdmin } from '@/redux/auth/selectors';
-
 import useLanguage from '@/locale/useLanguage';
 import { BASE_URL } from '@/config/serverApiConfig';
-
 import { checkImage } from '@/request';
-
 const AdminInfo = ({ config }) => {
   const translate = useLanguage();
   const navigate = useNavigate();
@@ -64,20 +59,17 @@ const AdminInfo = ({ config }) => {
             src={srcImgProfile}
             size={96}
             style={{ color: '#f56a00', backgroundColor: '#fde3cf', fontSize: '48px' }}
-            alt={`${currentAdmin?.name}`}
+            alt={`${currentAdmin?.fullname}`}
           >
-            {currentAdmin?.name.charAt(0).toUpperCase()}
+            {currentAdmin?.fullname.charAt(0).toUpperCase()}
           </Avatar>
         </Col>
         <Col xs={{ span: 24 }} sm={{ span: 18 }}>
           <Descriptions column={1} size="middle">
             <Descriptions.Item label={translate('first name')}>
-              {currentAdmin?.name}
+              {currentAdmin?.fullname}
             </Descriptions.Item>
-            <Descriptions.Item label={translate('last name')}>
-              {currentAdmin?.surname}
-            </Descriptions.Item>
-            <Descriptions.Item label={translate('email')}>{currentAdmin?.email}</Descriptions.Item>
+            <Descriptions.Item label={translate('username')}>{currentAdmin?.username}</Descriptions.Item>
             <Descriptions.Item label={translate('role')}>{currentAdmin?.role}</Descriptions.Item>
           </Descriptions>
         </Col>

@@ -64,7 +64,13 @@ export default function DataTable({ config, extra = [] }) {
   const [paymentData, setPaymentData] = useState({ result: null });
   const [searchQuery, setSearchQuery] = useState('');
 
+  const [role, setRole] = useState('');
 
+  // Retrieve the role from localStorage
+  useEffect(() => {
+    const userData = JSON.parse(window.localStorage.getItem('auth'));
+    setRole(userData.current.role);
+  }, []);
 
 
   const handelDataTableLoad = useCallback(
@@ -368,9 +374,6 @@ export default function DataTable({ config, extra = [] }) {
   }
 
 
-
-
-
   const amountCardsData = [
     {
       title: 'Total Course Fee',
@@ -415,12 +418,15 @@ export default function DataTable({ config, extra = [] }) {
     );
   });
 
+
   const filterRender = () => (
     <Card className='flex items-center justify-start gap-3'>
       <div className='grid grid-cols-5 gap-3'>
         <div>
           {/* Select for Institute */}
-          <Select
+          <Select showSearch optionFilterProp="children" filterOption={(input, option) =>
+            option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+          }
             placeholder="Select institute"
             className='w-60 h-10 capitalize'
             value={selectedInstitute}
@@ -433,7 +439,9 @@ export default function DataTable({ config, extra = [] }) {
         </div>
         <div>
           {/* Select for University */}
-          <Select
+          <Select showSearch optionFilterProp="children" filterOption={(input, option) =>
+            option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+          }
             placeholder="Select university"
             className='w-60 h-10 capitalize'
             value={selectedUniversity}
@@ -447,7 +455,9 @@ export default function DataTable({ config, extra = [] }) {
 
         <div>
           {/* Select for Status */}
-          <Select
+          <Select showSearch optionFilterProp="children" filterOption={(input, option) =>
+            option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+          }
             placeholder="Select status"
             className='w-60 h-10 capitalize'
             value={selectedStatus}
@@ -460,7 +470,9 @@ export default function DataTable({ config, extra = [] }) {
         </div>
         {/* Select for User Full Name */}
         <div>
-          <Select
+          <Select showSearch optionFilterProp="children" filterOption={(input, option) =>
+            option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+          }
             placeholder="Select payment mode"
             className='w-60 h-10 capitalize'
             value={selectedPaymentMode}
@@ -474,7 +486,9 @@ export default function DataTable({ config, extra = [] }) {
           </Select>
         </div>
         <div>
-          <Select
+          <Select showSearch optionFilterProp="children" filterOption={(input, option) =>
+            option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+          }
             placeholder="Select payment type"
             className='w-60 h-10 capitalize'
             value={selectedPaymentType}
@@ -489,7 +503,9 @@ export default function DataTable({ config, extra = [] }) {
         </div>
         {/* Date Range Picker */}
         <div>
-          <Select
+          <Select showSearch optionFilterProp="children" filterOption={(input, option) =>
+            option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+          }
             placeholder="Select user full name"
             className='w-60 h-10 capitalize'
             value={selectedUserId}
@@ -518,9 +534,14 @@ export default function DataTable({ config, extra = [] }) {
         {filterRender()}
       </div>
       <div className='space30'></div>
-      <div className='flex gap-4'>
-        {amountCards}
-      </div>
+      {['admin', 'subadmin'].includes(role) && (
+        <div>
+          <div className='space30'></div>
+          <div className='flex gap-4'>
+            {amountCards}
+          </div>
+        </div>
+      )}
       <div className='space30'></div>
       <div>
         {renderTable()}

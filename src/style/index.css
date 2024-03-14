@@ -50,3 +50,12 @@ button,
   color: #ffffff !important;
 background-color: #1677ff !important;
 }
+
+
+ .ant-picker-header button {
+    color: #1677ff !important;
+ }
+
+  .ant-picker-header button:hover {
+     color: #066cfb !important;
+ }

@@ -236,7 +236,7 @@ const formData = [
                   { value: "Hospital Administration & Healthcare Management", label: "Hospital Administration & Healthcare Management" },
                 ],
               },
-              {
+               {
                 value: "MSC",
                 label: "MSC",
                 specializations: [
@@ -246,6 +246,7 @@ const formData = [
                   { value: "Mathematics", label: "Mathematics" },
                   { value: "Information Technology", label: "Information Technology" },
                   { value: "Computer Science", label: "Computer Science" },
+                  { value: "Microbiology", label: "Microbiology" },
                   { value: "Bio-Technology", label: "Bio-Technology" },
                   { value: "Zoology", label: "Zoology" },
                   { value: "IT", label: "IT" },
@@ -259,6 +260,7 @@ const formData = [
                   { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
                 ],
               },
+
               {
                 value: "MLIS",
                 label: "MLIS",
@@ -791,7 +793,7 @@ const formData = [
                   { value: "Hospital Administration & Healthcare Management", label: "Hospital Administration & Healthcare Management" },
                 ],
               },
-              {
+               {
                 value: "MSC",
                 label: "MSC",
                 specializations: [
@@ -801,6 +803,7 @@ const formData = [
                   { value: "Mathematics", label: "Mathematics" },
                   { value: "Information Technology", label: "Information Technology" },
                   { value: "Computer Science", label: "Computer Science" },
+                  { value: "Microbiology", label: "Microbiology" },
                   { value: "Bio-Technology", label: "Bio-Technology" },
                   { value: "Zoology", label: "Zoology" },
                   { value: "IT", label: "IT" },
@@ -814,6 +817,7 @@ const formData = [
                   { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
                 ],
               },
+
               {
                 value: "MLIS",
                 label: "MLIS",
@@ -1346,7 +1350,7 @@ const formData = [
                   { value: "Hospital Administration & Healthcare Management", label: "Hospital Administration & Healthcare Management" },
                 ],
               },
-              {
+               {
                 value: "MSC",
                 label: "MSC",
                 specializations: [
@@ -1356,6 +1360,7 @@ const formData = [
                   { value: "Mathematics", label: "Mathematics" },
                   { value: "Information Technology", label: "Information Technology" },
                   { value: "Computer Science", label: "Computer Science" },
+                  { value: "Microbiology", label: "Microbiology" },
                   { value: "Bio-Technology", label: "Bio-Technology" },
                   { value: "Zoology", label: "Zoology" },
                   { value: "IT", label: "IT" },
@@ -1369,6 +1374,7 @@ const formData = [
                   { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
                 ],
               },
+
               {
                 value: "MLIS",
                 label: "MLIS",
@@ -1911,6 +1917,7 @@ const formData = [
                   { value: "Mathematics", label: "Mathematics" },
                   { value: "Information Technology", label: "Information Technology" },
                   { value: "Computer Science", label: "Computer Science" },
+                  { value: "Microbiology", label: "Microbiology" },
                   { value: "Bio-Technology", label: "Bio-Technology" },
                   { value: "Zoology", label: "Zoology" },
                   { value: "IT", label: "IT" },
@@ -2456,7 +2463,7 @@ const formData = [
                   { value: "Hospital Administration & Healthcare Management", label: "Hospital Administration & Healthcare Management" },
                 ],
               },
-              {
+               {
                 value: "MSC",
                 label: "MSC",
                 specializations: [
@@ -2466,6 +2473,7 @@ const formData = [
                   { value: "Mathematics", label: "Mathematics" },
                   { value: "Information Technology", label: "Information Technology" },
                   { value: "Computer Science", label: "Computer Science" },
+                  { value: "Microbiology", label: "Microbiology" },
                   { value: "Bio-Technology", label: "Bio-Technology" },
                   { value: "Zoology", label: "Zoology" },
                   { value: "IT", label: "IT" },
@@ -2479,6 +2487,7 @@ const formData = [
                   { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
                 ],
               },
+
               {
                 value: "MLIS",
                 label: "MLIS",
@@ -3011,7 +3020,7 @@ const formData = [
                   { value: "Hospital Administration & Healthcare Management", label: "Hospital Administration & Healthcare Management" },
                 ],
               },
-              {
+               {
                 value: "MSC",
                 label: "MSC",
                 specializations: [
@@ -3021,6 +3030,7 @@ const formData = [
                   { value: "Mathematics", label: "Mathematics" },
                   { value: "Information Technology", label: "Information Technology" },
                   { value: "Computer Science", label: "Computer Science" },
+                  { value: "Microbiology", label: "Microbiology" },
                   { value: "Bio-Technology", label: "Bio-Technology" },
                   { value: "Zoology", label: "Zoology" },
                   { value: "IT", label: "IT" },
@@ -3034,6 +3044,7 @@ const formData = [
                   { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
                 ],
               },
+
               {
                 value: "MLIS",
                 label: "MLIS",
@@ -3566,7 +3577,7 @@ const formData = [
                   { value: "Hospital Administration & Healthcare Management", label: "Hospital Administration & Healthcare Management" },
                 ],
               },
-              {
+               {
                 value: "MSC",
                 label: "MSC",
                 specializations: [
@@ -3576,6 +3587,7 @@ const formData = [
                   { value: "Mathematics", label: "Mathematics" },
                   { value: "Information Technology", label: "Information Technology" },
                   { value: "Computer Science", label: "Computer Science" },
+                  { value: "Microbiology", label: "Microbiology" },
                   { value: "Bio-Technology", label: "Bio-Technology" },
                   { value: "Zoology", label: "Zoology" },
                   { value: "IT", label: "IT" },
@@ -3589,6 +3601,7 @@ const formData = [
                   { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
                 ],
               },
+
               {
                 value: "MLIS",
                 label: "MLIS",
@@ -4122,7 +4135,7 @@ const formData = [
                   { value: "Hospital Administration & Healthcare Management", label: "Hospital Administration & Healthcare Management" },
                 ],
               },
-              {
+               {
                 value: "MSC",
                 label: "MSC",
                 specializations: [
@@ -4132,6 +4145,7 @@ const formData = [
                   { value: "Mathematics", label: "Mathematics" },
                   { value: "Information Technology", label: "Information Technology" },
                   { value: "Computer Science", label: "Computer Science" },
+                  { value: "Microbiology", label: "Microbiology" },
                   { value: "Bio-Technology", label: "Bio-Technology" },
                   { value: "Zoology", label: "Zoology" },
                   { value: "IT", label: "IT" },
@@ -4145,6 +4159,7 @@ const formData = [
                   { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
                 ],
               },
+
               {
                 value: "MLIS",
                 label: "MLIS",
@@ -4677,7 +4692,7 @@ const formData = [
                   { value: "Hospital Administration & Healthcare Management", label: "Hospital Administration & Healthcare Management" },
                 ],
               },
-              {
+               {
                 value: "MSC",
                 label: "MSC",
                 specializations: [
@@ -4687,6 +4702,7 @@ const formData = [
                   { value: "Mathematics", label: "Mathematics" },
                   { value: "Information Technology", label: "Information Technology" },
                   { value: "Computer Science", label: "Computer Science" },
+                  { value: "Microbiology", label: "Microbiology" },
                   { value: "Bio-Technology", label: "Bio-Technology" },
                   { value: "Zoology", label: "Zoology" },
                   { value: "IT", label: "IT" },
@@ -4700,6 +4716,7 @@ const formData = [
                   { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
                 ],
               },
+
               {
                 value: "MLIS",
                 label: "MLIS",
@@ -5232,7 +5249,7 @@ const formData = [
                   { value: "Hospital Administration & Healthcare Management", label: "Hospital Administration & Healthcare Management" },
                 ],
               },
-              {
+               {
                 value: "MSC",
                 label: "MSC",
                 specializations: [
@@ -5242,6 +5259,7 @@ const formData = [
                   { value: "Mathematics", label: "Mathematics" },
                   { value: "Information Technology", label: "Information Technology" },
                   { value: "Computer Science", label: "Computer Science" },
+                  { value: "Microbiology", label: "Microbiology" },
                   { value: "Bio-Technology", label: "Bio-Technology" },
                   { value: "Zoology", label: "Zoology" },
                   { value: "IT", label: "IT" },
@@ -5255,6 +5273,7 @@ const formData = [
                   { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
                 ],
               },
+
               {
                 value: "MLIS",
                 label: "MLIS",
@@ -5787,7 +5806,7 @@ const formData = [
                   { value: "Hospital Administration & Healthcare Management", label: "Hospital Administration & Healthcare Management" },
                 ],
               },
-              {
+               {
                 value: "MSC",
                 label: "MSC",
                 specializations: [
@@ -5797,6 +5816,7 @@ const formData = [
                   { value: "Mathematics", label: "Mathematics" },
                   { value: "Information Technology", label: "Information Technology" },
                   { value: "Computer Science", label: "Computer Science" },
+                  { value: "Microbiology", label: "Microbiology" },
                   { value: "Bio-Technology", label: "Bio-Technology" },
                   { value: "Zoology", label: "Zoology" },
                   { value: "IT", label: "IT" },
@@ -5810,6 +5830,7 @@ const formData = [
                   { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
                 ],
               },
+
               {
                 value: "MLIS",
                 label: "MLIS",
@@ -6342,7 +6363,7 @@ const formData = [
                   { value: "Hospital Administration & Healthcare Management", label: "Hospital Administration & Healthcare Management" },
                 ],
               },
-              {
+               {
                 value: "MSC",
                 label: "MSC",
                 specializations: [
@@ -6352,6 +6373,7 @@ const formData = [
                   { value: "Mathematics", label: "Mathematics" },
                   { value: "Information Technology", label: "Information Technology" },
                   { value: "Computer Science", label: "Computer Science" },
+                  { value: "Microbiology", label: "Microbiology" },
                   { value: "Bio-Technology", label: "Bio-Technology" },
                   { value: "Zoology", label: "Zoology" },
                   { value: "IT", label: "IT" },
@@ -6365,6 +6387,7 @@ const formData = [
                   { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
                 ],
               },
+
               {
                 value: "MLIS",
                 label: "MLIS",
@@ -6898,7 +6921,7 @@ const formData = [
                   { value: "Hospital Administration & Healthcare Management", label: "Hospital Administration & Healthcare Management" },
                 ],
               },
-              {
+               {
                 value: "MSC",
                 label: "MSC",
                 specializations: [
@@ -6908,6 +6931,7 @@ const formData = [
                   { value: "Mathematics", label: "Mathematics" },
                   { value: "Information Technology", label: "Information Technology" },
                   { value: "Computer Science", label: "Computer Science" },
+                  { value: "Microbiology", label: "Microbiology" },
                   { value: "Bio-Technology", label: "Bio-Technology" },
                   { value: "Zoology", label: "Zoology" },
                   { value: "IT", label: "IT" },
@@ -6921,6 +6945,7 @@ const formData = [
                   { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
                 ],
               },
+
               {
                 value: "MLIS",
                 label: "MLIS",
@@ -7453,7 +7478,7 @@ const formData = [
                   { value: "Hospital Administration & Healthcare Management", label: "Hospital Administration & Healthcare Management" },
                 ],
               },
-              {
+               {
                 value: "MSC",
                 label: "MSC",
                 specializations: [
@@ -7463,6 +7488,7 @@ const formData = [
                   { value: "Mathematics", label: "Mathematics" },
                   { value: "Information Technology", label: "Information Technology" },
                   { value: "Computer Science", label: "Computer Science" },
+                  { value: "Microbiology", label: "Microbiology" },
                   { value: "Bio-Technology", label: "Bio-Technology" },
                   { value: "Zoology", label: "Zoology" },
                   { value: "IT", label: "IT" },
@@ -7476,6 +7502,7 @@ const formData = [
                   { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
                 ],
               },
+
               {
                 value: "MLIS",
                 label: "MLIS",
@@ -8009,7 +8036,7 @@ const formData = [
                   { value: "Hospital Administration & Healthcare Management", label: "Hospital Administration & Healthcare Management" },
                 ],
               },
-              {
+               {
                 value: "MSC",
                 label: "MSC",
                 specializations: [
@@ -8019,6 +8046,7 @@ const formData = [
                   { value: "Mathematics", label: "Mathematics" },
                   { value: "Information Technology", label: "Information Technology" },
                   { value: "Computer Science", label: "Computer Science" },
+                  { value: "Microbiology", label: "Microbiology" },
                   { value: "Bio-Technology", label: "Bio-Technology" },
                   { value: "Zoology", label: "Zoology" },
                   { value: "IT", label: "IT" },
@@ -8032,6 +8060,7 @@ const formData = [
                   { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
                 ],
               },
+
               {
                 value: "MLIS",
                 label: "MLIS",
@@ -8564,7 +8593,7 @@ const formData = [
                   { value: "Hospital Administration & Healthcare Management", label: "Hospital Administration & Healthcare Management" },
                 ],
               },
-              {
+               {
                 value: "MSC",
                 label: "MSC",
                 specializations: [
@@ -8574,6 +8603,7 @@ const formData = [
                   { value: "Mathematics", label: "Mathematics" },
                   { value: "Information Technology", label: "Information Technology" },
                   { value: "Computer Science", label: "Computer Science" },
+                  { value: "Microbiology", label: "Microbiology" },
                   { value: "Bio-Technology", label: "Bio-Technology" },
                   { value: "Zoology", label: "Zoology" },
                   { value: "IT", label: "IT" },
@@ -8587,6 +8617,7 @@ const formData = [
                   { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
                 ],
               },
+
               {
                 value: "MLIS",
                 label: "MLIS",
@@ -9128,7 +9159,7 @@ const formData = [
                   { value: "Hospital Administration & Healthcare Management", label: "Hospital Administration & Healthcare Management" },
                 ],
               },
-              {
+               {
                 value: "MSC",
                 label: "MSC",
                 specializations: [
@@ -9138,6 +9169,7 @@ const formData = [
                   { value: "Mathematics", label: "Mathematics" },
                   { value: "Information Technology", label: "Information Technology" },
                   { value: "Computer Science", label: "Computer Science" },
+                  { value: "Microbiology", label: "Microbiology" },
                   { value: "Bio-Technology", label: "Bio-Technology" },
                   { value: "Zoology", label: "Zoology" },
                   { value: "IT", label: "IT" },
@@ -9151,6 +9183,7 @@ const formData = [
                   { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
                 ],
               },
+
               {
                 value: "MLIS",
                 label: "MLIS",
@@ -9683,7 +9716,7 @@ const formData = [
                   { value: "Hospital Administration & Healthcare Management", label: "Hospital Administration & Healthcare Management" },
                 ],
               },
-              {
+               {
                 value: "MSC",
                 label: "MSC",
                 specializations: [
@@ -9693,6 +9726,7 @@ const formData = [
                   { value: "Mathematics", label: "Mathematics" },
                   { value: "Information Technology", label: "Information Technology" },
                   { value: "Computer Science", label: "Computer Science" },
+                  { value: "Microbiology", label: "Microbiology" },
                   { value: "Bio-Technology", label: "Bio-Technology" },
                   { value: "Zoology", label: "Zoology" },
                   { value: "IT", label: "IT" },
@@ -9706,6 +9740,7 @@ const formData = [
                   { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
                 ],
               },
+
               {
                 value: "MLIS",
                 label: "MLIS",
@@ -10238,7 +10273,7 @@ const formData = [
                   { value: "Hospital Administration & Healthcare Management", label: "Hospital Administration & Healthcare Management" },
                 ],
               },
-              {
+               {
                 value: "MSC",
                 label: "MSC",
                 specializations: [
@@ -10248,6 +10283,7 @@ const formData = [
                   { value: "Mathematics", label: "Mathematics" },
                   { value: "Information Technology", label: "Information Technology" },
                   { value: "Computer Science", label: "Computer Science" },
+                  { value: "Microbiology", label: "Microbiology" },
                   { value: "Bio-Technology", label: "Bio-Technology" },
                   { value: "Zoology", label: "Zoology" },
                   { value: "IT", label: "IT" },
@@ -10261,6 +10297,7 @@ const formData = [
                   { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
                 ],
               },
+
               {
                 value: "MLIS",
                 label: "MLIS",
@@ -10793,7 +10830,7 @@ const formData = [
                   { value: "Hospital Administration & Healthcare Management", label: "Hospital Administration & Healthcare Management" },
                 ],
               },
-              {
+               {
                 value: "MSC",
                 label: "MSC",
                 specializations: [
@@ -10803,6 +10840,7 @@ const formData = [
                   { value: "Mathematics", label: "Mathematics" },
                   { value: "Information Technology", label: "Information Technology" },
                   { value: "Computer Science", label: "Computer Science" },
+                  { value: "Microbiology", label: "Microbiology" },
                   { value: "Bio-Technology", label: "Bio-Technology" },
                   { value: "Zoology", label: "Zoology" },
                   { value: "IT", label: "IT" },
@@ -10816,6 +10854,7 @@ const formData = [
                   { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
                 ],
               },
+
               {
                 value: "MLIS",
                 label: "MLIS",
@@ -11348,7 +11387,7 @@ const formData = [
                   { value: "Hospital Administration & Healthcare Management", label: "Hospital Administration & Healthcare Management" },
                 ],
               },
-              {
+               {
                 value: "MSC",
                 label: "MSC",
                 specializations: [
@@ -11358,6 +11397,7 @@ const formData = [
                   { value: "Mathematics", label: "Mathematics" },
                   { value: "Information Technology", label: "Information Technology" },
                   { value: "Computer Science", label: "Computer Science" },
+                  { value: "Microbiology", label: "Microbiology" },
                   { value: "Bio-Technology", label: "Bio-Technology" },
                   { value: "Zoology", label: "Zoology" },
                   { value: "IT", label: "IT" },
@@ -11371,6 +11411,7 @@ const formData = [
                   { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
                 ],
               },
+
               {
                 value: "MLIS",
                 label: "MLIS",
@@ -11903,7 +11944,7 @@ const formData = [
                   { value: "Hospital Administration & Healthcare Management", label: "Hospital Administration & Healthcare Management" },
                 ],
               },
-              {
+               {
                 value: "MSC",
                 label: "MSC",
                 specializations: [
@@ -11913,6 +11954,7 @@ const formData = [
                   { value: "Mathematics", label: "Mathematics" },
                   { value: "Information Technology", label: "Information Technology" },
                   { value: "Computer Science", label: "Computer Science" },
+                  { value: "Microbiology", label: "Microbiology" },
                   { value: "Bio-Technology", label: "Bio-Technology" },
                   { value: "Zoology", label: "Zoology" },
                   { value: "IT", label: "IT" },
@@ -11926,6 +11968,7 @@ const formData = [
                   { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
                 ],
               },
+
               {
                 value: "MLIS",
                 label: "MLIS",
@@ -12458,7 +12501,7 @@ const formData = [
                   { value: "Hospital Administration & Healthcare Management", label: "Hospital Administration & Healthcare Management" },
                 ],
               },
-              {
+               {
                 value: "MSC",
                 label: "MSC",
                 specializations: [
@@ -12468,6 +12511,7 @@ const formData = [
                   { value: "Mathematics", label: "Mathematics" },
                   { value: "Information Technology", label: "Information Technology" },
                   { value: "Computer Science", label: "Computer Science" },
+                  { value: "Microbiology", label: "Microbiology" },
                   { value: "Bio-Technology", label: "Bio-Technology" },
                   { value: "Zoology", label: "Zoology" },
                   { value: "IT", label: "IT" },
@@ -12481,6 +12525,7 @@ const formData = [
                   { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
                 ],
               },
+
               {
                 value: "MLIS",
                 label: "MLIS",
@@ -13013,7 +13058,7 @@ const formData = [
                   { value: "Hospital Administration & Healthcare Management", label: "Hospital Administration & Healthcare Management" },
                 ],
               },
-              {
+               {
                 value: "MSC",
                 label: "MSC",
                 specializations: [
@@ -13023,6 +13068,7 @@ const formData = [
                   { value: "Mathematics", label: "Mathematics" },
                   { value: "Information Technology", label: "Information Technology" },
                   { value: "Computer Science", label: "Computer Science" },
+                  { value: "Microbiology", label: "Microbiology" },
                   { value: "Bio-Technology", label: "Bio-Technology" },
                   { value: "Zoology", label: "Zoology" },
                   { value: "IT", label: "IT" },
@@ -13036,6 +13082,7 @@ const formData = [
                   { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
                 ],
               },
+
               {
                 value: "MLIS",
                 label: "MLIS",
@@ -13569,7 +13616,7 @@ const formData = [
                   { value: "Hospital Administration & Healthcare Management", label: "Hospital Administration & Healthcare Management" },
                 ],
               },
-              {
+               {
                 value: "MSC",
                 label: "MSC",
                 specializations: [
@@ -13579,6 +13626,7 @@ const formData = [
                   { value: "Mathematics", label: "Mathematics" },
                   { value: "Information Technology", label: "Information Technology" },
                   { value: "Computer Science", label: "Computer Science" },
+                  { value: "Microbiology", label: "Microbiology" },
                   { value: "Bio-Technology", label: "Bio-Technology" },
                   { value: "Zoology", label: "Zoology" },
                   { value: "IT", label: "IT" },
@@ -13592,6 +13640,7 @@ const formData = [
                   { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
                 ],
               },
+
               {
                 value: "MLIS",
                 label: "MLIS",
@@ -14124,7 +14173,7 @@ const formData = [
                   { value: "Hospital Administration & Healthcare Management", label: "Hospital Administration & Healthcare Management" },
                 ],
               },
-              {
+               {
                 value: "MSC",
                 label: "MSC",
                 specializations: [
@@ -14134,6 +14183,7 @@ const formData = [
                   { value: "Mathematics", label: "Mathematics" },
                   { value: "Information Technology", label: "Information Technology" },
                   { value: "Computer Science", label: "Computer Science" },
+                  { value: "Microbiology", label: "Microbiology" },
                   { value: "Bio-Technology", label: "Bio-Technology" },
                   { value: "Zoology", label: "Zoology" },
                   { value: "IT", label: "IT" },
@@ -14147,6 +14197,7 @@ const formData = [
                   { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
                 ],
               },
+
               {
                 value: "MLIS",
                 label: "MLIS",
@@ -14679,7 +14730,7 @@ const formData = [
                   { value: "Hospital Administration & Healthcare Management", label: "Hospital Administration & Healthcare Management" },
                 ],
               },
-              {
+               {
                 value: "MSC",
                 label: "MSC",
                 specializations: [
@@ -14689,6 +14740,7 @@ const formData = [
                   { value: "Mathematics", label: "Mathematics" },
                   { value: "Information Technology", label: "Information Technology" },
                   { value: "Computer Science", label: "Computer Science" },
+                  { value: "Microbiology", label: "Microbiology" },
                   { value: "Bio-Technology", label: "Bio-Technology" },
                   { value: "Zoology", label: "Zoology" },
                   { value: "IT", label: "IT" },
@@ -14702,6 +14754,7 @@ const formData = [
                   { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
                 ],
               },
+
               {
                 value: "MLIS",
                 label: "MLIS",
@@ -15234,7 +15287,7 @@ const formData = [
                   { value: "Hospital Administration & Healthcare Management", label: "Hospital Administration & Healthcare Management" },
                 ],
               },
-              {
+               {
                 value: "MSC",
                 label: "MSC",
                 specializations: [
@@ -15244,6 +15297,7 @@ const formData = [
                   { value: "Mathematics", label: "Mathematics" },
                   { value: "Information Technology", label: "Information Technology" },
                   { value: "Computer Science", label: "Computer Science" },
+                  { value: "Microbiology", label: "Microbiology" },
                   { value: "Bio-Technology", label: "Bio-Technology" },
                   { value: "Zoology", label: "Zoology" },
                   { value: "IT", label: "IT" },
@@ -15257,6 +15311,7 @@ const formData = [
                   { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
                 ],
               },
+
               {
                 value: "MLIS",
                 label: "MLIS",
@@ -15790,7 +15845,7 @@ const formData = [
                   { value: "Hospital Administration & Healthcare Management", label: "Hospital Administration & Healthcare Management" },
                 ],
               },
-              {
+               {
                 value: "MSC",
                 label: "MSC",
                 specializations: [
@@ -15800,6 +15855,7 @@ const formData = [
                   { value: "Mathematics", label: "Mathematics" },
                   { value: "Information Technology", label: "Information Technology" },
                   { value: "Computer Science", label: "Computer Science" },
+                  { value: "Microbiology", label: "Microbiology" },
                   { value: "Bio-Technology", label: "Bio-Technology" },
                   { value: "Zoology", label: "Zoology" },
                   { value: "IT", label: "IT" },
@@ -15813,6 +15869,7 @@ const formData = [
                   { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
                 ],
               },
+
               {
                 value: "MLIS",
                 label: "MLIS",
@@ -16345,7 +16402,7 @@ const formData = [
                   { value: "Hospital Administration & Healthcare Management", label: "Hospital Administration & Healthcare Management" },
                 ],
               },
-              {
+               {
                 value: "MSC",
                 label: "MSC",
                 specializations: [
@@ -16355,6 +16412,7 @@ const formData = [
                   { value: "Mathematics", label: "Mathematics" },
                   { value: "Information Technology", label: "Information Technology" },
                   { value: "Computer Science", label: "Computer Science" },
+                  { value: "Microbiology", label: "Microbiology" },
                   { value: "Bio-Technology", label: "Bio-Technology" },
                   { value: "Zoology", label: "Zoology" },
                   { value: "IT", label: "IT" },
@@ -16368,6 +16426,7 @@ const formData = [
                   { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
                 ],
               },
+
               {
                 value: "MLIS",
                 label: "MLIS",
@@ -16901,7 +16960,7 @@ const formData = [
                   { value: "Hospital Administration & Healthcare Management", label: "Hospital Administration & Healthcare Management" },
                 ],
               },
-              {
+               {
                 value: "MSC",
                 label: "MSC",
                 specializations: [
@@ -16911,6 +16970,7 @@ const formData = [
                   { value: "Mathematics", label: "Mathematics" },
                   { value: "Information Technology", label: "Information Technology" },
                   { value: "Computer Science", label: "Computer Science" },
+                  { value: "Microbiology", label: "Microbiology" },
                   { value: "Bio-Technology", label: "Bio-Technology" },
                   { value: "Zoology", label: "Zoology" },
                   { value: "IT", label: "IT" },
@@ -16924,6 +16984,7 @@ const formData = [
                   { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
                 ],
               },
+
               {
                 value: "MLIS",
                 label: "MLIS",
@@ -17456,7 +17517,7 @@ const formData = [
                   { value: "Hospital Administration & Healthcare Management", label: "Hospital Administration & Healthcare Management" },
                 ],
               },
-              {
+               {
                 value: "MSC",
                 label: "MSC",
                 specializations: [
@@ -17466,6 +17527,7 @@ const formData = [
                   { value: "Mathematics", label: "Mathematics" },
                   { value: "Information Technology", label: "Information Technology" },
                   { value: "Computer Science", label: "Computer Science" },
+                  { value: "Microbiology", label: "Microbiology" },
                   { value: "Bio-Technology", label: "Bio-Technology" },
                   { value: "Zoology", label: "Zoology" },
                   { value: "IT", label: "IT" },
@@ -17479,6 +17541,7 @@ const formData = [
                   { value: "Radiology & Imaging Technology", label: "Radiology & Imaging Technology" }
                 ],
               },
+
               {
                 value: "MLIS",
                 label: "MLIS",

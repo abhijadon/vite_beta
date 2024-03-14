@@ -73,45 +73,8 @@ const AddRoleform = () => {
                     {/* Add other role options as needed */}
                 </Select>
             </Form.Item>
-            <Form.Item label="Institute" name="institute">
-                <Select placeholder="select institute" mode='multiple'
-                    showSearch
-                    optionFilterProp='children'
-                    options={[
-                        { value: 'HES', label: 'HES' },
-                        { value: 'DES', label: 'DES' },
-                    ]}
-                ></Select>
-            </Form.Item>
-            <Form.Item label="University" name="university">
-                <Select placeholder="Select university" mode='multiple'
-                    showSearch
-                    optionFilterProp='children'
-                    options={[
-                        { value: 'SGVU', label: 'SGVU' },
-                        { value: 'CU', label: 'CU' },
-                        { value: 'SPU', label: 'SPU' },
-                        { value: 'LPU', label: 'LPU' },
-                        { value: 'DPU', label: 'DPU' },
-                        { value: 'JAIN', label: 'JAIN' },
-                        { value: 'SVSU', label: 'SVSU' },
-                        { value: 'VIGNAN', label: 'VIGNAN' },
-                        { value: 'MANIPAL', label: 'MANIPAL' },
-                        { value: 'SMU', label: 'SMU' },
-                        { value: 'HU', label: 'HU' },
-                        { value: 'BOSSSE', label: 'BOSSSE' },
-                        { value: 'UU', label: 'UU' },
-                        { value: 'UPES', label: 'UPES' },
-                        { value: 'MANGALAYATAN', label: 'MANGALAYATAN' },
-                        { value: 'MANGALAYATAN ONLINE', label: 'MANGALAYATAN ONLINE' },
-                    ]}
-                ></Select>
-            </Form.Item>
-            <Form.Item label="Team Name" name="teamName">
-                <Input placeholder='Enter teamname' />
-            </Form.Item>
-            <Form.Item label="Team leader" name="userId">
-                <Select
+            <Form.Item label="User" name="name">
+                <Select className='capitalize'
                     placeholder={`Select ${selectedRole ? selectedRole.toLowerCase() : 'users'}`}
                     showSearch
                     optionFilterProp="children"
@@ -120,22 +83,23 @@ const AddRoleform = () => {
                     }
                 >
                     {filteredUserList().map(user => (
-                        <Option classname="capitalize" key={user._id} value={user._id}>{user.fullname}</Option>
+                        <Select.Option classname="capitalize" key={user._id} value={user._id}>{user.fullname}</Select.Option>
                     ))}
                 </Select>
             </Form.Item>
 
-            {selectedRole === 'Team Leader' && (
-                <Form.Item label="Team Members" name="teamMembers">
-                    <Select classname="capitalize" placeholder='Select teamembers' mode='multiple' showSearch optionFilterProp="children" filterOption={(input, option) =>
-                        option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
-                    }>
-                        {userList.map(user => (
-                            <Option key={user._id} value={user._id}>{user.fullname}</Option>
-                        ))}
-                    </Select>
-                </Form.Item>
-            )}
+
+            <Form.Item label="Permissions" name="permissions">
+                <Select classname="capitalize" placeholder='Select permissions' mode='multiple' showSearch optionFilterProp="children" filterOption={(input, option) =>
+                    option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+                }>
+                    <Select.Option value="create">Create</Select.Option>
+                    <Select.Option value="read">Read</Select.Option>
+                    <Select.Option value="update">Update</Select.Option>
+                    <Select.Option value="delete">Delete</Select.Option>
+                </Select>
+            </Form.Item>
+
         </>
     );
 };

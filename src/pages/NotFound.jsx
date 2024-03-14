@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-
 import NotFound from '@/components/NotFound';
 
 const NotFoundPage = () => {

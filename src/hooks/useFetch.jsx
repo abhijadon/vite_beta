@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 
 function useFetchData(fetchFunction) {
   const [data, setData] = useState(null);
+  const [isLoading, setLoading] = useState(true);
   const [isSuccess, setSuccess] = useState(false);
   const [error, setError] = useState(null);
 
@@ -13,19 +14,22 @@ function useFetchData(fetchFunction) {
         setSuccess(true);
       } catch (error) {
         setError(error);
+      } finally {
+        setLoading(false);
       }
     }
 
     fetchData();
-  }, [fetchFunction]); // Corrected dependency array
+  }, [isLoading]);
 
-  return { data, isSuccess, error };
+  return { data, isLoading, isSuccess, error };
 }
 
 export const useFetch = (fetchFunction) => {
-  const { data, isSuccess, error } = useFetchData(fetchFunction);
+  const { data, isLoading, isSuccess, error } = useFetchData(fetchFunction);
 
-  return { data, isSuccess, error };
+  return { data, isLoading, isSuccess, error };
 }
 
 export default useFetch;
+

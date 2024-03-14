@@ -26,6 +26,7 @@ import Settings from '@/pages/Settings/Settings';
 import PaymentMode from '@/pages/PaymentMode';
 import Roles from '@/pages/Roles';
 import Permissions from '@/pages/Permissions';
+import Permission from '@/pages/permission';
 import Email from '@/pages/Email/index';
 import EmailRead from '@/pages/Email/EmailRead';
 import EmailUpdate from '@/pages/Email/EmailUpdate';
@@ -154,6 +155,10 @@ export default function AppRouter() {
     {
       path: '/permissions',
       element: <Permissions />,
+    },
+    {
+      path: '/permission',
+      element: <Permission />,
     },
     {
       path: '/application',

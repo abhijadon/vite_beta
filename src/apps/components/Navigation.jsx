@@ -9,6 +9,7 @@ import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { PiUsersThree } from "react-icons/pi";
 import { BsPersonCheck } from "react-icons/bs";
+import { RiPenNibLine } from "react-icons/ri";
 import { MdLockOpen } from "react-icons/md";
 import {
   SettingOutlined,
@@ -102,9 +103,13 @@ function Sidebar({ collapsible, onPathChange }) {
     {
       key: 'permissions',
       icon: <BsPersonCheck className='text-[18px]' />,
-      label: <Link to={'/permissions'}>{translate('Users_list')}</Link>,
+      label: <Link to={'/permissions'}>{translate('user_list')}</Link>,
     },
-
+    {
+      key: 'permission',
+      icon: <RiPenNibLine className='text-[18px]' />,
+      label: <Link to={'/permission'}>{translate('permission')}</Link>,
+    },
   ];
 
 

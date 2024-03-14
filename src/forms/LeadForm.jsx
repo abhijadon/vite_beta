@@ -453,7 +453,9 @@ export default function LeadForm() {
               </Select>
             </Form.Item>
             <Form.Item label="Users" name="userId">
-              <Select placeholder="select user">
+              <Select placeholder="Select user" showSearch optionFilterProp="children" filterOption={(input, option) =>
+                option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+              }>
                 {userList && userList.result.map(user => (
                   <Option className="capitalize" key={user._id} value={user._id}>{user.fullname}</Option>
                 ))}

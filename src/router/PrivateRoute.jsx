@@ -1,9 +1,16 @@
+import React from 'react';
 import { Navigate } from 'react-router-dom';
 
 const PrivateRoute = ({ children }) => {
-  if (window.localStorage.getItem('isLoggedIn')) {
+  const isLoggedIn = window.localStorage.getItem('isLoggedIn');
+  // Retrieve the role from localStorage
+  const role = window.localStorage.getItem('auth');
+  // Check if both isLoggedIn and role are truthy
+  if (isLoggedIn && role) {
     return <>{children}</>;
-  } else return <Navigate to="/login" replace />;
+  } else {
+    return <Navigate to="/login" replace />;
+  }
 };
 
 export default PrivateRoute;

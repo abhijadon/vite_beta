@@ -1,6 +1,16 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import { Spin } from 'antd';
-import { AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer, Scatter, Dot } from 'recharts';
+import {
+  AreaChart,
+  Area,
+  XAxis,
+  YAxis,
+  Tooltip,
+  ResponsiveContainer,
+  Scatter,
+  Dot,
+  CartesianGrid
+} from 'recharts';
 import useFetch from '@/hooks/useFetch';  // Adjust the path based on your project structure
 import { request } from '@/request';
 

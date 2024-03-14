@@ -338,7 +338,9 @@ export default function DataTable({ config, extra = [], setActiveForm }) {
           <div className='flex items-center justify-start mb-10 gap-3'>
             <div className='grid grid-cols-5 gap-3'>
               <div>
-                <Select
+                <Select showSearch optionFilterProp="children" filterOption={(input, option) =>
+                  option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+                }
                   placeholder="Select institute"
                   className='w-60 h-10 capitalize'
                   value={selectedInstitute}
@@ -350,7 +352,9 @@ export default function DataTable({ config, extra = [], setActiveForm }) {
                 </Select>
               </div>
               <div>
-                <Select
+                <Select showSearch optionFilterProp="children" filterOption={(input, option) =>
+                  option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+                }
                   placeholder="Select university"
                   className='w-60 h-10 capitalize'
                   value={selectedUniversity}
@@ -362,7 +366,9 @@ export default function DataTable({ config, extra = [], setActiveForm }) {
                 </Select>
               </div>
               <div>
-                <Select
+                <Select showSearch optionFilterProp="children" filterOption={(input, option) =>
+                  option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+                }
                   placeholder="Select status"
                   className='w-60 h-10 capitalize'
                   value={selectedStatus}
@@ -374,7 +380,9 @@ export default function DataTable({ config, extra = [], setActiveForm }) {
                 </Select>
               </div>
               <div>
-                <Select
+                <Select showSearch optionFilterProp="children" filterOption={(input, option) =>
+                  option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+                }
                   placeholder="Select user full name"
                   className='w-60 h-10 capitalize'
                   value={selectedUserId}
@@ -388,7 +396,9 @@ export default function DataTable({ config, extra = [], setActiveForm }) {
                 </Select>
               </div>
               <div>
-                <Select
+                <Select showSearch optionFilterProp="children" filterOption={(input, option) =>
+                  option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+                }
                   placeholder="Select session"
                   className='w-60 h-10 capitalize'
                   value={selectedSession}
