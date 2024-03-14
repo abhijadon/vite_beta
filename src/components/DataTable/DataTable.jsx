@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from 'react';
 import { EyeOutlined, EditOutlined, DeleteOutlined, EllipsisOutlined } from '@ant-design/icons';
-import { Dropdown, Table, Button, Card, Select, Input } from 'antd';
+import { Dropdown, Table, Button, Card, Select, Input, DatePicker } from 'antd';
 import { useSelector, useDispatch } from 'react-redux';
 import { crud } from '@/redux/crud/actions';
 import { LiaRupeeSignSolid } from "react-icons/lia";
@@ -15,7 +15,7 @@ import { LiaFileDownloadSolid } from "react-icons/lia";
 import { debounce } from 'lodash';
 
 const { Search } = Input;
-
+const { RangePicker } = DatePicker;
 function AddNewItem({ config }) {
   const { crudContextAction } = useCrudContext();
   const { collapsedBox, panel } = crudContextAction;
@@ -50,7 +50,8 @@ export default function DataTable({ config, extra = [], setActiveForm }) {
   const [session, setSession] = useState([]);
   const [userNames, setUserNames] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
-
+  const [startDate, setStartDate] = useState(null);
+  const [endDate, setEndDate] = useState(null);
   useEffect(() => {
     const fetchData = async () => {
       const { success, result } = await request.filter({ entity: 'payment' });
@@ -79,9 +80,18 @@ export default function DataTable({ config, extra = [], setActiveForm }) {
     setSelectedSession(null);
     setSelectedStatus(null);
     setSelectedUserId(null);
-    setSearchQuery('')
+    setSearchQuery('');
+    setStartDate(null); // Reset startDate state
+    setEndDate(null); // Reset endDate state
   };
 
+  // Function to handle changes in date range picker
+  const handleDateRangeChange = (dates) => {
+    if (dates && dates.length === 2) {
+      setStartDate(dates[0]);
+      setEndDate(dates[1]);
+    }
+  };
   const items = [
     {
       label: translate('Show'),
@@ -192,6 +202,9 @@ export default function DataTable({ config, extra = [], setActiveForm }) {
 
   const { result: listResult } = useSelector(selectListItems);
   const { items: dataSource } = listResult;
+
+
+  // useCallback for handling data table load
   const handelDataTableLoad = useCallback(
     async (pagination, newSearchQuery = '') => {
       const options = {
@@ -205,6 +218,8 @@ export default function DataTable({ config, extra = [], setActiveForm }) {
           session: selectedSession,
           status: selectedStatus,
           userId: selectedUserId,
+          startDate, // Include start date and end date in filter options
+          endDate,
         },
       };
 
@@ -213,7 +228,7 @@ export default function DataTable({ config, extra = [], setActiveForm }) {
         const filteredData = filterDataSource(result);
       }
     },
-    [entity, selectedInstitute, selectedUniversity, selectedStatus, selectedUserId, selectedSession]
+    [entity, selectedInstitute, selectedUniversity, selectedStatus, selectedUserId, selectedSession, startDate, endDate]
   );
 
   const handleSearch = debounce((value) => {
@@ -242,6 +257,13 @@ export default function DataTable({ config, extra = [], setActiveForm }) {
       const statusMatch = !selectedStatus || item.customfields.status === selectedStatus;
       const userMatch = !selectedUserId || item.userId?.fullname === selectedUserId;
 
+
+      // Assuming 'date' is the property in your data source representing the created date
+      const createdDate = new Date(item.created);
+      const startDateMatch = !startDate || createdDate >= startDate;
+      const endDateMatch = !endDate || createdDate <= endDate;
+
+
       const phoneAsString = item.contact?.phone?.toString();
       const emailLowerCase = item.contact?.email?.toLowerCase();
 
@@ -251,7 +273,7 @@ export default function DataTable({ config, extra = [], setActiveForm }) {
         (typeof phoneAsString === 'string' && phoneAsString.includes(searchQuery)) ||
         item.full_name.includes(searchQuery)
       );
-      return instituteMatch && universityMatch && statusMatch && userMatch && searchMatch && sessionMatch;
+      return instituteMatch && universityMatch && sessionMatch && statusMatch && userMatch && startDateMatch && endDateMatch;
     });
 
   };
@@ -410,6 +432,13 @@ export default function DataTable({ config, extra = [], setActiveForm }) {
                     </Select.Option>
                   ))}
                 </Select>
+              </div>
+              <div>
+                <RangePicker
+                  onChange={handleDateRangeChange}
+                  style={{ width: '100%' }}
+                  placeholder={['Start Date', 'End Date']}
+                />
               </div>
               <div>
                 <Button title='Reset All Filters' onClick={resetValues} className='bg-transparent text-red-500 font-thin text-lg h-10 hover:text-red-600'>
