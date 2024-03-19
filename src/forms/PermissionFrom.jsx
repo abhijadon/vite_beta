@@ -48,6 +48,9 @@ const AddRoleform = () => {
         else if (selectedRole === 'Team Leader') {
             return userList.filter(user => user.role === 'teamleader');
         }
+        else if (selectedRole === 'User') {
+            return userList.filter(user => user.role === 'user');
+        }
         // For other roles or when no role is selected, return the full user list
         return userList;
     };
@@ -69,11 +72,12 @@ const AddRoleform = () => {
                     <Option value="Manager">Manager</Option>
                     <Option value="Supportive Associate">Supportive Associate</Option>
                     <Option value="Team Leader">Team Leader</Option>
+                    <Option value="User">User</Option>
 
                     {/* Add other role options as needed */}
                 </Select>
             </Form.Item>
-            <Form.Item label="User" name="name">
+            <Form.Item label="User" name="userId">
                 <Select className='capitalize'
                     placeholder={`Select ${selectedRole ? selectedRole.toLowerCase() : 'users'}`}
                     showSearch

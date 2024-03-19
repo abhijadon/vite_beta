@@ -129,6 +129,7 @@ export const crud = {
         });
       }
     },
+    
   update:
     ({ entity, id, jsonData, withUpload = false }) =>
     async (dispatch) => {
@@ -220,4 +221,35 @@ export const crud = {
         });
       }
     },
+     // Action creator for fetching history data
+    history:
+    ({ entity, id }) =>
+    async (dispatch) => {
+      dispatch({
+        type: actionTypes.REQUEST_LOADING,
+        keyState: 'history',
+        payload: null,
+      });
+
+      let data = await request.history({ entity, id });
+
+      if (data.success === true) {
+        dispatch({
+          type: actionTypes.CURRENT_ITEM,
+          payload: data.result,
+        });
+        dispatch({
+          type: actionTypes.REQUEST_SUCCESS,
+          keyState: 'history',
+          payload: data.result,
+        });
+      } else {
+        dispatch({
+          type: actionTypes.REQUEST_FAILED,
+          keyState: 'history',
+          payload: null,
+        });
+      }
+    },
+    
 };

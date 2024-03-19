@@ -27,6 +27,7 @@ import PaymentMode from '@/pages/PaymentMode';
 import Roles from '@/pages/Roles';
 import Permissions from '@/pages/Permissions';
 import Permission from '@/pages/permission';
+import History from '@/pages/History';
 import Email from '@/pages/Email/index';
 import EmailRead from '@/pages/Email/EmailRead';
 import EmailUpdate from '@/pages/Email/EmailUpdate';
@@ -135,6 +136,10 @@ export default function AppRouter() {
     {
       path: '/email',
       element: <Email />,
+    },
+    {
+      path: '/history',
+      element: <History />,
     },
     {
       path: '/email/read/:id',

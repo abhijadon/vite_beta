@@ -40,11 +40,17 @@ export function has(obj, key) {
  convert indexes to properties
 */
 export function valueByString(obj, string, divider) {
+  if (typeof string !== 'string') {
+    // Handle the case where `string` is not a string
+    console.error('valueByString: string argument must be a string');
+    return null; // or handle the error appropriately
+  }
+
   if (divider === undefined) {
     divider = '|';
   }
   return string
-    .split(divider)  // Fix the typo here
+    .split(divider)
     .map(function (key) {
       return get(obj, key);
     })

@@ -76,8 +76,8 @@ function Sidebar({ collapsible, onPathChange }) {
       label: <Link to={'/payment/mode'}>{translate('payment_mode')}</Link>,
     },
     {
-      key: 'taxes',
-      label: <Link to={'/taxes'}>{translate('taxes')}</Link>,
+      key: 'history',
+      label: <Link to={'/history'}>{translate('history')}</Link>,
     },
     {
       key: 'advancedSettings',

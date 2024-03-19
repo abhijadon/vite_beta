@@ -14,6 +14,8 @@ export const selectUpdatedItem = createSelector([selectCrud], (crud) => crud.upd
 
 export const selectReadItem = createSelector([selectCrud], (crud) => crud.read);
 
+export const selectHistoryItem = createSelector([selectCrud], (crud) => crud.history);
+
 export const selectDeletedItem = createSelector([selectCrud], (crud) => crud.delete);
 
 export const selectSearchedItems = createSelector([selectCrud], (crud) => crud.search);

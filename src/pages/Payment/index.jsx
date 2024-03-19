@@ -56,7 +56,7 @@ export default function Payment() {
         const totalCourseFee = parseFloat(record.total_course_fee) || 0;
         const paidAmount = parseFloat(record.paid_amount) || 0;
         const dueAmount = totalCourseFee - paidAmount;
-        return <span>{dueAmount.toFixed(2)}</span>;
+        return <span>{dueAmount}</span>;
       },
     },
     {
@@ -66,27 +66,7 @@ export default function Payment() {
         return dayjs(date).format('DD/MM/YYYY');
       },
     },
-    {
-      title: translate('Update date'),
-      dataIndex: 'updatedAt',
-      render: (date) => {
-        return dayjs(date).format('DD/MM/YYYY');
-      },
-    },
-    {
-      title: translate('Create time'),
-      dataIndex: 'creationTime',
-      render: (date) => {
-        return dayjs(date).format('hh:mm:ss a');
-      },
-    },
-    {
-      title: translate('Update TIme'),
-      dataIndex: 'updatedAt',
-      render: (date) => {
-        return dayjs(date).format('hh:mm:ss a');
-      },
-    },
+
   ];
 
   const entity = 'payment';

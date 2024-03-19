@@ -46,6 +46,14 @@ const request = {
       return errorHandler(error);
     }
   },
+   history: async ({ entity, id }) => {
+    try {
+      const response = await axios.get(entity + '/history/' + id);
+      return response.data;
+    } catch (error) {
+      return errorHandler(error);
+    }
+  },
   update: async ({ entity, id, jsonData }) => {
     try {
       const response = await axios.patch(entity + '/update/' + id, jsonData);

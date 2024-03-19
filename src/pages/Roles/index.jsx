@@ -44,26 +44,34 @@ export default function Lead() {
         },
         {
             title: translate('fullname'),
-            dataIndex: ['userId', 'fullname'], // Access fullname within userId object
+            dataIndex: ['userId', 'fullname'],
+            render: (text) => text ? text.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ') : '',
         },
         {
             title: 'teamMembers',
             dataIndex: 'teamMembers',
             render: (teamMembers) => {
                 if (teamMembers && Array.isArray(teamMembers)) {
-                    return teamMembers.map((member) => member.fullname).join(', ');
+                    const capitalizedMembers = teamMembers.map((member) => member.fullname.charAt(0).toUpperCase() + member.fullname.slice(1));
+                    return capitalizedMembers.join(', ');
                 } else {
                     return ''; // or any other default value if 'teamMembers' is undefined or not an array
                 }
             },
         },
         {
-            title: 'University',
-            dataIndex: 'university',
-        },
-        {
             title: translate('institute'),
             dataIndex: 'institute',
+            render: (institute) => (
+                institute ? institute.join(', ') : ''
+            ),
+        },
+        {
+            title: 'University',
+            dataIndex: 'university',
+            render: (university) => (
+                university ? university.join(', ') : ''
+            ),
         },
         {
             title: translate('teamName'),

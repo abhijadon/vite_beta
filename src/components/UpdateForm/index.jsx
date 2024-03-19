@@ -29,7 +29,6 @@ export default function UpdateForm({ config, formElements, withUpload = false })
 
   const onSubmit = (fieldsValue) => {
     const id = current._id;
-    console.log('Received values:', fieldsValue);
     if (fieldsValue.file && withUpload) {
       fieldsValue.file = fieldsValue.file[0].originFileObj;
     }

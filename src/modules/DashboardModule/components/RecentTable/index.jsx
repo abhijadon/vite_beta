@@ -50,7 +50,7 @@ const Index = () => {
   const sortedData = data.slice().sort((a, b) => new Date(a.name + ' 1, 2000') - new Date(b.name + ' 1, 2000'));
 
   return (
-    <div style={{ marginLeft: '-45px', height: 300, fontFamily: 'Arial, sans-serif' }}>
+    <div style={{ marginLeft: '-45px', height: 100, fontFamily: 'Arial, sans-serif' }}>
       <ResponsiveContainer>
         <AreaChart data={sortedData}>
           <XAxis

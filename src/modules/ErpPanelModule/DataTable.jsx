@@ -8,7 +8,7 @@ import {
   PlusOutlined,
   EllipsisOutlined,
 } from '@ant-design/icons';
-import { Dropdown, Table, Button, Input, Select, Card } from 'antd';
+import { Dropdown, Table, Button, Input, Select, Card, Modal } from 'antd';
 import { useSelector, useDispatch } from 'react-redux';
 import useLanguage from '@/locale/useLanguage';
 import { erp } from '@/redux/erp/actions';
@@ -22,6 +22,7 @@ import { request } from '@/request';
 import { BiReset } from 'react-icons/bi';
 import { FcBearish, FcBullish, FcSalesPerformance } from 'react-icons/fc';
 import { LiaFileDownloadSolid } from 'react-icons/lia';
+import { GrHistory } from 'react-icons/gr';
 
 const { Search } = Input;
 
@@ -63,7 +64,8 @@ export default function DataTable({ config, extra = [] }) {
   const [userNames, setUserNames] = useState([]);
   const [paymentData, setPaymentData] = useState({ result: null });
   const [searchQuery, setSearchQuery] = useState('');
-
+  const [historyData, setHistoryData] = useState(null); // State to hold history data
+  const [showHistoryModal, setShowHistoryModal] = useState(false);
   const [role, setRole] = useState('');
 
   // Retrieve the role from localStorage
@@ -210,6 +212,11 @@ export default function DataTable({ config, extra = [] }) {
       key: 'download',
       icon: <FilePdfOutlined />,
     },
+    {
+      label: translate('History'),
+      key: 'history',
+      icon: <GrHistory />,
+    },
     ...extra,
     {
       type: 'divider',
@@ -241,7 +248,19 @@ export default function DataTable({ config, extra = [] }) {
     modal.open();
   };
 
-
+  const handleHistory = async (record) => {
+    try {
+      const historyData = await request.history({ entity: 'payment', id: record._id });
+      // Sort the history data in descending order based on the time it was changed
+      if (historyData && historyData.history) {
+        historyData.history.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
+      }
+      setHistoryData(historyData);
+      setShowHistoryModal(true);
+    } catch (error) {
+      console.error("Error fetching history data:", error);
+    }
+  };
 
   dataTableColumns = [
     ...dataTableColumns,
@@ -264,6 +283,9 @@ export default function DataTable({ config, extra = [] }) {
                 case 'download':
                   handleDownload(record);
                   break;
+                case 'history':
+                  handleHistory(record);
+                  break;
                 case 'delete':
                   handleDelete(record);
                   break;
@@ -282,6 +304,76 @@ export default function DataTable({ config, extra = [] }) {
       ),
     },
   ];
+
+  const renderHistoryModal = () => {
+    return (
+      <Modal
+        title="History"
+        visible={showHistoryModal}
+        onCancel={() => setShowHistoryModal(false)}
+        footer={null}
+        width={700}
+      >
+        {/* Check if historyData exists */}
+        {historyData && historyData.history && historyData.history.length > 0 ? (
+          // Render each history item
+          historyData.history.map((historyItem, index) => (
+            <div key={index} className="mb-4">
+              {/* Timestamp */}
+              <div className="mb-2">
+                <h3 className="text-xs font-medium uppercase text-gray-500 dark:text-gray-400">
+                  {new Date(historyItem.updatedAt).toLocaleDateString()} {new Date(historyItem.updatedAt).toLocaleTimeString()}
+                </h3>
+              </div>
+              {/* Changes */}
+              <div className="flex gap-x-3">
+                {/* Icon */}
+                <div className="relative last:after:hidden after:absolute after:top-7 after:bottom-0 after:start-3.5 after:w-px after:-translate-x-[0.5px] after:bg-gray-200 dark:after:bg-gray-700">
+                  <div className="relative z-10 size-7 flex justify-center items-center">
+                    <img className="flex-shrink-0 size-7 rounded-full" src="https://images.unsplash.com/photo-1659482633369-9fe69af50bfb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=3&w=320&h=320&q=80" alt="Image Description" />
+                  </div>
+                </div>
+                {/* End Icon */}
+                {/* Right Content */}
+                <div className="grow pt-0.5 pb-8">
+                  <h3 className="flex gap-x-1.5 font-semibold text-gray-800 dark:text-white">
+                    <svg className="flex-shrink-0 size-4 mt-1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" />
+                      <polyline points="14 2 14 8 20 8" />
+                      <line x1="16" x2="8" y1="13" y2="13" />
+                      <line x1="16" x2="8" y1="17" y2="17" />
+                      <line x1="10" x2="8" y1="9" y2="9" />
+                    </svg>
+                    {`Updated ${index + 1}`}
+                  </h3>
+                  {/* Display old and new values */}
+                  <div className="mt-1 text-sm text-gray-600 dark:text-gray-400">
+                    <table className="w-full">
+                      <tbody>
+                        {Object.entries(historyItem.updatedFields).map(([key, values]) => (
+                          // Check if both old and new values exist
+                          values.oldValue !== undefined && values.newValue !== undefined && (
+                            <tr key={key}>
+                              <td className="pr-2 text-right">{key}:</td>
+                              <td className="pr-2 text-gray-500">{values.oldValue}</td>
+                              <td className="px-2">&#8594;</td>
+                              <td className="pr-2 text-gray-700">{values.newValue}</td>
+                            </tr>
+                          )
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))
+        ) : (
+          <p>No history available.</p>
+        )}
+      </Modal>
+    );
+  };
 
   const dispatch = useDispatch();
 
@@ -546,6 +638,7 @@ export default function DataTable({ config, extra = [] }) {
       <div>
         {renderTable()}
       </div>
+      {renderHistoryModal()}
     </>
   );
 }

@@ -3,7 +3,6 @@ import { Row, Col, Button } from 'antd';
 import { PlusOutlined, EditOutlined, DeleteOutlined } from '@ant-design/icons';
 import CreateForm from '@/components/CreateForm';
 import UpdateForm from '@/components/UpdateForm';
-
 import DeleteModal from '@/components/DeleteModal';
 import ReadItem from '@/components/ReadItem';
 import SearchItem from '@/components/SearchItem';

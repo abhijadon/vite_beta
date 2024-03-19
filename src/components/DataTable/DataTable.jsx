@@ -1,12 +1,13 @@
-import { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { EyeOutlined, EditOutlined, DeleteOutlined, EllipsisOutlined } from '@ant-design/icons';
-import { Dropdown, Table, Button, Card, Select, Input, DatePicker } from 'antd';
+import { Dropdown, Table, Button, Card, Select, Input, DatePicker, Modal } from 'antd';
 import { useSelector, useDispatch } from 'react-redux';
 import { crud } from '@/redux/crud/actions';
 import { LiaRupeeSignSolid } from "react-icons/lia";
 import { selectListItems } from '@/redux/crud/selectors';
 import useLanguage from '@/locale/useLanguage';
 import useResponsiveTable from '@/hooks/useResponsiveTable';
+import { GrHistory } from "react-icons/gr";
 import { useCrudContext } from '@/context/crud';
 import * as XLSX from 'xlsx';
 import { request } from '@/request';
@@ -16,6 +17,7 @@ import { debounce } from 'lodash';
 
 const { Search } = Input;
 const { RangePicker } = DatePicker;
+
 function AddNewItem({ config }) {
   const { crudContextAction } = useCrudContext();
   const { collapsedBox, panel } = crudContextAction;
@@ -35,7 +37,7 @@ function AddNewItem({ config }) {
 
 export default function DataTable({ config, extra = [], setActiveForm }) {
   let { entity, dataTableColumns } = config;
-  const dispatch = useDispatch();  // Move this line to the top
+  const dispatch = useDispatch();
   const { crudContextAction } = useCrudContext();
   const { panel, collapsedBox, modal, readBox, editBox, addBox, advancedBox } = crudContextAction;
   const translate = useLanguage();
@@ -52,6 +54,9 @@ export default function DataTable({ config, extra = [], setActiveForm }) {
   const [searchQuery, setSearchQuery] = useState('');
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
+  const [historyData, setHistoryData] = useState(null); // State to hold history data
+  const [showHistoryModal, setShowHistoryModal] = useState(false); // State to control the visibility of the history modal
+
   useEffect(() => {
     const fetchData = async () => {
       const { success, result } = await request.filter({ entity: 'payment' });
@@ -67,7 +72,6 @@ export default function DataTable({ config, extra = [], setActiveForm }) {
         setSession(uniqueSession);
         setUniversities(uniqueUniversities);
         setUserNames(uniqueUserNames);
-
       }
     };
 
@@ -81,17 +85,17 @@ export default function DataTable({ config, extra = [], setActiveForm }) {
     setSelectedStatus(null);
     setSelectedUserId(null);
     setSearchQuery('');
-    setStartDate(null); // Reset startDate state
-    setEndDate(null); // Reset endDate state
+    setStartDate(null);
+    setEndDate(null);
   };
 
-  // Function to handle changes in date range picker
   const handleDateRangeChange = (dates) => {
     if (dates && dates.length === 2) {
       setStartDate(dates[0]);
       setEndDate(dates[1]);
     }
   };
+
   const items = [
     {
       label: translate('Show'),
@@ -102,6 +106,11 @@ export default function DataTable({ config, extra = [], setActiveForm }) {
       label: translate('Edit'),
       key: 'edit',
       icon: <EditOutlined />,
+    },
+    {
+      label: translate('History'),
+      key: 'history',
+      icon: <GrHistory />,
     },
     {
       label: translate('Add_payment'),
@@ -126,36 +135,49 @@ export default function DataTable({ config, extra = [], setActiveForm }) {
     readBox.open();
   };
 
-  function handleEdit(record) {
+  const handleHistory = async (record) => {
+    try {
+      const historyData = await request.history({ entity: 'lead', id: record._id });
+      // Sort the history data in descending order based on the time it was changed
+      if (historyData && historyData.history) {
+        historyData.history.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
+      }
+      setHistoryData(historyData);
+      setShowHistoryModal(true);
+    } catch (error) {
+      console.error("Error fetching history data:", error);
+    }
+  };
+  const handleEdit = (record) => {
     dispatch(crud.currentItem({ data: record }));
     dispatch(crud.currentAction({ actionType: 'update', data: record }));
     editBox.open();
     panel.open();
     collapsedBox.open();
     setActiveForm('updateForm');
-  }
+  };
 
-  function handleAddpayment(record) {
+  const handleAddpayment = (record) => {
     dispatch(crud.currentItem({ data: record }));
     dispatch(crud.currentAction({ actionType: 'update', data: record }));
     addBox.open();
     panel.open();
     collapsedBox.open();
     setActiveForm('addForm');
-  }
+  };
 
-  function handleDelete(record) {
+  const handleDelete = (record) => {
     dispatch(crud.currentAction({ actionType: 'delete', data: record }));
     modal.open();
-  }
+  };
 
-  function handleUpdatePassword(record) {
+  const handleUpdatePassword = (record) => {
     dispatch(crud.currentItem({ data: record }));
     dispatch(crud.currentAction({ actionType: 'update', data: record }));
     advancedBox.open();
     panel.open();
     collapsedBox.open();
-  }
+  };
 
   dataTableColumns = [
     ...dataTableColumns,
@@ -177,6 +199,9 @@ export default function DataTable({ config, extra = [], setActiveForm }) {
                   break;
                 case 'add':
                   handleAddpayment(record);
+                  break;
+                case 'history':
+                  handleHistory(record);
                   break;
                 case 'delete':
                   handleDelete(record);
@@ -202,9 +227,76 @@ export default function DataTable({ config, extra = [], setActiveForm }) {
 
   const { result: listResult } = useSelector(selectListItems);
   const { items: dataSource } = listResult;
-
-
-  // useCallback for handling data table load
+  const renderHistoryModal = () => {
+    return (
+      <Modal
+        title="History"
+        visible={showHistoryModal}
+        onCancel={() => setShowHistoryModal(false)}
+        footer={null}
+        width={800}
+      >
+        {/* Check if historyData exists */}
+        {historyData && historyData.history && historyData.history.length > 0 ? (
+          // Render each history item
+          historyData.history.map((historyItem, index) => (
+            <div key={index} className="mb-4">
+              {/* Timestamp */}
+              <div className="mb-2">
+                <h3 className="text-xs font-medium uppercase text-gray-500 dark:text-gray-400">
+                  {new Date(historyItem.updatedAt).toLocaleDateString()} {new Date(historyItem.updatedAt).toLocaleTimeString()}
+                </h3>
+              </div>
+              {/* Changes */}
+              <div className="flex gap-x-3">
+                {/* Icon */}
+                <div className="relative last:after:hidden after:absolute after:top-7 after:bottom-0 after:start-3.5 after:w-px after:-translate-x-[0.5px] after:bg-gray-200 dark:after:bg-gray-700">
+                  <div className="relative z-10 size-7 flex justify-center items-center">
+                    <img className="flex-shrink-0 size-7 rounded-full" src="https://images.unsplash.com/photo-1659482633369-9fe69af50bfb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=3&w=320&h=320&q=80" alt="Image Description" />
+                  </div>
+                </div>
+                {/* End Icon */}
+                {/* Right Content */}
+                <div className="grow pt-0.5 pb-8">
+                  <h3 className="flex gap-x-1.5 font-semibold text-gray-800 dark:text-white">
+                    <svg className="flex-shrink-0 size-4 mt-1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" />
+                      <polyline points="14 2 14 8 20 8" />
+                      <line x1="16" x2="8" y1="13" y2="13" />
+                      <line x1="16" x2="8" y1="17" y2="17" />
+                      <line x1="10" x2="8" y1="9" y2="9" />
+                    </svg>
+                    {`Updated ${index + 1}`}
+                  </h3>
+                  {/* Display old and new values */}
+                  <div className="mt-1 text-sm text-gray-600 dark:text-gray-400">
+                    <table className="w-full">
+                      <tbody>
+                        {Object.entries(historyItem.updatedFields.customfields.newValue).map(([key, newValue]) => (
+                          <tr key={key}>
+                            <td className="pr-2 text-right">{key}:</td>
+                            <td className="pr-2 text-gray-500">{historyItem.updatedFields.customfields.oldValue[key]}</td>
+                            <td className="px-2">&#8594;</td>
+                            <td className="pr-2 text-gray-700">{newValue}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                  <button type="button" className="mt-1 -ms-1 p-1 inline-flex items-center gap-x-2 text-xs rounded-lg border border-transparent text-gray-500 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">
+                    <img className="flex-shrink-0 size-4 rounded-full" src="https://images.unsplash.com/photo-1659482633369-9fe69af50bfb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8auto=format&fit=facearea&facepad=3&w=320&h=320&q=80" alt="Image Description" />
+                    James Collins
+                  </button>
+                </div>
+              </div>
+            </div>
+          ))
+        ) : (
+          <p>No history available.</p>
+        )}
+      </Modal>
+    );
+  };
   const handelDataTableLoad = useCallback(
     async (pagination, newSearchQuery = '') => {
       const options = {
@@ -218,7 +310,7 @@ export default function DataTable({ config, extra = [], setActiveForm }) {
           session: selectedSession,
           status: selectedStatus,
           userId: selectedUserId,
-          startDate, // Include start date and end date in filter options
+          startDate,
           endDate,
         },
       };
@@ -233,8 +325,9 @@ export default function DataTable({ config, extra = [], setActiveForm }) {
 
   const handleSearch = debounce((value) => {
     setSearchQuery(value);
-    handelDataTableLoad({}, value); // Trigger search on each keystroke
+    handelDataTableLoad({}, value);
   }, 500);
+
   const dispatcher = () => {
     dispatch(crud.list({ entity }));
   };
@@ -251,18 +344,16 @@ export default function DataTable({ config, extra = [], setActiveForm }) {
 
   const filterDataSource = (data) => {
     return data.filter(item => {
-      const instituteMatch = !selectedInstitute || item.customfields.institute_name === selectedInstitute;
-      const universityMatch = !selectedUniversity || item.customfields.university_name === selectedUniversity;
-      const sessionMatch = !selectedSession || item.customfields.session === selectedSession;
-      const statusMatch = !selectedStatus || item.customfields.status === selectedStatus;
+      const customfields = item.customfields || {};
+      const instituteMatch = !selectedInstitute || customfields.institute_name === selectedInstitute;
+      const universityMatch = !selectedUniversity || customfields.university_name === selectedUniversity;
+      const sessionMatch = !selectedSession || customfields.session === selectedSession;
+      const statusMatch = !selectedStatus || customfields.status === selectedStatus;
       const userMatch = !selectedUserId || item.userId?.fullname === selectedUserId;
 
-
-      // Assuming 'date' is the property in your data source representing the created date
       const createdDate = new Date(item.created);
       const startDateMatch = !startDate || createdDate >= startDate;
       const endDateMatch = !endDate || createdDate <= endDate;
-
 
       const phoneAsString = item.contact?.phone?.toString();
       const emailLowerCase = item.contact?.email?.toLowerCase();
@@ -273,9 +364,8 @@ export default function DataTable({ config, extra = [], setActiveForm }) {
         (typeof phoneAsString === 'string' && phoneAsString.includes(searchQuery)) ||
         item.full_name.includes(searchQuery)
       );
-      return instituteMatch && universityMatch && sessionMatch && statusMatch && userMatch && startDateMatch && endDateMatch;
+      return instituteMatch && universityMatch && sessionMatch && searchMatch && statusMatch && userMatch && startDateMatch && endDateMatch;
     });
-
   };
 
   const handleExportToExcel = () => {
@@ -310,7 +400,6 @@ export default function DataTable({ config, extra = [], setActiveForm }) {
 
   const renderTable = () => {
     const filteredData = filterDataSource(dataSource);
-
     return (
       <>
         <Card className='mt-8'>
@@ -353,6 +442,7 @@ export default function DataTable({ config, extra = [], setActiveForm }) {
       </>
     );
   };
+
   const renderFilters = () => {
     if (entity === 'lead') {
       return (
@@ -435,6 +525,7 @@ export default function DataTable({ config, extra = [], setActiveForm }) {
               </div>
               <div>
                 <RangePicker
+                  className='w-60 h-10 capitalize'
                   onChange={handleDateRangeChange}
                   style={{ width: '100%' }}
                   placeholder={['Start Date', 'End Date']}
@@ -454,6 +545,8 @@ export default function DataTable({ config, extra = [], setActiveForm }) {
     return null;
   };
 
+
+
   return (
     <>
       <div>
@@ -462,6 +555,7 @@ export default function DataTable({ config, extra = [], setActiveForm }) {
       <div className="table-container">
         {renderTable()}
       </div>
+      {renderHistoryModal()}
     </>
   );
 }
