@@ -59,3 +59,66 @@ background-color: #1677ff !important;
   .ant-picker-header button:hover {
      color: #066cfb !important;
  }
+.history-modal {
+ max-height: 500px; /* Adjust the maximum height as needed */
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+
+.history-tree {
+  display: flex;
+  flex-direction: column;
+}
+
+.history-node {
+  margin-bottom: 20px;
+  border-left: 2px solid #ccc;
+  padding-left: 20px;
+}
+
+.fullname {
+  font-weight: bold;
+}
+
+.timestamp-date {
+  display: flex;
+  align-items: center;
+}
+
+.timestamp {
+  margin-right: 10px;
+}
+
+.date {
+  margin-left: 10px;
+}
+
+.node-content {
+  margin-top: 10px;
+}
+
+.change-details {
+  font-size: 14px;
+}
+
+.change-table {
+  width: 100%;
+}
+
+.change-key {
+  padding-right: 10px;
+  text-align: right;
+}
+
+.old-value {
+  color: #888;
+  padding-right: 10px;
+}
+
+.change-arrow {
+  padding: 0 5px;
+}
+
+.new-value {
+  color: #333;
+}

@@ -235,62 +235,73 @@ export default function DataTable({ config, extra = [], setActiveForm }) {
         onCancel={() => setShowHistoryModal(false)}
         footer={null}
         width={800}
+        className="history-modal"
       >
         {/* Check if historyData exists */}
         {historyData && historyData.history && historyData.history.length > 0 ? (
           // Render each history item
-          historyData.history.map((historyItem, index) => (
-            <div key={index} className="mb-4">
-              {/* Timestamp */}
-              <div className="mb-2">
-                <h3 className="text-xs font-medium uppercase text-gray-500 dark:text-gray-400">
-                  {new Date(historyItem.updatedAt).toLocaleDateString()} {new Date(historyItem.updatedAt).toLocaleTimeString()}
-                </h3>
-              </div>
-              {/* Changes */}
-              <div className="flex gap-x-3">
-                {/* Icon */}
-                <div className="relative last:after:hidden after:absolute after:top-7 after:bottom-0 after:start-3.5 after:w-px after:-translate-x-[0.5px] after:bg-gray-200 dark:after:bg-gray-700">
-                  <div className="relative z-10 size-7 flex justify-center items-center">
-                    <img className="flex-shrink-0 size-7 rounded-full" src="https://images.unsplash.com/photo-1659482633369-9fe69af50bfb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=3&w=320&h=320&q=80" alt="Image Description" />
+          <div className="history-tree">
+            {historyData.history.map((historyItem, index) => (
+              <React.Fragment key={index}>
+                <h3 className="fullname capitalize">{historyItem.updatedBy.fullname}</h3>
+                <div className="history-node">
+                  <div className="node-header">
+                    <h3 className="timestamp">{new Date(historyItem.updatedAt).toLocaleString()}</h3>
                   </div>
-                </div>
-                {/* End Icon */}
-                {/* Right Content */}
-                <div className="grow pt-0.5 pb-8">
-                  <h3 className="flex gap-x-1.5 font-semibold text-gray-800 dark:text-white">
-                    <svg className="flex-shrink-0 size-4 mt-1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" />
-                      <polyline points="14 2 14 8 20 8" />
-                      <line x1="16" x2="8" y1="13" y2="13" />
-                      <line x1="16" x2="8" y1="17" y2="17" />
-                      <line x1="10" x2="8" y1="9" y2="9" />
-                    </svg>
-                    {`Updated ${index + 1}`}
-                  </h3>
-                  {/* Display old and new values */}
-                  <div className="mt-1 text-sm text-gray-600 dark:text-gray-400">
-                    <table className="w-full">
+                  <div className="node-content capitalize">
+                    <table className="change-table">
                       <tbody>
+                        {historyItem.updatedFields.full_name && (
+                          <tr>
+                            <td className="change-key">Full Name:</td>
+                            <td className="old-value">{historyItem.updatedFields.full_name.oldValue}</td>
+                            <td className="new-value">{historyItem.updatedFields.full_name.newValue}</td>
+                          </tr>
+                        )}
+
+                        {historyItem.updatedFields.lead_id && (
+                          <tr>
+                            <td className="change-key">Lead ID:</td>
+                            <td className="old-value">{historyItem.updatedFields.lead_id.oldValue}</td>
+                            <td className="new-value">{historyItem.updatedFields.lead_id.newValue}</td>
+                          </tr>
+                        )}
+                        {historyItem.updatedFields.contact && (
+                          Object.entries(historyItem.updatedFields.contact.newValue).map(([key, newValue]) => (
+                            <tr key={key}>
+                              <td className="change-key">{key}:</td>
+                              <td className="old-value"> {historyItem.updatedFields.contact.oldValue[key]}</td>
+                              <td className="new-value">{newValue}</td>
+                            </tr>
+                          ))
+                        )}
+                        {/* Render changes for education */}
+                        {historyItem.updatedFields.education && (
+                          Object.entries(historyItem.updatedFields.education.newValue).map(([key, newValue]) => (
+                            <tr key={key}>
+                              <td className="change-key">{key}:</td>
+                              <td className="old-value"> {historyItem.updatedFields.education.oldValue[key]}</td>
+                              <td className="new-value">{newValue}</td>
+                            </tr>
+                          ))
+                        )}
+                        {/* Render changes for customfields */}
                         {Object.entries(historyItem.updatedFields.customfields.newValue).map(([key, newValue]) => (
                           <tr key={key}>
-                            <td className="pr-2 text-right">{key}:</td>
-                            <td className="pr-2 text-gray-500">{historyItem.updatedFields.customfields.oldValue[key]}</td>
-                            <td className="px-2">&#8594;</td>
-                            <td className="pr-2 text-gray-700">{newValue}</td>
+                            <td className="change-key">{key}:</td>
+                            <td className="old-value"> {historyItem.updatedFields.customfields.oldValue[key]}</td>
+                            <td className="new-value">{newValue}</td>
                           </tr>
                         ))}
+
+
                       </tbody>
                     </table>
                   </div>
-                  <button type="button" className="mt-1 -ms-1 p-1 inline-flex items-center gap-x-2 text-xs rounded-lg border border-transparent text-gray-500 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">
-                    <img className="flex-shrink-0 size-4 rounded-full" src="https://images.unsplash.com/photo-1659482633369-9fe69af50bfb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8auto=format&fit=facearea&facepad=3&w=320&h=320&q=80" alt="Image Description" />
-                    James Collins
-                  </button>
                 </div>
-              </div>
-            </div>
-          ))
+              </React.Fragment>
+            ))}
+          </div>
         ) : (
           <p>No history available.</p>
         )}

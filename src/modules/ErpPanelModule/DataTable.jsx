@@ -313,6 +313,7 @@ export default function DataTable({ config, extra = [] }) {
         onCancel={() => setShowHistoryModal(false)}
         footer={null}
         width={700}
+        className="history-modal"
       >
         {/* Check if historyData exists */}
         {historyData && historyData.history && historyData.history.length > 0 ? (
@@ -330,7 +331,7 @@ export default function DataTable({ config, extra = [] }) {
                 {/* Icon */}
                 <div className="relative last:after:hidden after:absolute after:top-7 after:bottom-0 after:start-3.5 after:w-px after:-translate-x-[0.5px] after:bg-gray-200 dark:after:bg-gray-700">
                   <div className="relative z-10 size-7 flex justify-center items-center">
-                    <img className="flex-shrink-0 size-7 rounded-full" src="https://images.unsplash.com/photo-1659482633369-9fe69af50bfb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=3&w=320&h=320&q=80" alt="Image Description" />
+                    <h3 className="fullname capitalize">{historyItem.updatedBy.fullname}</h3>
                   </div>
                 </div>
                 {/* End Icon */}
