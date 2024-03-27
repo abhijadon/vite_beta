@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import * as XLSX from 'xlsx';
 import {
   EyeOutlined,
@@ -304,12 +304,11 @@ export default function DataTable({ config, extra = [] }) {
       ),
     },
   ];
-
   const renderHistoryModal = () => {
     return (
       <Modal
         title="History"
-        visible={showHistoryModal}
+        open={showHistoryModal}
         onCancel={() => setShowHistoryModal(false)}
         footer={null}
         width={700}
@@ -356,9 +355,26 @@ export default function DataTable({ config, extra = [] }) {
                           values.oldValue !== undefined && values.newValue !== undefined && (
                             <tr key={key}>
                               <td className="pr-2 text-right">{key}:</td>
-                              <td className="pr-2 text-gray-500">{values.oldValue}</td>
-                              <td className="px-2">&#8594;</td>
-                              <td className="pr-2 text-gray-700">{values.newValue}</td>
+                              {/* Check if oldValue is an array */}
+                              {Array.isArray(values.oldValue) ? (
+                                // If oldValue is an array, render each element separately
+                                <>
+                                  {values.oldValue.map((item, index) => (
+                                    <React.Fragment key={index}>
+                                      <td className="pr-2 text-gray-500">{item.value}</td>
+                                      <td className="px-2">&#8594;</td>
+                                      <td className="pr-2 text-gray-700">{item.value}</td>
+                                    </React.Fragment>
+                                  ))}
+                                </>
+                              ) : (
+                                // If oldValue is not an array, render it directly
+                                <>
+                                  <td className="pr-2 text-gray-500">{values.oldValue}</td>
+                                  <td className="px-2">&#8594;</td>
+                                  <td className="pr-2 text-gray-700">{values.newValue}</td>
+                                </>
+                              )}
                             </tr>
                           )
                         ))}
@@ -513,8 +529,8 @@ export default function DataTable({ config, extra = [] }) {
 
 
   const filterRender = () => (
-    <Card className='flex items-center justify-start gap-3'>
-      <div className='grid grid-cols-5 gap-3'>
+    <>
+      <div className='flex items-center space-x-2'>
         <div>
           {/* Select for Institute */}
           <Select showSearch optionFilterProp="children" filterOption={(input, option) =>
@@ -594,13 +610,15 @@ export default function DataTable({ config, extra = [] }) {
             ))}
           </Select>
         </div>
+      </div>
+      <div>
         {/* Date Range Picker */}
         <div>
           <Select showSearch optionFilterProp="children" filterOption={(input, option) =>
             option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
           }
             placeholder="Select user full name"
-            className='w-60 h-10 capitalize'
+            className='w-60 h-10 capitalize mt-3'
             value={selectedUserId}
             onChange={(value) => setSelectedUserId(value)}
           >
@@ -611,14 +629,13 @@ export default function DataTable({ config, extra = [] }) {
             ))}
           </Select>
         </div>
-        <div>
-          <Button title='Reset All Filters' onClick={resetValues} className='bg-transparent text-red-500 font-thin text-lg h-10 hover:text-red-600'>
-            <BiReset />
-          </Button>
-        </div>
       </div>
-
-    </Card>
+      <div className='relative float-right -mt-10 mr-2'>
+        <Button title='Reset All Filters' onClick={resetValues} className='bg-white text-red-500 text-lg h-10 hover:text-red-600'>
+          <BiReset />
+        </Button>
+      </div>
+    </>
   )
 
   return (

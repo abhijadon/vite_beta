@@ -29,7 +29,7 @@ const SelectLanguage = () => {
   );
 
   return (
-    <Dropdown overlay={menu} trigger={['click']}>
+    <Dropdown menu={menu} trigger={['click']}>
       <span>
         <IoLanguageOutline className='text-black text-[24px] cursor-pointer' />
       </span>

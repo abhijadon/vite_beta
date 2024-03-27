@@ -2,14 +2,12 @@ import { useRoutes } from 'react-router-dom';
 import PublicRoute from './PublicRoute';
 import Logout from '@/pages/Logout';
 import NotFound from '@/pages/NotFound.jsx';
-
 import Dashboard from '@/pages/Dashboard';
 import Customer from '@/pages/Customer';
 import Inventory from '@/pages/Inventory';
 import Order from '@/pages/Order';
 import Invoice from '@/pages/Invoice';
 import InvoiceCreate from '@/pages/Invoice/InvoiceCreate';
-
 import InvoiceRead from '@/pages/Invoice/InvoiceRead';
 import InvoiceUpdate from '@/pages/Invoice/InvoiceUpdate';
 import InvoiceRecordPayment from '@/pages/Invoice/InvoiceRecordPayment';

@@ -65,7 +65,17 @@ const request = {
     } catch (error) {
       return errorHandler(error);
     }
+  }, 
+
+  updatePayment: async ({ entity, id, jsonData }) => {
+    try {
+      const response = await axios.put(entity + '/updatePayment/' + id, jsonData);
+      return response.data;
+    } catch (error) {
+      return errorHandler(error);
+    }
   },
+
   updateAndUpload: async ({ entity, id, jsonData }) => {
     try {
       const response = await axios.patch(entity + '/update/' + id, jsonData, {
@@ -155,7 +165,6 @@ const request = {
   listAll: async ({ entity }) => {
     try {
       const response = await axios.get(entity + '/listAll');
-
       successHandler(response, {
         notifyOnSuccess: false,
         notifyOnFailed: false,

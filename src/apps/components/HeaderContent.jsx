@@ -205,7 +205,7 @@ export default function HeaderContent() {
           </Avatar>
         </Dropdown>
         <Notifications setNotificationCount={setNotificationCount} />
-        <Dropdown overlay={darkModeDropdown} trigger={['click']} placement='bottomRight'>
+        <Dropdown menu={darkModeDropdown} trigger={['click']} placement='bottomRight'>
           <div>
             <BsMoonStars className='text-[20px] text-black cursor-pointer' />
           </div>

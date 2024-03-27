@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import dayjs from 'dayjs';
 import { useDispatch, useSelector } from 'react-redux';
 import { crud } from '@/redux/crud/actions';
@@ -13,18 +13,8 @@ export default function UpdateForm({ config, formElements, withUpload = false })
   const translate = useLanguage();
   const dispatch = useDispatch();
   const { current, isLoading, isSuccess } = useSelector(selectUpdatedItem);
-
-  const { state, crudContextAction } = useCrudContext();
-
-  /////
-
-  const { panel, collapsedBox, readBox } = crudContextAction;
-
-  const showCurrentRecord = () => {
-    readBox.open();
-  };
-
-  /////
+  const { state } = useCrudContext();
+  const [isFormVisible, setIsFormVisible] = useState(true);
   const [form] = Form.useForm();
 
   const onSubmit = (fieldsValue) => {
@@ -38,6 +28,7 @@ export default function UpdateForm({ config, formElements, withUpload = false })
     }, {});
     dispatch(crud.update({ entity, id, jsonData: trimmedValues, withUpload }));
   };
+
   useEffect(() => {
     if (current) {
       let newValues = { ...current };
@@ -74,18 +65,17 @@ export default function UpdateForm({ config, formElements, withUpload = false })
 
       form.setFieldsValue(newValues);
     }
-  }, [current]);
+  }, [current, form]);
 
   useEffect(() => {
     if (isSuccess) {
-      readBox.open();
-      collapsedBox.open();
-      panel.open();
       form.resetFields();
       dispatch(crud.resetAction({ actionType: 'update' }));
       dispatch(crud.list({ entity }));
+      setIsFormVisible(false);
     }
-  }, [isSuccess]);
+  }, [isSuccess, entity, dispatch, form]);
+
 
   const { isEditBoxOpen } = state;
 
@@ -111,7 +101,6 @@ export default function UpdateForm({ config, formElements, withUpload = false })
               paddingLeft: '5px',
             }}
           >
-            <Button onClick={showCurrentRecord}>{translate('Cancel')}</Button>
           </Form.Item>
         </Form>
       </Loading>

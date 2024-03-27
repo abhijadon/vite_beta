@@ -1,6 +1,5 @@
 import { notification } from 'antd';
 import { Navigate } from 'react-router-dom';
-
 import codeMessage from './codeMessage';
 
 const errorHandler = (error) => {

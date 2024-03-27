@@ -1,45 +1,25 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useCrudContext } from '@/context/crud';
-import { useAppContext } from '@/context/appContext';
-import { Grid, Layout, Modal } from 'antd'; // Change Drawer to Modal
-import { MenuOutlined } from '@ant-design/icons';
+import { Modal } from 'antd';
 import CollapseBox from '../CollapseBox';
+import { selectCreatedItem, selectUpdatedItem } from '@/redux/crud/selectors'; // Import selectUpdatedItem selector
+import { useSelector } from 'react-redux';
 
-const { useBreakpoint } = Grid;
-const { Sider } = Layout;
-
-export default function SidePanel({ config, topContent, bottomContent, fixHeaderPanel }) {
-  const screens = useBreakpoint();
-
+export default function SidePanel({ config, topContent, bottomContent }) {
   const { ADD_NEW_ENTITY } = config;
   const { state, crudContextAction } = useCrudContext();
   const { isPanelClose, isBoxCollapsed } = state;
   const { panel, collapsedBox } = crudContextAction;
+  const { isSuccess: createdSuccess } = useSelector(selectCreatedItem); // Rename isSuccess to createdSuccess
+  const { isSuccess: updatedSuccess } = useSelector(selectUpdatedItem); // Add updatedSuccess selector
   const [isSidePanelClose, setSidePanel] = useState(isPanelClose);
-  const [leftSider, setLeftSider] = useState('-1px');
-  const [opacitySider, setOpacitySider] = useState(0);
-  const [paddingTopSider, setPaddingTopSider] = useState('20px');
 
   useEffect(() => {
-    let timer = [];
     if (isPanelClose) {
-      setOpacitySider(0);
-      setPaddingTopSider('20px');
-
-      timer = setTimeout(() => {
-        setLeftSider('-1px');
-        setSidePanel(isPanelClose);
-      }, 200);
+      setTimeout(() => setSidePanel(isPanelClose), 200);
     } else {
       setSidePanel(isPanelClose);
-      setLeftSider(0);
-      timer = setTimeout(() => {
-        setOpacitySider(1);
-        setPaddingTopSider(0);
-      }, 200);
     }
-
-    return () => clearTimeout(timer);
   }, [isPanelClose]);
 
   const collapsePanel = () => {
@@ -50,29 +30,28 @@ export default function SidePanel({ config, topContent, bottomContent, fixHeader
     collapsedBox.collapse();
   };
 
+  useEffect(() => {
+    if (createdSuccess || updatedSuccess) { // Check both createdSuccess and updatedSuccess
+      collapsePanel(); // Close the panel when either created or updated
+    }
+  }, [createdSuccess, updatedSuccess]); // Add updatedSuccess to the dependency array
+
   return (
     <Modal
       title="ERP_SODE"
-      visible={!isPanelClose} // Use the visibility property
-      onCancel={collapsePanel} // Use onCancel instead of onClose
+      visible={!isPanelClose}
+      onCancel={collapsePanel}
       footer={null}
-      width={1000} // No footer in the modal
+      width={1000}
     >
-      <div
-        className="sidePanelContent"
-        style={{
-          opacity: opacitySider,
-          paddingTop: paddingTopSider,
-        }}
-      >
-        {fixHeaderPanel}
+      <div>
         <CollapseBox
           buttonTitle={ADD_NEW_ENTITY}
           isCollapsed={isBoxCollapsed}
           onCollapse={collapsePanelBox}
           topContent={topContent}
           bottomContent={bottomContent}
-        ></CollapseBox>
+        />
       </div>
     </Modal>
   );

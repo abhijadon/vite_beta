@@ -200,7 +200,7 @@ const Notifications = ({ setNotificationCount }) => {
 
   return (
     <Badge count={notificationCount}>
-      <Dropdown overlay={notificationMenu} trigger={['click']} placement='bottomLeft'>
+      <Dropdown menu={notificationMenu} trigger={['click']} placement='bottomLeft'>
         {<IoIosNotificationsOutline className='text-[25px] cursor-pointer' />}
       </Dropdown>
     </Badge>

@@ -1,10 +1,10 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { EyeOutlined, EditOutlined, DeleteOutlined, EllipsisOutlined } from '@ant-design/icons';
-import { Dropdown, Table, Button, Card, Select, Input, DatePicker, Modal } from 'antd';
+import { Dropdown, Table, Button, Card, Select, Input, DatePicker, Modal, Drawer } from 'antd';
 import { useSelector, useDispatch } from 'react-redux';
 import { crud } from '@/redux/crud/actions';
 import { LiaRupeeSignSolid } from "react-icons/lia";
-import { selectListItems } from '@/redux/crud/selectors';
+import { selectCreatedItem, selectListItems } from '@/redux/crud/selectors';
 import useLanguage from '@/locale/useLanguage';
 import useResponsiveTable from '@/hooks/useResponsiveTable';
 import { GrHistory } from "react-icons/gr";
@@ -14,6 +14,8 @@ import { request } from '@/request';
 import { BiReset } from 'react-icons/bi';
 import { LiaFileDownloadSolid } from "react-icons/lia";
 import { debounce } from 'lodash';
+import UpdatePaymentForm from '@/forms/AddPayment';
+import StudentDetailsModal from '../StudentDetailsModal';
 
 const { Search } = Input;
 const { RangePicker } = DatePicker;
@@ -35,11 +37,12 @@ function AddNewItem({ config }) {
   );
 }
 
-export default function DataTable({ config, extra = [], setActiveForm }) {
+export default function DataTable({ config, extra = [] }) {
   let { entity, dataTableColumns } = config;
+  const { isLoading, isSuccess } = useSelector(selectCreatedItem);
   const dispatch = useDispatch();
   const { crudContextAction } = useCrudContext();
-  const { panel, collapsedBox, modal, readBox, editBox, addBox, advancedBox } = crudContextAction;
+  const { panel, collapsedBox, modal, editBox, advancedBox } = crudContextAction;
   const translate = useLanguage();
   const [selectedInstitute, setSelectedInstitute] = useState(null);
   const [selectedUniversity, setSelectedUniversity] = useState(null);
@@ -54,8 +57,28 @@ export default function DataTable({ config, extra = [], setActiveForm }) {
   const [searchQuery, setSearchQuery] = useState('');
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
-  const [historyData, setHistoryData] = useState(null); // State to hold history data
-  const [showHistoryModal, setShowHistoryModal] = useState(false); // State to control the visibility of the history modal
+  const [historyData, setHistoryData] = useState(null);
+  const [showHistoryModal, setShowHistoryModal] = useState(false);
+  const [showAddPaymentModal, setShowAddPaymentModal] = useState(false);
+  const [updatePaymentRecord, setUpdatePaymentRecord] = useState(null);
+  const [showStudentDetailsModal, setShowStudentDetailsModal] = useState(false);
+  const [selectedStudent, setSelectedStudent] = useState(null);
+
+  // Function to handle click event on action button
+  const handleShowStudentDetails = (record) => {
+    setSelectedStudent(record); // Store selected student details
+    setShowStudentDetailsModal(true); // Show modal
+  };
+
+  const handleCancelAddPaymentModal = () => {
+    setShowAddPaymentModal(false);
+    setUpdatePaymentRecord(null);
+  };
+
+  const handleSuccessUpdate = () => {
+
+    setShowAddPaymentModal(false);
+  };
 
   useEffect(() => {
     const fetchData = async () => {
@@ -76,7 +99,7 @@ export default function DataTable({ config, extra = [], setActiveForm }) {
     };
 
     fetchData();
-  }, []);
+  }, [isSuccess]);
 
   const resetValues = () => {
     setSelectedInstitute(null);
@@ -92,16 +115,15 @@ export default function DataTable({ config, extra = [], setActiveForm }) {
   const handleDateRangeChange = (dates) => {
     if (dates && dates.length === 2) {
       setStartDate(dates[0]);
-      setEndDate(dates[1]);
+      setEndDate(dates[1] ? new Date(dates[1]) : null); // Parse the end date as a Date object
     }
   };
-
   const items = [
     {
       label: translate('Show'),
-      key: 'read',
+      key: 'showDetails',
       icon: <EyeOutlined />,
-    },
+    }, ,
     {
       label: translate('Edit'),
       key: 'edit',
@@ -128,13 +150,6 @@ export default function DataTable({ config, extra = [], setActiveForm }) {
     },
   ];
 
-  const handleRead = (record) => {
-    dispatch(crud.currentItem({ data: record }));
-    panel.open();
-    collapsedBox.open();
-    readBox.open();
-  };
-
   const handleHistory = async (record) => {
     try {
       const historyData = await request.history({ entity: 'lead', id: record._id });
@@ -148,22 +163,23 @@ export default function DataTable({ config, extra = [], setActiveForm }) {
       console.error("Error fetching history data:", error);
     }
   };
+
+
   const handleEdit = (record) => {
     dispatch(crud.currentItem({ data: record }));
     dispatch(crud.currentAction({ actionType: 'update', data: record }));
     editBox.open();
     panel.open();
     collapsedBox.open();
-    setActiveForm('updateForm');
   };
 
-  const handleAddpayment = (record) => {
-    dispatch(crud.currentItem({ data: record }));
-    dispatch(crud.currentAction({ actionType: 'update', data: record }));
-    addBox.open();
-    panel.open();
-    collapsedBox.open();
-    setActiveForm('addForm');
+  const handleAddpayment = async (record) => {
+    try {
+      setUpdatePaymentRecord(record); // Ensure record details are correctly set
+      setShowAddPaymentModal(true);
+    } catch (error) {
+      console.error("Error preparing payment update:", error);
+    }
   };
 
   const handleDelete = (record) => {
@@ -178,7 +194,6 @@ export default function DataTable({ config, extra = [], setActiveForm }) {
     panel.open();
     collapsedBox.open();
   };
-
   dataTableColumns = [
     ...dataTableColumns,
     {
@@ -188,26 +203,26 @@ export default function DataTable({ config, extra = [], setActiveForm }) {
       render: (_, record) => (
         <Dropdown
           menu={{
-            items,
+            items: entity === 'lead' ? items : items.filter(item => item.key !== 'showDetails' && item.key !== 'add' && item.key !== 'history'), // Conditionally render items based on the entity
             onClick: ({ key }) => {
               switch (key) {
-                case 'read':
-                  handleRead(record);
+                case 'showDetails':
+                  handleShowStudentDetails(record); // Handle 'Show Details' action
                   break;
                 case 'edit':
                   handleEdit(record);
-                  break;
-                case 'add':
-                  handleAddpayment(record);
-                  break;
-                case 'history':
-                  handleHistory(record);
                   break;
                 case 'delete':
                   handleDelete(record);
                   break;
                 case 'updatePassword':
                   handleUpdatePassword(record);
+                  break;
+                case 'add':
+                  handleAddpayment(record);
+                  break;
+                case 'history':
+                  handleHistory(record);
                   break;
                 default:
                   break;
@@ -225,13 +240,15 @@ export default function DataTable({ config, extra = [], setActiveForm }) {
     },
   ];
 
+
   const { result: listResult } = useSelector(selectListItems);
   const { items: dataSource } = listResult;
+
   const renderHistoryModal = () => {
     return (
       <Modal
         title="History"
-        visible={showHistoryModal}
+        open={showHistoryModal}
         onCancel={() => setShowHistoryModal(false)}
         footer={null}
         width={800}
@@ -364,7 +381,16 @@ export default function DataTable({ config, extra = [], setActiveForm }) {
 
       const createdDate = new Date(item.created);
       const startDateMatch = !startDate || createdDate >= startDate;
-      const endDateMatch = !endDate || createdDate <= endDate;
+      let endDateMatch = true; // Initialize endDateMatch as true initially
+
+      // Check if end date is set and if it's the last day of the month
+      if (endDate && endDate.getDate() === new Date(endDate.getFullYear(), endDate.getMonth() + 1, 0).getDate()) {
+        // If end date is last day of the month, check if the created date is less than or equal to end date
+        endDateMatch = createdDate <= endDate;
+      } else {
+        // If end date is not the last day of the month, perform regular comparison
+        endDateMatch = !endDate || createdDate <= endDate;
+      }
 
       const phoneAsString = item.contact?.phone?.toString();
       const emailLowerCase = item.contact?.email?.toLowerCase();
@@ -457,105 +483,111 @@ export default function DataTable({ config, extra = [], setActiveForm }) {
   const renderFilters = () => {
     if (entity === 'lead') {
       return (
-        <Card className="custom-card">
-          <div className='flex items-center justify-start mb-10 gap-3'>
-            <div className='grid grid-cols-5 gap-3'>
-              <div>
-                <Select showSearch optionFilterProp="children" filterOption={(input, option) =>
-                  option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
-                }
-                  placeholder="Select institute"
-                  className='w-60 h-10 capitalize'
-                  value={selectedInstitute}
-                  onChange={(value) => setSelectedInstitute(value)}
-                >
-                  {institutes.map(institute => (
-                    <Select.Option key={institute}>{institute}</Select.Option>
-                  ))}
-                </Select>
-              </div>
-              <div>
-                <Select showSearch optionFilterProp="children" filterOption={(input, option) =>
-                  option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
-                }
-                  placeholder="Select university"
-                  className='w-60 h-10 capitalize'
-                  value={selectedUniversity}
-                  onChange={(value) => setSelectedUniversity(value)}
-                >
-                  {universities.map(university => (
-                    <Select.Option key={university}>{university}</Select.Option>
-                  ))}
-                </Select>
-              </div>
-              <div>
-                <Select showSearch optionFilterProp="children" filterOption={(input, option) =>
-                  option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
-                }
-                  placeholder="Select status"
-                  className='w-60 h-10 capitalize'
-                  value={selectedStatus}
-                  onChange={(value) => setSelectedStatus(value)}
-                >
-                  {statuses.map(status => (
-                    <Select.Option key={status}>{status}</Select.Option>
-                  ))}
-                </Select>
-              </div>
-              <div>
-                <Select showSearch optionFilterProp="children" filterOption={(input, option) =>
-                  option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
-                }
-                  placeholder="Select user full name"
-                  className='w-60 h-10 capitalize'
-                  value={selectedUserId}
-                  onChange={(value) => setSelectedUserId(value)}
-                >
-                  {userNames.map((userName) => (
-                    <Select.Option className="capitalize font-thin font-mono" key={userName}>
-                      {userName}
-                    </Select.Option>
-                  ))}
-                </Select>
-              </div>
-              <div>
-                <Select showSearch optionFilterProp="children" filterOption={(input, option) =>
-                  option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
-                }
-                  placeholder="Select session"
-                  className='w-60 h-10 capitalize'
-                  value={selectedSession}
-                  onChange={(value) => setSelectedSession(value)}
-                >
-                  {session.map((session) => (
-                    <Select.Option className="capitalize font-thin font-mono" key={session}>
-                      {session}
-                    </Select.Option>
-                  ))}
-                </Select>
-              </div>
-              <div>
-                <RangePicker
-                  className='w-60 h-10 capitalize'
-                  onChange={handleDateRangeChange}
-                  style={{ width: '100%' }}
-                  placeholder={['Start Date', 'End Date']}
-                />
-              </div>
-              <div>
-                <Button title='Reset All Filters' onClick={resetValues} className='bg-transparent text-red-500 font-thin text-lg h-10 hover:text-red-600'>
-                  <BiReset />
-                </Button>
-              </div>
+        <div>
+          <div className='flex items-center space-x-2'>
+            <div>
+              <Select showSearch optionFilterProp="children" filterOption={(input, option) =>
+                option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+              }
+                placeholder="Select institute"
+                className='w-60 h-10 capitalize'
+                value={selectedInstitute}
+                onChange={(value) => setSelectedInstitute(value)}
+              >
+                {institutes.map(institute => (
+                  <Select.Option key={institute}>{institute}</Select.Option>
+                ))}
+              </Select>
+            </div>
+            <div>
+              <Select showSearch optionFilterProp="children" filterOption={(input, option) =>
+                option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+              }
+                placeholder="Select university"
+                className='w-60 h-10 capitalize'
+                value={selectedUniversity}
+                onChange={(value) => setSelectedUniversity(value)}
+              >
+                {universities.map(university => (
+                  <Select.Option key={university}>{university}</Select.Option>
+                ))}
+              </Select>
+            </div>
+            <div>
+              <Select showSearch optionFilterProp="children" filterOption={(input, option) =>
+                option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+              }
+                placeholder="Select status"
+                className='w-60 h-10 capitalize'
+                value={selectedStatus}
+                onChange={(value) => setSelectedStatus(value)}
+              >
+                {statuses.map(status => (
+                  <Select.Option key={status}>{status}</Select.Option>
+                ))}
+              </Select>
+            </div>
+            <div>
+              <Select showSearch optionFilterProp="children" filterOption={(input, option) =>
+                option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+              }
+                placeholder="Select user full name"
+                className='w-60 h-10 capitalize'
+                value={selectedUserId}
+                onChange={(value) => setSelectedUserId(value)}
+              >
+                {userNames.map((userName) => (
+                  <Select.Option className="capitalize font-thin font-mono" key={userName}>
+                    {userName}
+                  </Select.Option>
+                ))}
+              </Select>
+            </div>
+            <div>
+              <Select showSearch optionFilterProp="children" filterOption={(input, option) =>
+                option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+              }
+                placeholder="Select session"
+                className='w-60 h-10 capitalize'
+                value={selectedSession}
+                onChange={(value) => setSelectedSession(value)}
+              >
+                {session.map((session) => (
+                  <Select.Option className="capitalize font-thin font-mono" key={session}>
+                    {session}
+                  </Select.Option>
+                ))}
+              </Select>
             </div>
           </div>
-        </Card>
+          <div>
+            <div>
+              <RangePicker
+                className='w-60 h-10 mt-3 capitalize'
+                onChange={handleDateRangeChange}
+                style={{ width: '100%' }}
+                placeholder={['Start Date', 'End Date']}
+              />
+            </div>
+          </div>
+          <div className='relative float-right -mt-10 mr-2'>
+            <Button title='Reset All Filters' onClick={resetValues} className='text-red-500 text-lg h-10 hover:text-red-600 bg-white rounded'>
+              <BiReset />
+            </Button>
+          </div>
+        </div>
       );
     }
 
     return null;
   };
 
+  // Add useEffect to handle automatic table reload
+  useEffect(() => {
+    if (isSuccess) {
+      handelDataTableLoad({}, searchQuery); // Call handelDataTableLoad function with the current searchQuery
+    }
+  }, [isSuccess, handelDataTableLoad, searchQuery]);
 
 
   return (
@@ -566,7 +598,24 @@ export default function DataTable({ config, extra = [], setActiveForm }) {
       <div className="table-container">
         {renderTable()}
       </div>
-      {renderHistoryModal()}
+      {showHistoryModal && renderHistoryModal()}
+      <Drawer
+        title="Add Payment"
+        open={showAddPaymentModal}
+        onClose={handleCancelAddPaymentModal}
+        footer={null}
+        width={500}
+      >
+        {/* Pass the onCloseModal callback to the UpdatePaymentForm component */}
+        {updatePaymentRecord && <UpdatePaymentForm entity="lead" id={updatePaymentRecord?._id} recordDetails={updatePaymentRecord} onCloseModal={handleSuccessUpdate} />}
+      </Drawer>
+      <div>
+        <StudentDetailsModal
+          visible={showStudentDetailsModal}
+          onClose={() => setShowStudentDetailsModal(false)}
+          student={selectedStudent}
+        />
+      </div>
     </>
   );
 }

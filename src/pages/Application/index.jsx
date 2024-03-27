@@ -24,99 +24,7 @@ export default function Lead() {
   };
   const entityDisplayLabels = ['number', 'company'];
 
-  const readColumns = [
-    {
-      title: translate('StudentID'),
-      dataIndex: 'lead_id',
-    },
-    {
-      title: translate('Student Name'),
-      dataIndex: 'full_name',
-    },
-    {
-      title: translate('Email'),
-      dataIndex: 'contact.email',
-    },
-    {
-      title: translate('Phone'),
-      dataIndex: 'contact.phone',
-    },
-    {
-      title: translate('course'),
-      dataIndex: 'education.course',
-    },
-    {
-      title: translate('Specialization'),
-      dataIndex: 'customfields.enter_specialization',
-    },
-    {
-      title: translate('Session'),
-      dataIndex: 'customfields.session',
-    },
-    {
-      title: translate('Session type'),
-      dataIndex: 'customfields.admission_type',
-    },
-    {
-      title: translate('Institute Name'),
-      dataIndex: 'customfields.institute_name',
-    },
-
-    {
-      title: translate('University name'),
-      dataIndex: 'customfields.university_name',
-    },
-    {
-      title: translate('Father Name'),
-      dataIndex: 'customfields.father_name',
-    },
-    {
-      title: translate('Mother name'),
-      dataIndex: 'customfields.mother_name',
-    },
-
-    {
-      title: translate('Date of birth'),
-      dataIndex: 'customfields.dob',
-    },
-    {
-      title: translate('gender'),
-      dataIndex: 'customfields.gender',
-    },
-    {
-      title: translate('Installment type'),
-      dataIndex: 'customfields.installment_type',
-    },
-    {
-      title: translate('Payment mode'),
-      dataIndex: 'customfields.payment_mode',
-    },
-
-    {
-      title: translate('Total Course Fee'),
-      dataIndex: 'customfields.total_course_fee',
-    },
-    {
-      title: translate('Total Paid amount'),
-      dataIndex: 'customfields.total_paid_amount',
-    },
-    {
-      title: translate('paid amount'),
-      dataIndex: 'customfields.paid_amount',
-    },
-
-    {
-      title: translate('Send Fee Receipt'),
-      dataIndex: 'customfields.send_fee_receipt',
-    },
-    {
-      title: translate('status'),
-      dataIndex: 'customfields.status',
-    },
-  ];
-
   const dataTableColumns = [
-
     {
       title: 'S.No.',
       dataIndex: '',
@@ -336,7 +244,6 @@ export default function Lead() {
   const config = {
     ...configPage,
     dataTableColumns,
-    readColumns,
     searchConfig,
     entityDisplayLabels,
   };

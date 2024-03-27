@@ -159,8 +159,8 @@ export default function DashboardModule() {
     });
 
     const filterRender = () => (
-        <div className='flex items-center justify-start mb-10 gap-3'>
-            <div className='grid grid-cols-5 gap-3'>
+        <div>
+            <div className='flex items-center space-x-2'>
                 <div>
                     {/* Select for Institute */}
                     <Select showSearch optionFilterProp="children" filterOption={(input, option) =>
@@ -222,7 +222,6 @@ export default function DashboardModule() {
                             </Select.Option>
                         ))}
                     </Select>
-
                 </div>
                 <div>
                     <Select showSearch optionFilterProp="children" filterOption={(input, option) =>
@@ -240,6 +239,9 @@ export default function DashboardModule() {
                         ))}
                     </Select>
                 </div>
+            </div>
+
+            <div className='flex space-x-2 mt-4'>
                 {/* Select for User Full Name */}
                 <div>
                     <Select placeholder="Select user full name" showSearch optionFilterProp="children" filterOption={(input, option) =>
@@ -263,13 +265,13 @@ export default function DashboardModule() {
                         }}
                     />
                 </div>
-                <div>
-                    <Button title='Reset All Filters' onClick={resetValues} className='bg-transparent text-red-500 font-thin text-lg h-10 hover:text-red-600'>
-                        <BiReset />
-                    </Button>
-                </div>
             </div>
 
+            <div className='relative float-right -mt-10 mr-2'>
+                <Button title='Reset All Filters' onClick={resetValues} className='bg-white text-red-500 text-lg h-10 hover:text-red-600'>
+                    <BiReset />
+                </Button>
+            </div>
         </div>
     )
 
@@ -277,9 +279,7 @@ export default function DashboardModule() {
     return (
         <>
             <div>
-                <Card className="custom-card shadow drop-shadow-md">
-                    {filterRender()}
-                </Card>
+                {filterRender()}
                 <div className="space30"></div>
             </div>
             <div className='flex gap-4'>
@@ -308,10 +308,8 @@ export default function DashboardModule() {
                         <CustomerPreviewCard />
                     </Card>
                 </Col>
-                <Col className="gutter-row" sm={{ span: 24 }} md={{ span: 24 }} lg={{ span: 10 }}>
-                    <Card className="shadow drop-shadow-lg" >
-                        <DataYear />
-                    </Card>
+                <Col className="gutter-row bg-white" sm={{ span: 24 }} md={{ span: 24 }} lg={{ span: 10 }} >
+                    <DataYear />
                 </Col>
 
             </Row>
