@@ -70,6 +70,10 @@ const request = {
   updatePayment: async ({ entity, id, jsonData }) => {
     try {
       const response = await axios.put(entity + '/updatePayment/' + id, jsonData);
+       successHandler(response, {
+        notifyOnSuccess: true,
+        notifyOnFailed: true,
+      });
       return response.data;
     } catch (error) {
       return errorHandler(error);

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Form, Input, Button, Select } from 'antd';
 import axios from 'axios';
 import useLanguage from '@/locale/useLanguage';
@@ -6,6 +6,15 @@ import useLanguage from '@/locale/useLanguage';
 const UpdatePaymentForm = ({ entity, id, recordDetails, onCloseModal }) => {
     const [loading, setLoading] = useState(false);
     const translate = useLanguage();
+    const [role, setRole] = useState('');
+
+    useEffect(() => {
+        // Retrieve the role from localStorage and parse it as JSON
+        const storedRole = window.localStorage.getItem('auth');
+        const parsedRole = storedRole ? JSON.parse(storedRole).current.role : '';
+        setRole(parsedRole);
+    }, []);
+
     const onFinish = async (values) => {
         setLoading(true);
         try {
@@ -21,6 +30,72 @@ const UpdatePaymentForm = ({ entity, id, recordDetails, onCloseModal }) => {
             setLoading(false);
         }
     };
+
+    const isLoggedIn = window.localStorage.getItem('isLoggedIn');
+
+    // Define function to get status options based on role
+    const getStatusOptions = (role) => {
+        switch (role) {
+            case 'admin':
+                return [
+                    { value: 'New', label: translate('New') },
+                    { value: 'Payment Approved', label: translate('Payment Approved') },
+                    { value: 'Payment Received', label: translate('Payment Received') },
+                    { value: 'Payment Rejected', label: translate('Payment Rejected') },
+                    { value: 'Enrolled', label: translate('Enrolled') },
+                    { value: 'Cancelled', label: translate('Cancelled') },
+                    { value: 'Alumni', label: translate('Alumni') },
+                ];
+
+            case 'subadmin':
+                return [
+                    { value: 'New', label: translate('New') },
+                    { value: 'Payment Approved', label: translate('Payment Approved') },
+                    { value: 'Payment Received', label: translate('Payment Received') },
+                    { value: 'Payment Rejected', label: translate('Payment Rejected') },
+                    { value: 'Enrolled', label: translate('Enrolled') },
+                    { value: 'Cancelled', label: translate('Cancelled') },
+                    { value: 'Alumni', label: translate('Alumni') },
+                ];
+
+            case 'manager':
+                return [
+                    { value: 'New', label: translate('New') },
+                    { value: 'Payment Approved', label: translate('Payment Approved') },
+                    { value: 'Payment Received', label: translate('Payment Received') },
+                    { value: 'Payment Rejected', label: translate('Payment Rejected') },
+                    { value: 'Enrolled', label: translate('Enrolled') },
+                    { value: 'Cancelled', label: translate('Cancelled') },
+                    { value: 'Alumni', label: translate('Alumni') },
+                ];
+
+
+            case 'supportiveassociate':
+                return [
+                    { value: 'New', label: translate('New') },
+                    { value: 'Payment Received', label: translate('Payment Received') },
+                ];
+
+
+            case 'teamleader':
+                return [
+                    { value: 'New', label: translate('New') },
+                    { value: 'Payment Received', label: translate('Payment Received') },
+                ];
+
+            case 'user':
+                return [
+                    { value: 'New', label: translate('New') },
+                    { value: 'Payment Received', label: translate('Payment Received') },
+                ];
+
+            default:
+                return [];
+        }
+    };
+
+    // Get status options based on the role
+    const statusOptions = getStatusOptions(role);
 
     return (
         <Form
@@ -91,6 +166,25 @@ const UpdatePaymentForm = ({ entity, id, recordDetails, onCloseModal }) => {
             >
                 <Input />
             </Form.Item>
+            <Form.Item
+                label={translate('status')}
+                name={['customfields', 'status']}
+                rules={[
+                    {
+                        required: false,
+                    },
+                ]}
+            >
+                {/* Render Select component based on isLoggedIn and role */}
+                {isLoggedIn && role ? (
+                    <Select
+                        showSearch
+                        optionFilterProp='children'
+                        options={statusOptions}
+                    ></Select>
+                ) : null}
+            </Form.Item>
+
             <Form.Item>
                 <Button type="primary" htmlType="submit" loading={loading}>
                     Update Payment

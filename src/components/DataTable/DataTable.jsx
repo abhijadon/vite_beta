@@ -76,8 +76,8 @@ export default function DataTable({ config, extra = [] }) {
   };
 
   const handleSuccessUpdate = () => {
-
-    setShowAddPaymentModal(false);
+    setShowAddPaymentModal(false); // Close the payment modal
+    handelDataTableLoad({}, searchQuery); // Reload the table data
   };
 
   useEffect(() => {
@@ -115,9 +115,10 @@ export default function DataTable({ config, extra = [] }) {
   const handleDateRangeChange = (dates) => {
     if (dates && dates.length === 2) {
       setStartDate(dates[0]);
-      setEndDate(dates[1] ? new Date(dates[1]) : null); // Parse the end date as a Date object
+      setEndDate(dates[1]); // Set the end date correctly
     }
   };
+
   const items = [
     {
       label: translate('Show'),
@@ -381,16 +382,7 @@ export default function DataTable({ config, extra = [] }) {
 
       const createdDate = new Date(item.created);
       const startDateMatch = !startDate || createdDate >= startDate;
-      let endDateMatch = true; // Initialize endDateMatch as true initially
-
-      // Check if end date is set and if it's the last day of the month
-      if (endDate && endDate.getDate() === new Date(endDate.getFullYear(), endDate.getMonth() + 1, 0).getDate()) {
-        // If end date is last day of the month, check if the created date is less than or equal to end date
-        endDateMatch = createdDate <= endDate;
-      } else {
-        // If end date is not the last day of the month, perform regular comparison
-        endDateMatch = !endDate || createdDate <= endDate;
-      }
+      const endDateMatch = !endDate || createdDate <= endDate;
 
       const phoneAsString = item.contact?.phone?.toString();
       const emailLowerCase = item.contact?.email?.toLowerCase();

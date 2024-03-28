@@ -8,7 +8,7 @@ import {
   PlusOutlined,
   EllipsisOutlined,
 } from '@ant-design/icons';
-import { Dropdown, Table, Button, Input, Select, Card, Modal } from 'antd';
+import { Dropdown, Table, Button, Input, Select, Card, Modal, DatePicker } from 'antd';
 import { useSelector, useDispatch } from 'react-redux';
 import useLanguage from '@/locale/useLanguage';
 import { erp } from '@/redux/erp/actions';
@@ -25,7 +25,7 @@ import { LiaFileDownloadSolid } from 'react-icons/lia';
 import { GrHistory } from 'react-icons/gr';
 
 const { Search } = Input;
-
+const { RangePicker } = DatePicker;
 
 function AddNewItem({ config, hasCreate = true }) {
   const navigate = useNavigate();
@@ -67,6 +67,9 @@ export default function DataTable({ config, extra = [] }) {
   const [historyData, setHistoryData] = useState(null); // State to hold history data
   const [showHistoryModal, setShowHistoryModal] = useState(false);
   const [role, setRole] = useState('');
+  const [startDate, setStartDate] = useState(null);
+  const [endDate, setEndDate] = useState(null);
+
 
   // Retrieve the role from localStorage
   useEffect(() => {
@@ -76,16 +79,16 @@ export default function DataTable({ config, extra = [] }) {
 
 
   const handelDataTableLoad = useCallback(
-    async (pagination, newSearchQuery = '') => {
+    async (newSearchQuery = '') => {
       const options = {
-        page: pagination.current || 1,
-        items: pagination.pageSize || 10,
         filter: {
           q: newSearchQuery,
           institute: selectedInstitute,
           university: selectedUniversity,
           status: selectedStatus,
           userId: selectedUserId,
+          startDate: startDate,
+          endDate: endDate,
         },
       };
 
@@ -95,7 +98,7 @@ export default function DataTable({ config, extra = [] }) {
         // Update filtered count
       }
     },
-    [entity, selectedInstitute, selectedUniversity, selectedStatus, selectedUserId]
+    [entity, selectedInstitute, selectedUniversity, selectedStatus, selectedUserId, startDate, endDate]
   );
 
   const handleExportToExcel = () => {
@@ -128,6 +131,17 @@ export default function DataTable({ config, extra = [] }) {
     }
   };
 
+  // Update the RangePicker component to set start and end dates
+  const handleDateRangeChange = (dates) => {
+    if (dates && dates.length === 2) {
+      setStartDate(dates[0]);
+      setEndDate(dates[1]); // Set the end date correctly
+    }
+  };
+
+  useEffect(() => {
+    handelDataTableLoad({}, searchQuery); // Call the function initially without filters
+  }, []);
 
   const fetchData = async () => {
     try {
@@ -139,6 +153,8 @@ export default function DataTable({ config, extra = [] }) {
           status: selectedStatus,
           payment_mode: selectedPaymentMode,
           payment_type: selectedPaymentType,
+          startDate: startDate,
+          endDate: endDate,
         },
       });
 
@@ -152,7 +168,7 @@ export default function DataTable({ config, extra = [] }) {
 
   useEffect(() => {
     fetchData();
-  }, [selectedUniversity, selectedInstitute, selectedStatus, selectedPaymentMode, selectedPaymentType]);
+  }, [selectedUniversity, selectedInstitute, selectedStatus, selectedPaymentMode, selectedPaymentType, startDate, endDate]);
 
 
   useEffect(() => {
@@ -186,8 +202,9 @@ export default function DataTable({ config, extra = [] }) {
     setSelectedUserId(null);
     setSelectedPaymentMode(null)
     setSelectedPaymentType(null)
+    setStartDate(null);
+    setEndDate(null);
   };
-
   useEffect(() => {
     const controller = new AbortController();
     return () => {
@@ -396,6 +413,13 @@ export default function DataTable({ config, extra = [] }) {
 
   const filterDataSource = (data) => {
     return data.filter(item => {
+      // Extract the date from your data source (assuming it's stored as a Date object)
+      const itemDate = new Date(item.created); // Change 'date' to the key where your date is stored
+
+      // Check if the item date falls within the selected date range
+      const dateMatch = (!startDate || !endDate || (itemDate >= startDate && itemDate <= endDate));
+
+      // Your existing filters
       const instituteMatch = !selectedInstitute || (item && item.institute_name === selectedInstitute);
       const universityMatch = !selectedUniversity || (item && item.university_name === selectedUniversity);
       const statusMatch = !selectedStatus || (item && item.status === selectedStatus);
@@ -410,10 +434,11 @@ export default function DataTable({ config, extra = [] }) {
         (typeof phoneAsString === 'string' && phoneAsString.includes(searchQuery)) ||
         (item && item.full_name && item.full_name.includes(searchQuery))
       );
-      return instituteMatch && universityMatch && statusMatch && userMatch && searchMatch;
+
+      // Return true only if all conditions match
+      return dateMatch && instituteMatch && universityMatch && statusMatch && userMatch && searchMatch;
     });
   };
-
 
 
   const dispatcher = () => {
@@ -611,8 +636,7 @@ export default function DataTable({ config, extra = [] }) {
           </Select>
         </div>
       </div>
-      <div>
-        {/* Date Range Picker */}
+      <div className='flex items-center space-x-2'>
         <div>
           <Select showSearch optionFilterProp="children" filterOption={(input, option) =>
             option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
@@ -628,6 +652,14 @@ export default function DataTable({ config, extra = [] }) {
               </Select.Option>
             ))}
           </Select>
+        </div>
+        <div>
+          <RangePicker
+            className='w-60 h-10 mt-3 capitalize'
+            onChange={handleDateRangeChange}
+            style={{ width: '100%' }}
+            placeholder={['Start Date', 'End Date']}
+          />
         </div>
       </div>
       <div className='relative float-right -mt-10 mr-2'>

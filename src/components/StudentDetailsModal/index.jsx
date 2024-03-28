@@ -4,7 +4,10 @@ import moment from 'moment';
 
 const StudentDetailsModal = ({ visible, onClose, student }) => {
     const renderPreviousInstallmentType = () => {
-        if (!student || !student.previousInstallmentType || student.previousInstallmentType.length === 0) return '';
+        if (!student || !student.previousstatus || !student.previousInstallmentType) return '';
+
+        const previousStatus = student.previousstatus.reverse(); // Reverse the array to display the most recent status first
+        const previousInstallmentType = student.previousInstallmentType.reverse(); // Reverse the array to display the most recent installment type first
 
         const getSuffix = (num) => {
             if (num === 1) return 'st';
@@ -13,14 +16,21 @@ const StudentDetailsModal = ({ visible, onClose, student }) => {
             return 'th';
         };
 
-        let installmentTypes = student.previousInstallmentType.map((installment) => {
-            const numericPart = parseInt(installment.value.match(/\d+/)[0]);
-            const suffix = getSuffix(numericPart);
-            return `${numericPart}${suffix}`;
+        const getStatusChange = (date) => {
+            const status = previousStatus.find(item => item.date === date);
+            return status ? status.value : '';
+        };
+
+        const installmentsAndStatus = previousInstallmentType.map((installment, index) => {
+            const statusChange = getStatusChange(installment.date);
+            const numericPart = installment.value.match(/\d+/)[0]; // Extract numeric part from the installment value
+            const suffix = getSuffix(parseInt(numericPart)); // Get suffix based on the numeric part
+            return { numericPart: `${numericPart}${suffix}`, statusChange }; // Append suffix to numeric part
         });
 
-        return installmentTypes.join(' / ');
+        return installmentsAndStatus.map(({ numericPart, statusChange }) => `${numericPart} (${statusChange})`).join(' / ');
     };
+
     const renderPreviousPaidamount = () => {
         if (!student || !student.previousPaidAmounts || student.previousPaidAmounts.length === 0) return '';
 
