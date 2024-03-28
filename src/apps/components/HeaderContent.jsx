@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Avatar, Dropdown, Layout, Menu } from 'antd';
-import Notifications from '@/components/Notification';
 import { SettingOutlined, LogoutOutlined } from '@ant-design/icons';
 import { checkImage } from '@/request';
 import { selectCurrentAdmin } from '@/redux/auth/selectors';
@@ -19,7 +18,6 @@ export default function HeaderContent() {
   const currentAdmin = useSelector(selectCurrentAdmin);
   const translate = useLanguage();
   const [hasPhotoprofile, setHasPhotoprofile] = useState(false);
-  const [notification, setNotificationCount] = useState(0);
   const [darkMode, setDarkMode] = useState(false);
   const [activeKey, setActiveKey] = useState(null);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -204,7 +202,6 @@ export default function HeaderContent() {
             {currentAdmin?.fullname && currentAdmin?.fullname.charAt(0).toUpperCase()}
           </Avatar>
         </Dropdown>
-        <Notifications setNotificationCount={setNotificationCount} />
         <Dropdown menu={darkModeDropdown} trigger={['click']} placement='bottomRight'>
           <div>
             <BsMoonStars className='text-[20px] text-black cursor-pointer' />
