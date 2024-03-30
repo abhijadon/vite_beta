@@ -85,16 +85,19 @@ export default function Lead() {
       title: 'User',
       dataIndex: ['userId', 'fullname'],
       key: 'userId', // Add a unique key for the column
+      render: (userId) => toTitleCase(userId),
     },
     {
       title: translate('Father Name'),
       dataIndex: ['customfields', 'father_name'],
-      key: 'father_name'
+      key: 'father_name',
+      render: (father_name) => toTitleCase(father_name),
     },
     {
       title: translate('Mother Name'),
       dataIndex: ['customfields', 'mother_name'],
-      key: 'mother_name'
+      key: 'mother_name',
+      render: (mother_name) => toTitleCase(mother_name),
     },
     {
       title: translate('Date of birth'),
@@ -105,23 +108,6 @@ export default function Lead() {
       title: translate('gender'),
       dataIndex: ['customfields', 'gender'],
       key: 'gender'
-    },
-
-    {
-      title: translate('Installment type'),
-      dataIndex: ['customfields', 'installment_type'],
-      key: 'installmentType'
-    },
-
-    {
-      title: translate('Payment mode'),
-      dataIndex: ['customfields', 'payment_mode'],
-      key: 'payment_mode'
-    },
-    {
-      title: translate('Payment type'),
-      dataIndex: ['customfields', 'payment_type'],
-      key: 'payment_type'
     },
     {
       title: translate('Total Course Fee'),
@@ -134,63 +120,24 @@ export default function Lead() {
       key: 'total_paid_amount'
     },
     {
-      title: translate('paid amount'),
-      dataIndex: ['customfields', 'paid_amount'],
-      key: 'paid_amount'
-    },
-    {
       title: translate('Due amount'),
-      key: 'due_amount',
-      render: (text, record) => {
-        const customFields = record.customfields;
-        if (!customFields) return null; // Return null if customfields is undefined or null
-
-        const totalCourseFee = customFields.total_course_fee;
-        const totalPaidAmount = customFields.total_paid_amount;
-        const dueAmount = totalCourseFee - totalPaidAmount;
-
-        return (
-          <span>
-            {dueAmount}
-          </span>
-        );
-      }
+      dataIndex: ['customfields', 'due_amount'],
+      key: 'due_amount'
     },
     {
-      title: "studnet fee reciept",
-      dataIndex: ['customfields', 'upload_fee_receipt_screenshot'],
-      key: "upload_fee_receipt_screenshot",
-      render: (studentReceipts) => (
-        <Space size="middle">
-          {Array.isArray(studentReceipts) && studentReceipts.map((record) => (
-            <div key={record._id}>
-              <img
-                src={`${import.meta.env.VITE_BACKEND_SERVER}public/uploads/studentDocument/${record.filename}`}
-                alt={record.originalFilename}
-                style={{ width: "100%", height: "50px" }}
-              />
-            </div>
-          ))}
-        </Space>
-      ),
-    },
-    {
-      title: "Student document",
-      dataIndex: ['customfields', 'upload_student_document'],
-      key: "upload_student_document",
-      render: (studentReceipts) => (
-        <Space size="middle">
-          {Array.isArray(studentReceipts) && studentReceipts.map((record) => (
-            <div key={record._id}>
-              <img
-                src={`${import.meta.env.VITE_BACKEND_SERVER}public/uploads/studentDocument/${record.filename}`}
-                alt={record.originalFilename}
-                style={{ width: "100%", height: "50px" }}
-              />
-            </div>
-          ))}
-        </Space>
-      ),
+      title: translate('paymentStatus'),
+      dataIndex: ['customfields', 'paymentStatus'],
+      render: (paymentStatus) => {
+        let color =
+          paymentStatus === 'Payment Approved'
+            ? 'green'
+            : paymentStatus === 'Payment Received'
+              ? 'cyan'
+              : paymentStatus === 'Payment Rejected'
+                ? 'red'
+                : 'red';
+        return <Tag color={color}>{paymentStatus && translate(paymentStatus)}</Tag>;
+      },
     },
     {
       title: translate('Status'),
@@ -208,7 +155,6 @@ export default function Lead() {
                   : 'red';
         return <Tag color={color}>{status && translate(status)}</Tag>;
       },
-
     },
     {
       title: 'Remark',
@@ -223,10 +169,7 @@ export default function Lead() {
       dataIndex: 'created',
       render: (date) => dayjs(date).format('DD/MM/YYYY'),
     },
-    {
-      title: translate('Lms'),
-      dataIndex: ['lms'],
-    },
+
   ];
 
   const Labels = {

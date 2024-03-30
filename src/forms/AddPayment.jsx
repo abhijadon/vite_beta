@@ -38,54 +38,39 @@ const UpdatePaymentForm = ({ entity, id, recordDetails, onCloseModal }) => {
         switch (role) {
             case 'admin':
                 return [
-                    { value: 'New', label: translate('New') },
                     { value: 'Payment Approved', label: translate('Payment Approved') },
                     { value: 'Payment Received', label: translate('Payment Received') },
                     { value: 'Payment Rejected', label: translate('Payment Rejected') },
-                    { value: 'Enrolled', label: translate('Enrolled') },
-                    { value: 'Cancelled', label: translate('Cancelled') },
-                    { value: 'Alumni', label: translate('Alumni') },
                 ];
 
             case 'subadmin':
                 return [
-                    { value: 'New', label: translate('New') },
                     { value: 'Payment Approved', label: translate('Payment Approved') },
                     { value: 'Payment Received', label: translate('Payment Received') },
                     { value: 'Payment Rejected', label: translate('Payment Rejected') },
-                    { value: 'Enrolled', label: translate('Enrolled') },
-                    { value: 'Cancelled', label: translate('Cancelled') },
-                    { value: 'Alumni', label: translate('Alumni') },
                 ];
 
             case 'manager':
                 return [
-                    { value: 'New', label: translate('New') },
                     { value: 'Payment Approved', label: translate('Payment Approved') },
                     { value: 'Payment Received', label: translate('Payment Received') },
                     { value: 'Payment Rejected', label: translate('Payment Rejected') },
-                    { value: 'Enrolled', label: translate('Enrolled') },
-                    { value: 'Cancelled', label: translate('Cancelled') },
-                    { value: 'Alumni', label: translate('Alumni') },
                 ];
 
 
             case 'supportiveassociate':
                 return [
-                    { value: 'New', label: translate('New') },
                     { value: 'Payment Received', label: translate('Payment Received') },
                 ];
 
 
             case 'teamleader':
                 return [
-                    { value: 'New', label: translate('New') },
                     { value: 'Payment Received', label: translate('Payment Received') },
                 ];
 
             case 'user':
                 return [
-                    { value: 'New', label: translate('New') },
                     { value: 'Payment Received', label: translate('Payment Received') },
                 ];
 
@@ -131,7 +116,7 @@ const UpdatePaymentForm = ({ entity, id, recordDetails, onCloseModal }) => {
                 <Select
                     showSearch
                     options={[
-                        { value: '1st Installment/ New Admission', label: '1st Installment/ New Admission' },
+                        { value: '1st Installment', label: '1st Installment' },
                         { value: '2nd Installment', label: '2nd Installment' },
                         { value: '3rd Installment', label: '3rd Installment' },
                         { value: '4th Installment', label: '4th Installment' },
@@ -141,6 +126,37 @@ const UpdatePaymentForm = ({ entity, id, recordDetails, onCloseModal }) => {
                         { value: '8th Installment', label: '8th Installment' },
                         { value: '9th Installment', label: '9th Installment' },
                         { value: '10th Installment', label: '10th Installment' },
+                    ]}
+                ></Select>
+            </Form.Item>
+
+
+            <Form.Item
+                label={translate('Payment Mode')}
+                name={['customfields', 'payment_mode']}
+            >
+                <Select
+                    showSearch
+                    options={[
+                        { value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
+                        { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
+                        { value: 'University Bank Account', label: 'University Bank Account' },
+                        { value: 'Payment Gateway', label: 'Payment Gateway' },
+                        { value: 'Cash/DD', label: 'Cash/DD' }
+
+                    ]}
+                ></Select>
+            </Form.Item>
+            <Form.Item
+                label={translate('payment type')}
+                name={['customfields', 'payment_type']}
+            >
+                <Select
+                    showSearch
+                    options={[
+                        { value: 'Semester', label: translate('semester') },
+                        { value: 'Yearly', label: translate('Yearly') },
+                        { value: 'Fullfees', label: translate('Fullfees') },
                     ]}
                 ></Select>
             </Form.Item>
@@ -167,8 +183,8 @@ const UpdatePaymentForm = ({ entity, id, recordDetails, onCloseModal }) => {
                 <Input />
             </Form.Item>
             <Form.Item
-                label={translate('status')}
-                name={['customfields', 'status']}
+                label={translate('paymentStatus')}
+                name={['customfields', 'paymentStatus']}
                 rules={[
                     {
                         required: false,

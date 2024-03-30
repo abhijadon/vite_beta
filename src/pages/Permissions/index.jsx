@@ -14,6 +14,13 @@ export default function Admin() {
 
     const entityDisplayLabels = ['email'];
 
+    const toTitleCase = (str) => {
+        if (!str) return ''; // Check for undefined or null
+        return str.toLowerCase().replace(/(?:^|\s)\w/g, function (match) {
+            return match.toUpperCase();
+        });
+    };
+
 
     const readColumns = [
         { title: translate('full_name'), dataIndex: 'fullname' },
@@ -38,7 +45,7 @@ export default function Admin() {
             dataIndex: '',
             render: (text, record, index) => index + 1,
         },
-        { title: translate('fullname'), dataIndex: 'fullname' },
+        { title: translate('fullname'), dataIndex: 'fullname', render: (fullname) => toTitleCase(fullname), },
         { title: translate('username'), dataIndex: 'username' },
         { title: translate('phone'), dataIndex: 'phone' },
         {

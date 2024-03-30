@@ -39,7 +39,7 @@ export default function SidePanel({ config, topContent, bottomContent }) {
   return (
     <Modal
       title="ERP_SODE"
-      visible={!isPanelClose}
+      open={!isPanelClose}
       onCancel={collapsePanel}
       footer={null}
       width={1000}

@@ -16,7 +16,7 @@ import { LiaFileDownloadSolid } from "react-icons/lia";
 import { debounce } from 'lodash';
 import UpdatePaymentForm from '@/forms/AddPayment';
 import StudentDetailsModal from '../StudentDetailsModal';
-
+import HistoryModal from '../HistoryModal';
 const { Search } = Input;
 const { RangePicker } = DatePicker;
 
@@ -63,6 +63,7 @@ export default function DataTable({ config, extra = [] }) {
   const [updatePaymentRecord, setUpdatePaymentRecord] = useState(null);
   const [showStudentDetailsModal, setShowStudentDetailsModal] = useState(false);
   const [selectedStudent, setSelectedStudent] = useState(null);
+  const [Paymentstatus, setSelectedPaymentstatus] = useState(null);
 
   // Function to handle click event on action button
   const handleShowStudentDetails = (record) => {
@@ -110,6 +111,7 @@ export default function DataTable({ config, extra = [] }) {
     setSearchQuery('');
     setStartDate(null);
     setEndDate(null);
+    setSelectedPaymentstatus(null)
   };
 
   const handleDateRangeChange = (dates) => {
@@ -245,93 +247,10 @@ export default function DataTable({ config, extra = [] }) {
   const { result: listResult } = useSelector(selectListItems);
   const { items: dataSource } = listResult;
 
-  const renderHistoryModal = () => {
-    return (
-      <Modal
-        title="History"
-        open={showHistoryModal}
-        onCancel={() => setShowHistoryModal(false)}
-        footer={null}
-        width={800}
-        className="history-modal"
-      >
-        {/* Check if historyData exists */}
-        {historyData && historyData.history && historyData.history.length > 0 ? (
-          // Render each history item
-          <div className="history-tree">
-            {historyData.history.map((historyItem, index) => (
-              <React.Fragment key={index}>
-                <h3 className="fullname capitalize">{historyItem.updatedBy.fullname}</h3>
-                <div className="history-node">
-                  <div className="node-header">
-                    <h3 className="timestamp">{new Date(historyItem.updatedAt).toLocaleString()}</h3>
-                  </div>
-                  <div className="node-content capitalize">
-                    <table className="change-table">
-                      <tbody>
-                        {historyItem.updatedFields.full_name && (
-                          <tr>
-                            <td className="change-key">Full Name:</td>
-                            <td className="old-value">{historyItem.updatedFields.full_name.oldValue}</td>
-                            <td className="new-value">{historyItem.updatedFields.full_name.newValue}</td>
-                          </tr>
-                        )}
 
-                        {historyItem.updatedFields.lead_id && (
-                          <tr>
-                            <td className="change-key">Lead ID:</td>
-                            <td className="old-value">{historyItem.updatedFields.lead_id.oldValue}</td>
-                            <td className="new-value">{historyItem.updatedFields.lead_id.newValue}</td>
-                          </tr>
-                        )}
-                        {historyItem.updatedFields.contact && (
-                          Object.entries(historyItem.updatedFields.contact.newValue).map(([key, newValue]) => (
-                            <tr key={key}>
-                              <td className="change-key">{key}:</td>
-                              <td className="old-value"> {historyItem.updatedFields.contact.oldValue[key]}</td>
-                              <td className="new-value">{newValue}</td>
-                            </tr>
-                          ))
-                        )}
-                        {/* Render changes for education */}
-                        {historyItem.updatedFields.education && (
-                          Object.entries(historyItem.updatedFields.education.newValue).map(([key, newValue]) => (
-                            <tr key={key}>
-                              <td className="change-key">{key}:</td>
-                              <td className="old-value"> {historyItem.updatedFields.education.oldValue[key]}</td>
-                              <td className="new-value">{newValue}</td>
-                            </tr>
-                          ))
-                        )}
-                        {/* Render changes for customfields */}
-                        {Object.entries(historyItem.updatedFields.customfields.newValue).map(([key, newValue]) => (
-                          <tr key={key}>
-                            <td className="change-key">{key}:</td>
-                            <td className="old-value"> {historyItem.updatedFields.customfields.oldValue[key]}</td>
-                            <td className="new-value">{newValue}</td>
-                          </tr>
-                        ))}
-
-
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              </React.Fragment>
-            ))}
-          </div>
-        ) : (
-          <p>No history available.</p>
-        )}
-      </Modal>
-    );
-  };
   const handelDataTableLoad = useCallback(
     async (pagination, newSearchQuery = '') => {
       const options = {
-        page: pagination.current || 1,
-        items: pagination.pageSize || 10,
-        total: pagination.total || 0,
         filter: {
           q: newSearchQuery,
           institute: selectedInstitute,
@@ -393,10 +312,20 @@ export default function DataTable({ config, extra = [] }) {
         (typeof phoneAsString === 'string' && phoneAsString.includes(searchQuery)) ||
         item.full_name.includes(searchQuery)
       );
-      return instituteMatch && universityMatch && sessionMatch && searchMatch && statusMatch && userMatch && startDateMatch && endDateMatch;
+
+      // Check if paymentStatus matches
+      let paymentStatusMatch = true;
+      if (Paymentstatus === 'Payment Received') {
+        paymentStatusMatch = customfields.paymentStatus === 'Payment Received';
+      } else if (Paymentstatus === 'Payment Rejected') {
+        paymentStatusMatch = customfields.paymentStatus === 'Payment Rejected';
+      } else if (Paymentstatus === 'Payment Approved') {
+        paymentStatusMatch = customfields.paymentStatus === 'Payment Approved';
+      }
+
+      return instituteMatch && universityMatch && sessionMatch && searchMatch && statusMatch && userMatch && startDateMatch && endDateMatch && paymentStatusMatch;
     });
   };
-
   const handleExportToExcel = () => {
     if (dataSource.length === 0) {
       return;
@@ -472,7 +401,17 @@ export default function DataTable({ config, extra = [] }) {
     );
   };
 
+
+  const handlePaymentStatus = (status) => {
+    setSelectedPaymentstatus(status);
+  };
+
   const renderFilters = () => {
+    // Calculate counts for each payment status
+    const paymentReceivedCount = dataSource.filter(item => item.customfields?.paymentStatus === 'Payment Received').length;
+    const paymentApprovedCount = dataSource.filter(item => item.customfields?.paymentStatus === 'Payment Approved').length;
+    const paymentRejectedCount = dataSource.filter(item => item.customfields?.paymentStatus === 'Payment Rejected').length;
+
     if (entity === 'lead') {
       return (
         <div>
@@ -552,7 +491,7 @@ export default function DataTable({ config, extra = [] }) {
               </Select>
             </div>
           </div>
-          <div>
+          <div className='flex items-center space-x-2'>
             <div>
               <RangePicker
                 className='w-60 h-10 mt-3 capitalize'
@@ -560,6 +499,27 @@ export default function DataTable({ config, extra = [] }) {
                 style={{ width: '100%' }}
                 placeholder={['Start Date', 'End Date']}
               />
+            </div>
+            <div>
+              {/* Button to filter Payment Received */}
+              <Button className='w-24 mt-3 capitalize text-center text-sm font-thin hover:bg-cyan-100 bg-cyan-100 hover:text-cyan-700 text-cyan-700' onClick={() => handlePaymentStatus('Payment Received')}>
+                <span className="font-thin text-sm -ml-2">Received</span>
+                <span className="font-thin text-sm ml-1">({paymentReceivedCount})</span>
+              </Button>
+            </div>
+            <div>
+              {/* Button to filter Payment Approved */}
+              <Button className='w-24 mt-3 capitalize text-center text-sm font-thin hover:bg-green-100 bg-green-100 hover:text-green-700 text-green-700' onClick={() => handlePaymentStatus('Payment Approved')}>
+                <span className="font-thin text-sm -ml-2">Approved</span>
+                <span className="font-thin text-sm ml-1">({paymentApprovedCount})</span>
+              </Button>
+            </div>
+            <div>
+              {/* Button to filter Payment Rejected */}
+              <Button className='w-24 mt-3 capitalize text-center text-sm font-thin hover:bg-red-100 bg-red-100 hover:text-red-700 text-red-700' onClick={() => handlePaymentStatus('Payment Rejected')}>
+                <span className="font-thin text-sm -ml-2">Rejected</span>
+                <span className="font-thin text-sm ml-1">({paymentRejectedCount})</span>
+              </Button>
             </div>
           </div>
           <div className='relative float-right -mt-10 mr-2'>
@@ -590,7 +550,6 @@ export default function DataTable({ config, extra = [] }) {
       <div className="table-container">
         {renderTable()}
       </div>
-      {showHistoryModal && renderHistoryModal()}
       <Drawer
         title="Add Payment"
         open={showAddPaymentModal}
@@ -608,6 +567,11 @@ export default function DataTable({ config, extra = [] }) {
           student={selectedStudent}
         />
       </div>
+      <HistoryModal
+        showHistoryModal={showHistoryModal}
+        historyData={historyData}
+        onClose={() => setShowHistoryModal(false)}
+      />
     </>
   );
 }

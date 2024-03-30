@@ -51,13 +51,7 @@ export default function Payment() {
     },
     {
       title: translate('Due amount'),
-      dataIndex: 'customfields',
-      render: (customfields, record) => {
-        const totalCourseFee = parseFloat(record.total_course_fee) || 0;
-        const paidAmount = parseFloat(record.paid_amount) || 0;
-        const dueAmount = totalCourseFee - paidAmount;
-        return <span>{dueAmount}</span>;
-      },
+      dataIndex: 'due_amount',
     },
     {
       title: translate('Create date'),

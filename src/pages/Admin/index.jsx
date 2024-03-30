@@ -15,6 +15,13 @@ export default function Admin() {
 
   const entityDisplayLabels = ['username'];
 
+  const toTitleCase = (str) => {
+    if (!str) return ''; // Check for undefined or null
+    return str.toLowerCase().replace(/(?:^|\s)\w/g, function (match) {
+      return match.toUpperCase();
+    });
+  };
+
   const readColumns = [
     { title: translate('full_name'), dataIndex: 'fullname' },
     { title: translate('username'), dataIndex: 'username' },
@@ -34,7 +41,12 @@ export default function Admin() {
       dataIndex: '',
       render: (text, record, index) => index + 1,
     },
-    { title: translate('fullname'), dataIndex: 'fullname' },
+    {
+      title: translate('fullname'),
+      dataIndex: 'fullname',
+      key: 'fullname',
+      render: (fullname) => toTitleCase(fullname),
+    },
     { title: translate('username'), dataIndex: 'username' },
     { title: translate('role'), dataIndex: 'role' },
     {

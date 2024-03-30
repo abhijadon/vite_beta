@@ -111,7 +111,7 @@ export default function PreviewCard() {
         <Modal
           width={1000}
           title={`All ${modalType && modalType.charAt(0).toUpperCase() + modalType.slice(1)} Data`}
-          visible={isModalVisible}
+          open={isModalVisible}
           onCancel={handleModalCancel}
           footer={null}
         >

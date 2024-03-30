@@ -192,7 +192,7 @@ export default function EditForm() {
                     <Select
                         showSearch
                         options={[
-                            { value: '1st Installment/ New Admission', label: '1st Installment/ New Admission' },
+                            { value: '1st Installment', label: '1st Installmen' },
                             { value: '2nd Installment', label: '2nd Installment' },
                             { value: '3rd Installment', label: '3rd Installment' },
                             { value: '4th Installment', label: '4th Installment' },
@@ -271,6 +271,18 @@ export default function EditForm() {
                             { value: 'Alumini', label: translate('Alumini') },
                         ]}
                     ></Select>
+                </Form.Item>
+
+                <Form.Item
+                    label={translate('paymentStatus')}
+                    name={['customfields', 'paymentStatus']}
+                    rules={[
+                        {
+                            required: false,
+                        },
+                    ]}
+                >
+                    <Input disabled />
                 </Form.Item>
 
                 <Form.Item
