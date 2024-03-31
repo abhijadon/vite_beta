@@ -220,11 +220,6 @@ export default function DataTable({ config, extra = [] }) {
       icon: <EyeOutlined />,
     },
     {
-      label: translate('Edit'),
-      key: 'edit',
-      icon: <EditOutlined />,
-    },
-    {
       label: translate('Download'),
       key: 'download',
       icon: <FilePdfOutlined />,
@@ -251,10 +246,6 @@ export default function DataTable({ config, extra = [] }) {
   const handleRead = (record) => {
     dispatch(erp.currentItem({ data: record }));
     navigate(`/${entity}/read/${record._id}`);
-  };
-  const handleEdit = (record) => {
-    dispatch(erp.currentAction({ actionType: 'update', data: record }));
-    navigate(`/${entity}/update/${record._id}`);
   };
   const handleDownload = (record) => {
     window.open(`${DOWNLOAD_BASE_URL}${entity}/${entity}-${record._id}.pdf`, '_blank');
@@ -294,9 +285,6 @@ export default function DataTable({ config, extra = [] }) {
               switch (key) {
                 case 'read':
                   handleRead(record);
-                  break;
-                case 'edit':
-                  handleEdit(record);
                   break;
                 case 'download':
                   handleDownload(record);
@@ -399,7 +387,9 @@ export default function DataTable({ config, extra = [] }) {
                   )}
                 </div>
                 <div className='flex items-center gap-1'>
-                  <AddNewItem config={config} key={`${uniqueId()}`} hasCreate={create} />
+                  {entity === 'invoice' && (
+                    <AddNewItem config={config} key={`${uniqueId()}`} hasCreate={create} />
+                  )}
                   <div>
                     <LiaFileDownloadSolid title='Export excel' onClick={handleExportToExcel} className='text-3xl text-blue-500 hover:text-blue-700 cursor-pointer font-thin' />
                   </div>

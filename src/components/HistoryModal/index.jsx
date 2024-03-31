@@ -103,7 +103,7 @@ const HistoryModal = ({ showHistoryModal, historyData, onClose }) => {
                                         <div key={`${dateIndex}_${historyIndex}`} className='flex items-center justify-start cursor-pointer' onClick={() => handleUserClick(user, dateTime)}>
                                             <span className="green-bullet">&#8226;</span>
                                             <span className="fullname capitalize font-thin text-[12px]">{user && user.fullname}</span>
-                                            <span className="timestamp font-thin text-xs ml-10 text-justify">({time})</span>
+                     
                                         </div>
                                     );
                                 })}

@@ -4,7 +4,7 @@ import { request } from '@/request';
 import { ResponsiveContainer, PieChart, Pie, Tooltip, Legend, Cell } from 'recharts';
 import { scaleOrdinal } from 'd3-scale';
 import { schemeCategory10 } from 'd3-scale-chromatic';
-
+import { VscSettings } from "react-icons/vsc";
 const Index = () => {
   const fetchPaymentData = useCallback(() => request.filter({ entity: 'payment' }), []);
 
@@ -34,6 +34,10 @@ const Index = () => {
 
   return (
     <div style={{ height: 400, fontFamily: 'Arial, sans-serif' }}>
+      <div className='flex items-center gap-2 p-1 w-20 rounded-md border box-border hover:bg-slate-200 cursor-pointer -ml-6 -mt-6 font-thin text-sm'>
+        <span><VscSettings /></span>
+        <span className='font-thin text-sm'>Filter</span>
+      </div>
       <ResponsiveContainer>
         <PieChart>
           <Tooltip />
