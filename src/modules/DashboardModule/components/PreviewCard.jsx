@@ -1,14 +1,21 @@
-import React, { useState, useCallback } from 'react';
-import { Card, Progress, Modal } from 'antd';
+import React, { useState } from 'react';
+import { Card, Progress, Modal, Spin } from 'antd';
 import useFetch from '@/hooks/useFetch';
 import { request } from '@/request';
 import { FcExpand } from 'react-icons/fc';
-
-export default function PreviewCard() {
+import { LoadingOutlined } from '@ant-design/icons';
+export default function PreviewCard({ startDate, endDate }) {
   const [modalType, setModalType] = useState(null);
   const [isModalVisible, setIsModalVisible] = useState(false);
-  const fetchPaymentData = useCallback(() => request.summary({ entity: 'payment' }), []);
-  const { data: paymentResult } = useFetch(fetchPaymentData);
+
+  const { data: summaryData, isLoading: dataLoading } = useFetch(() =>
+    request.summary({
+      entity: 'payment', params: {
+        startDate,
+        endDate,
+      }
+    })
+  );
 
   const handleShowMore = (type) => {
     setModalType(type);
@@ -21,7 +28,7 @@ export default function PreviewCard() {
   };
 
   const sortDataDescending = (data) => {
-    return data.slice().sort((a, b) => {
+    return data?.slice().sort((a, b) => {
       const countA = a[0]?.count || 0;
       const countB = b[0]?.count || 0;
       return countB - countA;
@@ -48,7 +55,7 @@ export default function PreviewCard() {
 
   const renderProgressItems = (data) => {
     const sortedData = sortDataDescending(data);
-    return sortedData.map((item, index) => (
+    return sortedData?.map((item, index) => (
       <div key={index}>
         {item[0] && item[0]._id && (
           <>
@@ -72,11 +79,11 @@ export default function PreviewCard() {
   const renderModalContent = () => {
     switch (modalType) {
       case 'university':
-        return renderProgressItems(paymentResult?.universitySpecificData || []);
+        return renderProgressItems(summaryData?.universitySpecificData || []);
       case 'institute':
-        return renderProgressItems(paymentResult?.instituteSpecificData || []);
+        return renderProgressItems(summaryData?.instituteSpecificData || []);
       case 'status':
-        return renderProgressItems(paymentResult?.statusSpecificData || []);
+        return renderProgressItems(summaryData?.statusSpecificData || []);
       default:
         return null;
     }
@@ -87,31 +94,48 @@ export default function PreviewCard() {
       <div className='grid grid-cols-3 gap-2'>
         <div>
           <div className='mb-8 text-base font-thin'>Institute Specific Data</div>
-          {renderProgressItems(paymentResult?.instituteSpecificData || [])}
-
-          <div className='flex justify-center items-center'>
-            <FcExpand title='Show More' className='text-2xl cursor-pointer' onClick={() => handleShowMore('institute')} />
-          </div>
+          {dataLoading ? (
+            <Spin indicator={<LoadingOutlined style={{ fontSize: 24 }} spin />} />
+          ) : (
+            <>
+              {renderProgressItems(summaryData?.instituteSpecificData || [])}
+              <div className='flex justify-center items-center'>
+                <FcExpand title='Show More' className='text-2xl cursor-pointer' onClick={() => handleShowMore('institute')} />
+              </div>
+            </>
+          )}
         </div>
         <div>
           <div className='mb-8 text-base font-thin'>University Specific Data</div>
-          {renderProgressItems(paymentResult?.universitySpecificData?.slice(0, 3) || [])}
-          <div className='flex justify-center items-center'>
-            <FcExpand title='Show More' className='text-2xl cursor-pointer' onClick={() => handleShowMore('university')} />
-          </div>
+          {dataLoading ? (
+            <Spin indicator={<LoadingOutlined style={{ fontSize: 24 }} spin />} />
+          ) : (
+            <>
+              {renderProgressItems(summaryData?.universitySpecificData?.slice(0, 3) || [])}
+              <div className='flex justify-center items-center'>
+                <FcExpand title='Show More' className='text-2xl cursor-pointer' onClick={() => handleShowMore('university')} />
+              </div>
+            </>
+          )}
         </div>
         <div>
           <div className='mb-8 text-base font-thin'>Status Specific Data</div>
-          {renderProgressItems(paymentResult?.statusSpecificData?.slice(0, 3) || [])}
-          <div className='flex justify-center items-center'>
-            <FcExpand title='Show More' className='text-2xl cursor-pointer ' onClick={() => handleShowMore('status')} />
-          </div>
+          {dataLoading ? (
+            <Spin indicator={<LoadingOutlined style={{ fontSize: 24 }} spin />} />
+          ) : (
+            <>
+              {renderProgressItems(summaryData?.statusSpecificData?.slice(0, 3) || [])}
+              <div className='flex justify-center items-center'>
+                <FcExpand title='Show More' className='text-2xl cursor-pointer ' onClick={() => handleShowMore('status')} />
+              </div>
+            </>
+          )}
         </div>
 
         <Modal
           width={1000}
           title={`All ${modalType && modalType.charAt(0).toUpperCase() + modalType.slice(1)} Data`}
-          open={isModalVisible}
+          visible={isModalVisible}
           onCancel={handleModalCancel}
           footer={null}
         >

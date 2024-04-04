@@ -236,7 +236,7 @@ const formData = [
                   { value: "Hospital Administration & Healthcare Management", label: "Hospital Administration & Healthcare Management" },
                 ],
               },
-               {
+              {
                 value: "MSC",
                 label: "MSC",
                 specializations: [
@@ -401,16 +401,16 @@ const formData = [
             name: ['contact', 'email'],
             id: 'EmailID',
             type: 'email',
-
+            required: 'require'
           },
           {
-            key: 'tel',
+           key: 'tel',
             label: 'phone',
             name: ['contact', 'phone'],
             place: 'Enter Phone Number',
             id: 'phone',
             type: 'tel',
-
+            required: 'require'
           },
           {
             key: 'text',
@@ -531,9 +531,10 @@ const formData = [
 
             options: [
               { value: 'New', label: 'New' },
-              { value: 'Cancel', label: 'Cancel' },
+              { value: 'Approved', label: 'Approved' },
               { value: 'Enrolled', label: 'Enrolled' },
               { value: 'Alumini', label: 'Alumini' },
+              { value: 'Cancel', label: 'Cancel' },
             ],
           },
           {
@@ -793,7 +794,7 @@ const formData = [
                   { value: "Hospital Administration & Healthcare Management", label: "Hospital Administration & Healthcare Management" },
                 ],
               },
-               {
+              {
                 value: "MSC",
                 label: "MSC",
                 specializations: [
@@ -958,15 +959,16 @@ const formData = [
             name: ['contact', 'email'],
             id: 'EmailID',
             type: 'email',
-
+            required: 'require'
           },
           {
-            key: 'tel',
+           key: 'tel',
             label: 'phone',
             name: ['contact', 'phone'],
             place: 'Enter Phone Number',
             id: 'phone',
             type: 'tel',
+            required: 'require'
 
           },
           {
@@ -1088,9 +1090,10 @@ const formData = [
 
             options: [
               { value: 'New', label: 'New' },
-              { value: 'Cancel', label: 'Cancel' },
+              { value: 'Approved', label: 'Approved' },
               { value: 'Enrolled', label: 'Enrolled' },
               { value: 'Alumini', label: 'Alumini' },
+              { value: 'Cancel', label: 'Cancel' },
             ],
           },
           {
@@ -1350,7 +1353,7 @@ const formData = [
                   { value: "Hospital Administration & Healthcare Management", label: "Hospital Administration & Healthcare Management" },
                 ],
               },
-               {
+              {
                 value: "MSC",
                 label: "MSC",
                 specializations: [
@@ -1515,15 +1518,16 @@ const formData = [
             name: ['contact', 'email'],
             id: 'EmailID',
             type: 'email',
-
+            required: 'require'
           },
           {
-            key: 'tel',
+           key: 'tel',
             label: 'phone',
             name: ['contact', 'phone'],
             place: 'Enter Phone Number',
             id: 'phone',
             type: 'tel',
+            required: 'require'
 
           },
           {
@@ -1645,9 +1649,10 @@ const formData = [
 
             options: [
               { value: 'New', label: 'New' },
-              { value: 'Cancel', label: 'Cancel' },
+              { value: 'Approved', label: 'Approved' },
               { value: 'Enrolled', label: 'Enrolled' },
               { value: 'Alumini', label: 'Alumini' },
+              { value: 'Cancel', label: 'Cancel' },
             ],
           },
           {
@@ -2071,15 +2076,16 @@ const formData = [
             name: ['contact', 'email'],
             id: 'EmailID',
             type: 'email',
-
+            required: 'require'
           },
           {
-            key: 'tel',
+           key: 'tel',
             label: 'phone',
             name: ['contact', 'phone'],
             place: 'Enter Phone Number',
             id: 'phone',
             type: 'tel',
+            required: 'require'
 
           },
           {
@@ -2201,9 +2207,10 @@ const formData = [
 
             options: [
               { value: 'New', label: 'New' },
-              { value: 'Cancel', label: 'Cancel' },
+              { value: 'Approved', label: 'Approved' },
               { value: 'Enrolled', label: 'Enrolled' },
               { value: 'Alumini', label: 'Alumini' },
+              { value: 'Cancel', label: 'Cancel' },
             ],
           },
           {
@@ -2463,7 +2470,7 @@ const formData = [
                   { value: "Hospital Administration & Healthcare Management", label: "Hospital Administration & Healthcare Management" },
                 ],
               },
-               {
+              {
                 value: "MSC",
                 label: "MSC",
                 specializations: [
@@ -2628,15 +2635,16 @@ const formData = [
             name: ['contact', 'email'],
             id: 'EmailID',
             type: 'email',
-
+            required: 'require'
           },
           {
-            key: 'tel',
+           key: 'tel',
             label: 'phone',
             name: ['contact', 'phone'],
             place: 'Enter Phone Number',
             id: 'phone',
             type: 'tel',
+            required: 'require'
 
           },
           {
@@ -2758,9 +2766,10 @@ const formData = [
 
             options: [
               { value: 'New', label: 'New' },
-              { value: 'Cancel', label: 'Cancel' },
+              { value: 'Approved', label: 'Approved' },
               { value: 'Enrolled', label: 'Enrolled' },
               { value: 'Alumini', label: 'Alumini' },
+              { value: 'Cancel', label: 'Cancel' },
             ],
           },
           {
@@ -3020,7 +3029,7 @@ const formData = [
                   { value: "Hospital Administration & Healthcare Management", label: "Hospital Administration & Healthcare Management" },
                 ],
               },
-               {
+              {
                 value: "MSC",
                 label: "MSC",
                 specializations: [
@@ -3185,15 +3194,16 @@ const formData = [
             name: ['contact', 'email'],
             id: 'EmailID',
             type: 'email',
-
+            required: 'require'
           },
           {
-            key: 'tel',
+           key: 'tel',
             label: 'phone',
             name: ['contact', 'phone'],
             place: 'Enter Phone Number',
             id: 'phone',
             type: 'tel',
+            required: 'require'
 
           },
           {
@@ -3315,9 +3325,10 @@ const formData = [
 
             options: [
               { value: 'New', label: 'New' },
-              { value: 'Cancel', label: 'Cancel' },
+              { value: 'Approved', label: 'Approved' },
               { value: 'Enrolled', label: 'Enrolled' },
               { value: 'Alumini', label: 'Alumini' },
+              { value: 'Cancel', label: 'Cancel' },
             ],
           },
           {
@@ -3577,7 +3588,7 @@ const formData = [
                   { value: "Hospital Administration & Healthcare Management", label: "Hospital Administration & Healthcare Management" },
                 ],
               },
-               {
+              {
                 value: "MSC",
                 label: "MSC",
                 specializations: [
@@ -3742,15 +3753,16 @@ const formData = [
             name: ['contact', 'email'],
             id: 'EmailID',
             type: 'email',
-
+            required: 'require'
           },
           {
-            key: 'tel',
+           key: 'tel',
             label: 'phone',
             name: ['contact', 'phone'],
             place: 'Enter Phone Number',
             id: 'phone',
             type: 'tel',
+            required: 'require'
 
           },
           {
@@ -3872,9 +3884,10 @@ const formData = [
 
             options: [
               { value: 'New', label: 'New' },
-              { value: 'Cancel', label: 'Cancel' },
+              { value: 'Approved', label: 'Approved' },
               { value: 'Enrolled', label: 'Enrolled' },
               { value: 'Alumini', label: 'Alumini' },
+              { value: 'Cancel', label: 'Cancel' },
             ],
           },
           {
@@ -4135,7 +4148,7 @@ const formData = [
                   { value: "Hospital Administration & Healthcare Management", label: "Hospital Administration & Healthcare Management" },
                 ],
               },
-               {
+              {
                 value: "MSC",
                 label: "MSC",
                 specializations: [
@@ -4300,15 +4313,16 @@ const formData = [
             name: ['contact', 'email'],
             id: 'EmailID',
             type: 'email',
-
+            required: 'require'
           },
           {
-            key: 'tel',
+           key: 'tel',
             label: 'phone',
             name: ['contact', 'phone'],
             place: 'Enter Phone Number',
             id: 'phone',
             type: 'tel',
+            required: 'require'
 
           },
           {
@@ -4430,9 +4444,10 @@ const formData = [
 
             options: [
               { value: 'New', label: 'New' },
-              { value: 'Cancel', label: 'Cancel' },
+              { value: 'Approved', label: 'Approved' },
               { value: 'Enrolled', label: 'Enrolled' },
               { value: 'Alumini', label: 'Alumini' },
+              { value: 'Cancel', label: 'Cancel' },
             ],
           },
           {
@@ -4692,7 +4707,7 @@ const formData = [
                   { value: "Hospital Administration & Healthcare Management", label: "Hospital Administration & Healthcare Management" },
                 ],
               },
-               {
+              {
                 value: "MSC",
                 label: "MSC",
                 specializations: [
@@ -4857,15 +4872,16 @@ const formData = [
             name: ['contact', 'email'],
             id: 'EmailID',
             type: 'email',
-
+            required: 'require'
           },
           {
-            key: 'tel',
+           key: 'tel',
             label: 'phone',
             name: ['contact', 'phone'],
             place: 'Enter Phone Number',
             id: 'phone',
             type: 'tel',
+            required: 'require'
 
           },
           {
@@ -4987,9 +5003,10 @@ const formData = [
 
             options: [
               { value: 'New', label: 'New' },
-              { value: 'Cancel', label: 'Cancel' },
+              { value: 'Approved', label: 'Approved' },
               { value: 'Enrolled', label: 'Enrolled' },
               { value: 'Alumini', label: 'Alumini' },
+              { value: 'Cancel', label: 'Cancel' },
             ],
           },
           {
@@ -5249,7 +5266,7 @@ const formData = [
                   { value: "Hospital Administration & Healthcare Management", label: "Hospital Administration & Healthcare Management" },
                 ],
               },
-               {
+              {
                 value: "MSC",
                 label: "MSC",
                 specializations: [
@@ -5414,15 +5431,16 @@ const formData = [
             name: ['contact', 'email'],
             id: 'EmailID',
             type: 'email',
-
+            required: 'require'
           },
           {
-            key: 'tel',
+           key: 'tel',
             label: 'phone',
             name: ['contact', 'phone'],
             place: 'Enter Phone Number',
             id: 'phone',
             type: 'tel',
+            required: 'require'
 
           },
           {
@@ -5544,9 +5562,10 @@ const formData = [
 
             options: [
               { value: 'New', label: 'New' },
-              { value: 'Cancel', label: 'Cancel' },
+              { value: 'Approved', label: 'Approved' },
               { value: 'Enrolled', label: 'Enrolled' },
               { value: 'Alumini', label: 'Alumini' },
+              { value: 'Cancel', label: 'Cancel' },
             ],
           },
           {
@@ -5806,7 +5825,7 @@ const formData = [
                   { value: "Hospital Administration & Healthcare Management", label: "Hospital Administration & Healthcare Management" },
                 ],
               },
-               {
+              {
                 value: "MSC",
                 label: "MSC",
                 specializations: [
@@ -5971,15 +5990,16 @@ const formData = [
             name: ['contact', 'email'],
             id: 'EmailID',
             type: 'email',
-
+            required: 'require'
           },
           {
-            key: 'tel',
+           key: 'tel',
             label: 'phone',
             name: ['contact', 'phone'],
             place: 'Enter Phone Number',
             id: 'phone',
             type: 'tel',
+            required: 'require'
 
           },
           {
@@ -6101,9 +6121,10 @@ const formData = [
 
             options: [
               { value: 'New', label: 'New' },
-              { value: 'Cancel', label: 'Cancel' },
+              { value: 'Approved', label: 'Approved' },
               { value: 'Enrolled', label: 'Enrolled' },
               { value: 'Alumini', label: 'Alumini' },
+              { value: 'Cancel', label: 'Cancel' },
             ],
           },
           {
@@ -6363,7 +6384,7 @@ const formData = [
                   { value: "Hospital Administration & Healthcare Management", label: "Hospital Administration & Healthcare Management" },
                 ],
               },
-               {
+              {
                 value: "MSC",
                 label: "MSC",
                 specializations: [
@@ -6528,15 +6549,16 @@ const formData = [
             name: ['contact', 'email'],
             id: 'EmailID',
             type: 'email',
-
+            required: 'require'
           },
           {
-            key: 'tel',
+           key: 'tel',
             label: 'phone',
             name: ['contact', 'phone'],
             place: 'Enter Phone Number',
             id: 'phone',
             type: 'tel',
+            required: 'require'
 
           },
           {
@@ -6658,9 +6680,10 @@ const formData = [
 
             options: [
               { value: 'New', label: 'New' },
-              { value: 'Cancel', label: 'Cancel' },
+              { value: 'Approved', label: 'Approved' },
               { value: 'Enrolled', label: 'Enrolled' },
               { value: 'Alumini', label: 'Alumini' },
+              { value: 'Cancel', label: 'Cancel' },
             ],
           },
           {
@@ -6921,7 +6944,7 @@ const formData = [
                   { value: "Hospital Administration & Healthcare Management", label: "Hospital Administration & Healthcare Management" },
                 ],
               },
-               {
+              {
                 value: "MSC",
                 label: "MSC",
                 specializations: [
@@ -7086,15 +7109,16 @@ const formData = [
             name: ['contact', 'email'],
             id: 'EmailID',
             type: 'email',
-
+            required: 'require'
           },
           {
-            key: 'tel',
+           key: 'tel',
             label: 'phone',
             name: ['contact', 'phone'],
             place: 'Enter Phone Number',
             id: 'phone',
             type: 'tel',
+            required: 'require'
 
           },
           {
@@ -7216,9 +7240,10 @@ const formData = [
 
             options: [
               { value: 'New', label: 'New' },
-              { value: 'Cancel', label: 'Cancel' },
+              { value: 'Approved', label: 'Approved' },
               { value: 'Enrolled', label: 'Enrolled' },
               { value: 'Alumini', label: 'Alumini' },
+              { value: 'Cancel', label: 'Cancel' },
             ],
           },
           {
@@ -7478,7 +7503,7 @@ const formData = [
                   { value: "Hospital Administration & Healthcare Management", label: "Hospital Administration & Healthcare Management" },
                 ],
               },
-               {
+              {
                 value: "MSC",
                 label: "MSC",
                 specializations: [
@@ -7643,15 +7668,16 @@ const formData = [
             name: ['contact', 'email'],
             id: 'EmailID',
             type: 'email',
-
+            required: 'require'
           },
           {
-            key: 'tel',
+           key: 'tel',
             label: 'phone',
             name: ['contact', 'phone'],
             place: 'Enter Phone Number',
             id: 'phone',
             type: 'tel',
+            required: 'require'
 
           },
           {
@@ -7773,9 +7799,10 @@ const formData = [
 
             options: [
               { value: 'New', label: 'New' },
-              { value: 'Cancel', label: 'Cancel' },
+              { value: 'Approved', label: 'Approved' },
               { value: 'Enrolled', label: 'Enrolled' },
               { value: 'Alumini', label: 'Alumini' },
+              { value: 'Cancel', label: 'Cancel' },
             ],
           },
           {
@@ -8036,7 +8063,7 @@ const formData = [
                   { value: "Hospital Administration & Healthcare Management", label: "Hospital Administration & Healthcare Management" },
                 ],
               },
-               {
+              {
                 value: "MSC",
                 label: "MSC",
                 specializations: [
@@ -8201,15 +8228,16 @@ const formData = [
             name: ['contact', 'email'],
             id: 'EmailID',
             type: 'email',
-
+            required: 'require'
           },
           {
-            key: 'tel',
+           key: 'tel',
             label: 'phone',
             name: ['contact', 'phone'],
             place: 'Enter Phone Number',
             id: 'phone',
             type: 'tel',
+            required: 'require'
 
           },
           {
@@ -8331,9 +8359,10 @@ const formData = [
 
             options: [
               { value: 'New', label: 'New' },
-              { value: 'Cancel', label: 'Cancel' },
+              { value: 'Approved', label: 'Approved' },
               { value: 'Enrolled', label: 'Enrolled' },
               { value: 'Alumini', label: 'Alumini' },
+              { value: 'Cancel', label: 'Cancel' },
             ],
           },
           {
@@ -8593,7 +8622,7 @@ const formData = [
                   { value: "Hospital Administration & Healthcare Management", label: "Hospital Administration & Healthcare Management" },
                 ],
               },
-               {
+              {
                 value: "MSC",
                 label: "MSC",
                 specializations: [
@@ -8758,15 +8787,16 @@ const formData = [
             name: ['contact', 'email'],
             id: 'EmailID',
             type: 'email',
-
+            required: 'require'
           },
           {
-            key: 'tel',
+           key: 'tel',
             label: 'phone',
             name: ['contact', 'phone'],
             place: 'Enter Phone Number',
             id: 'phone',
             type: 'tel',
+            required: 'require'
 
           },
           {
@@ -8888,9 +8918,10 @@ const formData = [
 
             options: [
               { value: 'New', label: 'New' },
-              { value: 'Cancel', label: 'Cancel' },
+              { value: 'Approved', label: 'Approved' },
               { value: 'Enrolled', label: 'Enrolled' },
               { value: 'Alumini', label: 'Alumini' },
+              { value: 'Cancel', label: 'Cancel' },
             ],
           },
           {
@@ -9159,7 +9190,7 @@ const formData = [
                   { value: "Hospital Administration & Healthcare Management", label: "Hospital Administration & Healthcare Management" },
                 ],
               },
-               {
+              {
                 value: "MSC",
                 label: "MSC",
                 specializations: [
@@ -9324,15 +9355,16 @@ const formData = [
             name: ['contact', 'email'],
             id: 'EmailID',
             type: 'email',
-
+            required: 'require'
           },
           {
-            key: 'tel',
+           key: 'tel',
             label: 'phone',
             name: ['contact', 'phone'],
             place: 'Enter Phone Number',
             id: 'phone',
             type: 'tel',
+            required: 'require'
 
           },
           {
@@ -9454,9 +9486,10 @@ const formData = [
 
             options: [
               { value: 'New', label: 'New' },
-              { value: 'Cancel', label: 'Cancel' },
+              { value: 'Approved', label: 'Approved' },
               { value: 'Enrolled', label: 'Enrolled' },
               { value: 'Alumini', label: 'Alumini' },
+              { value: 'Cancel', label: 'Cancel' },
             ],
           },
           {
@@ -9716,7 +9749,7 @@ const formData = [
                   { value: "Hospital Administration & Healthcare Management", label: "Hospital Administration & Healthcare Management" },
                 ],
               },
-               {
+              {
                 value: "MSC",
                 label: "MSC",
                 specializations: [
@@ -9881,15 +9914,16 @@ const formData = [
             name: ['contact', 'email'],
             id: 'EmailID',
             type: 'email',
-
+            required: 'require'
           },
           {
-            key: 'tel',
+           key: 'tel',
             label: 'phone',
             name: ['contact', 'phone'],
             place: 'Enter Phone Number',
             id: 'phone',
             type: 'tel',
+            required: 'require'
 
           },
           {
@@ -10011,9 +10045,10 @@ const formData = [
 
             options: [
               { value: 'New', label: 'New' },
-              { value: 'Cancel', label: 'Cancel' },
+              { value: 'Approved', label: 'Approved' },
               { value: 'Enrolled', label: 'Enrolled' },
               { value: 'Alumini', label: 'Alumini' },
+              { value: 'Cancel', label: 'Cancel' },
             ],
           },
           {
@@ -10273,7 +10308,7 @@ const formData = [
                   { value: "Hospital Administration & Healthcare Management", label: "Hospital Administration & Healthcare Management" },
                 ],
               },
-               {
+              {
                 value: "MSC",
                 label: "MSC",
                 specializations: [
@@ -10438,15 +10473,16 @@ const formData = [
             name: ['contact', 'email'],
             id: 'EmailID',
             type: 'email',
-
+            required: 'require'
           },
           {
-            key: 'tel',
+           key: 'tel',
             label: 'phone',
             name: ['contact', 'phone'],
             place: 'Enter Phone Number',
             id: 'phone',
             type: 'tel',
+            required: 'require'
 
           },
           {
@@ -10568,9 +10604,10 @@ const formData = [
 
             options: [
               { value: 'New', label: 'New' },
-              { value: 'Cancel', label: 'Cancel' },
+              { value: 'Approved', label: 'Approved' },
               { value: 'Enrolled', label: 'Enrolled' },
               { value: 'Alumini', label: 'Alumini' },
+              { value: 'Cancel', label: 'Cancel' },
             ],
           },
           {
@@ -10830,7 +10867,7 @@ const formData = [
                   { value: "Hospital Administration & Healthcare Management", label: "Hospital Administration & Healthcare Management" },
                 ],
               },
-               {
+              {
                 value: "MSC",
                 label: "MSC",
                 specializations: [
@@ -10995,15 +11032,16 @@ const formData = [
             name: ['contact', 'email'],
             id: 'EmailID',
             type: 'email',
-
+            required: 'require'
           },
           {
-            key: 'tel',
+           key: 'tel',
             label: 'phone',
             name: ['contact', 'phone'],
             place: 'Enter Phone Number',
             id: 'phone',
             type: 'tel',
+            required: 'require'
 
           },
           {
@@ -11125,9 +11163,10 @@ const formData = [
 
             options: [
               { value: 'New', label: 'New' },
-              { value: 'Cancel', label: 'Cancel' },
+              { value: 'Approved', label: 'Approved' },
               { value: 'Enrolled', label: 'Enrolled' },
               { value: 'Alumini', label: 'Alumini' },
+              { value: 'Cancel', label: 'Cancel' },
             ],
           },
           {
@@ -11387,7 +11426,7 @@ const formData = [
                   { value: "Hospital Administration & Healthcare Management", label: "Hospital Administration & Healthcare Management" },
                 ],
               },
-               {
+              {
                 value: "MSC",
                 label: "MSC",
                 specializations: [
@@ -11552,15 +11591,16 @@ const formData = [
             name: ['contact', 'email'],
             id: 'EmailID',
             type: 'email',
-
+            required: 'require'
           },
           {
-            key: 'tel',
+           key: 'tel',
             label: 'phone',
             name: ['contact', 'phone'],
             place: 'Enter Phone Number',
             id: 'phone',
             type: 'tel',
+            required: 'require'
 
           },
           {
@@ -11682,9 +11722,10 @@ const formData = [
 
             options: [
               { value: 'New', label: 'New' },
-              { value: 'Cancel', label: 'Cancel' },
+              { value: 'Approved', label: 'Approved' },
               { value: 'Enrolled', label: 'Enrolled' },
               { value: 'Alumini', label: 'Alumini' },
+              { value: 'Cancel', label: 'Cancel' },
             ],
           },
           {
@@ -11944,7 +11985,7 @@ const formData = [
                   { value: "Hospital Administration & Healthcare Management", label: "Hospital Administration & Healthcare Management" },
                 ],
               },
-               {
+              {
                 value: "MSC",
                 label: "MSC",
                 specializations: [
@@ -12109,15 +12150,16 @@ const formData = [
             name: ['contact', 'email'],
             id: 'EmailID',
             type: 'email',
-
+            required: 'require'
           },
           {
-            key: 'tel',
+           key: 'tel',
             label: 'phone',
             name: ['contact', 'phone'],
             place: 'Enter Phone Number',
             id: 'phone',
             type: 'tel',
+            required: 'require'
 
           },
           {
@@ -12239,9 +12281,10 @@ const formData = [
 
             options: [
               { value: 'New', label: 'New' },
-              { value: 'Cancel', label: 'Cancel' },
+              { value: 'Approved', label: 'Approved' },
               { value: 'Enrolled', label: 'Enrolled' },
               { value: 'Alumini', label: 'Alumini' },
+              { value: 'Cancel', label: 'Cancel' },
             ],
           },
           {
@@ -12501,7 +12544,7 @@ const formData = [
                   { value: "Hospital Administration & Healthcare Management", label: "Hospital Administration & Healthcare Management" },
                 ],
               },
-               {
+              {
                 value: "MSC",
                 label: "MSC",
                 specializations: [
@@ -12666,15 +12709,16 @@ const formData = [
             name: ['contact', 'email'],
             id: 'EmailID',
             type: 'email',
-
+            required: 'require'
           },
           {
-            key: 'tel',
+           key: 'tel',
             label: 'phone',
             name: ['contact', 'phone'],
             place: 'Enter Phone Number',
             id: 'phone',
             type: 'tel',
+            required: 'require'
 
           },
           {
@@ -12796,9 +12840,10 @@ const formData = [
 
             options: [
               { value: 'New', label: 'New' },
-              { value: 'Cancel', label: 'Cancel' },
+              { value: 'Approved', label: 'Approved' },
               { value: 'Enrolled', label: 'Enrolled' },
               { value: 'Alumini', label: 'Alumini' },
+              { value: 'Cancel', label: 'Cancel' },
             ],
           },
           {
@@ -13058,7 +13103,7 @@ const formData = [
                   { value: "Hospital Administration & Healthcare Management", label: "Hospital Administration & Healthcare Management" },
                 ],
               },
-               {
+              {
                 value: "MSC",
                 label: "MSC",
                 specializations: [
@@ -13223,15 +13268,16 @@ const formData = [
             name: ['contact', 'email'],
             id: 'EmailID',
             type: 'email',
-
+            required: 'require'
           },
           {
-            key: 'tel',
+           key: 'tel',
             label: 'phone',
             name: ['contact', 'phone'],
             place: 'Enter Phone Number',
             id: 'phone',
             type: 'tel',
+            required: 'require'
 
           },
           {
@@ -13353,9 +13399,10 @@ const formData = [
 
             options: [
               { value: 'New', label: 'New' },
-              { value: 'Cancel', label: 'Cancel' },
+              { value: 'Approved', label: 'Approved' },
               { value: 'Enrolled', label: 'Enrolled' },
               { value: 'Alumini', label: 'Alumini' },
+              { value: 'Cancel', label: 'Cancel' },
             ],
           },
           {
@@ -13616,7 +13663,7 @@ const formData = [
                   { value: "Hospital Administration & Healthcare Management", label: "Hospital Administration & Healthcare Management" },
                 ],
               },
-               {
+              {
                 value: "MSC",
                 label: "MSC",
                 specializations: [
@@ -13781,15 +13828,16 @@ const formData = [
             name: ['contact', 'email'],
             id: 'EmailID',
             type: 'email',
-
+            required: 'require'
           },
           {
-            key: 'tel',
+           key: 'tel',
             label: 'phone',
             name: ['contact', 'phone'],
             place: 'Enter Phone Number',
             id: 'phone',
             type: 'tel',
+            required: 'require'
 
           },
           {
@@ -13911,9 +13959,10 @@ const formData = [
 
             options: [
               { value: 'New', label: 'New' },
-              { value: 'Cancel', label: 'Cancel' },
+              { value: 'Approved', label: 'Approved' },
               { value: 'Enrolled', label: 'Enrolled' },
               { value: 'Alumini', label: 'Alumini' },
+              { value: 'Cancel', label: 'Cancel' },
             ],
           },
           {
@@ -14173,7 +14222,7 @@ const formData = [
                   { value: "Hospital Administration & Healthcare Management", label: "Hospital Administration & Healthcare Management" },
                 ],
               },
-               {
+              {
                 value: "MSC",
                 label: "MSC",
                 specializations: [
@@ -14338,15 +14387,16 @@ const formData = [
             name: ['contact', 'email'],
             id: 'EmailID',
             type: 'email',
-
+            required: 'require'
           },
           {
-            key: 'tel',
+           key: 'tel',
             label: 'phone',
             name: ['contact', 'phone'],
             place: 'Enter Phone Number',
             id: 'phone',
             type: 'tel',
+            required: 'require'
 
           },
           {
@@ -14468,9 +14518,10 @@ const formData = [
 
             options: [
               { value: 'New', label: 'New' },
-              { value: 'Cancel', label: 'Cancel' },
+              { value: 'Approved', label: 'Approved' },
               { value: 'Enrolled', label: 'Enrolled' },
               { value: 'Alumini', label: 'Alumini' },
+              { value: 'Cancel', label: 'Cancel' },
             ],
           },
           {
@@ -14730,7 +14781,7 @@ const formData = [
                   { value: "Hospital Administration & Healthcare Management", label: "Hospital Administration & Healthcare Management" },
                 ],
               },
-               {
+              {
                 value: "MSC",
                 label: "MSC",
                 specializations: [
@@ -14895,15 +14946,16 @@ const formData = [
             name: ['contact', 'email'],
             id: 'EmailID',
             type: 'email',
-
+            required: 'require'
           },
           {
-            key: 'tel',
+           key: 'tel',
             label: 'phone',
             name: ['contact', 'phone'],
             place: 'Enter Phone Number',
             id: 'phone',
             type: 'tel',
+            required: 'require'
 
           },
           {
@@ -15025,9 +15077,10 @@ const formData = [
 
             options: [
               { value: 'New', label: 'New' },
-              { value: 'Cancel', label: 'Cancel' },
+              { value: 'Approved', label: 'Approved' },
               { value: 'Enrolled', label: 'Enrolled' },
               { value: 'Alumini', label: 'Alumini' },
+              { value: 'Cancel', label: 'Cancel' },
             ],
           },
           {
@@ -15287,7 +15340,7 @@ const formData = [
                   { value: "Hospital Administration & Healthcare Management", label: "Hospital Administration & Healthcare Management" },
                 ],
               },
-               {
+              {
                 value: "MSC",
                 label: "MSC",
                 specializations: [
@@ -15452,15 +15505,16 @@ const formData = [
             name: ['contact', 'email'],
             id: 'EmailID',
             type: 'email',
-
+            required: 'require'
           },
           {
-            key: 'tel',
+           key: 'tel',
             label: 'phone',
             name: ['contact', 'phone'],
             place: 'Enter Phone Number',
             id: 'phone',
             type: 'tel',
+            required: 'require'
 
           },
           {
@@ -15582,9 +15636,10 @@ const formData = [
 
             options: [
               { value: 'New', label: 'New' },
-              { value: 'Cancel', label: 'Cancel' },
+              { value: 'Approved', label: 'Approved' },
               { value: 'Enrolled', label: 'Enrolled' },
               { value: 'Alumini', label: 'Alumini' },
+              { value: 'Cancel', label: 'Cancel' },
             ],
           },
           {
@@ -15845,7 +15900,7 @@ const formData = [
                   { value: "Hospital Administration & Healthcare Management", label: "Hospital Administration & Healthcare Management" },
                 ],
               },
-               {
+              {
                 value: "MSC",
                 label: "MSC",
                 specializations: [
@@ -16010,15 +16065,16 @@ const formData = [
             name: ['contact', 'email'],
             id: 'EmailID',
             type: 'email',
-
+            required: 'require'
           },
           {
-            key: 'tel',
+           key: 'tel',
             label: 'phone',
             name: ['contact', 'phone'],
             place: 'Enter Phone Number',
             id: 'phone',
             type: 'tel',
+            required: 'require'
 
           },
           {
@@ -16140,9 +16196,10 @@ const formData = [
 
             options: [
               { value: 'New', label: 'New' },
-              { value: 'Cancel', label: 'Cancel' },
+              { value: 'Approved', label: 'Approved' },
               { value: 'Enrolled', label: 'Enrolled' },
               { value: 'Alumini', label: 'Alumini' },
+              { value: 'Cancel', label: 'Cancel' },
             ],
           },
           {
@@ -16402,7 +16459,7 @@ const formData = [
                   { value: "Hospital Administration & Healthcare Management", label: "Hospital Administration & Healthcare Management" },
                 ],
               },
-               {
+              {
                 value: "MSC",
                 label: "MSC",
                 specializations: [
@@ -16567,15 +16624,16 @@ const formData = [
             name: ['contact', 'email'],
             id: 'EmailID',
             type: 'email',
-
+            required: 'require'
           },
           {
-            key: 'tel',
+           key: 'tel',
             label: 'phone',
             name: ['contact', 'phone'],
             place: 'Enter Phone Number',
             id: 'phone',
             type: 'tel',
+            required: 'require'
 
           },
           {
@@ -16697,9 +16755,10 @@ const formData = [
 
             options: [
               { value: 'New', label: 'New' },
-              { value: 'Cancel', label: 'Cancel' },
+              { value: 'Approved', label: 'Approved' },
               { value: 'Enrolled', label: 'Enrolled' },
               { value: 'Alumini', label: 'Alumini' },
+              { value: 'Cancel', label: 'Cancel' },
             ],
           },
           {
@@ -16960,7 +17019,7 @@ const formData = [
                   { value: "Hospital Administration & Healthcare Management", label: "Hospital Administration & Healthcare Management" },
                 ],
               },
-               {
+              {
                 value: "MSC",
                 label: "MSC",
                 specializations: [
@@ -17125,15 +17184,16 @@ const formData = [
             name: ['contact', 'email'],
             id: 'EmailID',
             type: 'email',
-
+            required: 'require'
           },
           {
-            key: 'tel',
+           key: 'tel',
             label: 'phone',
             name: ['contact', 'phone'],
             place: 'Enter Phone Number',
             id: 'phone',
             type: 'tel',
+            required: 'require'
 
           },
           {
@@ -17255,9 +17315,10 @@ const formData = [
 
             options: [
               { value: 'New', label: 'New' },
-              { value: 'Cancel', label: 'Cancel' },
+              { value: 'Approved', label: 'Approved' },
               { value: 'Enrolled', label: 'Enrolled' },
               { value: 'Alumini', label: 'Alumini' },
+              { value: 'Cancel', label: 'Cancel' },
             ],
           },
           {
@@ -17517,7 +17578,7 @@ const formData = [
                   { value: "Hospital Administration & Healthcare Management", label: "Hospital Administration & Healthcare Management" },
                 ],
               },
-               {
+              {
                 value: "MSC",
                 label: "MSC",
                 specializations: [
@@ -17682,15 +17743,16 @@ const formData = [
             name: ['contact', 'email'],
             id: 'EmailID',
             type: 'email',
-
+            required: 'require'
           },
           {
-            key: 'tel',
+           key: 'tel',
             label: 'phone',
             name: ['contact', 'phone'],
             place: 'Enter Phone Number',
             id: 'phone',
             type: 'tel',
+            required: 'require'
 
           },
           {
@@ -17812,9 +17874,10 @@ const formData = [
 
             options: [
               { value: 'New', label: 'New' },
-              { value: 'Cancel', label: 'Cancel' },
+              { value: 'Approved', label: 'Approved' },
               { value: 'Enrolled', label: 'Enrolled' },
               { value: 'Alumini', label: 'Alumini' },
+              { value: 'Cancel', label: 'Cancel' },
             ],
           },
           {

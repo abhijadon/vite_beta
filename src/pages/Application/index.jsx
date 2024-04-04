@@ -129,11 +129,11 @@ export default function Lead() {
       dataIndex: ['customfields', 'paymentStatus'],
       render: (paymentStatus) => {
         let color =
-          paymentStatus === 'Payment Approved'
+          paymentStatus === 'payment approved'
             ? 'green'
-            : paymentStatus === 'Payment Received'
+            : paymentStatus === 'payment received'
               ? 'cyan'
-              : paymentStatus === 'Payment Rejected'
+              : paymentStatus === 'payment rejected'
                 ? 'red'
                 : 'red';
         return <Tag color={color}>{paymentStatus && translate(paymentStatus)}</Tag>;

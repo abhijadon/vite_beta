@@ -19,7 +19,6 @@ const UpdatePaymentForm = ({ entity, id, recordDetails, onCloseModal }) => {
         setLoading(true);
         try {
             const response = await axios.put(`/${entity}/updatePayment/${id}`, values);
-            // Check if the update operation was successful
             if (response && response.data && response.data.success) {
                 // If successful, call the onCloseModal callback to close the modal
                 onCloseModal();
@@ -96,6 +95,19 @@ const UpdatePaymentForm = ({ entity, id, recordDetails, onCloseModal }) => {
                 <Input disabled />
             </Form.Item>
 
+            <Form.Item
+                label={translate('Institute name')}
+                name={['customfields', 'institute_name']}
+            >
+                <Select
+                    showSearch
+                    optionFilterProp='children'
+                    options={[
+                        { value: 'HES', label: 'HES' },
+                        { value: 'DES', label: 'DES' },
+                    ]}
+                ></Select>
+            </Form.Item>
             <Form.Item
                 label={translate('email')}
                 name={['contact', 'email']}

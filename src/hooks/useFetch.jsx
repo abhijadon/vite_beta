@@ -7,29 +7,37 @@ function useFetchData(fetchFunction) {
   const [error, setError] = useState(null);
 
   useEffect(() => {
+    let isMounted = true; // flag to prevent state updates if unmounted
+
     async function fetchData() {
       try {
         const result = await fetchFunction();
-        setData(result);
-        setSuccess(true);
+        if (isMounted) {
+          setData(result);
+          setSuccess(true);
+          setLoading(false);
+        }
       } catch (error) {
-        setError(error);
-      } finally {
-        setLoading(false);
+        if (isMounted) {
+          setError(error);
+          setLoading(false);
+        }
       }
     }
 
     fetchData();
-  }, [isLoading]);
+
+    // Cleanup function to prevent state updates if unmounted
+    return () => {
+      isMounted = false;
+    };
+  }, []); // useEffect runs only once on mount
 
   return { data, isLoading, isSuccess, error };
 }
 
 export const useFetch = (fetchFunction) => {
-  const { data, isLoading, isSuccess, error } = useFetchData(fetchFunction);
-
-  return { data, isLoading, isSuccess, error };
+  return useFetchData(fetchFunction);
 }
 
 export default useFetch;
-

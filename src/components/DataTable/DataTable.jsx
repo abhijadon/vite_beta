@@ -315,12 +315,12 @@ export default function DataTable({ config, extra = [] }) {
 
       // Check if paymentStatus matches
       let paymentStatusMatch = true;
-      if (Paymentstatus === 'Payment Received') {
-        paymentStatusMatch = customfields.paymentStatus === 'Payment Received';
-      } else if (Paymentstatus === 'Payment Rejected') {
-        paymentStatusMatch = customfields.paymentStatus === 'Payment Rejected';
-      } else if (Paymentstatus === 'Payment Approved') {
-        paymentStatusMatch = customfields.paymentStatus === 'Payment Approved';
+      if (Paymentstatus === 'payment received') {
+        paymentStatusMatch = customfields.paymentStatus === 'payment received';
+      } else if (Paymentstatus === 'payment rejected') {
+        paymentStatusMatch = customfields.paymentStatus === 'payment rejected';
+      } else if (Paymentstatus === 'payment approved') {
+        paymentStatusMatch = customfields.paymentStatus === 'payment approved';
       }
 
       return instituteMatch && universityMatch && sessionMatch && searchMatch && statusMatch && userMatch && startDateMatch && endDateMatch && paymentStatusMatch;
@@ -408,9 +408,9 @@ export default function DataTable({ config, extra = [] }) {
 
   const renderFilters = () => {
     // Calculate counts for each payment status
-    const paymentReceivedCount = dataSource.filter(item => item.customfields?.paymentStatus === 'Payment Received').length;
-    const paymentApprovedCount = dataSource.filter(item => item.customfields?.paymentStatus === 'Payment Approved').length;
-    const paymentRejectedCount = dataSource.filter(item => item.customfields?.paymentStatus === 'Payment Rejected').length;
+    const paymentReceivedCount = dataSource.filter(item => item.customfields?.paymentStatus === 'payment received').length;
+    const paymentApprovedCount = dataSource.filter(item => item.customfields?.paymentStatus === 'payment approved').length;
+    const paymentRejectedCount = dataSource.filter(item => item.customfields?.paymentStatus === 'payment rejected').length;
 
     if (entity === 'lead') {
       return (
@@ -502,21 +502,21 @@ export default function DataTable({ config, extra = [] }) {
             </div>
             <div>
               {/* Button to filter Payment Received */}
-              <Button className='w-24 mt-3 capitalize text-center text-sm font-thin hover:bg-cyan-100 bg-cyan-100 hover:text-cyan-700 text-cyan-700' onClick={() => handlePaymentStatus('Payment Received')}>
+              <Button className='w-24 mt-3 capitalize text-center text-sm font-thin hover:bg-cyan-100 bg-cyan-100 hover:text-cyan-700 text-cyan-700' onClick={() => handlePaymentStatus('payment received')}>
                 <span className="font-thin text-sm -ml-2">Received</span>
                 <span className="font-thin text-sm ml-1">({paymentReceivedCount})</span>
               </Button>
             </div>
             <div>
               {/* Button to filter Payment Approved */}
-              <Button className='w-24 mt-3 capitalize text-center text-sm font-thin hover:bg-green-100 bg-green-100 hover:text-green-700 text-green-700' onClick={() => handlePaymentStatus('Payment Approved')}>
+              <Button className='w-24 mt-3 capitalize text-center text-sm font-thin hover:bg-green-100 bg-green-100 hover:text-green-700 text-green-700' onClick={() => handlePaymentStatus('payment approved')}>
                 <span className="font-thin text-sm -ml-2">Approved</span>
                 <span className="font-thin text-sm ml-1">({paymentApprovedCount})</span>
               </Button>
             </div>
             <div>
               {/* Button to filter Payment Rejected */}
-              <Button className='w-24 mt-3 capitalize text-center text-sm font-thin hover:bg-red-100 bg-red-100 hover:text-red-700 text-red-700' onClick={() => handlePaymentStatus('Payment Rejected')}>
+              <Button className='w-24 mt-3 capitalize text-center text-sm font-thin hover:bg-red-100 bg-red-100 hover:text-red-700 text-red-700' onClick={() => handlePaymentStatus('payment rejected')}>
                 <span className="font-thin text-sm -ml-2">Rejected</span>
                 <span className="font-thin text-sm ml-1">({paymentRejectedCount})</span>
               </Button>

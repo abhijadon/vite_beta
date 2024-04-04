@@ -290,7 +290,7 @@ export default function DashboardModule() {
                 <Col className="gutter-row" sm={{ span: 24 }} md={{ span: 24 }} lg={{ span: 14 }}>
                     <div>
                         <Row>
-                            <PreviewCard />
+                            <PreviewCard startDate={selectedStartDate} endDate={selectedEndDate} />
                         </Row>
                     </div>
                 </Col>

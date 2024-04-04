@@ -1,16 +1,10 @@
 import { DatePicker, Form, Input, Select } from 'antd';
 import useLanguage from '@/locale/useLanguage';
-import { request } from '@/request';
-import useFetch from '@/hooks/useFetch';
-const { Option } = Select;
+
+
 const { TextArea } = Input;
 export default function EditForm() {
     const translate = useLanguage();
-
-    const { data: userList, isLoading: userLoading } = useFetch(() =>
-        request.list({ entity: 'admin' })
-    );
-
 
     return (
         <>
@@ -176,15 +170,6 @@ export default function EditForm() {
                         ]}
                     ></Select>
                 </Form.Item>
-                <Form.Item label="Users" name="userId">
-                    <Select placeholder="Select user" showSearch optionFilterProp="children" filterOption={(input, option) =>
-                        option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
-                    }>
-                        {userList && userList.result.map(user => (
-                            <Option className="capitalize" key={user._id} value={user._id}>{user.fullname}</Option>
-                        ))}
-                    </Select>
-                </Form.Item>
                 <Form.Item
                     label={translate('Installment Type')}
                     name={['customfields', 'installment_type']}
@@ -266,6 +251,7 @@ export default function EditForm() {
                         optionFilterProp='children'
                         options={[
                             { value: 'New', label: translate('New') },
+                            { value: 'Approved', label: translate('Approved') },
                             { value: 'Enrolled', label: translate('Enrolled') },
                             { value: 'Cancel', label: translate('cancel') },
                             { value: 'Alumini', label: translate('Alumini') },
