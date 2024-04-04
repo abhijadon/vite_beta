@@ -4,18 +4,14 @@ import { request } from '@/request';
 import { ResponsiveContainer, PieChart, Pie, Tooltip, Legend, Cell } from 'recharts';
 import { scaleOrdinal } from 'd3-scale';
 import { schemeCategory10 } from 'd3-scale-chromatic';
-import { Select, Dropdown, Menu, Button, DatePicker } from 'antd';
+import { Select, Dropdown, Menu, Button } from 'antd';
 import { VscSettings } from "react-icons/vsc";
 import { useSelector } from 'react-redux';
 import { selectCreatedItem } from '@/redux/crud/selectors';
 import { BiReset } from "react-icons/bi";
-
-const { RangePicker } = DatePicker;
-
 const Index = () => {
   const { isLoading, isSuccess } = useSelector(selectCreatedItem);
   const [selectedUserId, setSelectedUserId] = useState(null);
-  const [selectedDateRange, setSelectedDateRange] = useState(null);
   const [userNames, setUserNames] = useState([]);
   const [data, setData] = useState([]); // Define data state
 
@@ -33,18 +29,12 @@ const Index = () => {
 
   const resetValues = () => {
     setSelectedUserId(null);
-    setSelectedDateRange(null);
   };
 
-  // Filter data based on selected user and date range
-  const filteredData = data.filter(item => {
-    const userNameMatch = !selectedUserId || item.userId?.fullname.toLowerCase() === selectedUserId.toLowerCase();
-    const dateMatch = !selectedDateRange || (
-      item.date >= selectedDateRange[0].startOf('day') &&
-      item.date <= selectedDateRange[1].endOf('day')
-    );
-    return userNameMatch && dateMatch;
-  });
+  // Filter data based on selected user
+  const filteredData = selectedUserId
+    ? data.filter(item => item.userId?.fullname.toLowerCase() === selectedUserId.toLowerCase())
+    : data;
 
   const userDataCount = {};
   filteredData.forEach((payment) => {
@@ -66,7 +56,7 @@ const Index = () => {
   const colorScale = scaleOrdinal(schemeCategory10);
 
   const menu = (
-    <Menu>
+    <Menu style={{ maxHeight: 200, overflowY: 'auto' }}>
       {userNames.map((userName) => (
         <Menu.Item key={userName} onClick={() => setSelectedUserId(userName)}>
           {userName}
@@ -77,17 +67,14 @@ const Index = () => {
 
   return (
     <div style={{ height: 400, fontFamily: 'Arial, sans-serif' }}>
-      <div style={{ display: 'flex', alignItems: 'center' }}>
-        <Dropdown menu={menu} placement="bottomLeft" arrow>
-          <div className='flex items-center gap-2 p-1 w-20 rounded-md border box-border hover:bg-slate-200 cursor-pointer font-thin text-sm'>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+        <Dropdown overlay={menu} placement="bottomLeft" arrow>
+          <div className='flex items-center gap-2 p-1 w-20 rounded-md border box-border hover:bg-slate-200 cursor-pointer -ml-6 -mt-6 font-thin text-sm'>
             <span><VscSettings /></span>
             <span className='font-thin text-sm'>Filter</span>
           </div>
         </Dropdown>
-        <RangePicker className='w-20' onChange={(dates) => setSelectedDateRange(dates)} />
-        <div className='relative'>
-          <Button type="dashed" className='bg-transparent float-right text-red-500 font-thin text-base hover:text-red-500 hover:bg-slate-100' onClick={resetValues}><BiReset /></Button>
-        </div>
+        <Button type="dashed" className='bg-transparent text-red-500 font-thin text-base hover:text-red-500 hover:bg-slate-100' onClick={resetValues}><BiReset /></Button>
       </div>
       <ResponsiveContainer>
         <PieChart>
