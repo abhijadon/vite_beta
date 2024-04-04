@@ -31,6 +31,9 @@ export default function EditForm() {
                 <Form.Item
                     label={translate('email')}
                     name={['contact', 'email']}
+                    rules={[
+                        { required: true, message: 'Email is required' }
+                    ]}
                 >
                     <Input type='email' autoComplete='
                 on'/>
@@ -39,6 +42,9 @@ export default function EditForm() {
                 <Form.Item
                     label={translate('phone')}
                     name={['contact', 'phone']}
+                    rules={[
+                        { required: true, message: 'Phone is required' }
+                    ]}
                 >
                     <Input type='tel' autoComplete='on' />
                 </Form.Item>
@@ -173,6 +179,9 @@ export default function EditForm() {
                 <Form.Item
                     label={translate('Installment Type')}
                     name={['customfields', 'installment_type']}
+                    rules={[
+                        { required: true, message: 'Installment is required' }
+                    ]}
                 >
                     <Select
                         showSearch
@@ -241,9 +250,7 @@ export default function EditForm() {
                     label={translate('status')}
                     name={['customfields', 'status']}
                     rules={[
-                        {
-                            required: false,
-                        },
+                        { required: true, message: 'status is required' }
                     ]}
                 >
                     <Select

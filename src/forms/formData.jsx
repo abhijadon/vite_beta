@@ -487,12 +487,13 @@ const formData = [
             { value: 'Other', label: 'Other' }],
           },
           {
-            key: 'select',
+             key: 'select',
             label: 'Installment Type',
             id: 'InstallmentType',
             name: ['customfields', 'installment_type'],
             place: 'Installment Type',
             type: 'select',
+            required: 'require',
 
             options: [
               { value: '1st Installment', label: '1st Installment' },
@@ -522,12 +523,13 @@ const formData = [
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
           {
-            key: 'select ',
+              key: 'select ',
             label: 'Status',
             name: ['customfields', 'status'],
             id: 'status ',
             type: 'select',
             place: 'select status',
+            required: 'require',
 
             options: [
               { value: 'New', label: 'New' },
@@ -1046,14 +1048,14 @@ const formData = [
             { value: 'Other', label: 'Other' }],
           },
           {
-            key: 'select',
+             key: 'select',
             label: 'Installment Type',
             id: 'InstallmentType',
             name: ['customfields', 'installment_type'],
             place: 'Installment Type',
             type: 'select',
-
-            options: [
+            required: 'require',
+                  options: [
               { value: '1st Installment', label: '1st Installment' },
               { value: '2nd Installment', label: '2nd Installment' },
               { value: '3rd Installment', label: '3rd Installment' },
@@ -1081,12 +1083,13 @@ const formData = [
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
           {
-            key: 'select ',
+              key: 'select ',
             label: 'Status',
             name: ['customfields', 'status'],
             id: 'status ',
             type: 'select',
             place: 'select status',
+            required: 'require',
 
             options: [
               { value: 'New', label: 'New' },
@@ -1605,12 +1608,13 @@ const formData = [
             { value: 'Other', label: 'Other' }],
           },
           {
-            key: 'select',
+             key: 'select',
             label: 'Installment Type',
             id: 'InstallmentType',
             name: ['customfields', 'installment_type'],
             place: 'Installment Type',
             type: 'select',
+            required: 'require',
 
             options: [
               { value: '1st Installment', label: '1st Installment' },
@@ -1640,12 +1644,13 @@ const formData = [
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
           {
-            key: 'select ',
+              key: 'select ',
             label: 'Status',
             name: ['customfields', 'status'],
             id: 'status ',
             type: 'select',
             place: 'select status',
+            required: 'require',
 
             options: [
               { value: 'New', label: 'New' },
@@ -2163,12 +2168,13 @@ const formData = [
             { value: 'Other', label: 'Other' }],
           },
           {
-            key: 'select',
+             key: 'select',
             label: 'Installment Type',
             id: 'InstallmentType',
             name: ['customfields', 'installment_type'],
             place: 'Installment Type',
             type: 'select',
+            required: 'require',
 
             options: [
               { value: '1st Installment', label: '1st Installment' },
@@ -2198,12 +2204,13 @@ const formData = [
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
           {
-            key: 'select ',
+              key: 'select ',
             label: 'Status',
             name: ['customfields', 'status'],
             id: 'status ',
             type: 'select',
             place: 'select status',
+            required: 'require',
 
             options: [
               { value: 'New', label: 'New' },
@@ -2722,12 +2729,13 @@ const formData = [
             { value: 'Other', label: 'Other' }],
           },
           {
-            key: 'select',
+             key: 'select',
             label: 'Installment Type',
             id: 'InstallmentType',
             name: ['customfields', 'installment_type'],
             place: 'Installment Type',
             type: 'select',
+            required: 'require',
 
             options: [
               { value: '1st Installment', label: '1st Installment' },
@@ -2757,12 +2765,13 @@ const formData = [
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
           {
-            key: 'select ',
+              key: 'select ',
             label: 'Status',
             name: ['customfields', 'status'],
             id: 'status ',
             type: 'select',
             place: 'select status',
+            required: 'require',
 
             options: [
               { value: 'New', label: 'New' },
@@ -3281,12 +3290,13 @@ const formData = [
             { value: 'Other', label: 'Other' }],
           },
           {
-            key: 'select',
+             key: 'select',
             label: 'Installment Type',
             id: 'InstallmentType',
             name: ['customfields', 'installment_type'],
             place: 'Installment Type',
             type: 'select',
+            required: 'require',
 
             options: [
               { value: '1st Installment', label: '1st Installment' },
@@ -3316,12 +3326,13 @@ const formData = [
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
           {
-            key: 'select ',
+              key: 'select ',
             label: 'Status',
             name: ['customfields', 'status'],
             id: 'status ',
             type: 'select',
             place: 'select status',
+            required: 'require',
 
             options: [
               { value: 'New', label: 'New' },
@@ -3840,12 +3851,13 @@ const formData = [
             { value: 'Other', label: 'Other' }],
           },
           {
-            key: 'select',
+             key: 'select',
             label: 'Installment Type',
             id: 'InstallmentType',
             name: ['customfields', 'installment_type'],
             place: 'Installment Type',
             type: 'select',
+            required: 'require',
 
             options: [
               { value: '1st Installment', label: '1st Installment' },
@@ -3875,12 +3887,13 @@ const formData = [
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
           {
-            key: 'select ',
+              key: 'select ',
             label: 'Status',
             name: ['customfields', 'status'],
             id: 'status ',
             type: 'select',
             place: 'select status',
+            required: 'require',
 
             options: [
               { value: 'New', label: 'New' },
@@ -4400,12 +4413,13 @@ const formData = [
             { value: 'Other', label: 'Other' }],
           },
           {
-            key: 'select',
+             key: 'select',
             label: 'Installment Type',
             id: 'InstallmentType',
             name: ['customfields', 'installment_type'],
             place: 'Installment Type',
             type: 'select',
+            required: 'require',
 
             options: [
               { value: '1st Installment', label: '1st Installment' },
@@ -4435,12 +4449,13 @@ const formData = [
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
           {
-            key: 'select ',
+              key: 'select ',
             label: 'Status',
             name: ['customfields', 'status'],
             id: 'status ',
             type: 'select',
             place: 'select status',
+            required: 'require',
 
             options: [
               { value: 'New', label: 'New' },
@@ -4959,12 +4974,13 @@ const formData = [
             { value: 'Other', label: 'Other' }],
           },
           {
-            key: 'select',
+             key: 'select',
             label: 'Installment Type',
             id: 'InstallmentType',
             name: ['customfields', 'installment_type'],
             place: 'Installment Type',
             type: 'select',
+            required: 'require',
 
             options: [
               { value: '1st Installment', label: '1st Installment' },
@@ -4994,12 +5010,13 @@ const formData = [
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
           {
-            key: 'select ',
+              key: 'select ',
             label: 'Status',
             name: ['customfields', 'status'],
             id: 'status ',
             type: 'select',
             place: 'select status',
+            required: 'require',
 
             options: [
               { value: 'New', label: 'New' },
@@ -5518,12 +5535,13 @@ const formData = [
             { value: 'Other', label: 'Other' }],
           },
           {
-            key: 'select',
+             key: 'select',
             label: 'Installment Type',
             id: 'InstallmentType',
             name: ['customfields', 'installment_type'],
             place: 'Installment Type',
             type: 'select',
+            required: 'require',
 
             options: [
               { value: '1st Installment', label: '1st Installment' },
@@ -5553,13 +5571,14 @@ const formData = [
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
           {
-            key: 'select ',
+              key: 'select ',
             label: 'Status',
             name: ['customfields', 'status'],
             id: 'status ',
             type: 'select',
             place: 'select status',
-
+            required: 'require',
+  
             options: [
               { value: 'New', label: 'New' },
               { value: 'Approved', label: 'Approved' },
@@ -6077,12 +6096,13 @@ const formData = [
             { value: 'Other', label: 'Other' }],
           },
           {
-            key: 'select',
+             key: 'select',
             label: 'Installment Type',
             id: 'InstallmentType',
             name: ['customfields', 'installment_type'],
             place: 'Installment Type',
             type: 'select',
+            required: 'require',
 
             options: [
               { value: '1st Installment', label: '1st Installment' },
@@ -6112,12 +6132,13 @@ const formData = [
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
           {
-            key: 'select ',
+              key: 'select ',
             label: 'Status',
             name: ['customfields', 'status'],
             id: 'status ',
             type: 'select',
             place: 'select status',
+            required: 'require',
 
             options: [
               { value: 'New', label: 'New' },
@@ -6636,12 +6657,13 @@ const formData = [
             { value: 'Other', label: 'Other' }],
           },
           {
-            key: 'select',
+             key: 'select',
             label: 'Installment Type',
             id: 'InstallmentType',
             name: ['customfields', 'installment_type'],
             place: 'Installment Type',
             type: 'select',
+            required: 'require',
 
             options: [
               { value: '1st Installment', label: '1st Installment' },
@@ -6671,12 +6693,13 @@ const formData = [
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
           {
-            key: 'select ',
+              key: 'select ',
             label: 'Status',
             name: ['customfields', 'status'],
             id: 'status ',
             type: 'select',
             place: 'select status',
+            required: 'require',
 
             options: [
               { value: 'New', label: 'New' },
@@ -7196,12 +7219,13 @@ const formData = [
             { value: 'Other', label: 'Other' }],
           },
           {
-            key: 'select',
+             key: 'select',
             label: 'Installment Type',
             id: 'InstallmentType',
             name: ['customfields', 'installment_type'],
             place: 'Installment Type',
             type: 'select',
+            required: 'require',
 
             options: [
               { value: '1st Installment', label: '1st Installment' },
@@ -7231,12 +7255,13 @@ const formData = [
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
           {
-            key: 'select ',
+              key: 'select ',
             label: 'Status',
             name: ['customfields', 'status'],
             id: 'status ',
             type: 'select',
             place: 'select status',
+            required: 'require',
 
             options: [
               { value: 'New', label: 'New' },
@@ -7755,12 +7780,13 @@ const formData = [
             { value: 'Other', label: 'Other' }],
           },
           {
-            key: 'select',
+             key: 'select',
             label: 'Installment Type',
             id: 'InstallmentType',
             name: ['customfields', 'installment_type'],
             place: 'Installment Type',
             type: 'select',
+            required: 'require',
 
             options: [
               { value: '1st Installment', label: '1st Installment' },
@@ -7790,12 +7816,13 @@ const formData = [
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
           {
-            key: 'select ',
+              key: 'select ',
             label: 'Status',
             name: ['customfields', 'status'],
             id: 'status ',
             type: 'select',
             place: 'select status',
+            required: 'require',
 
             options: [
               { value: 'New', label: 'New' },
@@ -8315,12 +8342,13 @@ const formData = [
             { value: 'Other', label: 'Other' }],
           },
           {
-            key: 'select',
+             key: 'select',
             label: 'Installment Type',
             id: 'InstallmentType',
             name: ['customfields', 'installment_type'],
             place: 'Installment Type',
             type: 'select',
+            required: 'require',
 
             options: [
               { value: '1st Installment', label: '1st Installment' },
@@ -8350,12 +8378,13 @@ const formData = [
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
           {
-            key: 'select ',
+              key: 'select ',
             label: 'Status',
             name: ['customfields', 'status'],
             id: 'status ',
             type: 'select',
             place: 'select status',
+            required: 'require',
 
             options: [
               { value: 'New', label: 'New' },
@@ -8874,12 +8903,13 @@ const formData = [
             { value: 'Other', label: 'Other' }],
           },
           {
-            key: 'select',
+             key: 'select',
             label: 'Installment Type',
             id: 'InstallmentType',
             name: ['customfields', 'installment_type'],
             place: 'Installment Type',
             type: 'select',
+            required: 'require',
 
             options: [
               { value: '1st Installment', label: '1st Installment' },
@@ -8909,12 +8939,13 @@ const formData = [
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
           {
-            key: 'select ',
+              key: 'select ',
             label: 'Status',
             name: ['customfields', 'status'],
             id: 'status ',
             type: 'select',
             place: 'select status',
+            required: 'require',
 
             options: [
               { value: 'New', label: 'New' },
@@ -9442,12 +9473,13 @@ const formData = [
             { value: 'Other', label: 'Other' }],
           },
           {
-            key: 'select',
+             key: 'select',
             label: 'Installment Type',
             id: 'InstallmentType',
             name: ['customfields', 'installment_type'],
             place: 'Installment Type',
             type: 'select',
+            required: 'require',
 
             options: [
               { value: '1st Installment', label: '1st Installment' },
@@ -9477,12 +9509,13 @@ const formData = [
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
           {
-            key: 'select ',
+              key: 'select ',
             label: 'Status',
             name: ['customfields', 'status'],
             id: 'status ',
             type: 'select',
             place: 'select status',
+            required: 'require',
 
             options: [
               { value: 'New', label: 'New' },
@@ -10001,12 +10034,13 @@ const formData = [
             { value: 'Other', label: 'Other' }],
           },
           {
-            key: 'select',
+             key: 'select',
             label: 'Installment Type',
             id: 'InstallmentType',
             name: ['customfields', 'installment_type'],
             place: 'Installment Type',
             type: 'select',
+            required: 'require',
 
             options: [
               { value: '1st Installment', label: '1st Installment' },
@@ -10036,12 +10070,13 @@ const formData = [
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
           {
-            key: 'select ',
+              key: 'select ',
             label: 'Status',
             name: ['customfields', 'status'],
             id: 'status ',
             type: 'select',
             place: 'select status',
+            required: 'require',
 
             options: [
               { value: 'New', label: 'New' },
@@ -10560,12 +10595,13 @@ const formData = [
             { value: 'Other', label: 'Other' }],
           },
           {
-            key: 'select',
+             key: 'select',
             label: 'Installment Type',
             id: 'InstallmentType',
             name: ['customfields', 'installment_type'],
             place: 'Installment Type',
             type: 'select',
+            required: 'require',
 
             options: [
               { value: '1st Installment', label: '1st Installment' },
@@ -10595,12 +10631,13 @@ const formData = [
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
           {
-            key: 'select ',
+              key: 'select ',
             label: 'Status',
             name: ['customfields', 'status'],
             id: 'status ',
             type: 'select',
             place: 'select status',
+            required: 'require',
 
             options: [
               { value: 'New', label: 'New' },
@@ -11119,12 +11156,13 @@ const formData = [
             { value: 'Other', label: 'Other' }],
           },
           {
-            key: 'select',
+             key: 'select',
             label: 'Installment Type',
             id: 'InstallmentType',
             name: ['customfields', 'installment_type'],
             place: 'Installment Type',
             type: 'select',
+            required: 'require',
 
             options: [
               { value: '1st Installment', label: '1st Installment' },
@@ -11154,12 +11192,13 @@ const formData = [
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
           {
-            key: 'select ',
+              key: 'select ',
             label: 'Status',
             name: ['customfields', 'status'],
             id: 'status ',
             type: 'select',
             place: 'select status',
+            required: 'require',
 
             options: [
               { value: 'New', label: 'New' },
@@ -11678,12 +11717,13 @@ const formData = [
             { value: 'Other', label: 'Other' }],
           },
           {
-            key: 'select',
+             key: 'select',
             label: 'Installment Type',
             id: 'InstallmentType',
             name: ['customfields', 'installment_type'],
             place: 'Installment Type',
             type: 'select',
+            required: 'require',
 
             options: [
               { value: '1st Installment', label: '1st Installment' },
@@ -11713,12 +11753,13 @@ const formData = [
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
           {
-            key: 'select ',
+              key: 'select ',
             label: 'Status',
             name: ['customfields', 'status'],
             id: 'status ',
             type: 'select',
             place: 'select status',
+            required: 'require',
 
             options: [
               { value: 'New', label: 'New' },
@@ -12237,12 +12278,13 @@ const formData = [
             { value: 'Other', label: 'Other' }],
           },
           {
-            key: 'select',
+             key: 'select',
             label: 'Installment Type',
             id: 'InstallmentType',
             name: ['customfields', 'installment_type'],
             place: 'Installment Type',
             type: 'select',
+            required: 'require',
 
             options: [
               { value: '1st Installment', label: '1st Installment' },
@@ -12272,12 +12314,13 @@ const formData = [
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
           {
-            key: 'select ',
+              key: 'select ',
             label: 'Status',
             name: ['customfields', 'status'],
             id: 'status ',
             type: 'select',
             place: 'select status',
+            required: 'require',
 
             options: [
               { value: 'New', label: 'New' },
@@ -12796,12 +12839,13 @@ const formData = [
             { value: 'Other', label: 'Other' }],
           },
           {
-            key: 'select',
+             key: 'select',
             label: 'Installment Type',
             id: 'InstallmentType',
             name: ['customfields', 'installment_type'],
             place: 'Installment Type',
             type: 'select',
+            required: 'require',
 
             options: [
               { value: '1st Installment', label: '1st Installment' },
@@ -12831,12 +12875,13 @@ const formData = [
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
           {
-            key: 'select ',
+              key: 'select ',
             label: 'Status',
             name: ['customfields', 'status'],
             id: 'status ',
             type: 'select',
             place: 'select status',
+            required: 'require',
 
             options: [
               { value: 'New', label: 'New' },
@@ -13355,12 +13400,13 @@ const formData = [
             { value: 'Other', label: 'Other' }],
           },
           {
-            key: 'select',
+             key: 'select',
             label: 'Installment Type',
             id: 'InstallmentType',
             name: ['customfields', 'installment_type'],
             place: 'Installment Type',
             type: 'select',
+            required: 'require',
 
             options: [
               { value: '1st Installment', label: '1st Installment' },
@@ -13390,12 +13436,13 @@ const formData = [
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
           {
-            key: 'select ',
+              key: 'select ',
             label: 'Status',
             name: ['customfields', 'status'],
             id: 'status ',
             type: 'select',
             place: 'select status',
+            required: 'require',
 
             options: [
               { value: 'New', label: 'New' },
@@ -13915,12 +13962,13 @@ const formData = [
             { value: 'Other', label: 'Other' }],
           },
           {
-            key: 'select',
+             key: 'select',
             label: 'Installment Type',
             id: 'InstallmentType',
             name: ['customfields', 'installment_type'],
             place: 'Installment Type',
             type: 'select',
+            required: 'require',
 
             options: [
               { value: '1st Installment', label: '1st Installment' },
@@ -13950,12 +13998,13 @@ const formData = [
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
           {
-            key: 'select ',
+              key: 'select ',
             label: 'Status',
             name: ['customfields', 'status'],
             id: 'status ',
             type: 'select',
             place: 'select status',
+            required: 'require',
 
             options: [
               { value: 'New', label: 'New' },
@@ -14474,12 +14523,13 @@ const formData = [
             { value: 'Other', label: 'Other' }],
           },
           {
-            key: 'select',
+             key: 'select',
             label: 'Installment Type',
             id: 'InstallmentType',
             name: ['customfields', 'installment_type'],
             place: 'Installment Type',
             type: 'select',
+            required: 'require',
 
             options: [
               { value: '1st Installment', label: '1st Installment' },
@@ -14509,12 +14559,13 @@ const formData = [
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
           {
-            key: 'select ',
+              key: 'select ',
             label: 'Status',
             name: ['customfields', 'status'],
             id: 'status ',
             type: 'select',
             place: 'select status',
+            required: 'require',
 
             options: [
               { value: 'New', label: 'New' },
@@ -15033,12 +15084,13 @@ const formData = [
             { value: 'Other', label: 'Other' }],
           },
           {
-            key: 'select',
+             key: 'select',
             label: 'Installment Type',
             id: 'InstallmentType',
             name: ['customfields', 'installment_type'],
             place: 'Installment Type',
             type: 'select',
+            required: 'require',
 
             options: [
               { value: '1st Installment', label: '1st Installment' },
@@ -15068,12 +15120,13 @@ const formData = [
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
           {
-            key: 'select ',
+              key: 'select ',
             label: 'Status',
             name: ['customfields', 'status'],
             id: 'status ',
             type: 'select',
             place: 'select status',
+            required: 'require',
 
             options: [
               { value: 'New', label: 'New' },
@@ -15592,12 +15645,13 @@ const formData = [
             { value: 'Other', label: 'Other' }],
           },
           {
-            key: 'select',
+             key: 'select',
             label: 'Installment Type',
             id: 'InstallmentType',
             name: ['customfields', 'installment_type'],
             place: 'Installment Type',
             type: 'select',
+            required: 'require',
 
             options: [
               { value: '1st Installment', label: '1st Installment' },
@@ -15627,12 +15681,13 @@ const formData = [
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
           {
-            key: 'select ',
+              key: 'select ',
             label: 'Status',
             name: ['customfields', 'status'],
             id: 'status ',
             type: 'select',
             place: 'select status',
+            required: 'require',
 
             options: [
               { value: 'New', label: 'New' },
@@ -16152,12 +16207,13 @@ const formData = [
             { value: 'Other', label: 'Other' }],
           },
           {
-            key: 'select',
+             key: 'select',
             label: 'Installment Type',
             id: 'InstallmentType',
             name: ['customfields', 'installment_type'],
             place: 'Installment Type',
             type: 'select',
+            required: 'require',
 
             options: [
               { value: '1st Installment', label: '1st Installment' },
@@ -16187,12 +16243,13 @@ const formData = [
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
           {
-            key: 'select ',
+              key: 'select ',
             label: 'Status',
             name: ['customfields', 'status'],
             id: 'status ',
             type: 'select',
             place: 'select status',
+            required: 'require',
 
             options: [
               { value: 'New', label: 'New' },
@@ -16711,12 +16768,13 @@ const formData = [
             { value: 'Other', label: 'Other' }],
           },
           {
-            key: 'select',
+             key: 'select',
             label: 'Installment Type',
             id: 'InstallmentType',
             name: ['customfields', 'installment_type'],
             place: 'Installment Type',
             type: 'select',
+            required: 'require',
 
             options: [
               { value: '1st Installment', label: '1st Installment' },
@@ -16746,12 +16804,13 @@ const formData = [
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
           {
-            key: 'select ',
+              key: 'select ',
             label: 'Status',
             name: ['customfields', 'status'],
             id: 'status ',
             type: 'select',
             place: 'select status',
+            required: 'require',
 
             options: [
               { value: 'New', label: 'New' },
@@ -17271,12 +17330,13 @@ const formData = [
             { value: 'Other', label: 'Other' }],
           },
           {
-            key: 'select',
+             key: 'select',
             label: 'Installment Type',
             id: 'InstallmentType',
             name: ['customfields', 'installment_type'],
             place: 'Installment Type',
             type: 'select',
+            required: 'require',
 
             options: [
               { value: '1st Installment', label: '1st Installment' },
@@ -17306,12 +17366,13 @@ const formData = [
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
           {
-            key: 'select ',
+              key: 'select ',
             label: 'Status',
             name: ['customfields', 'status'],
             id: 'status ',
             type: 'select',
             place: 'select status',
+            required: 'require',
 
             options: [
               { value: 'New', label: 'New' },
@@ -17830,12 +17891,13 @@ const formData = [
             { value: 'Other', label: 'Other' }],
           },
           {
-            key: 'select',
+             key: 'select',
             label: 'Installment Type',
             id: 'InstallmentType',
             name: ['customfields', 'installment_type'],
             place: 'Installment Type',
             type: 'select',
+            required: 'require',
 
             options: [
               { value: '1st Installment', label: '1st Installment' },
@@ -17865,12 +17927,13 @@ const formData = [
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
           {
-            key: 'select ',
+              key: 'select ',
             label: 'Status',
             name: ['customfields', 'status'],
             id: 'status ',
             type: 'select',
             place: 'select status',
+            required: 'require',
 
             options: [
               { value: 'New', label: 'New' },
