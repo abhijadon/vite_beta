@@ -126,3 +126,20 @@ background-color: #1677ff !important;
     color: green;
     font-size: 1rem; /* Adjust the size as needed */
 }
+
+
+.ant-drawer-header {
+  background-color: #D8F7C9;
+}
+
+
+:where(.css-dev-only-do-not-override-1k979oh).ant-drawer .ant-drawer-close {
+  color:  red !important;
+  font-size: 20px;
+}
+
+:where(.css-dev-only-do-not-override-1k979oh).ant-drawer .ant-drawer-close:hover {
+  color:  red !important;
+  font-size: 22px;
+ background-color: transparent;
+}

@@ -1,6 +1,6 @@
 import { Form, Input, Select } from 'antd';
-import { UploadOutlined } from '@ant-design/icons';
-import { message, Upload, Button } from 'antd';
+import { UserOutlined, LockOutlined, MailOutlined, PhoneOutlined } from '@ant-design/icons';
+import { message } from 'antd';
 import useLanguage from '@/locale/useLanguage';
 
 const beforeUpload = (file) => {
@@ -20,10 +20,6 @@ export default function AdminForm({ isUpdateForm = false }) {
   return (
     <>
       <div>
-        <div className='text-center text-lg font-thin font-mono text-blue-500 underline-offset-2 underline'>
-          Register user
-        </div>
-        <div>
           <div>
             <label htmlFor="fullname" className='font-thin font-mono text-base capitalize'>Fullname</label><span className='text-red-500'>*</span>
             <Form.Item
@@ -34,7 +30,7 @@ export default function AdminForm({ isUpdateForm = false }) {
                 },
               ]}
             >
-              <Input autoComplete="off" placeholder='Enter your fullname' />
+              <Input autoComplete="off" placeholder='Enter your fullname' prefix={<UserOutlined className="site-form-item-icon" />} />
             </Form.Item>
           </div>
 
@@ -51,7 +47,7 @@ export default function AdminForm({ isUpdateForm = false }) {
                 }
               ]}
             >
-              <Input autoComplete="off" placeholder='Enter your email' />
+              <Input autoComplete="off" placeholder='Enter your email' prefix={<MailOutlined className="site-form-item-icon" />} />
             </Form.Item>
           </div>
           <div>
@@ -64,7 +60,7 @@ export default function AdminForm({ isUpdateForm = false }) {
                 },
               ]}
             >
-              <Input autoComplete="off" placeholder='Enter your phone' />
+              <Input autoComplete="off" placeholder='Enter your phone' prefix={<PhoneOutlined className="site-form-item-icon" />} />
             </Form.Item>
           </div>
 
@@ -79,7 +75,34 @@ export default function AdminForm({ isUpdateForm = false }) {
                   },
                 ]}
               >
-                <Input.Password autoComplete="off" placeholder='Enter your password' />
+                <Input.Password
+                  prefix={<LockOutlined className="site-form-item-icon" />}
+                  placeholder="Password"
+                  size="large"
+                />
+              </Form.Item>
+              <Form.Item
+                name="confirm_password"
+                rules={[
+                  {
+                    required: true,
+                  },
+                  ({ getFieldValue }) => ({
+                    validator(_, value) {
+                      if (!value || getFieldValue('password') === value) {
+                        return Promise.resolve();
+                      }
+                      return Promise.reject(new Error('The two passwords that you entered do not match!'));
+                    },
+                  }),
+                ]}
+                hasFeedback
+              >
+                <Input.Password
+                  prefix={<LockOutlined className="site-form-item-icon" />}
+                  placeholder="Confirm_password"
+                  size="large"
+                />
               </Form.Item>
             </div>
           )}
@@ -103,19 +126,7 @@ export default function AdminForm({ isUpdateForm = false }) {
               </Select>
             </Form.Item>
           </div>
-          <div>
-            <label htmlFor="role" className='font-thin font-mono text-base capitalize'>role</label><span className='text-red-500'>*</span>
-            <Form.Item
-              name="file"
-              valuePropName="fileList"
-              getValueFromEvent={(e) => e.fileList}
-            >
-              <Upload beforeUpload={beforeUpload}>
-                <Button icon={<UploadOutlined />}>{translate("click_to_upload")}</Button>
-              </Upload>
-            </Form.Item>
-          </div>
-        </div>
+      
       </div>
     </>
   );

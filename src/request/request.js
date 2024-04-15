@@ -8,7 +8,11 @@ axios.defaults.withCredentials = true;
 const request = {
   create: async ({ entity, jsonData }) => {
     try {
-      const response = await axios.post(entity + '/create', jsonData);
+      const response = await axios.post(entity + '/create', jsonData, {
+        headers: {
+       'Content-Type': 'multipart/form-data',
+        }
+      });
       successHandler(response, {
         notifyOnSuccess: true,
         notifyOnFailed: true,

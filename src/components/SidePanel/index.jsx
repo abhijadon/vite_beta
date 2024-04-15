@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useCrudContext } from '@/context/crud';
-import { Modal } from 'antd';
+import { Modal, Drawer } from 'antd';
 import CollapseBox from '../CollapseBox';
 import { selectCreatedItem, selectUpdatedItem } from '@/redux/crud/selectors'; // Import selectUpdatedItem selector
 import { useSelector } from 'react-redux';
@@ -37,22 +37,46 @@ export default function SidePanel({ config, topContent, bottomContent }) {
   }, [createdSuccess, updatedSuccess]); // Add updatedSuccess to the dependency array
 
   return (
-    <Modal
-      title="ERP_SODE"
-      open={!isPanelClose}
-      onCancel={collapsePanel}
-      footer={null}
-      width={1000}
-    >
-      <div>
-        <CollapseBox
-          buttonTitle={ADD_NEW_ENTITY}
-          isCollapsed={isBoxCollapsed}
-          onCollapse={collapsePanelBox}
-          topContent={topContent}
-          bottomContent={bottomContent}
-        />
-      </div>
-    </Modal>
+    <>
+      {ADD_NEW_ENTITY === 'Add Applications' ? ( // Check if ADD_NEW_ENTITY is 'Add Applications'
+        <Modal
+          title={ADD_NEW_ENTITY} 
+          open={!isPanelClose} // Change open to visible
+          onCancel={collapsePanel}
+          footer={null}
+          width={1000}
+        >
+          <div>
+            <CollapseBox
+              isCollapsed={isBoxCollapsed}
+              onCollapse={collapsePanelBox}
+              topContent={topContent}
+              bottomContent={bottomContent}
+            />
+          </div>
+        </Modal>
+      ) : (
+          <Drawer
+            title={
+              <div className='float-end font-thin text-[17px]'>
+                {ADD_NEW_ENTITY}
+              </div>
+            } // Use ADD_NEW_ENTITY directly as the title
+            visible={!isPanelClose} // Change open to visible
+            onClose={collapsePanel}
+            footer={null}
+            width={500}
+          >
+            <div>
+              <CollapseBox
+                isCollapsed={isBoxCollapsed}
+                onCollapse={collapsePanelBox}
+                topContent={topContent}
+                bottomContent={bottomContent}
+              />
+            </div>
+          </Drawer>
+      )}
+    </>
   );
 }

@@ -10,12 +10,6 @@ export default function EditForm() {
         <>
             <div className='grid grid-cols-4 gap-3'>
                 <Form.Item
-                    label={translate('send fee reciept')}
-                    name={['customfields', 'send_fee_receipt']}
-                >
-                    <Input disabled />
-                </Form.Item>
-                <Form.Item
                     label={translate('studentid')}
                     name={['lead_id']}
                 >
@@ -48,6 +42,15 @@ export default function EditForm() {
                 >
                     <Input type='tel' autoComplete='on' />
                 </Form.Item>
+
+                <Form.Item
+                    label={translate('Alternate number')}
+                    name={['contact', 'alternate_phone']}
+
+                >
+                    <Input type='tel' autoComplete='on' />
+                </Form.Item>
+
 
                 <Form.Item
                     label={translate('course')}
@@ -126,6 +129,8 @@ export default function EditForm() {
                         options={[
                             { value: 'SGVU', label: 'SGVU' },
                             { value: 'CU', label: 'CU' },
+                            { value: 'AMRITA', label: 'AMRITA' },
+                            { value: 'AMITY', label: 'AMITY' },
                             { value: 'SPU', label: 'SPU' },
                             { value: 'LPU', label: 'LPU' },
                             { value: 'DPU', label: 'DPU' },
@@ -135,7 +140,7 @@ export default function EditForm() {
                             { value: 'MANIPAL', label: 'MANIPAL' },
                             { value: 'SMU', label: 'SMU' },
                             { value: 'HU', label: 'HU' },
-                            { value: 'BOSSSE', label: 'BOSSSE' },
+                            { value: 'BOSSE', label: 'BOSSE' },
                             { value: 'UU', label: 'UU' },
                             { value: 'UPES', label: 'UPES' },
                             { value: 'MANGALAYATAN', label: 'MANGALAYATAN' },
@@ -283,12 +288,6 @@ export default function EditForm() {
                     name={['customfields', 'remark']}
                 >
                     <TextArea rows={1} />
-                </Form.Item>
-                <Form.Item
-                    label={translate('Create_at')}
-                    name='created'
-                >
-                    <DatePicker className='uppercase' />
                 </Form.Item>
             </div>
         </>

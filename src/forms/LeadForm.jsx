@@ -3,21 +3,7 @@ import { Form, Select, Input, Checkbox, Radio, notification, Upload, message } f
 import { InboxOutlined } from '@ant-design/icons';
 import formData from './formData';
 
-
 const { Option } = Select;
-const { Dragger } = Upload;
-const beforeUpload = (file) => {
-  const isJpgOrPng =
-    file.type === 'image/jpeg' || file.type === 'image/png' || file.type === 'image/svg+xml';
-  if (!isJpgOrPng) {
-    message.error('You can only upload JPG/PNG or SVG file!');
-  }
-  const isLt2M = file.size / 1024 / 1024 < 5;
-  if (!isLt2M) {
-    message.error('Image must smaller than 5MB!');
-  }
-  return false;
-};
 
 /* require message show on notification */
 const openNotification = (fieldName) => {
@@ -37,6 +23,9 @@ export default function LeadForm() {
   const [selectedPayment, setSelectedPayment] = useState(null);
   const [studentId, setStudentId] = useState('');
   const [selectedSpecialization, setSelectedSpecialization] = useState(null);
+  const [feeDocument, setFeeDocument] = useState([]);
+  const [studentDocument, setStudentDocument] = useState([]);
+
   /* useState, useEffect uses condition */
 
   /* student id generate automatica */
@@ -154,21 +143,26 @@ export default function LeadForm() {
               name={field.name}
               rules={[
                 {
+                  type: 'email',
+                  message: 'Please enter a valid email address',
                   required: field.required === 'require',
+                },
+                {
                   validator: (_, value) => {
                     return new Promise((resolve, reject) => {
-                      if (value || field.required !== 'require') {
-                        // If the value is not empty or the field is not required, resolve
-                        resolve();
-                      } else {
-                        // If the value is empty and the field is required, reject and show notification
+                      if (!value && field.required === 'require') {
+                        // If the field is required and value is empty, reject and show notification
                         openNotification(field.label);
                         reject(`${field.label} is required.`);
+                      } else {
+                        // Otherwise, resolve
+                        resolve();
                       }
                     });
                   },
                 },
               ]}
+              validateTrigger={['onChange', 'onBlur']}
             >
               <Input placeholder={field.place} />
             </Form.Item>
@@ -198,64 +192,6 @@ export default function LeadForm() {
               ]}
             >
               <Input placeholder={field.place} />
-            </Form.Item>
-          );
-        case 'checkbox':
-          return (
-            <Form.Item
-              key={field.id}
-              valuePropName="checked"
-              name={field.name}
-              rules={[
-                {
-                  required: field.required === 'require',
-                  validator: (_, value) => {
-                    return new Promise((resolve, reject) => {
-                      if (value || field.required !== 'require') {
-                        // If the value is not empty or the field is not required, resolve
-                        resolve();
-                      } else {
-                        // If the value is empty and the field is required, reject and show notification
-                        openNotification(field.label);
-                        reject(`${field.label} is required.`);
-                      }
-                    });
-                  },
-                },
-              ]}
-            >
-              <Checkbox>{capitalizedLabel}</Checkbox>
-            </Form.Item>
-          );
-        case 'radio':
-          return (
-            <Form.Item
-              key={field.id}
-              label={capitalizedLabel}
-              name={field.name}
-              rules={[
-                {
-                  required: field.required === 'require',
-                  validator: (_, value) => {
-                    return new Promise((resolve, reject) => {
-                      if (value || field.required !== 'require') {
-                        resolve();
-                      } else {
-                        openNotification(field.label);
-                        reject(`${field.label} is required.`);
-                      }
-                    });
-                  },
-                },
-              ]}
-            >
-              <Radio.Group>
-                {field.options.map((option) => (
-                  <Radio key={option} value={option}>
-                    {option.charAt(0).toUpperCase() + option.slice(1)}
-                  </Radio>
-                ))}
-              </Radio.Group>
             </Form.Item>
           );
         case 'select':
@@ -289,33 +225,6 @@ export default function LeadForm() {
                   </Option>
                 ))}
               </Select>
-            </Form.Item>
-          );
-        case 'number':
-          return (
-            <Form.Item
-              key={field.id}
-              label={capitalizedLabel}
-              name={field.name}
-              rules={[
-                {
-                  required: field.required === 'require',
-                  validator: (_, value) => {
-                    return new Promise((resolve, reject) => {
-                      if (value || field.required !== 'require') {
-                        // If the value is not empty or the field is not required, resolve
-                        resolve();
-                      } else {
-                        // If the value is empty and the field is required, reject and show notification
-                        openNotification(field.label);
-                        reject(`${field.label} is required.`);
-                      }
-                    });
-                  },
-                },
-              ]}
-            >
-              <Input type="number" placeholder={field.place} />
             </Form.Item>
           );
         case 'date':
@@ -370,45 +279,6 @@ export default function LeadForm() {
               ]}
             >
               <Input.TextArea rows={1} placeholder={field.place} />
-            </Form.Item>
-          );
-        case 'file':
-          return (
-            <Form.Item
-              label={capitalizedLabel}
-              name={field.name}
-              valuePropName="fileList"
-              getValueFromEvent={(e) => e.fileList}
-              rules={[
-                {
-                  required: field.required === 'require',
-                  validator: (_, value) => {
-                    return new Promise((resolve, reject) => {
-                      // Check if there are files or the field is not required
-                      if (value.length > 0 || field.required !== 'require') {
-                        resolve(); // Resolve if the condition is met
-                      } else {
-                        // If no files are selected and the field is required, reject and show notification
-                        openNotification(field.label);
-                        reject(`${field.label} is required.`);
-                      }
-                    });
-                  },
-                },
-              ]}
-            >
-              <Dragger
-                multiple
-                beforeUpload={beforeUpload}
-                listType="picture"
-                accept="image/png, image/jpeg ,image/svg+xml"
-              >
-                <p className="ant-upload-drag-icon">
-                  <InboxOutlined />
-                </p>
-                <p className="ant-upload-text">Click or drag files to this area to upload</p>
-                <p className="ant-upload-hint">Support for multiple images</p>
-              </Dragger>
             </Form.Item>
           );
         default:
@@ -497,70 +367,109 @@ export default function LeadForm() {
               </>
             )}
             {/* selectedcourse and then show specialization */}
-
           </>
         )}
       </form>
-      {/* selected payment and then show generate fields fees */}
-      {selectedUniversity && (
-        <>
-          <div>
-            {formData
-              .find((item) => item.value === selectedInstitute)
-              .universities.find((university) => university.value === selectedUniversity)
-              .fields[1]?.payments ? (
-              <Form.Item label="Select payment" name={['customfields', 'payment_type']} className='grid col-span-1'>
-                <Select showSearch optionFilterProp='children' filterOption={(input, option) =>
-                  option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
-                } onChange={handlePaymentChange} placeholder="--Select Payment--">
-                  {formData
-                    .find((item) => item.value === selectedInstitute)
-                    .universities.find((university) => university.value === selectedUniversity)
-                    .fields[1]?.payments?.map((payment) => (
-                      <Option key={payment.value} value={payment.value}>
-                        {payment.label}
-                      </Option>
-                    ))}
-                </Select>
-              </Form.Item>
-            ) : null}
-            {selectedPayment && (
-              <div>
-                <Form.Item>
-                  {(formData
-                    .find((item) => item.value === selectedInstitute)
-                    .universities.find((university) => university.value === selectedUniversity)
-                    .fields[1]?.payments.find((payment) => payment.value === selectedPayment)?.paymentType || []
-                  ).map((pay) => (
-                    <Form.Item
-                      key={pay.label}
-                      label={pay.label}
-                      name={pay.name}  // Use pay.name as the name
-                      rules={[
-                        {
-                          required: pay.required === 'require',
-                          message: `Please input ${pay.label}!`,
-                        },
-                      ]}
-                    >
-                      <Input placeholder={pay.place} type={pay.type} />
-                    </Form.Item>
-                  ))}
-                </Form.Item>
-              </div>
-            )}
-          </div>
-        </>
-      )}
-      {/* selected payment and then show generate fields fees */}
       {selectedUniversity && (
         <div>
-          <form className='grid grid-cols-4 gap-3'>
+          <form className='grid grid-cols-3 gap-3'>
             {generateFormItems(
               formData
                 .find((item) => item.value === selectedInstitute)
                 .universities.find((university) => university.value === selectedUniversity).fields
             )}
+            {selectedUniversity && (
+              <>
+                <div>
+                  {formData
+                    .find((item) => item.value === selectedInstitute)
+                    .universities.find((university) => university.value === selectedUniversity)
+                    .fields[1]?.payments ? (
+                    <Form.Item label="Select payment" name={['customfields', 'payment_type']} className='grid col-span-1' rules={[
+                        {
+                          required: true,
+                          message: "Please Select payment",
+                        },         
+                    ]}>
+                      <Select showSearch optionFilterProp='children' filterOption={(input, option) =>
+                        option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+                      } onChange={handlePaymentChange} placeholder="--Select Payment--">
+                        {formData
+                          .find((item) => item.value === selectedInstitute)
+                          .universities.find((university) => university.value === selectedUniversity)
+                          .fields[1]?.payments?.map((payment) => (
+                            <Option key={payment.value} value={payment.value}>
+                              {payment.label}
+                            </Option>
+                          ))}
+                      </Select>
+                    </Form.Item>
+                  ) : null}
+                  {selectedPayment && (
+                    <div>
+                      <Form.Item>
+                        {(formData
+                          .find((item) => item.value === selectedInstitute)
+                          .universities.find((university) => university.value === selectedUniversity)
+                          .fields[1]?.payments.find((payment) => payment.value === selectedPayment)?.paymentType || []
+                        ).map((pay) => (
+                          <Form.Item
+                            key={pay.label}
+                            label={pay.label}
+                            name={pay.name}  // Use pay.name as the name
+                            rules={[
+                              {
+                                required: pay.required === 'require',
+                                message: `Please input ${pay.label}!`,
+                              },
+                            ]}
+                          >
+                            <Input placeholder={pay.place} type={pay.type}/>
+                          </Form.Item>
+                        ))}
+                      </Form.Item>
+                    </div>
+                  )}
+                </div>
+              </>
+            )}
+            <Form.Item
+              label="Fee Documents"
+              name="feeDocument"
+              valuePropName="fileList"
+              getValueFromEvent={(e) => e.fileList}
+            >
+              <Upload.Dragger
+                multiple={true} // Allow multiple file upload
+                listType="picture"
+                accept="image/png, image/jpeg, image/svg+xml"
+              >
+                <p className="ant-upload-drag-icon">
+                  <InboxOutlined />
+                </p>
+                <p className="ant-upload-text">Click or drag files to this area to upload</p>
+                <p className="ant-upload-hint">Support for multiple images</p>
+              </Upload.Dragger>
+            </Form.Item>
+
+            <Form.Item
+              label="Student Documents"
+              name="studentDocument"
+              valuePropName="fileList"
+              getValueFromEvent={(e) => e.fileList}
+            >
+              <Upload.Dragger
+                multiple={true} // Allow multiple file upload
+                listType="picture"
+                accept="image/png, image/jpeg, image/svg+xml"
+              >
+                <p className="ant-upload-drag-icon">
+                  <InboxOutlined />
+                </p>
+                <p className="ant-upload-text">Click or drag files to this area to upload</p>
+                <p className="ant-upload-hint">Support for multiple images</p>
+              </Upload.Dragger>
+            </Form.Item>
           </form>
         </div>
       )}

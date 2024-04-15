@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import { Form, Input, Button, Select } from 'antd';
+import { Form, Input, Button, Select, Upload } from 'antd';
 import axios from 'axios';
 import useLanguage from '@/locale/useLanguage';
+import { InboxOutlined } from '@ant-design/icons';
 
 const UpdatePaymentForm = ({ entity, id, recordDetails, onCloseModal }) => {
     const [loading, setLoading] = useState(false);
     const translate = useLanguage();
     const [role, setRole] = useState('');
+    const [success, setSuccess] = useState(false); // Track success state
 
     useEffect(() => {
         // Retrieve the role from localStorage and parse it as JSON
@@ -15,13 +17,55 @@ const UpdatePaymentForm = ({ entity, id, recordDetails, onCloseModal }) => {
         setRole(parsedRole);
     }, []);
 
+    useEffect(() => {
+        // Automatically refresh the page after 2 seconds when success state changes to true
+        if (success) {
+            const timer = setTimeout(() => {
+                window.location.reload();
+            }, 2000); // 2000 milliseconds = 2 seconds
+            // Clear the timer when the component unmounts or success state changes
+            return () => clearTimeout(timer);
+        }
+    }, [success]);
     const onFinish = async (values) => {
         setLoading(true);
         try {
-            const response = await axios.put(`/${entity}/updatePayment/${id}`, values);
+            const formData = new FormData();
+            formData.append('full_name', values.full_name);
+            formData.append('contact[email]', values.contact.email);
+            formData.append('contact[phone]', values.contact.phone);
+            formData.append('education[course]', values.education.course);
+            formData.append('customfields[institute_name]', values.customfields.institute_name);
+            formData.append('customfields[university_name]', values.customfields.university_name);
+            formData.append('customfields[session]', values.customfields.session);
+            formData.append('customfields[father_name]', values.customfields.father_name);
+            formData.append('customfields[dob]', values.customfields.dob);
+            formData.append('customfields[installment_type]', values.customfields.installment_type);
+            formData.append('customfields[payment_mode]', values.customfields.payment_mode);
+            formData.append('customfields[payment_type]', values.customfields.payment_type);
+            formData.append('customfields[total_course_fee]', values.customfields.total_course_fee);
+            formData.append('customfields[total_paid_amount]', values.customfields.total_paid_amount);
+            formData.append('customfields[paid_amount]', values.customfields.paid_amount);
+            formData.append('customfields[paymentStatus]', values.customfields.paymentStatus);
+
+            // Append existing images
+            if (recordDetails && recordDetails.feeDocument) {
+                recordDetails.feeDocument.forEach((image) => {
+                    formData.append('feeDocument', image);
+                });
+            }
+            // Append newly uploaded images
+            if (values.feeDocument && Array.isArray(values.feeDocument)) {
+                values.feeDocument.forEach((file) => {
+                    formData.append('feeDocument', file.originFileObj);
+                });
+            }
+
+            const response = await axios.put(`/${entity}/updatePayment/${id}`, formData);
             if (response && response.data && response.data.success) {
-                // If successful, call the onCloseModal callback to close the modal
-                onCloseModal();
+                // Set success state to true upon successful update
+                setSuccess(true);
+                onCloseModal(); // Close modal if needed
             }
         } catch (error) {
             console.error('Update failed:', error);
@@ -96,6 +140,23 @@ const UpdatePaymentForm = ({ entity, id, recordDetails, onCloseModal }) => {
             </Form.Item>
 
             <Form.Item
+                hidden
+                label={translate('University name')}
+                name={['customfields', 'university_name']}
+            >
+                <Input />
+            </Form.Item>
+
+            <Form.Item
+                hidden
+                label={translate('session')}
+                name={['customfields', 'session']}
+            >
+                <Input />
+            </Form.Item>
+
+            <Form.Item
+                hidden
                 label={translate('Institute name')}
                 name={['customfields', 'institute_name']}
             >
@@ -107,6 +168,27 @@ const UpdatePaymentForm = ({ entity, id, recordDetails, onCloseModal }) => {
                         { value: 'DES', label: 'DES' },
                     ]}
                 ></Select>
+            </Form.Item>
+            <Form.Item
+                hidden
+                label={translate('Course name')}
+                name={['education', 'course']}
+            >
+                <Input />
+            </Form.Item>
+            <Form.Item
+                hidden
+                label={translate('father name')}
+                name={['customfields', 'father_name']}
+            >
+                <Input />
+            </Form.Item>
+            <Form.Item
+                hidden
+                label={translate('Date of birth')}
+                name={['customfields', 'dob']}
+            >
+                <Input />
             </Form.Item>
             <Form.Item
                 label={translate('email')}
@@ -212,7 +294,30 @@ const UpdatePaymentForm = ({ entity, id, recordDetails, onCloseModal }) => {
                     ></Select>
                 ) : null}
             </Form.Item>
-
+            <Form.Item
+                label="Fee Documents"
+                name="feeDocument"
+                valuePropName="fileList"
+                getValueFromEvent={(e) => e.fileList}
+                rules={[
+                    {
+                        required: true,
+                        message: 'Please upload fee documents!',
+                    },
+                ]}
+            >
+                <Upload.Dragger
+                    multiple={true} // Allow multiple file upload
+                    listType="picture"
+                    accept="image/png, image/jpeg, image/svg+xml"
+                >
+                    <p className="ant-upload-drag-icon">
+                        <InboxOutlined />
+                    </p>
+                    <p className="ant-upload-text">Click or drag files to this area to upload</p>
+                    <p className="ant-upload-hint">Support for multiple images</p>
+                </Upload.Dragger>
+            </Form.Item>
             <Form.Item>
                 <Button type="primary" htmlType="submit" loading={loading}>
                     Update Payment

@@ -1,21 +1,60 @@
 import React, { useState, useEffect } from 'react';
-import { Button, Drawer, Modal, Table } from 'antd';
+import { Button, Drawer, Modal, Table, Image, Space } from 'antd';
 import moment from 'moment';
 import { PiStudent } from "react-icons/pi";
 import { SiContactlesspayment } from "react-icons/si";
 import { CheckCircleOutlined, CloseCircleOutlined } from '@ant-design/icons';
-
+import { IoDocumentAttachOutline } from "react-icons/io5";
+import { DownloadOutlined, SwapOutlined, RotateLeftOutlined, RotateRightOutlined, ZoomOutOutlined, ZoomInOutlined } from '@ant-design/icons';
+import { FiDownload } from "react-icons/fi";
 const StudentDetailsModal = ({ visible, onClose, student }) => {
-    const [modalVisible, setModalVisible] = useState(false);
     const [installmentData, setInstallmentData] = useState([]);
     const [dueAmount, setDueAmount] = useState(0);
+    const [documentUrls, setDocumentUrls] = useState([]);
+    const [installmentModalVisible, setInstallmentModalVisible] = useState(false);
+    const [documentModalVisible, setDocumentModalVisible] = useState(false);
+    const [selectedDocumentUrl, setSelectedDocumentUrl] = useState('');
 
     useEffect(() => {
         if (student) {
             const totalDue = parseFloat(student.customfields.total_course_fee) - parseFloat(student.customfields.total_paid_amount);
             setDueAmount(totalDue);
+            // Extract document URLs
+            const urls = [student.feeDocument, student.studentDocument].flat();
+            setDocumentUrls(urls);
         }
     }, [student]);
+
+    const handleViewDocuments = (documentType) => {
+        let documents;
+
+        // Determine which documents to display based on the document type
+        if (documentType === 'studentDocument') {
+            documents = student.studentDocument;
+        } else if (documentType === 'feeDocument') {
+            documents = student.feeDocument;
+        }
+
+        // Set the selected document URLs to display in the modal
+        setDocumentUrls(documents);
+
+        // Show the document modal
+        setDocumentModalVisible(true);
+    };
+
+    const onDownload = (url) => {
+        // Create a temporary link element
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = true;
+
+        // Trigger the click event on the link to start the download
+        document.body.appendChild(link);
+        link.click();
+
+        // Clean up
+        document.body.removeChild(link);
+    };
 
     const handleViewInstallment = () => {
         if (student) {
@@ -31,10 +70,9 @@ const StudentDetailsModal = ({ visible, onClose, student }) => {
                 date: moment(data.date).format('DD/MM/YYYY'),
             }));
             setInstallmentData(combinedData);
-            setModalVisible(true);
+            setInstallmentModalVisible(true);
         }
     };
-
     const columns = [
         {
             title: 'Installment Type',
@@ -106,12 +144,12 @@ const StudentDetailsModal = ({ visible, onClose, student }) => {
             key: 'date',
         },
     ];
+
     return (
         <>
             <Drawer
                 placement='right'
-                open={visible}
-                footer={null}
+                visible={visible}
                 onClose={onClose}
                 width={1000}
             >
@@ -142,6 +180,10 @@ const StudentDetailsModal = ({ visible, onClose, student }) => {
                                     <span className='text-sm font-thin text-gray-500'>{student.contact.phone}</span>
                                 </li>
                                 <li className=' border-b p-1 ml-8 grid grid-cols-2 gap-20'>
+                                    <span className='text-base font-thin text-gray-700 capitalize'>alternate phone</span>
+                                    <span className='text-sm font-thin text-gray-500'>{student.contact.alternate_phone}</span>
+                                </li>
+                                <li className=' border-b p-1 ml-8 grid grid-cols-2 gap-20'>
                                     <span className='text-base font-thin text-gray-700'>Course</span>
                                     <span className='text-sm font-thin text-gray-500'>{student.education.course}</span>
                                 </li>
@@ -153,26 +195,7 @@ const StudentDetailsModal = ({ visible, onClose, student }) => {
                                     <span className='text-base font-thin text-gray-700'>Session</span>
                                     <span className='text-sm font-thin text-gray-500'>{student.customfields.session}</span>
                                 </li>
-                                <li className='grid grid-cols-2 gap-20 border-b p-1 ml-8'>
-                                    <span className='text-base font-thin text-gray-700'>Status</span>
-                                    <span className='text-sm font-thin text-gray-500'>
-                                        {student.customfields.status === 'New' && (
-                                            <span className='mt-3 capitalize text-center text-sm font-thin hover:bg-blue-100 bg-blue-100 hover:text-blue-700 text-blue-700 pl-2 pr-2'>New</span>
-                                        )}
-                                        {student.customfields.status === 'Cancel' && (
-                                            <span className='mt-3 capitalize text-center text-sm font-thin hover:bg-red-100 bg-red-100 hover:text-red-700 text-red-700 pl-2 pr-2'>Cancel</span>
-                                        )}
-                                        {student.customfields.status === 'Alumini' && (
-                                            <span className='mt-3 capitalize text-center text-sm font-thin hover:bg-green-100 bg-green-100 hover:text-green-700 text-green-700 pl-2 pr-2'>Alumini</span>
-                                        )}
-                                        {student.customfields.status === 'Not Intrested' && (
-                                            <span style={{ color: 'orange' }}>Not Intrested</span>
-                                        )}
-                                        {student.customfields.status === 'Enrolled' && (
-                                            <span className='capitalize text-center text-sm font-thin hover:bg-yellow-100 bg-yellow-100 hover:text-yellow-700 text-yellow-700 pl-2 pr-2'>Enrolled</span>
-                                        )}
-                                    </span>
-                                </li>
+
                             </ul>
                             <ul>
                                 <li className='grid grid-cols-2 gap-20 border-b p-1 ml-8'>
@@ -203,6 +226,26 @@ const StudentDetailsModal = ({ visible, onClose, student }) => {
                                 <li className='grid grid-cols-2 gap-20 border-b p-1 ml-8'>
                                     <span className='text-base font-thin text-gray-700'>Remark</span>
                                     <span className='text-sm font-thin text-gray-500'>{student.customfields.remark}</span>
+                                </li>
+                                <li className='grid grid-cols-2 gap-20 border-b p-1 ml-8'>
+                                    <span className='text-base font-thin text-gray-700'>Status</span>
+                                    <span className='text-sm font-thin text-gray-500'>
+                                        {student.customfields.status === 'New' && (
+                                            <span className='mt-3 capitalize text-center text-sm font-thin hover:bg-blue-100 bg-blue-100 hover:text-blue-700 text-blue-700 pl-2 pr-2'>New</span>
+                                        )}
+                                        {student.customfields.status === 'Cancel' && (
+                                            <span className='mt-3 capitalize text-center text-sm font-thin hover:bg-red-100 bg-red-100 hover:text-red-700 text-red-700 pl-2 pr-2'>Cancel</span>
+                                        )}
+                                        {student.customfields.status === 'Alumini' && (
+                                            <span className='mt-3 capitalize text-center text-sm font-thin hover:bg-green-100 bg-green-100 hover:text-green-700 text-green-700 pl-2 pr-2'>Alumini</span>
+                                        )}
+                                        {student.customfields.status === 'Not Intrested' && (
+                                            <span style={{ color: 'orange' }}>Not Intrested</span>
+                                        )}
+                                        {student.customfields.status === 'Enrolled' && (
+                                            <span className='capitalize text-center text-sm font-thin hover:bg-yellow-100 bg-yellow-100 hover:text-yellow-700 text-yellow-700 pl-2 pr-2'>Enrolled</span>
+                                        )}
+                                    </span>
                                 </li>
                             </ul>
                         </div>
@@ -246,18 +289,75 @@ const StudentDetailsModal = ({ visible, onClose, student }) => {
                                 </ul>
                             </div>
                         </div>
+                        <div>
+                            <div className='flex items-center gap-1 mb-5 mt-10 ml-4'><span className='font-thin text-xl'><IoDocumentAttachOutline /></span><span className='font-thin text-lg'>Student Documents</span></div>
+                            <div>
+                                <ul>
+                                    <li className='grid grid-cols-2 gap-20 border-b p-1.5 ml-8'>
+                                        <span className='text-base font-thin text-gray-700'>Student document</span>
+                                        <Button onClick={() => handleViewDocuments('studentDocument')} className='hover:bg-[#CCFFCC] pl-2 pr-2 bg-[#CCFFCC] hover:text-[#333300] text-[#333300] max-w-32 text-center font-thin text-sm'>View Documents</Button>
+                                    </li>
+                                    <li className='grid grid-cols-2 gap-20 border-b p-1.5 ml-8'>
+                                        <span className='text-base font-thin text-gray-700'>Fee Receipt</span>
+                                        <Button onClick={() => handleViewDocuments('feeDocument')} className='hover:bg-[#CCFFCC] pl-2 pr-2 bg-[#CCFFCC] hover:text-[#333300] text-[#333300] max-w-32 text-center font-thin text-sm'>View Fee Receipt</Button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </>
-                )
-                }
-            </Drawer >
+                )}
+            </Drawer>
+
             <Modal
                 title="Previous Installments"
-                open={modalVisible}
-                onCancel={() => setModalVisible(false)}
+                visible={installmentModalVisible}
+                onCancel={() => setInstallmentModalVisible(false)}
                 footer={null}
                 width={1500}
             >
                 <Table dataSource={installmentData} columns={columns} pagination={false} />
+            </Modal>
+            <Modal
+                title={
+                    <div className='font-thin text-lg border-b mb-10'>
+                        Student Documents
+                    </div>
+                }
+                visible={documentModalVisible}
+                onCancel={() => setDocumentModalVisible(false)}
+                footer={null}
+                width={1000}
+            >
+                <div className="grid grid-cols-4 gap-4">
+                    {documentUrls.map((doc, index) => (
+                        <div key={index} className='w-52 flex flex-col items-center'>
+                            <Image
+                                width={200}
+                                src={doc.downloadURL}
+                                preview={{
+                                    toolbarRender: (
+                                        _,
+                                        {
+                                            transform: { scale },
+                                            actions: { onFlipY, onFlipX, onRotateLeft, onRotateRight, onZoomOut, onZoomIn },
+                                        },
+                                    ) => (
+                                        <Space size={12} className="toolbar-wrapper">
+                                            <Button className='bg-transparent' onClick={() => onDownload(doc.downloadURL)} icon={<DownloadOutlined />} />
+                                            <Button className='bg-transparent' onClick={onFlipY} icon={<SwapOutlined rotate={90} />} />
+                                            <Button className='bg-transparent' onClick={onFlipX} icon={<SwapOutlined />} />
+                                            <Button className='bg-transparent' onClick={onRotateLeft} icon={<RotateLeftOutlined />} />
+                                            <Button className='bg-transparent' onClick={onRotateRight} icon={<RotateRightOutlined />} />
+                                            <Button className='bg-transparent' onClick={onZoomOut} icon={<ZoomOutOutlined />} disabled={scale === 1} />
+                                            <Button className='bg-transparent' onClick={onZoomIn} icon={<ZoomInOutlined />} disabled={scale === 50} />
+                                        </Space>
+                                    ),
+                                }}
+                            />
+                            <span>{doc.originalFileName}</span>
+                        </div>
+                    ))}
+                </div>
             </Modal>
         </>
     );
