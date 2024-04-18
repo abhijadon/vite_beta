@@ -22,7 +22,7 @@ import Employee from '@/pages/Employee';
 import Admin from '@/pages/Admin';
 import Settings from '@/pages/Settings/Settings';
 import PaymentMode from '@/pages/PaymentMode';
-import Roles from '@/pages/Roles';
+import Teams from '@/pages/Roles';
 import Permissions from '@/pages/Permissions';
 import Permission from '@/pages/permission';
 import History from '@/pages/History';
@@ -129,7 +129,7 @@ export default function AppRouter() {
     },
     {
       path: '/roles',
-      element: <Roles />,
+      element: <Teams />,
     },
     {
       path: '/email',

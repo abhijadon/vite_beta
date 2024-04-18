@@ -387,7 +387,7 @@ export default function DataTable({ config, extra = [] }) {
                   )}
                 </div>
                 <div className='flex items-center gap-1'>
-                  {entity === 'invoice' && (
+                  {entity === 'teams' && (
                     <AddNewItem config={config} key={`${uniqueId()}`} hasCreate={create} />
                   )}
                   <div>

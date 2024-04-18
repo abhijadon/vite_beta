@@ -1,104 +1,115 @@
-import React from 'react';
-import CrudModule from '@/modules/CrudModule/CrudModule';
-import useLanguage from '@/locale/useLanguage';
-import '@/style/tailwind.css';
-import PermissionFrom from '@/forms/PermissionFrom';
+import React, { useState } from 'react';
+import { Table, Button, Drawer, message } from 'antd';
+import useFetch from '@/hooks/useFetch';
+import { request } from '@/request';
+import PermissionForm from '@/forms/PermissionFrom';
+import EditPermission from '@/forms/EditPermission';
+import { RiDeleteBin6Line } from "react-icons/ri";
+import { TbEdit } from "react-icons/tb";
+import { CiBookmarkPlus } from "react-icons/ci";
 
-export default function Lead() {
-    const translate = useLanguage();
-    const entity = 'permission';
-    const searchConfig = {
-        displayLabels: ['userId'],
-        searchFields: ['userId'],
-        outputValue: '_id',
+const UserTable = () => {
+    const [visible, setVisible] = useState(false);
+    const [selectedRecord, setSelectedRecord] = useState(null);
+
+    const { data: userList, isLoading: userLoading, error } = useFetch(() =>
+        request.list({ entity: 'permission' })
+    );
+
+    const handleAddNew = () => {
+        setSelectedRecord(null);
+        setVisible(true);
     };
 
-    // Define a mapping of roles to colors
-    const roleColors = {
-        admin: 'red',
-        subadmin: 'blue',
-        manager: 'green',
-        supportiveassociate: 'black',
-        teamleader: 'yellow',
-        user: 'green', // Unique color for coordinator role
+    const handleDrawerClose = () => {
+        setVisible(false);
+        setSelectedRecord(null);
     };
 
+    const handleEdit = (record) => {
+        setSelectedRecord(record);
+        setVisible(true);
+    };
 
-    const readColumns = [
+    const handleDelete = async (record) => {
+        try {
+            await request.delete({ entity: 'permission', id: record._id });
+        } catch (error) {
+            message.error('Failed to delete record');
+        }
+    };
+
+    const handleFormSubmit = () => {
+        setVisible(false);
+        setSelectedRecord(null);
+    };
+
+    const columns = [
         {
-            title: translate('userId'),
+            title: 'Full Name',
             dataIndex: ['userId', 'fullname'],
+            key: 'fullname',
+            render: (text) => <span style={{ textTransform: 'capitalize' }}>{text}</span>,
         },
         {
-            title: translate('role'),
-            dataIndex: ['userId', 'role'],
-        },
-        {
-            title: translate('permission'),
+            title: 'Permissions',
             dataIndex: 'permissions',
+            key: 'permissions',
+            render: (permissions) => permissions.join(', '),
         },
-    ];
-
-
-    const dataTableColumns = [
         {
-            title: 'S.No.',
+            title: 'Actions',
             dataIndex: '',
-            render: (text, record, index) => index + 1,
-        },
-        {
-            title: translate('user'),
-            dataIndex: ['userId', 'fullname'],
-            render: (text) => text ? text.charAt(0).toUpperCase() + text.slice(1) : '',
-        },
-        {
-            title: translate('role'),
-            dataIndex: ['userId', 'role'],
-            render: (text) => {
-                const lowercaseText = text ? text.toLowerCase() : ''; // Ensure text is not undefined before calling toLowerCase()
-                const color = roleColors[lowercaseText] || 'black'; // Use a default color if the role is not found
-                return (
-                    <span style={{ color }}>
-                        {text ? text.charAt(0).toUpperCase() + text.slice(1) : ''}
-                    </span>
-                );
-            },
-        },
-        {
-            title: translate('permissions'),
-            dataIndex: 'permissions',
-            render: (permissions) => (
-                permissions ? permissions.map(permission => translate(permission.charAt(0).toUpperCase() + permission.slice(1))).join(', ') : ''
+            key: 'actions',
+            fixed: 'right',
+            render: (text, record) => (
+                <span className='flex items-center gap-4'>
+                    <TbEdit
+                        className='text-blue-500 text-base cursor-pointer'
+                        onClick={() => handleEdit(record)}
+                    />
+                    <RiDeleteBin6Line
+                        className='text-red-500 text-base cursor-pointer'
+                        onClick={() => handleDelete(record)}
+                    />
+                </span>
             ),
         },
     ];
 
-    const Labels = {
-        PANEL_TITLE: translate('permission'),
-        DATATABLE_TITLE: translate('permission'),
-        ADD_NEW_ENTITY: translate('allow_permissions'),
-        ENTITY_NAME: translate('permission'),
-        CREATE_ENTITY: translate('save'),
-        UPDATE_ENTITY: translate('update'),
-    };
-    const configPage = {
-        entity,
-        ...Labels,
-    };
-    const config = {
-        ...configPage,
-        dataTableColumns,
-        readColumns,
-        searchConfig,
-    };
+    if (error) {
+        return <div>Error: {error.message}</div>;
+    }
 
     return (
-        <>
-            <CrudModule
-                createForm={<PermissionFrom />}
-                updateForm={<PermissionFrom isUpdateForm={true} />}
-                config={config}
-            />
-        </>
+        <div>
+            <Button type="primary" onClick={handleAddNew} className='relative float-right mb-10 flex items-center gap-1'>
+                <span><CiBookmarkPlus className='text-red-600 font-bold text-lg' /></span> <span>Add Permissions</span>
+            </Button>
+            <Table dataSource={userList?.result} columns={columns} loading={userLoading} />
+            <Drawer
+                title={selectedRecord ? 'Edit Permission' : 'Given Permission'}
+                placement="right"
+                closable={false}
+                onClose={handleDrawerClose}
+                visible={visible}
+                width={400}
+            >
+                {selectedRecord ? (
+                    <EditPermission
+                        onClose={handleDrawerClose}
+                        onFormSubmit={handleFormSubmit}
+                        selectedRecord={selectedRecord}
+                    />
+                ) : (
+                    <PermissionForm
+                        onClose={handleDrawerClose}
+                        onFormSubmit={handleFormSubmit}
+                    />
+                )}
+            </Drawer>
+        </div>
     );
-}
+};
+
+export default UserTable;

@@ -1,12 +1,11 @@
 import { Badge } from 'antd';
 import useLanguage from '@/locale/useLanguage';
 import AdminCrudModule from '@/modules/AdminCrudModule';
-import AdminForm from '@/forms/AdminForm';
-import RolesForm from '@/forms/AdminForm';
+import RolesForm from '@/forms/AddRoleform';
 
 export default function Admin() {
   const translate = useLanguage();
-  const entity = 'admin';
+  const entity = 'teams';
   const searchConfig = {
     displayLabels: ['fullname', 'username'],
     searchFields: 'username',
@@ -59,13 +58,12 @@ export default function Admin() {
   ];
 
   const Labels = {
-    PANEL_TITLE: translate('admin'),
-    DATATABLE_TITLE: translate('admin_list'),
-    ADD_NEW_ENTITY: translate('add_new_admin'),
-    ENTITY_NAME: translate('admin'),
+    PANEL_TITLE: translate('teams'),
+    DATATABLE_TITLE: translate('team_list'),
+    ADD_NEW_ENTITY: translate('add team'),
+    ENTITY_NAME: translate('team'),
     CREATE_ENTITY: translate('save'),
     UPDATE_ENTITY: translate('update'),
-    RECORD_ENTITY: translate('record_payment'),
   };
 
   const configPage = {
@@ -82,7 +80,7 @@ export default function Admin() {
 
   return (
     <AdminCrudModule
-      createForm={<AdminForm />}
+      createForm={<RolesForm />}
       updateForm={<RolesForm isUpdateForm={true} />}
       config={config}
     />

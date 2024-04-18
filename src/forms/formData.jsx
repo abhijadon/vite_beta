@@ -403,13 +403,14 @@ const formData = [
             type: 'tel',
             required: 'require'
           },
-          {
+       {
             key: 'tel',
             label: 'Alternate number',
             name: ['contact', 'alternate_phone'],
             place: 'Enter Alternate Number',
             id: 'alternate',
             type: 'tel',
+           required: 'require'
           },
           {
             key: 'text',
@@ -463,6 +464,7 @@ const formData = [
             place: 'Enter Admission Type',
             type: 'select',
             options: [{ value: 'FRESH', label: 'FRESH' },
+              { value: 'Credit Transfer', label: 'Credit Transfer' },
             { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
           },
 
@@ -964,13 +966,14 @@ const formData = [
             type: 'tel',
             required: 'require'
           },
-          {
+       {
             key: 'tel',
             label: 'Alternate number',
             name: ['contact', 'alternate_phone'],
             place: 'Enter Alternate Number',
             id: 'alternate',
             type: 'tel',
+           required: 'require'
           },
           {
             key: 'text',
@@ -1024,6 +1027,7 @@ const formData = [
             place: 'Enter Admission Type',
             type: 'select',
             options: [{ value: 'FRESH', label: 'FRESH' },
+              { value: 'Credit Transfer', label: 'Credit Transfer' },
             { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
           },
 
@@ -1525,13 +1529,14 @@ const formData = [
             type: 'tel',
             required: 'require'
           },
-          {
+       {
             key: 'tel',
             label: 'Alternate number',
             name: ['contact', 'alternate_phone'],
             place: 'Enter Alternate Number',
             id: 'alternate',
             type: 'tel',
+           required: 'require'
           },
           {
             key: 'text',
@@ -1585,6 +1590,7 @@ const formData = [
             place: 'Enter Admission Type',
             type: 'select',
             options: [{ value: 'FRESH', label: 'FRESH' },
+              { value: 'Credit Transfer', label: 'Credit Transfer' },
             { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
           },
 
@@ -2086,13 +2092,14 @@ const formData = [
             type: 'tel',
             required: 'require'
           },
-          {
+       {
             key: 'tel',
             label: 'Alternate number',
             name: ['contact', 'alternate_phone'],
             place: 'Enter Alternate Number',
             id: 'alternate',
             type: 'tel',
+           required: 'require'
           },
           {
             key: 'text',
@@ -2146,6 +2153,7 @@ const formData = [
             place: 'Enter Admission Type',
             type: 'select',
             options: [{ value: 'FRESH', label: 'FRESH' },
+              { value: 'Credit Transfer', label: 'Credit Transfer' },
             { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
           },
 
@@ -2647,13 +2655,14 @@ const formData = [
             type: 'tel',
             required: 'require'
           },
-          {
+       {
             key: 'tel',
             label: 'Alternate number',
             name: ['contact', 'alternate_phone'],
             place: 'Enter Alternate Number',
             id: 'alternate',
             type: 'tel',
+           required: 'require'
           },
           {
             key: 'text',
@@ -2707,6 +2716,7 @@ const formData = [
             place: 'Enter Admission Type',
             type: 'select',
             options: [{ value: 'FRESH', label: 'FRESH' },
+              { value: 'Credit Transfer', label: 'Credit Transfer' },
             { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
           },
 
@@ -3208,13 +3218,14 @@ const formData = [
             type: 'tel',
             required: 'require'
           },
-          {
+       {
             key: 'tel',
             label: 'Alternate number',
             name: ['contact', 'alternate_phone'],
             place: 'Enter Alternate Number',
             id: 'alternate',
             type: 'tel',
+           required: 'require'
           },
           {
             key: 'text',
@@ -3268,6 +3279,7 @@ const formData = [
             place: 'Enter Admission Type',
             type: 'select',
             options: [{ value: 'FRESH', label: 'FRESH' },
+              { value: 'Credit Transfer', label: 'Credit Transfer' },
             { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
           },
 
@@ -3776,6 +3788,7 @@ const formData = [
             place: 'Enter Alternate Number',
             id: 'alternate',
             type: 'tel',
+            required: 'require'
           },
           {
             key: 'text',
@@ -3829,6 +3842,7 @@ const formData = [
             place: 'Enter Admission Type',
             type: 'select',
             options: [{ value: 'FRESH', label: 'FRESH' },
+              { value: 'Credit Transfer', label: 'Credit Transfer' },
             { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
           },
 
@@ -4330,13 +4344,14 @@ const formData = [
             type: 'tel',
             required: 'require'
           },
-          {
+         {
             key: 'tel',
             label: 'Alternate number',
             name: ['contact', 'alternate_phone'],
             place: 'Enter Alternate Number',
             id: 'alternate',
             type: 'tel',
+           required: 'require'
           },
           {
             key: 'text',
@@ -4390,6 +4405,7 @@ const formData = [
             place: 'Enter Admission Type',
             type: 'select',
             options: [{ value: 'FRESH', label: 'FRESH' },
+              { value: 'Credit Transfer', label: 'Credit Transfer' },
             { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
           },
 
@@ -4891,13 +4907,14 @@ const formData = [
             type: 'tel',
             required: 'require'
           },
-          {
+       {
             key: 'tel',
             label: 'Alternate number',
             name: ['contact', 'alternate_phone'],
             place: 'Enter Alternate Number',
             id: 'alternate',
             type: 'tel',
+           required: 'require'
           },
           {
             key: 'text',
@@ -4951,6 +4968,7 @@ const formData = [
             place: 'Enter Admission Type',
             type: 'select',
             options: [{ value: 'FRESH', label: 'FRESH' },
+              { value: 'Credit Transfer', label: 'Credit Transfer' },
             { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
           },
 
@@ -5453,13 +5471,14 @@ const formData = [
             type: 'tel',
             required: 'require'
           },
-          {
+       {
             key: 'tel',
             label: 'Alternate number',
             name: ['contact', 'alternate_phone'],
             place: 'Enter Alternate Number',
             id: 'alternate',
             type: 'tel',
+           required: 'require'
           },
           {
             key: 'text',
@@ -5513,6 +5532,7 @@ const formData = [
             place: 'Enter Admission Type',
             type: 'select',
             options: [{ value: 'FRESH', label: 'FRESH' },
+              { value: 'Credit Transfer', label: 'Credit Transfer' },
             { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
           },
 
@@ -6014,13 +6034,14 @@ const formData = [
             type: 'tel',
             required: 'require'
           },
-          {
+       {
             key: 'tel',
             label: 'Alternate number',
             name: ['contact', 'alternate_phone'],
             place: 'Enter Alternate Number',
             id: 'alternate',
             type: 'tel',
+           required: 'require'
           },
           {
             key: 'text',
@@ -6074,6 +6095,7 @@ const formData = [
             place: 'Enter Admission Type',
             type: 'select',
             options: [{ value: 'FRESH', label: 'FRESH' },
+              { value: 'Credit Transfer', label: 'Credit Transfer' },
             { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
           },
 
@@ -6575,13 +6597,14 @@ const formData = [
             type: 'tel',
             required: 'require'
           },
-          {
+       {
             key: 'tel',
             label: 'Alternate number',
             name: ['contact', 'alternate_phone'],
             place: 'Enter Alternate Number',
             id: 'alternate',
             type: 'tel',
+           required: 'require'
           },
           {
             key: 'text',
@@ -6635,6 +6658,7 @@ const formData = [
             place: 'Enter Admission Type',
             type: 'select',
             options: [{ value: 'FRESH', label: 'FRESH' },
+              { value: 'Credit Transfer', label: 'Credit Transfer' },
             { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
           },
 
@@ -7136,13 +7160,14 @@ const formData = [
             type: 'tel',
             required: 'require'
           },
-          {
+       {
             key: 'tel',
             label: 'Alternate number',
             name: ['contact', 'alternate_phone'],
             place: 'Enter Alternate Number',
             id: 'alternate',
             type: 'tel',
+           required: 'require'
           },
           {
             key: 'text',
@@ -7196,6 +7221,7 @@ const formData = [
             place: 'Enter Admission Type',
             type: 'select',
             options: [{ value: 'FRESH', label: 'FRESH' },
+              { value: 'Credit Transfer', label: 'Credit Transfer' },
             { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
           },
 
@@ -7697,13 +7723,14 @@ const formData = [
             type: 'tel',
             required: 'require'
           },
-          {
+       {
             key: 'tel',
             label: 'Alternate number',
             name: ['contact', 'alternate_phone'],
             place: 'Enter Alternate Number',
             id: 'alternate',
             type: 'tel',
+           required: 'require'
           },
           {
             key: 'text',
@@ -7757,6 +7784,7 @@ const formData = [
             place: 'Enter Admission Type',
             type: 'select',
             options: [{ value: 'FRESH', label: 'FRESH' },
+              { value: 'Credit Transfer', label: 'Credit Transfer' },
             { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
           },
 
@@ -8259,13 +8287,14 @@ const formData = [
             type: 'tel',
             required: 'require'
           },
-          {
+       {
             key: 'tel',
             label: 'Alternate number',
             name: ['contact', 'alternate_phone'],
             place: 'Enter Alternate Number',
             id: 'alternate',
             type: 'tel',
+           required: 'require'
           },
           {
             key: 'text',
@@ -8319,6 +8348,7 @@ const formData = [
             place: 'Enter Admission Type',
             type: 'select',
             options: [{ value: 'FRESH', label: 'FRESH' },
+              { value: 'Credit Transfer', label: 'Credit Transfer' },
             { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
           },
 
@@ -8820,13 +8850,14 @@ const formData = [
             type: 'tel',
             required: 'require'
           },
-          {
+       {
             key: 'tel',
             label: 'Alternate number',
             name: ['contact', 'alternate_phone'],
             place: 'Enter Alternate Number',
             id: 'alternate',
             type: 'tel',
+           required: 'require'
           },
           {
             key: 'text',
@@ -8880,6 +8911,7 @@ const formData = [
             place: 'Enter Admission Type',
             type: 'select',
             options: [{ value: 'FRESH', label: 'FRESH' },
+              { value: 'Credit Transfer', label: 'Credit Transfer' },
             { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
           },
 
@@ -9382,13 +9414,14 @@ const formData = [
             type: 'tel',
             required: 'require'
           },
-          {
+       {
             key: 'tel',
             label: 'Alternate number',
             name: ['contact', 'alternate_phone'],
             place: 'Enter Alternate Number',
             id: 'alternate',
             type: 'tel',
+           required: 'require'
           },
           {
             key: 'text',
@@ -9442,6 +9475,7 @@ const formData = [
             place: 'Enter Admission Type',
             type: 'select',
             options: [{ value: 'FRESH', label: 'FRESH' },
+              { value: 'Credit Transfer', label: 'Credit Transfer' },
             { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
           },
 
@@ -9943,13 +9977,14 @@ const formData = [
             type: 'tel',
             required: 'require'
           },
-          {
+       {
             key: 'tel',
             label: 'Alternate number',
             name: ['contact', 'alternate_phone'],
             place: 'Enter Alternate Number',
             id: 'alternate',
             type: 'tel',
+           required: 'require'
           },
           {
             key: 'text',
@@ -10003,6 +10038,7 @@ const formData = [
             place: 'Enter Admission Type',
             type: 'select',
             options: [{ value: 'FRESH', label: 'FRESH' },
+              { value: 'Credit Transfer', label: 'Credit Transfer' },
             { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
           },
 
@@ -10513,13 +10549,14 @@ const formData = [
             type: 'tel',
             required: 'require'
           },
-          {
+       {
             key: 'tel',
             label: 'Alternate number',
             name: ['contact', 'alternate_phone'],
             place: 'Enter Alternate Number',
             id: 'alternate',
             type: 'tel',
+           required: 'require'
           },
           {
             key: 'text',
@@ -10573,6 +10610,7 @@ const formData = [
             place: 'Enter Admission Type',
             type: 'select',
             options: [{ value: 'FRESH', label: 'FRESH' },
+              { value: 'Credit Transfer', label: 'Credit Transfer' },
             { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
           },
 
@@ -11074,13 +11112,14 @@ const formData = [
             type: 'tel',
             required: 'require'
           },
-          {
+       {
             key: 'tel',
             label: 'Alternate number',
             name: ['contact', 'alternate_phone'],
             place: 'Enter Alternate Number',
             id: 'alternate',
             type: 'tel',
+           required: 'require'
           },
           {
             key: 'text',
@@ -11134,6 +11173,7 @@ const formData = [
             place: 'Enter Admission Type',
             type: 'select',
             options: [{ value: 'FRESH', label: 'FRESH' },
+              { value: 'Credit Transfer', label: 'Credit Transfer' },
             { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
           },
 
@@ -11635,13 +11675,14 @@ const formData = [
             type: 'tel',
             required: 'require'
           },
-          {
+       {
             key: 'tel',
             label: 'Alternate number',
             name: ['contact', 'alternate_phone'],
             place: 'Enter Alternate Number',
             id: 'alternate',
             type: 'tel',
+           required: 'require'
           },
           {
             key: 'text',
@@ -11695,6 +11736,7 @@ const formData = [
             place: 'Enter Admission Type',
             type: 'select',
             options: [{ value: 'FRESH', label: 'FRESH' },
+              { value: 'Credit Transfer', label: 'Credit Transfer' },
             { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
           },
 
@@ -12196,13 +12238,14 @@ const formData = [
             type: 'tel',
             required: 'require'
           },
-          {
+       {
             key: 'tel',
             label: 'Alternate number',
             name: ['contact', 'alternate_phone'],
             place: 'Enter Alternate Number',
             id: 'alternate',
             type: 'tel',
+           required: 'require'
           },
           {
             key: 'text',
@@ -12256,6 +12299,7 @@ const formData = [
             place: 'Enter Admission Type',
             type: 'select',
             options: [{ value: 'FRESH', label: 'FRESH' },
+              { value: 'Credit Transfer', label: 'Credit Transfer' },
             { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
           },
 
@@ -12757,13 +12801,14 @@ const formData = [
             type: 'tel',
             required: 'require'
           },
-          {
+       {
             key: 'tel',
             label: 'Alternate number',
             name: ['contact', 'alternate_phone'],
             place: 'Enter Alternate Number',
             id: 'alternate',
             type: 'tel',
+           required: 'require'
           },
           {
             key: 'text',
@@ -12817,6 +12862,7 @@ const formData = [
             place: 'Enter Admission Type',
             type: 'select',
             options: [{ value: 'FRESH', label: 'FRESH' },
+              { value: 'Credit Transfer', label: 'Credit Transfer' },
             { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
           },
 
@@ -13318,13 +13364,14 @@ const formData = [
             type: 'tel',
             required: 'require'
           },
-          {
+       {
             key: 'tel',
             label: 'Alternate number',
             name: ['contact', 'alternate_phone'],
             place: 'Enter Alternate Number',
             id: 'alternate',
             type: 'tel',
+           required: 'require'
           },
           {
             key: 'text',
@@ -13378,6 +13425,7 @@ const formData = [
             place: 'Enter Admission Type',
             type: 'select',
             options: [{ value: 'FRESH', label: 'FRESH' },
+              { value: 'Credit Transfer', label: 'Credit Transfer' },
             { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
           },
 
@@ -13879,13 +13927,14 @@ const formData = [
             type: 'tel',
             required: 'require'
           },
-          {
+       {
             key: 'tel',
             label: 'Alternate number',
             name: ['contact', 'alternate_phone'],
             place: 'Enter Alternate Number',
             id: 'alternate',
             type: 'tel',
+           required: 'require'
           },
           {
             key: 'text',
@@ -13939,6 +13988,7 @@ const formData = [
             place: 'Enter Admission Type',
             type: 'select',
             options: [{ value: 'FRESH', label: 'FRESH' },
+              { value: 'Credit Transfer', label: 'Credit Transfer' },
             { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
           },
 
@@ -14440,13 +14490,14 @@ const formData = [
             type: 'tel',
             required: 'require'
           },
-          {
+       {
             key: 'tel',
             label: 'Alternate number',
             name: ['contact', 'alternate_phone'],
             place: 'Enter Alternate Number',
             id: 'alternate',
             type: 'tel',
+           required: 'require'
           },
           {
             key: 'text',
@@ -14500,6 +14551,7 @@ const formData = [
             place: 'Enter Admission Type',
             type: 'select',
             options: [{ value: 'FRESH', label: 'FRESH' },
+              { value: 'Credit Transfer', label: 'Credit Transfer' },
             { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
           },
 
@@ -15001,13 +15053,14 @@ const formData = [
             type: 'tel',
             required: 'require'
           },
-          {
+       {
             key: 'tel',
             label: 'Alternate number',
             name: ['contact', 'alternate_phone'],
             place: 'Enter Alternate Number',
             id: 'alternate',
             type: 'tel',
+           required: 'require'
           },
           {
             key: 'text',
@@ -15061,6 +15114,7 @@ const formData = [
             place: 'Enter Admission Type',
             type: 'select',
             options: [{ value: 'FRESH', label: 'FRESH' },
+              { value: 'Credit Transfer', label: 'Credit Transfer' },
             { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
           },
 
@@ -15563,13 +15617,14 @@ const formData = [
             type: 'tel',
             required: 'require'
           },
-          {
+       {
             key: 'tel',
             label: 'Alternate number',
             name: ['contact', 'alternate_phone'],
             place: 'Enter Alternate Number',
             id: 'alternate',
             type: 'tel',
+           required: 'require'
           },
           {
             key: 'text',
@@ -15623,6 +15678,7 @@ const formData = [
             place: 'Enter Admission Type',
             type: 'select',
             options: [{ value: 'FRESH', label: 'FRESH' },
+              { value: 'Credit Transfer', label: 'Credit Transfer' },
             { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
           },
 
@@ -16124,13 +16180,14 @@ const formData = [
             type: 'tel',
             required: 'require'
           },
-          {
+       {
             key: 'tel',
             label: 'Alternate number',
             name: ['contact', 'alternate_phone'],
             place: 'Enter Alternate Number',
             id: 'alternate',
             type: 'tel',
+           required: 'require'
           },
           {
             key: 'text',
@@ -16184,6 +16241,7 @@ const formData = [
             place: 'Enter Admission Type',
             type: 'select',
             options: [{ value: 'FRESH', label: 'FRESH' },
+              { value: 'Credit Transfer', label: 'Credit Transfer' },
             { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
           },
 
@@ -16685,13 +16743,14 @@ const formData = [
             type: 'tel',
             required: 'require'
           },
-          {
+       {
             key: 'tel',
             label: 'Alternate number',
             name: ['contact', 'alternate_phone'],
             place: 'Enter Alternate Number',
             id: 'alternate',
             type: 'tel',
+           required: 'require'
           },
           {
             key: 'text',
@@ -16745,6 +16804,7 @@ const formData = [
             place: 'Enter Admission Type',
             type: 'select',
             options: [{ value: 'FRESH', label: 'FRESH' },
+              { value: 'Credit Transfer', label: 'Credit Transfer' },
             { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
           },
 
@@ -17246,13 +17306,14 @@ const formData = [
             type: 'tel',
             required: 'require'
           },
-          {
+       {
             key: 'tel',
             label: 'Alternate number',
             name: ['contact', 'alternate_phone'],
             place: 'Enter Alternate Number',
             id: 'alternate',
             type: 'tel',
+           required: 'require'
           },
           {
             key: 'text',
@@ -17306,6 +17367,7 @@ const formData = [
             place: 'Enter Admission Type',
             type: 'select',
             options: [{ value: 'FRESH', label: 'FRESH' },
+              { value: 'Credit Transfer', label: 'Credit Transfer' },
             { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
           },
 
@@ -17807,13 +17869,14 @@ const formData = [
             type: 'tel',
             required: 'require'
           },
-          {
+       {
             key: 'tel',
             label: 'Alternate number',
             name: ['contact', 'alternate_phone'],
             place: 'Enter Alternate Number',
             id: 'alternate',
             type: 'tel',
+           required: 'require'
           },
           {
             key: 'text',
@@ -17867,6 +17930,7 @@ const formData = [
             place: 'Enter Admission Type',
             type: 'select',
             options: [{ value: 'FRESH', label: 'FRESH' },
+              { value: 'Credit Transfer', label: 'Credit Transfer' },
             { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
           },
 
@@ -18369,13 +18433,14 @@ const formData = [
             type: 'tel',
             required: 'require'
           },
-          {
+       {
             key: 'tel',
             label: 'Alternate number',
             name: ['contact', 'alternate_phone'],
             place: 'Enter Alternate Number',
             id: 'alternate',
             type: 'tel',
+           required: 'require'
           },
           {
             key: 'text',
@@ -18429,6 +18494,7 @@ const formData = [
             place: 'Enter Admission Type',
             type: 'select',
             options: [{ value: 'FRESH', label: 'FRESH' },
+              { value: 'Credit Transfer', label: 'Credit Transfer' },
             { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
           },
 
@@ -18930,13 +18996,14 @@ const formData = [
             type: 'tel',
             required: 'require'
           },
-          {
+       {
             key: 'tel',
             label: 'Alternate number',
             name: ['contact', 'alternate_phone'],
             place: 'Enter Alternate Number',
             id: 'alternate',
             type: 'tel',
+           required: 'require'
           },
           {
             key: 'text',
@@ -18990,6 +19057,7 @@ const formData = [
             place: 'Enter Admission Type',
             type: 'select',
             options: [{ value: 'FRESH', label: 'FRESH' },
+              { value: 'Credit Transfer', label: 'Credit Transfer' },
             { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
           },
 
@@ -19492,13 +19560,14 @@ const formData = [
             type: 'tel',
             required: 'require'
           },
-          {
+       {
             key: 'tel',
             label: 'Alternate number',
             name: ['contact', 'alternate_phone'],
             place: 'Enter Alternate Number',
             id: 'alternate',
             type: 'tel',
+           required: 'require'
           },
           {
             key: 'text',
@@ -19552,6 +19621,7 @@ const formData = [
             place: 'Enter Admission Type',
             type: 'select',
             options: [{ value: 'FRESH', label: 'FRESH' },
+              { value: 'Credit Transfer', label: 'Credit Transfer' },
             { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
           },
 
@@ -20053,13 +20123,14 @@ const formData = [
             type: 'tel',
             required: 'require'
           },
-          {
+       {
             key: 'tel',
             label: 'Alternate number',
             name: ['contact', 'alternate_phone'],
             place: 'Enter Alternate Number',
             id: 'alternate',
             type: 'tel',
+           required: 'require'
           },
           {
             key: 'text',
@@ -20113,6 +20184,7 @@ const formData = [
             place: 'Enter Admission Type',
             type: 'select',
             options: [{ value: 'FRESH', label: 'FRESH' },
+              { value: 'Credit Transfer', label: 'Credit Transfer' },
             { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
           },
 

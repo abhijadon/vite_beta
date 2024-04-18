@@ -333,7 +333,7 @@ const StudentDetailsModal = ({ visible, onClose, student }) => {
                         <div key={index} className='w-52 flex flex-col items-center'>
                             <Image
                                 width={200}
-                                src={doc.downloadURL}
+                                src={doc?.downloadURL}
                                 preview={{
                                     toolbarRender: (
                                         _,

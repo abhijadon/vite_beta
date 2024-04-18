@@ -4,7 +4,7 @@ import InvoiceDataTableModule from '@/modules/InvoiceModule/InvoiceDataTableModu
 
 export default function Invoice() {
   const translate = useLanguage();
-  const entity = 'invoice';
+  const entity = 'teams';
 
   const searchConfig = {
     displayLabels: ['full_name', 'username'],

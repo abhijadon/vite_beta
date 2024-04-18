@@ -100,7 +100,6 @@ export const crud = {
         });
       }
     },
-    
   read:
     ({ entity, id }) =>
     async (dispatch) => {

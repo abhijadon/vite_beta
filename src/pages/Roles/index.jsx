@@ -1,109 +1,138 @@
-import CrudModule from '@/modules/CrudModule/CrudModule';
-import LeadForm from '@/forms/LeadForm';
-import useLanguage from '@/locale/useLanguage';
-import '@/style/tailwind.css'
-import AddForm from '@/forms/AddRoleform';
-export default function Lead() {
+// UserTable.jsx
+import React, { useState } from 'react';
+import { Table, Button, Drawer, message } from 'antd';
+import useFetch from '@/hooks/useFetch'; // Assuming this hook handles API requests
+import { request } from '@/request';
+import AddRoleform from '@/forms/AddRoleform';
+import { RiDeleteBin6Line } from "react-icons/ri";
+import { TbEdit } from "react-icons/tb";
+import { CiBookmarkPlus } from "react-icons/ci";
+import EditRole from '@/forms/EditRole';
 
-    const translate = useLanguage();
-    const entity = 'teams';
-    const searchConfig = {
-        displayLabels: ['userId'],
-        searchFields: ['userId'],
-        outputValue: '_id',
-    };
+const UserTable = () => {
+    const [visible, setVisible] = useState(false);
+    const [selectedRecord, setSelectedRecord] = useState(null);
 
-    const readColumns = [
-        {
-            title: translate('userId'),
-            dataIndex: 'userId',
-        },
-        {
-            title: translate('teamMembers'),
-            dataIndex: 'teamMembers',
-        },
-        {
-            title: translate('institute'),
-            dataIndex: 'institute',
-        },
-        {
-            title: translate('university'),
-            dataIndex: 'university',
-        },
-        {
-            title: translate('teamName'),
-            dataIndex: 'teamName',
-        },
-    ];
-
-    const dataTableColumns = [
-        {
-            title: 'S.No.',
-            dataIndex: '',
-            render: (text, record, index) => index + 1,
-        },
-        {
-            title: translate('fullname'),
-            dataIndex: ['userId', 'fullname'],
-            render: (text) => text ? text.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ') : '',
-        },
-        {
-            title: 'teamMembers',
-            dataIndex: 'teamMembers',
-            render: (teamMembers) => {
-                if (teamMembers && Array.isArray(teamMembers)) {
-                    const capitalizedMembers = teamMembers.map((member) => member.fullname.charAt(0).toUpperCase() + member.fullname.slice(1));
-                    return capitalizedMembers.join(', ');
-                } else {
-                    return ''; // or any other default value if 'teamMembers' is undefined or not an array
-                }
-            },
-        },
-        {
-            title: translate('institute'),
-            dataIndex: 'institute',
-            render: (institute) => (
-                institute ? institute.join(', ') : ''
-            ),
-        },
-        {
-            title: 'University',
-            dataIndex: 'university',
-            render: (university) => (
-                university ? university.join(', ') : ''
-            ),
-        },
-        {
-            title: translate('teamName'),
-            dataIndex: 'teamName',
-        },
-    ];
-
-    const Labels = {
-        PANEL_TITLE: translate('teams'),
-        DATATABLE_TITLE: translate('teams'),
-        ADD_NEW_ENTITY: translate('add_roles'),
-        ENTITY_NAME: translate('teams'),
-        CREATE_ENTITY: translate('save'),
-        UPDATE_ENTITY: translate('update'),
-    };
-    const configPage = {
-        entity,
-        ...Labels,
-    };
-    const config = {
-        ...configPage,
-        dataTableColumns,
-        readColumns,
-        searchConfig,
-    };
-    return (
-        <>
-            <CrudModule
-                createForm={<AddForm />}
-                updateForm={<AddForm isUpdateForm={true} />}
-                config={config}
-            />
-        </>
+    const { data: userList, isLoading: userLoading, error } = useFetch(() =>
+        request.list({ entity: 'teams' })
     );
-}
+
+    const handleAddNew = () => {
+        setSelectedRecord(null); // Reset selected record
+        setVisible(true);
+    };
+
+    const handleDrawerClose = () => {
+        setVisible(false);
+        setSelectedRecord(null);
+    };
+
+    const handleEdit = (record) => {
+        setSelectedRecord(record);
+        setVisible(true);
+    };
+
+    const handleDelete = async (record) => {
+        try {
+            await request.delete({ entity: 'teams', id: record._id });
+        } catch (error) {
+            message.error('Failed to delete record');
+        }
+    };
+
+    const handleFormSubmit = () => {
+        // Close drawer after form submission
+        setVisible(false);
+        setSelectedRecord(null); // Reset selected record
+    };
+
+    const columns = [
+        {
+            title: 'Full Name',
+            dataIndex: ['userId', 'fullname'],
+            key: 'fullname',
+            render: (text) => <span style={{ textTransform: 'capitalize' }}>{text}</span>,
+        },
+        {
+            title: 'Team Members',
+            dataIndex: 'teamMembers',
+            key: 'teamMembers',
+            render: (teamMembers) => (
+                <span className='capitalize'>
+                    {teamMembers.map(member => member.fullname).join(', ')}
+                </span>
+            ),
+        },
+        {
+            title: 'Institute Name',
+            dataIndex: 'institute',
+            key: 'institute',
+            render: (institutes) => institutes.join(', '), // Assuming institutes is an array
+        },
+        {
+            title: 'University Name',
+            dataIndex: 'university',
+            key: 'university',
+            render: (universities) => universities.join(', '), // Assuming universities is an array
+        },
+        {
+            title: 'Teamname',
+            dataIndex: 'teamName',
+            key: 'teamName',
+        },
+        {
+            title: 'Actions',
+            dataIndex: '',
+            key: 'actions',
+            fixed: 'right',
+            render: (text, record) => (
+                <span className='flex items-center gap-4'>
+                    <TbEdit
+                        className='text-blue-500 text-base cursor-pointer'
+                        onClick={() => handleEdit(record)}
+                    />
+                    <RiDeleteBin6Line
+                        className='text-red-500 text-base cursor-pointer'
+                        onClick={() => handleDelete(record)}
+                    />
+                </span>
+            ),
+        },
+    ];
+
+    if (error) {
+        return <div>Error: {error.message}</div>;
+    }
+
+    return (
+        <div>
+            <Button type="primary" onClick={handleAddNew} className='relative float-right mb-10 flex items-center gap-1'>
+                <span><CiBookmarkPlus className='text-red-600 font-bold text-lg' /></span> <span>Add Teams</span>
+            </Button>
+            <Table dataSource={userList?.result} columns={columns} loading={userLoading} />
+            <Drawer
+                title={selectedRecord ? 'Edit Item' : 'Add New Item'}
+                placement="right"
+                closable={false}
+                onClose={handleDrawerClose}
+                visible={visible}
+                width={400}
+            >
+                {selectedRecord ? (
+                    <EditRole
+                        onClose={handleDrawerClose}
+                        onFormSubmit={handleFormSubmit}
+                        selectedRecord={selectedRecord}
+                    />
+                ) : (
+                    <AddRoleform
+                        onClose={handleDrawerClose}
+                        onFormSubmit={handleFormSubmit}
+                    />
+                )}
+            </Drawer>
+        </div>
+    );
+};
+
+export default UserTable;

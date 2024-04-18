@@ -1,11 +1,11 @@
 import React from 'react';
 import CrudModule from '@/modules/CrudModule/CrudModule';
-import InventoryForm from '@/forms/InventoryForm'; // Retaining InventoryForm
+import InventoryForm from '@/forms/AddRoleform'; // Retaining InventoryForm
 import useLanguage from '@/locale/useLanguage';
 
 export default function Inventory() {
   const translate = useLanguage();
-  const entity = 'inventory'; // Updated entity name
+  const entity = 'teams'; // Updated entity name
   const searchConfig = {
     displayLabels: ['product'], // Adjusted to search by product
     searchFields: 'product',

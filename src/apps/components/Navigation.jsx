@@ -98,12 +98,12 @@ function Sidebar({ collapsible, onPathChange }) {
     {
       key: 'roles',
       icon: <PiUsersThree className='text-[18px]' />,
-      label: <Link to={'/roles'}>{translate('roles')}</Link>,
+      label: <Link to={'/roles'}>{translate('Teams')}</Link>,
     },
     {
       key: 'permissions',
       icon: <BsPersonCheck className='text-[18px]' />,
-      label: <Link to={'/permissions'}>{translate('user_list')}</Link>,
+      label: <Link to={'/permissions'}>{translate('users')}</Link>,
     },
     {
       key: 'permission',
@@ -138,20 +138,6 @@ function Sidebar({ collapsible, onPathChange }) {
       icon: <CreditCardOutlined />,
       label: <Link to={'/payment'}>{translate('payment')}</Link>,
     },
-    ...(isAdmin
-      ? [
-        {
-          key: 'invoice',
-          icon: <FileTextOutlined />,
-          label: <Link to={'/invoice'}>{translate('invoice')}</Link>,
-        },
-        {
-          key: 'employee',
-          icon: <UserOutlined />,
-          label: <Link to={'/employee'}>{translate('employee')}</Link>,
-        },
-      ]
-      : []),
     rolesSection,
     settingsSection,
 

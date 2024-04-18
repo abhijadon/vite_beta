@@ -1,13 +1,12 @@
+// EditRole.jsx
 import React, { useEffect, useState } from 'react';
-import { Input, Select, Form, Spin, Button, message } from 'antd';
+import { Form, Select, Input, Button, message } from 'antd';
 import { request } from '@/request';
-import axios from 'axios';
-import Cookies from 'js-cookie';
-
 
 const { Option } = Select;
 
-const AddRoleform = ({ onClose, onFormSubmit }) => {
+const EditRole = ({ onClose, onFormSubmit, selectedRecord }) => {
+    const [form] = Form.useForm();
     const [userList, setUserList] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const [selectedRole, setSelectedRole] = useState(null);
@@ -24,11 +23,14 @@ const AddRoleform = ({ onClose, onFormSubmit }) => {
             }
         };
 
-        // Fetch data only if userList is empty
-        if (userList.length === 0) {
-            fetchData();
-        }
-    }, [userList]);
+        fetchData(); // Call fetchData unconditionally
+
+    }, []);
+
+    useEffect(() => {
+        // Set form values when selectedRecord changes
+        form.setFieldsValue(selectedRecord);
+    }, [selectedRecord, form]);
 
     const handleRoleChange = (value) => {
         setSelectedRole(value);
@@ -54,41 +56,28 @@ const AddRoleform = ({ onClose, onFormSubmit }) => {
         return userList;
     };
 
+    const handleFinish = async (values) => {
+        try {
+            await request.update({ entity: 'teams', id: selectedRecord._id, jsonData: values });
+            onFormSubmit(); // Trigger reload in parent component
+            onClose(); // Close the form
+        } catch (error) {
+            message.error('Failed to update record');
+        }
+    };
+
     if (isLoading) {
         // You can add a loading state or spinner while the data is being fetched
-        return <div><Spin /></div>;
+        return <div>Loading...</div>;
     }
-
-    const onFinish = async (formValues) => {
-        setIsLoading(true);
-        try {
-            const response = await axios.post('http://localhost:5000/api/teams/create', formValues, {
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${Cookies.get('token')}`,
-                },
-            });
-
-            const data = response.data;
-
-            if (response.status === 201) {
-                message.success('Team created successfully');
-                onFormSubmit(); // Trigger parent component's onFormSubmit function
-                onClose(); // Close the form
-            } else {
-                throw new Error(data.message || 'Failed to create team');
-            }
-        } catch (error) {
-            console.error('Error:', error);
-            message.error(error.message || 'Failed to create team');
-        } finally {
-            setIsLoading(false);
-        }
-    }
-
 
     return (
-        <Form onFinish={onFinish} layout='vertical'>
+        <Form
+            form={form}
+            layout="vertical"
+            onFinish={handleFinish}
+            initialValues={selectedRecord}
+        >
             <Form.Item label="Role" name="role">
                 <Select
                     placeholder='Select role'
@@ -172,4 +161,4 @@ const AddRoleform = ({ onClose, onFormSubmit }) => {
     );
 };
 
-export default AddRoleform;
+export default EditRole;

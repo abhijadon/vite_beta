@@ -1,13 +1,12 @@
+// EditRole.jsx
 import React, { useEffect, useState } from 'react';
-import { Input, Select, Form, Spin, Button, message } from 'antd';
+import { Form, Select, Input, Button, message } from 'antd';
 import { request } from '@/request';
-import axios from 'axios';
-import Cookies from 'js-cookie';
-
 
 const { Option } = Select;
 
-const PermissionForm = ({ onClose, onFormSubmit }) => {
+const EditPermission = ({ onClose, onFormSubmit, selectedRecord }) => {
+    const [form] = Form.useForm();
     const [userList, setUserList] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const [selectedRole, setSelectedRole] = useState(null);
@@ -24,11 +23,14 @@ const PermissionForm = ({ onClose, onFormSubmit }) => {
             }
         };
 
-        // Fetch data only if userList is empty
-        if (userList.length === 0) {
-            fetchData();
-        }
-    }, [userList]);
+        fetchData(); // Call fetchData unconditionally
+
+    }, []);
+
+    useEffect(() => {
+        // Set form values when selectedRecord changes
+        form.setFieldsValue(selectedRecord);
+    }, [selectedRecord, form]);
 
     const handleRoleChange = (value) => {
         setSelectedRole(value);
@@ -54,42 +56,29 @@ const PermissionForm = ({ onClose, onFormSubmit }) => {
         return userList;
     };
 
-    const onFinish = async (formValues) => {
-        setIsLoading(true);
+    const handleFinish = async (values) => {
         try {
-            const response = await axios.post('http://localhost:5000/api/permission/create', formValues, {
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${Cookies.get('token')}`,
-                },
-            });
-
-            const data = response.data;
-
-            if (response.status === 200) {
-                message.success('Permission created successfully');
-                onFormSubmit(); // Trigger parent component's onFormSubmit function
-                onClose(); // Close the form
-            } else {
-                throw new Error(data.message || 'Failed to create permission');
-            }
+            await request.update({ entity: 'permission', id: selectedRecord._id, jsonData: values });
+            onFormSubmit(); // Trigger reload in parent component
+            onClose(); // Close the form
         } catch (error) {
-            console.error('Error:', error);
-            message.error(error.message || 'Failed to create permission');
-        } finally {
-            setIsLoading(false);
+            message.error('Failed to update record');
         }
     };
 
     if (isLoading) {
         // You can add a loading state or spinner while the data is being fetched
-        return <div><Spin /></div>;
+        return <div>Loading...</div>;
     }
 
-
     return (
-        <Form onFinish={onFinish} layout='vertical'>
-            <Form.Item label="Role" name="role">
+        <Form
+            form={form}
+            layout="vertical"
+            onFinish={handleFinish}
+            initialValues={selectedRecord}
+        >
+             <Form.Item label="Role" name="role">
                 <Select
                     placeholder='Select role'
                     onChange={handleRoleChange}
@@ -125,7 +114,6 @@ const PermissionForm = ({ onClose, onFormSubmit }) => {
                     <Select.Option value="delete">Delete</Select.Option>
                 </Select>
             </Form.Item>
-
             <Form.Item>
                 <Button type="primary" htmlType="submit">
                     Submit
@@ -135,4 +123,4 @@ const PermissionForm = ({ onClose, onFormSubmit }) => {
     );
 };
 
-export default PermissionForm;
+export default EditPermission;
