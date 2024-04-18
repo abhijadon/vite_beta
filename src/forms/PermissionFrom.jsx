@@ -57,7 +57,7 @@ const PermissionForm = ({ onClose, onFormSubmit }) => {
     const onFinish = async (formValues) => {
         setIsLoading(true);
         try {
-            const response = await axios.post('http://localhost:5000/api/permission/create', formValues, {
+            const response = await axios.post(`${import.meta.env.VITE_BACKEND_SERVER}api/permission/create`, formValues, {
                 headers: {
                     'Content-Type': 'application/json',
                     'Authorization': `Bearer ${Cookies.get('token')}`,
