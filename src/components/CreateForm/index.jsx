@@ -19,13 +19,17 @@ export default function CreateForm({ config, formElements, withUpload = false })
   const [logoUrl, setLogoUrl] = useState('https://highereducationschool.com/wp-content/uploads/2022/09/3.png'); // Default logo URL
 
   const onSubmit = (fieldsValue) => {
-    if (entity === 'lead') {
-      // Open the drawer if the entity is 'lead'
+    const universityName = fieldsValue.customfields ? fieldsValue.customfields.university_name : '';
+    const session = fieldsValue.customfields ? fieldsValue.customfields.session : '';
+
+    // Check if the entity is 'lead' and the university name is one of the specified values and not "MANGALAYATAN ONLINE"
+    if (entity === 'lead' && (['SPU', 'BOSSE', 'MANGALAYATAN'].includes(universityName) || (universityName === 'MANGALAYATAN ONLINE' && ['JULY 23', 'JAN 24'].includes(session)))) {
+      // Open the drawer if the conditions are met
       setIsDrawerVisible(true);
       // Save form data to display in drawer
       setFormData(fieldsValue);
     } else {
-      // Dispatch the form submission action
+      // If the conditions are not met, directly submit the form
       dispatchFormSubmission(fieldsValue);
     }
   };
@@ -44,7 +48,7 @@ export default function CreateForm({ config, formElements, withUpload = false })
 
   const dispatchFormSubmission = (fieldsValue) => {
     const formData = new FormData();
-       console.log('felval', fieldsValue)
+    console.log('felval', fieldsValue)
     if (fieldsValue && entity !== 'lead') {
       console.log('fiewldvalue', fieldsValue)
       dispatch(crud.create({ entity, jsonData: fieldsValue, withUpload: true }));

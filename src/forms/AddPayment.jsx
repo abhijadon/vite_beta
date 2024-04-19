@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Form, Input, Button, Select, Upload } from 'antd';
+import { Form, Input, Button, Select, Upload, message } from 'antd';
 import axios from 'axios';
 import useLanguage from '@/locale/useLanguage';
 import { InboxOutlined } from '@ant-design/icons';
@@ -63,12 +63,19 @@ const UpdatePaymentForm = ({ entity, id, recordDetails, onCloseModal }) => {
 
             const response = await axios.put(`/${entity}/updatePayment/${id}`, formData);
             if (response && response.data && response.data.success) {
-                // Set success state to true upon successful update
                 setSuccess(true);
                 onCloseModal(); // Close modal if needed
+                if (response.data.message) {
+                    message.success(response.data.message); // Display success message from backend
+                }
             }
         } catch (error) {
             console.error('Update failed:', error);
+            if (error.response && error.response.data && error.response.data.message) {
+                message.error(error.response.data.message); // Display error message from backend
+            } else {
+                message.error('Update failed'); // Display generic error message
+            }
         } finally {
             setLoading(false);
         }

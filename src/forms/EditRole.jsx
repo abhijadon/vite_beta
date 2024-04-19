@@ -104,9 +104,9 @@ const EditRole = ({ onClose, onFormSubmit, selectedRecord }) => {
                     ))}
                 </Select>
             </Form.Item>
-            {selectedRole === 'Team Leader' && (
+            {(selectedRole === 'Team Leader' || selectedRole === 'Supportive Associate') && (
                 <Form.Item label="Team Members" name="teamMembers">
-                    <Select classname="capitalize" placeholder='Select teamembers' mode='multiple' showSearch optionFilterProp="children" filterOption={(input, option) =>
+                    <Select className="capitalize" placeholder="Select team members" mode="multiple" showSearch optionFilterProp="children" filterOption={(input, option) =>
                         option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
                     }>
                         {userList.map(user => (
@@ -141,7 +141,7 @@ const EditRole = ({ onClose, onFormSubmit, selectedRecord }) => {
                         { value: 'MANIPAL', label: 'MANIPAL' },
                         { value: 'SMU', label: 'SMU' },
                         { value: 'HU', label: 'HU' },
-                        { value: 'BOSSSE', label: 'BOSSSE' },
+                        { value: 'BOSSE', label: 'BOSSE' },
                         { value: 'UU', label: 'UU' },
                         { value: 'UPES', label: 'UPES' },
                         { value: 'MANGALAYATAN', label: 'MANGALAYATAN' },
