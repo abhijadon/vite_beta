@@ -83,7 +83,7 @@ export default function DataTable({ config, extra = [] }) {
 
   useEffect(() => {
     const fetchData = async () => {
-      const { success, result } = await request.filter({ entity: 'payment' });
+      const { success, result } = await request.list({ entity: 'payment' });
       if (success) {
         const uniqueStatuses = [...new Set(result.map(item => item.status))];
         const uniqueInstitutes = [...new Set(result.map(item => item.institute_name))];

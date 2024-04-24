@@ -25,27 +25,27 @@ const formData = [
                 label: "BA",
                 specializations: [
                   { value: "General", label: "General" },
-                  { "value": "Education", "label": "Education" },
-                  { "value": "English", "label": "English" },
-                  { "value": "Journlsim & Mass Communication", label: "Journlsim & Mass Communication" },
-                  { "value": "Economics", "label": "Economics" },
-                  { "value": "History", "label": "History" },
-                  { "value": "Political science", "label": "Political science" },
-                  { "value": "Sociology", "label": "Sociology" },
-                  { "value": "Journalism & Mass Communication", "label": "Journalism & Mass Communication" },
-                  { "value": "Public Administration", "label": "Public Administration" },
-                  { "value": "Psychology", "label": "Psychology" },
-                  { "value": "Hindi", "label": "Hindi" },
-                  { "value": "Mathematics", "label": "Mathematics" },
-                  { "value": 'Geography', label: 'Geography' },
+                  { value: "Education", label: "Education" },
+                  { value: "English", label: "English" },
+                  { value: "Journlsim & Mass Communication", label: "Journlsim & Mass Communication" },
+                  { value: "Economics", label: "Economics" },
+                  { value: "History", label: "History" },
+                  { value: "Political science", label: "Political science" },
+                  { value: "Sociology", label: "Sociology" },
+                  { value: "Journalism & Mass Communication", label: "Journalism & Mass Communication" },
+                  { value: "Public Administration", label: "Public Administration" },
+                  { value: "Psychology", label: "Psychology" },
+                  { value: "Hindi", label: "Hindi" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: 'Geography', label: 'Geography' },
                 ],
               },
               {
                 value: "BBA",
                 label: "BBA",
                 specializations: [
-                  { "value": "General", "label": "General" },
-                  { "value": "Education", "label": "Education" },
+                  { value: "General", label: "General" },
+                  { value: "Education", label: "Education" },
                   { value: "Marketing", label: "Marketing" },
                   { value: "Human Resource Management", label: "Human Resource Management" },
                   { value: "Finance", label: "Finance" },
@@ -271,100 +271,186 @@ const formData = [
             ]
           },
           {
-            payments: [
+            admission_type: [
               {
-                value: "Semester",
-                label: "Semester",
-                paymentType: [
+                value: "FRESH",
+                label: "FRESH",
+                payments: [
                   {
-                    key: 'text',
-                    label: 'Semester fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'text',
-                    required: 'require'
+                    value: "Semester",
+                    label: "Semester",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Semester fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'text',
+                    value: "Yearly",
+                    label: "Yearly",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Yearly Fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'text',
-                  },
+                    value: "Fullfees",
+                    label: "Fullfees",
+                    "paymentType": [
+                      {
+                        key: "text",
+                        label: "Full fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
+                  }
                 ]
               },
               {
-                value: "Yearly",
-                label: "Yearly",
-                paymentType: [
+                value: "Credit Transfer",
+                label: "Credit Transfer",
+                payments: [
                   {
-                    key: 'text',
-                    label: 'Yearly Fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'text',
-                    required: 'require'
-                  },
-                  {
-                    key: 'text',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'text',
-                  },
-                  {
-                    key: 'text',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'text',
-                  },
+                    value: "Fullfees",
+                    label: "Fullfees",
+                    "paymentType": [
+                      {
+                        key: "text",
+                        label: "Full fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
+                  }
                 ]
               },
               {
-                value: "Fullfees",
-                label: "Fullfees",
-                paymentType: [
+                value: "LATERAL ENTRY",
+                label: "LATERAL ENTRY",
+                payments: [
                   {
-                    key: 'text',
-                    label: 'Full fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'text',
-                    required: 'require'
+                    value: "Semester",
+                    label: "Semester",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Semester fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'text',
+                    value: "Yearly",
+                    label: "Yearly",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Yearly Fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'text',
-                  },
+                    value: "Fullfees",
+                    label: "Fullfees",
+                    "paymentType": [
+                      {
+                        key: "text",
+                        label: "Full fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
+                  }
                 ]
-              }
+              },
             ]
           },
           {
@@ -403,14 +489,14 @@ const formData = [
             type: 'tel',
             required: 'require'
           },
-       {
+          {
             key: 'tel',
             label: 'Alternate number',
             name: ['contact', 'alternate_phone'],
             place: 'Enter Alternate Number',
             id: 'alternate',
             type: 'tel',
-           required: 'require'
+            required: 'require'
           },
           {
             key: 'text',
@@ -457,18 +543,6 @@ const formData = [
 
           },
           {
-            key: 'select',
-            label: 'Admission Type',
-            name: ['customfields', 'admission_type'],
-            id: 'SessionType',
-            place: 'Enter Admission Type',
-            type: 'select',
-            options: [{ value: 'FRESH', label: 'FRESH' },
-              { value: 'Credit Transfer', label: 'Credit Transfer' },
-            { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
-          },
-
-          {
             key: 'date',
             label: 'Date of Birth',
             name: ['customfields', 'dob'],
@@ -489,28 +563,7 @@ const formData = [
             { value: 'Female', label: 'Female' },
             { value: 'Other', label: 'Other' }],
           },
-          {
-            key: 'select',
-            label: 'Installment Type',
-            id: 'InstallmentType',
-            name: ['customfields', 'installment_type'],
-            place: 'Installment Type',
-            type: 'select',
-            required: 'require',
 
-            options: [
-              { value: '1st Installment', label: '1st Installment' },
-              { value: '2nd Installment', label: '2nd Installment' },
-              { value: '3rd Installment', label: '3rd Installment' },
-              { value: '4th Installment', label: '4th Installment' },
-              { value: '5th Installment', label: '5th Installment' },
-              { value: '6th Installment', label: '6th Installment' },
-              { value: '7th Installment', label: '7th Installment' },
-              { value: '8th Installment', label: '8th Installment' },
-              { value: '9th Installment', label: '9th Installment' },
-              { value: '10th Installment', label: '10th Installment' },
-            ],
-          },
           {
             key: 'select ',
             label: 'Payment mode ',
@@ -525,23 +578,7 @@ const formData = [
             { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
-          {
-            key: 'select ',
-            label: 'Status',
-            name: ['customfields', 'status'],
-            id: 'status ',
-            type: 'select',
-            place: 'select status',
-            required: 'require',
 
-            options: [
-              { value: 'New', label: 'New' },
-              { value: 'Approved', label: 'Approved' },
-              { value: 'Enrolled', label: 'Enrolled' },
-              { value: 'Alumini', label: 'Alumini' },
-              { value: 'Cancel', label: 'Cancel' },
-            ],
-          },
           {
             key: 'textarea',
             label: 'Remark',
@@ -564,7 +601,7 @@ const formData = [
             id: 'studentDocument',
             type: 'file',
           },
-          
+
         ],
       },
       {
@@ -572,7 +609,7 @@ const formData = [
         label: 'DPU',
         name: ['customfields', 'university_name'],
         value: 'DPU',
-        fields: [
+      fields: [
           {
             courses: [
               {
@@ -588,27 +625,27 @@ const formData = [
                 label: "BA",
                 specializations: [
                   { value: "General", label: "General" },
-                  { "value": "Education", "label": "Education" },
-                  { "value": "English", "label": "English" },
-                  { "value": "Journlsim & Mass Communication", label: "Journlsim & Mass Communication" },
-                  { "value": "Economics", "label": "Economics" },
-                  { "value": "History", "label": "History" },
-                  { "value": "Political science", "label": "Political science" },
-                  { "value": "Sociology", "label": "Sociology" },
-                  { "value": "Journalism & Mass Communication", "label": "Journalism & Mass Communication" },
-                  { "value": "Public Administration", "label": "Public Administration" },
-                  { "value": "Psychology", "label": "Psychology" },
-                  { "value": "Hindi", "label": "Hindi" },
-                  { "value": "Mathematics", "label": "Mathematics" },
-                  { "value": 'Geography', label: 'Geography' },
+                  { value: "Education", label: "Education" },
+                  { value: "English", label: "English" },
+                  { value: "Journlsim & Mass Communication", label: "Journlsim & Mass Communication" },
+                  { value: "Economics", label: "Economics" },
+                  { value: "History", label: "History" },
+                  { value: "Political science", label: "Political science" },
+                  { value: "Sociology", label: "Sociology" },
+                  { value: "Journalism & Mass Communication", label: "Journalism & Mass Communication" },
+                  { value: "Public Administration", label: "Public Administration" },
+                  { value: "Psychology", label: "Psychology" },
+                  { value: "Hindi", label: "Hindi" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: 'Geography', label: 'Geography' },
                 ],
               },
               {
                 value: "BBA",
                 label: "BBA",
                 specializations: [
-                  { "value": "General", "label": "General" },
-                  { "value": "Education", "label": "Education" },
+                  { value: "General", label: "General" },
+                  { value: "Education", label: "Education" },
                   { value: "Marketing", label: "Marketing" },
                   { value: "Human Resource Management", label: "Human Resource Management" },
                   { value: "Finance", label: "Finance" },
@@ -834,100 +871,186 @@ const formData = [
             ]
           },
           {
-            payments: [
+            admission_type: [
               {
-                value: "Semester",
-                label: "Semester",
-                paymentType: [
+                value: "FRESH",
+                label: "FRESH",
+                payments: [
                   {
-                    key: 'text',
-                    label: 'Semester fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'text',
-                    required: 'require'
+                    value: "Semester",
+                    label: "Semester",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Semester fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'text',
+                    value: "Yearly",
+                    label: "Yearly",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Yearly Fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'text',
-                  },
+                    value: "Fullfees",
+                    label: "Fullfees",
+                    "paymentType": [
+                      {
+                        key: "text",
+                        label: "Full fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
+                  }
                 ]
               },
               {
-                value: "Yearly",
-                label: "Yearly",
-                paymentType: [
+                value: "Credit Transfer",
+                label: "Credit Transfer",
+                payments: [
                   {
-                    key: 'text',
-                    label: 'Yearly Fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'text',
-                    required: 'require'
-                  },
-                  {
-                    key: 'text',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'text',
-                  },
-                  {
-                    key: 'text',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'text',
-                  },
+                    value: "Fullfees",
+                    label: "Fullfees",
+                    "paymentType": [
+                      {
+                        key: "text",
+                        label: "Full fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
+                  }
                 ]
               },
               {
-                value: "Fullfees",
-                label: "Fullfees",
-                paymentType: [
+                value: "LATERAL ENTRY",
+                label: "LATERAL ENTRY",
+                payments: [
                   {
-                    key: 'text',
-                    label: 'Full fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'text',
-                    required: 'require'
+                    value: "Semester",
+                    label: "Semester",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Semester fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'text',
+                    value: "Yearly",
+                    label: "Yearly",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Yearly Fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'text',
-                  },
+                    value: "Fullfees",
+                    label: "Fullfees",
+                    "paymentType": [
+                      {
+                        key: "text",
+                        label: "Full fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
+                  }
                 ]
-              }
+              },
             ]
           },
           {
@@ -966,14 +1089,14 @@ const formData = [
             type: 'tel',
             required: 'require'
           },
-       {
+          {
             key: 'tel',
             label: 'Alternate number',
             name: ['contact', 'alternate_phone'],
             place: 'Enter Alternate Number',
             id: 'alternate',
             type: 'tel',
-           required: 'require'
+            required: 'require'
           },
           {
             key: 'text',
@@ -1020,18 +1143,6 @@ const formData = [
 
           },
           {
-            key: 'select',
-            label: 'Admission Type',
-            name: ['customfields', 'admission_type'],
-            id: 'SessionType',
-            place: 'Enter Admission Type',
-            type: 'select',
-            options: [{ value: 'FRESH', label: 'FRESH' },
-              { value: 'Credit Transfer', label: 'Credit Transfer' },
-            { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
-          },
-
-          {
             key: 'date',
             label: 'Date of Birth',
             name: ['customfields', 'dob'],
@@ -1052,28 +1163,7 @@ const formData = [
             { value: 'Female', label: 'Female' },
             { value: 'Other', label: 'Other' }],
           },
-          {
-            key: 'select',
-            label: 'Installment Type',
-            id: 'InstallmentType',
-            name: ['customfields', 'installment_type'],
-            place: 'Installment Type',
-            type: 'select',
-            required: 'require',
 
-            options: [
-              { value: '1st Installment', label: '1st Installment' },
-              { value: '2nd Installment', label: '2nd Installment' },
-              { value: '3rd Installment', label: '3rd Installment' },
-              { value: '4th Installment', label: '4th Installment' },
-              { value: '5th Installment', label: '5th Installment' },
-              { value: '6th Installment', label: '6th Installment' },
-              { value: '7th Installment', label: '7th Installment' },
-              { value: '8th Installment', label: '8th Installment' },
-              { value: '9th Installment', label: '9th Installment' },
-              { value: '10th Installment', label: '10th Installment' },
-            ],
-          },
           {
             key: 'select ',
             label: 'Payment mode ',
@@ -1088,23 +1178,7 @@ const formData = [
             { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
-          {
-            key: 'select ',
-            label: 'Status',
-            name: ['customfields', 'status'],
-            id: 'status ',
-            type: 'select',
-            place: 'select status',
-            required: 'require',
 
-            options: [
-              { value: 'New', label: 'New' },
-              { value: 'Approved', label: 'Approved' },
-              { value: 'Enrolled', label: 'Enrolled' },
-              { value: 'Alumini', label: 'Alumini' },
-              { value: 'Cancel', label: 'Cancel' },
-            ],
-          },
           {
             key: 'textarea',
             label: 'Remark',
@@ -1127,7 +1201,7 @@ const formData = [
             id: 'studentDocument',
             type: 'file',
           },
-          
+
         ],
       },
       {
@@ -1135,7 +1209,7 @@ const formData = [
         label: 'CU',
         name: ['customfields', 'university_name'],
         value: 'CU',
-        fields: [
+      fields: [
           {
             courses: [
               {
@@ -1151,27 +1225,27 @@ const formData = [
                 label: "BA",
                 specializations: [
                   { value: "General", label: "General" },
-                  { "value": "Education", "label": "Education" },
-                  { "value": "English", "label": "English" },
-                  { "value": "Journlsim & Mass Communication", label: "Journlsim & Mass Communication" },
-                  { "value": "Economics", "label": "Economics" },
-                  { "value": "History", "label": "History" },
-                  { "value": "Political science", "label": "Political science" },
-                  { "value": "Sociology", "label": "Sociology" },
-                  { "value": "Journalism & Mass Communication", "label": "Journalism & Mass Communication" },
-                  { "value": "Public Administration", "label": "Public Administration" },
-                  { "value": "Psychology", "label": "Psychology" },
-                  { "value": "Hindi", "label": "Hindi" },
-                  { "value": "Mathematics", "label": "Mathematics" },
-                  { "value": 'Geography', label: 'Geography' },
+                  { value: "Education", label: "Education" },
+                  { value: "English", label: "English" },
+                  { value: "Journlsim & Mass Communication", label: "Journlsim & Mass Communication" },
+                  { value: "Economics", label: "Economics" },
+                  { value: "History", label: "History" },
+                  { value: "Political science", label: "Political science" },
+                  { value: "Sociology", label: "Sociology" },
+                  { value: "Journalism & Mass Communication", label: "Journalism & Mass Communication" },
+                  { value: "Public Administration", label: "Public Administration" },
+                  { value: "Psychology", label: "Psychology" },
+                  { value: "Hindi", label: "Hindi" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: 'Geography', label: 'Geography' },
                 ],
               },
               {
                 value: "BBA",
                 label: "BBA",
                 specializations: [
-                  { "value": "General", "label": "General" },
-                  { "value": "Education", "label": "Education" },
+                  { value: "General", label: "General" },
+                  { value: "Education", label: "Education" },
                   { value: "Marketing", label: "Marketing" },
                   { value: "Human Resource Management", label: "Human Resource Management" },
                   { value: "Finance", label: "Finance" },
@@ -1397,100 +1471,186 @@ const formData = [
             ]
           },
           {
-            payments: [
+            admission_type: [
               {
-                value: "Semester",
-                label: "Semester",
-                paymentType: [
+                value: "FRESH",
+                label: "FRESH",
+                payments: [
                   {
-                    key: 'text',
-                    label: 'Semester fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'text',
-                    required: 'require'
+                    value: "Semester",
+                    label: "Semester",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Semester fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'text',
+                    value: "Yearly",
+                    label: "Yearly",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Yearly Fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'text',
-                  },
+                    value: "Fullfees",
+                    label: "Fullfees",
+                    "paymentType": [
+                      {
+                        key: "text",
+                        label: "Full fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
+                  }
                 ]
               },
               {
-                value: "Yearly",
-                label: "Yearly",
-                paymentType: [
+                value: "Credit Transfer",
+                label: "Credit Transfer",
+                payments: [
                   {
-                    key: 'text',
-                    label: 'Yearly Fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'text',
-                    required: 'require'
-                  },
-                  {
-                    key: 'text',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'text',
-                  },
-                  {
-                    key: 'text',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'text',
-                  },
+                    value: "Fullfees",
+                    label: "Fullfees",
+                    "paymentType": [
+                      {
+                        key: "text",
+                        label: "Full fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
+                  }
                 ]
               },
               {
-                value: "Fullfees",
-                label: "Fullfees",
-                paymentType: [
+                value: "LATERAL ENTRY",
+                label: "LATERAL ENTRY",
+                payments: [
                   {
-                    key: 'text',
-                    label: 'Full fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'text',
-                    required: 'require'
+                    value: "Semester",
+                    label: "Semester",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Semester fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'text',
+                    value: "Yearly",
+                    label: "Yearly",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Yearly Fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'text',
-                  },
+                    value: "Fullfees",
+                    label: "Fullfees",
+                    "paymentType": [
+                      {
+                        key: "text",
+                        label: "Full fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
+                  }
                 ]
-              }
+              },
             ]
           },
           {
@@ -1529,14 +1689,14 @@ const formData = [
             type: 'tel',
             required: 'require'
           },
-       {
+          {
             key: 'tel',
             label: 'Alternate number',
             name: ['contact', 'alternate_phone'],
             place: 'Enter Alternate Number',
             id: 'alternate',
             type: 'tel',
-           required: 'require'
+            required: 'require'
           },
           {
             key: 'text',
@@ -1583,18 +1743,6 @@ const formData = [
 
           },
           {
-            key: 'select',
-            label: 'Admission Type',
-            name: ['customfields', 'admission_type'],
-            id: 'SessionType',
-            place: 'Enter Admission Type',
-            type: 'select',
-            options: [{ value: 'FRESH', label: 'FRESH' },
-              { value: 'Credit Transfer', label: 'Credit Transfer' },
-            { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
-          },
-
-          {
             key: 'date',
             label: 'Date of Birth',
             name: ['customfields', 'dob'],
@@ -1615,28 +1763,7 @@ const formData = [
             { value: 'Female', label: 'Female' },
             { value: 'Other', label: 'Other' }],
           },
-          {
-            key: 'select',
-            label: 'Installment Type',
-            id: 'InstallmentType',
-            name: ['customfields', 'installment_type'],
-            place: 'Installment Type',
-            type: 'select',
-            required: 'require',
 
-            options: [
-              { value: '1st Installment', label: '1st Installment' },
-              { value: '2nd Installment', label: '2nd Installment' },
-              { value: '3rd Installment', label: '3rd Installment' },
-              { value: '4th Installment', label: '4th Installment' },
-              { value: '5th Installment', label: '5th Installment' },
-              { value: '6th Installment', label: '6th Installment' },
-              { value: '7th Installment', label: '7th Installment' },
-              { value: '8th Installment', label: '8th Installment' },
-              { value: '9th Installment', label: '9th Installment' },
-              { value: '10th Installment', label: '10th Installment' },
-            ],
-          },
           {
             key: 'select ',
             label: 'Payment mode ',
@@ -1651,23 +1778,7 @@ const formData = [
             { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
-          {
-            key: 'select ',
-            label: 'Status',
-            name: ['customfields', 'status'],
-            id: 'status ',
-            type: 'select',
-            place: 'select status',
-            required: 'require',
 
-            options: [
-              { value: 'New', label: 'New' },
-              { value: 'Approved', label: 'Approved' },
-              { value: 'Enrolled', label: 'Enrolled' },
-              { value: 'Alumini', label: 'Alumini' },
-              { value: 'Cancel', label: 'Cancel' },
-            ],
-          },
           {
             key: 'textarea',
             label: 'Remark',
@@ -1690,7 +1801,7 @@ const formData = [
             id: 'studentDocument',
             type: 'file',
           },
-          
+
         ],
       },
       {
@@ -1698,7 +1809,7 @@ const formData = [
         label: 'SPU',
         name: ['customfields', 'university_name'],
         value: 'SPU',
-        fields: [
+      fields: [
           {
             courses: [
               {
@@ -1714,27 +1825,27 @@ const formData = [
                 label: "BA",
                 specializations: [
                   { value: "General", label: "General" },
-                  { "value": "Education", "label": "Education" },
-                  { "value": "English", "label": "English" },
-                  { "value": "Journlsim & Mass Communication", label: "Journlsim & Mass Communication" },
-                  { "value": "Economics", "label": "Economics" },
-                  { "value": "History", "label": "History" },
-                  { "value": "Political science", "label": "Political science" },
-                  { "value": "Sociology", "label": "Sociology" },
-                  { "value": "Journalism & Mass Communication", "label": "Journalism & Mass Communication" },
-                  { "value": "Public Administration", "label": "Public Administration" },
-                  { "value": "Psychology", "label": "Psychology" },
-                  { "value": "Hindi", "label": "Hindi" },
-                  { "value": "Mathematics", "label": "Mathematics" },
-                  { "value": 'Geography', label: 'Geography' },
+                  { value: "Education", label: "Education" },
+                  { value: "English", label: "English" },
+                  { value: "Journlsim & Mass Communication", label: "Journlsim & Mass Communication" },
+                  { value: "Economics", label: "Economics" },
+                  { value: "History", label: "History" },
+                  { value: "Political science", label: "Political science" },
+                  { value: "Sociology", label: "Sociology" },
+                  { value: "Journalism & Mass Communication", label: "Journalism & Mass Communication" },
+                  { value: "Public Administration", label: "Public Administration" },
+                  { value: "Psychology", label: "Psychology" },
+                  { value: "Hindi", label: "Hindi" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: 'Geography', label: 'Geography' },
                 ],
               },
               {
                 value: "BBA",
                 label: "BBA",
                 specializations: [
-                  { "value": "General", "label": "General" },
-                  { "value": "Education", "label": "Education" },
+                  { value: "General", label: "General" },
+                  { value: "Education", label: "Education" },
                   { value: "Marketing", label: "Marketing" },
                   { value: "Human Resource Management", label: "Human Resource Management" },
                   { value: "Finance", label: "Finance" },
@@ -1960,100 +2071,186 @@ const formData = [
             ]
           },
           {
-            payments: [
+            admission_type: [
               {
-                value: "Semester",
-                label: "Semester",
-                paymentType: [
+                value: "FRESH",
+                label: "FRESH",
+                payments: [
                   {
-                    key: 'text',
-                    label: 'Semester fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'text',
-                    required: 'require'
+                    value: "Semester",
+                    label: "Semester",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Semester fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'text',
+                    value: "Yearly",
+                    label: "Yearly",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Yearly Fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'text',
-                  },
+                    value: "Fullfees",
+                    label: "Fullfees",
+                    "paymentType": [
+                      {
+                        key: "text",
+                        label: "Full fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
+                  }
                 ]
               },
               {
-                value: "Yearly",
-                label: "Yearly",
-                paymentType: [
+                value: "Credit Transfer",
+                label: "Credit Transfer",
+                payments: [
                   {
-                    key: 'text',
-                    label: 'Yearly Fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'text',
-                    required: 'require'
-                  },
-                  {
-                    key: 'text',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'text',
-                  },
-                  {
-                    key: 'text',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'text',
-                  },
+                    value: "Fullfees",
+                    label: "Fullfees",
+                    "paymentType": [
+                      {
+                        key: "text",
+                        label: "Full fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
+                  }
                 ]
               },
               {
-                value: "Fullfees",
-                label: "Fullfees",
-                paymentType: [
+                value: "LATERAL ENTRY",
+                label: "LATERAL ENTRY",
+                payments: [
                   {
-                    key: 'text',
-                    label: 'Full fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'text',
-                    required: 'require'
+                    value: "Semester",
+                    label: "Semester",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Semester fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'text',
+                    value: "Yearly",
+                    label: "Yearly",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Yearly Fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'text',
-                  },
+                    value: "Fullfees",
+                    label: "Fullfees",
+                    "paymentType": [
+                      {
+                        key: "text",
+                        label: "Full fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
+                  }
                 ]
-              }
+              },
             ]
           },
           {
@@ -2092,14 +2289,14 @@ const formData = [
             type: 'tel',
             required: 'require'
           },
-       {
+          {
             key: 'tel',
             label: 'Alternate number',
             name: ['contact', 'alternate_phone'],
             place: 'Enter Alternate Number',
             id: 'alternate',
             type: 'tel',
-           required: 'require'
+            required: 'require'
           },
           {
             key: 'text',
@@ -2146,18 +2343,6 @@ const formData = [
 
           },
           {
-            key: 'select',
-            label: 'Admission Type',
-            name: ['customfields', 'admission_type'],
-            id: 'SessionType',
-            place: 'Enter Admission Type',
-            type: 'select',
-            options: [{ value: 'FRESH', label: 'FRESH' },
-              { value: 'Credit Transfer', label: 'Credit Transfer' },
-            { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
-          },
-
-          {
             key: 'date',
             label: 'Date of Birth',
             name: ['customfields', 'dob'],
@@ -2178,28 +2363,7 @@ const formData = [
             { value: 'Female', label: 'Female' },
             { value: 'Other', label: 'Other' }],
           },
-          {
-            key: 'select',
-            label: 'Installment Type',
-            id: 'InstallmentType',
-            name: ['customfields', 'installment_type'],
-            place: 'Installment Type',
-            type: 'select',
-            required: 'require',
 
-            options: [
-              { value: '1st Installment', label: '1st Installment' },
-              { value: '2nd Installment', label: '2nd Installment' },
-              { value: '3rd Installment', label: '3rd Installment' },
-              { value: '4th Installment', label: '4th Installment' },
-              { value: '5th Installment', label: '5th Installment' },
-              { value: '6th Installment', label: '6th Installment' },
-              { value: '7th Installment', label: '7th Installment' },
-              { value: '8th Installment', label: '8th Installment' },
-              { value: '9th Installment', label: '9th Installment' },
-              { value: '10th Installment', label: '10th Installment' },
-            ],
-          },
           {
             key: 'select ',
             label: 'Payment mode ',
@@ -2214,23 +2378,7 @@ const formData = [
             { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
-          {
-            key: 'select ',
-            label: 'Status',
-            name: ['customfields', 'status'],
-            id: 'status ',
-            type: 'select',
-            place: 'select status',
-            required: 'require',
 
-            options: [
-              { value: 'New', label: 'New' },
-              { value: 'Approved', label: 'Approved' },
-              { value: 'Enrolled', label: 'Enrolled' },
-              { value: 'Alumini', label: 'Alumini' },
-              { value: 'Cancel', label: 'Cancel' },
-            ],
-          },
           {
             key: 'textarea',
             label: 'Remark',
@@ -2253,7 +2401,7 @@ const formData = [
             id: 'studentDocument',
             type: 'file',
           },
-          
+
         ],
       },
       {
@@ -2261,7 +2409,7 @@ const formData = [
         label: 'AMRITA',
         name: ['customfields', 'university_name'],
         value: 'AMRITA',
-        fields: [
+      fields: [
           {
             courses: [
               {
@@ -2277,27 +2425,27 @@ const formData = [
                 label: "BA",
                 specializations: [
                   { value: "General", label: "General" },
-                  { "value": "Education", "label": "Education" },
-                  { "value": "English", "label": "English" },
-                  { "value": "Journlsim & Mass Communication", label: "Journlsim & Mass Communication" },
-                  { "value": "Economics", "label": "Economics" },
-                  { "value": "History", "label": "History" },
-                  { "value": "Political science", "label": "Political science" },
-                  { "value": "Sociology", "label": "Sociology" },
-                  { "value": "Journalism & Mass Communication", "label": "Journalism & Mass Communication" },
-                  { "value": "Public Administration", "label": "Public Administration" },
-                  { "value": "Psychology", "label": "Psychology" },
-                  { "value": "Hindi", "label": "Hindi" },
-                  { "value": "Mathematics", "label": "Mathematics" },
-                  { "value": 'Geography', label: 'Geography' },
+                  { value: "Education", label: "Education" },
+                  { value: "English", label: "English" },
+                  { value: "Journlsim & Mass Communication", label: "Journlsim & Mass Communication" },
+                  { value: "Economics", label: "Economics" },
+                  { value: "History", label: "History" },
+                  { value: "Political science", label: "Political science" },
+                  { value: "Sociology", label: "Sociology" },
+                  { value: "Journalism & Mass Communication", label: "Journalism & Mass Communication" },
+                  { value: "Public Administration", label: "Public Administration" },
+                  { value: "Psychology", label: "Psychology" },
+                  { value: "Hindi", label: "Hindi" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: 'Geography', label: 'Geography' },
                 ],
               },
               {
                 value: "BBA",
                 label: "BBA",
                 specializations: [
-                  { "value": "General", "label": "General" },
-                  { "value": "Education", "label": "Education" },
+                  { value: "General", label: "General" },
+                  { value: "Education", label: "Education" },
                   { value: "Marketing", label: "Marketing" },
                   { value: "Human Resource Management", label: "Human Resource Management" },
                   { value: "Finance", label: "Finance" },
@@ -2523,100 +2671,186 @@ const formData = [
             ]
           },
           {
-            payments: [
+            admission_type: [
               {
-                value: "Semester",
-                label: "Semester",
-                paymentType: [
+                value: "FRESH",
+                label: "FRESH",
+                payments: [
                   {
-                    key: 'text',
-                    label: 'Semester fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'text',
-                    required: 'require'
+                    value: "Semester",
+                    label: "Semester",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Semester fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'text',
+                    value: "Yearly",
+                    label: "Yearly",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Yearly Fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'text',
-                  },
+                    value: "Fullfees",
+                    label: "Fullfees",
+                    "paymentType": [
+                      {
+                        key: "text",
+                        label: "Full fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
+                  }
                 ]
               },
               {
-                value: "Yearly",
-                label: "Yearly",
-                paymentType: [
+                value: "Credit Transfer",
+                label: "Credit Transfer",
+                payments: [
                   {
-                    key: 'text',
-                    label: 'Yearly Fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'text',
-                    required: 'require'
-                  },
-                  {
-                    key: 'text',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'text',
-                  },
-                  {
-                    key: 'text',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'text',
-                  },
+                    value: "Fullfees",
+                    label: "Fullfees",
+                    "paymentType": [
+                      {
+                        key: "text",
+                        label: "Full fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
+                  }
                 ]
               },
               {
-                value: "Fullfees",
-                label: "Fullfees",
-                paymentType: [
+                value: "LATERAL ENTRY",
+                label: "LATERAL ENTRY",
+                payments: [
                   {
-                    key: 'text',
-                    label: 'Full fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'text',
-                    required: 'require'
+                    value: "Semester",
+                    label: "Semester",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Semester fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'text',
+                    value: "Yearly",
+                    label: "Yearly",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Yearly Fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'text',
-                  },
+                    value: "Fullfees",
+                    label: "Fullfees",
+                    "paymentType": [
+                      {
+                        key: "text",
+                        label: "Full fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
+                  }
                 ]
-              }
+              },
             ]
           },
           {
@@ -2655,14 +2889,14 @@ const formData = [
             type: 'tel',
             required: 'require'
           },
-       {
+          {
             key: 'tel',
             label: 'Alternate number',
             name: ['contact', 'alternate_phone'],
             place: 'Enter Alternate Number',
             id: 'alternate',
             type: 'tel',
-           required: 'require'
+            required: 'require'
           },
           {
             key: 'text',
@@ -2709,18 +2943,6 @@ const formData = [
 
           },
           {
-            key: 'select',
-            label: 'Admission Type',
-            name: ['customfields', 'admission_type'],
-            id: 'SessionType',
-            place: 'Enter Admission Type',
-            type: 'select',
-            options: [{ value: 'FRESH', label: 'FRESH' },
-              { value: 'Credit Transfer', label: 'Credit Transfer' },
-            { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
-          },
-
-          {
             key: 'date',
             label: 'Date of Birth',
             name: ['customfields', 'dob'],
@@ -2741,28 +2963,7 @@ const formData = [
             { value: 'Female', label: 'Female' },
             { value: 'Other', label: 'Other' }],
           },
-          {
-            key: 'select',
-            label: 'Installment Type',
-            id: 'InstallmentType',
-            name: ['customfields', 'installment_type'],
-            place: 'Installment Type',
-            type: 'select',
-            required: 'require',
 
-            options: [
-              { value: '1st Installment', label: '1st Installment' },
-              { value: '2nd Installment', label: '2nd Installment' },
-              { value: '3rd Installment', label: '3rd Installment' },
-              { value: '4th Installment', label: '4th Installment' },
-              { value: '5th Installment', label: '5th Installment' },
-              { value: '6th Installment', label: '6th Installment' },
-              { value: '7th Installment', label: '7th Installment' },
-              { value: '8th Installment', label: '8th Installment' },
-              { value: '9th Installment', label: '9th Installment' },
-              { value: '10th Installment', label: '10th Installment' },
-            ],
-          },
           {
             key: 'select ',
             label: 'Payment mode ',
@@ -2777,23 +2978,7 @@ const formData = [
             { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
-          {
-            key: 'select ',
-            label: 'Status',
-            name: ['customfields', 'status'],
-            id: 'status ',
-            type: 'select',
-            place: 'select status',
-            required: 'require',
 
-            options: [
-              { value: 'New', label: 'New' },
-              { value: 'Approved', label: 'Approved' },
-              { value: 'Enrolled', label: 'Enrolled' },
-              { value: 'Alumini', label: 'Alumini' },
-              { value: 'Cancel', label: 'Cancel' },
-            ],
-          },
           {
             key: 'textarea',
             label: 'Remark',
@@ -2816,7 +3001,7 @@ const formData = [
             id: 'studentDocument',
             type: 'file',
           },
-          
+
         ],
       },
       {
@@ -2824,7 +3009,7 @@ const formData = [
         label: 'AMITY',
         name: ['customfields', 'university_name'],
         value: 'AMITY',
-        fields: [
+      fields: [
           {
             courses: [
               {
@@ -2840,27 +3025,27 @@ const formData = [
                 label: "BA",
                 specializations: [
                   { value: "General", label: "General" },
-                  { "value": "Education", "label": "Education" },
-                  { "value": "English", "label": "English" },
-                  { "value": "Journlsim & Mass Communication", label: "Journlsim & Mass Communication" },
-                  { "value": "Economics", "label": "Economics" },
-                  { "value": "History", "label": "History" },
-                  { "value": "Political science", "label": "Political science" },
-                  { "value": "Sociology", "label": "Sociology" },
-                  { "value": "Journalism & Mass Communication", "label": "Journalism & Mass Communication" },
-                  { "value": "Public Administration", "label": "Public Administration" },
-                  { "value": "Psychology", "label": "Psychology" },
-                  { "value": "Hindi", "label": "Hindi" },
-                  { "value": "Mathematics", "label": "Mathematics" },
-                  { "value": 'Geography', label: 'Geography' },
+                  { value: "Education", label: "Education" },
+                  { value: "English", label: "English" },
+                  { value: "Journlsim & Mass Communication", label: "Journlsim & Mass Communication" },
+                  { value: "Economics", label: "Economics" },
+                  { value: "History", label: "History" },
+                  { value: "Political science", label: "Political science" },
+                  { value: "Sociology", label: "Sociology" },
+                  { value: "Journalism & Mass Communication", label: "Journalism & Mass Communication" },
+                  { value: "Public Administration", label: "Public Administration" },
+                  { value: "Psychology", label: "Psychology" },
+                  { value: "Hindi", label: "Hindi" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: 'Geography', label: 'Geography' },
                 ],
               },
               {
                 value: "BBA",
                 label: "BBA",
                 specializations: [
-                  { "value": "General", "label": "General" },
-                  { "value": "Education", "label": "Education" },
+                  { value: "General", label: "General" },
+                  { value: "Education", label: "Education" },
                   { value: "Marketing", label: "Marketing" },
                   { value: "Human Resource Management", label: "Human Resource Management" },
                   { value: "Finance", label: "Finance" },
@@ -3086,100 +3271,186 @@ const formData = [
             ]
           },
           {
-            payments: [
+            admission_type: [
               {
-                value: "Semester",
-                label: "Semester",
-                paymentType: [
+                value: "FRESH",
+                label: "FRESH",
+                payments: [
                   {
-                    key: 'text',
-                    label: 'Semester fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'text',
-                    required: 'require'
+                    value: "Semester",
+                    label: "Semester",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Semester fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'text',
+                    value: "Yearly",
+                    label: "Yearly",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Yearly Fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'text',
-                  },
+                    value: "Fullfees",
+                    label: "Fullfees",
+                    "paymentType": [
+                      {
+                        key: "text",
+                        label: "Full fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
+                  }
                 ]
               },
               {
-                value: "Yearly",
-                label: "Yearly",
-                paymentType: [
+                value: "Credit Transfer",
+                label: "Credit Transfer",
+                payments: [
                   {
-                    key: 'text',
-                    label: 'Yearly Fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'text',
-                    required: 'require'
-                  },
-                  {
-                    key: 'text',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'text',
-                  },
-                  {
-                    key: 'text',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'text',
-                  },
+                    value: "Fullfees",
+                    label: "Fullfees",
+                    "paymentType": [
+                      {
+                        key: "text",
+                        label: "Full fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
+                  }
                 ]
               },
               {
-                value: "Fullfees",
-                label: "Fullfees",
-                paymentType: [
+                value: "LATERAL ENTRY",
+                label: "LATERAL ENTRY",
+                payments: [
                   {
-                    key: 'text',
-                    label: 'Full fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'text',
-                    required: 'require'
+                    value: "Semester",
+                    label: "Semester",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Semester fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'text',
+                    value: "Yearly",
+                    label: "Yearly",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Yearly Fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'text',
-                  },
+                    value: "Fullfees",
+                    label: "Fullfees",
+                    "paymentType": [
+                      {
+                        key: "text",
+                        label: "Full fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
+                  }
                 ]
-              }
+              },
             ]
           },
           {
@@ -3218,14 +3489,14 @@ const formData = [
             type: 'tel',
             required: 'require'
           },
-       {
+          {
             key: 'tel',
             label: 'Alternate number',
             name: ['contact', 'alternate_phone'],
             place: 'Enter Alternate Number',
             id: 'alternate',
             type: 'tel',
-           required: 'require'
+            required: 'require'
           },
           {
             key: 'text',
@@ -3272,18 +3543,6 @@ const formData = [
 
           },
           {
-            key: 'select',
-            label: 'Admission Type',
-            name: ['customfields', 'admission_type'],
-            id: 'SessionType',
-            place: 'Enter Admission Type',
-            type: 'select',
-            options: [{ value: 'FRESH', label: 'FRESH' },
-              { value: 'Credit Transfer', label: 'Credit Transfer' },
-            { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
-          },
-
-          {
             key: 'date',
             label: 'Date of Birth',
             name: ['customfields', 'dob'],
@@ -3304,28 +3563,7 @@ const formData = [
             { value: 'Female', label: 'Female' },
             { value: 'Other', label: 'Other' }],
           },
-          {
-            key: 'select',
-            label: 'Installment Type',
-            id: 'InstallmentType',
-            name: ['customfields', 'installment_type'],
-            place: 'Installment Type',
-            type: 'select',
-            required: 'require',
 
-            options: [
-              { value: '1st Installment', label: '1st Installment' },
-              { value: '2nd Installment', label: '2nd Installment' },
-              { value: '3rd Installment', label: '3rd Installment' },
-              { value: '4th Installment', label: '4th Installment' },
-              { value: '5th Installment', label: '5th Installment' },
-              { value: '6th Installment', label: '6th Installment' },
-              { value: '7th Installment', label: '7th Installment' },
-              { value: '8th Installment', label: '8th Installment' },
-              { value: '9th Installment', label: '9th Installment' },
-              { value: '10th Installment', label: '10th Installment' },
-            ],
-          },
           {
             key: 'select ',
             label: 'Payment mode ',
@@ -3340,23 +3578,7 @@ const formData = [
             { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
-          {
-            key: 'select ',
-            label: 'Status',
-            name: ['customfields', 'status'],
-            id: 'status ',
-            type: 'select',
-            place: 'select status',
-            required: 'require',
 
-            options: [
-              { value: 'New', label: 'New' },
-              { value: 'Approved', label: 'Approved' },
-              { value: 'Enrolled', label: 'Enrolled' },
-              { value: 'Alumini', label: 'Alumini' },
-              { value: 'Cancel', label: 'Cancel' },
-            ],
-          },
           {
             key: 'textarea',
             label: 'Remark',
@@ -3379,7 +3601,7 @@ const formData = [
             id: 'studentDocument',
             type: 'file',
           },
-          
+
         ],
       },
       {
@@ -3387,7 +3609,7 @@ const formData = [
         label: 'LPU',
         name: ['customfields', 'university_name'],
         value: 'LPU',
-        fields: [
+      fields: [
           {
             courses: [
               {
@@ -3403,27 +3625,27 @@ const formData = [
                 label: "BA",
                 specializations: [
                   { value: "General", label: "General" },
-                  { "value": "Education", "label": "Education" },
-                  { "value": "English", "label": "English" },
-                  { "value": "Journlsim & Mass Communication", label: "Journlsim & Mass Communication" },
-                  { "value": "Economics", "label": "Economics" },
-                  { "value": "History", "label": "History" },
-                  { "value": "Political science", "label": "Political science" },
-                  { "value": "Sociology", "label": "Sociology" },
-                  { "value": "Journalism & Mass Communication", "label": "Journalism & Mass Communication" },
-                  { "value": "Public Administration", "label": "Public Administration" },
-                  { "value": "Psychology", "label": "Psychology" },
-                  { "value": "Hindi", "label": "Hindi" },
-                  { "value": "Mathematics", "label": "Mathematics" },
-                  { "value": 'Geography', label: 'Geography' },
+                  { value: "Education", label: "Education" },
+                  { value: "English", label: "English" },
+                  { value: "Journlsim & Mass Communication", label: "Journlsim & Mass Communication" },
+                  { value: "Economics", label: "Economics" },
+                  { value: "History", label: "History" },
+                  { value: "Political science", label: "Political science" },
+                  { value: "Sociology", label: "Sociology" },
+                  { value: "Journalism & Mass Communication", label: "Journalism & Mass Communication" },
+                  { value: "Public Administration", label: "Public Administration" },
+                  { value: "Psychology", label: "Psychology" },
+                  { value: "Hindi", label: "Hindi" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: 'Geography', label: 'Geography' },
                 ],
               },
               {
                 value: "BBA",
                 label: "BBA",
                 specializations: [
-                  { "value": "General", "label": "General" },
-                  { "value": "Education", "label": "Education" },
+                  { value: "General", label: "General" },
+                  { value: "Education", label: "Education" },
                   { value: "Marketing", label: "Marketing" },
                   { value: "Human Resource Management", label: "Human Resource Management" },
                   { value: "Finance", label: "Finance" },
@@ -3649,100 +3871,186 @@ const formData = [
             ]
           },
           {
-            payments: [
+            admission_type: [
               {
-                value: "Semester",
-                label: "Semester",
-                paymentType: [
+                value: "FRESH",
+                label: "FRESH",
+                payments: [
                   {
-                    key: 'text',
-                    label: 'Semester fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'text',
-                    required: 'require'
+                    value: "Semester",
+                    label: "Semester",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Semester fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'text',
+                    value: "Yearly",
+                    label: "Yearly",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Yearly Fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'text',
-                  },
+                    value: "Fullfees",
+                    label: "Fullfees",
+                    "paymentType": [
+                      {
+                        key: "text",
+                        label: "Full fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
+                  }
                 ]
               },
               {
-                value: "Yearly",
-                label: "Yearly",
-                paymentType: [
+                value: "Credit Transfer",
+                label: "Credit Transfer",
+                payments: [
                   {
-                    key: 'text',
-                    label: 'Yearly Fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'text',
-                    required: 'require'
-                  },
-                  {
-                    key: 'text',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'text',
-                  },
-                  {
-                    key: 'text',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'text',
-                  },
+                    value: "Fullfees",
+                    label: "Fullfees",
+                    "paymentType": [
+                      {
+                        key: "text",
+                        label: "Full fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
+                  }
                 ]
               },
               {
-                value: "Fullfees",
-                label: "Fullfees",
-                paymentType: [
+                value: "LATERAL ENTRY",
+                label: "LATERAL ENTRY",
+                payments: [
                   {
-                    key: 'text',
-                    label: 'Full fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'text',
-                    required: 'require'
+                    value: "Semester",
+                    label: "Semester",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Semester fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'text',
+                    value: "Yearly",
+                    label: "Yearly",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Yearly Fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'text',
-                  },
+                    value: "Fullfees",
+                    label: "Fullfees",
+                    "paymentType": [
+                      {
+                        key: "text",
+                        label: "Full fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
+                  }
                 ]
-              }
+              },
             ]
           },
           {
@@ -3835,18 +4143,6 @@ const formData = [
 
           },
           {
-            key: 'select',
-            label: 'Admission Type',
-            name: ['customfields', 'admission_type'],
-            id: 'SessionType',
-            place: 'Enter Admission Type',
-            type: 'select',
-            options: [{ value: 'FRESH', label: 'FRESH' },
-              { value: 'Credit Transfer', label: 'Credit Transfer' },
-            { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
-          },
-
-          {
             key: 'date',
             label: 'Date of Birth',
             name: ['customfields', 'dob'],
@@ -3867,28 +4163,7 @@ const formData = [
             { value: 'Female', label: 'Female' },
             { value: 'Other', label: 'Other' }],
           },
-          {
-            key: 'select',
-            label: 'Installment Type',
-            id: 'InstallmentType',
-            name: ['customfields', 'installment_type'],
-            place: 'Installment Type',
-            type: 'select',
-            required: 'require',
 
-            options: [
-              { value: '1st Installment', label: '1st Installment' },
-              { value: '2nd Installment', label: '2nd Installment' },
-              { value: '3rd Installment', label: '3rd Installment' },
-              { value: '4th Installment', label: '4th Installment' },
-              { value: '5th Installment', label: '5th Installment' },
-              { value: '6th Installment', label: '6th Installment' },
-              { value: '7th Installment', label: '7th Installment' },
-              { value: '8th Installment', label: '8th Installment' },
-              { value: '9th Installment', label: '9th Installment' },
-              { value: '10th Installment', label: '10th Installment' },
-            ],
-          },
           {
             key: 'select ',
             label: 'Payment mode ',
@@ -3903,23 +4178,7 @@ const formData = [
             { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
-          {
-            key: 'select ',
-            label: 'Status',
-            name: ['customfields', 'status'],
-            id: 'status ',
-            type: 'select',
-            place: 'select status',
-            required: 'require',
 
-            options: [
-              { value: 'New', label: 'New' },
-              { value: 'Approved', label: 'Approved' },
-              { value: 'Enrolled', label: 'Enrolled' },
-              { value: 'Alumini', label: 'Alumini' },
-              { value: 'Cancel', label: 'Cancel' },
-            ],
-          },
           {
             key: 'textarea',
             label: 'Remark',
@@ -3942,7 +4201,7 @@ const formData = [
             id: 'studentDocument',
             type: 'file',
           },
-          
+
         ],
       },
       {
@@ -3950,7 +4209,7 @@ const formData = [
         label: 'JAIN',
         name: ['customfields', 'university_name'],
         value: 'JAIN',
-        fields: [
+      fields: [
           {
             courses: [
               {
@@ -3966,27 +4225,27 @@ const formData = [
                 label: "BA",
                 specializations: [
                   { value: "General", label: "General" },
-                  { "value": "Education", "label": "Education" },
-                  { "value": "English", "label": "English" },
-                  { "value": "Journlsim & Mass Communication", label: "Journlsim & Mass Communication" },
-                  { "value": "Economics", "label": "Economics" },
-                  { "value": "History", "label": "History" },
-                  { "value": "Political science", "label": "Political science" },
-                  { "value": "Sociology", "label": "Sociology" },
-                  { "value": "Journalism & Mass Communication", "label": "Journalism & Mass Communication" },
-                  { "value": "Public Administration", "label": "Public Administration" },
-                  { "value": "Psychology", "label": "Psychology" },
-                  { "value": "Hindi", "label": "Hindi" },
-                  { "value": "Mathematics", "label": "Mathematics" },
-                  { "value": 'Geography', label: 'Geography' },
+                  { value: "Education", label: "Education" },
+                  { value: "English", label: "English" },
+                  { value: "Journlsim & Mass Communication", label: "Journlsim & Mass Communication" },
+                  { value: "Economics", label: "Economics" },
+                  { value: "History", label: "History" },
+                  { value: "Political science", label: "Political science" },
+                  { value: "Sociology", label: "Sociology" },
+                  { value: "Journalism & Mass Communication", label: "Journalism & Mass Communication" },
+                  { value: "Public Administration", label: "Public Administration" },
+                  { value: "Psychology", label: "Psychology" },
+                  { value: "Hindi", label: "Hindi" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: 'Geography', label: 'Geography' },
                 ],
               },
               {
                 value: "BBA",
                 label: "BBA",
                 specializations: [
-                  { "value": "General", "label": "General" },
-                  { "value": "Education", "label": "Education" },
+                  { value: "General", label: "General" },
+                  { value: "Education", label: "Education" },
                   { value: "Marketing", label: "Marketing" },
                   { value: "Human Resource Management", label: "Human Resource Management" },
                   { value: "Finance", label: "Finance" },
@@ -4212,100 +4471,186 @@ const formData = [
             ]
           },
           {
-            payments: [
+            admission_type: [
               {
-                value: "Semester",
-                label: "Semester",
-                paymentType: [
+                value: "FRESH",
+                label: "FRESH",
+                payments: [
                   {
-                    key: 'text',
-                    label: 'Semester fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'text',
-                    required: 'require'
+                    value: "Semester",
+                    label: "Semester",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Semester fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'text',
+                    value: "Yearly",
+                    label: "Yearly",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Yearly Fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'text',
-                  },
+                    value: "Fullfees",
+                    label: "Fullfees",
+                    "paymentType": [
+                      {
+                        key: "text",
+                        label: "Full fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
+                  }
                 ]
               },
               {
-                value: "Yearly",
-                label: "Yearly",
-                paymentType: [
+                value: "Credit Transfer",
+                label: "Credit Transfer",
+                payments: [
                   {
-                    key: 'text',
-                    label: 'Yearly Fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'text',
-                    required: 'require'
-                  },
-                  {
-                    key: 'text',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'text',
-                  },
-                  {
-                    key: 'text',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'text',
-                  },
+                    value: "Fullfees",
+                    label: "Fullfees",
+                    "paymentType": [
+                      {
+                        key: "text",
+                        label: "Full fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
+                  }
                 ]
               },
               {
-                value: "Fullfees",
-                label: "Fullfees",
-                paymentType: [
+                value: "LATERAL ENTRY",
+                label: "LATERAL ENTRY",
+                payments: [
                   {
-                    key: 'text',
-                    label: 'Full fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'text',
-                    required: 'require'
+                    value: "Semester",
+                    label: "Semester",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Semester fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'text',
+                    value: "Yearly",
+                    label: "Yearly",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Yearly Fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'text',
-                  },
+                    value: "Fullfees",
+                    label: "Fullfees",
+                    "paymentType": [
+                      {
+                        key: "text",
+                        label: "Full fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
+                  }
                 ]
-              }
+              },
             ]
           },
           {
@@ -4344,14 +4689,14 @@ const formData = [
             type: 'tel',
             required: 'require'
           },
-         {
+          {
             key: 'tel',
             label: 'Alternate number',
             name: ['contact', 'alternate_phone'],
             place: 'Enter Alternate Number',
             id: 'alternate',
             type: 'tel',
-           required: 'require'
+            required: 'require'
           },
           {
             key: 'text',
@@ -4398,18 +4743,6 @@ const formData = [
 
           },
           {
-            key: 'select',
-            label: 'Admission Type',
-            name: ['customfields', 'admission_type'],
-            id: 'SessionType',
-            place: 'Enter Admission Type',
-            type: 'select',
-            options: [{ value: 'FRESH', label: 'FRESH' },
-              { value: 'Credit Transfer', label: 'Credit Transfer' },
-            { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
-          },
-
-          {
             key: 'date',
             label: 'Date of Birth',
             name: ['customfields', 'dob'],
@@ -4430,28 +4763,7 @@ const formData = [
             { value: 'Female', label: 'Female' },
             { value: 'Other', label: 'Other' }],
           },
-          {
-            key: 'select',
-            label: 'Installment Type',
-            id: 'InstallmentType',
-            name: ['customfields', 'installment_type'],
-            place: 'Installment Type',
-            type: 'select',
-            required: 'require',
 
-            options: [
-              { value: '1st Installment', label: '1st Installment' },
-              { value: '2nd Installment', label: '2nd Installment' },
-              { value: '3rd Installment', label: '3rd Installment' },
-              { value: '4th Installment', label: '4th Installment' },
-              { value: '5th Installment', label: '5th Installment' },
-              { value: '6th Installment', label: '6th Installment' },
-              { value: '7th Installment', label: '7th Installment' },
-              { value: '8th Installment', label: '8th Installment' },
-              { value: '9th Installment', label: '9th Installment' },
-              { value: '10th Installment', label: '10th Installment' },
-            ],
-          },
           {
             key: 'select ',
             label: 'Payment mode ',
@@ -4466,23 +4778,7 @@ const formData = [
             { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
-          {
-            key: 'select ',
-            label: 'Status',
-            name: ['customfields', 'status'],
-            id: 'status ',
-            type: 'select',
-            place: 'select status',
-            required: 'require',
 
-            options: [
-              { value: 'New', label: 'New' },
-              { value: 'Approved', label: 'Approved' },
-              { value: 'Enrolled', label: 'Enrolled' },
-              { value: 'Alumini', label: 'Alumini' },
-              { value: 'Cancel', label: 'Cancel' },
-            ],
-          },
           {
             key: 'textarea',
             label: 'Remark',
@@ -4505,7 +4801,7 @@ const formData = [
             id: 'studentDocument',
             type: 'file',
           },
-          
+
         ],
       },
       {
@@ -4513,7 +4809,7 @@ const formData = [
         label: 'SVSU',
         name: ['customfields', 'university_name'],
         value: 'SVSU',
-        fields: [
+      fields: [
           {
             courses: [
               {
@@ -4529,27 +4825,27 @@ const formData = [
                 label: "BA",
                 specializations: [
                   { value: "General", label: "General" },
-                  { "value": "Education", "label": "Education" },
-                  { "value": "English", "label": "English" },
-                  { "value": "Journlsim & Mass Communication", label: "Journlsim & Mass Communication" },
-                  { "value": "Economics", "label": "Economics" },
-                  { "value": "History", "label": "History" },
-                  { "value": "Political science", "label": "Political science" },
-                  { "value": "Sociology", "label": "Sociology" },
-                  { "value": "Journalism & Mass Communication", "label": "Journalism & Mass Communication" },
-                  { "value": "Public Administration", "label": "Public Administration" },
-                  { "value": "Psychology", "label": "Psychology" },
-                  { "value": "Hindi", "label": "Hindi" },
-                  { "value": "Mathematics", "label": "Mathematics" },
-                  { "value": 'Geography', label: 'Geography' },
+                  { value: "Education", label: "Education" },
+                  { value: "English", label: "English" },
+                  { value: "Journlsim & Mass Communication", label: "Journlsim & Mass Communication" },
+                  { value: "Economics", label: "Economics" },
+                  { value: "History", label: "History" },
+                  { value: "Political science", label: "Political science" },
+                  { value: "Sociology", label: "Sociology" },
+                  { value: "Journalism & Mass Communication", label: "Journalism & Mass Communication" },
+                  { value: "Public Administration", label: "Public Administration" },
+                  { value: "Psychology", label: "Psychology" },
+                  { value: "Hindi", label: "Hindi" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: 'Geography', label: 'Geography' },
                 ],
               },
               {
                 value: "BBA",
                 label: "BBA",
                 specializations: [
-                  { "value": "General", "label": "General" },
-                  { "value": "Education", "label": "Education" },
+                  { value: "General", label: "General" },
+                  { value: "Education", label: "Education" },
                   { value: "Marketing", label: "Marketing" },
                   { value: "Human Resource Management", label: "Human Resource Management" },
                   { value: "Finance", label: "Finance" },
@@ -4775,100 +5071,186 @@ const formData = [
             ]
           },
           {
-            payments: [
+            admission_type: [
               {
-                value: "Semester",
-                label: "Semester",
-                paymentType: [
+                value: "FRESH",
+                label: "FRESH",
+                payments: [
                   {
-                    key: 'text',
-                    label: 'Semester fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'text',
-                    required: 'require'
+                    value: "Semester",
+                    label: "Semester",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Semester fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'text',
+                    value: "Yearly",
+                    label: "Yearly",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Yearly Fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'text',
-                  },
+                    value: "Fullfees",
+                    label: "Fullfees",
+                    "paymentType": [
+                      {
+                        key: "text",
+                        label: "Full fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
+                  }
                 ]
               },
               {
-                value: "Yearly",
-                label: "Yearly",
-                paymentType: [
+                value: "Credit Transfer",
+                label: "Credit Transfer",
+                payments: [
                   {
-                    key: 'text',
-                    label: 'Yearly Fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'text',
-                    required: 'require'
-                  },
-                  {
-                    key: 'text',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'text',
-                  },
-                  {
-                    key: 'text',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'text',
-                  },
+                    value: "Fullfees",
+                    label: "Fullfees",
+                    "paymentType": [
+                      {
+                        key: "text",
+                        label: "Full fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
+                  }
                 ]
               },
               {
-                value: "Fullfees",
-                label: "Fullfees",
-                paymentType: [
+                value: "LATERAL ENTRY",
+                label: "LATERAL ENTRY",
+                payments: [
                   {
-                    key: 'text',
-                    label: 'Full fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'text',
-                    required: 'require'
+                    value: "Semester",
+                    label: "Semester",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Semester fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'text',
+                    value: "Yearly",
+                    label: "Yearly",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Yearly Fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'text',
-                  },
+                    value: "Fullfees",
+                    label: "Fullfees",
+                    "paymentType": [
+                      {
+                        key: "text",
+                        label: "Full fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
+                  }
                 ]
-              }
+              },
             ]
           },
           {
@@ -4907,14 +5289,14 @@ const formData = [
             type: 'tel',
             required: 'require'
           },
-       {
+          {
             key: 'tel',
             label: 'Alternate number',
             name: ['contact', 'alternate_phone'],
             place: 'Enter Alternate Number',
             id: 'alternate',
             type: 'tel',
-           required: 'require'
+            required: 'require'
           },
           {
             key: 'text',
@@ -4961,18 +5343,6 @@ const formData = [
 
           },
           {
-            key: 'select',
-            label: 'Admission Type',
-            name: ['customfields', 'admission_type'],
-            id: 'SessionType',
-            place: 'Enter Admission Type',
-            type: 'select',
-            options: [{ value: 'FRESH', label: 'FRESH' },
-              { value: 'Credit Transfer', label: 'Credit Transfer' },
-            { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
-          },
-
-          {
             key: 'date',
             label: 'Date of Birth',
             name: ['customfields', 'dob'],
@@ -4993,28 +5363,7 @@ const formData = [
             { value: 'Female', label: 'Female' },
             { value: 'Other', label: 'Other' }],
           },
-          {
-            key: 'select',
-            label: 'Installment Type',
-            id: 'InstallmentType',
-            name: ['customfields', 'installment_type'],
-            place: 'Installment Type',
-            type: 'select',
-            required: 'require',
 
-            options: [
-              { value: '1st Installment', label: '1st Installment' },
-              { value: '2nd Installment', label: '2nd Installment' },
-              { value: '3rd Installment', label: '3rd Installment' },
-              { value: '4th Installment', label: '4th Installment' },
-              { value: '5th Installment', label: '5th Installment' },
-              { value: '6th Installment', label: '6th Installment' },
-              { value: '7th Installment', label: '7th Installment' },
-              { value: '8th Installment', label: '8th Installment' },
-              { value: '9th Installment', label: '9th Installment' },
-              { value: '10th Installment', label: '10th Installment' },
-            ],
-          },
           {
             key: 'select ',
             label: 'Payment mode ',
@@ -5029,23 +5378,7 @@ const formData = [
             { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
-          {
-            key: 'select ',
-            label: 'Status',
-            name: ['customfields', 'status'],
-            id: 'status ',
-            type: 'select',
-            place: 'select status',
-            required: 'require',
 
-            options: [
-              { value: 'New', label: 'New' },
-              { value: 'Approved', label: 'Approved' },
-              { value: 'Enrolled', label: 'Enrolled' },
-              { value: 'Alumini', label: 'Alumini' },
-              { value: 'Cancel', label: 'Cancel' },
-            ],
-          },
           {
             key: 'textarea',
             label: 'Remark',
@@ -5068,7 +5401,7 @@ const formData = [
             id: 'studentDocument',
             type: 'file',
           },
-          
+
         ],
       },
 
@@ -5077,7 +5410,7 @@ const formData = [
         label: 'VIGNAN',
         name: ['customfields', 'university_name'],
         value: 'VIGNAN',
-        fields: [
+      fields: [
           {
             courses: [
               {
@@ -5093,27 +5426,27 @@ const formData = [
                 label: "BA",
                 specializations: [
                   { value: "General", label: "General" },
-                  { "value": "Education", "label": "Education" },
-                  { "value": "English", "label": "English" },
-                  { "value": "Journlsim & Mass Communication", label: "Journlsim & Mass Communication" },
-                  { "value": "Economics", "label": "Economics" },
-                  { "value": "History", "label": "History" },
-                  { "value": "Political science", "label": "Political science" },
-                  { "value": "Sociology", "label": "Sociology" },
-                  { "value": "Journalism & Mass Communication", "label": "Journalism & Mass Communication" },
-                  { "value": "Public Administration", "label": "Public Administration" },
-                  { "value": "Psychology", "label": "Psychology" },
-                  { "value": "Hindi", "label": "Hindi" },
-                  { "value": "Mathematics", "label": "Mathematics" },
-                  { "value": 'Geography', label: 'Geography' },
+                  { value: "Education", label: "Education" },
+                  { value: "English", label: "English" },
+                  { value: "Journlsim & Mass Communication", label: "Journlsim & Mass Communication" },
+                  { value: "Economics", label: "Economics" },
+                  { value: "History", label: "History" },
+                  { value: "Political science", label: "Political science" },
+                  { value: "Sociology", label: "Sociology" },
+                  { value: "Journalism & Mass Communication", label: "Journalism & Mass Communication" },
+                  { value: "Public Administration", label: "Public Administration" },
+                  { value: "Psychology", label: "Psychology" },
+                  { value: "Hindi", label: "Hindi" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: 'Geography', label: 'Geography' },
                 ],
               },
               {
                 value: "BBA",
                 label: "BBA",
                 specializations: [
-                  { "value": "General", "label": "General" },
-                  { "value": "Education", "label": "Education" },
+                  { value: "General", label: "General" },
+                  { value: "Education", label: "Education" },
                   { value: "Marketing", label: "Marketing" },
                   { value: "Human Resource Management", label: "Human Resource Management" },
                   { value: "Finance", label: "Finance" },
@@ -5339,100 +5672,186 @@ const formData = [
             ]
           },
           {
-            payments: [
+            admission_type: [
               {
-                value: "Semester",
-                label: "Semester",
-                paymentType: [
+                value: "FRESH",
+                label: "FRESH",
+                payments: [
                   {
-                    key: 'text',
-                    label: 'Semester fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'text',
-                    required: 'require'
+                    value: "Semester",
+                    label: "Semester",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Semester fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'text',
+                    value: "Yearly",
+                    label: "Yearly",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Yearly Fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'text',
-                  },
+                    value: "Fullfees",
+                    label: "Fullfees",
+                    "paymentType": [
+                      {
+                        key: "text",
+                        label: "Full fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
+                  }
                 ]
               },
               {
-                value: "Yearly",
-                label: "Yearly",
-                paymentType: [
+                value: "Credit Transfer",
+                label: "Credit Transfer",
+                payments: [
                   {
-                    key: 'text',
-                    label: 'Yearly Fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'text',
-                    required: 'require'
-                  },
-                  {
-                    key: 'text',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'text',
-                  },
-                  {
-                    key: 'text',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'text',
-                  },
+                    value: "Fullfees",
+                    label: "Fullfees",
+                    "paymentType": [
+                      {
+                        key: "text",
+                        label: "Full fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
+                  }
                 ]
               },
               {
-                value: "Fullfees",
-                label: "Fullfees",
-                paymentType: [
+                value: "LATERAL ENTRY",
+                label: "LATERAL ENTRY",
+                payments: [
                   {
-                    key: 'text',
-                    label: 'Full fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'text',
-                    required: 'require'
+                    value: "Semester",
+                    label: "Semester",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Semester fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'text',
+                    value: "Yearly",
+                    label: "Yearly",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Yearly Fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'text',
-                  },
+                    value: "Fullfees",
+                    label: "Fullfees",
+                    "paymentType": [
+                      {
+                        key: "text",
+                        label: "Full fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
+                  }
                 ]
-              }
+              },
             ]
           },
           {
@@ -5471,14 +5890,14 @@ const formData = [
             type: 'tel',
             required: 'require'
           },
-       {
+          {
             key: 'tel',
             label: 'Alternate number',
             name: ['contact', 'alternate_phone'],
             place: 'Enter Alternate Number',
             id: 'alternate',
             type: 'tel',
-           required: 'require'
+            required: 'require'
           },
           {
             key: 'text',
@@ -5525,18 +5944,6 @@ const formData = [
 
           },
           {
-            key: 'select',
-            label: 'Admission Type',
-            name: ['customfields', 'admission_type'],
-            id: 'SessionType',
-            place: 'Enter Admission Type',
-            type: 'select',
-            options: [{ value: 'FRESH', label: 'FRESH' },
-              { value: 'Credit Transfer', label: 'Credit Transfer' },
-            { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
-          },
-
-          {
             key: 'date',
             label: 'Date of Birth',
             name: ['customfields', 'dob'],
@@ -5557,28 +5964,7 @@ const formData = [
             { value: 'Female', label: 'Female' },
             { value: 'Other', label: 'Other' }],
           },
-          {
-            key: 'select',
-            label: 'Installment Type',
-            id: 'InstallmentType',
-            name: ['customfields', 'installment_type'],
-            place: 'Installment Type',
-            type: 'select',
-            required: 'require',
 
-            options: [
-              { value: '1st Installment', label: '1st Installment' },
-              { value: '2nd Installment', label: '2nd Installment' },
-              { value: '3rd Installment', label: '3rd Installment' },
-              { value: '4th Installment', label: '4th Installment' },
-              { value: '5th Installment', label: '5th Installment' },
-              { value: '6th Installment', label: '6th Installment' },
-              { value: '7th Installment', label: '7th Installment' },
-              { value: '8th Installment', label: '8th Installment' },
-              { value: '9th Installment', label: '9th Installment' },
-              { value: '10th Installment', label: '10th Installment' },
-            ],
-          },
           {
             key: 'select ',
             label: 'Payment mode ',
@@ -5593,23 +5979,7 @@ const formData = [
             { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
-          {
-            key: 'select ',
-            label: 'Status',
-            name: ['customfields', 'status'],
-            id: 'status ',
-            type: 'select',
-            place: 'select status',
-            required: 'require',
 
-            options: [
-              { value: 'New', label: 'New' },
-              { value: 'Approved', label: 'Approved' },
-              { value: 'Enrolled', label: 'Enrolled' },
-              { value: 'Alumini', label: 'Alumini' },
-              { value: 'Cancel', label: 'Cancel' },
-            ],
-          },
           {
             key: 'textarea',
             label: 'Remark',
@@ -5632,7 +6002,7 @@ const formData = [
             id: 'studentDocument',
             type: 'file',
           },
-          
+
         ],
       },
       {
@@ -5640,7 +6010,7 @@ const formData = [
         label: 'MANIPAL',
         name: ['customfields', 'university_name'],
         value: 'MANIPAL',
-        fields: [
+      fields: [
           {
             courses: [
               {
@@ -5656,27 +6026,27 @@ const formData = [
                 label: "BA",
                 specializations: [
                   { value: "General", label: "General" },
-                  { "value": "Education", "label": "Education" },
-                  { "value": "English", "label": "English" },
-                  { "value": "Journlsim & Mass Communication", label: "Journlsim & Mass Communication" },
-                  { "value": "Economics", "label": "Economics" },
-                  { "value": "History", "label": "History" },
-                  { "value": "Political science", "label": "Political science" },
-                  { "value": "Sociology", "label": "Sociology" },
-                  { "value": "Journalism & Mass Communication", "label": "Journalism & Mass Communication" },
-                  { "value": "Public Administration", "label": "Public Administration" },
-                  { "value": "Psychology", "label": "Psychology" },
-                  { "value": "Hindi", "label": "Hindi" },
-                  { "value": "Mathematics", "label": "Mathematics" },
-                  { "value": 'Geography', label: 'Geography' },
+                  { value: "Education", label: "Education" },
+                  { value: "English", label: "English" },
+                  { value: "Journlsim & Mass Communication", label: "Journlsim & Mass Communication" },
+                  { value: "Economics", label: "Economics" },
+                  { value: "History", label: "History" },
+                  { value: "Political science", label: "Political science" },
+                  { value: "Sociology", label: "Sociology" },
+                  { value: "Journalism & Mass Communication", label: "Journalism & Mass Communication" },
+                  { value: "Public Administration", label: "Public Administration" },
+                  { value: "Psychology", label: "Psychology" },
+                  { value: "Hindi", label: "Hindi" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: 'Geography', label: 'Geography' },
                 ],
               },
               {
                 value: "BBA",
                 label: "BBA",
                 specializations: [
-                  { "value": "General", "label": "General" },
-                  { "value": "Education", "label": "Education" },
+                  { value: "General", label: "General" },
+                  { value: "Education", label: "Education" },
                   { value: "Marketing", label: "Marketing" },
                   { value: "Human Resource Management", label: "Human Resource Management" },
                   { value: "Finance", label: "Finance" },
@@ -5902,100 +6272,186 @@ const formData = [
             ]
           },
           {
-            payments: [
+            admission_type: [
               {
-                value: "Semester",
-                label: "Semester",
-                paymentType: [
+                value: "FRESH",
+                label: "FRESH",
+                payments: [
                   {
-                    key: 'text',
-                    label: 'Semester fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'text',
-                    required: 'require'
+                    value: "Semester",
+                    label: "Semester",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Semester fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'text',
+                    value: "Yearly",
+                    label: "Yearly",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Yearly Fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'text',
-                  },
+                    value: "Fullfees",
+                    label: "Fullfees",
+                    "paymentType": [
+                      {
+                        key: "text",
+                        label: "Full fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
+                  }
                 ]
               },
               {
-                value: "Yearly",
-                label: "Yearly",
-                paymentType: [
+                value: "Credit Transfer",
+                label: "Credit Transfer",
+                payments: [
                   {
-                    key: 'text',
-                    label: 'Yearly Fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'text',
-                    required: 'require'
-                  },
-                  {
-                    key: 'text',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'text',
-                  },
-                  {
-                    key: 'text',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'text',
-                  },
+                    value: "Fullfees",
+                    label: "Fullfees",
+                    "paymentType": [
+                      {
+                        key: "text",
+                        label: "Full fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
+                  }
                 ]
               },
               {
-                value: "Fullfees",
-                label: "Fullfees",
-                paymentType: [
+                value: "LATERAL ENTRY",
+                label: "LATERAL ENTRY",
+                payments: [
                   {
-                    key: 'text',
-                    label: 'Full fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'text',
-                    required: 'require'
+                    value: "Semester",
+                    label: "Semester",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Semester fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'text',
+                    value: "Yearly",
+                    label: "Yearly",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Yearly Fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'text',
-                  },
+                    value: "Fullfees",
+                    label: "Fullfees",
+                    "paymentType": [
+                      {
+                        key: "text",
+                        label: "Full fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
+                  }
                 ]
-              }
+              },
             ]
           },
           {
@@ -6034,14 +6490,14 @@ const formData = [
             type: 'tel',
             required: 'require'
           },
-       {
+          {
             key: 'tel',
             label: 'Alternate number',
             name: ['contact', 'alternate_phone'],
             place: 'Enter Alternate Number',
             id: 'alternate',
             type: 'tel',
-           required: 'require'
+            required: 'require'
           },
           {
             key: 'text',
@@ -6088,18 +6544,6 @@ const formData = [
 
           },
           {
-            key: 'select',
-            label: 'Admission Type',
-            name: ['customfields', 'admission_type'],
-            id: 'SessionType',
-            place: 'Enter Admission Type',
-            type: 'select',
-            options: [{ value: 'FRESH', label: 'FRESH' },
-              { value: 'Credit Transfer', label: 'Credit Transfer' },
-            { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
-          },
-
-          {
             key: 'date',
             label: 'Date of Birth',
             name: ['customfields', 'dob'],
@@ -6120,28 +6564,7 @@ const formData = [
             { value: 'Female', label: 'Female' },
             { value: 'Other', label: 'Other' }],
           },
-          {
-            key: 'select',
-            label: 'Installment Type',
-            id: 'InstallmentType',
-            name: ['customfields', 'installment_type'],
-            place: 'Installment Type',
-            type: 'select',
-            required: 'require',
 
-            options: [
-              { value: '1st Installment', label: '1st Installment' },
-              { value: '2nd Installment', label: '2nd Installment' },
-              { value: '3rd Installment', label: '3rd Installment' },
-              { value: '4th Installment', label: '4th Installment' },
-              { value: '5th Installment', label: '5th Installment' },
-              { value: '6th Installment', label: '6th Installment' },
-              { value: '7th Installment', label: '7th Installment' },
-              { value: '8th Installment', label: '8th Installment' },
-              { value: '9th Installment', label: '9th Installment' },
-              { value: '10th Installment', label: '10th Installment' },
-            ],
-          },
           {
             key: 'select ',
             label: 'Payment mode ',
@@ -6156,23 +6579,7 @@ const formData = [
             { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
-          {
-            key: 'select ',
-            label: 'Status',
-            name: ['customfields', 'status'],
-            id: 'status ',
-            type: 'select',
-            place: 'select status',
-            required: 'require',
 
-            options: [
-              { value: 'New', label: 'New' },
-              { value: 'Approved', label: 'Approved' },
-              { value: 'Enrolled', label: 'Enrolled' },
-              { value: 'Alumini', label: 'Alumini' },
-              { value: 'Cancel', label: 'Cancel' },
-            ],
-          },
           {
             key: 'textarea',
             label: 'Remark',
@@ -6195,7 +6602,7 @@ const formData = [
             id: 'studentDocument',
             type: 'file',
           },
-          
+
         ],
       },
       {
@@ -6203,7 +6610,7 @@ const formData = [
         label: 'SMU',
         name: ['customfields', 'university_name'],
         value: 'SMU',
-        fields: [
+      fields: [
           {
             courses: [
               {
@@ -6219,27 +6626,27 @@ const formData = [
                 label: "BA",
                 specializations: [
                   { value: "General", label: "General" },
-                  { "value": "Education", "label": "Education" },
-                  { "value": "English", "label": "English" },
-                  { "value": "Journlsim & Mass Communication", label: "Journlsim & Mass Communication" },
-                  { "value": "Economics", "label": "Economics" },
-                  { "value": "History", "label": "History" },
-                  { "value": "Political science", "label": "Political science" },
-                  { "value": "Sociology", "label": "Sociology" },
-                  { "value": "Journalism & Mass Communication", "label": "Journalism & Mass Communication" },
-                  { "value": "Public Administration", "label": "Public Administration" },
-                  { "value": "Psychology", "label": "Psychology" },
-                  { "value": "Hindi", "label": "Hindi" },
-                  { "value": "Mathematics", "label": "Mathematics" },
-                  { "value": 'Geography', label: 'Geography' },
+                  { value: "Education", label: "Education" },
+                  { value: "English", label: "English" },
+                  { value: "Journlsim & Mass Communication", label: "Journlsim & Mass Communication" },
+                  { value: "Economics", label: "Economics" },
+                  { value: "History", label: "History" },
+                  { value: "Political science", label: "Political science" },
+                  { value: "Sociology", label: "Sociology" },
+                  { value: "Journalism & Mass Communication", label: "Journalism & Mass Communication" },
+                  { value: "Public Administration", label: "Public Administration" },
+                  { value: "Psychology", label: "Psychology" },
+                  { value: "Hindi", label: "Hindi" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: 'Geography', label: 'Geography' },
                 ],
               },
               {
                 value: "BBA",
                 label: "BBA",
                 specializations: [
-                  { "value": "General", "label": "General" },
-                  { "value": "Education", "label": "Education" },
+                  { value: "General", label: "General" },
+                  { value: "Education", label: "Education" },
                   { value: "Marketing", label: "Marketing" },
                   { value: "Human Resource Management", label: "Human Resource Management" },
                   { value: "Finance", label: "Finance" },
@@ -6465,100 +6872,186 @@ const formData = [
             ]
           },
           {
-            payments: [
+            admission_type: [
               {
-                value: "Semester",
-                label: "Semester",
-                paymentType: [
+                value: "FRESH",
+                label: "FRESH",
+                payments: [
                   {
-                    key: 'text',
-                    label: 'Semester fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'text',
-                    required: 'require'
+                    value: "Semester",
+                    label: "Semester",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Semester fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'text',
+                    value: "Yearly",
+                    label: "Yearly",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Yearly Fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'text',
-                  },
+                    value: "Fullfees",
+                    label: "Fullfees",
+                    "paymentType": [
+                      {
+                        key: "text",
+                        label: "Full fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
+                  }
                 ]
               },
               {
-                value: "Yearly",
-                label: "Yearly",
-                paymentType: [
+                value: "Credit Transfer",
+                label: "Credit Transfer",
+                payments: [
                   {
-                    key: 'text',
-                    label: 'Yearly Fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'text',
-                    required: 'require'
-                  },
-                  {
-                    key: 'text',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'text',
-                  },
-                  {
-                    key: 'text',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'text',
-                  },
+                    value: "Fullfees",
+                    label: "Fullfees",
+                    "paymentType": [
+                      {
+                        key: "text",
+                        label: "Full fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
+                  }
                 ]
               },
               {
-                value: "Fullfees",
-                label: "Fullfees",
-                paymentType: [
+                value: "LATERAL ENTRY",
+                label: "LATERAL ENTRY",
+                payments: [
                   {
-                    key: 'text',
-                    label: 'Full fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'text',
-                    required: 'require'
+                    value: "Semester",
+                    label: "Semester",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Semester fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'text',
+                    value: "Yearly",
+                    label: "Yearly",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Yearly Fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'text',
-                  },
+                    value: "Fullfees",
+                    label: "Fullfees",
+                    "paymentType": [
+                      {
+                        key: "text",
+                        label: "Full fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
+                  }
                 ]
-              }
+              },
             ]
           },
           {
@@ -6597,14 +7090,14 @@ const formData = [
             type: 'tel',
             required: 'require'
           },
-       {
+          {
             key: 'tel',
             label: 'Alternate number',
             name: ['contact', 'alternate_phone'],
             place: 'Enter Alternate Number',
             id: 'alternate',
             type: 'tel',
-           required: 'require'
+            required: 'require'
           },
           {
             key: 'text',
@@ -6651,18 +7144,6 @@ const formData = [
 
           },
           {
-            key: 'select',
-            label: 'Admission Type',
-            name: ['customfields', 'admission_type'],
-            id: 'SessionType',
-            place: 'Enter Admission Type',
-            type: 'select',
-            options: [{ value: 'FRESH', label: 'FRESH' },
-              { value: 'Credit Transfer', label: 'Credit Transfer' },
-            { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
-          },
-
-          {
             key: 'date',
             label: 'Date of Birth',
             name: ['customfields', 'dob'],
@@ -6683,28 +7164,7 @@ const formData = [
             { value: 'Female', label: 'Female' },
             { value: 'Other', label: 'Other' }],
           },
-          {
-            key: 'select',
-            label: 'Installment Type',
-            id: 'InstallmentType',
-            name: ['customfields', 'installment_type'],
-            place: 'Installment Type',
-            type: 'select',
-            required: 'require',
 
-            options: [
-              { value: '1st Installment', label: '1st Installment' },
-              { value: '2nd Installment', label: '2nd Installment' },
-              { value: '3rd Installment', label: '3rd Installment' },
-              { value: '4th Installment', label: '4th Installment' },
-              { value: '5th Installment', label: '5th Installment' },
-              { value: '6th Installment', label: '6th Installment' },
-              { value: '7th Installment', label: '7th Installment' },
-              { value: '8th Installment', label: '8th Installment' },
-              { value: '9th Installment', label: '9th Installment' },
-              { value: '10th Installment', label: '10th Installment' },
-            ],
-          },
           {
             key: 'select ',
             label: 'Payment mode ',
@@ -6719,23 +7179,7 @@ const formData = [
             { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
-          {
-            key: 'select ',
-            label: 'Status',
-            name: ['customfields', 'status'],
-            id: 'status ',
-            type: 'select',
-            place: 'select status',
-            required: 'require',
 
-            options: [
-              { value: 'New', label: 'New' },
-              { value: 'Approved', label: 'Approved' },
-              { value: 'Enrolled', label: 'Enrolled' },
-              { value: 'Alumini', label: 'Alumini' },
-              { value: 'Cancel', label: 'Cancel' },
-            ],
-          },
           {
             key: 'textarea',
             label: 'Remark',
@@ -6758,7 +7202,7 @@ const formData = [
             id: 'studentDocument',
             type: 'file',
           },
-          
+
         ],
       },
       {
@@ -6766,7 +7210,7 @@ const formData = [
         label: 'HU',
         name: ['customfields', 'university_name'],
         value: 'HU',
-        fields: [
+      fields: [
           {
             courses: [
               {
@@ -6782,27 +7226,27 @@ const formData = [
                 label: "BA",
                 specializations: [
                   { value: "General", label: "General" },
-                  { "value": "Education", "label": "Education" },
-                  { "value": "English", "label": "English" },
-                  { "value": "Journlsim & Mass Communication", label: "Journlsim & Mass Communication" },
-                  { "value": "Economics", "label": "Economics" },
-                  { "value": "History", "label": "History" },
-                  { "value": "Political science", "label": "Political science" },
-                  { "value": "Sociology", "label": "Sociology" },
-                  { "value": "Journalism & Mass Communication", "label": "Journalism & Mass Communication" },
-                  { "value": "Public Administration", "label": "Public Administration" },
-                  { "value": "Psychology", "label": "Psychology" },
-                  { "value": "Hindi", "label": "Hindi" },
-                  { "value": "Mathematics", "label": "Mathematics" },
-                  { "value": 'Geography', label: 'Geography' },
+                  { value: "Education", label: "Education" },
+                  { value: "English", label: "English" },
+                  { value: "Journlsim & Mass Communication", label: "Journlsim & Mass Communication" },
+                  { value: "Economics", label: "Economics" },
+                  { value: "History", label: "History" },
+                  { value: "Political science", label: "Political science" },
+                  { value: "Sociology", label: "Sociology" },
+                  { value: "Journalism & Mass Communication", label: "Journalism & Mass Communication" },
+                  { value: "Public Administration", label: "Public Administration" },
+                  { value: "Psychology", label: "Psychology" },
+                  { value: "Hindi", label: "Hindi" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: 'Geography', label: 'Geography' },
                 ],
               },
               {
                 value: "BBA",
                 label: "BBA",
                 specializations: [
-                  { "value": "General", "label": "General" },
-                  { "value": "Education", "label": "Education" },
+                  { value: "General", label: "General" },
+                  { value: "Education", label: "Education" },
                   { value: "Marketing", label: "Marketing" },
                   { value: "Human Resource Management", label: "Human Resource Management" },
                   { value: "Finance", label: "Finance" },
@@ -7028,100 +7472,186 @@ const formData = [
             ]
           },
           {
-            payments: [
+            admission_type: [
               {
-                value: "Semester",
-                label: "Semester",
-                paymentType: [
+                value: "FRESH",
+                label: "FRESH",
+                payments: [
                   {
-                    key: 'text',
-                    label: 'Semester fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'text',
-                    required: 'require'
+                    value: "Semester",
+                    label: "Semester",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Semester fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'text',
+                    value: "Yearly",
+                    label: "Yearly",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Yearly Fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'text',
-                  },
+                    value: "Fullfees",
+                    label: "Fullfees",
+                    "paymentType": [
+                      {
+                        key: "text",
+                        label: "Full fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
+                  }
                 ]
               },
               {
-                value: "Yearly",
-                label: "Yearly",
-                paymentType: [
+                value: "Credit Transfer",
+                label: "Credit Transfer",
+                payments: [
                   {
-                    key: 'text',
-                    label: 'Yearly Fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'text',
-                    required: 'require'
-                  },
-                  {
-                    key: 'text',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'text',
-                  },
-                  {
-                    key: 'text',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'text',
-                  },
+                    value: "Fullfees",
+                    label: "Fullfees",
+                    "paymentType": [
+                      {
+                        key: "text",
+                        label: "Full fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
+                  }
                 ]
               },
               {
-                value: "Fullfees",
-                label: "Fullfees",
-                paymentType: [
+                value: "LATERAL ENTRY",
+                label: "LATERAL ENTRY",
+                payments: [
                   {
-                    key: 'text',
-                    label: 'Full fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'text',
-                    required: 'require'
+                    value: "Semester",
+                    label: "Semester",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Semester fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'text',
+                    value: "Yearly",
+                    label: "Yearly",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Yearly Fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'text',
-                  },
+                    value: "Fullfees",
+                    label: "Fullfees",
+                    "paymentType": [
+                      {
+                        key: "text",
+                        label: "Full fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
+                  }
                 ]
-              }
+              },
             ]
           },
           {
@@ -7160,14 +7690,14 @@ const formData = [
             type: 'tel',
             required: 'require'
           },
-       {
+          {
             key: 'tel',
             label: 'Alternate number',
             name: ['contact', 'alternate_phone'],
             place: 'Enter Alternate Number',
             id: 'alternate',
             type: 'tel',
-           required: 'require'
+            required: 'require'
           },
           {
             key: 'text',
@@ -7214,18 +7744,6 @@ const formData = [
 
           },
           {
-            key: 'select',
-            label: 'Admission Type',
-            name: ['customfields', 'admission_type'],
-            id: 'SessionType',
-            place: 'Enter Admission Type',
-            type: 'select',
-            options: [{ value: 'FRESH', label: 'FRESH' },
-              { value: 'Credit Transfer', label: 'Credit Transfer' },
-            { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
-          },
-
-          {
             key: 'date',
             label: 'Date of Birth',
             name: ['customfields', 'dob'],
@@ -7246,28 +7764,7 @@ const formData = [
             { value: 'Female', label: 'Female' },
             { value: 'Other', label: 'Other' }],
           },
-          {
-            key: 'select',
-            label: 'Installment Type',
-            id: 'InstallmentType',
-            name: ['customfields', 'installment_type'],
-            place: 'Installment Type',
-            type: 'select',
-            required: 'require',
 
-            options: [
-              { value: '1st Installment', label: '1st Installment' },
-              { value: '2nd Installment', label: '2nd Installment' },
-              { value: '3rd Installment', label: '3rd Installment' },
-              { value: '4th Installment', label: '4th Installment' },
-              { value: '5th Installment', label: '5th Installment' },
-              { value: '6th Installment', label: '6th Installment' },
-              { value: '7th Installment', label: '7th Installment' },
-              { value: '8th Installment', label: '8th Installment' },
-              { value: '9th Installment', label: '9th Installment' },
-              { value: '10th Installment', label: '10th Installment' },
-            ],
-          },
           {
             key: 'select ',
             label: 'Payment mode ',
@@ -7282,23 +7779,7 @@ const formData = [
             { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
-          {
-            key: 'select ',
-            label: 'Status',
-            name: ['customfields', 'status'],
-            id: 'status ',
-            type: 'select',
-            place: 'select status',
-            required: 'require',
 
-            options: [
-              { value: 'New', label: 'New' },
-              { value: 'Approved', label: 'Approved' },
-              { value: 'Enrolled', label: 'Enrolled' },
-              { value: 'Alumini', label: 'Alumini' },
-              { value: 'Cancel', label: 'Cancel' },
-            ],
-          },
           {
             key: 'textarea',
             label: 'Remark',
@@ -7321,7 +7802,7 @@ const formData = [
             id: 'studentDocument',
             type: 'file',
           },
-          
+
         ],
       },
       {
@@ -7329,7 +7810,7 @@ const formData = [
         label: 'BOSSE',
         name: ['customfields', 'university_name'],
         value: 'BOSSE',
-        fields: [
+      fields: [
           {
             courses: [
               {
@@ -7345,27 +7826,27 @@ const formData = [
                 label: "BA",
                 specializations: [
                   { value: "General", label: "General" },
-                  { "value": "Education", "label": "Education" },
-                  { "value": "English", "label": "English" },
-                  { "value": "Journlsim & Mass Communication", label: "Journlsim & Mass Communication" },
-                  { "value": "Economics", "label": "Economics" },
-                  { "value": "History", "label": "History" },
-                  { "value": "Political science", "label": "Political science" },
-                  { "value": "Sociology", "label": "Sociology" },
-                  { "value": "Journalism & Mass Communication", "label": "Journalism & Mass Communication" },
-                  { "value": "Public Administration", "label": "Public Administration" },
-                  { "value": "Psychology", "label": "Psychology" },
-                  { "value": "Hindi", "label": "Hindi" },
-                  { "value": "Mathematics", "label": "Mathematics" },
-                  { "value": 'Geography', label: 'Geography' },
+                  { value: "Education", label: "Education" },
+                  { value: "English", label: "English" },
+                  { value: "Journlsim & Mass Communication", label: "Journlsim & Mass Communication" },
+                  { value: "Economics", label: "Economics" },
+                  { value: "History", label: "History" },
+                  { value: "Political science", label: "Political science" },
+                  { value: "Sociology", label: "Sociology" },
+                  { value: "Journalism & Mass Communication", label: "Journalism & Mass Communication" },
+                  { value: "Public Administration", label: "Public Administration" },
+                  { value: "Psychology", label: "Psychology" },
+                  { value: "Hindi", label: "Hindi" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: 'Geography', label: 'Geography' },
                 ],
               },
               {
                 value: "BBA",
                 label: "BBA",
                 specializations: [
-                  { "value": "General", "label": "General" },
-                  { "value": "Education", "label": "Education" },
+                  { value: "General", label: "General" },
+                  { value: "Education", label: "Education" },
                   { value: "Marketing", label: "Marketing" },
                   { value: "Human Resource Management", label: "Human Resource Management" },
                   { value: "Finance", label: "Finance" },
@@ -7591,100 +8072,186 @@ const formData = [
             ]
           },
           {
-            payments: [
+            admission_type: [
               {
-                value: "Semester",
-                label: "Semester",
-                paymentType: [
+                value: "FRESH",
+                label: "FRESH",
+                payments: [
                   {
-                    key: 'text',
-                    label: 'Semester fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'text',
-                    required: 'require'
+                    value: "Semester",
+                    label: "Semester",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Semester fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'text',
+                    value: "Yearly",
+                    label: "Yearly",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Yearly Fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'text',
-                  },
+                    value: "Fullfees",
+                    label: "Fullfees",
+                    "paymentType": [
+                      {
+                        key: "text",
+                        label: "Full fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
+                  }
                 ]
               },
               {
-                value: "Yearly",
-                label: "Yearly",
-                paymentType: [
+                value: "Credit Transfer",
+                label: "Credit Transfer",
+                payments: [
                   {
-                    key: 'text',
-                    label: 'Yearly Fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'text',
-                    required: 'require'
-                  },
-                  {
-                    key: 'text',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'text',
-                  },
-                  {
-                    key: 'text',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'text',
-                  },
+                    value: "Fullfees",
+                    label: "Fullfees",
+                    "paymentType": [
+                      {
+                        key: "text",
+                        label: "Full fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
+                  }
                 ]
               },
               {
-                value: "Fullfees",
-                label: "Fullfees",
-                paymentType: [
+                value: "LATERAL ENTRY",
+                label: "LATERAL ENTRY",
+                payments: [
                   {
-                    key: 'text',
-                    label: 'Full fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'text',
-                    required: 'require'
+                    value: "Semester",
+                    label: "Semester",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Semester fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'text',
+                    value: "Yearly",
+                    label: "Yearly",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Yearly Fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'text',
-                  },
+                    value: "Fullfees",
+                    label: "Fullfees",
+                    "paymentType": [
+                      {
+                        key: "text",
+                        label: "Full fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
+                  }
                 ]
-              }
+              },
             ]
           },
           {
@@ -7723,14 +8290,14 @@ const formData = [
             type: 'tel',
             required: 'require'
           },
-       {
+          {
             key: 'tel',
             label: 'Alternate number',
             name: ['contact', 'alternate_phone'],
             place: 'Enter Alternate Number',
             id: 'alternate',
             type: 'tel',
-           required: 'require'
+            required: 'require'
           },
           {
             key: 'text',
@@ -7777,18 +8344,6 @@ const formData = [
 
           },
           {
-            key: 'select',
-            label: 'Admission Type',
-            name: ['customfields', 'admission_type'],
-            id: 'SessionType',
-            place: 'Enter Admission Type',
-            type: 'select',
-            options: [{ value: 'FRESH', label: 'FRESH' },
-              { value: 'Credit Transfer', label: 'Credit Transfer' },
-            { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
-          },
-
-          {
             key: 'date',
             label: 'Date of Birth',
             name: ['customfields', 'dob'],
@@ -7809,28 +8364,7 @@ const formData = [
             { value: 'Female', label: 'Female' },
             { value: 'Other', label: 'Other' }],
           },
-          {
-            key: 'select',
-            label: 'Installment Type',
-            id: 'InstallmentType',
-            name: ['customfields', 'installment_type'],
-            place: 'Installment Type',
-            type: 'select',
-            required: 'require',
 
-            options: [
-              { value: '1st Installment', label: '1st Installment' },
-              { value: '2nd Installment', label: '2nd Installment' },
-              { value: '3rd Installment', label: '3rd Installment' },
-              { value: '4th Installment', label: '4th Installment' },
-              { value: '5th Installment', label: '5th Installment' },
-              { value: '6th Installment', label: '6th Installment' },
-              { value: '7th Installment', label: '7th Installment' },
-              { value: '8th Installment', label: '8th Installment' },
-              { value: '9th Installment', label: '9th Installment' },
-              { value: '10th Installment', label: '10th Installment' },
-            ],
-          },
           {
             key: 'select ',
             label: 'Payment mode ',
@@ -7845,23 +8379,7 @@ const formData = [
             { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
-          {
-            key: 'select ',
-            label: 'Status',
-            name: ['customfields', 'status'],
-            id: 'status ',
-            type: 'select',
-            place: 'select status',
-            required: 'require',
 
-            options: [
-              { value: 'New', label: 'New' },
-              { value: 'Approved', label: 'Approved' },
-              { value: 'Enrolled', label: 'Enrolled' },
-              { value: 'Alumini', label: 'Alumini' },
-              { value: 'Cancel', label: 'Cancel' },
-            ],
-          },
           {
             key: 'textarea',
             label: 'Remark',
@@ -7884,7 +8402,7 @@ const formData = [
             id: 'studentDocument',
             type: 'file',
           },
-          
+
         ],
       },
 
@@ -7893,7 +8411,7 @@ const formData = [
         label: 'UU',
         name: ['customfields', 'university_name'],
         value: 'UU',
-        fields: [
+      fields: [
           {
             courses: [
               {
@@ -7909,27 +8427,27 @@ const formData = [
                 label: "BA",
                 specializations: [
                   { value: "General", label: "General" },
-                  { "value": "Education", "label": "Education" },
-                  { "value": "English", "label": "English" },
-                  { "value": "Journlsim & Mass Communication", label: "Journlsim & Mass Communication" },
-                  { "value": "Economics", "label": "Economics" },
-                  { "value": "History", "label": "History" },
-                  { "value": "Political science", "label": "Political science" },
-                  { "value": "Sociology", "label": "Sociology" },
-                  { "value": "Journalism & Mass Communication", "label": "Journalism & Mass Communication" },
-                  { "value": "Public Administration", "label": "Public Administration" },
-                  { "value": "Psychology", "label": "Psychology" },
-                  { "value": "Hindi", "label": "Hindi" },
-                  { "value": "Mathematics", "label": "Mathematics" },
-                  { "value": 'Geography', label: 'Geography' },
+                  { value: "Education", label: "Education" },
+                  { value: "English", label: "English" },
+                  { value: "Journlsim & Mass Communication", label: "Journlsim & Mass Communication" },
+                  { value: "Economics", label: "Economics" },
+                  { value: "History", label: "History" },
+                  { value: "Political science", label: "Political science" },
+                  { value: "Sociology", label: "Sociology" },
+                  { value: "Journalism & Mass Communication", label: "Journalism & Mass Communication" },
+                  { value: "Public Administration", label: "Public Administration" },
+                  { value: "Psychology", label: "Psychology" },
+                  { value: "Hindi", label: "Hindi" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: 'Geography', label: 'Geography' },
                 ],
               },
               {
                 value: "BBA",
                 label: "BBA",
                 specializations: [
-                  { "value": "General", "label": "General" },
-                  { "value": "Education", "label": "Education" },
+                  { value: "General", label: "General" },
+                  { value: "Education", label: "Education" },
                   { value: "Marketing", label: "Marketing" },
                   { value: "Human Resource Management", label: "Human Resource Management" },
                   { value: "Finance", label: "Finance" },
@@ -8155,100 +8673,186 @@ const formData = [
             ]
           },
           {
-            payments: [
+            admission_type: [
               {
-                value: "Semester",
-                label: "Semester",
-                paymentType: [
+                value: "FRESH",
+                label: "FRESH",
+                payments: [
                   {
-                    key: 'text',
-                    label: 'Semester fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'text',
-                    required: 'require'
+                    value: "Semester",
+                    label: "Semester",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Semester fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'text',
+                    value: "Yearly",
+                    label: "Yearly",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Yearly Fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'text',
-                  },
+                    value: "Fullfees",
+                    label: "Fullfees",
+                    "paymentType": [
+                      {
+                        key: "text",
+                        label: "Full fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
+                  }
                 ]
               },
               {
-                value: "Yearly",
-                label: "Yearly",
-                paymentType: [
+                value: "Credit Transfer",
+                label: "Credit Transfer",
+                payments: [
                   {
-                    key: 'text',
-                    label: 'Yearly Fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'text',
-                    required: 'require'
-                  },
-                  {
-                    key: 'text',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'text',
-                  },
-                  {
-                    key: 'text',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'text',
-                  },
+                    value: "Fullfees",
+                    label: "Fullfees",
+                    "paymentType": [
+                      {
+                        key: "text",
+                        label: "Full fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
+                  }
                 ]
               },
               {
-                value: "Fullfees",
-                label: "Fullfees",
-                paymentType: [
+                value: "LATERAL ENTRY",
+                label: "LATERAL ENTRY",
+                payments: [
                   {
-                    key: 'text',
-                    label: 'Full fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'text',
-                    required: 'require'
+                    value: "Semester",
+                    label: "Semester",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Semester fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'text',
+                    value: "Yearly",
+                    label: "Yearly",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Yearly Fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'text',
-                  },
+                    value: "Fullfees",
+                    label: "Fullfees",
+                    "paymentType": [
+                      {
+                        key: "text",
+                        label: "Full fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
+                  }
                 ]
-              }
+              },
             ]
           },
           {
@@ -8287,14 +8891,14 @@ const formData = [
             type: 'tel',
             required: 'require'
           },
-       {
+          {
             key: 'tel',
             label: 'Alternate number',
             name: ['contact', 'alternate_phone'],
             place: 'Enter Alternate Number',
             id: 'alternate',
             type: 'tel',
-           required: 'require'
+            required: 'require'
           },
           {
             key: 'text',
@@ -8341,18 +8945,6 @@ const formData = [
 
           },
           {
-            key: 'select',
-            label: 'Admission Type',
-            name: ['customfields', 'admission_type'],
-            id: 'SessionType',
-            place: 'Enter Admission Type',
-            type: 'select',
-            options: [{ value: 'FRESH', label: 'FRESH' },
-              { value: 'Credit Transfer', label: 'Credit Transfer' },
-            { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
-          },
-
-          {
             key: 'date',
             label: 'Date of Birth',
             name: ['customfields', 'dob'],
@@ -8373,28 +8965,7 @@ const formData = [
             { value: 'Female', label: 'Female' },
             { value: 'Other', label: 'Other' }],
           },
-          {
-            key: 'select',
-            label: 'Installment Type',
-            id: 'InstallmentType',
-            name: ['customfields', 'installment_type'],
-            place: 'Installment Type',
-            type: 'select',
-            required: 'require',
 
-            options: [
-              { value: '1st Installment', label: '1st Installment' },
-              { value: '2nd Installment', label: '2nd Installment' },
-              { value: '3rd Installment', label: '3rd Installment' },
-              { value: '4th Installment', label: '4th Installment' },
-              { value: '5th Installment', label: '5th Installment' },
-              { value: '6th Installment', label: '6th Installment' },
-              { value: '7th Installment', label: '7th Installment' },
-              { value: '8th Installment', label: '8th Installment' },
-              { value: '9th Installment', label: '9th Installment' },
-              { value: '10th Installment', label: '10th Installment' },
-            ],
-          },
           {
             key: 'select ',
             label: 'Payment mode ',
@@ -8409,23 +8980,7 @@ const formData = [
             { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
-          {
-            key: 'select ',
-            label: 'Status',
-            name: ['customfields', 'status'],
-            id: 'status ',
-            type: 'select',
-            place: 'select status',
-            required: 'require',
 
-            options: [
-              { value: 'New', label: 'New' },
-              { value: 'Approved', label: 'Approved' },
-              { value: 'Enrolled', label: 'Enrolled' },
-              { value: 'Alumini', label: 'Alumini' },
-              { value: 'Cancel', label: 'Cancel' },
-            ],
-          },
           {
             key: 'textarea',
             label: 'Remark',
@@ -8448,7 +9003,7 @@ const formData = [
             id: 'studentDocument',
             type: 'file',
           },
-          
+
         ],
       },
       {
@@ -8456,7 +9011,7 @@ const formData = [
         label: 'UPES',
         name: ['customfields', 'university_name'],
         value: 'UPES',
-        fields: [
+      fields: [
           {
             courses: [
               {
@@ -8472,27 +9027,27 @@ const formData = [
                 label: "BA",
                 specializations: [
                   { value: "General", label: "General" },
-                  { "value": "Education", "label": "Education" },
-                  { "value": "English", "label": "English" },
-                  { "value": "Journlsim & Mass Communication", label: "Journlsim & Mass Communication" },
-                  { "value": "Economics", "label": "Economics" },
-                  { "value": "History", "label": "History" },
-                  { "value": "Political science", "label": "Political science" },
-                  { "value": "Sociology", "label": "Sociology" },
-                  { "value": "Journalism & Mass Communication", "label": "Journalism & Mass Communication" },
-                  { "value": "Public Administration", "label": "Public Administration" },
-                  { "value": "Psychology", "label": "Psychology" },
-                  { "value": "Hindi", "label": "Hindi" },
-                  { "value": "Mathematics", "label": "Mathematics" },
-                  { "value": 'Geography', label: 'Geography' },
+                  { value: "Education", label: "Education" },
+                  { value: "English", label: "English" },
+                  { value: "Journlsim & Mass Communication", label: "Journlsim & Mass Communication" },
+                  { value: "Economics", label: "Economics" },
+                  { value: "History", label: "History" },
+                  { value: "Political science", label: "Political science" },
+                  { value: "Sociology", label: "Sociology" },
+                  { value: "Journalism & Mass Communication", label: "Journalism & Mass Communication" },
+                  { value: "Public Administration", label: "Public Administration" },
+                  { value: "Psychology", label: "Psychology" },
+                  { value: "Hindi", label: "Hindi" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: 'Geography', label: 'Geography' },
                 ],
               },
               {
                 value: "BBA",
                 label: "BBA",
                 specializations: [
-                  { "value": "General", "label": "General" },
-                  { "value": "Education", "label": "Education" },
+                  { value: "General", label: "General" },
+                  { value: "Education", label: "Education" },
                   { value: "Marketing", label: "Marketing" },
                   { value: "Human Resource Management", label: "Human Resource Management" },
                   { value: "Finance", label: "Finance" },
@@ -8718,100 +9273,186 @@ const formData = [
             ]
           },
           {
-            payments: [
+            admission_type: [
               {
-                value: "Semester",
-                label: "Semester",
-                paymentType: [
+                value: "FRESH",
+                label: "FRESH",
+                payments: [
                   {
-                    key: 'text',
-                    label: 'Semester fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'text',
-                    required: 'require'
+                    value: "Semester",
+                    label: "Semester",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Semester fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'text',
+                    value: "Yearly",
+                    label: "Yearly",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Yearly Fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'text',
-                  },
+                    value: "Fullfees",
+                    label: "Fullfees",
+                    "paymentType": [
+                      {
+                        key: "text",
+                        label: "Full fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
+                  }
                 ]
               },
               {
-                value: "Yearly",
-                label: "Yearly",
-                paymentType: [
+                value: "Credit Transfer",
+                label: "Credit Transfer",
+                payments: [
                   {
-                    key: 'text',
-                    label: 'Yearly Fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'text',
-                    required: 'require'
-                  },
-                  {
-                    key: 'text',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'text',
-                  },
-                  {
-                    key: 'text',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'text',
-                  },
+                    value: "Fullfees",
+                    label: "Fullfees",
+                    "paymentType": [
+                      {
+                        key: "text",
+                        label: "Full fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
+                  }
                 ]
               },
               {
-                value: "Fullfees",
-                label: "Fullfees",
-                paymentType: [
+                value: "LATERAL ENTRY",
+                label: "LATERAL ENTRY",
+                payments: [
                   {
-                    key: 'text',
-                    label: 'Full fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'text',
-                    required: 'require'
+                    value: "Semester",
+                    label: "Semester",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Semester fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'text',
+                    value: "Yearly",
+                    label: "Yearly",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Yearly Fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'text',
-                  },
+                    value: "Fullfees",
+                    label: "Fullfees",
+                    "paymentType": [
+                      {
+                        key: "text",
+                        label: "Full fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
+                  }
                 ]
-              }
+              },
             ]
           },
           {
@@ -8850,14 +9491,14 @@ const formData = [
             type: 'tel',
             required: 'require'
           },
-       {
+          {
             key: 'tel',
             label: 'Alternate number',
             name: ['contact', 'alternate_phone'],
             place: 'Enter Alternate Number',
             id: 'alternate',
             type: 'tel',
-           required: 'require'
+            required: 'require'
           },
           {
             key: 'text',
@@ -8904,18 +9545,6 @@ const formData = [
 
           },
           {
-            key: 'select',
-            label: 'Admission Type',
-            name: ['customfields', 'admission_type'],
-            id: 'SessionType',
-            place: 'Enter Admission Type',
-            type: 'select',
-            options: [{ value: 'FRESH', label: 'FRESH' },
-              { value: 'Credit Transfer', label: 'Credit Transfer' },
-            { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
-          },
-
-          {
             key: 'date',
             label: 'Date of Birth',
             name: ['customfields', 'dob'],
@@ -8936,28 +9565,7 @@ const formData = [
             { value: 'Female', label: 'Female' },
             { value: 'Other', label: 'Other' }],
           },
-          {
-            key: 'select',
-            label: 'Installment Type',
-            id: 'InstallmentType',
-            name: ['customfields', 'installment_type'],
-            place: 'Installment Type',
-            type: 'select',
-            required: 'require',
 
-            options: [
-              { value: '1st Installment', label: '1st Installment' },
-              { value: '2nd Installment', label: '2nd Installment' },
-              { value: '3rd Installment', label: '3rd Installment' },
-              { value: '4th Installment', label: '4th Installment' },
-              { value: '5th Installment', label: '5th Installment' },
-              { value: '6th Installment', label: '6th Installment' },
-              { value: '7th Installment', label: '7th Installment' },
-              { value: '8th Installment', label: '8th Installment' },
-              { value: '9th Installment', label: '9th Installment' },
-              { value: '10th Installment', label: '10th Installment' },
-            ],
-          },
           {
             key: 'select ',
             label: 'Payment mode ',
@@ -8972,23 +9580,7 @@ const formData = [
             { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
-          {
-            key: 'select ',
-            label: 'Status',
-            name: ['customfields', 'status'],
-            id: 'status ',
-            type: 'select',
-            place: 'select status',
-            required: 'require',
 
-            options: [
-              { value: 'New', label: 'New' },
-              { value: 'Approved', label: 'Approved' },
-              { value: 'Enrolled', label: 'Enrolled' },
-              { value: 'Alumini', label: 'Alumini' },
-              { value: 'Cancel', label: 'Cancel' },
-            ],
-          },
           {
             key: 'textarea',
             label: 'Remark',
@@ -9011,7 +9603,7 @@ const formData = [
             id: 'studentDocument',
             type: 'file',
           },
-          
+
         ],
       },
 
@@ -9020,7 +9612,7 @@ const formData = [
         label: 'MANGALAYATAN',
         name: ['customfields', 'university_name'],
         value: 'MANGALAYATAN',
-        fields: [
+      fields: [
           {
             courses: [
               {
@@ -9036,27 +9628,27 @@ const formData = [
                 label: "BA",
                 specializations: [
                   { value: "General", label: "General" },
-                  { "value": "Education", "label": "Education" },
-                  { "value": "English", "label": "English" },
-                  { "value": "Journlsim & Mass Communication", label: "Journlsim & Mass Communication" },
-                  { "value": "Economics", "label": "Economics" },
-                  { "value": "History", "label": "History" },
-                  { "value": "Political science", "label": "Political science" },
-                  { "value": "Sociology", "label": "Sociology" },
-                  { "value": "Journalism & Mass Communication", "label": "Journalism & Mass Communication" },
-                  { "value": "Public Administration", "label": "Public Administration" },
-                  { "value": "Psychology", "label": "Psychology" },
-                  { "value": "Hindi", "label": "Hindi" },
-                  { "value": "Mathematics", "label": "Mathematics" },
-                  { "value": 'Geography', label: 'Geography' },
+                  { value: "Education", label: "Education" },
+                  { value: "English", label: "English" },
+                  { value: "Journlsim & Mass Communication", label: "Journlsim & Mass Communication" },
+                  { value: "Economics", label: "Economics" },
+                  { value: "History", label: "History" },
+                  { value: "Political science", label: "Political science" },
+                  { value: "Sociology", label: "Sociology" },
+                  { value: "Journalism & Mass Communication", label: "Journalism & Mass Communication" },
+                  { value: "Public Administration", label: "Public Administration" },
+                  { value: "Psychology", label: "Psychology" },
+                  { value: "Hindi", label: "Hindi" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: 'Geography', label: 'Geography' },
                 ],
               },
               {
                 value: "BBA",
                 label: "BBA",
                 specializations: [
-                  { "value": "General", "label": "General" },
-                  { "value": "Education", "label": "Education" },
+                  { value: "General", label: "General" },
+                  { value: "Education", label: "Education" },
                   { value: "Marketing", label: "Marketing" },
                   { value: "Human Resource Management", label: "Human Resource Management" },
                   { value: "Finance", label: "Finance" },
@@ -9282,100 +9874,186 @@ const formData = [
             ]
           },
           {
-            payments: [
+            admission_type: [
               {
-                value: "Semester",
-                label: "Semester",
-                paymentType: [
+                value: "FRESH",
+                label: "FRESH",
+                payments: [
                   {
-                    key: 'text',
-                    label: 'Semester fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'text',
-                    required: 'require'
+                    value: "Semester",
+                    label: "Semester",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Semester fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'text',
+                    value: "Yearly",
+                    label: "Yearly",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Yearly Fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'text',
-                  },
+                    value: "Fullfees",
+                    label: "Fullfees",
+                    "paymentType": [
+                      {
+                        key: "text",
+                        label: "Full fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
+                  }
                 ]
               },
               {
-                value: "Yearly",
-                label: "Yearly",
-                paymentType: [
+                value: "Credit Transfer",
+                label: "Credit Transfer",
+                payments: [
                   {
-                    key: 'text',
-                    label: 'Yearly Fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'text',
-                    required: 'require'
-                  },
-                  {
-                    key: 'text',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'text',
-                  },
-                  {
-                    key: 'text',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'text',
-                  },
+                    value: "Fullfees",
+                    label: "Fullfees",
+                    "paymentType": [
+                      {
+                        key: "text",
+                        label: "Full fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
+                  }
                 ]
               },
               {
-                value: "Fullfees",
-                label: "Fullfees",
-                paymentType: [
+                value: "LATERAL ENTRY",
+                label: "LATERAL ENTRY",
+                payments: [
                   {
-                    key: 'text',
-                    label: 'Full fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'text',
-                    required: 'require'
+                    value: "Semester",
+                    label: "Semester",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Semester fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'text',
+                    value: "Yearly",
+                    label: "Yearly",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Yearly Fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'text',
-                  },
+                    value: "Fullfees",
+                    label: "Fullfees",
+                    "paymentType": [
+                      {
+                        key: "text",
+                        label: "Full fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
+                  }
                 ]
-              }
+              },
             ]
           },
           {
@@ -9414,14 +10092,14 @@ const formData = [
             type: 'tel',
             required: 'require'
           },
-       {
+          {
             key: 'tel',
             label: 'Alternate number',
             name: ['contact', 'alternate_phone'],
             place: 'Enter Alternate Number',
             id: 'alternate',
             type: 'tel',
-           required: 'require'
+            required: 'require'
           },
           {
             key: 'text',
@@ -9468,18 +10146,6 @@ const formData = [
 
           },
           {
-            key: 'select',
-            label: 'Admission Type',
-            name: ['customfields', 'admission_type'],
-            id: 'SessionType',
-            place: 'Enter Admission Type',
-            type: 'select',
-            options: [{ value: 'FRESH', label: 'FRESH' },
-              { value: 'Credit Transfer', label: 'Credit Transfer' },
-            { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
-          },
-
-          {
             key: 'date',
             label: 'Date of Birth',
             name: ['customfields', 'dob'],
@@ -9500,28 +10166,7 @@ const formData = [
             { value: 'Female', label: 'Female' },
             { value: 'Other', label: 'Other' }],
           },
-          {
-            key: 'select',
-            label: 'Installment Type',
-            id: 'InstallmentType',
-            name: ['customfields', 'installment_type'],
-            place: 'Installment Type',
-            type: 'select',
-            required: 'require',
 
-            options: [
-              { value: '1st Installment', label: '1st Installment' },
-              { value: '2nd Installment', label: '2nd Installment' },
-              { value: '3rd Installment', label: '3rd Installment' },
-              { value: '4th Installment', label: '4th Installment' },
-              { value: '5th Installment', label: '5th Installment' },
-              { value: '6th Installment', label: '6th Installment' },
-              { value: '7th Installment', label: '7th Installment' },
-              { value: '8th Installment', label: '8th Installment' },
-              { value: '9th Installment', label: '9th Installment' },
-              { value: '10th Installment', label: '10th Installment' },
-            ],
-          },
           {
             key: 'select ',
             label: 'Payment mode ',
@@ -9536,23 +10181,7 @@ const formData = [
             { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
-          {
-            key: 'select ',
-            label: 'Status',
-            name: ['customfields', 'status'],
-            id: 'status ',
-            type: 'select',
-            place: 'select status',
-            required: 'require',
 
-            options: [
-              { value: 'New', label: 'New' },
-              { value: 'Approved', label: 'Approved' },
-              { value: 'Enrolled', label: 'Enrolled' },
-              { value: 'Alumini', label: 'Alumini' },
-              { value: 'Cancel', label: 'Cancel' },
-            ],
-          },
           {
             key: 'textarea',
             label: 'Remark',
@@ -9575,7 +10204,7 @@ const formData = [
             id: 'studentDocument',
             type: 'file',
           },
-          
+
         ],
       },
       {
@@ -9583,7 +10212,7 @@ const formData = [
         label: 'MANGALAYATAN ONLINE',
         name: ['customfields', 'university_name'],
         value: 'MANGALAYATAN ONLINE',
-        fields: [
+      fields: [
           {
             courses: [
               {
@@ -9599,27 +10228,27 @@ const formData = [
                 label: "BA",
                 specializations: [
                   { value: "General", label: "General" },
-                  { "value": "Education", "label": "Education" },
-                  { "value": "English", "label": "English" },
-                  { "value": "Journlsim & Mass Communication", label: "Journlsim & Mass Communication" },
-                  { "value": "Economics", "label": "Economics" },
-                  { "value": "History", "label": "History" },
-                  { "value": "Political science", "label": "Political science" },
-                  { "value": "Sociology", "label": "Sociology" },
-                  { "value": "Journalism & Mass Communication", "label": "Journalism & Mass Communication" },
-                  { "value": "Public Administration", "label": "Public Administration" },
-                  { "value": "Psychology", "label": "Psychology" },
-                  { "value": "Hindi", "label": "Hindi" },
-                  { "value": "Mathematics", "label": "Mathematics" },
-                  { "value": 'Geography', label: 'Geography' },
+                  { value: "Education", label: "Education" },
+                  { value: "English", label: "English" },
+                  { value: "Journlsim & Mass Communication", label: "Journlsim & Mass Communication" },
+                  { value: "Economics", label: "Economics" },
+                  { value: "History", label: "History" },
+                  { value: "Political science", label: "Political science" },
+                  { value: "Sociology", label: "Sociology" },
+                  { value: "Journalism & Mass Communication", label: "Journalism & Mass Communication" },
+                  { value: "Public Administration", label: "Public Administration" },
+                  { value: "Psychology", label: "Psychology" },
+                  { value: "Hindi", label: "Hindi" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: 'Geography', label: 'Geography' },
                 ],
               },
               {
                 value: "BBA",
                 label: "BBA",
                 specializations: [
-                  { "value": "General", "label": "General" },
-                  { "value": "Education", "label": "Education" },
+                  { value: "General", label: "General" },
+                  { value: "Education", label: "Education" },
                   { value: "Marketing", label: "Marketing" },
                   { value: "Human Resource Management", label: "Human Resource Management" },
                   { value: "Finance", label: "Finance" },
@@ -9845,100 +10474,186 @@ const formData = [
             ]
           },
           {
-            payments: [
+            admission_type: [
               {
-                value: "Semester",
-                label: "Semester",
-                paymentType: [
+                value: "FRESH",
+                label: "FRESH",
+                payments: [
                   {
-                    key: 'text',
-                    label: 'Semester fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'text',
-                    required: 'require'
+                    value: "Semester",
+                    label: "Semester",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Semester fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'text',
+                    value: "Yearly",
+                    label: "Yearly",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Yearly Fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'text',
-                  },
+                    value: "Fullfees",
+                    label: "Fullfees",
+                    "paymentType": [
+                      {
+                        key: "text",
+                        label: "Full fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
+                  }
                 ]
               },
               {
-                value: "Yearly",
-                label: "Yearly",
-                paymentType: [
+                value: "Credit Transfer",
+                label: "Credit Transfer",
+                payments: [
                   {
-                    key: 'text',
-                    label: 'Yearly Fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'text',
-                    required: 'require'
-                  },
-                  {
-                    key: 'text',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'text',
-                  },
-                  {
-                    key: 'text',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'text',
-                  },
+                    value: "Fullfees",
+                    label: "Fullfees",
+                    "paymentType": [
+                      {
+                        key: "text",
+                        label: "Full fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
+                  }
                 ]
               },
               {
-                value: "Fullfees",
-                label: "Fullfees",
-                paymentType: [
+                value: "LATERAL ENTRY",
+                label: "LATERAL ENTRY",
+                payments: [
                   {
-                    key: 'text',
-                    label: 'Full fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'text',
-                    required: 'require'
+                    value: "Semester",
+                    label: "Semester",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Semester fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'text',
+                    value: "Yearly",
+                    label: "Yearly",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Yearly Fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'text',
-                  },
+                    value: "Fullfees",
+                    label: "Fullfees",
+                    "paymentType": [
+                      {
+                        key: "text",
+                        label: "Full fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
+                  }
                 ]
-              }
+              },
             ]
           },
           {
@@ -9977,14 +10692,14 @@ const formData = [
             type: 'tel',
             required: 'require'
           },
-       {
+          {
             key: 'tel',
             label: 'Alternate number',
             name: ['contact', 'alternate_phone'],
             place: 'Enter Alternate Number',
             id: 'alternate',
             type: 'tel',
-           required: 'require'
+            required: 'require'
           },
           {
             key: 'text',
@@ -10031,18 +10746,6 @@ const formData = [
 
           },
           {
-            key: 'select',
-            label: 'Admission Type',
-            name: ['customfields', 'admission_type'],
-            id: 'SessionType',
-            place: 'Enter Admission Type',
-            type: 'select',
-            options: [{ value: 'FRESH', label: 'FRESH' },
-              { value: 'Credit Transfer', label: 'Credit Transfer' },
-            { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
-          },
-
-          {
             key: 'date',
             label: 'Date of Birth',
             name: ['customfields', 'dob'],
@@ -10063,28 +10766,7 @@ const formData = [
             { value: 'Female', label: 'Female' },
             { value: 'Other', label: 'Other' }],
           },
-          {
-            key: 'select',
-            label: 'Installment Type',
-            id: 'InstallmentType',
-            name: ['customfields', 'installment_type'],
-            place: 'Installment Type',
-            type: 'select',
-            required: 'require',
 
-            options: [
-              { value: '1st Installment', label: '1st Installment' },
-              { value: '2nd Installment', label: '2nd Installment' },
-              { value: '3rd Installment', label: '3rd Installment' },
-              { value: '4th Installment', label: '4th Installment' },
-              { value: '5th Installment', label: '5th Installment' },
-              { value: '6th Installment', label: '6th Installment' },
-              { value: '7th Installment', label: '7th Installment' },
-              { value: '8th Installment', label: '8th Installment' },
-              { value: '9th Installment', label: '9th Installment' },
-              { value: '10th Installment', label: '10th Installment' },
-            ],
-          },
           {
             key: 'select ',
             label: 'Payment mode ',
@@ -10099,23 +10781,7 @@ const formData = [
             { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
-          {
-            key: 'select ',
-            label: 'Status',
-            name: ['customfields', 'status'],
-            id: 'status ',
-            type: 'select',
-            place: 'select status',
-            required: 'require',
 
-            options: [
-              { value: 'New', label: 'New' },
-              { value: 'Approved', label: 'Approved' },
-              { value: 'Enrolled', label: 'Enrolled' },
-              { value: 'Alumini', label: 'Alumini' },
-              { value: 'Cancel', label: 'Cancel' },
-            ],
-          },
           {
             key: 'textarea',
             label: 'Remark',
@@ -10138,7 +10804,7 @@ const formData = [
             id: 'studentDocument',
             type: 'file',
           },
-          
+
         ],
       },
     ],
@@ -10155,7 +10821,7 @@ const formData = [
         label: 'SGVU',
         name: ['customfields', 'university_name'],
         value: 'SGVU',
-        fields: [
+      fields: [
           {
             courses: [
               {
@@ -10171,27 +10837,27 @@ const formData = [
                 label: "BA",
                 specializations: [
                   { value: "General", label: "General" },
-                  { "value": "Education", "label": "Education" },
-                  { "value": "English", "label": "English" },
-                  { "value": "Journlsim & Mass Communication", label: "Journlsim & Mass Communication" },
-                  { "value": "Economics", "label": "Economics" },
-                  { "value": "History", "label": "History" },
-                  { "value": "Political science", "label": "Political science" },
-                  { "value": "Sociology", "label": "Sociology" },
-                  { "value": "Journalism & Mass Communication", "label": "Journalism & Mass Communication" },
-                  { "value": "Public Administration", "label": "Public Administration" },
-                  { "value": "Psychology", "label": "Psychology" },
-                  { "value": "Hindi", "label": "Hindi" },
-                  { "value": "Mathematics", "label": "Mathematics" },
-                  { "value": 'Geography', label: 'Geography' },
+                  { value: "Education", label: "Education" },
+                  { value: "English", label: "English" },
+                  { value: "Journlsim & Mass Communication", label: "Journlsim & Mass Communication" },
+                  { value: "Economics", label: "Economics" },
+                  { value: "History", label: "History" },
+                  { value: "Political science", label: "Political science" },
+                  { value: "Sociology", label: "Sociology" },
+                  { value: "Journalism & Mass Communication", label: "Journalism & Mass Communication" },
+                  { value: "Public Administration", label: "Public Administration" },
+                  { value: "Psychology", label: "Psychology" },
+                  { value: "Hindi", label: "Hindi" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: 'Geography', label: 'Geography' },
                 ],
               },
               {
                 value: "BBA",
                 label: "BBA",
                 specializations: [
-                  { "value": "General", "label": "General" },
-                  { "value": "Education", "label": "Education" },
+                  { value: "General", label: "General" },
+                  { value: "Education", label: "Education" },
                   { value: "Marketing", label: "Marketing" },
                   { value: "Human Resource Management", label: "Human Resource Management" },
                   { value: "Finance", label: "Finance" },
@@ -10417,100 +11083,186 @@ const formData = [
             ]
           },
           {
-            payments: [
+            admission_type: [
               {
-                value: "Semester",
-                label: "Semester",
-                paymentType: [
+                value: "FRESH",
+                label: "FRESH",
+                payments: [
                   {
-                    key: 'text',
-                    label: 'Semester fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'text',
-                    required: 'require'
+                    value: "Semester",
+                    label: "Semester",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Semester fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'text',
+                    value: "Yearly",
+                    label: "Yearly",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Yearly Fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'text',
-                  },
+                    value: "Fullfees",
+                    label: "Fullfees",
+                    "paymentType": [
+                      {
+                        key: "text",
+                        label: "Full fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
+                  }
                 ]
               },
               {
-                value: "Yearly",
-                label: "Yearly",
-                paymentType: [
+                value: "Credit Transfer",
+                label: "Credit Transfer",
+                payments: [
                   {
-                    key: 'text',
-                    label: 'Yearly Fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'text',
-                    required: 'require'
-                  },
-                  {
-                    key: 'text',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'text',
-                  },
-                  {
-                    key: 'text',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'text',
-                  },
+                    value: "Fullfees",
+                    label: "Fullfees",
+                    "paymentType": [
+                      {
+                        key: "text",
+                        label: "Full fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
+                  }
                 ]
               },
               {
-                value: "Fullfees",
-                label: "Fullfees",
-                paymentType: [
+                value: "LATERAL ENTRY",
+                label: "LATERAL ENTRY",
+                payments: [
                   {
-                    key: 'text',
-                    label: 'Full fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'text',
-                    required: 'require'
+                    value: "Semester",
+                    label: "Semester",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Semester fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'text',
+                    value: "Yearly",
+                    label: "Yearly",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Yearly Fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'text',
-                  },
+                    value: "Fullfees",
+                    label: "Fullfees",
+                    "paymentType": [
+                      {
+                        key: "text",
+                        label: "Full fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
+                  }
                 ]
-              }
+              },
             ]
           },
           {
@@ -10549,14 +11301,14 @@ const formData = [
             type: 'tel',
             required: 'require'
           },
-       {
+          {
             key: 'tel',
             label: 'Alternate number',
             name: ['contact', 'alternate_phone'],
             place: 'Enter Alternate Number',
             id: 'alternate',
             type: 'tel',
-           required: 'require'
+            required: 'require'
           },
           {
             key: 'text',
@@ -10603,18 +11355,6 @@ const formData = [
 
           },
           {
-            key: 'select',
-            label: 'Admission Type',
-            name: ['customfields', 'admission_type'],
-            id: 'SessionType',
-            place: 'Enter Admission Type',
-            type: 'select',
-            options: [{ value: 'FRESH', label: 'FRESH' },
-              { value: 'Credit Transfer', label: 'Credit Transfer' },
-            { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
-          },
-
-          {
             key: 'date',
             label: 'Date of Birth',
             name: ['customfields', 'dob'],
@@ -10635,28 +11375,7 @@ const formData = [
             { value: 'Female', label: 'Female' },
             { value: 'Other', label: 'Other' }],
           },
-          {
-            key: 'select',
-            label: 'Installment Type',
-            id: 'InstallmentType',
-            name: ['customfields', 'installment_type'],
-            place: 'Installment Type',
-            type: 'select',
-            required: 'require',
 
-            options: [
-              { value: '1st Installment', label: '1st Installment' },
-              { value: '2nd Installment', label: '2nd Installment' },
-              { value: '3rd Installment', label: '3rd Installment' },
-              { value: '4th Installment', label: '4th Installment' },
-              { value: '5th Installment', label: '5th Installment' },
-              { value: '6th Installment', label: '6th Installment' },
-              { value: '7th Installment', label: '7th Installment' },
-              { value: '8th Installment', label: '8th Installment' },
-              { value: '9th Installment', label: '9th Installment' },
-              { value: '10th Installment', label: '10th Installment' },
-            ],
-          },
           {
             key: 'select ',
             label: 'Payment mode ',
@@ -10671,23 +11390,7 @@ const formData = [
             { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
-          {
-            key: 'select ',
-            label: 'Status',
-            name: ['customfields', 'status'],
-            id: 'status ',
-            type: 'select',
-            place: 'select status',
-            required: 'require',
 
-            options: [
-              { value: 'New', label: 'New' },
-              { value: 'Approved', label: 'Approved' },
-              { value: 'Enrolled', label: 'Enrolled' },
-              { value: 'Alumini', label: 'Alumini' },
-              { value: 'Cancel', label: 'Cancel' },
-            ],
-          },
           {
             key: 'textarea',
             label: 'Remark',
@@ -10710,7 +11413,7 @@ const formData = [
             id: 'studentDocument',
             type: 'file',
           },
-          
+
         ],
       },
       {
@@ -10718,7 +11421,7 @@ const formData = [
         label: 'DPU',
         name: ['customfields', 'university_name'],
         value: 'DPU',
-        fields: [
+      fields: [
           {
             courses: [
               {
@@ -10734,27 +11437,27 @@ const formData = [
                 label: "BA",
                 specializations: [
                   { value: "General", label: "General" },
-                  { "value": "Education", "label": "Education" },
-                  { "value": "English", "label": "English" },
-                  { "value": "Journlsim & Mass Communication", label: "Journlsim & Mass Communication" },
-                  { "value": "Economics", "label": "Economics" },
-                  { "value": "History", "label": "History" },
-                  { "value": "Political science", "label": "Political science" },
-                  { "value": "Sociology", "label": "Sociology" },
-                  { "value": "Journalism & Mass Communication", "label": "Journalism & Mass Communication" },
-                  { "value": "Public Administration", "label": "Public Administration" },
-                  { "value": "Psychology", "label": "Psychology" },
-                  { "value": "Hindi", "label": "Hindi" },
-                  { "value": "Mathematics", "label": "Mathematics" },
-                  { "value": 'Geography', label: 'Geography' },
+                  { value: "Education", label: "Education" },
+                  { value: "English", label: "English" },
+                  { value: "Journlsim & Mass Communication", label: "Journlsim & Mass Communication" },
+                  { value: "Economics", label: "Economics" },
+                  { value: "History", label: "History" },
+                  { value: "Political science", label: "Political science" },
+                  { value: "Sociology", label: "Sociology" },
+                  { value: "Journalism & Mass Communication", label: "Journalism & Mass Communication" },
+                  { value: "Public Administration", label: "Public Administration" },
+                  { value: "Psychology", label: "Psychology" },
+                  { value: "Hindi", label: "Hindi" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: 'Geography', label: 'Geography' },
                 ],
               },
               {
                 value: "BBA",
                 label: "BBA",
                 specializations: [
-                  { "value": "General", "label": "General" },
-                  { "value": "Education", "label": "Education" },
+                  { value: "General", label: "General" },
+                  { value: "Education", label: "Education" },
                   { value: "Marketing", label: "Marketing" },
                   { value: "Human Resource Management", label: "Human Resource Management" },
                   { value: "Finance", label: "Finance" },
@@ -10980,100 +11683,186 @@ const formData = [
             ]
           },
           {
-            payments: [
+            admission_type: [
               {
-                value: "Semester",
-                label: "Semester",
-                paymentType: [
+                value: "FRESH",
+                label: "FRESH",
+                payments: [
                   {
-                    key: 'text',
-                    label: 'Semester fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'text',
-                    required: 'require'
+                    value: "Semester",
+                    label: "Semester",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Semester fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'text',
+                    value: "Yearly",
+                    label: "Yearly",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Yearly Fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'text',
-                  },
+                    value: "Fullfees",
+                    label: "Fullfees",
+                    "paymentType": [
+                      {
+                        key: "text",
+                        label: "Full fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
+                  }
                 ]
               },
               {
-                value: "Yearly",
-                label: "Yearly",
-                paymentType: [
+                value: "Credit Transfer",
+                label: "Credit Transfer",
+                payments: [
                   {
-                    key: 'text',
-                    label: 'Yearly Fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'text',
-                    required: 'require'
-                  },
-                  {
-                    key: 'text',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'text',
-                  },
-                  {
-                    key: 'text',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'text',
-                  },
+                    value: "Fullfees",
+                    label: "Fullfees",
+                    "paymentType": [
+                      {
+                        key: "text",
+                        label: "Full fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
+                  }
                 ]
               },
               {
-                value: "Fullfees",
-                label: "Fullfees",
-                paymentType: [
+                value: "LATERAL ENTRY",
+                label: "LATERAL ENTRY",
+                payments: [
                   {
-                    key: 'text',
-                    label: 'Full fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'text',
-                    required: 'require'
+                    value: "Semester",
+                    label: "Semester",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Semester fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'text',
+                    value: "Yearly",
+                    label: "Yearly",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Yearly Fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'text',
-                  },
+                    value: "Fullfees",
+                    label: "Fullfees",
+                    "paymentType": [
+                      {
+                        key: "text",
+                        label: "Full fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
+                  }
                 ]
-              }
+              },
             ]
           },
           {
@@ -11112,14 +11901,14 @@ const formData = [
             type: 'tel',
             required: 'require'
           },
-       {
+          {
             key: 'tel',
             label: 'Alternate number',
             name: ['contact', 'alternate_phone'],
             place: 'Enter Alternate Number',
             id: 'alternate',
             type: 'tel',
-           required: 'require'
+            required: 'require'
           },
           {
             key: 'text',
@@ -11166,18 +11955,6 @@ const formData = [
 
           },
           {
-            key: 'select',
-            label: 'Admission Type',
-            name: ['customfields', 'admission_type'],
-            id: 'SessionType',
-            place: 'Enter Admission Type',
-            type: 'select',
-            options: [{ value: 'FRESH', label: 'FRESH' },
-              { value: 'Credit Transfer', label: 'Credit Transfer' },
-            { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
-          },
-
-          {
             key: 'date',
             label: 'Date of Birth',
             name: ['customfields', 'dob'],
@@ -11198,28 +11975,7 @@ const formData = [
             { value: 'Female', label: 'Female' },
             { value: 'Other', label: 'Other' }],
           },
-          {
-            key: 'select',
-            label: 'Installment Type',
-            id: 'InstallmentType',
-            name: ['customfields', 'installment_type'],
-            place: 'Installment Type',
-            type: 'select',
-            required: 'require',
 
-            options: [
-              { value: '1st Installment', label: '1st Installment' },
-              { value: '2nd Installment', label: '2nd Installment' },
-              { value: '3rd Installment', label: '3rd Installment' },
-              { value: '4th Installment', label: '4th Installment' },
-              { value: '5th Installment', label: '5th Installment' },
-              { value: '6th Installment', label: '6th Installment' },
-              { value: '7th Installment', label: '7th Installment' },
-              { value: '8th Installment', label: '8th Installment' },
-              { value: '9th Installment', label: '9th Installment' },
-              { value: '10th Installment', label: '10th Installment' },
-            ],
-          },
           {
             key: 'select ',
             label: 'Payment mode ',
@@ -11234,23 +11990,7 @@ const formData = [
             { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
-          {
-            key: 'select ',
-            label: 'Status',
-            name: ['customfields', 'status'],
-            id: 'status ',
-            type: 'select',
-            place: 'select status',
-            required: 'require',
 
-            options: [
-              { value: 'New', label: 'New' },
-              { value: 'Approved', label: 'Approved' },
-              { value: 'Enrolled', label: 'Enrolled' },
-              { value: 'Alumini', label: 'Alumini' },
-              { value: 'Cancel', label: 'Cancel' },
-            ],
-          },
           {
             key: 'textarea',
             label: 'Remark',
@@ -11273,7 +12013,7 @@ const formData = [
             id: 'studentDocument',
             type: 'file',
           },
-          
+
         ],
       },
       {
@@ -11281,7 +12021,7 @@ const formData = [
         label: 'CU',
         name: ['customfields', 'university_name'],
         value: 'CU',
-        fields: [
+      fields: [
           {
             courses: [
               {
@@ -11297,27 +12037,27 @@ const formData = [
                 label: "BA",
                 specializations: [
                   { value: "General", label: "General" },
-                  { "value": "Education", "label": "Education" },
-                  { "value": "English", "label": "English" },
-                  { "value": "Journlsim & Mass Communication", label: "Journlsim & Mass Communication" },
-                  { "value": "Economics", "label": "Economics" },
-                  { "value": "History", "label": "History" },
-                  { "value": "Political science", "label": "Political science" },
-                  { "value": "Sociology", "label": "Sociology" },
-                  { "value": "Journalism & Mass Communication", "label": "Journalism & Mass Communication" },
-                  { "value": "Public Administration", "label": "Public Administration" },
-                  { "value": "Psychology", "label": "Psychology" },
-                  { "value": "Hindi", "label": "Hindi" },
-                  { "value": "Mathematics", "label": "Mathematics" },
-                  { "value": 'Geography', label: 'Geography' },
+                  { value: "Education", label: "Education" },
+                  { value: "English", label: "English" },
+                  { value: "Journlsim & Mass Communication", label: "Journlsim & Mass Communication" },
+                  { value: "Economics", label: "Economics" },
+                  { value: "History", label: "History" },
+                  { value: "Political science", label: "Political science" },
+                  { value: "Sociology", label: "Sociology" },
+                  { value: "Journalism & Mass Communication", label: "Journalism & Mass Communication" },
+                  { value: "Public Administration", label: "Public Administration" },
+                  { value: "Psychology", label: "Psychology" },
+                  { value: "Hindi", label: "Hindi" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: 'Geography', label: 'Geography' },
                 ],
               },
               {
                 value: "BBA",
                 label: "BBA",
                 specializations: [
-                  { "value": "General", "label": "General" },
-                  { "value": "Education", "label": "Education" },
+                  { value: "General", label: "General" },
+                  { value: "Education", label: "Education" },
                   { value: "Marketing", label: "Marketing" },
                   { value: "Human Resource Management", label: "Human Resource Management" },
                   { value: "Finance", label: "Finance" },
@@ -11543,100 +12283,186 @@ const formData = [
             ]
           },
           {
-            payments: [
+            admission_type: [
               {
-                value: "Semester",
-                label: "Semester",
-                paymentType: [
+                value: "FRESH",
+                label: "FRESH",
+                payments: [
                   {
-                    key: 'text',
-                    label: 'Semester fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'text',
-                    required: 'require'
+                    value: "Semester",
+                    label: "Semester",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Semester fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'text',
+                    value: "Yearly",
+                    label: "Yearly",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Yearly Fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'text',
-                  },
+                    value: "Fullfees",
+                    label: "Fullfees",
+                    "paymentType": [
+                      {
+                        key: "text",
+                        label: "Full fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
+                  }
                 ]
               },
               {
-                value: "Yearly",
-                label: "Yearly",
-                paymentType: [
+                value: "Credit Transfer",
+                label: "Credit Transfer",
+                payments: [
                   {
-                    key: 'text',
-                    label: 'Yearly Fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'text',
-                    required: 'require'
-                  },
-                  {
-                    key: 'text',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'text',
-                  },
-                  {
-                    key: 'text',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'text',
-                  },
+                    value: "Fullfees",
+                    label: "Fullfees",
+                    "paymentType": [
+                      {
+                        key: "text",
+                        label: "Full fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
+                  }
                 ]
               },
               {
-                value: "Fullfees",
-                label: "Fullfees",
-                paymentType: [
+                value: "LATERAL ENTRY",
+                label: "LATERAL ENTRY",
+                payments: [
                   {
-                    key: 'text',
-                    label: 'Full fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'text',
-                    required: 'require'
+                    value: "Semester",
+                    label: "Semester",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Semester fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'text',
+                    value: "Yearly",
+                    label: "Yearly",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Yearly Fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'text',
-                  },
+                    value: "Fullfees",
+                    label: "Fullfees",
+                    "paymentType": [
+                      {
+                        key: "text",
+                        label: "Full fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
+                  }
                 ]
-              }
+              },
             ]
           },
           {
@@ -11675,14 +12501,14 @@ const formData = [
             type: 'tel',
             required: 'require'
           },
-       {
+          {
             key: 'tel',
             label: 'Alternate number',
             name: ['contact', 'alternate_phone'],
             place: 'Enter Alternate Number',
             id: 'alternate',
             type: 'tel',
-           required: 'require'
+            required: 'require'
           },
           {
             key: 'text',
@@ -11729,18 +12555,6 @@ const formData = [
 
           },
           {
-            key: 'select',
-            label: 'Admission Type',
-            name: ['customfields', 'admission_type'],
-            id: 'SessionType',
-            place: 'Enter Admission Type',
-            type: 'select',
-            options: [{ value: 'FRESH', label: 'FRESH' },
-              { value: 'Credit Transfer', label: 'Credit Transfer' },
-            { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
-          },
-
-          {
             key: 'date',
             label: 'Date of Birth',
             name: ['customfields', 'dob'],
@@ -11761,28 +12575,7 @@ const formData = [
             { value: 'Female', label: 'Female' },
             { value: 'Other', label: 'Other' }],
           },
-          {
-            key: 'select',
-            label: 'Installment Type',
-            id: 'InstallmentType',
-            name: ['customfields', 'installment_type'],
-            place: 'Installment Type',
-            type: 'select',
-            required: 'require',
 
-            options: [
-              { value: '1st Installment', label: '1st Installment' },
-              { value: '2nd Installment', label: '2nd Installment' },
-              { value: '3rd Installment', label: '3rd Installment' },
-              { value: '4th Installment', label: '4th Installment' },
-              { value: '5th Installment', label: '5th Installment' },
-              { value: '6th Installment', label: '6th Installment' },
-              { value: '7th Installment', label: '7th Installment' },
-              { value: '8th Installment', label: '8th Installment' },
-              { value: '9th Installment', label: '9th Installment' },
-              { value: '10th Installment', label: '10th Installment' },
-            ],
-          },
           {
             key: 'select ',
             label: 'Payment mode ',
@@ -11797,23 +12590,7 @@ const formData = [
             { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
-          {
-            key: 'select ',
-            label: 'Status',
-            name: ['customfields', 'status'],
-            id: 'status ',
-            type: 'select',
-            place: 'select status',
-            required: 'require',
 
-            options: [
-              { value: 'New', label: 'New' },
-              { value: 'Approved', label: 'Approved' },
-              { value: 'Enrolled', label: 'Enrolled' },
-              { value: 'Alumini', label: 'Alumini' },
-              { value: 'Cancel', label: 'Cancel' },
-            ],
-          },
           {
             key: 'textarea',
             label: 'Remark',
@@ -11836,7 +12613,7 @@ const formData = [
             id: 'studentDocument',
             type: 'file',
           },
-          
+
         ],
       },
       {
@@ -11844,7 +12621,7 @@ const formData = [
         label: 'SPU',
         name: ['customfields', 'university_name'],
         value: 'SPU',
-        fields: [
+      fields: [
           {
             courses: [
               {
@@ -11860,27 +12637,27 @@ const formData = [
                 label: "BA",
                 specializations: [
                   { value: "General", label: "General" },
-                  { "value": "Education", "label": "Education" },
-                  { "value": "English", "label": "English" },
-                  { "value": "Journlsim & Mass Communication", label: "Journlsim & Mass Communication" },
-                  { "value": "Economics", "label": "Economics" },
-                  { "value": "History", "label": "History" },
-                  { "value": "Political science", "label": "Political science" },
-                  { "value": "Sociology", "label": "Sociology" },
-                  { "value": "Journalism & Mass Communication", "label": "Journalism & Mass Communication" },
-                  { "value": "Public Administration", "label": "Public Administration" },
-                  { "value": "Psychology", "label": "Psychology" },
-                  { "value": "Hindi", "label": "Hindi" },
-                  { "value": "Mathematics", "label": "Mathematics" },
-                  { "value": 'Geography', label: 'Geography' },
+                  { value: "Education", label: "Education" },
+                  { value: "English", label: "English" },
+                  { value: "Journlsim & Mass Communication", label: "Journlsim & Mass Communication" },
+                  { value: "Economics", label: "Economics" },
+                  { value: "History", label: "History" },
+                  { value: "Political science", label: "Political science" },
+                  { value: "Sociology", label: "Sociology" },
+                  { value: "Journalism & Mass Communication", label: "Journalism & Mass Communication" },
+                  { value: "Public Administration", label: "Public Administration" },
+                  { value: "Psychology", label: "Psychology" },
+                  { value: "Hindi", label: "Hindi" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: 'Geography', label: 'Geography' },
                 ],
               },
               {
                 value: "BBA",
                 label: "BBA",
                 specializations: [
-                  { "value": "General", "label": "General" },
-                  { "value": "Education", "label": "Education" },
+                  { value: "General", label: "General" },
+                  { value: "Education", label: "Education" },
                   { value: "Marketing", label: "Marketing" },
                   { value: "Human Resource Management", label: "Human Resource Management" },
                   { value: "Finance", label: "Finance" },
@@ -12106,100 +12883,186 @@ const formData = [
             ]
           },
           {
-            payments: [
+            admission_type: [
               {
-                value: "Semester",
-                label: "Semester",
-                paymentType: [
+                value: "FRESH",
+                label: "FRESH",
+                payments: [
                   {
-                    key: 'text',
-                    label: 'Semester fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'text',
-                    required: 'require'
+                    value: "Semester",
+                    label: "Semester",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Semester fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'text',
+                    value: "Yearly",
+                    label: "Yearly",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Yearly Fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'text',
-                  },
+                    value: "Fullfees",
+                    label: "Fullfees",
+                    "paymentType": [
+                      {
+                        key: "text",
+                        label: "Full fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
+                  }
                 ]
               },
               {
-                value: "Yearly",
-                label: "Yearly",
-                paymentType: [
+                value: "Credit Transfer",
+                label: "Credit Transfer",
+                payments: [
                   {
-                    key: 'text',
-                    label: 'Yearly Fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'text',
-                    required: 'require'
-                  },
-                  {
-                    key: 'text',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'text',
-                  },
-                  {
-                    key: 'text',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'text',
-                  },
+                    value: "Fullfees",
+                    label: "Fullfees",
+                    "paymentType": [
+                      {
+                        key: "text",
+                        label: "Full fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
+                  }
                 ]
               },
               {
-                value: "Fullfees",
-                label: "Fullfees",
-                paymentType: [
+                value: "LATERAL ENTRY",
+                label: "LATERAL ENTRY",
+                payments: [
                   {
-                    key: 'text',
-                    label: 'Full fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'text',
-                    required: 'require'
+                    value: "Semester",
+                    label: "Semester",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Semester fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'text',
+                    value: "Yearly",
+                    label: "Yearly",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Yearly Fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'text',
-                  },
+                    value: "Fullfees",
+                    label: "Fullfees",
+                    "paymentType": [
+                      {
+                        key: "text",
+                        label: "Full fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
+                  }
                 ]
-              }
+              },
             ]
           },
           {
@@ -12238,14 +13101,14 @@ const formData = [
             type: 'tel',
             required: 'require'
           },
-       {
+          {
             key: 'tel',
             label: 'Alternate number',
             name: ['contact', 'alternate_phone'],
             place: 'Enter Alternate Number',
             id: 'alternate',
             type: 'tel',
-           required: 'require'
+            required: 'require'
           },
           {
             key: 'text',
@@ -12292,18 +13155,6 @@ const formData = [
 
           },
           {
-            key: 'select',
-            label: 'Admission Type',
-            name: ['customfields', 'admission_type'],
-            id: 'SessionType',
-            place: 'Enter Admission Type',
-            type: 'select',
-            options: [{ value: 'FRESH', label: 'FRESH' },
-              { value: 'Credit Transfer', label: 'Credit Transfer' },
-            { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
-          },
-
-          {
             key: 'date',
             label: 'Date of Birth',
             name: ['customfields', 'dob'],
@@ -12324,28 +13175,7 @@ const formData = [
             { value: 'Female', label: 'Female' },
             { value: 'Other', label: 'Other' }],
           },
-          {
-            key: 'select',
-            label: 'Installment Type',
-            id: 'InstallmentType',
-            name: ['customfields', 'installment_type'],
-            place: 'Installment Type',
-            type: 'select',
-            required: 'require',
 
-            options: [
-              { value: '1st Installment', label: '1st Installment' },
-              { value: '2nd Installment', label: '2nd Installment' },
-              { value: '3rd Installment', label: '3rd Installment' },
-              { value: '4th Installment', label: '4th Installment' },
-              { value: '5th Installment', label: '5th Installment' },
-              { value: '6th Installment', label: '6th Installment' },
-              { value: '7th Installment', label: '7th Installment' },
-              { value: '8th Installment', label: '8th Installment' },
-              { value: '9th Installment', label: '9th Installment' },
-              { value: '10th Installment', label: '10th Installment' },
-            ],
-          },
           {
             key: 'select ',
             label: 'Payment mode ',
@@ -12360,23 +13190,7 @@ const formData = [
             { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
-          {
-            key: 'select ',
-            label: 'Status',
-            name: ['customfields', 'status'],
-            id: 'status ',
-            type: 'select',
-            place: 'select status',
-            required: 'require',
 
-            options: [
-              { value: 'New', label: 'New' },
-              { value: 'Approved', label: 'Approved' },
-              { value: 'Enrolled', label: 'Enrolled' },
-              { value: 'Alumini', label: 'Alumini' },
-              { value: 'Cancel', label: 'Cancel' },
-            ],
-          },
           {
             key: 'textarea',
             label: 'Remark',
@@ -12399,7 +13213,7 @@ const formData = [
             id: 'studentDocument',
             type: 'file',
           },
-          
+
         ],
       },
       {
@@ -12407,7 +13221,7 @@ const formData = [
         label: 'AMRITA',
         name: ['customfields', 'university_name'],
         value: 'AMRITA',
-        fields: [
+      fields: [
           {
             courses: [
               {
@@ -12423,27 +13237,27 @@ const formData = [
                 label: "BA",
                 specializations: [
                   { value: "General", label: "General" },
-                  { "value": "Education", "label": "Education" },
-                  { "value": "English", "label": "English" },
-                  { "value": "Journlsim & Mass Communication", label: "Journlsim & Mass Communication" },
-                  { "value": "Economics", "label": "Economics" },
-                  { "value": "History", "label": "History" },
-                  { "value": "Political science", "label": "Political science" },
-                  { "value": "Sociology", "label": "Sociology" },
-                  { "value": "Journalism & Mass Communication", "label": "Journalism & Mass Communication" },
-                  { "value": "Public Administration", "label": "Public Administration" },
-                  { "value": "Psychology", "label": "Psychology" },
-                  { "value": "Hindi", "label": "Hindi" },
-                  { "value": "Mathematics", "label": "Mathematics" },
-                  { "value": 'Geography', label: 'Geography' },
+                  { value: "Education", label: "Education" },
+                  { value: "English", label: "English" },
+                  { value: "Journlsim & Mass Communication", label: "Journlsim & Mass Communication" },
+                  { value: "Economics", label: "Economics" },
+                  { value: "History", label: "History" },
+                  { value: "Political science", label: "Political science" },
+                  { value: "Sociology", label: "Sociology" },
+                  { value: "Journalism & Mass Communication", label: "Journalism & Mass Communication" },
+                  { value: "Public Administration", label: "Public Administration" },
+                  { value: "Psychology", label: "Psychology" },
+                  { value: "Hindi", label: "Hindi" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: 'Geography', label: 'Geography' },
                 ],
               },
               {
                 value: "BBA",
                 label: "BBA",
                 specializations: [
-                  { "value": "General", "label": "General" },
-                  { "value": "Education", "label": "Education" },
+                  { value: "General", label: "General" },
+                  { value: "Education", label: "Education" },
                   { value: "Marketing", label: "Marketing" },
                   { value: "Human Resource Management", label: "Human Resource Management" },
                   { value: "Finance", label: "Finance" },
@@ -12669,100 +13483,186 @@ const formData = [
             ]
           },
           {
-            payments: [
+            admission_type: [
               {
-                value: "Semester",
-                label: "Semester",
-                paymentType: [
+                value: "FRESH",
+                label: "FRESH",
+                payments: [
                   {
-                    key: 'text',
-                    label: 'Semester fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'text',
-                    required: 'require'
+                    value: "Semester",
+                    label: "Semester",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Semester fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'text',
+                    value: "Yearly",
+                    label: "Yearly",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Yearly Fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'text',
-                  },
+                    value: "Fullfees",
+                    label: "Fullfees",
+                    "paymentType": [
+                      {
+                        key: "text",
+                        label: "Full fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
+                  }
                 ]
               },
               {
-                value: "Yearly",
-                label: "Yearly",
-                paymentType: [
+                value: "Credit Transfer",
+                label: "Credit Transfer",
+                payments: [
                   {
-                    key: 'text',
-                    label: 'Yearly Fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'text',
-                    required: 'require'
-                  },
-                  {
-                    key: 'text',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'text',
-                  },
-                  {
-                    key: 'text',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'text',
-                  },
+                    value: "Fullfees",
+                    label: "Fullfees",
+                    "paymentType": [
+                      {
+                        key: "text",
+                        label: "Full fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
+                  }
                 ]
               },
               {
-                value: "Fullfees",
-                label: "Fullfees",
-                paymentType: [
+                value: "LATERAL ENTRY",
+                label: "LATERAL ENTRY",
+                payments: [
                   {
-                    key: 'text',
-                    label: 'Full fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'text',
-                    required: 'require'
+                    value: "Semester",
+                    label: "Semester",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Semester fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'text',
+                    value: "Yearly",
+                    label: "Yearly",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Yearly Fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'text',
-                  },
+                    value: "Fullfees",
+                    label: "Fullfees",
+                    "paymentType": [
+                      {
+                        key: "text",
+                        label: "Full fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
+                  }
                 ]
-              }
+              },
             ]
           },
           {
@@ -12801,14 +13701,14 @@ const formData = [
             type: 'tel',
             required: 'require'
           },
-       {
+          {
             key: 'tel',
             label: 'Alternate number',
             name: ['contact', 'alternate_phone'],
             place: 'Enter Alternate Number',
             id: 'alternate',
             type: 'tel',
-           required: 'require'
+            required: 'require'
           },
           {
             key: 'text',
@@ -12855,18 +13755,6 @@ const formData = [
 
           },
           {
-            key: 'select',
-            label: 'Admission Type',
-            name: ['customfields', 'admission_type'],
-            id: 'SessionType',
-            place: 'Enter Admission Type',
-            type: 'select',
-            options: [{ value: 'FRESH', label: 'FRESH' },
-              { value: 'Credit Transfer', label: 'Credit Transfer' },
-            { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
-          },
-
-          {
             key: 'date',
             label: 'Date of Birth',
             name: ['customfields', 'dob'],
@@ -12887,28 +13775,7 @@ const formData = [
             { value: 'Female', label: 'Female' },
             { value: 'Other', label: 'Other' }],
           },
-          {
-            key: 'select',
-            label: 'Installment Type',
-            id: 'InstallmentType',
-            name: ['customfields', 'installment_type'],
-            place: 'Installment Type',
-            type: 'select',
-            required: 'require',
 
-            options: [
-              { value: '1st Installment', label: '1st Installment' },
-              { value: '2nd Installment', label: '2nd Installment' },
-              { value: '3rd Installment', label: '3rd Installment' },
-              { value: '4th Installment', label: '4th Installment' },
-              { value: '5th Installment', label: '5th Installment' },
-              { value: '6th Installment', label: '6th Installment' },
-              { value: '7th Installment', label: '7th Installment' },
-              { value: '8th Installment', label: '8th Installment' },
-              { value: '9th Installment', label: '9th Installment' },
-              { value: '10th Installment', label: '10th Installment' },
-            ],
-          },
           {
             key: 'select ',
             label: 'Payment mode ',
@@ -12923,23 +13790,7 @@ const formData = [
             { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
-          {
-            key: 'select ',
-            label: 'Status',
-            name: ['customfields', 'status'],
-            id: 'status ',
-            type: 'select',
-            place: 'select status',
-            required: 'require',
 
-            options: [
-              { value: 'New', label: 'New' },
-              { value: 'Approved', label: 'Approved' },
-              { value: 'Enrolled', label: 'Enrolled' },
-              { value: 'Alumini', label: 'Alumini' },
-              { value: 'Cancel', label: 'Cancel' },
-            ],
-          },
           {
             key: 'textarea',
             label: 'Remark',
@@ -12962,7 +13813,7 @@ const formData = [
             id: 'studentDocument',
             type: 'file',
           },
-          
+
         ],
       },
       {
@@ -12970,7 +13821,7 @@ const formData = [
         label: 'AMITY',
         name: ['customfields', 'university_name'],
         value: 'AMITY',
-        fields: [
+      fields: [
           {
             courses: [
               {
@@ -12986,27 +13837,27 @@ const formData = [
                 label: "BA",
                 specializations: [
                   { value: "General", label: "General" },
-                  { "value": "Education", "label": "Education" },
-                  { "value": "English", "label": "English" },
-                  { "value": "Journlsim & Mass Communication", label: "Journlsim & Mass Communication" },
-                  { "value": "Economics", "label": "Economics" },
-                  { "value": "History", "label": "History" },
-                  { "value": "Political science", "label": "Political science" },
-                  { "value": "Sociology", "label": "Sociology" },
-                  { "value": "Journalism & Mass Communication", "label": "Journalism & Mass Communication" },
-                  { "value": "Public Administration", "label": "Public Administration" },
-                  { "value": "Psychology", "label": "Psychology" },
-                  { "value": "Hindi", "label": "Hindi" },
-                  { "value": "Mathematics", "label": "Mathematics" },
-                  { "value": 'Geography', label: 'Geography' },
+                  { value: "Education", label: "Education" },
+                  { value: "English", label: "English" },
+                  { value: "Journlsim & Mass Communication", label: "Journlsim & Mass Communication" },
+                  { value: "Economics", label: "Economics" },
+                  { value: "History", label: "History" },
+                  { value: "Political science", label: "Political science" },
+                  { value: "Sociology", label: "Sociology" },
+                  { value: "Journalism & Mass Communication", label: "Journalism & Mass Communication" },
+                  { value: "Public Administration", label: "Public Administration" },
+                  { value: "Psychology", label: "Psychology" },
+                  { value: "Hindi", label: "Hindi" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: 'Geography', label: 'Geography' },
                 ],
               },
               {
                 value: "BBA",
                 label: "BBA",
                 specializations: [
-                  { "value": "General", "label": "General" },
-                  { "value": "Education", "label": "Education" },
+                  { value: "General", label: "General" },
+                  { value: "Education", label: "Education" },
                   { value: "Marketing", label: "Marketing" },
                   { value: "Human Resource Management", label: "Human Resource Management" },
                   { value: "Finance", label: "Finance" },
@@ -13232,100 +14083,186 @@ const formData = [
             ]
           },
           {
-            payments: [
+            admission_type: [
               {
-                value: "Semester",
-                label: "Semester",
-                paymentType: [
+                value: "FRESH",
+                label: "FRESH",
+                payments: [
                   {
-                    key: 'text',
-                    label: 'Semester fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'text',
-                    required: 'require'
+                    value: "Semester",
+                    label: "Semester",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Semester fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'text',
+                    value: "Yearly",
+                    label: "Yearly",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Yearly Fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'text',
-                  },
+                    value: "Fullfees",
+                    label: "Fullfees",
+                    "paymentType": [
+                      {
+                        key: "text",
+                        label: "Full fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
+                  }
                 ]
               },
               {
-                value: "Yearly",
-                label: "Yearly",
-                paymentType: [
+                value: "Credit Transfer",
+                label: "Credit Transfer",
+                payments: [
                   {
-                    key: 'text',
-                    label: 'Yearly Fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'text',
-                    required: 'require'
-                  },
-                  {
-                    key: 'text',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'text',
-                  },
-                  {
-                    key: 'text',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'text',
-                  },
+                    value: "Fullfees",
+                    label: "Fullfees",
+                    "paymentType": [
+                      {
+                        key: "text",
+                        label: "Full fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
+                  }
                 ]
               },
               {
-                value: "Fullfees",
-                label: "Fullfees",
-                paymentType: [
+                value: "LATERAL ENTRY",
+                label: "LATERAL ENTRY",
+                payments: [
                   {
-                    key: 'text',
-                    label: 'Full fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'text',
-                    required: 'require'
+                    value: "Semester",
+                    label: "Semester",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Semester fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'text',
+                    value: "Yearly",
+                    label: "Yearly",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Yearly Fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'text',
-                  },
+                    value: "Fullfees",
+                    label: "Fullfees",
+                    "paymentType": [
+                      {
+                        key: "text",
+                        label: "Full fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
+                  }
                 ]
-              }
+              },
             ]
           },
           {
@@ -13364,14 +14301,14 @@ const formData = [
             type: 'tel',
             required: 'require'
           },
-       {
+          {
             key: 'tel',
             label: 'Alternate number',
             name: ['contact', 'alternate_phone'],
             place: 'Enter Alternate Number',
             id: 'alternate',
             type: 'tel',
-           required: 'require'
+            required: 'require'
           },
           {
             key: 'text',
@@ -13418,18 +14355,6 @@ const formData = [
 
           },
           {
-            key: 'select',
-            label: 'Admission Type',
-            name: ['customfields', 'admission_type'],
-            id: 'SessionType',
-            place: 'Enter Admission Type',
-            type: 'select',
-            options: [{ value: 'FRESH', label: 'FRESH' },
-              { value: 'Credit Transfer', label: 'Credit Transfer' },
-            { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
-          },
-
-          {
             key: 'date',
             label: 'Date of Birth',
             name: ['customfields', 'dob'],
@@ -13450,28 +14375,7 @@ const formData = [
             { value: 'Female', label: 'Female' },
             { value: 'Other', label: 'Other' }],
           },
-          {
-            key: 'select',
-            label: 'Installment Type',
-            id: 'InstallmentType',
-            name: ['customfields', 'installment_type'],
-            place: 'Installment Type',
-            type: 'select',
-            required: 'require',
 
-            options: [
-              { value: '1st Installment', label: '1st Installment' },
-              { value: '2nd Installment', label: '2nd Installment' },
-              { value: '3rd Installment', label: '3rd Installment' },
-              { value: '4th Installment', label: '4th Installment' },
-              { value: '5th Installment', label: '5th Installment' },
-              { value: '6th Installment', label: '6th Installment' },
-              { value: '7th Installment', label: '7th Installment' },
-              { value: '8th Installment', label: '8th Installment' },
-              { value: '9th Installment', label: '9th Installment' },
-              { value: '10th Installment', label: '10th Installment' },
-            ],
-          },
           {
             key: 'select ',
             label: 'Payment mode ',
@@ -13486,23 +14390,7 @@ const formData = [
             { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
-          {
-            key: 'select ',
-            label: 'Status',
-            name: ['customfields', 'status'],
-            id: 'status ',
-            type: 'select',
-            place: 'select status',
-            required: 'require',
 
-            options: [
-              { value: 'New', label: 'New' },
-              { value: 'Approved', label: 'Approved' },
-              { value: 'Enrolled', label: 'Enrolled' },
-              { value: 'Alumini', label: 'Alumini' },
-              { value: 'Cancel', label: 'Cancel' },
-            ],
-          },
           {
             key: 'textarea',
             label: 'Remark',
@@ -13525,7 +14413,7 @@ const formData = [
             id: 'studentDocument',
             type: 'file',
           },
-          
+
         ],
       },
       {
@@ -13533,7 +14421,7 @@ const formData = [
         label: 'LPU',
         name: ['customfields', 'university_name'],
         value: 'LPU',
-        fields: [
+      fields: [
           {
             courses: [
               {
@@ -13549,27 +14437,27 @@ const formData = [
                 label: "BA",
                 specializations: [
                   { value: "General", label: "General" },
-                  { "value": "Education", "label": "Education" },
-                  { "value": "English", "label": "English" },
-                  { "value": "Journlsim & Mass Communication", label: "Journlsim & Mass Communication" },
-                  { "value": "Economics", "label": "Economics" },
-                  { "value": "History", "label": "History" },
-                  { "value": "Political science", "label": "Political science" },
-                  { "value": "Sociology", "label": "Sociology" },
-                  { "value": "Journalism & Mass Communication", "label": "Journalism & Mass Communication" },
-                  { "value": "Public Administration", "label": "Public Administration" },
-                  { "value": "Psychology", "label": "Psychology" },
-                  { "value": "Hindi", "label": "Hindi" },
-                  { "value": "Mathematics", "label": "Mathematics" },
-                  { "value": 'Geography', label: 'Geography' },
+                  { value: "Education", label: "Education" },
+                  { value: "English", label: "English" },
+                  { value: "Journlsim & Mass Communication", label: "Journlsim & Mass Communication" },
+                  { value: "Economics", label: "Economics" },
+                  { value: "History", label: "History" },
+                  { value: "Political science", label: "Political science" },
+                  { value: "Sociology", label: "Sociology" },
+                  { value: "Journalism & Mass Communication", label: "Journalism & Mass Communication" },
+                  { value: "Public Administration", label: "Public Administration" },
+                  { value: "Psychology", label: "Psychology" },
+                  { value: "Hindi", label: "Hindi" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: 'Geography', label: 'Geography' },
                 ],
               },
               {
                 value: "BBA",
                 label: "BBA",
                 specializations: [
-                  { "value": "General", "label": "General" },
-                  { "value": "Education", "label": "Education" },
+                  { value: "General", label: "General" },
+                  { value: "Education", label: "Education" },
                   { value: "Marketing", label: "Marketing" },
                   { value: "Human Resource Management", label: "Human Resource Management" },
                   { value: "Finance", label: "Finance" },
@@ -13795,100 +14683,186 @@ const formData = [
             ]
           },
           {
-            payments: [
+            admission_type: [
               {
-                value: "Semester",
-                label: "Semester",
-                paymentType: [
+                value: "FRESH",
+                label: "FRESH",
+                payments: [
                   {
-                    key: 'text',
-                    label: 'Semester fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'text',
-                    required: 'require'
+                    value: "Semester",
+                    label: "Semester",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Semester fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'text',
+                    value: "Yearly",
+                    label: "Yearly",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Yearly Fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'text',
-                  },
+                    value: "Fullfees",
+                    label: "Fullfees",
+                    "paymentType": [
+                      {
+                        key: "text",
+                        label: "Full fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
+                  }
                 ]
               },
               {
-                value: "Yearly",
-                label: "Yearly",
-                paymentType: [
+                value: "Credit Transfer",
+                label: "Credit Transfer",
+                payments: [
                   {
-                    key: 'text',
-                    label: 'Yearly Fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'text',
-                    required: 'require'
-                  },
-                  {
-                    key: 'text',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'text',
-                  },
-                  {
-                    key: 'text',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'text',
-                  },
+                    value: "Fullfees",
+                    label: "Fullfees",
+                    "paymentType": [
+                      {
+                        key: "text",
+                        label: "Full fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
+                  }
                 ]
               },
               {
-                value: "Fullfees",
-                label: "Fullfees",
-                paymentType: [
+                value: "LATERAL ENTRY",
+                label: "LATERAL ENTRY",
+                payments: [
                   {
-                    key: 'text',
-                    label: 'Full fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'text',
-                    required: 'require'
+                    value: "Semester",
+                    label: "Semester",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Semester fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'text',
+                    value: "Yearly",
+                    label: "Yearly",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Yearly Fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'text',
-                  },
+                    value: "Fullfees",
+                    label: "Fullfees",
+                    "paymentType": [
+                      {
+                        key: "text",
+                        label: "Full fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
+                  }
                 ]
-              }
+              },
             ]
           },
           {
@@ -13927,14 +14901,14 @@ const formData = [
             type: 'tel',
             required: 'require'
           },
-       {
+          {
             key: 'tel',
             label: 'Alternate number',
             name: ['contact', 'alternate_phone'],
             place: 'Enter Alternate Number',
             id: 'alternate',
             type: 'tel',
-           required: 'require'
+            required: 'require'
           },
           {
             key: 'text',
@@ -13981,18 +14955,6 @@ const formData = [
 
           },
           {
-            key: 'select',
-            label: 'Admission Type',
-            name: ['customfields', 'admission_type'],
-            id: 'SessionType',
-            place: 'Enter Admission Type',
-            type: 'select',
-            options: [{ value: 'FRESH', label: 'FRESH' },
-              { value: 'Credit Transfer', label: 'Credit Transfer' },
-            { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
-          },
-
-          {
             key: 'date',
             label: 'Date of Birth',
             name: ['customfields', 'dob'],
@@ -14013,28 +14975,7 @@ const formData = [
             { value: 'Female', label: 'Female' },
             { value: 'Other', label: 'Other' }],
           },
-          {
-            key: 'select',
-            label: 'Installment Type',
-            id: 'InstallmentType',
-            name: ['customfields', 'installment_type'],
-            place: 'Installment Type',
-            type: 'select',
-            required: 'require',
 
-            options: [
-              { value: '1st Installment', label: '1st Installment' },
-              { value: '2nd Installment', label: '2nd Installment' },
-              { value: '3rd Installment', label: '3rd Installment' },
-              { value: '4th Installment', label: '4th Installment' },
-              { value: '5th Installment', label: '5th Installment' },
-              { value: '6th Installment', label: '6th Installment' },
-              { value: '7th Installment', label: '7th Installment' },
-              { value: '8th Installment', label: '8th Installment' },
-              { value: '9th Installment', label: '9th Installment' },
-              { value: '10th Installment', label: '10th Installment' },
-            ],
-          },
           {
             key: 'select ',
             label: 'Payment mode ',
@@ -14049,23 +14990,7 @@ const formData = [
             { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
-          {
-            key: 'select ',
-            label: 'Status',
-            name: ['customfields', 'status'],
-            id: 'status ',
-            type: 'select',
-            place: 'select status',
-            required: 'require',
 
-            options: [
-              { value: 'New', label: 'New' },
-              { value: 'Approved', label: 'Approved' },
-              { value: 'Enrolled', label: 'Enrolled' },
-              { value: 'Alumini', label: 'Alumini' },
-              { value: 'Cancel', label: 'Cancel' },
-            ],
-          },
           {
             key: 'textarea',
             label: 'Remark',
@@ -14088,7 +15013,7 @@ const formData = [
             id: 'studentDocument',
             type: 'file',
           },
-          
+
         ],
       },
       {
@@ -14096,7 +15021,7 @@ const formData = [
         label: 'JAIN',
         name: ['customfields', 'university_name'],
         value: 'JAIN',
-        fields: [
+      fields: [
           {
             courses: [
               {
@@ -14112,27 +15037,27 @@ const formData = [
                 label: "BA",
                 specializations: [
                   { value: "General", label: "General" },
-                  { "value": "Education", "label": "Education" },
-                  { "value": "English", "label": "English" },
-                  { "value": "Journlsim & Mass Communication", label: "Journlsim & Mass Communication" },
-                  { "value": "Economics", "label": "Economics" },
-                  { "value": "History", "label": "History" },
-                  { "value": "Political science", "label": "Political science" },
-                  { "value": "Sociology", "label": "Sociology" },
-                  { "value": "Journalism & Mass Communication", "label": "Journalism & Mass Communication" },
-                  { "value": "Public Administration", "label": "Public Administration" },
-                  { "value": "Psychology", "label": "Psychology" },
-                  { "value": "Hindi", "label": "Hindi" },
-                  { "value": "Mathematics", "label": "Mathematics" },
-                  { "value": 'Geography', label: 'Geography' },
+                  { value: "Education", label: "Education" },
+                  { value: "English", label: "English" },
+                  { value: "Journlsim & Mass Communication", label: "Journlsim & Mass Communication" },
+                  { value: "Economics", label: "Economics" },
+                  { value: "History", label: "History" },
+                  { value: "Political science", label: "Political science" },
+                  { value: "Sociology", label: "Sociology" },
+                  { value: "Journalism & Mass Communication", label: "Journalism & Mass Communication" },
+                  { value: "Public Administration", label: "Public Administration" },
+                  { value: "Psychology", label: "Psychology" },
+                  { value: "Hindi", label: "Hindi" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: 'Geography', label: 'Geography' },
                 ],
               },
               {
                 value: "BBA",
                 label: "BBA",
                 specializations: [
-                  { "value": "General", "label": "General" },
-                  { "value": "Education", "label": "Education" },
+                  { value: "General", label: "General" },
+                  { value: "Education", label: "Education" },
                   { value: "Marketing", label: "Marketing" },
                   { value: "Human Resource Management", label: "Human Resource Management" },
                   { value: "Finance", label: "Finance" },
@@ -14358,100 +15283,186 @@ const formData = [
             ]
           },
           {
-            payments: [
+            admission_type: [
               {
-                value: "Semester",
-                label: "Semester",
-                paymentType: [
+                value: "FRESH",
+                label: "FRESH",
+                payments: [
                   {
-                    key: 'text',
-                    label: 'Semester fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'text',
-                    required: 'require'
+                    value: "Semester",
+                    label: "Semester",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Semester fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'text',
+                    value: "Yearly",
+                    label: "Yearly",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Yearly Fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'text',
-                  },
+                    value: "Fullfees",
+                    label: "Fullfees",
+                    "paymentType": [
+                      {
+                        key: "text",
+                        label: "Full fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
+                  }
                 ]
               },
               {
-                value: "Yearly",
-                label: "Yearly",
-                paymentType: [
+                value: "Credit Transfer",
+                label: "Credit Transfer",
+                payments: [
                   {
-                    key: 'text',
-                    label: 'Yearly Fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'text',
-                    required: 'require'
-                  },
-                  {
-                    key: 'text',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'text',
-                  },
-                  {
-                    key: 'text',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'text',
-                  },
+                    value: "Fullfees",
+                    label: "Fullfees",
+                    "paymentType": [
+                      {
+                        key: "text",
+                        label: "Full fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
+                  }
                 ]
               },
               {
-                value: "Fullfees",
-                label: "Fullfees",
-                paymentType: [
+                value: "LATERAL ENTRY",
+                label: "LATERAL ENTRY",
+                payments: [
                   {
-                    key: 'text',
-                    label: 'Full fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'text',
-                    required: 'require'
+                    value: "Semester",
+                    label: "Semester",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Semester fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'text',
+                    value: "Yearly",
+                    label: "Yearly",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Yearly Fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'text',
-                  },
+                    value: "Fullfees",
+                    label: "Fullfees",
+                    "paymentType": [
+                      {
+                        key: "text",
+                        label: "Full fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
+                  }
                 ]
-              }
+              },
             ]
           },
           {
@@ -14490,14 +15501,14 @@ const formData = [
             type: 'tel',
             required: 'require'
           },
-       {
+          {
             key: 'tel',
             label: 'Alternate number',
             name: ['contact', 'alternate_phone'],
             place: 'Enter Alternate Number',
             id: 'alternate',
             type: 'tel',
-           required: 'require'
+            required: 'require'
           },
           {
             key: 'text',
@@ -14544,18 +15555,6 @@ const formData = [
 
           },
           {
-            key: 'select',
-            label: 'Admission Type',
-            name: ['customfields', 'admission_type'],
-            id: 'SessionType',
-            place: 'Enter Admission Type',
-            type: 'select',
-            options: [{ value: 'FRESH', label: 'FRESH' },
-              { value: 'Credit Transfer', label: 'Credit Transfer' },
-            { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
-          },
-
-          {
             key: 'date',
             label: 'Date of Birth',
             name: ['customfields', 'dob'],
@@ -14576,28 +15575,7 @@ const formData = [
             { value: 'Female', label: 'Female' },
             { value: 'Other', label: 'Other' }],
           },
-          {
-            key: 'select',
-            label: 'Installment Type',
-            id: 'InstallmentType',
-            name: ['customfields', 'installment_type'],
-            place: 'Installment Type',
-            type: 'select',
-            required: 'require',
 
-            options: [
-              { value: '1st Installment', label: '1st Installment' },
-              { value: '2nd Installment', label: '2nd Installment' },
-              { value: '3rd Installment', label: '3rd Installment' },
-              { value: '4th Installment', label: '4th Installment' },
-              { value: '5th Installment', label: '5th Installment' },
-              { value: '6th Installment', label: '6th Installment' },
-              { value: '7th Installment', label: '7th Installment' },
-              { value: '8th Installment', label: '8th Installment' },
-              { value: '9th Installment', label: '9th Installment' },
-              { value: '10th Installment', label: '10th Installment' },
-            ],
-          },
           {
             key: 'select ',
             label: 'Payment mode ',
@@ -14612,23 +15590,7 @@ const formData = [
             { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
-          {
-            key: 'select ',
-            label: 'Status',
-            name: ['customfields', 'status'],
-            id: 'status ',
-            type: 'select',
-            place: 'select status',
-            required: 'require',
 
-            options: [
-              { value: 'New', label: 'New' },
-              { value: 'Approved', label: 'Approved' },
-              { value: 'Enrolled', label: 'Enrolled' },
-              { value: 'Alumini', label: 'Alumini' },
-              { value: 'Cancel', label: 'Cancel' },
-            ],
-          },
           {
             key: 'textarea',
             label: 'Remark',
@@ -14651,7 +15613,7 @@ const formData = [
             id: 'studentDocument',
             type: 'file',
           },
-          
+
         ],
       },
       {
@@ -14659,7 +15621,7 @@ const formData = [
         label: 'SVSU',
         name: ['customfields', 'university_name'],
         value: 'SVSU',
-        fields: [
+      fields: [
           {
             courses: [
               {
@@ -14675,27 +15637,27 @@ const formData = [
                 label: "BA",
                 specializations: [
                   { value: "General", label: "General" },
-                  { "value": "Education", "label": "Education" },
-                  { "value": "English", "label": "English" },
-                  { "value": "Journlsim & Mass Communication", label: "Journlsim & Mass Communication" },
-                  { "value": "Economics", "label": "Economics" },
-                  { "value": "History", "label": "History" },
-                  { "value": "Political science", "label": "Political science" },
-                  { "value": "Sociology", "label": "Sociology" },
-                  { "value": "Journalism & Mass Communication", "label": "Journalism & Mass Communication" },
-                  { "value": "Public Administration", "label": "Public Administration" },
-                  { "value": "Psychology", "label": "Psychology" },
-                  { "value": "Hindi", "label": "Hindi" },
-                  { "value": "Mathematics", "label": "Mathematics" },
-                  { "value": 'Geography', label: 'Geography' },
+                  { value: "Education", label: "Education" },
+                  { value: "English", label: "English" },
+                  { value: "Journlsim & Mass Communication", label: "Journlsim & Mass Communication" },
+                  { value: "Economics", label: "Economics" },
+                  { value: "History", label: "History" },
+                  { value: "Political science", label: "Political science" },
+                  { value: "Sociology", label: "Sociology" },
+                  { value: "Journalism & Mass Communication", label: "Journalism & Mass Communication" },
+                  { value: "Public Administration", label: "Public Administration" },
+                  { value: "Psychology", label: "Psychology" },
+                  { value: "Hindi", label: "Hindi" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: 'Geography', label: 'Geography' },
                 ],
               },
               {
                 value: "BBA",
                 label: "BBA",
                 specializations: [
-                  { "value": "General", "label": "General" },
-                  { "value": "Education", "label": "Education" },
+                  { value: "General", label: "General" },
+                  { value: "Education", label: "Education" },
                   { value: "Marketing", label: "Marketing" },
                   { value: "Human Resource Management", label: "Human Resource Management" },
                   { value: "Finance", label: "Finance" },
@@ -14921,100 +15883,186 @@ const formData = [
             ]
           },
           {
-            payments: [
+            admission_type: [
               {
-                value: "Semester",
-                label: "Semester",
-                paymentType: [
+                value: "FRESH",
+                label: "FRESH",
+                payments: [
                   {
-                    key: 'text',
-                    label: 'Semester fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'text',
-                    required: 'require'
+                    value: "Semester",
+                    label: "Semester",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Semester fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'text',
+                    value: "Yearly",
+                    label: "Yearly",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Yearly Fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'text',
-                  },
+                    value: "Fullfees",
+                    label: "Fullfees",
+                    "paymentType": [
+                      {
+                        key: "text",
+                        label: "Full fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
+                  }
                 ]
               },
               {
-                value: "Yearly",
-                label: "Yearly",
-                paymentType: [
+                value: "Credit Transfer",
+                label: "Credit Transfer",
+                payments: [
                   {
-                    key: 'text',
-                    label: 'Yearly Fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'text',
-                    required: 'require'
-                  },
-                  {
-                    key: 'text',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'text',
-                  },
-                  {
-                    key: 'text',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'text',
-                  },
+                    value: "Fullfees",
+                    label: "Fullfees",
+                    "paymentType": [
+                      {
+                        key: "text",
+                        label: "Full fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
+                  }
                 ]
               },
               {
-                value: "Fullfees",
-                label: "Fullfees",
-                paymentType: [
+                value: "LATERAL ENTRY",
+                label: "LATERAL ENTRY",
+                payments: [
                   {
-                    key: 'text',
-                    label: 'Full fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'text',
-                    required: 'require'
+                    value: "Semester",
+                    label: "Semester",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Semester fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'text',
+                    value: "Yearly",
+                    label: "Yearly",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Yearly Fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'text',
-                  },
+                    value: "Fullfees",
+                    label: "Fullfees",
+                    "paymentType": [
+                      {
+                        key: "text",
+                        label: "Full fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
+                  }
                 ]
-              }
+              },
             ]
           },
           {
@@ -15053,14 +16101,14 @@ const formData = [
             type: 'tel',
             required: 'require'
           },
-       {
+          {
             key: 'tel',
             label: 'Alternate number',
             name: ['contact', 'alternate_phone'],
             place: 'Enter Alternate Number',
             id: 'alternate',
             type: 'tel',
-           required: 'require'
+            required: 'require'
           },
           {
             key: 'text',
@@ -15107,18 +16155,6 @@ const formData = [
 
           },
           {
-            key: 'select',
-            label: 'Admission Type',
-            name: ['customfields', 'admission_type'],
-            id: 'SessionType',
-            place: 'Enter Admission Type',
-            type: 'select',
-            options: [{ value: 'FRESH', label: 'FRESH' },
-              { value: 'Credit Transfer', label: 'Credit Transfer' },
-            { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
-          },
-
-          {
             key: 'date',
             label: 'Date of Birth',
             name: ['customfields', 'dob'],
@@ -15139,28 +16175,7 @@ const formData = [
             { value: 'Female', label: 'Female' },
             { value: 'Other', label: 'Other' }],
           },
-          {
-            key: 'select',
-            label: 'Installment Type',
-            id: 'InstallmentType',
-            name: ['customfields', 'installment_type'],
-            place: 'Installment Type',
-            type: 'select',
-            required: 'require',
 
-            options: [
-              { value: '1st Installment', label: '1st Installment' },
-              { value: '2nd Installment', label: '2nd Installment' },
-              { value: '3rd Installment', label: '3rd Installment' },
-              { value: '4th Installment', label: '4th Installment' },
-              { value: '5th Installment', label: '5th Installment' },
-              { value: '6th Installment', label: '6th Installment' },
-              { value: '7th Installment', label: '7th Installment' },
-              { value: '8th Installment', label: '8th Installment' },
-              { value: '9th Installment', label: '9th Installment' },
-              { value: '10th Installment', label: '10th Installment' },
-            ],
-          },
           {
             key: 'select ',
             label: 'Payment mode ',
@@ -15175,23 +16190,7 @@ const formData = [
             { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
-          {
-            key: 'select ',
-            label: 'Status',
-            name: ['customfields', 'status'],
-            id: 'status ',
-            type: 'select',
-            place: 'select status',
-            required: 'require',
 
-            options: [
-              { value: 'New', label: 'New' },
-              { value: 'Approved', label: 'Approved' },
-              { value: 'Enrolled', label: 'Enrolled' },
-              { value: 'Alumini', label: 'Alumini' },
-              { value: 'Cancel', label: 'Cancel' },
-            ],
-          },
           {
             key: 'textarea',
             label: 'Remark',
@@ -15214,7 +16213,7 @@ const formData = [
             id: 'studentDocument',
             type: 'file',
           },
-          
+
         ],
       },
 
@@ -15223,7 +16222,7 @@ const formData = [
         label: 'VIGNAN',
         name: ['customfields', 'university_name'],
         value: 'VIGNAN',
-        fields: [
+      fields: [
           {
             courses: [
               {
@@ -15239,27 +16238,27 @@ const formData = [
                 label: "BA",
                 specializations: [
                   { value: "General", label: "General" },
-                  { "value": "Education", "label": "Education" },
-                  { "value": "English", "label": "English" },
-                  { "value": "Journlsim & Mass Communication", label: "Journlsim & Mass Communication" },
-                  { "value": "Economics", "label": "Economics" },
-                  { "value": "History", "label": "History" },
-                  { "value": "Political science", "label": "Political science" },
-                  { "value": "Sociology", "label": "Sociology" },
-                  { "value": "Journalism & Mass Communication", "label": "Journalism & Mass Communication" },
-                  { "value": "Public Administration", "label": "Public Administration" },
-                  { "value": "Psychology", "label": "Psychology" },
-                  { "value": "Hindi", "label": "Hindi" },
-                  { "value": "Mathematics", "label": "Mathematics" },
-                  { "value": 'Geography', label: 'Geography' },
+                  { value: "Education", label: "Education" },
+                  { value: "English", label: "English" },
+                  { value: "Journlsim & Mass Communication", label: "Journlsim & Mass Communication" },
+                  { value: "Economics", label: "Economics" },
+                  { value: "History", label: "History" },
+                  { value: "Political science", label: "Political science" },
+                  { value: "Sociology", label: "Sociology" },
+                  { value: "Journalism & Mass Communication", label: "Journalism & Mass Communication" },
+                  { value: "Public Administration", label: "Public Administration" },
+                  { value: "Psychology", label: "Psychology" },
+                  { value: "Hindi", label: "Hindi" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: 'Geography', label: 'Geography' },
                 ],
               },
               {
                 value: "BBA",
                 label: "BBA",
                 specializations: [
-                  { "value": "General", "label": "General" },
-                  { "value": "Education", "label": "Education" },
+                  { value: "General", label: "General" },
+                  { value: "Education", label: "Education" },
                   { value: "Marketing", label: "Marketing" },
                   { value: "Human Resource Management", label: "Human Resource Management" },
                   { value: "Finance", label: "Finance" },
@@ -15485,100 +16484,186 @@ const formData = [
             ]
           },
           {
-            payments: [
+            admission_type: [
               {
-                value: "Semester",
-                label: "Semester",
-                paymentType: [
+                value: "FRESH",
+                label: "FRESH",
+                payments: [
                   {
-                    key: 'text',
-                    label: 'Semester fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'text',
-                    required: 'require'
+                    value: "Semester",
+                    label: "Semester",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Semester fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'text',
+                    value: "Yearly",
+                    label: "Yearly",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Yearly Fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'text',
-                  },
+                    value: "Fullfees",
+                    label: "Fullfees",
+                    "paymentType": [
+                      {
+                        key: "text",
+                        label: "Full fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
+                  }
                 ]
               },
               {
-                value: "Yearly",
-                label: "Yearly",
-                paymentType: [
+                value: "Credit Transfer",
+                label: "Credit Transfer",
+                payments: [
                   {
-                    key: 'text',
-                    label: 'Yearly Fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'text',
-                    required: 'require'
-                  },
-                  {
-                    key: 'text',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'text',
-                  },
-                  {
-                    key: 'text',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'text',
-                  },
+                    value: "Fullfees",
+                    label: "Fullfees",
+                    "paymentType": [
+                      {
+                        key: "text",
+                        label: "Full fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
+                  }
                 ]
               },
               {
-                value: "Fullfees",
-                label: "Fullfees",
-                paymentType: [
+                value: "LATERAL ENTRY",
+                label: "LATERAL ENTRY",
+                payments: [
                   {
-                    key: 'text',
-                    label: 'Full fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'text',
-                    required: 'require'
+                    value: "Semester",
+                    label: "Semester",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Semester fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'text',
+                    value: "Yearly",
+                    label: "Yearly",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Yearly Fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'text',
-                  },
+                    value: "Fullfees",
+                    label: "Fullfees",
+                    "paymentType": [
+                      {
+                        key: "text",
+                        label: "Full fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
+                  }
                 ]
-              }
+              },
             ]
           },
           {
@@ -15617,14 +16702,14 @@ const formData = [
             type: 'tel',
             required: 'require'
           },
-       {
+          {
             key: 'tel',
             label: 'Alternate number',
             name: ['contact', 'alternate_phone'],
             place: 'Enter Alternate Number',
             id: 'alternate',
             type: 'tel',
-           required: 'require'
+            required: 'require'
           },
           {
             key: 'text',
@@ -15671,18 +16756,6 @@ const formData = [
 
           },
           {
-            key: 'select',
-            label: 'Admission Type',
-            name: ['customfields', 'admission_type'],
-            id: 'SessionType',
-            place: 'Enter Admission Type',
-            type: 'select',
-            options: [{ value: 'FRESH', label: 'FRESH' },
-              { value: 'Credit Transfer', label: 'Credit Transfer' },
-            { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
-          },
-
-          {
             key: 'date',
             label: 'Date of Birth',
             name: ['customfields', 'dob'],
@@ -15703,28 +16776,7 @@ const formData = [
             { value: 'Female', label: 'Female' },
             { value: 'Other', label: 'Other' }],
           },
-          {
-            key: 'select',
-            label: 'Installment Type',
-            id: 'InstallmentType',
-            name: ['customfields', 'installment_type'],
-            place: 'Installment Type',
-            type: 'select',
-            required: 'require',
 
-            options: [
-              { value: '1st Installment', label: '1st Installment' },
-              { value: '2nd Installment', label: '2nd Installment' },
-              { value: '3rd Installment', label: '3rd Installment' },
-              { value: '4th Installment', label: '4th Installment' },
-              { value: '5th Installment', label: '5th Installment' },
-              { value: '6th Installment', label: '6th Installment' },
-              { value: '7th Installment', label: '7th Installment' },
-              { value: '8th Installment', label: '8th Installment' },
-              { value: '9th Installment', label: '9th Installment' },
-              { value: '10th Installment', label: '10th Installment' },
-            ],
-          },
           {
             key: 'select ',
             label: 'Payment mode ',
@@ -15739,23 +16791,7 @@ const formData = [
             { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
-          {
-            key: 'select ',
-            label: 'Status',
-            name: ['customfields', 'status'],
-            id: 'status ',
-            type: 'select',
-            place: 'select status',
-            required: 'require',
 
-            options: [
-              { value: 'New', label: 'New' },
-              { value: 'Approved', label: 'Approved' },
-              { value: 'Enrolled', label: 'Enrolled' },
-              { value: 'Alumini', label: 'Alumini' },
-              { value: 'Cancel', label: 'Cancel' },
-            ],
-          },
           {
             key: 'textarea',
             label: 'Remark',
@@ -15778,7 +16814,7 @@ const formData = [
             id: 'studentDocument',
             type: 'file',
           },
-          
+
         ],
       },
       {
@@ -15786,7 +16822,7 @@ const formData = [
         label: 'MANIPAL',
         name: ['customfields', 'university_name'],
         value: 'MANIPAL',
-        fields: [
+      fields: [
           {
             courses: [
               {
@@ -15802,27 +16838,27 @@ const formData = [
                 label: "BA",
                 specializations: [
                   { value: "General", label: "General" },
-                  { "value": "Education", "label": "Education" },
-                  { "value": "English", "label": "English" },
-                  { "value": "Journlsim & Mass Communication", label: "Journlsim & Mass Communication" },
-                  { "value": "Economics", "label": "Economics" },
-                  { "value": "History", "label": "History" },
-                  { "value": "Political science", "label": "Political science" },
-                  { "value": "Sociology", "label": "Sociology" },
-                  { "value": "Journalism & Mass Communication", "label": "Journalism & Mass Communication" },
-                  { "value": "Public Administration", "label": "Public Administration" },
-                  { "value": "Psychology", "label": "Psychology" },
-                  { "value": "Hindi", "label": "Hindi" },
-                  { "value": "Mathematics", "label": "Mathematics" },
-                  { "value": 'Geography', label: 'Geography' },
+                  { value: "Education", label: "Education" },
+                  { value: "English", label: "English" },
+                  { value: "Journlsim & Mass Communication", label: "Journlsim & Mass Communication" },
+                  { value: "Economics", label: "Economics" },
+                  { value: "History", label: "History" },
+                  { value: "Political science", label: "Political science" },
+                  { value: "Sociology", label: "Sociology" },
+                  { value: "Journalism & Mass Communication", label: "Journalism & Mass Communication" },
+                  { value: "Public Administration", label: "Public Administration" },
+                  { value: "Psychology", label: "Psychology" },
+                  { value: "Hindi", label: "Hindi" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: 'Geography', label: 'Geography' },
                 ],
               },
               {
                 value: "BBA",
                 label: "BBA",
                 specializations: [
-                  { "value": "General", "label": "General" },
-                  { "value": "Education", "label": "Education" },
+                  { value: "General", label: "General" },
+                  { value: "Education", label: "Education" },
                   { value: "Marketing", label: "Marketing" },
                   { value: "Human Resource Management", label: "Human Resource Management" },
                   { value: "Finance", label: "Finance" },
@@ -16048,100 +17084,186 @@ const formData = [
             ]
           },
           {
-            payments: [
+            admission_type: [
               {
-                value: "Semester",
-                label: "Semester",
-                paymentType: [
+                value: "FRESH",
+                label: "FRESH",
+                payments: [
                   {
-                    key: 'text',
-                    label: 'Semester fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'text',
-                    required: 'require'
+                    value: "Semester",
+                    label: "Semester",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Semester fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'text',
+                    value: "Yearly",
+                    label: "Yearly",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Yearly Fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'text',
-                  },
+                    value: "Fullfees",
+                    label: "Fullfees",
+                    "paymentType": [
+                      {
+                        key: "text",
+                        label: "Full fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
+                  }
                 ]
               },
               {
-                value: "Yearly",
-                label: "Yearly",
-                paymentType: [
+                value: "Credit Transfer",
+                label: "Credit Transfer",
+                payments: [
                   {
-                    key: 'text',
-                    label: 'Yearly Fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'text',
-                    required: 'require'
-                  },
-                  {
-                    key: 'text',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'text',
-                  },
-                  {
-                    key: 'text',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'text',
-                  },
+                    value: "Fullfees",
+                    label: "Fullfees",
+                    "paymentType": [
+                      {
+                        key: "text",
+                        label: "Full fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
+                  }
                 ]
               },
               {
-                value: "Fullfees",
-                label: "Fullfees",
-                paymentType: [
+                value: "LATERAL ENTRY",
+                label: "LATERAL ENTRY",
+                payments: [
                   {
-                    key: 'text',
-                    label: 'Full fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'text',
-                    required: 'require'
+                    value: "Semester",
+                    label: "Semester",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Semester fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'text',
+                    value: "Yearly",
+                    label: "Yearly",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Yearly Fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'text',
-                  },
+                    value: "Fullfees",
+                    label: "Fullfees",
+                    "paymentType": [
+                      {
+                        key: "text",
+                        label: "Full fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
+                  }
                 ]
-              }
+              },
             ]
           },
           {
@@ -16180,14 +17302,14 @@ const formData = [
             type: 'tel',
             required: 'require'
           },
-       {
+          {
             key: 'tel',
             label: 'Alternate number',
             name: ['contact', 'alternate_phone'],
             place: 'Enter Alternate Number',
             id: 'alternate',
             type: 'tel',
-           required: 'require'
+            required: 'require'
           },
           {
             key: 'text',
@@ -16234,18 +17356,6 @@ const formData = [
 
           },
           {
-            key: 'select',
-            label: 'Admission Type',
-            name: ['customfields', 'admission_type'],
-            id: 'SessionType',
-            place: 'Enter Admission Type',
-            type: 'select',
-            options: [{ value: 'FRESH', label: 'FRESH' },
-              { value: 'Credit Transfer', label: 'Credit Transfer' },
-            { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
-          },
-
-          {
             key: 'date',
             label: 'Date of Birth',
             name: ['customfields', 'dob'],
@@ -16266,28 +17376,7 @@ const formData = [
             { value: 'Female', label: 'Female' },
             { value: 'Other', label: 'Other' }],
           },
-          {
-            key: 'select',
-            label: 'Installment Type',
-            id: 'InstallmentType',
-            name: ['customfields', 'installment_type'],
-            place: 'Installment Type',
-            type: 'select',
-            required: 'require',
 
-            options: [
-              { value: '1st Installment', label: '1st Installment' },
-              { value: '2nd Installment', label: '2nd Installment' },
-              { value: '3rd Installment', label: '3rd Installment' },
-              { value: '4th Installment', label: '4th Installment' },
-              { value: '5th Installment', label: '5th Installment' },
-              { value: '6th Installment', label: '6th Installment' },
-              { value: '7th Installment', label: '7th Installment' },
-              { value: '8th Installment', label: '8th Installment' },
-              { value: '9th Installment', label: '9th Installment' },
-              { value: '10th Installment', label: '10th Installment' },
-            ],
-          },
           {
             key: 'select ',
             label: 'Payment mode ',
@@ -16302,23 +17391,7 @@ const formData = [
             { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
-          {
-            key: 'select ',
-            label: 'Status',
-            name: ['customfields', 'status'],
-            id: 'status ',
-            type: 'select',
-            place: 'select status',
-            required: 'require',
 
-            options: [
-              { value: 'New', label: 'New' },
-              { value: 'Approved', label: 'Approved' },
-              { value: 'Enrolled', label: 'Enrolled' },
-              { value: 'Alumini', label: 'Alumini' },
-              { value: 'Cancel', label: 'Cancel' },
-            ],
-          },
           {
             key: 'textarea',
             label: 'Remark',
@@ -16341,7 +17414,7 @@ const formData = [
             id: 'studentDocument',
             type: 'file',
           },
-          
+
         ],
       },
       {
@@ -16349,7 +17422,7 @@ const formData = [
         label: 'SMU',
         name: ['customfields', 'university_name'],
         value: 'SMU',
-        fields: [
+      fields: [
           {
             courses: [
               {
@@ -16365,27 +17438,27 @@ const formData = [
                 label: "BA",
                 specializations: [
                   { value: "General", label: "General" },
-                  { "value": "Education", "label": "Education" },
-                  { "value": "English", "label": "English" },
-                  { "value": "Journlsim & Mass Communication", label: "Journlsim & Mass Communication" },
-                  { "value": "Economics", "label": "Economics" },
-                  { "value": "History", "label": "History" },
-                  { "value": "Political science", "label": "Political science" },
-                  { "value": "Sociology", "label": "Sociology" },
-                  { "value": "Journalism & Mass Communication", "label": "Journalism & Mass Communication" },
-                  { "value": "Public Administration", "label": "Public Administration" },
-                  { "value": "Psychology", "label": "Psychology" },
-                  { "value": "Hindi", "label": "Hindi" },
-                  { "value": "Mathematics", "label": "Mathematics" },
-                  { "value": 'Geography', label: 'Geography' },
+                  { value: "Education", label: "Education" },
+                  { value: "English", label: "English" },
+                  { value: "Journlsim & Mass Communication", label: "Journlsim & Mass Communication" },
+                  { value: "Economics", label: "Economics" },
+                  { value: "History", label: "History" },
+                  { value: "Political science", label: "Political science" },
+                  { value: "Sociology", label: "Sociology" },
+                  { value: "Journalism & Mass Communication", label: "Journalism & Mass Communication" },
+                  { value: "Public Administration", label: "Public Administration" },
+                  { value: "Psychology", label: "Psychology" },
+                  { value: "Hindi", label: "Hindi" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: 'Geography', label: 'Geography' },
                 ],
               },
               {
                 value: "BBA",
                 label: "BBA",
                 specializations: [
-                  { "value": "General", "label": "General" },
-                  { "value": "Education", "label": "Education" },
+                  { value: "General", label: "General" },
+                  { value: "Education", label: "Education" },
                   { value: "Marketing", label: "Marketing" },
                   { value: "Human Resource Management", label: "Human Resource Management" },
                   { value: "Finance", label: "Finance" },
@@ -16611,100 +17684,186 @@ const formData = [
             ]
           },
           {
-            payments: [
+            admission_type: [
               {
-                value: "Semester",
-                label: "Semester",
-                paymentType: [
+                value: "FRESH",
+                label: "FRESH",
+                payments: [
                   {
-                    key: 'text',
-                    label: 'Semester fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'text',
-                    required: 'require'
+                    value: "Semester",
+                    label: "Semester",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Semester fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'text',
+                    value: "Yearly",
+                    label: "Yearly",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Yearly Fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'text',
-                  },
+                    value: "Fullfees",
+                    label: "Fullfees",
+                    "paymentType": [
+                      {
+                        key: "text",
+                        label: "Full fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
+                  }
                 ]
               },
               {
-                value: "Yearly",
-                label: "Yearly",
-                paymentType: [
+                value: "Credit Transfer",
+                label: "Credit Transfer",
+                payments: [
                   {
-                    key: 'text',
-                    label: 'Yearly Fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'text',
-                    required: 'require'
-                  },
-                  {
-                    key: 'text',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'text',
-                  },
-                  {
-                    key: 'text',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'text',
-                  },
+                    value: "Fullfees",
+                    label: "Fullfees",
+                    "paymentType": [
+                      {
+                        key: "text",
+                        label: "Full fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
+                  }
                 ]
               },
               {
-                value: "Fullfees",
-                label: "Fullfees",
-                paymentType: [
+                value: "LATERAL ENTRY",
+                label: "LATERAL ENTRY",
+                payments: [
                   {
-                    key: 'text',
-                    label: 'Full fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'text',
-                    required: 'require'
+                    value: "Semester",
+                    label: "Semester",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Semester fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'text',
+                    value: "Yearly",
+                    label: "Yearly",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Yearly Fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'text',
-                  },
+                    value: "Fullfees",
+                    label: "Fullfees",
+                    "paymentType": [
+                      {
+                        key: "text",
+                        label: "Full fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
+                  }
                 ]
-              }
+              },
             ]
           },
           {
@@ -16743,14 +17902,14 @@ const formData = [
             type: 'tel',
             required: 'require'
           },
-       {
+          {
             key: 'tel',
             label: 'Alternate number',
             name: ['contact', 'alternate_phone'],
             place: 'Enter Alternate Number',
             id: 'alternate',
             type: 'tel',
-           required: 'require'
+            required: 'require'
           },
           {
             key: 'text',
@@ -16797,18 +17956,6 @@ const formData = [
 
           },
           {
-            key: 'select',
-            label: 'Admission Type',
-            name: ['customfields', 'admission_type'],
-            id: 'SessionType',
-            place: 'Enter Admission Type',
-            type: 'select',
-            options: [{ value: 'FRESH', label: 'FRESH' },
-              { value: 'Credit Transfer', label: 'Credit Transfer' },
-            { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
-          },
-
-          {
             key: 'date',
             label: 'Date of Birth',
             name: ['customfields', 'dob'],
@@ -16829,28 +17976,7 @@ const formData = [
             { value: 'Female', label: 'Female' },
             { value: 'Other', label: 'Other' }],
           },
-          {
-            key: 'select',
-            label: 'Installment Type',
-            id: 'InstallmentType',
-            name: ['customfields', 'installment_type'],
-            place: 'Installment Type',
-            type: 'select',
-            required: 'require',
 
-            options: [
-              { value: '1st Installment', label: '1st Installment' },
-              { value: '2nd Installment', label: '2nd Installment' },
-              { value: '3rd Installment', label: '3rd Installment' },
-              { value: '4th Installment', label: '4th Installment' },
-              { value: '5th Installment', label: '5th Installment' },
-              { value: '6th Installment', label: '6th Installment' },
-              { value: '7th Installment', label: '7th Installment' },
-              { value: '8th Installment', label: '8th Installment' },
-              { value: '9th Installment', label: '9th Installment' },
-              { value: '10th Installment', label: '10th Installment' },
-            ],
-          },
           {
             key: 'select ',
             label: 'Payment mode ',
@@ -16865,23 +17991,7 @@ const formData = [
             { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
-          {
-            key: 'select ',
-            label: 'Status',
-            name: ['customfields', 'status'],
-            id: 'status ',
-            type: 'select',
-            place: 'select status',
-            required: 'require',
 
-            options: [
-              { value: 'New', label: 'New' },
-              { value: 'Approved', label: 'Approved' },
-              { value: 'Enrolled', label: 'Enrolled' },
-              { value: 'Alumini', label: 'Alumini' },
-              { value: 'Cancel', label: 'Cancel' },
-            ],
-          },
           {
             key: 'textarea',
             label: 'Remark',
@@ -16904,7 +18014,7 @@ const formData = [
             id: 'studentDocument',
             type: 'file',
           },
-          
+
         ],
       },
       {
@@ -16912,7 +18022,7 @@ const formData = [
         label: 'HU',
         name: ['customfields', 'university_name'],
         value: 'HU',
-        fields: [
+      fields: [
           {
             courses: [
               {
@@ -16928,27 +18038,27 @@ const formData = [
                 label: "BA",
                 specializations: [
                   { value: "General", label: "General" },
-                  { "value": "Education", "label": "Education" },
-                  { "value": "English", "label": "English" },
-                  { "value": "Journlsim & Mass Communication", label: "Journlsim & Mass Communication" },
-                  { "value": "Economics", "label": "Economics" },
-                  { "value": "History", "label": "History" },
-                  { "value": "Political science", "label": "Political science" },
-                  { "value": "Sociology", "label": "Sociology" },
-                  { "value": "Journalism & Mass Communication", "label": "Journalism & Mass Communication" },
-                  { "value": "Public Administration", "label": "Public Administration" },
-                  { "value": "Psychology", "label": "Psychology" },
-                  { "value": "Hindi", "label": "Hindi" },
-                  { "value": "Mathematics", "label": "Mathematics" },
-                  { "value": 'Geography', label: 'Geography' },
+                  { value: "Education", label: "Education" },
+                  { value: "English", label: "English" },
+                  { value: "Journlsim & Mass Communication", label: "Journlsim & Mass Communication" },
+                  { value: "Economics", label: "Economics" },
+                  { value: "History", label: "History" },
+                  { value: "Political science", label: "Political science" },
+                  { value: "Sociology", label: "Sociology" },
+                  { value: "Journalism & Mass Communication", label: "Journalism & Mass Communication" },
+                  { value: "Public Administration", label: "Public Administration" },
+                  { value: "Psychology", label: "Psychology" },
+                  { value: "Hindi", label: "Hindi" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: 'Geography', label: 'Geography' },
                 ],
               },
               {
                 value: "BBA",
                 label: "BBA",
                 specializations: [
-                  { "value": "General", "label": "General" },
-                  { "value": "Education", "label": "Education" },
+                  { value: "General", label: "General" },
+                  { value: "Education", label: "Education" },
                   { value: "Marketing", label: "Marketing" },
                   { value: "Human Resource Management", label: "Human Resource Management" },
                   { value: "Finance", label: "Finance" },
@@ -17174,100 +18284,186 @@ const formData = [
             ]
           },
           {
-            payments: [
+            admission_type: [
               {
-                value: "Semester",
-                label: "Semester",
-                paymentType: [
+                value: "FRESH",
+                label: "FRESH",
+                payments: [
                   {
-                    key: 'text',
-                    label: 'Semester fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'text',
-                    required: 'require'
+                    value: "Semester",
+                    label: "Semester",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Semester fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'text',
+                    value: "Yearly",
+                    label: "Yearly",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Yearly Fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'text',
-                  },
+                    value: "Fullfees",
+                    label: "Fullfees",
+                    "paymentType": [
+                      {
+                        key: "text",
+                        label: "Full fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
+                  }
                 ]
               },
               {
-                value: "Yearly",
-                label: "Yearly",
-                paymentType: [
+                value: "Credit Transfer",
+                label: "Credit Transfer",
+                payments: [
                   {
-                    key: 'text',
-                    label: 'Yearly Fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'text',
-                    required: 'require'
-                  },
-                  {
-                    key: 'text',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'text',
-                  },
-                  {
-                    key: 'text',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'text',
-                  },
+                    value: "Fullfees",
+                    label: "Fullfees",
+                    "paymentType": [
+                      {
+                        key: "text",
+                        label: "Full fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
+                  }
                 ]
               },
               {
-                value: "Fullfees",
-                label: "Fullfees",
-                paymentType: [
+                value: "LATERAL ENTRY",
+                label: "LATERAL ENTRY",
+                payments: [
                   {
-                    key: 'text',
-                    label: 'Full fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'text',
-                    required: 'require'
+                    value: "Semester",
+                    label: "Semester",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Semester fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'text',
+                    value: "Yearly",
+                    label: "Yearly",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Yearly Fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'text',
-                  },
+                    value: "Fullfees",
+                    label: "Fullfees",
+                    "paymentType": [
+                      {
+                        key: "text",
+                        label: "Full fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
+                  }
                 ]
-              }
+              },
             ]
           },
           {
@@ -17306,14 +18502,14 @@ const formData = [
             type: 'tel',
             required: 'require'
           },
-       {
+          {
             key: 'tel',
             label: 'Alternate number',
             name: ['contact', 'alternate_phone'],
             place: 'Enter Alternate Number',
             id: 'alternate',
             type: 'tel',
-           required: 'require'
+            required: 'require'
           },
           {
             key: 'text',
@@ -17360,18 +18556,6 @@ const formData = [
 
           },
           {
-            key: 'select',
-            label: 'Admission Type',
-            name: ['customfields', 'admission_type'],
-            id: 'SessionType',
-            place: 'Enter Admission Type',
-            type: 'select',
-            options: [{ value: 'FRESH', label: 'FRESH' },
-              { value: 'Credit Transfer', label: 'Credit Transfer' },
-            { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
-          },
-
-          {
             key: 'date',
             label: 'Date of Birth',
             name: ['customfields', 'dob'],
@@ -17392,28 +18576,7 @@ const formData = [
             { value: 'Female', label: 'Female' },
             { value: 'Other', label: 'Other' }],
           },
-          {
-            key: 'select',
-            label: 'Installment Type',
-            id: 'InstallmentType',
-            name: ['customfields', 'installment_type'],
-            place: 'Installment Type',
-            type: 'select',
-            required: 'require',
 
-            options: [
-              { value: '1st Installment', label: '1st Installment' },
-              { value: '2nd Installment', label: '2nd Installment' },
-              { value: '3rd Installment', label: '3rd Installment' },
-              { value: '4th Installment', label: '4th Installment' },
-              { value: '5th Installment', label: '5th Installment' },
-              { value: '6th Installment', label: '6th Installment' },
-              { value: '7th Installment', label: '7th Installment' },
-              { value: '8th Installment', label: '8th Installment' },
-              { value: '9th Installment', label: '9th Installment' },
-              { value: '10th Installment', label: '10th Installment' },
-            ],
-          },
           {
             key: 'select ',
             label: 'Payment mode ',
@@ -17428,23 +18591,7 @@ const formData = [
             { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
-          {
-            key: 'select ',
-            label: 'Status',
-            name: ['customfields', 'status'],
-            id: 'status ',
-            type: 'select',
-            place: 'select status',
-            required: 'require',
 
-            options: [
-              { value: 'New', label: 'New' },
-              { value: 'Approved', label: 'Approved' },
-              { value: 'Enrolled', label: 'Enrolled' },
-              { value: 'Alumini', label: 'Alumini' },
-              { value: 'Cancel', label: 'Cancel' },
-            ],
-          },
           {
             key: 'textarea',
             label: 'Remark',
@@ -17467,7 +18614,7 @@ const formData = [
             id: 'studentDocument',
             type: 'file',
           },
-          
+
         ],
       },
       {
@@ -17475,7 +18622,7 @@ const formData = [
         label: 'BOSSE',
         name: ['customfields', 'university_name'],
         value: 'BOSSE',
-        fields: [
+      fields: [
           {
             courses: [
               {
@@ -17491,27 +18638,27 @@ const formData = [
                 label: "BA",
                 specializations: [
                   { value: "General", label: "General" },
-                  { "value": "Education", "label": "Education" },
-                  { "value": "English", "label": "English" },
-                  { "value": "Journlsim & Mass Communication", label: "Journlsim & Mass Communication" },
-                  { "value": "Economics", "label": "Economics" },
-                  { "value": "History", "label": "History" },
-                  { "value": "Political science", "label": "Political science" },
-                  { "value": "Sociology", "label": "Sociology" },
-                  { "value": "Journalism & Mass Communication", "label": "Journalism & Mass Communication" },
-                  { "value": "Public Administration", "label": "Public Administration" },
-                  { "value": "Psychology", "label": "Psychology" },
-                  { "value": "Hindi", "label": "Hindi" },
-                  { "value": "Mathematics", "label": "Mathematics" },
-                  { "value": 'Geography', label: 'Geography' },
+                  { value: "Education", label: "Education" },
+                  { value: "English", label: "English" },
+                  { value: "Journlsim & Mass Communication", label: "Journlsim & Mass Communication" },
+                  { value: "Economics", label: "Economics" },
+                  { value: "History", label: "History" },
+                  { value: "Political science", label: "Political science" },
+                  { value: "Sociology", label: "Sociology" },
+                  { value: "Journalism & Mass Communication", label: "Journalism & Mass Communication" },
+                  { value: "Public Administration", label: "Public Administration" },
+                  { value: "Psychology", label: "Psychology" },
+                  { value: "Hindi", label: "Hindi" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: 'Geography', label: 'Geography' },
                 ],
               },
               {
                 value: "BBA",
                 label: "BBA",
                 specializations: [
-                  { "value": "General", "label": "General" },
-                  { "value": "Education", "label": "Education" },
+                  { value: "General", label: "General" },
+                  { value: "Education", label: "Education" },
                   { value: "Marketing", label: "Marketing" },
                   { value: "Human Resource Management", label: "Human Resource Management" },
                   { value: "Finance", label: "Finance" },
@@ -17737,100 +18884,186 @@ const formData = [
             ]
           },
           {
-            payments: [
+            admission_type: [
               {
-                value: "Semester",
-                label: "Semester",
-                paymentType: [
+                value: "FRESH",
+                label: "FRESH",
+                payments: [
                   {
-                    key: 'text',
-                    label: 'Semester fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'text',
-                    required: 'require'
+                    value: "Semester",
+                    label: "Semester",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Semester fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'text',
+                    value: "Yearly",
+                    label: "Yearly",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Yearly Fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'text',
-                  },
+                    value: "Fullfees",
+                    label: "Fullfees",
+                    "paymentType": [
+                      {
+                        key: "text",
+                        label: "Full fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
+                  }
                 ]
               },
               {
-                value: "Yearly",
-                label: "Yearly",
-                paymentType: [
+                value: "Credit Transfer",
+                label: "Credit Transfer",
+                payments: [
                   {
-                    key: 'text',
-                    label: 'Yearly Fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'text',
-                    required: 'require'
-                  },
-                  {
-                    key: 'text',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'text',
-                  },
-                  {
-                    key: 'text',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'text',
-                  },
+                    value: "Fullfees",
+                    label: "Fullfees",
+                    "paymentType": [
+                      {
+                        key: "text",
+                        label: "Full fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
+                  }
                 ]
               },
               {
-                value: "Fullfees",
-                label: "Fullfees",
-                paymentType: [
+                value: "LATERAL ENTRY",
+                label: "LATERAL ENTRY",
+                payments: [
                   {
-                    key: 'text',
-                    label: 'Full fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'text',
-                    required: 'require'
+                    value: "Semester",
+                    label: "Semester",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Semester fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'text',
+                    value: "Yearly",
+                    label: "Yearly",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Yearly Fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'text',
-                  },
+                    value: "Fullfees",
+                    label: "Fullfees",
+                    "paymentType": [
+                      {
+                        key: "text",
+                        label: "Full fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
+                  }
                 ]
-              }
+              },
             ]
           },
           {
@@ -17869,14 +19102,14 @@ const formData = [
             type: 'tel',
             required: 'require'
           },
-       {
+          {
             key: 'tel',
             label: 'Alternate number',
             name: ['contact', 'alternate_phone'],
             place: 'Enter Alternate Number',
             id: 'alternate',
             type: 'tel',
-           required: 'require'
+            required: 'require'
           },
           {
             key: 'text',
@@ -17923,18 +19156,6 @@ const formData = [
 
           },
           {
-            key: 'select',
-            label: 'Admission Type',
-            name: ['customfields', 'admission_type'],
-            id: 'SessionType',
-            place: 'Enter Admission Type',
-            type: 'select',
-            options: [{ value: 'FRESH', label: 'FRESH' },
-              { value: 'Credit Transfer', label: 'Credit Transfer' },
-            { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
-          },
-
-          {
             key: 'date',
             label: 'Date of Birth',
             name: ['customfields', 'dob'],
@@ -17955,28 +19176,7 @@ const formData = [
             { value: 'Female', label: 'Female' },
             { value: 'Other', label: 'Other' }],
           },
-          {
-            key: 'select',
-            label: 'Installment Type',
-            id: 'InstallmentType',
-            name: ['customfields', 'installment_type'],
-            place: 'Installment Type',
-            type: 'select',
-            required: 'require',
 
-            options: [
-              { value: '1st Installment', label: '1st Installment' },
-              { value: '2nd Installment', label: '2nd Installment' },
-              { value: '3rd Installment', label: '3rd Installment' },
-              { value: '4th Installment', label: '4th Installment' },
-              { value: '5th Installment', label: '5th Installment' },
-              { value: '6th Installment', label: '6th Installment' },
-              { value: '7th Installment', label: '7th Installment' },
-              { value: '8th Installment', label: '8th Installment' },
-              { value: '9th Installment', label: '9th Installment' },
-              { value: '10th Installment', label: '10th Installment' },
-            ],
-          },
           {
             key: 'select ',
             label: 'Payment mode ',
@@ -17991,23 +19191,7 @@ const formData = [
             { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
-          {
-            key: 'select ',
-            label: 'Status',
-            name: ['customfields', 'status'],
-            id: 'status ',
-            type: 'select',
-            place: 'select status',
-            required: 'require',
 
-            options: [
-              { value: 'New', label: 'New' },
-              { value: 'Approved', label: 'Approved' },
-              { value: 'Enrolled', label: 'Enrolled' },
-              { value: 'Alumini', label: 'Alumini' },
-              { value: 'Cancel', label: 'Cancel' },
-            ],
-          },
           {
             key: 'textarea',
             label: 'Remark',
@@ -18030,7 +19214,7 @@ const formData = [
             id: 'studentDocument',
             type: 'file',
           },
-          
+
         ],
       },
 
@@ -18039,7 +19223,7 @@ const formData = [
         label: 'UU',
         name: ['customfields', 'university_name'],
         value: 'UU',
-        fields: [
+      fields: [
           {
             courses: [
               {
@@ -18055,27 +19239,27 @@ const formData = [
                 label: "BA",
                 specializations: [
                   { value: "General", label: "General" },
-                  { "value": "Education", "label": "Education" },
-                  { "value": "English", "label": "English" },
-                  { "value": "Journlsim & Mass Communication", label: "Journlsim & Mass Communication" },
-                  { "value": "Economics", "label": "Economics" },
-                  { "value": "History", "label": "History" },
-                  { "value": "Political science", "label": "Political science" },
-                  { "value": "Sociology", "label": "Sociology" },
-                  { "value": "Journalism & Mass Communication", "label": "Journalism & Mass Communication" },
-                  { "value": "Public Administration", "label": "Public Administration" },
-                  { "value": "Psychology", "label": "Psychology" },
-                  { "value": "Hindi", "label": "Hindi" },
-                  { "value": "Mathematics", "label": "Mathematics" },
-                  { "value": 'Geography', label: 'Geography' },
+                  { value: "Education", label: "Education" },
+                  { value: "English", label: "English" },
+                  { value: "Journlsim & Mass Communication", label: "Journlsim & Mass Communication" },
+                  { value: "Economics", label: "Economics" },
+                  { value: "History", label: "History" },
+                  { value: "Political science", label: "Political science" },
+                  { value: "Sociology", label: "Sociology" },
+                  { value: "Journalism & Mass Communication", label: "Journalism & Mass Communication" },
+                  { value: "Public Administration", label: "Public Administration" },
+                  { value: "Psychology", label: "Psychology" },
+                  { value: "Hindi", label: "Hindi" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: 'Geography', label: 'Geography' },
                 ],
               },
               {
                 value: "BBA",
                 label: "BBA",
                 specializations: [
-                  { "value": "General", "label": "General" },
-                  { "value": "Education", "label": "Education" },
+                  { value: "General", label: "General" },
+                  { value: "Education", label: "Education" },
                   { value: "Marketing", label: "Marketing" },
                   { value: "Human Resource Management", label: "Human Resource Management" },
                   { value: "Finance", label: "Finance" },
@@ -18301,100 +19485,186 @@ const formData = [
             ]
           },
           {
-            payments: [
+            admission_type: [
               {
-                value: "Semester",
-                label: "Semester",
-                paymentType: [
+                value: "FRESH",
+                label: "FRESH",
+                payments: [
                   {
-                    key: 'text',
-                    label: 'Semester fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'text',
-                    required: 'require'
+                    value: "Semester",
+                    label: "Semester",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Semester fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'text',
+                    value: "Yearly",
+                    label: "Yearly",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Yearly Fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'text',
-                  },
+                    value: "Fullfees",
+                    label: "Fullfees",
+                    "paymentType": [
+                      {
+                        key: "text",
+                        label: "Full fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
+                  }
                 ]
               },
               {
-                value: "Yearly",
-                label: "Yearly",
-                paymentType: [
+                value: "Credit Transfer",
+                label: "Credit Transfer",
+                payments: [
                   {
-                    key: 'text',
-                    label: 'Yearly Fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'text',
-                    required: 'require'
-                  },
-                  {
-                    key: 'text',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'text',
-                  },
-                  {
-                    key: 'text',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'text',
-                  },
+                    value: "Fullfees",
+                    label: "Fullfees",
+                    "paymentType": [
+                      {
+                        key: "text",
+                        label: "Full fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
+                  }
                 ]
               },
               {
-                value: "Fullfees",
-                label: "Fullfees",
-                paymentType: [
+                value: "LATERAL ENTRY",
+                label: "LATERAL ENTRY",
+                payments: [
                   {
-                    key: 'text',
-                    label: 'Full fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'text',
-                    required: 'require'
+                    value: "Semester",
+                    label: "Semester",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Semester fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'text',
+                    value: "Yearly",
+                    label: "Yearly",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Yearly Fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'text',
-                  },
+                    value: "Fullfees",
+                    label: "Fullfees",
+                    "paymentType": [
+                      {
+                        key: "text",
+                        label: "Full fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
+                  }
                 ]
-              }
+              },
             ]
           },
           {
@@ -18433,14 +19703,14 @@ const formData = [
             type: 'tel',
             required: 'require'
           },
-       {
+          {
             key: 'tel',
             label: 'Alternate number',
             name: ['contact', 'alternate_phone'],
             place: 'Enter Alternate Number',
             id: 'alternate',
             type: 'tel',
-           required: 'require'
+            required: 'require'
           },
           {
             key: 'text',
@@ -18487,18 +19757,6 @@ const formData = [
 
           },
           {
-            key: 'select',
-            label: 'Admission Type',
-            name: ['customfields', 'admission_type'],
-            id: 'SessionType',
-            place: 'Enter Admission Type',
-            type: 'select',
-            options: [{ value: 'FRESH', label: 'FRESH' },
-              { value: 'Credit Transfer', label: 'Credit Transfer' },
-            { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
-          },
-
-          {
             key: 'date',
             label: 'Date of Birth',
             name: ['customfields', 'dob'],
@@ -18519,28 +19777,7 @@ const formData = [
             { value: 'Female', label: 'Female' },
             { value: 'Other', label: 'Other' }],
           },
-          {
-            key: 'select',
-            label: 'Installment Type',
-            id: 'InstallmentType',
-            name: ['customfields', 'installment_type'],
-            place: 'Installment Type',
-            type: 'select',
-            required: 'require',
 
-            options: [
-              { value: '1st Installment', label: '1st Installment' },
-              { value: '2nd Installment', label: '2nd Installment' },
-              { value: '3rd Installment', label: '3rd Installment' },
-              { value: '4th Installment', label: '4th Installment' },
-              { value: '5th Installment', label: '5th Installment' },
-              { value: '6th Installment', label: '6th Installment' },
-              { value: '7th Installment', label: '7th Installment' },
-              { value: '8th Installment', label: '8th Installment' },
-              { value: '9th Installment', label: '9th Installment' },
-              { value: '10th Installment', label: '10th Installment' },
-            ],
-          },
           {
             key: 'select ',
             label: 'Payment mode ',
@@ -18555,23 +19792,7 @@ const formData = [
             { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
-          {
-            key: 'select ',
-            label: 'Status',
-            name: ['customfields', 'status'],
-            id: 'status ',
-            type: 'select',
-            place: 'select status',
-            required: 'require',
 
-            options: [
-              { value: 'New', label: 'New' },
-              { value: 'Approved', label: 'Approved' },
-              { value: 'Enrolled', label: 'Enrolled' },
-              { value: 'Alumini', label: 'Alumini' },
-              { value: 'Cancel', label: 'Cancel' },
-            ],
-          },
           {
             key: 'textarea',
             label: 'Remark',
@@ -18594,7 +19815,7 @@ const formData = [
             id: 'studentDocument',
             type: 'file',
           },
-          
+
         ],
       },
       {
@@ -18602,7 +19823,7 @@ const formData = [
         label: 'UPES',
         name: ['customfields', 'university_name'],
         value: 'UPES',
-        fields: [
+      fields: [
           {
             courses: [
               {
@@ -18618,27 +19839,27 @@ const formData = [
                 label: "BA",
                 specializations: [
                   { value: "General", label: "General" },
-                  { "value": "Education", "label": "Education" },
-                  { "value": "English", "label": "English" },
-                  { "value": "Journlsim & Mass Communication", label: "Journlsim & Mass Communication" },
-                  { "value": "Economics", "label": "Economics" },
-                  { "value": "History", "label": "History" },
-                  { "value": "Political science", "label": "Political science" },
-                  { "value": "Sociology", "label": "Sociology" },
-                  { "value": "Journalism & Mass Communication", "label": "Journalism & Mass Communication" },
-                  { "value": "Public Administration", "label": "Public Administration" },
-                  { "value": "Psychology", "label": "Psychology" },
-                  { "value": "Hindi", "label": "Hindi" },
-                  { "value": "Mathematics", "label": "Mathematics" },
-                  { "value": 'Geography', label: 'Geography' },
+                  { value: "Education", label: "Education" },
+                  { value: "English", label: "English" },
+                  { value: "Journlsim & Mass Communication", label: "Journlsim & Mass Communication" },
+                  { value: "Economics", label: "Economics" },
+                  { value: "History", label: "History" },
+                  { value: "Political science", label: "Political science" },
+                  { value: "Sociology", label: "Sociology" },
+                  { value: "Journalism & Mass Communication", label: "Journalism & Mass Communication" },
+                  { value: "Public Administration", label: "Public Administration" },
+                  { value: "Psychology", label: "Psychology" },
+                  { value: "Hindi", label: "Hindi" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: 'Geography', label: 'Geography' },
                 ],
               },
               {
                 value: "BBA",
                 label: "BBA",
                 specializations: [
-                  { "value": "General", "label": "General" },
-                  { "value": "Education", "label": "Education" },
+                  { value: "General", label: "General" },
+                  { value: "Education", label: "Education" },
                   { value: "Marketing", label: "Marketing" },
                   { value: "Human Resource Management", label: "Human Resource Management" },
                   { value: "Finance", label: "Finance" },
@@ -18864,100 +20085,186 @@ const formData = [
             ]
           },
           {
-            payments: [
+            admission_type: [
               {
-                value: "Semester",
-                label: "Semester",
-                paymentType: [
+                value: "FRESH",
+                label: "FRESH",
+                payments: [
                   {
-                    key: 'text',
-                    label: 'Semester fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'text',
-                    required: 'require'
+                    value: "Semester",
+                    label: "Semester",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Semester fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'text',
+                    value: "Yearly",
+                    label: "Yearly",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Yearly Fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'text',
-                  },
+                    value: "Fullfees",
+                    label: "Fullfees",
+                    "paymentType": [
+                      {
+                        key: "text",
+                        label: "Full fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
+                  }
                 ]
               },
               {
-                value: "Yearly",
-                label: "Yearly",
-                paymentType: [
+                value: "Credit Transfer",
+                label: "Credit Transfer",
+                payments: [
                   {
-                    key: 'text',
-                    label: 'Yearly Fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'text',
-                    required: 'require'
-                  },
-                  {
-                    key: 'text',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'text',
-                  },
-                  {
-                    key: 'text',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'text',
-                  },
+                    value: "Fullfees",
+                    label: "Fullfees",
+                    "paymentType": [
+                      {
+                        key: "text",
+                        label: "Full fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
+                  }
                 ]
               },
               {
-                value: "Fullfees",
-                label: "Fullfees",
-                paymentType: [
+                value: "LATERAL ENTRY",
+                label: "LATERAL ENTRY",
+                payments: [
                   {
-                    key: 'text',
-                    label: 'Full fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'text',
-                    required: 'require'
+                    value: "Semester",
+                    label: "Semester",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Semester fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'text',
+                    value: "Yearly",
+                    label: "Yearly",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Yearly Fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'text',
-                  },
+                    value: "Fullfees",
+                    label: "Fullfees",
+                    "paymentType": [
+                      {
+                        key: "text",
+                        label: "Full fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
+                  }
                 ]
-              }
+              },
             ]
           },
           {
@@ -18996,14 +20303,14 @@ const formData = [
             type: 'tel',
             required: 'require'
           },
-       {
+          {
             key: 'tel',
             label: 'Alternate number',
             name: ['contact', 'alternate_phone'],
             place: 'Enter Alternate Number',
             id: 'alternate',
             type: 'tel',
-           required: 'require'
+            required: 'require'
           },
           {
             key: 'text',
@@ -19050,18 +20357,6 @@ const formData = [
 
           },
           {
-            key: 'select',
-            label: 'Admission Type',
-            name: ['customfields', 'admission_type'],
-            id: 'SessionType',
-            place: 'Enter Admission Type',
-            type: 'select',
-            options: [{ value: 'FRESH', label: 'FRESH' },
-              { value: 'Credit Transfer', label: 'Credit Transfer' },
-            { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
-          },
-
-          {
             key: 'date',
             label: 'Date of Birth',
             name: ['customfields', 'dob'],
@@ -19082,28 +20377,7 @@ const formData = [
             { value: 'Female', label: 'Female' },
             { value: 'Other', label: 'Other' }],
           },
-          {
-            key: 'select',
-            label: 'Installment Type',
-            id: 'InstallmentType',
-            name: ['customfields', 'installment_type'],
-            place: 'Installment Type',
-            type: 'select',
-            required: 'require',
 
-            options: [
-              { value: '1st Installment', label: '1st Installment' },
-              { value: '2nd Installment', label: '2nd Installment' },
-              { value: '3rd Installment', label: '3rd Installment' },
-              { value: '4th Installment', label: '4th Installment' },
-              { value: '5th Installment', label: '5th Installment' },
-              { value: '6th Installment', label: '6th Installment' },
-              { value: '7th Installment', label: '7th Installment' },
-              { value: '8th Installment', label: '8th Installment' },
-              { value: '9th Installment', label: '9th Installment' },
-              { value: '10th Installment', label: '10th Installment' },
-            ],
-          },
           {
             key: 'select ',
             label: 'Payment mode ',
@@ -19118,23 +20392,7 @@ const formData = [
             { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
-          {
-            key: 'select ',
-            label: 'Status',
-            name: ['customfields', 'status'],
-            id: 'status ',
-            type: 'select',
-            place: 'select status',
-            required: 'require',
 
-            options: [
-              { value: 'New', label: 'New' },
-              { value: 'Approved', label: 'Approved' },
-              { value: 'Enrolled', label: 'Enrolled' },
-              { value: 'Alumini', label: 'Alumini' },
-              { value: 'Cancel', label: 'Cancel' },
-            ],
-          },
           {
             key: 'textarea',
             label: 'Remark',
@@ -19157,7 +20415,7 @@ const formData = [
             id: 'studentDocument',
             type: 'file',
           },
-          
+
         ],
       },
 
@@ -19166,7 +20424,7 @@ const formData = [
         label: 'MANGALAYATAN',
         name: ['customfields', 'university_name'],
         value: 'MANGALAYATAN',
-        fields: [
+      fields: [
           {
             courses: [
               {
@@ -19182,27 +20440,27 @@ const formData = [
                 label: "BA",
                 specializations: [
                   { value: "General", label: "General" },
-                  { "value": "Education", "label": "Education" },
-                  { "value": "English", "label": "English" },
-                  { "value": "Journlsim & Mass Communication", label: "Journlsim & Mass Communication" },
-                  { "value": "Economics", "label": "Economics" },
-                  { "value": "History", "label": "History" },
-                  { "value": "Political science", "label": "Political science" },
-                  { "value": "Sociology", "label": "Sociology" },
-                  { "value": "Journalism & Mass Communication", "label": "Journalism & Mass Communication" },
-                  { "value": "Public Administration", "label": "Public Administration" },
-                  { "value": "Psychology", "label": "Psychology" },
-                  { "value": "Hindi", "label": "Hindi" },
-                  { "value": "Mathematics", "label": "Mathematics" },
-                  { "value": 'Geography', label: 'Geography' },
+                  { value: "Education", label: "Education" },
+                  { value: "English", label: "English" },
+                  { value: "Journlsim & Mass Communication", label: "Journlsim & Mass Communication" },
+                  { value: "Economics", label: "Economics" },
+                  { value: "History", label: "History" },
+                  { value: "Political science", label: "Political science" },
+                  { value: "Sociology", label: "Sociology" },
+                  { value: "Journalism & Mass Communication", label: "Journalism & Mass Communication" },
+                  { value: "Public Administration", label: "Public Administration" },
+                  { value: "Psychology", label: "Psychology" },
+                  { value: "Hindi", label: "Hindi" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: 'Geography', label: 'Geography' },
                 ],
               },
               {
                 value: "BBA",
                 label: "BBA",
                 specializations: [
-                  { "value": "General", "label": "General" },
-                  { "value": "Education", "label": "Education" },
+                  { value: "General", label: "General" },
+                  { value: "Education", label: "Education" },
                   { value: "Marketing", label: "Marketing" },
                   { value: "Human Resource Management", label: "Human Resource Management" },
                   { value: "Finance", label: "Finance" },
@@ -19428,100 +20686,186 @@ const formData = [
             ]
           },
           {
-            payments: [
+            admission_type: [
               {
-                value: "Semester",
-                label: "Semester",
-                paymentType: [
+                value: "FRESH",
+                label: "FRESH",
+                payments: [
                   {
-                    key: 'text',
-                    label: 'Semester fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'text',
-                    required: 'require'
+                    value: "Semester",
+                    label: "Semester",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Semester fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'text',
+                    value: "Yearly",
+                    label: "Yearly",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Yearly Fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'text',
-                  },
+                    value: "Fullfees",
+                    label: "Fullfees",
+                    "paymentType": [
+                      {
+                        key: "text",
+                        label: "Full fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
+                  }
                 ]
               },
               {
-                value: "Yearly",
-                label: "Yearly",
-                paymentType: [
+                value: "Credit Transfer",
+                label: "Credit Transfer",
+                payments: [
                   {
-                    key: 'text',
-                    label: 'Yearly Fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'text',
-                    required: 'require'
-                  },
-                  {
-                    key: 'text',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'text',
-                  },
-                  {
-                    key: 'text',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'text',
-                  },
+                    value: "Fullfees",
+                    label: "Fullfees",
+                    "paymentType": [
+                      {
+                        key: "text",
+                        label: "Full fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
+                  }
                 ]
               },
               {
-                value: "Fullfees",
-                label: "Fullfees",
-                paymentType: [
+                value: "LATERAL ENTRY",
+                label: "LATERAL ENTRY",
+                payments: [
                   {
-                    key: 'text',
-                    label: 'Full fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'text',
-                    required: 'require'
+                    value: "Semester",
+                    label: "Semester",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Semester fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'text',
+                    value: "Yearly",
+                    label: "Yearly",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Yearly Fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'text',
-                  },
+                    value: "Fullfees",
+                    label: "Fullfees",
+                    "paymentType": [
+                      {
+                        key: "text",
+                        label: "Full fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
+                  }
                 ]
-              }
+              },
             ]
           },
           {
@@ -19560,14 +20904,14 @@ const formData = [
             type: 'tel',
             required: 'require'
           },
-       {
+          {
             key: 'tel',
             label: 'Alternate number',
             name: ['contact', 'alternate_phone'],
             place: 'Enter Alternate Number',
             id: 'alternate',
             type: 'tel',
-           required: 'require'
+            required: 'require'
           },
           {
             key: 'text',
@@ -19614,18 +20958,6 @@ const formData = [
 
           },
           {
-            key: 'select',
-            label: 'Admission Type',
-            name: ['customfields', 'admission_type'],
-            id: 'SessionType',
-            place: 'Enter Admission Type',
-            type: 'select',
-            options: [{ value: 'FRESH', label: 'FRESH' },
-              { value: 'Credit Transfer', label: 'Credit Transfer' },
-            { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
-          },
-
-          {
             key: 'date',
             label: 'Date of Birth',
             name: ['customfields', 'dob'],
@@ -19646,28 +20978,7 @@ const formData = [
             { value: 'Female', label: 'Female' },
             { value: 'Other', label: 'Other' }],
           },
-          {
-            key: 'select',
-            label: 'Installment Type',
-            id: 'InstallmentType',
-            name: ['customfields', 'installment_type'],
-            place: 'Installment Type',
-            type: 'select',
-            required: 'require',
 
-            options: [
-              { value: '1st Installment', label: '1st Installment' },
-              { value: '2nd Installment', label: '2nd Installment' },
-              { value: '3rd Installment', label: '3rd Installment' },
-              { value: '4th Installment', label: '4th Installment' },
-              { value: '5th Installment', label: '5th Installment' },
-              { value: '6th Installment', label: '6th Installment' },
-              { value: '7th Installment', label: '7th Installment' },
-              { value: '8th Installment', label: '8th Installment' },
-              { value: '9th Installment', label: '9th Installment' },
-              { value: '10th Installment', label: '10th Installment' },
-            ],
-          },
           {
             key: 'select ',
             label: 'Payment mode ',
@@ -19682,23 +20993,7 @@ const formData = [
             { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
-          {
-            key: 'select ',
-            label: 'Status',
-            name: ['customfields', 'status'],
-            id: 'status ',
-            type: 'select',
-            place: 'select status',
-            required: 'require',
 
-            options: [
-              { value: 'New', label: 'New' },
-              { value: 'Approved', label: 'Approved' },
-              { value: 'Enrolled', label: 'Enrolled' },
-              { value: 'Alumini', label: 'Alumini' },
-              { value: 'Cancel', label: 'Cancel' },
-            ],
-          },
           {
             key: 'textarea',
             label: 'Remark',
@@ -19721,7 +21016,7 @@ const formData = [
             id: 'studentDocument',
             type: 'file',
           },
-          
+
         ],
       },
       {
@@ -19729,7 +21024,7 @@ const formData = [
         label: 'MANGALAYATAN ONLINE',
         name: ['customfields', 'university_name'],
         value: 'MANGALAYATAN ONLINE',
-        fields: [
+      fields: [
           {
             courses: [
               {
@@ -19745,27 +21040,27 @@ const formData = [
                 label: "BA",
                 specializations: [
                   { value: "General", label: "General" },
-                  { "value": "Education", "label": "Education" },
-                  { "value": "English", "label": "English" },
-                  { "value": "Journlsim & Mass Communication", label: "Journlsim & Mass Communication" },
-                  { "value": "Economics", "label": "Economics" },
-                  { "value": "History", "label": "History" },
-                  { "value": "Political science", "label": "Political science" },
-                  { "value": "Sociology", "label": "Sociology" },
-                  { "value": "Journalism & Mass Communication", "label": "Journalism & Mass Communication" },
-                  { "value": "Public Administration", "label": "Public Administration" },
-                  { "value": "Psychology", "label": "Psychology" },
-                  { "value": "Hindi", "label": "Hindi" },
-                  { "value": "Mathematics", "label": "Mathematics" },
-                  { "value": 'Geography', label: 'Geography' },
+                  { value: "Education", label: "Education" },
+                  { value: "English", label: "English" },
+                  { value: "Journlsim & Mass Communication", label: "Journlsim & Mass Communication" },
+                  { value: "Economics", label: "Economics" },
+                  { value: "History", label: "History" },
+                  { value: "Political science", label: "Political science" },
+                  { value: "Sociology", label: "Sociology" },
+                  { value: "Journalism & Mass Communication", label: "Journalism & Mass Communication" },
+                  { value: "Public Administration", label: "Public Administration" },
+                  { value: "Psychology", label: "Psychology" },
+                  { value: "Hindi", label: "Hindi" },
+                  { value: "Mathematics", label: "Mathematics" },
+                  { value: 'Geography', label: 'Geography' },
                 ],
               },
               {
                 value: "BBA",
                 label: "BBA",
                 specializations: [
-                  { "value": "General", "label": "General" },
-                  { "value": "Education", "label": "Education" },
+                  { value: "General", label: "General" },
+                  { value: "Education", label: "Education" },
                   { value: "Marketing", label: "Marketing" },
                   { value: "Human Resource Management", label: "Human Resource Management" },
                   { value: "Finance", label: "Finance" },
@@ -19991,100 +21286,186 @@ const formData = [
             ]
           },
           {
-            payments: [
+            admission_type: [
               {
-                value: "Semester",
-                label: "Semester",
-                paymentType: [
+                value: "FRESH",
+                label: "FRESH",
+                payments: [
                   {
-                    key: 'text',
-                    label: 'Semester fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'text',
-                    required: 'require'
+                    value: "Semester",
+                    label: "Semester",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Semester fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'text',
+                    value: "Yearly",
+                    label: "Yearly",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Yearly Fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'text',
-                  },
+                    value: "Fullfees",
+                    label: "Fullfees",
+                    "paymentType": [
+                      {
+                        key: "text",
+                        label: "Full fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
+                  }
                 ]
               },
               {
-                value: "Yearly",
-                label: "Yearly",
-                paymentType: [
+                value: "Credit Transfer",
+                label: "Credit Transfer",
+                payments: [
                   {
-                    key: 'text',
-                    label: 'Yearly Fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'text',
-                    required: 'require'
-                  },
-                  {
-                    key: 'text',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'text',
-                  },
-                  {
-                    key: 'text',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'text',
-                  },
+                    value: "Fullfees",
+                    label: "Fullfees",
+                    "paymentType": [
+                      {
+                        key: "text",
+                        label: "Full fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
+                  }
                 ]
               },
               {
-                value: "Fullfees",
-                label: "Fullfees",
-                paymentType: [
+                value: "LATERAL ENTRY",
+                label: "LATERAL ENTRY",
+                payments: [
                   {
-                    key: 'text',
-                    label: 'Full fees',
-                    name: ['customfields', 'total_course_fee'],
-                    place: 'eg: 20000',
-                    id: 'Total Course Fee',
-                    type: 'text',
-                    required: 'require'
+                    value: "Semester",
+                    label: "Semester",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Semester fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Total Paid amount',
-                    place: 'eg: 20000',
-                    name: ['customfields', 'total_paid_amount'],
-                    id: 'Total Paid Amount',
-                    type: 'text',
+                    value: "Yearly",
+                    label: "Yearly",
+                    paymentType: [
+                      {
+                        key: "text",
+                        label: "Yearly Fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
                   },
                   {
-                    key: 'text',
-                    label: 'Paid Amount',
-                    name: ['customfields', 'paid_amount'],
-                    place: 'eg: 20000',
-                    id: 'Paid Amount',
-                    type: 'text',
-                  },
+                    value: "Fullfees",
+                    label: "Fullfees",
+                    "paymentType": [
+                      {
+                        key: "text",
+                        label: "Full fees",
+                        name: ["customfields", "total_course_fee"],
+                        place: "eg: 20000",
+                        id: "Total Course Fee",
+                        type: "text",
+                        required: "require"
+                      },
+                      {
+                        key: "text",
+                        label: "Paid Amount",
+                        name: ["customfields", "paid_amount"],
+                        place: "eg: 20000",
+                        id: "Paid Amount",
+                        type: "text"
+                      }
+                    ]
+                  }
                 ]
-              }
+              },
             ]
           },
           {
@@ -20123,14 +21504,14 @@ const formData = [
             type: 'tel',
             required: 'require'
           },
-       {
+          {
             key: 'tel',
             label: 'Alternate number',
             name: ['contact', 'alternate_phone'],
             place: 'Enter Alternate Number',
             id: 'alternate',
             type: 'tel',
-           required: 'require'
+            required: 'require'
           },
           {
             key: 'text',
@@ -20177,18 +21558,6 @@ const formData = [
 
           },
           {
-            key: 'select',
-            label: 'Admission Type',
-            name: ['customfields', 'admission_type'],
-            id: 'SessionType',
-            place: 'Enter Admission Type',
-            type: 'select',
-            options: [{ value: 'FRESH', label: 'FRESH' },
-              { value: 'Credit Transfer', label: 'Credit Transfer' },
-            { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }],
-          },
-
-          {
             key: 'date',
             label: 'Date of Birth',
             name: ['customfields', 'dob'],
@@ -20209,28 +21578,7 @@ const formData = [
             { value: 'Female', label: 'Female' },
             { value: 'Other', label: 'Other' }],
           },
-          {
-            key: 'select',
-            label: 'Installment Type',
-            id: 'InstallmentType',
-            name: ['customfields', 'installment_type'],
-            place: 'Installment Type',
-            type: 'select',
-            required: 'require',
 
-            options: [
-              { value: '1st Installment', label: '1st Installment' },
-              { value: '2nd Installment', label: '2nd Installment' },
-              { value: '3rd Installment', label: '3rd Installment' },
-              { value: '4th Installment', label: '4th Installment' },
-              { value: '5th Installment', label: '5th Installment' },
-              { value: '6th Installment', label: '6th Installment' },
-              { value: '7th Installment', label: '7th Installment' },
-              { value: '8th Installment', label: '8th Installment' },
-              { value: '9th Installment', label: '9th Installment' },
-              { value: '10th Installment', label: '10th Installment' },
-            ],
-          },
           {
             key: 'select ',
             label: 'Payment mode ',
@@ -20245,23 +21593,7 @@ const formData = [
             { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
-          {
-            key: 'select ',
-            label: 'Status',
-            name: ['customfields', 'status'],
-            id: 'status ',
-            type: 'select',
-            place: 'select status',
-            required: 'require',
 
-            options: [
-              { value: 'New', label: 'New' },
-              { value: 'Approved', label: 'Approved' },
-              { value: 'Enrolled', label: 'Enrolled' },
-              { value: 'Alumini', label: 'Alumini' },
-              { value: 'Cancel', label: 'Cancel' },
-            ],
-          },
           {
             key: 'textarea',
             label: 'Remark',
@@ -20284,7 +21616,7 @@ const formData = [
             id: 'studentDocument',
             type: 'file',
           },
-          
+
         ],
       },
     ],

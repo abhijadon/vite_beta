@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Form, Input, Button, Select, Upload, message } from 'antd';
+import { Form, Input, Button, Select, Upload, message, Radio } from 'antd';
 import axios from 'axios';
 import useLanguage from '@/locale/useLanguage';
-import { InboxOutlined } from '@ant-design/icons';
+import { InboxOutlined, CheckOutlined, CloseOutlined } from '@ant-design/icons';
 
 const UpdatePaymentForm = ({ entity, id, recordDetails, onCloseModal }) => {
     const [loading, setLoading] = useState(false);
@@ -48,7 +48,12 @@ const UpdatePaymentForm = ({ entity, id, recordDetails, onCloseModal }) => {
             formData.append('customfields[paid_amount]', values.customfields.paid_amount);
             formData.append('customfields[paymentStatus]', values.customfields.paymentStatus);
 
-            // Append existing images
+            formData.append(
+                'customfields[sendfeeReciept]',
+                values.customfields.sendfeeReciept === 'yes' ? 'Yes' : 'No'
+            );
+
+            // Append existing images 
             if (recordDetails && recordDetails.feeDocument) {
                 recordDetails.feeDocument.forEach((image) => {
                     formData.append('feeDocument', image);
@@ -282,6 +287,16 @@ const UpdatePaymentForm = ({ entity, id, recordDetails, onCloseModal }) => {
                 name={['customfields', 'paid_amount']}
             >
                 <Input />
+            </Form.Item>
+            <Form.Item
+                label="Send Fee Receipt"
+                name={['customfields', 'sendfeeReciept']}
+                rules={[{ required: true, message: 'Please select an option' }]}
+            >
+                <Radio.Group>
+                    <Radio value="yes">Yes</Radio>
+                    <Radio value="no">No</Radio>
+                </Radio.Group>
             </Form.Item>
             <Form.Item
                 label={translate('paymentStatus')}

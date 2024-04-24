@@ -22,9 +22,12 @@ export default function LeadForm() {
   const [selectedCourse, setSelectedCourse] = useState(null);
   const [selectedPayment, setSelectedPayment] = useState(null);
   const [studentId, setStudentId] = useState('');
-  const [selectedSpecialization, setSelectedSpecialization] = useState(null);
-  const [feeDocument, setFeeDocument] = useState([]);
-  const [studentDocument, setStudentDocument] = useState([]);
+  const [selectedAdmissionType, setSelectedAdmissionType] = useState(null);
+
+
+  const handleAdmissionTypeChange = (value) => {
+    setSelectedAdmissionType(value);
+  };
 
   /* useState, useEffect uses condition */
 
@@ -381,37 +384,75 @@ export default function LeadForm() {
             {selectedUniversity && (
               <>
                 <div>
+                  {/* Render admission type select */}
                   {formData
                     .find((item) => item.value === selectedInstitute)
                     .universities.find((university) => university.value === selectedUniversity)
-                    .fields[1]?.payments ? (
-                    <Form.Item label="Select payment" name={['customfields', 'payment_type']} className='grid col-span-1' rules={[
-                        {
-                          required: true,
-                          message: "Please Select payment",
-                        },         
+                    .fields[1]?.admission_type ? (
+                    <Form.Item label="Select admission status" name={['customfields', 'admission_type']} className='grid col-span-1' rules={[
+                      {
+                        required: true,
+                        message: "Please Select admission status",
+                      },
                     ]}>
-                      <Select showSearch optionFilterProp='children' filterOption={(input, option) =>
-                        option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
-                      } onChange={handlePaymentChange} placeholder="--Select Payment--">
+                      <Select
+                        showSearch
+                        optionFilterProp='children'
+                        filterOption={(input, option) =>
+                          option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+                        }
+                        onChange={handleAdmissionTypeChange}
+                        placeholder="--Select admission status--"
+                      >
                         {formData
                           .find((item) => item.value === selectedInstitute)
                           .universities.find((university) => university.value === selectedUniversity)
-                          .fields[1]?.payments?.map((payment) => (
+                          .fields[1]?.admission_type?.map((admission) => (
+                            <Option key={admission.value} value={admission.value}>
+                              {admission.label}
+                            </Option>
+                          ))}
+                      </Select>
+                    </Form.Item>
+                  ) : null}
+
+                  {/* Render payment select based on selected admission type */}
+                  {selectedAdmissionType && (
+                    <Form.Item label="Select payment status" name={['customfields', 'payment_type']} className='grid col-span-1' rules={[
+                      {
+                        required: true,
+                        message: "Please Select admission status",
+                      },
+                    ]}>
+                      <Select
+                        onChange={handlePaymentChange}
+                        placeholder="--Select Payment--"
+                      >
+                        {/* Map over payment options based on selected admission type */}
+                        {formData
+                          .find((item) => item.value === selectedInstitute)
+                          .universities.find((university) => university.value === selectedUniversity)
+                          .fields[1]?.admission_type
+                          .find((admission) => admission.value === selectedAdmissionType)
+                          ?.payments.map((payment) => (
                             <Option key={payment.value} value={payment.value}>
                               {payment.label}
                             </Option>
                           ))}
                       </Select>
                     </Form.Item>
-                  ) : null}
+                  )}
+
+                  {/* Render payment types based on selected payment option */}
                   {selectedPayment && (
                     <div>
                       <Form.Item>
                         {(formData
                           .find((item) => item.value === selectedInstitute)
                           .universities.find((university) => university.value === selectedUniversity)
-                          .fields[1]?.payments.find((payment) => payment.value === selectedPayment)?.paymentType || []
+                          .fields[1]?.admission_type
+                          .find((admission) => admission.value === selectedAdmissionType)
+                          ?.payments.find((payment) => payment.value === selectedPayment)?.paymentType || []
                         ).map((pay) => (
                           <Form.Item
                             key={pay.label}
@@ -424,7 +465,7 @@ export default function LeadForm() {
                               },
                             ]}
                           >
-                            <Input placeholder={pay.place} type={pay.type}/>
+                            <Input placeholder={pay.place} type={pay.type} />
                           </Form.Item>
                         ))}
                       </Form.Item>

@@ -146,6 +146,8 @@ const AddRoleform = ({ onClose, onFormSubmit }) => {
                         { value: 'SPU', label: 'SPU' },
                         { value: 'LPU', label: 'LPU' },
                         { value: 'DPU', label: 'DPU' },
+                        { value: 'AMRITA', label: 'AMRITA' },
+                        { value: 'AMITY', label: 'AMITY' },
                         { value: 'JAIN', label: 'JAIN' },
                         { value: 'SVSU', label: 'SVSU' },
                         { value: 'VIGNAN', label: 'VIGNAN' },

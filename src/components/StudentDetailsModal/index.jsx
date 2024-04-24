@@ -13,7 +13,6 @@ const StudentDetailsModal = ({ visible, onClose, student }) => {
     const [documentUrls, setDocumentUrls] = useState([]);
     const [installmentModalVisible, setInstallmentModalVisible] = useState(false);
     const [documentModalVisible, setDocumentModalVisible] = useState(false);
-    const [selectedDocumentUrl, setSelectedDocumentUrl] = useState('');
 
     useEffect(() => {
         if (student) {
@@ -62,6 +61,7 @@ const StudentDetailsModal = ({ visible, onClose, student }) => {
                 installment_type: data.installment_type,
                 paymentStatus: data.paymentStatus,
                 payment_mode: data.payment_mode,
+                sendfeeReciept: data.sendfeeReciept,
                 payment_type: data.payment_type,
                 total_course_fee: data.total_course_fee,
                 total_paid_amount: data.total_paid_amount,
@@ -117,6 +117,11 @@ const StudentDetailsModal = ({ visible, onClose, student }) => {
             title: 'Payment Type',
             dataIndex: 'payment_type',
             key: 'payment_type',
+        },
+        {
+            title: 'Fee Reciept',
+            dataIndex: 'sendfeeReciept',
+            key: 'sendfeeReciept',
         },
         {
             title: 'Total course fee',
@@ -260,6 +265,11 @@ const StudentDetailsModal = ({ visible, onClose, student }) => {
                                     <li className='grid grid-cols-2 gap-20 border-b p-1.5 ml-8'>
                                         <span className='text-base font-thin text-gray-700'>Payment Type</span>
                                         <span className='text-sm font-thin text-gray-500'>{student.customfields.payment_type}</span>
+                                    </li>
+
+                                    <li className='grid grid-cols-2 gap-20 border-b p-1.5 ml-8'>
+                                        <span className='text-base font-thin text-gray-700'>Fee Reciept</span>
+                                        <span className='text-sm font-thin text-gray-500 capitalize'>{student.customfields.sendfeeReciept}</span>
                                     </li>
                                     <li className='grid grid-cols-2 gap-20 border-b p-1.5 ml-8'>
                                         <span className='text-base font-thin text-gray-700'>Installment</span>
