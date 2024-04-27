@@ -5,7 +5,7 @@ import UserDashboard from './Dashboard';
 export default function Index() {
     // Retrieve the role from localStorage
     const userData = JSON.parse(window.localStorage.getItem('auth'));
-    const role = userData.current.role;
+    const role = userData.current?.role;
 
     return (
         <div>

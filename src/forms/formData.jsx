@@ -376,56 +376,10 @@ const formData = [
                   }
                 ]
               },
-              {
+               {
                 value: "LATERAL ENTRY",
                 label: "LATERAL ENTRY",
                 payments: [
-                  {
-                    value: "Semester",
-                    label: "Semester",
-                    paymentType: [
-                      {
-                        key: "text",
-                        label: "Semester fees",
-                        name: ["customfields", "total_course_fee"],
-                        place: "eg: 20000",
-                        id: "Total Course Fee",
-                        type: "text",
-                        required: "require"
-                      },
-                      {
-                        key: "text",
-                        label: "Paid Amount",
-                        name: ["customfields", "paid_amount"],
-                        place: "eg: 20000",
-                        id: "Paid Amount",
-                        type: "text"
-                      }
-                    ]
-                  },
-                  {
-                    value: "Yearly",
-                    label: "Yearly",
-                    paymentType: [
-                      {
-                        key: "text",
-                        label: "Yearly Fees",
-                        name: ["customfields", "total_course_fee"],
-                        place: "eg: 20000",
-                        id: "Total Course Fee",
-                        type: "text",
-                        required: "require"
-                      },
-                      {
-                        key: "text",
-                        label: "Paid Amount",
-                        name: ["customfields", "paid_amount"],
-                        place: "eg: 20000",
-                        id: "Paid Amount",
-                        type: "text"
-                      }
-                    ]
-                  },
                   {
                     value: "Fullfees",
                     label: "Fullfees",
@@ -495,8 +449,7 @@ const formData = [
             name: ['contact', 'alternate_phone'],
             place: 'Enter Alternate Number',
             id: 'alternate',
-            type: 'tel',
-            required: 'require'
+            type: 'tel'
           },
           {
             key: 'text',
@@ -524,7 +477,7 @@ const formData = [
             place: 'eg: JAN 20',
             id: 'Session',
             type: 'select',
-            options: [{ value: 'JAN 20', label: 'JAN 20' },
+              options: [{ value: 'JAN 20', label: 'JAN 20' },
             { value: 'JULY 20', label: 'JULY 20' },
             { value: 'JAN 21', label: 'JAN 21' },
             { value: 'JULY 21', label: 'JULY 21' },
@@ -537,8 +490,10 @@ const formData = [
             { value: 'JAN 25', label: 'JAN 25' },
             { value: 'JULY 25', label: 'JULY 25' },
             { value: 'MAR 23', label: 'MAR 23' },
+            { value: 'MAR 25', label: 'MAR 25' },
             { value: 'APR 23', label: 'APR 23' },
             { value: 'OCT 23', label: 'OCT 23' },
+            { value: 'OCT 24', label: 'OCT 24' },
             { value: 'NOV 23', label: 'NOV 23' },],
 
           },
@@ -575,7 +530,6 @@ const formData = [
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
             { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
 
@@ -976,56 +930,10 @@ const formData = [
                   }
                 ]
               },
-              {
+               {
                 value: "LATERAL ENTRY",
                 label: "LATERAL ENTRY",
                 payments: [
-                  {
-                    value: "Semester",
-                    label: "Semester",
-                    paymentType: [
-                      {
-                        key: "text",
-                        label: "Semester fees",
-                        name: ["customfields", "total_course_fee"],
-                        place: "eg: 20000",
-                        id: "Total Course Fee",
-                        type: "text",
-                        required: "require"
-                      },
-                      {
-                        key: "text",
-                        label: "Paid Amount",
-                        name: ["customfields", "paid_amount"],
-                        place: "eg: 20000",
-                        id: "Paid Amount",
-                        type: "text"
-                      }
-                    ]
-                  },
-                  {
-                    value: "Yearly",
-                    label: "Yearly",
-                    paymentType: [
-                      {
-                        key: "text",
-                        label: "Yearly Fees",
-                        name: ["customfields", "total_course_fee"],
-                        place: "eg: 20000",
-                        id: "Total Course Fee",
-                        type: "text",
-                        required: "require"
-                      },
-                      {
-                        key: "text",
-                        label: "Paid Amount",
-                        name: ["customfields", "paid_amount"],
-                        place: "eg: 20000",
-                        id: "Paid Amount",
-                        type: "text"
-                      }
-                    ]
-                  },
                   {
                     value: "Fullfees",
                     label: "Fullfees",
@@ -1095,8 +1003,7 @@ const formData = [
             name: ['contact', 'alternate_phone'],
             place: 'Enter Alternate Number',
             id: 'alternate',
-            type: 'tel',
-            required: 'require'
+            type: 'tel'
           },
           {
             key: 'text',
@@ -1124,7 +1031,7 @@ const formData = [
             place: 'eg: JAN 20',
             id: 'Session',
             type: 'select',
-            options: [{ value: 'JAN 20', label: 'JAN 20' },
+              options: [{ value: 'JAN 20', label: 'JAN 20' },
             { value: 'JULY 20', label: 'JULY 20' },
             { value: 'JAN 21', label: 'JAN 21' },
             { value: 'JULY 21', label: 'JULY 21' },
@@ -1137,8 +1044,10 @@ const formData = [
             { value: 'JAN 25', label: 'JAN 25' },
             { value: 'JULY 25', label: 'JULY 25' },
             { value: 'MAR 23', label: 'MAR 23' },
+            { value: 'MAR 25', label: 'MAR 25' },
             { value: 'APR 23', label: 'APR 23' },
             { value: 'OCT 23', label: 'OCT 23' },
+            { value: 'OCT 24', label: 'OCT 24' },
             { value: 'NOV 23', label: 'NOV 23' },],
 
           },
@@ -1175,7 +1084,6 @@ const formData = [
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
             { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
 
@@ -1576,56 +1484,10 @@ const formData = [
                   }
                 ]
               },
-              {
+               {
                 value: "LATERAL ENTRY",
                 label: "LATERAL ENTRY",
                 payments: [
-                  {
-                    value: "Semester",
-                    label: "Semester",
-                    paymentType: [
-                      {
-                        key: "text",
-                        label: "Semester fees",
-                        name: ["customfields", "total_course_fee"],
-                        place: "eg: 20000",
-                        id: "Total Course Fee",
-                        type: "text",
-                        required: "require"
-                      },
-                      {
-                        key: "text",
-                        label: "Paid Amount",
-                        name: ["customfields", "paid_amount"],
-                        place: "eg: 20000",
-                        id: "Paid Amount",
-                        type: "text"
-                      }
-                    ]
-                  },
-                  {
-                    value: "Yearly",
-                    label: "Yearly",
-                    paymentType: [
-                      {
-                        key: "text",
-                        label: "Yearly Fees",
-                        name: ["customfields", "total_course_fee"],
-                        place: "eg: 20000",
-                        id: "Total Course Fee",
-                        type: "text",
-                        required: "require"
-                      },
-                      {
-                        key: "text",
-                        label: "Paid Amount",
-                        name: ["customfields", "paid_amount"],
-                        place: "eg: 20000",
-                        id: "Paid Amount",
-                        type: "text"
-                      }
-                    ]
-                  },
                   {
                     value: "Fullfees",
                     label: "Fullfees",
@@ -1695,8 +1557,7 @@ const formData = [
             name: ['contact', 'alternate_phone'],
             place: 'Enter Alternate Number',
             id: 'alternate',
-            type: 'tel',
-            required: 'require'
+            type: 'tel'
           },
           {
             key: 'text',
@@ -1724,7 +1585,7 @@ const formData = [
             place: 'eg: JAN 20',
             id: 'Session',
             type: 'select',
-            options: [{ value: 'JAN 20', label: 'JAN 20' },
+              options: [{ value: 'JAN 20', label: 'JAN 20' },
             { value: 'JULY 20', label: 'JULY 20' },
             { value: 'JAN 21', label: 'JAN 21' },
             { value: 'JULY 21', label: 'JULY 21' },
@@ -1737,8 +1598,10 @@ const formData = [
             { value: 'JAN 25', label: 'JAN 25' },
             { value: 'JULY 25', label: 'JULY 25' },
             { value: 'MAR 23', label: 'MAR 23' },
+            { value: 'MAR 25', label: 'MAR 25' },
             { value: 'APR 23', label: 'APR 23' },
             { value: 'OCT 23', label: 'OCT 23' },
+            { value: 'OCT 24', label: 'OCT 24' },
             { value: 'NOV 23', label: 'NOV 23' },],
 
           },
@@ -1775,7 +1638,6 @@ const formData = [
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
             { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
 
@@ -2176,56 +2038,10 @@ const formData = [
                   }
                 ]
               },
-              {
+               {
                 value: "LATERAL ENTRY",
                 label: "LATERAL ENTRY",
                 payments: [
-                  {
-                    value: "Semester",
-                    label: "Semester",
-                    paymentType: [
-                      {
-                        key: "text",
-                        label: "Semester fees",
-                        name: ["customfields", "total_course_fee"],
-                        place: "eg: 20000",
-                        id: "Total Course Fee",
-                        type: "text",
-                        required: "require"
-                      },
-                      {
-                        key: "text",
-                        label: "Paid Amount",
-                        name: ["customfields", "paid_amount"],
-                        place: "eg: 20000",
-                        id: "Paid Amount",
-                        type: "text"
-                      }
-                    ]
-                  },
-                  {
-                    value: "Yearly",
-                    label: "Yearly",
-                    paymentType: [
-                      {
-                        key: "text",
-                        label: "Yearly Fees",
-                        name: ["customfields", "total_course_fee"],
-                        place: "eg: 20000",
-                        id: "Total Course Fee",
-                        type: "text",
-                        required: "require"
-                      },
-                      {
-                        key: "text",
-                        label: "Paid Amount",
-                        name: ["customfields", "paid_amount"],
-                        place: "eg: 20000",
-                        id: "Paid Amount",
-                        type: "text"
-                      }
-                    ]
-                  },
                   {
                     value: "Fullfees",
                     label: "Fullfees",
@@ -2295,8 +2111,7 @@ const formData = [
             name: ['contact', 'alternate_phone'],
             place: 'Enter Alternate Number',
             id: 'alternate',
-            type: 'tel',
-            required: 'require'
+            type: 'tel'
           },
           {
             key: 'text',
@@ -2324,7 +2139,7 @@ const formData = [
             place: 'eg: JAN 20',
             id: 'Session',
             type: 'select',
-            options: [{ value: 'JAN 20', label: 'JAN 20' },
+              options: [{ value: 'JAN 20', label: 'JAN 20' },
             { value: 'JULY 20', label: 'JULY 20' },
             { value: 'JAN 21', label: 'JAN 21' },
             { value: 'JULY 21', label: 'JULY 21' },
@@ -2337,8 +2152,10 @@ const formData = [
             { value: 'JAN 25', label: 'JAN 25' },
             { value: 'JULY 25', label: 'JULY 25' },
             { value: 'MAR 23', label: 'MAR 23' },
+            { value: 'MAR 25', label: 'MAR 25' },
             { value: 'APR 23', label: 'APR 23' },
             { value: 'OCT 23', label: 'OCT 23' },
+            { value: 'OCT 24', label: 'OCT 24' },
             { value: 'NOV 23', label: 'NOV 23' },],
 
           },
@@ -2375,7 +2192,6 @@ const formData = [
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
             { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
 
@@ -2776,56 +2592,10 @@ const formData = [
                   }
                 ]
               },
-              {
+               {
                 value: "LATERAL ENTRY",
                 label: "LATERAL ENTRY",
                 payments: [
-                  {
-                    value: "Semester",
-                    label: "Semester",
-                    paymentType: [
-                      {
-                        key: "text",
-                        label: "Semester fees",
-                        name: ["customfields", "total_course_fee"],
-                        place: "eg: 20000",
-                        id: "Total Course Fee",
-                        type: "text",
-                        required: "require"
-                      },
-                      {
-                        key: "text",
-                        label: "Paid Amount",
-                        name: ["customfields", "paid_amount"],
-                        place: "eg: 20000",
-                        id: "Paid Amount",
-                        type: "text"
-                      }
-                    ]
-                  },
-                  {
-                    value: "Yearly",
-                    label: "Yearly",
-                    paymentType: [
-                      {
-                        key: "text",
-                        label: "Yearly Fees",
-                        name: ["customfields", "total_course_fee"],
-                        place: "eg: 20000",
-                        id: "Total Course Fee",
-                        type: "text",
-                        required: "require"
-                      },
-                      {
-                        key: "text",
-                        label: "Paid Amount",
-                        name: ["customfields", "paid_amount"],
-                        place: "eg: 20000",
-                        id: "Paid Amount",
-                        type: "text"
-                      }
-                    ]
-                  },
                   {
                     value: "Fullfees",
                     label: "Fullfees",
@@ -2895,8 +2665,7 @@ const formData = [
             name: ['contact', 'alternate_phone'],
             place: 'Enter Alternate Number',
             id: 'alternate',
-            type: 'tel',
-            required: 'require'
+            type: 'tel'
           },
           {
             key: 'text',
@@ -2924,7 +2693,7 @@ const formData = [
             place: 'eg: JAN 20',
             id: 'Session',
             type: 'select',
-            options: [{ value: 'JAN 20', label: 'JAN 20' },
+              options: [{ value: 'JAN 20', label: 'JAN 20' },
             { value: 'JULY 20', label: 'JULY 20' },
             { value: 'JAN 21', label: 'JAN 21' },
             { value: 'JULY 21', label: 'JULY 21' },
@@ -2937,8 +2706,10 @@ const formData = [
             { value: 'JAN 25', label: 'JAN 25' },
             { value: 'JULY 25', label: 'JULY 25' },
             { value: 'MAR 23', label: 'MAR 23' },
+            { value: 'MAR 25', label: 'MAR 25' },
             { value: 'APR 23', label: 'APR 23' },
             { value: 'OCT 23', label: 'OCT 23' },
+            { value: 'OCT 24', label: 'OCT 24' },
             { value: 'NOV 23', label: 'NOV 23' },],
 
           },
@@ -2975,7 +2746,6 @@ const formData = [
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
             { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
 
@@ -3376,56 +3146,10 @@ const formData = [
                   }
                 ]
               },
-              {
+               {
                 value: "LATERAL ENTRY",
                 label: "LATERAL ENTRY",
                 payments: [
-                  {
-                    value: "Semester",
-                    label: "Semester",
-                    paymentType: [
-                      {
-                        key: "text",
-                        label: "Semester fees",
-                        name: ["customfields", "total_course_fee"],
-                        place: "eg: 20000",
-                        id: "Total Course Fee",
-                        type: "text",
-                        required: "require"
-                      },
-                      {
-                        key: "text",
-                        label: "Paid Amount",
-                        name: ["customfields", "paid_amount"],
-                        place: "eg: 20000",
-                        id: "Paid Amount",
-                        type: "text"
-                      }
-                    ]
-                  },
-                  {
-                    value: "Yearly",
-                    label: "Yearly",
-                    paymentType: [
-                      {
-                        key: "text",
-                        label: "Yearly Fees",
-                        name: ["customfields", "total_course_fee"],
-                        place: "eg: 20000",
-                        id: "Total Course Fee",
-                        type: "text",
-                        required: "require"
-                      },
-                      {
-                        key: "text",
-                        label: "Paid Amount",
-                        name: ["customfields", "paid_amount"],
-                        place: "eg: 20000",
-                        id: "Paid Amount",
-                        type: "text"
-                      }
-                    ]
-                  },
                   {
                     value: "Fullfees",
                     label: "Fullfees",
@@ -3495,8 +3219,7 @@ const formData = [
             name: ['contact', 'alternate_phone'],
             place: 'Enter Alternate Number',
             id: 'alternate',
-            type: 'tel',
-            required: 'require'
+            type: 'tel'
           },
           {
             key: 'text',
@@ -3524,7 +3247,7 @@ const formData = [
             place: 'eg: JAN 20',
             id: 'Session',
             type: 'select',
-            options: [{ value: 'JAN 20', label: 'JAN 20' },
+              options: [{ value: 'JAN 20', label: 'JAN 20' },
             { value: 'JULY 20', label: 'JULY 20' },
             { value: 'JAN 21', label: 'JAN 21' },
             { value: 'JULY 21', label: 'JULY 21' },
@@ -3537,8 +3260,10 @@ const formData = [
             { value: 'JAN 25', label: 'JAN 25' },
             { value: 'JULY 25', label: 'JULY 25' },
             { value: 'MAR 23', label: 'MAR 23' },
+            { value: 'MAR 25', label: 'MAR 25' },
             { value: 'APR 23', label: 'APR 23' },
             { value: 'OCT 23', label: 'OCT 23' },
+            { value: 'OCT 24', label: 'OCT 24' },
             { value: 'NOV 23', label: 'NOV 23' },],
 
           },
@@ -3575,7 +3300,6 @@ const formData = [
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
             { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
 
@@ -3976,56 +3700,10 @@ const formData = [
                   }
                 ]
               },
-              {
+               {
                 value: "LATERAL ENTRY",
                 label: "LATERAL ENTRY",
                 payments: [
-                  {
-                    value: "Semester",
-                    label: "Semester",
-                    paymentType: [
-                      {
-                        key: "text",
-                        label: "Semester fees",
-                        name: ["customfields", "total_course_fee"],
-                        place: "eg: 20000",
-                        id: "Total Course Fee",
-                        type: "text",
-                        required: "require"
-                      },
-                      {
-                        key: "text",
-                        label: "Paid Amount",
-                        name: ["customfields", "paid_amount"],
-                        place: "eg: 20000",
-                        id: "Paid Amount",
-                        type: "text"
-                      }
-                    ]
-                  },
-                  {
-                    value: "Yearly",
-                    label: "Yearly",
-                    paymentType: [
-                      {
-                        key: "text",
-                        label: "Yearly Fees",
-                        name: ["customfields", "total_course_fee"],
-                        place: "eg: 20000",
-                        id: "Total Course Fee",
-                        type: "text",
-                        required: "require"
-                      },
-                      {
-                        key: "text",
-                        label: "Paid Amount",
-                        name: ["customfields", "paid_amount"],
-                        place: "eg: 20000",
-                        id: "Paid Amount",
-                        type: "text"
-                      }
-                    ]
-                  },
                   {
                     value: "Fullfees",
                     label: "Fullfees",
@@ -4095,8 +3773,7 @@ const formData = [
             name: ['contact', 'alternate_phone'],
             place: 'Enter Alternate Number',
             id: 'alternate',
-            type: 'tel',
-            required: 'require'
+            type: 'tel'
           },
           {
             key: 'text',
@@ -4124,7 +3801,7 @@ const formData = [
             place: 'eg: JAN 20',
             id: 'Session',
             type: 'select',
-            options: [{ value: 'JAN 20', label: 'JAN 20' },
+              options: [{ value: 'JAN 20', label: 'JAN 20' },
             { value: 'JULY 20', label: 'JULY 20' },
             { value: 'JAN 21', label: 'JAN 21' },
             { value: 'JULY 21', label: 'JULY 21' },
@@ -4137,8 +3814,10 @@ const formData = [
             { value: 'JAN 25', label: 'JAN 25' },
             { value: 'JULY 25', label: 'JULY 25' },
             { value: 'MAR 23', label: 'MAR 23' },
+            { value: 'MAR 25', label: 'MAR 25' },
             { value: 'APR 23', label: 'APR 23' },
             { value: 'OCT 23', label: 'OCT 23' },
+            { value: 'OCT 24', label: 'OCT 24' },
             { value: 'NOV 23', label: 'NOV 23' },],
 
           },
@@ -4175,7 +3854,6 @@ const formData = [
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
             { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
 
@@ -4576,56 +4254,10 @@ const formData = [
                   }
                 ]
               },
-              {
+               {
                 value: "LATERAL ENTRY",
                 label: "LATERAL ENTRY",
                 payments: [
-                  {
-                    value: "Semester",
-                    label: "Semester",
-                    paymentType: [
-                      {
-                        key: "text",
-                        label: "Semester fees",
-                        name: ["customfields", "total_course_fee"],
-                        place: "eg: 20000",
-                        id: "Total Course Fee",
-                        type: "text",
-                        required: "require"
-                      },
-                      {
-                        key: "text",
-                        label: "Paid Amount",
-                        name: ["customfields", "paid_amount"],
-                        place: "eg: 20000",
-                        id: "Paid Amount",
-                        type: "text"
-                      }
-                    ]
-                  },
-                  {
-                    value: "Yearly",
-                    label: "Yearly",
-                    paymentType: [
-                      {
-                        key: "text",
-                        label: "Yearly Fees",
-                        name: ["customfields", "total_course_fee"],
-                        place: "eg: 20000",
-                        id: "Total Course Fee",
-                        type: "text",
-                        required: "require"
-                      },
-                      {
-                        key: "text",
-                        label: "Paid Amount",
-                        name: ["customfields", "paid_amount"],
-                        place: "eg: 20000",
-                        id: "Paid Amount",
-                        type: "text"
-                      }
-                    ]
-                  },
                   {
                     value: "Fullfees",
                     label: "Fullfees",
@@ -4695,8 +4327,7 @@ const formData = [
             name: ['contact', 'alternate_phone'],
             place: 'Enter Alternate Number',
             id: 'alternate',
-            type: 'tel',
-            required: 'require'
+            type: 'tel'
           },
           {
             key: 'text',
@@ -4724,7 +4355,7 @@ const formData = [
             place: 'eg: JAN 20',
             id: 'Session',
             type: 'select',
-            options: [{ value: 'JAN 20', label: 'JAN 20' },
+              options: [{ value: 'JAN 20', label: 'JAN 20' },
             { value: 'JULY 20', label: 'JULY 20' },
             { value: 'JAN 21', label: 'JAN 21' },
             { value: 'JULY 21', label: 'JULY 21' },
@@ -4737,8 +4368,10 @@ const formData = [
             { value: 'JAN 25', label: 'JAN 25' },
             { value: 'JULY 25', label: 'JULY 25' },
             { value: 'MAR 23', label: 'MAR 23' },
+            { value: 'MAR 25', label: 'MAR 25' },
             { value: 'APR 23', label: 'APR 23' },
             { value: 'OCT 23', label: 'OCT 23' },
+            { value: 'OCT 24', label: 'OCT 24' },
             { value: 'NOV 23', label: 'NOV 23' },],
 
           },
@@ -4775,7 +4408,6 @@ const formData = [
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
             { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
 
@@ -5176,56 +4808,10 @@ const formData = [
                   }
                 ]
               },
-              {
+               {
                 value: "LATERAL ENTRY",
                 label: "LATERAL ENTRY",
                 payments: [
-                  {
-                    value: "Semester",
-                    label: "Semester",
-                    paymentType: [
-                      {
-                        key: "text",
-                        label: "Semester fees",
-                        name: ["customfields", "total_course_fee"],
-                        place: "eg: 20000",
-                        id: "Total Course Fee",
-                        type: "text",
-                        required: "require"
-                      },
-                      {
-                        key: "text",
-                        label: "Paid Amount",
-                        name: ["customfields", "paid_amount"],
-                        place: "eg: 20000",
-                        id: "Paid Amount",
-                        type: "text"
-                      }
-                    ]
-                  },
-                  {
-                    value: "Yearly",
-                    label: "Yearly",
-                    paymentType: [
-                      {
-                        key: "text",
-                        label: "Yearly Fees",
-                        name: ["customfields", "total_course_fee"],
-                        place: "eg: 20000",
-                        id: "Total Course Fee",
-                        type: "text",
-                        required: "require"
-                      },
-                      {
-                        key: "text",
-                        label: "Paid Amount",
-                        name: ["customfields", "paid_amount"],
-                        place: "eg: 20000",
-                        id: "Paid Amount",
-                        type: "text"
-                      }
-                    ]
-                  },
                   {
                     value: "Fullfees",
                     label: "Fullfees",
@@ -5295,8 +4881,7 @@ const formData = [
             name: ['contact', 'alternate_phone'],
             place: 'Enter Alternate Number',
             id: 'alternate',
-            type: 'tel',
-            required: 'require'
+            type: 'tel'
           },
           {
             key: 'text',
@@ -5324,7 +4909,7 @@ const formData = [
             place: 'eg: JAN 20',
             id: 'Session',
             type: 'select',
-            options: [{ value: 'JAN 20', label: 'JAN 20' },
+              options: [{ value: 'JAN 20', label: 'JAN 20' },
             { value: 'JULY 20', label: 'JULY 20' },
             { value: 'JAN 21', label: 'JAN 21' },
             { value: 'JULY 21', label: 'JULY 21' },
@@ -5337,8 +4922,10 @@ const formData = [
             { value: 'JAN 25', label: 'JAN 25' },
             { value: 'JULY 25', label: 'JULY 25' },
             { value: 'MAR 23', label: 'MAR 23' },
+            { value: 'MAR 25', label: 'MAR 25' },
             { value: 'APR 23', label: 'APR 23' },
             { value: 'OCT 23', label: 'OCT 23' },
+            { value: 'OCT 24', label: 'OCT 24' },
             { value: 'NOV 23', label: 'NOV 23' },],
 
           },
@@ -5375,7 +4962,6 @@ const formData = [
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
             { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
 
@@ -5777,56 +5363,10 @@ const formData = [
                   }
                 ]
               },
-              {
+               {
                 value: "LATERAL ENTRY",
                 label: "LATERAL ENTRY",
                 payments: [
-                  {
-                    value: "Semester",
-                    label: "Semester",
-                    paymentType: [
-                      {
-                        key: "text",
-                        label: "Semester fees",
-                        name: ["customfields", "total_course_fee"],
-                        place: "eg: 20000",
-                        id: "Total Course Fee",
-                        type: "text",
-                        required: "require"
-                      },
-                      {
-                        key: "text",
-                        label: "Paid Amount",
-                        name: ["customfields", "paid_amount"],
-                        place: "eg: 20000",
-                        id: "Paid Amount",
-                        type: "text"
-                      }
-                    ]
-                  },
-                  {
-                    value: "Yearly",
-                    label: "Yearly",
-                    paymentType: [
-                      {
-                        key: "text",
-                        label: "Yearly Fees",
-                        name: ["customfields", "total_course_fee"],
-                        place: "eg: 20000",
-                        id: "Total Course Fee",
-                        type: "text",
-                        required: "require"
-                      },
-                      {
-                        key: "text",
-                        label: "Paid Amount",
-                        name: ["customfields", "paid_amount"],
-                        place: "eg: 20000",
-                        id: "Paid Amount",
-                        type: "text"
-                      }
-                    ]
-                  },
                   {
                     value: "Fullfees",
                     label: "Fullfees",
@@ -5896,8 +5436,7 @@ const formData = [
             name: ['contact', 'alternate_phone'],
             place: 'Enter Alternate Number',
             id: 'alternate',
-            type: 'tel',
-            required: 'require'
+            type: 'tel'
           },
           {
             key: 'text',
@@ -5925,7 +5464,7 @@ const formData = [
             place: 'eg: JAN 20',
             id: 'Session',
             type: 'select',
-            options: [{ value: 'JAN 20', label: 'JAN 20' },
+              options: [{ value: 'JAN 20', label: 'JAN 20' },
             { value: 'JULY 20', label: 'JULY 20' },
             { value: 'JAN 21', label: 'JAN 21' },
             { value: 'JULY 21', label: 'JULY 21' },
@@ -5938,8 +5477,10 @@ const formData = [
             { value: 'JAN 25', label: 'JAN 25' },
             { value: 'JULY 25', label: 'JULY 25' },
             { value: 'MAR 23', label: 'MAR 23' },
+            { value: 'MAR 25', label: 'MAR 25' },
             { value: 'APR 23', label: 'APR 23' },
             { value: 'OCT 23', label: 'OCT 23' },
+            { value: 'OCT 24', label: 'OCT 24' },
             { value: 'NOV 23', label: 'NOV 23' },],
 
           },
@@ -5976,7 +5517,6 @@ const formData = [
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
             { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
 
@@ -6377,56 +5917,10 @@ const formData = [
                   }
                 ]
               },
-              {
+               {
                 value: "LATERAL ENTRY",
                 label: "LATERAL ENTRY",
                 payments: [
-                  {
-                    value: "Semester",
-                    label: "Semester",
-                    paymentType: [
-                      {
-                        key: "text",
-                        label: "Semester fees",
-                        name: ["customfields", "total_course_fee"],
-                        place: "eg: 20000",
-                        id: "Total Course Fee",
-                        type: "text",
-                        required: "require"
-                      },
-                      {
-                        key: "text",
-                        label: "Paid Amount",
-                        name: ["customfields", "paid_amount"],
-                        place: "eg: 20000",
-                        id: "Paid Amount",
-                        type: "text"
-                      }
-                    ]
-                  },
-                  {
-                    value: "Yearly",
-                    label: "Yearly",
-                    paymentType: [
-                      {
-                        key: "text",
-                        label: "Yearly Fees",
-                        name: ["customfields", "total_course_fee"],
-                        place: "eg: 20000",
-                        id: "Total Course Fee",
-                        type: "text",
-                        required: "require"
-                      },
-                      {
-                        key: "text",
-                        label: "Paid Amount",
-                        name: ["customfields", "paid_amount"],
-                        place: "eg: 20000",
-                        id: "Paid Amount",
-                        type: "text"
-                      }
-                    ]
-                  },
                   {
                     value: "Fullfees",
                     label: "Fullfees",
@@ -6496,8 +5990,7 @@ const formData = [
             name: ['contact', 'alternate_phone'],
             place: 'Enter Alternate Number',
             id: 'alternate',
-            type: 'tel',
-            required: 'require'
+            type: 'tel'
           },
           {
             key: 'text',
@@ -6525,7 +6018,7 @@ const formData = [
             place: 'eg: JAN 20',
             id: 'Session',
             type: 'select',
-            options: [{ value: 'JAN 20', label: 'JAN 20' },
+              options: [{ value: 'JAN 20', label: 'JAN 20' },
             { value: 'JULY 20', label: 'JULY 20' },
             { value: 'JAN 21', label: 'JAN 21' },
             { value: 'JULY 21', label: 'JULY 21' },
@@ -6538,8 +6031,10 @@ const formData = [
             { value: 'JAN 25', label: 'JAN 25' },
             { value: 'JULY 25', label: 'JULY 25' },
             { value: 'MAR 23', label: 'MAR 23' },
+            { value: 'MAR 25', label: 'MAR 25' },
             { value: 'APR 23', label: 'APR 23' },
             { value: 'OCT 23', label: 'OCT 23' },
+            { value: 'OCT 24', label: 'OCT 24' },
             { value: 'NOV 23', label: 'NOV 23' },],
 
           },
@@ -6576,7 +6071,6 @@ const formData = [
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
             { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
 
@@ -6977,56 +6471,10 @@ const formData = [
                   }
                 ]
               },
-              {
+               {
                 value: "LATERAL ENTRY",
                 label: "LATERAL ENTRY",
                 payments: [
-                  {
-                    value: "Semester",
-                    label: "Semester",
-                    paymentType: [
-                      {
-                        key: "text",
-                        label: "Semester fees",
-                        name: ["customfields", "total_course_fee"],
-                        place: "eg: 20000",
-                        id: "Total Course Fee",
-                        type: "text",
-                        required: "require"
-                      },
-                      {
-                        key: "text",
-                        label: "Paid Amount",
-                        name: ["customfields", "paid_amount"],
-                        place: "eg: 20000",
-                        id: "Paid Amount",
-                        type: "text"
-                      }
-                    ]
-                  },
-                  {
-                    value: "Yearly",
-                    label: "Yearly",
-                    paymentType: [
-                      {
-                        key: "text",
-                        label: "Yearly Fees",
-                        name: ["customfields", "total_course_fee"],
-                        place: "eg: 20000",
-                        id: "Total Course Fee",
-                        type: "text",
-                        required: "require"
-                      },
-                      {
-                        key: "text",
-                        label: "Paid Amount",
-                        name: ["customfields", "paid_amount"],
-                        place: "eg: 20000",
-                        id: "Paid Amount",
-                        type: "text"
-                      }
-                    ]
-                  },
                   {
                     value: "Fullfees",
                     label: "Fullfees",
@@ -7096,8 +6544,7 @@ const formData = [
             name: ['contact', 'alternate_phone'],
             place: 'Enter Alternate Number',
             id: 'alternate',
-            type: 'tel',
-            required: 'require'
+            type: 'tel'
           },
           {
             key: 'text',
@@ -7125,7 +6572,7 @@ const formData = [
             place: 'eg: JAN 20',
             id: 'Session',
             type: 'select',
-            options: [{ value: 'JAN 20', label: 'JAN 20' },
+              options: [{ value: 'JAN 20', label: 'JAN 20' },
             { value: 'JULY 20', label: 'JULY 20' },
             { value: 'JAN 21', label: 'JAN 21' },
             { value: 'JULY 21', label: 'JULY 21' },
@@ -7138,8 +6585,10 @@ const formData = [
             { value: 'JAN 25', label: 'JAN 25' },
             { value: 'JULY 25', label: 'JULY 25' },
             { value: 'MAR 23', label: 'MAR 23' },
+            { value: 'MAR 25', label: 'MAR 25' },
             { value: 'APR 23', label: 'APR 23' },
             { value: 'OCT 23', label: 'OCT 23' },
+            { value: 'OCT 24', label: 'OCT 24' },
             { value: 'NOV 23', label: 'NOV 23' },],
 
           },
@@ -7176,7 +6625,6 @@ const formData = [
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
             { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
 
@@ -7577,56 +7025,10 @@ const formData = [
                   }
                 ]
               },
-              {
+               {
                 value: "LATERAL ENTRY",
                 label: "LATERAL ENTRY",
                 payments: [
-                  {
-                    value: "Semester",
-                    label: "Semester",
-                    paymentType: [
-                      {
-                        key: "text",
-                        label: "Semester fees",
-                        name: ["customfields", "total_course_fee"],
-                        place: "eg: 20000",
-                        id: "Total Course Fee",
-                        type: "text",
-                        required: "require"
-                      },
-                      {
-                        key: "text",
-                        label: "Paid Amount",
-                        name: ["customfields", "paid_amount"],
-                        place: "eg: 20000",
-                        id: "Paid Amount",
-                        type: "text"
-                      }
-                    ]
-                  },
-                  {
-                    value: "Yearly",
-                    label: "Yearly",
-                    paymentType: [
-                      {
-                        key: "text",
-                        label: "Yearly Fees",
-                        name: ["customfields", "total_course_fee"],
-                        place: "eg: 20000",
-                        id: "Total Course Fee",
-                        type: "text",
-                        required: "require"
-                      },
-                      {
-                        key: "text",
-                        label: "Paid Amount",
-                        name: ["customfields", "paid_amount"],
-                        place: "eg: 20000",
-                        id: "Paid Amount",
-                        type: "text"
-                      }
-                    ]
-                  },
                   {
                     value: "Fullfees",
                     label: "Fullfees",
@@ -7696,8 +7098,7 @@ const formData = [
             name: ['contact', 'alternate_phone'],
             place: 'Enter Alternate Number',
             id: 'alternate',
-            type: 'tel',
-            required: 'require'
+            type: 'tel'
           },
           {
             key: 'text',
@@ -7725,7 +7126,7 @@ const formData = [
             place: 'eg: JAN 20',
             id: 'Session',
             type: 'select',
-            options: [{ value: 'JAN 20', label: 'JAN 20' },
+              options: [{ value: 'JAN 20', label: 'JAN 20' },
             { value: 'JULY 20', label: 'JULY 20' },
             { value: 'JAN 21', label: 'JAN 21' },
             { value: 'JULY 21', label: 'JULY 21' },
@@ -7738,8 +7139,10 @@ const formData = [
             { value: 'JAN 25', label: 'JAN 25' },
             { value: 'JULY 25', label: 'JULY 25' },
             { value: 'MAR 23', label: 'MAR 23' },
+            { value: 'MAR 25', label: 'MAR 25' },
             { value: 'APR 23', label: 'APR 23' },
             { value: 'OCT 23', label: 'OCT 23' },
+            { value: 'OCT 24', label: 'OCT 24' },
             { value: 'NOV 23', label: 'NOV 23' },],
 
           },
@@ -7776,7 +7179,6 @@ const formData = [
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
             { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
 
@@ -8177,56 +7579,10 @@ const formData = [
                   }
                 ]
               },
-              {
+               {
                 value: "LATERAL ENTRY",
                 label: "LATERAL ENTRY",
                 payments: [
-                  {
-                    value: "Semester",
-                    label: "Semester",
-                    paymentType: [
-                      {
-                        key: "text",
-                        label: "Semester fees",
-                        name: ["customfields", "total_course_fee"],
-                        place: "eg: 20000",
-                        id: "Total Course Fee",
-                        type: "text",
-                        required: "require"
-                      },
-                      {
-                        key: "text",
-                        label: "Paid Amount",
-                        name: ["customfields", "paid_amount"],
-                        place: "eg: 20000",
-                        id: "Paid Amount",
-                        type: "text"
-                      }
-                    ]
-                  },
-                  {
-                    value: "Yearly",
-                    label: "Yearly",
-                    paymentType: [
-                      {
-                        key: "text",
-                        label: "Yearly Fees",
-                        name: ["customfields", "total_course_fee"],
-                        place: "eg: 20000",
-                        id: "Total Course Fee",
-                        type: "text",
-                        required: "require"
-                      },
-                      {
-                        key: "text",
-                        label: "Paid Amount",
-                        name: ["customfields", "paid_amount"],
-                        place: "eg: 20000",
-                        id: "Paid Amount",
-                        type: "text"
-                      }
-                    ]
-                  },
                   {
                     value: "Fullfees",
                     label: "Fullfees",
@@ -8296,8 +7652,7 @@ const formData = [
             name: ['contact', 'alternate_phone'],
             place: 'Enter Alternate Number',
             id: 'alternate',
-            type: 'tel',
-            required: 'require'
+            type: 'tel'
           },
           {
             key: 'text',
@@ -8325,7 +7680,7 @@ const formData = [
             place: 'eg: JAN 20',
             id: 'Session',
             type: 'select',
-            options: [{ value: 'JAN 20', label: 'JAN 20' },
+              options: [{ value: 'JAN 20', label: 'JAN 20' },
             { value: 'JULY 20', label: 'JULY 20' },
             { value: 'JAN 21', label: 'JAN 21' },
             { value: 'JULY 21', label: 'JULY 21' },
@@ -8338,8 +7693,10 @@ const formData = [
             { value: 'JAN 25', label: 'JAN 25' },
             { value: 'JULY 25', label: 'JULY 25' },
             { value: 'MAR 23', label: 'MAR 23' },
+            { value: 'MAR 25', label: 'MAR 25' },
             { value: 'APR 23', label: 'APR 23' },
             { value: 'OCT 23', label: 'OCT 23' },
+            { value: 'OCT 24', label: 'OCT 24' },
             { value: 'NOV 23', label: 'NOV 23' },],
 
           },
@@ -8376,7 +7733,6 @@ const formData = [
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
             { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
 
@@ -8778,56 +8134,10 @@ const formData = [
                   }
                 ]
               },
-              {
+               {
                 value: "LATERAL ENTRY",
                 label: "LATERAL ENTRY",
                 payments: [
-                  {
-                    value: "Semester",
-                    label: "Semester",
-                    paymentType: [
-                      {
-                        key: "text",
-                        label: "Semester fees",
-                        name: ["customfields", "total_course_fee"],
-                        place: "eg: 20000",
-                        id: "Total Course Fee",
-                        type: "text",
-                        required: "require"
-                      },
-                      {
-                        key: "text",
-                        label: "Paid Amount",
-                        name: ["customfields", "paid_amount"],
-                        place: "eg: 20000",
-                        id: "Paid Amount",
-                        type: "text"
-                      }
-                    ]
-                  },
-                  {
-                    value: "Yearly",
-                    label: "Yearly",
-                    paymentType: [
-                      {
-                        key: "text",
-                        label: "Yearly Fees",
-                        name: ["customfields", "total_course_fee"],
-                        place: "eg: 20000",
-                        id: "Total Course Fee",
-                        type: "text",
-                        required: "require"
-                      },
-                      {
-                        key: "text",
-                        label: "Paid Amount",
-                        name: ["customfields", "paid_amount"],
-                        place: "eg: 20000",
-                        id: "Paid Amount",
-                        type: "text"
-                      }
-                    ]
-                  },
                   {
                     value: "Fullfees",
                     label: "Fullfees",
@@ -8897,8 +8207,7 @@ const formData = [
             name: ['contact', 'alternate_phone'],
             place: 'Enter Alternate Number',
             id: 'alternate',
-            type: 'tel',
-            required: 'require'
+            type: 'tel'
           },
           {
             key: 'text',
@@ -8926,7 +8235,7 @@ const formData = [
             place: 'eg: JAN 20',
             id: 'Session',
             type: 'select',
-            options: [{ value: 'JAN 20', label: 'JAN 20' },
+              options: [{ value: 'JAN 20', label: 'JAN 20' },
             { value: 'JULY 20', label: 'JULY 20' },
             { value: 'JAN 21', label: 'JAN 21' },
             { value: 'JULY 21', label: 'JULY 21' },
@@ -8939,8 +8248,10 @@ const formData = [
             { value: 'JAN 25', label: 'JAN 25' },
             { value: 'JULY 25', label: 'JULY 25' },
             { value: 'MAR 23', label: 'MAR 23' },
+            { value: 'MAR 25', label: 'MAR 25' },
             { value: 'APR 23', label: 'APR 23' },
             { value: 'OCT 23', label: 'OCT 23' },
+            { value: 'OCT 24', label: 'OCT 24' },
             { value: 'NOV 23', label: 'NOV 23' },],
 
           },
@@ -8977,7 +8288,6 @@ const formData = [
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
             { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
 
@@ -9378,56 +8688,10 @@ const formData = [
                   }
                 ]
               },
-              {
+               {
                 value: "LATERAL ENTRY",
                 label: "LATERAL ENTRY",
                 payments: [
-                  {
-                    value: "Semester",
-                    label: "Semester",
-                    paymentType: [
-                      {
-                        key: "text",
-                        label: "Semester fees",
-                        name: ["customfields", "total_course_fee"],
-                        place: "eg: 20000",
-                        id: "Total Course Fee",
-                        type: "text",
-                        required: "require"
-                      },
-                      {
-                        key: "text",
-                        label: "Paid Amount",
-                        name: ["customfields", "paid_amount"],
-                        place: "eg: 20000",
-                        id: "Paid Amount",
-                        type: "text"
-                      }
-                    ]
-                  },
-                  {
-                    value: "Yearly",
-                    label: "Yearly",
-                    paymentType: [
-                      {
-                        key: "text",
-                        label: "Yearly Fees",
-                        name: ["customfields", "total_course_fee"],
-                        place: "eg: 20000",
-                        id: "Total Course Fee",
-                        type: "text",
-                        required: "require"
-                      },
-                      {
-                        key: "text",
-                        label: "Paid Amount",
-                        name: ["customfields", "paid_amount"],
-                        place: "eg: 20000",
-                        id: "Paid Amount",
-                        type: "text"
-                      }
-                    ]
-                  },
                   {
                     value: "Fullfees",
                     label: "Fullfees",
@@ -9497,8 +8761,7 @@ const formData = [
             name: ['contact', 'alternate_phone'],
             place: 'Enter Alternate Number',
             id: 'alternate',
-            type: 'tel',
-            required: 'require'
+            type: 'tel'
           },
           {
             key: 'text',
@@ -9526,7 +8789,7 @@ const formData = [
             place: 'eg: JAN 20',
             id: 'Session',
             type: 'select',
-            options: [{ value: 'JAN 20', label: 'JAN 20' },
+              options: [{ value: 'JAN 20', label: 'JAN 20' },
             { value: 'JULY 20', label: 'JULY 20' },
             { value: 'JAN 21', label: 'JAN 21' },
             { value: 'JULY 21', label: 'JULY 21' },
@@ -9539,8 +8802,10 @@ const formData = [
             { value: 'JAN 25', label: 'JAN 25' },
             { value: 'JULY 25', label: 'JULY 25' },
             { value: 'MAR 23', label: 'MAR 23' },
+            { value: 'MAR 25', label: 'MAR 25' },
             { value: 'APR 23', label: 'APR 23' },
             { value: 'OCT 23', label: 'OCT 23' },
+            { value: 'OCT 24', label: 'OCT 24' },
             { value: 'NOV 23', label: 'NOV 23' },],
 
           },
@@ -9577,7 +8842,6 @@ const formData = [
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
             { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
 
@@ -9979,56 +9243,10 @@ const formData = [
                   }
                 ]
               },
-              {
+               {
                 value: "LATERAL ENTRY",
                 label: "LATERAL ENTRY",
                 payments: [
-                  {
-                    value: "Semester",
-                    label: "Semester",
-                    paymentType: [
-                      {
-                        key: "text",
-                        label: "Semester fees",
-                        name: ["customfields", "total_course_fee"],
-                        place: "eg: 20000",
-                        id: "Total Course Fee",
-                        type: "text",
-                        required: "require"
-                      },
-                      {
-                        key: "text",
-                        label: "Paid Amount",
-                        name: ["customfields", "paid_amount"],
-                        place: "eg: 20000",
-                        id: "Paid Amount",
-                        type: "text"
-                      }
-                    ]
-                  },
-                  {
-                    value: "Yearly",
-                    label: "Yearly",
-                    paymentType: [
-                      {
-                        key: "text",
-                        label: "Yearly Fees",
-                        name: ["customfields", "total_course_fee"],
-                        place: "eg: 20000",
-                        id: "Total Course Fee",
-                        type: "text",
-                        required: "require"
-                      },
-                      {
-                        key: "text",
-                        label: "Paid Amount",
-                        name: ["customfields", "paid_amount"],
-                        place: "eg: 20000",
-                        id: "Paid Amount",
-                        type: "text"
-                      }
-                    ]
-                  },
                   {
                     value: "Fullfees",
                     label: "Fullfees",
@@ -10098,8 +9316,7 @@ const formData = [
             name: ['contact', 'alternate_phone'],
             place: 'Enter Alternate Number',
             id: 'alternate',
-            type: 'tel',
-            required: 'require'
+            type: 'tel'
           },
           {
             key: 'text',
@@ -10127,7 +9344,7 @@ const formData = [
             place: 'eg: JAN 20',
             id: 'Session',
             type: 'select',
-            options: [{ value: 'JAN 20', label: 'JAN 20' },
+              options: [{ value: 'JAN 20', label: 'JAN 20' },
             { value: 'JULY 20', label: 'JULY 20' },
             { value: 'JAN 21', label: 'JAN 21' },
             { value: 'JULY 21', label: 'JULY 21' },
@@ -10140,8 +9357,10 @@ const formData = [
             { value: 'JAN 25', label: 'JAN 25' },
             { value: 'JULY 25', label: 'JULY 25' },
             { value: 'MAR 23', label: 'MAR 23' },
+            { value: 'MAR 25', label: 'MAR 25' },
             { value: 'APR 23', label: 'APR 23' },
             { value: 'OCT 23', label: 'OCT 23' },
+            { value: 'OCT 24', label: 'OCT 24' },
             { value: 'NOV 23', label: 'NOV 23' },],
 
           },
@@ -10178,7 +9397,6 @@ const formData = [
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
             { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
 
@@ -10579,56 +9797,10 @@ const formData = [
                   }
                 ]
               },
-              {
+               {
                 value: "LATERAL ENTRY",
                 label: "LATERAL ENTRY",
                 payments: [
-                  {
-                    value: "Semester",
-                    label: "Semester",
-                    paymentType: [
-                      {
-                        key: "text",
-                        label: "Semester fees",
-                        name: ["customfields", "total_course_fee"],
-                        place: "eg: 20000",
-                        id: "Total Course Fee",
-                        type: "text",
-                        required: "require"
-                      },
-                      {
-                        key: "text",
-                        label: "Paid Amount",
-                        name: ["customfields", "paid_amount"],
-                        place: "eg: 20000",
-                        id: "Paid Amount",
-                        type: "text"
-                      }
-                    ]
-                  },
-                  {
-                    value: "Yearly",
-                    label: "Yearly",
-                    paymentType: [
-                      {
-                        key: "text",
-                        label: "Yearly Fees",
-                        name: ["customfields", "total_course_fee"],
-                        place: "eg: 20000",
-                        id: "Total Course Fee",
-                        type: "text",
-                        required: "require"
-                      },
-                      {
-                        key: "text",
-                        label: "Paid Amount",
-                        name: ["customfields", "paid_amount"],
-                        place: "eg: 20000",
-                        id: "Paid Amount",
-                        type: "text"
-                      }
-                    ]
-                  },
                   {
                     value: "Fullfees",
                     label: "Fullfees",
@@ -10698,8 +9870,7 @@ const formData = [
             name: ['contact', 'alternate_phone'],
             place: 'Enter Alternate Number',
             id: 'alternate',
-            type: 'tel',
-            required: 'require'
+            type: 'tel'
           },
           {
             key: 'text',
@@ -10727,7 +9898,7 @@ const formData = [
             place: 'eg: JAN 20',
             id: 'Session',
             type: 'select',
-            options: [{ value: 'JAN 20', label: 'JAN 20' },
+              options: [{ value: 'JAN 20', label: 'JAN 20' },
             { value: 'JULY 20', label: 'JULY 20' },
             { value: 'JAN 21', label: 'JAN 21' },
             { value: 'JULY 21', label: 'JULY 21' },
@@ -10740,8 +9911,10 @@ const formData = [
             { value: 'JAN 25', label: 'JAN 25' },
             { value: 'JULY 25', label: 'JULY 25' },
             { value: 'MAR 23', label: 'MAR 23' },
+            { value: 'MAR 25', label: 'MAR 25' },
             { value: 'APR 23', label: 'APR 23' },
             { value: 'OCT 23', label: 'OCT 23' },
+            { value: 'OCT 24', label: 'OCT 24' },
             { value: 'NOV 23', label: 'NOV 23' },],
 
           },
@@ -10778,7 +9951,6 @@ const formData = [
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
             { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
 
@@ -11188,56 +10360,10 @@ const formData = [
                   }
                 ]
               },
-              {
+               {
                 value: "LATERAL ENTRY",
                 label: "LATERAL ENTRY",
                 payments: [
-                  {
-                    value: "Semester",
-                    label: "Semester",
-                    paymentType: [
-                      {
-                        key: "text",
-                        label: "Semester fees",
-                        name: ["customfields", "total_course_fee"],
-                        place: "eg: 20000",
-                        id: "Total Course Fee",
-                        type: "text",
-                        required: "require"
-                      },
-                      {
-                        key: "text",
-                        label: "Paid Amount",
-                        name: ["customfields", "paid_amount"],
-                        place: "eg: 20000",
-                        id: "Paid Amount",
-                        type: "text"
-                      }
-                    ]
-                  },
-                  {
-                    value: "Yearly",
-                    label: "Yearly",
-                    paymentType: [
-                      {
-                        key: "text",
-                        label: "Yearly Fees",
-                        name: ["customfields", "total_course_fee"],
-                        place: "eg: 20000",
-                        id: "Total Course Fee",
-                        type: "text",
-                        required: "require"
-                      },
-                      {
-                        key: "text",
-                        label: "Paid Amount",
-                        name: ["customfields", "paid_amount"],
-                        place: "eg: 20000",
-                        id: "Paid Amount",
-                        type: "text"
-                      }
-                    ]
-                  },
                   {
                     value: "Fullfees",
                     label: "Fullfees",
@@ -11307,8 +10433,7 @@ const formData = [
             name: ['contact', 'alternate_phone'],
             place: 'Enter Alternate Number',
             id: 'alternate',
-            type: 'tel',
-            required: 'require'
+            type: 'tel'
           },
           {
             key: 'text',
@@ -11336,7 +10461,7 @@ const formData = [
             place: 'eg: JAN 20',
             id: 'Session',
             type: 'select',
-            options: [{ value: 'JAN 20', label: 'JAN 20' },
+              options: [{ value: 'JAN 20', label: 'JAN 20' },
             { value: 'JULY 20', label: 'JULY 20' },
             { value: 'JAN 21', label: 'JAN 21' },
             { value: 'JULY 21', label: 'JULY 21' },
@@ -11349,8 +10474,10 @@ const formData = [
             { value: 'JAN 25', label: 'JAN 25' },
             { value: 'JULY 25', label: 'JULY 25' },
             { value: 'MAR 23', label: 'MAR 23' },
+            { value: 'MAR 25', label: 'MAR 25' },
             { value: 'APR 23', label: 'APR 23' },
             { value: 'OCT 23', label: 'OCT 23' },
+            { value: 'OCT 24', label: 'OCT 24' },
             { value: 'NOV 23', label: 'NOV 23' },],
 
           },
@@ -11387,7 +10514,6 @@ const formData = [
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
             { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
 
@@ -11788,56 +10914,10 @@ const formData = [
                   }
                 ]
               },
-              {
+               {
                 value: "LATERAL ENTRY",
                 label: "LATERAL ENTRY",
                 payments: [
-                  {
-                    value: "Semester",
-                    label: "Semester",
-                    paymentType: [
-                      {
-                        key: "text",
-                        label: "Semester fees",
-                        name: ["customfields", "total_course_fee"],
-                        place: "eg: 20000",
-                        id: "Total Course Fee",
-                        type: "text",
-                        required: "require"
-                      },
-                      {
-                        key: "text",
-                        label: "Paid Amount",
-                        name: ["customfields", "paid_amount"],
-                        place: "eg: 20000",
-                        id: "Paid Amount",
-                        type: "text"
-                      }
-                    ]
-                  },
-                  {
-                    value: "Yearly",
-                    label: "Yearly",
-                    paymentType: [
-                      {
-                        key: "text",
-                        label: "Yearly Fees",
-                        name: ["customfields", "total_course_fee"],
-                        place: "eg: 20000",
-                        id: "Total Course Fee",
-                        type: "text",
-                        required: "require"
-                      },
-                      {
-                        key: "text",
-                        label: "Paid Amount",
-                        name: ["customfields", "paid_amount"],
-                        place: "eg: 20000",
-                        id: "Paid Amount",
-                        type: "text"
-                      }
-                    ]
-                  },
                   {
                     value: "Fullfees",
                     label: "Fullfees",
@@ -11907,8 +10987,7 @@ const formData = [
             name: ['contact', 'alternate_phone'],
             place: 'Enter Alternate Number',
             id: 'alternate',
-            type: 'tel',
-            required: 'require'
+            type: 'tel'
           },
           {
             key: 'text',
@@ -11936,7 +11015,7 @@ const formData = [
             place: 'eg: JAN 20',
             id: 'Session',
             type: 'select',
-            options: [{ value: 'JAN 20', label: 'JAN 20' },
+              options: [{ value: 'JAN 20', label: 'JAN 20' },
             { value: 'JULY 20', label: 'JULY 20' },
             { value: 'JAN 21', label: 'JAN 21' },
             { value: 'JULY 21', label: 'JULY 21' },
@@ -11949,8 +11028,10 @@ const formData = [
             { value: 'JAN 25', label: 'JAN 25' },
             { value: 'JULY 25', label: 'JULY 25' },
             { value: 'MAR 23', label: 'MAR 23' },
+            { value: 'MAR 25', label: 'MAR 25' },
             { value: 'APR 23', label: 'APR 23' },
             { value: 'OCT 23', label: 'OCT 23' },
+            { value: 'OCT 24', label: 'OCT 24' },
             { value: 'NOV 23', label: 'NOV 23' },],
 
           },
@@ -11987,7 +11068,6 @@ const formData = [
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
             { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
 
@@ -12388,56 +11468,10 @@ const formData = [
                   }
                 ]
               },
-              {
+               {
                 value: "LATERAL ENTRY",
                 label: "LATERAL ENTRY",
                 payments: [
-                  {
-                    value: "Semester",
-                    label: "Semester",
-                    paymentType: [
-                      {
-                        key: "text",
-                        label: "Semester fees",
-                        name: ["customfields", "total_course_fee"],
-                        place: "eg: 20000",
-                        id: "Total Course Fee",
-                        type: "text",
-                        required: "require"
-                      },
-                      {
-                        key: "text",
-                        label: "Paid Amount",
-                        name: ["customfields", "paid_amount"],
-                        place: "eg: 20000",
-                        id: "Paid Amount",
-                        type: "text"
-                      }
-                    ]
-                  },
-                  {
-                    value: "Yearly",
-                    label: "Yearly",
-                    paymentType: [
-                      {
-                        key: "text",
-                        label: "Yearly Fees",
-                        name: ["customfields", "total_course_fee"],
-                        place: "eg: 20000",
-                        id: "Total Course Fee",
-                        type: "text",
-                        required: "require"
-                      },
-                      {
-                        key: "text",
-                        label: "Paid Amount",
-                        name: ["customfields", "paid_amount"],
-                        place: "eg: 20000",
-                        id: "Paid Amount",
-                        type: "text"
-                      }
-                    ]
-                  },
                   {
                     value: "Fullfees",
                     label: "Fullfees",
@@ -12507,8 +11541,7 @@ const formData = [
             name: ['contact', 'alternate_phone'],
             place: 'Enter Alternate Number',
             id: 'alternate',
-            type: 'tel',
-            required: 'require'
+            type: 'tel'
           },
           {
             key: 'text',
@@ -12536,7 +11569,7 @@ const formData = [
             place: 'eg: JAN 20',
             id: 'Session',
             type: 'select',
-            options: [{ value: 'JAN 20', label: 'JAN 20' },
+              options: [{ value: 'JAN 20', label: 'JAN 20' },
             { value: 'JULY 20', label: 'JULY 20' },
             { value: 'JAN 21', label: 'JAN 21' },
             { value: 'JULY 21', label: 'JULY 21' },
@@ -12549,8 +11582,10 @@ const formData = [
             { value: 'JAN 25', label: 'JAN 25' },
             { value: 'JULY 25', label: 'JULY 25' },
             { value: 'MAR 23', label: 'MAR 23' },
+            { value: 'MAR 25', label: 'MAR 25' },
             { value: 'APR 23', label: 'APR 23' },
             { value: 'OCT 23', label: 'OCT 23' },
+            { value: 'OCT 24', label: 'OCT 24' },
             { value: 'NOV 23', label: 'NOV 23' },],
 
           },
@@ -12587,7 +11622,6 @@ const formData = [
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
             { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
 
@@ -12988,56 +12022,10 @@ const formData = [
                   }
                 ]
               },
-              {
+               {
                 value: "LATERAL ENTRY",
                 label: "LATERAL ENTRY",
                 payments: [
-                  {
-                    value: "Semester",
-                    label: "Semester",
-                    paymentType: [
-                      {
-                        key: "text",
-                        label: "Semester fees",
-                        name: ["customfields", "total_course_fee"],
-                        place: "eg: 20000",
-                        id: "Total Course Fee",
-                        type: "text",
-                        required: "require"
-                      },
-                      {
-                        key: "text",
-                        label: "Paid Amount",
-                        name: ["customfields", "paid_amount"],
-                        place: "eg: 20000",
-                        id: "Paid Amount",
-                        type: "text"
-                      }
-                    ]
-                  },
-                  {
-                    value: "Yearly",
-                    label: "Yearly",
-                    paymentType: [
-                      {
-                        key: "text",
-                        label: "Yearly Fees",
-                        name: ["customfields", "total_course_fee"],
-                        place: "eg: 20000",
-                        id: "Total Course Fee",
-                        type: "text",
-                        required: "require"
-                      },
-                      {
-                        key: "text",
-                        label: "Paid Amount",
-                        name: ["customfields", "paid_amount"],
-                        place: "eg: 20000",
-                        id: "Paid Amount",
-                        type: "text"
-                      }
-                    ]
-                  },
                   {
                     value: "Fullfees",
                     label: "Fullfees",
@@ -13107,8 +12095,7 @@ const formData = [
             name: ['contact', 'alternate_phone'],
             place: 'Enter Alternate Number',
             id: 'alternate',
-            type: 'tel',
-            required: 'require'
+            type: 'tel'
           },
           {
             key: 'text',
@@ -13136,7 +12123,7 @@ const formData = [
             place: 'eg: JAN 20',
             id: 'Session',
             type: 'select',
-            options: [{ value: 'JAN 20', label: 'JAN 20' },
+              options: [{ value: 'JAN 20', label: 'JAN 20' },
             { value: 'JULY 20', label: 'JULY 20' },
             { value: 'JAN 21', label: 'JAN 21' },
             { value: 'JULY 21', label: 'JULY 21' },
@@ -13149,8 +12136,10 @@ const formData = [
             { value: 'JAN 25', label: 'JAN 25' },
             { value: 'JULY 25', label: 'JULY 25' },
             { value: 'MAR 23', label: 'MAR 23' },
+            { value: 'MAR 25', label: 'MAR 25' },
             { value: 'APR 23', label: 'APR 23' },
             { value: 'OCT 23', label: 'OCT 23' },
+            { value: 'OCT 24', label: 'OCT 24' },
             { value: 'NOV 23', label: 'NOV 23' },],
 
           },
@@ -13187,7 +12176,6 @@ const formData = [
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
             { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
 
@@ -13588,56 +12576,10 @@ const formData = [
                   }
                 ]
               },
-              {
+               {
                 value: "LATERAL ENTRY",
                 label: "LATERAL ENTRY",
                 payments: [
-                  {
-                    value: "Semester",
-                    label: "Semester",
-                    paymentType: [
-                      {
-                        key: "text",
-                        label: "Semester fees",
-                        name: ["customfields", "total_course_fee"],
-                        place: "eg: 20000",
-                        id: "Total Course Fee",
-                        type: "text",
-                        required: "require"
-                      },
-                      {
-                        key: "text",
-                        label: "Paid Amount",
-                        name: ["customfields", "paid_amount"],
-                        place: "eg: 20000",
-                        id: "Paid Amount",
-                        type: "text"
-                      }
-                    ]
-                  },
-                  {
-                    value: "Yearly",
-                    label: "Yearly",
-                    paymentType: [
-                      {
-                        key: "text",
-                        label: "Yearly Fees",
-                        name: ["customfields", "total_course_fee"],
-                        place: "eg: 20000",
-                        id: "Total Course Fee",
-                        type: "text",
-                        required: "require"
-                      },
-                      {
-                        key: "text",
-                        label: "Paid Amount",
-                        name: ["customfields", "paid_amount"],
-                        place: "eg: 20000",
-                        id: "Paid Amount",
-                        type: "text"
-                      }
-                    ]
-                  },
                   {
                     value: "Fullfees",
                     label: "Fullfees",
@@ -13707,8 +12649,7 @@ const formData = [
             name: ['contact', 'alternate_phone'],
             place: 'Enter Alternate Number',
             id: 'alternate',
-            type: 'tel',
-            required: 'require'
+            type: 'tel'
           },
           {
             key: 'text',
@@ -13736,7 +12677,7 @@ const formData = [
             place: 'eg: JAN 20',
             id: 'Session',
             type: 'select',
-            options: [{ value: 'JAN 20', label: 'JAN 20' },
+              options: [{ value: 'JAN 20', label: 'JAN 20' },
             { value: 'JULY 20', label: 'JULY 20' },
             { value: 'JAN 21', label: 'JAN 21' },
             { value: 'JULY 21', label: 'JULY 21' },
@@ -13749,8 +12690,10 @@ const formData = [
             { value: 'JAN 25', label: 'JAN 25' },
             { value: 'JULY 25', label: 'JULY 25' },
             { value: 'MAR 23', label: 'MAR 23' },
+            { value: 'MAR 25', label: 'MAR 25' },
             { value: 'APR 23', label: 'APR 23' },
             { value: 'OCT 23', label: 'OCT 23' },
+            { value: 'OCT 24', label: 'OCT 24' },
             { value: 'NOV 23', label: 'NOV 23' },],
 
           },
@@ -13787,7 +12730,6 @@ const formData = [
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
             { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
 
@@ -14188,56 +13130,10 @@ const formData = [
                   }
                 ]
               },
-              {
+               {
                 value: "LATERAL ENTRY",
                 label: "LATERAL ENTRY",
                 payments: [
-                  {
-                    value: "Semester",
-                    label: "Semester",
-                    paymentType: [
-                      {
-                        key: "text",
-                        label: "Semester fees",
-                        name: ["customfields", "total_course_fee"],
-                        place: "eg: 20000",
-                        id: "Total Course Fee",
-                        type: "text",
-                        required: "require"
-                      },
-                      {
-                        key: "text",
-                        label: "Paid Amount",
-                        name: ["customfields", "paid_amount"],
-                        place: "eg: 20000",
-                        id: "Paid Amount",
-                        type: "text"
-                      }
-                    ]
-                  },
-                  {
-                    value: "Yearly",
-                    label: "Yearly",
-                    paymentType: [
-                      {
-                        key: "text",
-                        label: "Yearly Fees",
-                        name: ["customfields", "total_course_fee"],
-                        place: "eg: 20000",
-                        id: "Total Course Fee",
-                        type: "text",
-                        required: "require"
-                      },
-                      {
-                        key: "text",
-                        label: "Paid Amount",
-                        name: ["customfields", "paid_amount"],
-                        place: "eg: 20000",
-                        id: "Paid Amount",
-                        type: "text"
-                      }
-                    ]
-                  },
                   {
                     value: "Fullfees",
                     label: "Fullfees",
@@ -14307,8 +13203,7 @@ const formData = [
             name: ['contact', 'alternate_phone'],
             place: 'Enter Alternate Number',
             id: 'alternate',
-            type: 'tel',
-            required: 'require'
+            type: 'tel'
           },
           {
             key: 'text',
@@ -14336,7 +13231,7 @@ const formData = [
             place: 'eg: JAN 20',
             id: 'Session',
             type: 'select',
-            options: [{ value: 'JAN 20', label: 'JAN 20' },
+              options: [{ value: 'JAN 20', label: 'JAN 20' },
             { value: 'JULY 20', label: 'JULY 20' },
             { value: 'JAN 21', label: 'JAN 21' },
             { value: 'JULY 21', label: 'JULY 21' },
@@ -14349,8 +13244,10 @@ const formData = [
             { value: 'JAN 25', label: 'JAN 25' },
             { value: 'JULY 25', label: 'JULY 25' },
             { value: 'MAR 23', label: 'MAR 23' },
+            { value: 'MAR 25', label: 'MAR 25' },
             { value: 'APR 23', label: 'APR 23' },
             { value: 'OCT 23', label: 'OCT 23' },
+            { value: 'OCT 24', label: 'OCT 24' },
             { value: 'NOV 23', label: 'NOV 23' },],
 
           },
@@ -14387,7 +13284,6 @@ const formData = [
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
             { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
 
@@ -14788,56 +13684,10 @@ const formData = [
                   }
                 ]
               },
-              {
+               {
                 value: "LATERAL ENTRY",
                 label: "LATERAL ENTRY",
                 payments: [
-                  {
-                    value: "Semester",
-                    label: "Semester",
-                    paymentType: [
-                      {
-                        key: "text",
-                        label: "Semester fees",
-                        name: ["customfields", "total_course_fee"],
-                        place: "eg: 20000",
-                        id: "Total Course Fee",
-                        type: "text",
-                        required: "require"
-                      },
-                      {
-                        key: "text",
-                        label: "Paid Amount",
-                        name: ["customfields", "paid_amount"],
-                        place: "eg: 20000",
-                        id: "Paid Amount",
-                        type: "text"
-                      }
-                    ]
-                  },
-                  {
-                    value: "Yearly",
-                    label: "Yearly",
-                    paymentType: [
-                      {
-                        key: "text",
-                        label: "Yearly Fees",
-                        name: ["customfields", "total_course_fee"],
-                        place: "eg: 20000",
-                        id: "Total Course Fee",
-                        type: "text",
-                        required: "require"
-                      },
-                      {
-                        key: "text",
-                        label: "Paid Amount",
-                        name: ["customfields", "paid_amount"],
-                        place: "eg: 20000",
-                        id: "Paid Amount",
-                        type: "text"
-                      }
-                    ]
-                  },
                   {
                     value: "Fullfees",
                     label: "Fullfees",
@@ -14907,8 +13757,7 @@ const formData = [
             name: ['contact', 'alternate_phone'],
             place: 'Enter Alternate Number',
             id: 'alternate',
-            type: 'tel',
-            required: 'require'
+            type: 'tel'
           },
           {
             key: 'text',
@@ -14936,7 +13785,7 @@ const formData = [
             place: 'eg: JAN 20',
             id: 'Session',
             type: 'select',
-            options: [{ value: 'JAN 20', label: 'JAN 20' },
+              options: [{ value: 'JAN 20', label: 'JAN 20' },
             { value: 'JULY 20', label: 'JULY 20' },
             { value: 'JAN 21', label: 'JAN 21' },
             { value: 'JULY 21', label: 'JULY 21' },
@@ -14949,8 +13798,10 @@ const formData = [
             { value: 'JAN 25', label: 'JAN 25' },
             { value: 'JULY 25', label: 'JULY 25' },
             { value: 'MAR 23', label: 'MAR 23' },
+            { value: 'MAR 25', label: 'MAR 25' },
             { value: 'APR 23', label: 'APR 23' },
             { value: 'OCT 23', label: 'OCT 23' },
+            { value: 'OCT 24', label: 'OCT 24' },
             { value: 'NOV 23', label: 'NOV 23' },],
 
           },
@@ -14987,7 +13838,6 @@ const formData = [
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
             { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
 
@@ -15388,56 +14238,10 @@ const formData = [
                   }
                 ]
               },
-              {
+               {
                 value: "LATERAL ENTRY",
                 label: "LATERAL ENTRY",
                 payments: [
-                  {
-                    value: "Semester",
-                    label: "Semester",
-                    paymentType: [
-                      {
-                        key: "text",
-                        label: "Semester fees",
-                        name: ["customfields", "total_course_fee"],
-                        place: "eg: 20000",
-                        id: "Total Course Fee",
-                        type: "text",
-                        required: "require"
-                      },
-                      {
-                        key: "text",
-                        label: "Paid Amount",
-                        name: ["customfields", "paid_amount"],
-                        place: "eg: 20000",
-                        id: "Paid Amount",
-                        type: "text"
-                      }
-                    ]
-                  },
-                  {
-                    value: "Yearly",
-                    label: "Yearly",
-                    paymentType: [
-                      {
-                        key: "text",
-                        label: "Yearly Fees",
-                        name: ["customfields", "total_course_fee"],
-                        place: "eg: 20000",
-                        id: "Total Course Fee",
-                        type: "text",
-                        required: "require"
-                      },
-                      {
-                        key: "text",
-                        label: "Paid Amount",
-                        name: ["customfields", "paid_amount"],
-                        place: "eg: 20000",
-                        id: "Paid Amount",
-                        type: "text"
-                      }
-                    ]
-                  },
                   {
                     value: "Fullfees",
                     label: "Fullfees",
@@ -15507,8 +14311,7 @@ const formData = [
             name: ['contact', 'alternate_phone'],
             place: 'Enter Alternate Number',
             id: 'alternate',
-            type: 'tel',
-            required: 'require'
+            type: 'tel'
           },
           {
             key: 'text',
@@ -15536,7 +14339,7 @@ const formData = [
             place: 'eg: JAN 20',
             id: 'Session',
             type: 'select',
-            options: [{ value: 'JAN 20', label: 'JAN 20' },
+              options: [{ value: 'JAN 20', label: 'JAN 20' },
             { value: 'JULY 20', label: 'JULY 20' },
             { value: 'JAN 21', label: 'JAN 21' },
             { value: 'JULY 21', label: 'JULY 21' },
@@ -15549,8 +14352,10 @@ const formData = [
             { value: 'JAN 25', label: 'JAN 25' },
             { value: 'JULY 25', label: 'JULY 25' },
             { value: 'MAR 23', label: 'MAR 23' },
+            { value: 'MAR 25', label: 'MAR 25' },
             { value: 'APR 23', label: 'APR 23' },
             { value: 'OCT 23', label: 'OCT 23' },
+            { value: 'OCT 24', label: 'OCT 24' },
             { value: 'NOV 23', label: 'NOV 23' },],
 
           },
@@ -15587,7 +14392,6 @@ const formData = [
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
             { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
 
@@ -15988,56 +14792,10 @@ const formData = [
                   }
                 ]
               },
-              {
+               {
                 value: "LATERAL ENTRY",
                 label: "LATERAL ENTRY",
                 payments: [
-                  {
-                    value: "Semester",
-                    label: "Semester",
-                    paymentType: [
-                      {
-                        key: "text",
-                        label: "Semester fees",
-                        name: ["customfields", "total_course_fee"],
-                        place: "eg: 20000",
-                        id: "Total Course Fee",
-                        type: "text",
-                        required: "require"
-                      },
-                      {
-                        key: "text",
-                        label: "Paid Amount",
-                        name: ["customfields", "paid_amount"],
-                        place: "eg: 20000",
-                        id: "Paid Amount",
-                        type: "text"
-                      }
-                    ]
-                  },
-                  {
-                    value: "Yearly",
-                    label: "Yearly",
-                    paymentType: [
-                      {
-                        key: "text",
-                        label: "Yearly Fees",
-                        name: ["customfields", "total_course_fee"],
-                        place: "eg: 20000",
-                        id: "Total Course Fee",
-                        type: "text",
-                        required: "require"
-                      },
-                      {
-                        key: "text",
-                        label: "Paid Amount",
-                        name: ["customfields", "paid_amount"],
-                        place: "eg: 20000",
-                        id: "Paid Amount",
-                        type: "text"
-                      }
-                    ]
-                  },
                   {
                     value: "Fullfees",
                     label: "Fullfees",
@@ -16107,8 +14865,7 @@ const formData = [
             name: ['contact', 'alternate_phone'],
             place: 'Enter Alternate Number',
             id: 'alternate',
-            type: 'tel',
-            required: 'require'
+            type: 'tel'
           },
           {
             key: 'text',
@@ -16136,7 +14893,7 @@ const formData = [
             place: 'eg: JAN 20',
             id: 'Session',
             type: 'select',
-            options: [{ value: 'JAN 20', label: 'JAN 20' },
+              options: [{ value: 'JAN 20', label: 'JAN 20' },
             { value: 'JULY 20', label: 'JULY 20' },
             { value: 'JAN 21', label: 'JAN 21' },
             { value: 'JULY 21', label: 'JULY 21' },
@@ -16149,8 +14906,10 @@ const formData = [
             { value: 'JAN 25', label: 'JAN 25' },
             { value: 'JULY 25', label: 'JULY 25' },
             { value: 'MAR 23', label: 'MAR 23' },
+            { value: 'MAR 25', label: 'MAR 25' },
             { value: 'APR 23', label: 'APR 23' },
             { value: 'OCT 23', label: 'OCT 23' },
+            { value: 'OCT 24', label: 'OCT 24' },
             { value: 'NOV 23', label: 'NOV 23' },],
 
           },
@@ -16187,7 +14946,6 @@ const formData = [
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
             { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
 
@@ -16589,56 +15347,10 @@ const formData = [
                   }
                 ]
               },
-              {
+               {
                 value: "LATERAL ENTRY",
                 label: "LATERAL ENTRY",
                 payments: [
-                  {
-                    value: "Semester",
-                    label: "Semester",
-                    paymentType: [
-                      {
-                        key: "text",
-                        label: "Semester fees",
-                        name: ["customfields", "total_course_fee"],
-                        place: "eg: 20000",
-                        id: "Total Course Fee",
-                        type: "text",
-                        required: "require"
-                      },
-                      {
-                        key: "text",
-                        label: "Paid Amount",
-                        name: ["customfields", "paid_amount"],
-                        place: "eg: 20000",
-                        id: "Paid Amount",
-                        type: "text"
-                      }
-                    ]
-                  },
-                  {
-                    value: "Yearly",
-                    label: "Yearly",
-                    paymentType: [
-                      {
-                        key: "text",
-                        label: "Yearly Fees",
-                        name: ["customfields", "total_course_fee"],
-                        place: "eg: 20000",
-                        id: "Total Course Fee",
-                        type: "text",
-                        required: "require"
-                      },
-                      {
-                        key: "text",
-                        label: "Paid Amount",
-                        name: ["customfields", "paid_amount"],
-                        place: "eg: 20000",
-                        id: "Paid Amount",
-                        type: "text"
-                      }
-                    ]
-                  },
                   {
                     value: "Fullfees",
                     label: "Fullfees",
@@ -16708,8 +15420,7 @@ const formData = [
             name: ['contact', 'alternate_phone'],
             place: 'Enter Alternate Number',
             id: 'alternate',
-            type: 'tel',
-            required: 'require'
+            type: 'tel'
           },
           {
             key: 'text',
@@ -16737,7 +15448,7 @@ const formData = [
             place: 'eg: JAN 20',
             id: 'Session',
             type: 'select',
-            options: [{ value: 'JAN 20', label: 'JAN 20' },
+              options: [{ value: 'JAN 20', label: 'JAN 20' },
             { value: 'JULY 20', label: 'JULY 20' },
             { value: 'JAN 21', label: 'JAN 21' },
             { value: 'JULY 21', label: 'JULY 21' },
@@ -16750,8 +15461,10 @@ const formData = [
             { value: 'JAN 25', label: 'JAN 25' },
             { value: 'JULY 25', label: 'JULY 25' },
             { value: 'MAR 23', label: 'MAR 23' },
+            { value: 'MAR 25', label: 'MAR 25' },
             { value: 'APR 23', label: 'APR 23' },
             { value: 'OCT 23', label: 'OCT 23' },
+            { value: 'OCT 24', label: 'OCT 24' },
             { value: 'NOV 23', label: 'NOV 23' },],
 
           },
@@ -16788,7 +15501,6 @@ const formData = [
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
             { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
 
@@ -17189,56 +15901,10 @@ const formData = [
                   }
                 ]
               },
-              {
+               {
                 value: "LATERAL ENTRY",
                 label: "LATERAL ENTRY",
                 payments: [
-                  {
-                    value: "Semester",
-                    label: "Semester",
-                    paymentType: [
-                      {
-                        key: "text",
-                        label: "Semester fees",
-                        name: ["customfields", "total_course_fee"],
-                        place: "eg: 20000",
-                        id: "Total Course Fee",
-                        type: "text",
-                        required: "require"
-                      },
-                      {
-                        key: "text",
-                        label: "Paid Amount",
-                        name: ["customfields", "paid_amount"],
-                        place: "eg: 20000",
-                        id: "Paid Amount",
-                        type: "text"
-                      }
-                    ]
-                  },
-                  {
-                    value: "Yearly",
-                    label: "Yearly",
-                    paymentType: [
-                      {
-                        key: "text",
-                        label: "Yearly Fees",
-                        name: ["customfields", "total_course_fee"],
-                        place: "eg: 20000",
-                        id: "Total Course Fee",
-                        type: "text",
-                        required: "require"
-                      },
-                      {
-                        key: "text",
-                        label: "Paid Amount",
-                        name: ["customfields", "paid_amount"],
-                        place: "eg: 20000",
-                        id: "Paid Amount",
-                        type: "text"
-                      }
-                    ]
-                  },
                   {
                     value: "Fullfees",
                     label: "Fullfees",
@@ -17308,8 +15974,7 @@ const formData = [
             name: ['contact', 'alternate_phone'],
             place: 'Enter Alternate Number',
             id: 'alternate',
-            type: 'tel',
-            required: 'require'
+            type: 'tel'
           },
           {
             key: 'text',
@@ -17337,7 +16002,7 @@ const formData = [
             place: 'eg: JAN 20',
             id: 'Session',
             type: 'select',
-            options: [{ value: 'JAN 20', label: 'JAN 20' },
+              options: [{ value: 'JAN 20', label: 'JAN 20' },
             { value: 'JULY 20', label: 'JULY 20' },
             { value: 'JAN 21', label: 'JAN 21' },
             { value: 'JULY 21', label: 'JULY 21' },
@@ -17350,8 +16015,10 @@ const formData = [
             { value: 'JAN 25', label: 'JAN 25' },
             { value: 'JULY 25', label: 'JULY 25' },
             { value: 'MAR 23', label: 'MAR 23' },
+            { value: 'MAR 25', label: 'MAR 25' },
             { value: 'APR 23', label: 'APR 23' },
             { value: 'OCT 23', label: 'OCT 23' },
+            { value: 'OCT 24', label: 'OCT 24' },
             { value: 'NOV 23', label: 'NOV 23' },],
 
           },
@@ -17388,7 +16055,6 @@ const formData = [
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
             { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
 
@@ -17789,56 +16455,10 @@ const formData = [
                   }
                 ]
               },
-              {
+               {
                 value: "LATERAL ENTRY",
                 label: "LATERAL ENTRY",
                 payments: [
-                  {
-                    value: "Semester",
-                    label: "Semester",
-                    paymentType: [
-                      {
-                        key: "text",
-                        label: "Semester fees",
-                        name: ["customfields", "total_course_fee"],
-                        place: "eg: 20000",
-                        id: "Total Course Fee",
-                        type: "text",
-                        required: "require"
-                      },
-                      {
-                        key: "text",
-                        label: "Paid Amount",
-                        name: ["customfields", "paid_amount"],
-                        place: "eg: 20000",
-                        id: "Paid Amount",
-                        type: "text"
-                      }
-                    ]
-                  },
-                  {
-                    value: "Yearly",
-                    label: "Yearly",
-                    paymentType: [
-                      {
-                        key: "text",
-                        label: "Yearly Fees",
-                        name: ["customfields", "total_course_fee"],
-                        place: "eg: 20000",
-                        id: "Total Course Fee",
-                        type: "text",
-                        required: "require"
-                      },
-                      {
-                        key: "text",
-                        label: "Paid Amount",
-                        name: ["customfields", "paid_amount"],
-                        place: "eg: 20000",
-                        id: "Paid Amount",
-                        type: "text"
-                      }
-                    ]
-                  },
                   {
                     value: "Fullfees",
                     label: "Fullfees",
@@ -17908,8 +16528,7 @@ const formData = [
             name: ['contact', 'alternate_phone'],
             place: 'Enter Alternate Number',
             id: 'alternate',
-            type: 'tel',
-            required: 'require'
+            type: 'tel'
           },
           {
             key: 'text',
@@ -17937,7 +16556,7 @@ const formData = [
             place: 'eg: JAN 20',
             id: 'Session',
             type: 'select',
-            options: [{ value: 'JAN 20', label: 'JAN 20' },
+              options: [{ value: 'JAN 20', label: 'JAN 20' },
             { value: 'JULY 20', label: 'JULY 20' },
             { value: 'JAN 21', label: 'JAN 21' },
             { value: 'JULY 21', label: 'JULY 21' },
@@ -17950,8 +16569,10 @@ const formData = [
             { value: 'JAN 25', label: 'JAN 25' },
             { value: 'JULY 25', label: 'JULY 25' },
             { value: 'MAR 23', label: 'MAR 23' },
+            { value: 'MAR 25', label: 'MAR 25' },
             { value: 'APR 23', label: 'APR 23' },
             { value: 'OCT 23', label: 'OCT 23' },
+            { value: 'OCT 24', label: 'OCT 24' },
             { value: 'NOV 23', label: 'NOV 23' },],
 
           },
@@ -17988,7 +16609,6 @@ const formData = [
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
             { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
 
@@ -18389,56 +17009,10 @@ const formData = [
                   }
                 ]
               },
-              {
+               {
                 value: "LATERAL ENTRY",
                 label: "LATERAL ENTRY",
                 payments: [
-                  {
-                    value: "Semester",
-                    label: "Semester",
-                    paymentType: [
-                      {
-                        key: "text",
-                        label: "Semester fees",
-                        name: ["customfields", "total_course_fee"],
-                        place: "eg: 20000",
-                        id: "Total Course Fee",
-                        type: "text",
-                        required: "require"
-                      },
-                      {
-                        key: "text",
-                        label: "Paid Amount",
-                        name: ["customfields", "paid_amount"],
-                        place: "eg: 20000",
-                        id: "Paid Amount",
-                        type: "text"
-                      }
-                    ]
-                  },
-                  {
-                    value: "Yearly",
-                    label: "Yearly",
-                    paymentType: [
-                      {
-                        key: "text",
-                        label: "Yearly Fees",
-                        name: ["customfields", "total_course_fee"],
-                        place: "eg: 20000",
-                        id: "Total Course Fee",
-                        type: "text",
-                        required: "require"
-                      },
-                      {
-                        key: "text",
-                        label: "Paid Amount",
-                        name: ["customfields", "paid_amount"],
-                        place: "eg: 20000",
-                        id: "Paid Amount",
-                        type: "text"
-                      }
-                    ]
-                  },
                   {
                     value: "Fullfees",
                     label: "Fullfees",
@@ -18508,8 +17082,7 @@ const formData = [
             name: ['contact', 'alternate_phone'],
             place: 'Enter Alternate Number',
             id: 'alternate',
-            type: 'tel',
-            required: 'require'
+            type: 'tel'
           },
           {
             key: 'text',
@@ -18537,7 +17110,7 @@ const formData = [
             place: 'eg: JAN 20',
             id: 'Session',
             type: 'select',
-            options: [{ value: 'JAN 20', label: 'JAN 20' },
+              options: [{ value: 'JAN 20', label: 'JAN 20' },
             { value: 'JULY 20', label: 'JULY 20' },
             { value: 'JAN 21', label: 'JAN 21' },
             { value: 'JULY 21', label: 'JULY 21' },
@@ -18550,8 +17123,10 @@ const formData = [
             { value: 'JAN 25', label: 'JAN 25' },
             { value: 'JULY 25', label: 'JULY 25' },
             { value: 'MAR 23', label: 'MAR 23' },
+            { value: 'MAR 25', label: 'MAR 25' },
             { value: 'APR 23', label: 'APR 23' },
             { value: 'OCT 23', label: 'OCT 23' },
+            { value: 'OCT 24', label: 'OCT 24' },
             { value: 'NOV 23', label: 'NOV 23' },],
 
           },
@@ -18588,7 +17163,6 @@ const formData = [
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
             { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
 
@@ -18989,56 +17563,10 @@ const formData = [
                   }
                 ]
               },
-              {
+               {
                 value: "LATERAL ENTRY",
                 label: "LATERAL ENTRY",
                 payments: [
-                  {
-                    value: "Semester",
-                    label: "Semester",
-                    paymentType: [
-                      {
-                        key: "text",
-                        label: "Semester fees",
-                        name: ["customfields", "total_course_fee"],
-                        place: "eg: 20000",
-                        id: "Total Course Fee",
-                        type: "text",
-                        required: "require"
-                      },
-                      {
-                        key: "text",
-                        label: "Paid Amount",
-                        name: ["customfields", "paid_amount"],
-                        place: "eg: 20000",
-                        id: "Paid Amount",
-                        type: "text"
-                      }
-                    ]
-                  },
-                  {
-                    value: "Yearly",
-                    label: "Yearly",
-                    paymentType: [
-                      {
-                        key: "text",
-                        label: "Yearly Fees",
-                        name: ["customfields", "total_course_fee"],
-                        place: "eg: 20000",
-                        id: "Total Course Fee",
-                        type: "text",
-                        required: "require"
-                      },
-                      {
-                        key: "text",
-                        label: "Paid Amount",
-                        name: ["customfields", "paid_amount"],
-                        place: "eg: 20000",
-                        id: "Paid Amount",
-                        type: "text"
-                      }
-                    ]
-                  },
                   {
                     value: "Fullfees",
                     label: "Fullfees",
@@ -19108,8 +17636,7 @@ const formData = [
             name: ['contact', 'alternate_phone'],
             place: 'Enter Alternate Number',
             id: 'alternate',
-            type: 'tel',
-            required: 'require'
+            type: 'tel'
           },
           {
             key: 'text',
@@ -19137,7 +17664,7 @@ const formData = [
             place: 'eg: JAN 20',
             id: 'Session',
             type: 'select',
-            options: [{ value: 'JAN 20', label: 'JAN 20' },
+              options: [{ value: 'JAN 20', label: 'JAN 20' },
             { value: 'JULY 20', label: 'JULY 20' },
             { value: 'JAN 21', label: 'JAN 21' },
             { value: 'JULY 21', label: 'JULY 21' },
@@ -19150,8 +17677,10 @@ const formData = [
             { value: 'JAN 25', label: 'JAN 25' },
             { value: 'JULY 25', label: 'JULY 25' },
             { value: 'MAR 23', label: 'MAR 23' },
+            { value: 'MAR 25', label: 'MAR 25' },
             { value: 'APR 23', label: 'APR 23' },
             { value: 'OCT 23', label: 'OCT 23' },
+            { value: 'OCT 24', label: 'OCT 24' },
             { value: 'NOV 23', label: 'NOV 23' },],
 
           },
@@ -19188,7 +17717,6 @@ const formData = [
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
             { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
 
@@ -19590,56 +18118,10 @@ const formData = [
                   }
                 ]
               },
-              {
+               {
                 value: "LATERAL ENTRY",
                 label: "LATERAL ENTRY",
                 payments: [
-                  {
-                    value: "Semester",
-                    label: "Semester",
-                    paymentType: [
-                      {
-                        key: "text",
-                        label: "Semester fees",
-                        name: ["customfields", "total_course_fee"],
-                        place: "eg: 20000",
-                        id: "Total Course Fee",
-                        type: "text",
-                        required: "require"
-                      },
-                      {
-                        key: "text",
-                        label: "Paid Amount",
-                        name: ["customfields", "paid_amount"],
-                        place: "eg: 20000",
-                        id: "Paid Amount",
-                        type: "text"
-                      }
-                    ]
-                  },
-                  {
-                    value: "Yearly",
-                    label: "Yearly",
-                    paymentType: [
-                      {
-                        key: "text",
-                        label: "Yearly Fees",
-                        name: ["customfields", "total_course_fee"],
-                        place: "eg: 20000",
-                        id: "Total Course Fee",
-                        type: "text",
-                        required: "require"
-                      },
-                      {
-                        key: "text",
-                        label: "Paid Amount",
-                        name: ["customfields", "paid_amount"],
-                        place: "eg: 20000",
-                        id: "Paid Amount",
-                        type: "text"
-                      }
-                    ]
-                  },
                   {
                     value: "Fullfees",
                     label: "Fullfees",
@@ -19709,8 +18191,7 @@ const formData = [
             name: ['contact', 'alternate_phone'],
             place: 'Enter Alternate Number',
             id: 'alternate',
-            type: 'tel',
-            required: 'require'
+            type: 'tel'
           },
           {
             key: 'text',
@@ -19738,7 +18219,7 @@ const formData = [
             place: 'eg: JAN 20',
             id: 'Session',
             type: 'select',
-            options: [{ value: 'JAN 20', label: 'JAN 20' },
+              options: [{ value: 'JAN 20', label: 'JAN 20' },
             { value: 'JULY 20', label: 'JULY 20' },
             { value: 'JAN 21', label: 'JAN 21' },
             { value: 'JULY 21', label: 'JULY 21' },
@@ -19751,8 +18232,10 @@ const formData = [
             { value: 'JAN 25', label: 'JAN 25' },
             { value: 'JULY 25', label: 'JULY 25' },
             { value: 'MAR 23', label: 'MAR 23' },
+            { value: 'MAR 25', label: 'MAR 25' },
             { value: 'APR 23', label: 'APR 23' },
             { value: 'OCT 23', label: 'OCT 23' },
+            { value: 'OCT 24', label: 'OCT 24' },
             { value: 'NOV 23', label: 'NOV 23' },],
 
           },
@@ -19789,7 +18272,6 @@ const formData = [
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
             { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
 
@@ -20190,56 +18672,10 @@ const formData = [
                   }
                 ]
               },
-              {
+               {
                 value: "LATERAL ENTRY",
                 label: "LATERAL ENTRY",
                 payments: [
-                  {
-                    value: "Semester",
-                    label: "Semester",
-                    paymentType: [
-                      {
-                        key: "text",
-                        label: "Semester fees",
-                        name: ["customfields", "total_course_fee"],
-                        place: "eg: 20000",
-                        id: "Total Course Fee",
-                        type: "text",
-                        required: "require"
-                      },
-                      {
-                        key: "text",
-                        label: "Paid Amount",
-                        name: ["customfields", "paid_amount"],
-                        place: "eg: 20000",
-                        id: "Paid Amount",
-                        type: "text"
-                      }
-                    ]
-                  },
-                  {
-                    value: "Yearly",
-                    label: "Yearly",
-                    paymentType: [
-                      {
-                        key: "text",
-                        label: "Yearly Fees",
-                        name: ["customfields", "total_course_fee"],
-                        place: "eg: 20000",
-                        id: "Total Course Fee",
-                        type: "text",
-                        required: "require"
-                      },
-                      {
-                        key: "text",
-                        label: "Paid Amount",
-                        name: ["customfields", "paid_amount"],
-                        place: "eg: 20000",
-                        id: "Paid Amount",
-                        type: "text"
-                      }
-                    ]
-                  },
                   {
                     value: "Fullfees",
                     label: "Fullfees",
@@ -20309,8 +18745,7 @@ const formData = [
             name: ['contact', 'alternate_phone'],
             place: 'Enter Alternate Number',
             id: 'alternate',
-            type: 'tel',
-            required: 'require'
+            type: 'tel'
           },
           {
             key: 'text',
@@ -20338,7 +18773,7 @@ const formData = [
             place: 'eg: JAN 20',
             id: 'Session',
             type: 'select',
-            options: [{ value: 'JAN 20', label: 'JAN 20' },
+              options: [{ value: 'JAN 20', label: 'JAN 20' },
             { value: 'JULY 20', label: 'JULY 20' },
             { value: 'JAN 21', label: 'JAN 21' },
             { value: 'JULY 21', label: 'JULY 21' },
@@ -20351,8 +18786,10 @@ const formData = [
             { value: 'JAN 25', label: 'JAN 25' },
             { value: 'JULY 25', label: 'JULY 25' },
             { value: 'MAR 23', label: 'MAR 23' },
+            { value: 'MAR 25', label: 'MAR 25' },
             { value: 'APR 23', label: 'APR 23' },
             { value: 'OCT 23', label: 'OCT 23' },
+            { value: 'OCT 24', label: 'OCT 24' },
             { value: 'NOV 23', label: 'NOV 23' },],
 
           },
@@ -20389,7 +18826,6 @@ const formData = [
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
             { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
 
@@ -20791,56 +19227,10 @@ const formData = [
                   }
                 ]
               },
-              {
+               {
                 value: "LATERAL ENTRY",
                 label: "LATERAL ENTRY",
                 payments: [
-                  {
-                    value: "Semester",
-                    label: "Semester",
-                    paymentType: [
-                      {
-                        key: "text",
-                        label: "Semester fees",
-                        name: ["customfields", "total_course_fee"],
-                        place: "eg: 20000",
-                        id: "Total Course Fee",
-                        type: "text",
-                        required: "require"
-                      },
-                      {
-                        key: "text",
-                        label: "Paid Amount",
-                        name: ["customfields", "paid_amount"],
-                        place: "eg: 20000",
-                        id: "Paid Amount",
-                        type: "text"
-                      }
-                    ]
-                  },
-                  {
-                    value: "Yearly",
-                    label: "Yearly",
-                    paymentType: [
-                      {
-                        key: "text",
-                        label: "Yearly Fees",
-                        name: ["customfields", "total_course_fee"],
-                        place: "eg: 20000",
-                        id: "Total Course Fee",
-                        type: "text",
-                        required: "require"
-                      },
-                      {
-                        key: "text",
-                        label: "Paid Amount",
-                        name: ["customfields", "paid_amount"],
-                        place: "eg: 20000",
-                        id: "Paid Amount",
-                        type: "text"
-                      }
-                    ]
-                  },
                   {
                     value: "Fullfees",
                     label: "Fullfees",
@@ -20910,8 +19300,7 @@ const formData = [
             name: ['contact', 'alternate_phone'],
             place: 'Enter Alternate Number',
             id: 'alternate',
-            type: 'tel',
-            required: 'require'
+            type: 'tel'
           },
           {
             key: 'text',
@@ -20939,7 +19328,7 @@ const formData = [
             place: 'eg: JAN 20',
             id: 'Session',
             type: 'select',
-            options: [{ value: 'JAN 20', label: 'JAN 20' },
+              options: [{ value: 'JAN 20', label: 'JAN 20' },
             { value: 'JULY 20', label: 'JULY 20' },
             { value: 'JAN 21', label: 'JAN 21' },
             { value: 'JULY 21', label: 'JULY 21' },
@@ -20952,8 +19341,10 @@ const formData = [
             { value: 'JAN 25', label: 'JAN 25' },
             { value: 'JULY 25', label: 'JULY 25' },
             { value: 'MAR 23', label: 'MAR 23' },
+            { value: 'MAR 25', label: 'MAR 25' },
             { value: 'APR 23', label: 'APR 23' },
             { value: 'OCT 23', label: 'OCT 23' },
+            { value: 'OCT 24', label: 'OCT 24' },
             { value: 'NOV 23', label: 'NOV 23' },],
 
           },
@@ -20990,7 +19381,6 @@ const formData = [
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
             { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
 
@@ -21391,56 +19781,10 @@ const formData = [
                   }
                 ]
               },
-              {
+               {
                 value: "LATERAL ENTRY",
                 label: "LATERAL ENTRY",
                 payments: [
-                  {
-                    value: "Semester",
-                    label: "Semester",
-                    paymentType: [
-                      {
-                        key: "text",
-                        label: "Semester fees",
-                        name: ["customfields", "total_course_fee"],
-                        place: "eg: 20000",
-                        id: "Total Course Fee",
-                        type: "text",
-                        required: "require"
-                      },
-                      {
-                        key: "text",
-                        label: "Paid Amount",
-                        name: ["customfields", "paid_amount"],
-                        place: "eg: 20000",
-                        id: "Paid Amount",
-                        type: "text"
-                      }
-                    ]
-                  },
-                  {
-                    value: "Yearly",
-                    label: "Yearly",
-                    paymentType: [
-                      {
-                        key: "text",
-                        label: "Yearly Fees",
-                        name: ["customfields", "total_course_fee"],
-                        place: "eg: 20000",
-                        id: "Total Course Fee",
-                        type: "text",
-                        required: "require"
-                      },
-                      {
-                        key: "text",
-                        label: "Paid Amount",
-                        name: ["customfields", "paid_amount"],
-                        place: "eg: 20000",
-                        id: "Paid Amount",
-                        type: "text"
-                      }
-                    ]
-                  },
                   {
                     value: "Fullfees",
                     label: "Fullfees",
@@ -21510,8 +19854,7 @@ const formData = [
             name: ['contact', 'alternate_phone'],
             place: 'Enter Alternate Number',
             id: 'alternate',
-            type: 'tel',
-            required: 'require'
+            type: 'tel'
           },
           {
             key: 'text',
@@ -21539,7 +19882,7 @@ const formData = [
             place: 'eg: JAN 20',
             id: 'Session',
             type: 'select',
-            options: [{ value: 'JAN 20', label: 'JAN 20' },
+              options: [{ value: 'JAN 20', label: 'JAN 20' },
             { value: 'JULY 20', label: 'JULY 20' },
             { value: 'JAN 21', label: 'JAN 21' },
             { value: 'JULY 21', label: 'JULY 21' },
@@ -21552,8 +19895,10 @@ const formData = [
             { value: 'JAN 25', label: 'JAN 25' },
             { value: 'JULY 25', label: 'JULY 25' },
             { value: 'MAR 23', label: 'MAR 23' },
+            { value: 'MAR 25', label: 'MAR 25' },
             { value: 'APR 23', label: 'APR 23' },
             { value: 'OCT 23', label: 'OCT 23' },
+            { value: 'OCT 24', label: 'OCT 24' },
             { value: 'NOV 23', label: 'NOV 23' },],
 
           },
@@ -21590,7 +19935,6 @@ const formData = [
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
             { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Payment Gateway', label: 'Payment Gateway' },
             { value: 'Cash/DD', label: 'Cash/DD' }],
           },
 

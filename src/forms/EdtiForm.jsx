@@ -1,10 +1,12 @@
-import { DatePicker, Form, Input, Select } from 'antd';
+import { Form, Input, Select, Radio } from 'antd';
 import useLanguage from '@/locale/useLanguage';
+import { useState } from 'react';
 
 
 const { TextArea } = Input;
 export default function EditForm() {
     const translate = useLanguage();
+    const [status, setStatus] = useState('');
 
     return (
         <>
@@ -85,8 +87,10 @@ export default function EditForm() {
                             { value: 'JAN 25', label: 'JAN 25' },
                             { value: 'JULY 25', label: 'JULY 25' },
                             { value: 'MAR 23', label: 'MAR 23' },
+                            { value: 'MAR 25', label: 'MAR 25' },
                             { value: 'APR 23', label: 'APR 23' },
                             { value: 'OCT 23', label: 'OCT 23' },
+                            { value: 'OCT 24', label: 'OCT 24' },
                             { value: 'NOV 23', label: 'NOV 23' },
                         ]}>
 
@@ -191,7 +195,7 @@ export default function EditForm() {
                     <Select
                         showSearch
                         options={[
-                            { value: '1st Installment', label: '1st Installmen' },
+                            { value: '1st Installment', label: '1st Installment' },
                             { value: '2nd Installment', label: '2nd Installment' },
                             { value: '3rd Installment', label: '3rd Installment' },
                             { value: '4th Installment', label: '4th Installment' },
@@ -214,7 +218,6 @@ export default function EditForm() {
                             { value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
                             { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
                             { value: 'University Bank Account', label: 'University Bank Account' },
-                            { value: 'Payment Gateway', label: 'Payment Gateway' },
                             { value: 'Cash/DD', label: 'Cash/DD' }
 
                         ]}
@@ -251,26 +254,51 @@ export default function EditForm() {
                 >
                     <Input />
                 </Form.Item>
+
                 <Form.Item
                     label={translate('status')}
                     name={['customfields', 'status']}
-                    rules={[
-                        { required: true, message: 'status is required' }
-                    ]}
+                    rules={[{ required: true, message: 'Status is required' }]}
                 >
                     <Select
                         showSearch
-                        optionFilterProp='children'
                         options={[
                             { value: 'New', label: translate('New') },
                             { value: 'Approved', label: translate('Approved') },
                             { value: 'Enrolled', label: translate('Enrolled') },
-                            { value: 'Cancel', label: translate('cancel') },
-                            { value: 'Alumini', label: translate('Alumini') },
+                            { value: 'Cancel', label: translate('Cancel') },
+                            { value: 'Alumni', label: translate('Alumni') },
                         ]}
-                    ></Select>
+                        onChange={(value) => setStatus(value)} // Update status state
+                    />
                 </Form.Item>
 
+                {status === 'Enrolled' && ( // Conditionally render if status is 'Enrolled'
+                    <Form.Item
+                        label={translate('Enrollment Number')}
+                        name={['customfields', 'enrollment']}
+                        rules={[
+                            { required: status === 'Enrolled', message: 'Enrollment number is required for enrolled status' },
+                        ]}
+                    >
+                        <Input placeholder='Enter enrollment number' />
+                    </Form.Item>
+                )}
+
+                {status === 'Approved' && ( // Conditionally render if status is 'Enrolled'
+                    <Form.Item className='ml-10'
+                        label={translate('lms')}
+                        name={['customfields', 'lmsStatus']}
+                        rules={[
+                            { required: status === 'Approved', message: 'lms status required' },
+                        ]}
+                    >
+                        <Radio.Group>
+                            <Radio value="yes">Yes</Radio>
+                            <Radio value="no">No</Radio>
+                        </Radio.Group>
+                    </Form.Item>
+                )}
                 <Form.Item
                     label={translate('paymentStatus')}
                     name={['customfields', 'paymentStatus']}

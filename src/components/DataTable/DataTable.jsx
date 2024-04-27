@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { EyeOutlined, EditOutlined, DeleteOutlined, EllipsisOutlined } from '@ant-design/icons';
-import { Dropdown, Table, Button, Card, Select, Input, DatePicker, Modal, Drawer } from 'antd';
+import { Dropdown, Table, Button, Card, Select, Input, DatePicker, Menu, Drawer } from 'antd';
 import { useSelector, useDispatch } from 'react-redux';
 import { crud } from '@/redux/crud/actions';
 import { LiaRupeeSignSolid } from "react-icons/lia";
@@ -15,8 +15,11 @@ import { BiReset } from 'react-icons/bi';
 import { LiaFileDownloadSolid } from "react-icons/lia";
 import { debounce } from 'lodash';
 import UpdatePaymentForm from '@/forms/AddPayment';
+import UploadDocumentForm from '@/forms/uploadDocument';
+import { IoDocumentAttachOutline } from "react-icons/io5";
 import StudentDetailsModal from '../StudentDetailsModal';
 import HistoryModal from '../HistoryModal';
+import { IoFilterOutline } from "react-icons/io5";
 const { Search } = Input;
 const { RangePicker } = DatePicker;
 
@@ -64,6 +67,9 @@ export default function DataTable({ config, extra = [] }) {
   const [showStudentDetailsModal, setShowStudentDetailsModal] = useState(false);
   const [selectedStudent, setSelectedStudent] = useState(null);
   const [Paymentstatus, setSelectedPaymentstatus] = useState(null);
+  const [lmsFilter, setLmsFilter] = useState(null);
+  const [showUploadDocumentDrawer, setShowUploadDocumentDrawer] = useState(false); // New state to control the drawer
+  const [recordForUploadDocument, setRecordForUploadDocument] = useState(null); // Record to be used in the upload document form
 
   // Function to handle click event on action button
   const handleShowStudentDetails = (record) => {
@@ -112,6 +118,17 @@ export default function DataTable({ config, extra = [] }) {
     setStartDate(null);
     setEndDate(null);
     setSelectedPaymentstatus(null)
+    setLmsFilter(null)
+  };
+
+
+  // Conditional styling for the payment status buttons
+  const getPaymentStatusStyle = (status) => {
+    const isSelected = lmsFilter === status;
+    return {
+      backgroundColor: isSelected ? '#blue' : '#white',
+      color: isSelected ? '#0000ff' : '#000',
+    };
   };
 
   const handleDateRangeChange = (dates) => {
@@ -145,6 +162,11 @@ export default function DataTable({ config, extra = [] }) {
     ...extra,
     {
       type: 'divider',
+    },
+    {
+      label: translate('Upload_document'),
+      key: 'upload',
+      icon: <IoDocumentAttachOutline />,
     },
     {
       label: translate('Delete'),
@@ -184,6 +206,19 @@ export default function DataTable({ config, extra = [] }) {
       console.error("Error preparing payment update:", error);
     }
   };
+  
+  // Function to handle document upload drawer open
+  const handleUploadDocument = (record) => {
+    setRecordForUploadDocument(record); // Store the record to be used in the form
+    setShowUploadDocumentDrawer(true); // Open the drawer
+  };
+
+  // Close the drawer
+  const closeUploadDocumentDrawer = () => {
+    setShowUploadDocumentDrawer(false);
+    setRecordForUploadDocument(null);
+  };
+
 
   const handleDelete = (record) => {
     dispatch(crud.currentAction({ actionType: 'delete', data: record }));
@@ -223,6 +258,9 @@ export default function DataTable({ config, extra = [] }) {
                   break;
                 case 'add':
                   handleAddpayment(record);
+                  break;
+                case 'upload':
+                  handleUploadDocument(record); // Open the drawer for document upload
                   break;
                 case 'history':
                   handleHistory(record);
@@ -323,7 +361,18 @@ export default function DataTable({ config, extra = [] }) {
         paymentStatusMatch = customfields.paymentStatus === 'payment approved';
       }
 
-      return instituteMatch && universityMatch && sessionMatch && searchMatch && statusMatch && userMatch && startDateMatch && endDateMatch && paymentStatusMatch;
+
+      // If there is a specific condition for lmsFilter
+      let lmsMatch = true; // Default is true (no filtering by "Yes" or "No")
+      if (lmsFilter) {
+        if (lmsFilter === 'yes') {
+          lmsMatch = customfields.lmsStatus === 'yes'; // Change `someProperty` to the relevant property
+        } else if (lmsFilter === 'no') {
+          lmsMatch = customfields.lmsStatus === 'no'; // Change `someProperty` to the relevant property
+        }
+      }
+
+      return instituteMatch && universityMatch && sessionMatch && searchMatch && statusMatch && userMatch && startDateMatch && endDateMatch && paymentStatusMatch && lmsMatch;
     });
   };
   const handleExportToExcel = () => {
@@ -356,6 +405,29 @@ export default function DataTable({ config, extra = [] }) {
     }
   };
 
+  const handleOptionSelect = (option) => {
+    setLmsFilter(option); // Set the filter to "yes" or "no"
+    handelDataTableLoad(); // Reload the table data with the new filter
+  };
+
+
+  const menu = (
+    <Menu onClick={({ key }) => handleOptionSelect(key)}>
+      <Menu.Item
+        key="yes"
+        className={`${lmsFilter === 'yes' ? 'bg-blue-100 text-blue-600' : ''}`}
+      >
+        Yes
+      </Menu.Item>
+      <Menu.Item
+        key="no"
+        className={`${lmsFilter === 'no' ? 'bg-red-100 text-red-600' : ''}`}
+      >
+        No
+      </Menu.Item>
+    </Menu>
+  );
+
   const renderTable = () => {
     const filteredData = filterDataSource(dataSource);
     return (
@@ -387,6 +459,12 @@ export default function DataTable({ config, extra = [] }) {
               <div className='font-thin'>
                 <LiaFileDownloadSolid title='Export excel' onClick={handleExportToExcel} className='text-3xl text-blue-500 hover:text-blue-700 cursor-pointer' />
               </div>
+              <Dropdown overlay={menu} trigger={['click']}>
+                <div className='flex items-center gap-1.5 text-sm uppercase rounded-full border border-gray-400 bg-gray-50 px-1 cursor-pointer'>
+                  <span><IoFilterOutline /></span>
+                  <span>lms</span>
+                </div>
+              </Dropdown>
             </div>
           </div>
           <Table
@@ -502,7 +580,7 @@ export default function DataTable({ config, extra = [] }) {
             </div>
             <div>
               {/* Button to filter Payment Received */}
-              <Button className='w-24 mt-3 capitalize text-center text-sm font-thin hover:bg-cyan-100 bg-cyan-100 hover:text-cyan-700 text-cyan-700' onClick={() => handlePaymentStatus('payment received')}>
+              <Button style={getPaymentStatusStyle('payment received')} className='w-24 mt-3 capitalize text-center text-sm font-thin hover:bg-cyan-100 bg-cyan-100 hover:text-cyan-700 text-cyan-700' onClick={() => handlePaymentStatus('payment received')}>
                 <span className="font-thin text-sm -ml-2">Received</span>
                 <span className="font-thin text-sm ml-1">({paymentReceivedCount})</span>
               </Button>
@@ -559,6 +637,23 @@ export default function DataTable({ config, extra = [] }) {
       >
         {/* Pass the onCloseModal callback to the UpdatePaymentForm component */}
         {updatePaymentRecord && <UpdatePaymentForm entity="lead" id={updatePaymentRecord?._id} recordDetails={updatePaymentRecord} onCloseModal={handleSuccessUpdate} />}
+      </Drawer>
+      <Drawer
+        title="Upload Document"
+        open={showUploadDocumentDrawer} // Controlled by state
+        onClose={closeUploadDocumentDrawer} // Close action
+        footer={null}
+        width={500}
+      >
+        {/* Render the form only if a record is set */}
+        {recordForUploadDocument && (
+          <UploadDocumentForm
+            entity="lead"
+            id={recordForUploadDocument?._id}
+            recordDetails={recordForUploadDocument}
+            onCloseModal={closeUploadDocumentDrawer} // Pass the close function to the form
+          />
+        )}
       </Drawer>
       <div>
         <StudentDetailsModal

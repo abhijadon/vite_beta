@@ -7,8 +7,10 @@ import useLanguage from '@/locale/useLanguage';
 import '@/style/tailwind.css'
 import EditForm from '../../forms/EdtiForm';
 import AddForm from '../../forms/AddPayment';
+import { useState } from 'react';
 export default function Lead() {
   const translate = useLanguage();
+  const [page, setPage] = useState(1);
   const entity = 'lead';
   const searchConfig = {
     displayLabels: ['full_name', 'company', 'contact.email'],
@@ -28,7 +30,7 @@ export default function Lead() {
     {
       title: 'S.No.',
       dataIndex: '',
-      render: (text, record, index) => index + 1,
+      render: (value, item, index) => (page - 1) * 1000 + index + 1, // S.No. based on page and index
     },
     {
       title: translate('StudentID'),

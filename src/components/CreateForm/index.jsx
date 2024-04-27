@@ -114,7 +114,7 @@ export default function CreateForm({ config, formElements, withUpload = false })
     if (formData) {
       // Calculate due amount based on total course fee and total paid amount
       const totalCourseFee = parseFloat(formData.customfields.total_course_fee);
-      const totalPaidAmount = parseFloat(formData.customfields.total_paid_amount);
+      const totalPaidAmount = parseFloat(formData.customfields.paid_amount);
       const calculatedDueAmount = totalCourseFee - totalPaidAmount;
       setDueAmount(calculatedDueAmount);
 
@@ -205,16 +205,12 @@ export default function CreateForm({ config, formElements, withUpload = false })
                 <div className='mt-3'>
                   <ul className='list-disc'>
                     <li className=' border-b p-1 grid grid-cols-2 gap-20'>
-                      <span className='text-base font-thin text-[#000066]'>Installment Type</span>
-                      <span className='text-sm font-thin text-gray-500'>{formData.customfields.installment_type}</span>
-                    </li>
-                    <li className=' border-b p-1 grid grid-cols-2 gap-20'>
                       <span className='text-base font-thin text-[#000066]'>Total Course Fee</span>
                       <span className='text-sm font-thin text-gray-500'>{formData.customfields.total_course_fee}</span>
                     </li>
                     <li className=' border-b p-1 grid grid-cols-2 gap-20 '>
                       <span className='text-base font-thin text-[#000066]'>Total Paid Amount</span>
-                      <span className='text-sm font-thin text-left text-gray-500'>{formData.customfields.total_paid_amount}</span>
+                      <span className='text-sm font-thin text-left text-gray-500'>{formData.customfields.paid_amount}</span>
                     </li>
                     <li className=' border-b p-1 grid grid-cols-2 gap-20'>
                       <span className='text-base font-thin text-[#000066]'>Paid Amount</span>

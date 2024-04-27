@@ -200,7 +200,10 @@ const StudentDetailsModal = ({ visible, onClose, student }) => {
                                     <span className='text-base font-thin text-gray-700'>Session</span>
                                     <span className='text-sm font-thin text-gray-500'>{student.customfields.session}</span>
                                 </li>
-
+                                <li className='grid grid-cols-2 gap-20 border-b p-1 ml-8'>
+                                    <span className='text-base font-thin text-gray-700'>LMS Status</span>
+                                    <span className='text-sm font-thin text-gray-500 capitalize'>{student.customfields.lmsStatus}</span>
+                                </li>
                             </ul>
                             <ul>
                                 <li className='grid grid-cols-2 gap-20 border-b p-1 ml-8'>
@@ -233,10 +236,17 @@ const StudentDetailsModal = ({ visible, onClose, student }) => {
                                     <span className='text-sm font-thin text-gray-500'>{student.customfields.remark}</span>
                                 </li>
                                 <li className='grid grid-cols-2 gap-20 border-b p-1 ml-8'>
+                                    <span className='text-base font-thin text-gray-700'>Enrollment Number</span>
+                                    <span className='text-sm font-thin text-gray-500'>{student.customfields.enrollment}</span>
+                                </li>
+                                <li className='grid grid-cols-2 gap-20 border-b p-1 ml-8'>
                                     <span className='text-base font-thin text-gray-700'>Status</span>
                                     <span className='text-sm font-thin text-gray-500'>
                                         {student.customfields.status === 'New' && (
                                             <span className='mt-3 capitalize text-center text-sm font-thin hover:bg-blue-100 bg-blue-100 hover:text-blue-700 text-blue-700 pl-2 pr-2'>New</span>
+                                        )}
+                                        {student.customfields.status === 'Approved' && (
+                                            <span className='mt-3 capitalize text-center text-sm font-thin hover:bg-green-100 bg-green-100 hover:text-green-700 text-green-700 pl-2 pr-2'>Approved</span>
                                         )}
                                         {student.customfields.status === 'Cancel' && (
                                             <span className='mt-3 capitalize text-center text-sm font-thin hover:bg-red-100 bg-red-100 hover:text-red-700 text-red-700 pl-2 pr-2'>Cancel</span>

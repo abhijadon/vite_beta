@@ -123,12 +123,6 @@ const UpdatePaymentForm = ({ entity, id, recordDetails, onCloseModal }) => {
                 return [
                     { value: 'Payment Received', label: translate('Payment Received') },
                 ];
-
-            case 'user':
-                return [
-                    { value: 'Payment Received', label: translate('Payment Received') },
-                ];
-
             default:
                 return [];
         }
@@ -257,7 +251,7 @@ const UpdatePaymentForm = ({ entity, id, recordDetails, onCloseModal }) => {
                 label={translate('payment type')}
                 name={['customfields', 'payment_type']}
             >
-                <Select
+                <Select disabled
                     showSearch
                     options={[
                         { value: 'Semester', label: translate('semester') },

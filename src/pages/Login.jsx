@@ -1,12 +1,8 @@
 import { useEffect } from 'react';
-
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-
 import useLanguage from '@/locale/useLanguage';
-
 import { Form, Button, Layout, Col, Divider, Typography } from 'antd';
-
 import { login } from '@/redux/auth/actions';
 import { selectAuth } from '@/redux/auth/selectors';
 import LoginForm from '@/forms/LoginForm';
@@ -14,9 +10,7 @@ import AuthLayout from '@/layout/AuthLayout';
 import SideContent from '@/components/SideContent';
 import SelectLanguage from '@/components/SelectLanguage';
 import useIsMobile from '@/hooks/useIsMobile';
-
 import logo from '@/style/images/logo.png';
-
 const { Content } = Layout;
 const { Title } = Typography;
 
