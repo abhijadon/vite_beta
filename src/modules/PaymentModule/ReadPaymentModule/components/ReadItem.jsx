@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Button, Row, Col, Descriptions, Statistic, Tag, Divider, Typography } from 'antd';
+import { Button, Row, Col, Card, Statistic, Tag, Divider, Typography } from 'antd';
 import { PageHeader } from '@ant-design/pro-layout';
 import {
   EditOutlined,
@@ -67,7 +67,7 @@ const Item = ({ item }) => {
 
 export default function ReadItem({ config, selectedItem }) {
   const translate = useLanguage();
-  const { entity, ENTITY_NAME } = config;
+  const { entity } = config;
   const dispatch = useDispatch();
 
   const { moneyFormatter } = useMoney();
@@ -91,18 +91,12 @@ export default function ReadItem({ config, selectedItem }) {
     return () => controller.abort();
   }, [currentResult]);
 
+
   return (
     <>
-      <PageHeader
-        onBack={() => {
-          history.goBack();
-        }}
-        title={`${ENTITY_NAME}/${currentErp.student_name}/${dayjs(currentErp.created).format('DD/MM/YY') || ''}`}
-
-        ghost={false}
-        tags={<Tag color="volcano">{currentErp.paymentStatus || currentErp.status}</Tag>}
+      <PageHeader className='mt-0'
         extra={[
-          <Button
+          <Button className='hover:bg-blue-200 hover:text-blue-800 bg-blue-300 text-blue-700'
             key={`${uniqueId()}`}
             onClick={() => {
               navigate(`/${entity.toLowerCase()}`);
@@ -111,7 +105,7 @@ export default function ReadItem({ config, selectedItem }) {
           >
             {translate('Close')}
           </Button>,
-          <Button
+          <Button className='hover:bg-blue-200 hover:text-blue-800 bg-blue-300 text-blue-700'
             key={`${uniqueId()}`}
             onClick={() => {
               window.open(
@@ -123,7 +117,7 @@ export default function ReadItem({ config, selectedItem }) {
           >
             {translate('Download PDF')}
           </Button>,
-          <Button
+          <Button className='hover:bg-blue-200 hover:text-blue-800 bg-blue-300 text-blue-700'
             key={`${uniqueId()}`}
             onClick={() => {
               send(currentErp._id);
@@ -133,7 +127,7 @@ export default function ReadItem({ config, selectedItem }) {
             {translate('Send by email')}
           </Button>,
 
-          <Button
+          <Button className='hover:bg-blue-200 hover:text-blue-800 bg-blue-300 text-blue-700'
             key={`${uniqueId()}`}
             onClick={() => {
               dispatch(
@@ -150,124 +144,89 @@ export default function ReadItem({ config, selectedItem }) {
             {translate('Edit')}
           </Button>,
         ]}
-        style={{
-          padding: '20px 0px',
-        }}
       >
-        <Row>
-          <Statistic title="Status" value={currentErp.status} />
-          <Statistic
-            title={translate('SubTotal')}
-            value={moneyFormatter({ amount: currentErp.total_course_fee })}
-            style={{
-              margin: '0 32px',
-            }}
-          />
-          <Statistic
-            title={translate('Total')}
-            value={moneyFormatter({ amount: currentErp.total_paid_amount })}
-            style={{
-              margin: '0 32px',
-            }}
-          />
-          <Statistic
-            title={translate('paid')}
-            value={moneyFormatter({ amount: currentErp.paid_amount })}
-            style={{
-              margin: '0 32px',
-            }}
-          />
-          <Statistic
-            title={translate('Due')}
-            value={moneyFormatter({ amount: currentErp.total_course_fee - currentErp.total_paid_amount })}
-            style={{
-              margin: '0 32px',
-            }}
-          />
-        </Row>
-      </PageHeader>
-      <Divider dashed />
-      <Descriptions title={`${translate('Details')} : ${currentErp.client?.company || ''}`}>
-        <Descriptions.Item label={translate('Name')}>
-          {currentErp.student_name || ''}
-        </Descriptions.Item>
-        <Descriptions.Item label={translate('email')}>
-          {currentErp.email || ''}
-        </Descriptions.Item>
-        <Descriptions.Item label={translate('Phone')}>
-          {currentErp.phone || ''}
-        </Descriptions.Item>
-      </Descriptions>
-      <Divider />
-      <Row>
-        <Col sm={24} md={12}>
-          <Typography.Title level={5}>{translate('Payment Information')} :</Typography.Title>
-        </Col>
-        <Col sm={24} md={12} style={{ textAlign: 'right' }}>
-          <Button icon={<ExportOutlined />}>{translate('Show invoice')}</Button>
-        </Col>
-      </Row>
-      <div
-        style={{
-          width: '300px',
-          float: 'left',
-          textAlign: 'right',
-          fontWeight: '700',
-        }}
-      >
-        <Row gutter={[12, -5]}>
-          {Item}
-          <Col className="gutter-row" span={12}>
-            <p>{translate('Total Course Fee')} :</p>
-          </Col>
-          <Col className="gutter-row" span={12}>
-            <p>{moneyFormatter({ amount: currentErp.total_course_fee })}</p>
-          </Col>
 
-          <Col className="gutter-row" span={12}>
-            <p>{translate('Total Paid')} :</p>
-          </Col>
-          <Col className="gutter-row" span={12}>
-            <p>{moneyFormatter({ amount: currentErp.total_paid_amount })}</p>
-          </Col>
+        <div className="relative flex items-center">
+          <div className="uppercase text-lg text-[#003399]">
+            <span>
+              Student Details
+            </span>
+          </div>
+          <hr className="absolute left-48 right-0 top-3 border-t-2 border-gray-200" />
+        </div>
 
-          <Col className="gutter-row" span={12}>
-            <p>{translate('Paid')} :</p>
-          </Col>
-          <Col className="gutter-row" span={12}>
-            <p>{moneyFormatter({ amount: currentErp.paid_amount })}</p>
-          </Col>
-
-          <Col className="gutter-row" span={12}>
-            <p>{translate('Total Due')} :</p>
-          </Col>
-          <Col className="gutter-row" span={12}>
-            <p>{moneyFormatter({ amount: currentErp.total_course_fee - currentErp.total_paid_amount })}</p>
-          </Col>
-        </Row>
-      </div>
-      <div>
-        <div style={{ display: 'flex', flexDirection: 'column', paddingLeft: '100px' }}>
-          <div className="gutter-row" span={24}>
-            <Typography.Title level={5}>{translate('Payment Details')} :</Typography.Title>
-            <Col className="gutter-row" span={12}>
-              <p>{translate('Payment Date')} :{dayjs(currentErp.date).format('DD/MM/YYYY')}</p>
-            </Col>
-            <Col className="gutter-row" span={12}>
-              <p>{translate('Payment Time')} :  {dayjs(currentErp.createdAt).format('HH:mm:ss')}</p>
-            </Col>
-            <Col className="gutter-row" span={12}>
-              <p>{translate('Payment Week')} : {currentErp.week}</p>
-            </Col>
-            <Col className="gutter-row" span={12}>
-              <p>{translate('Payment Year')} : {currentErp.year}</p>
-            </Col>
-            <Col className="gutter-row" span={12}>
-              <p>{translate('Update Time')} : {dayjs(currentErp.updatedAt).format('HH:mm:ss')}</p>
-            </Col>
+        <div className='mt-3 mb-4 flex items-center justify-start gap-32'>
+          <div>
+            <span className='text-base font-bold capitalize'>Name:</span><span className='font-semibold leading-loose'> {currentErp.student_name || ''}</span>
+          </div>
+          <div>
+            <span className='text-base font-bold capitalize'>Email:</span><span className='font-semibold leading-loose'>  {currentErp.email || ''}</span>
+          </div>
+          <div>
+            <span className='text-base font-bold capitalize'>Phone:</span><span className='font-semibold leading-loose'>  {currentErp.phone || ''}</span>
           </div>
         </div>
-      </div>
+
+        <div className="relative flex items-center mt-10">
+          <div className="uppercase text-lg text-[#003399]">
+            <span>
+              Payment Details
+            </span>
+          </div>
+          <hr className="absolute left-48 right-0 top-3 border-t-2 border-gray-200" />
+        </div>
+        <Row>
+
+
+          <div className='mt-6 '>
+            <Card className='h-32 w-[100%]'>
+              <div className='mt-5 flex items-center gap-10'>
+                <div className='border-r-2'>
+                  <div className='pl-8 pr-8'>
+                    <h4 className='text-base text-gray-500'>
+                      Total course fee
+                    </h4>
+                    <p className='text-2xl mt-1.5 text-[#003399]'>
+                      {moneyFormatter({ amount: currentErp.total_course_fee })}
+                    </p>
+                  </div>
+                </div>
+                <Col className='border-r-2'>
+                  <div className='pl-8 pr-8'>
+                    <h4 className='text-base text-gray-500'>
+                      Total Paid Amount
+                    </h4>
+                    <p className='text-2xl mt-1.5 text-[#009445]'>
+                      {moneyFormatter({ amount: currentErp.total_paid_amount })}
+                    </p>
+                  </div>
+                </Col>
+                <Col className='border-r-2'>
+                  <div className='pl-8 pr-8'>
+                    <h4 className='text-base text-gray-500'>
+                      Paid Amount
+                    </h4>
+                    <p className='text-2xl mt-1.5 text-[#009445]'>
+                      {moneyFormatter({ amount: currentErp.paid_amount })}
+                    </p>
+                  </div>
+                </Col>
+
+                <Col>
+                  <div className='pl-8 pr-8'>
+                    <h4 className='text-base text-gray-500'>
+                      Due Amount
+                    </h4>
+                    <p className='text-2xl mt-1.5 text-[#FF0000]'>
+                      {moneyFormatter({ amount: currentErp.due_amount })}
+                    </p>
+                  </div>
+                </Col>
+              </div>
+            </Card>
+          </div>
+        </Row>
+      </PageHeader>
 
     </>
   );

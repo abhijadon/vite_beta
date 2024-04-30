@@ -376,7 +376,7 @@ const formData = [
                   }
                 ]
               },
-               {
+              {
                 value: "LATERAL ENTRY",
                 label: "LATERAL ENTRY",
                 payments: [
@@ -477,7 +477,7 @@ const formData = [
             place: 'eg: JAN 20',
             id: 'Session',
             type: 'select',
-              options: [{ value: 'JAN 20', label: 'JAN 20' },
+            options: [{ value: 'JAN 20', label: 'JAN 20' },
             { value: 'JULY 20', label: 'JULY 20' },
             { value: 'JAN 21', label: 'JAN 21' },
             { value: 'JULY 21', label: 'JULY 21' },
@@ -527,10 +527,11 @@ const formData = [
             type: 'select',
             place: 'Select Payment Mode',
 
-            options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
-            { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
-            { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Cash/DD', label: 'Cash/DD' }],
+            options: [
+              { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
+              { value: 'University Bank Account', label: 'University Bank Account' },
+              { value: 'Cash/DD', label: 'Cash/DD' },
+             { value: 'University Website', label: 'University Website' }],
           },
 
           {
@@ -563,7 +564,7 @@ const formData = [
         label: 'DPU',
         name: ['customfields', 'university_name'],
         value: 'DPU',
-      fields: [
+        fields: [
           {
             courses: [
               {
@@ -930,7 +931,7 @@ const formData = [
                   }
                 ]
               },
-               {
+              {
                 value: "LATERAL ENTRY",
                 label: "LATERAL ENTRY",
                 payments: [
@@ -1031,7 +1032,7 @@ const formData = [
             place: 'eg: JAN 20',
             id: 'Session',
             type: 'select',
-              options: [{ value: 'JAN 20', label: 'JAN 20' },
+            options: [{ value: 'JAN 20', label: 'JAN 20' },
             { value: 'JULY 20', label: 'JULY 20' },
             { value: 'JAN 21', label: 'JAN 21' },
             { value: 'JULY 21', label: 'JULY 21' },
@@ -1081,10 +1082,11 @@ const formData = [
             type: 'select',
             place: 'Select Payment Mode',
 
-            options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
-            { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
-            { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Cash/DD', label: 'Cash/DD' }],
+            options: [
+              { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
+              { value: 'University Bank Account', label: 'University Bank Account' },
+              { value: 'Cash/DD', label: 'Cash/DD' },
+             { value: 'University Website', label: 'University Website' }],
           },
 
           {
@@ -1117,7 +1119,7 @@ const formData = [
         label: 'CU',
         name: ['customfields', 'university_name'],
         value: 'CU',
-      fields: [
+        fields: [
           {
             courses: [
               {
@@ -1484,7 +1486,7 @@ const formData = [
                   }
                 ]
               },
-               {
+              {
                 value: "LATERAL ENTRY",
                 label: "LATERAL ENTRY",
                 payments: [
@@ -1585,7 +1587,7 @@ const formData = [
             place: 'eg: JAN 20',
             id: 'Session',
             type: 'select',
-              options: [{ value: 'JAN 20', label: 'JAN 20' },
+            options: [{ value: 'JAN 20', label: 'JAN 20' },
             { value: 'JULY 20', label: 'JULY 20' },
             { value: 'JAN 21', label: 'JAN 21' },
             { value: 'JULY 21', label: 'JULY 21' },
@@ -1635,10 +1637,11 @@ const formData = [
             type: 'select',
             place: 'Select Payment Mode',
 
-            options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
-            { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
-            { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Cash/DD', label: 'Cash/DD' }],
+            options: [
+              { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
+              { value: 'University Bank Account', label: 'University Bank Account' },
+              { value: 'Cash/DD', label: 'Cash/DD' },
+             { value: 'University Website', label: 'University Website' }],
           },
 
           {
@@ -1671,7 +1674,7 @@ const formData = [
         label: 'SPU',
         name: ['customfields', 'university_name'],
         value: 'SPU',
-      fields: [
+        fields: [
           {
             courses: [
               {
@@ -2038,7 +2041,7 @@ const formData = [
                   }
                 ]
               },
-               {
+              {
                 value: "LATERAL ENTRY",
                 label: "LATERAL ENTRY",
                 payments: [
@@ -2139,7 +2142,7 @@ const formData = [
             place: 'eg: JAN 20',
             id: 'Session',
             type: 'select',
-              options: [{ value: 'JAN 20', label: 'JAN 20' },
+            options: [{ value: 'JAN 20', label: 'JAN 20' },
             { value: 'JULY 20', label: 'JULY 20' },
             { value: 'JAN 21', label: 'JAN 21' },
             { value: 'JULY 21', label: 'JULY 21' },
@@ -2189,10 +2192,11 @@ const formData = [
             type: 'select',
             place: 'Select Payment Mode',
 
-            options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
-            { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
-            { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Cash/DD', label: 'Cash/DD' }],
+            options: [
+              { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
+              { value: 'University Bank Account', label: 'University Bank Account' },
+              { value: 'Cash/DD', label: 'Cash/DD' },
+             { value: 'University Website', label: 'University Website' }],
           },
 
           {
@@ -2225,7 +2229,7 @@ const formData = [
         label: 'AMRITA',
         name: ['customfields', 'university_name'],
         value: 'AMRITA',
-      fields: [
+        fields: [
           {
             courses: [
               {
@@ -2592,7 +2596,7 @@ const formData = [
                   }
                 ]
               },
-               {
+              {
                 value: "LATERAL ENTRY",
                 label: "LATERAL ENTRY",
                 payments: [
@@ -2693,7 +2697,7 @@ const formData = [
             place: 'eg: JAN 20',
             id: 'Session',
             type: 'select',
-              options: [{ value: 'JAN 20', label: 'JAN 20' },
+            options: [{ value: 'JAN 20', label: 'JAN 20' },
             { value: 'JULY 20', label: 'JULY 20' },
             { value: 'JAN 21', label: 'JAN 21' },
             { value: 'JULY 21', label: 'JULY 21' },
@@ -2743,10 +2747,11 @@ const formData = [
             type: 'select',
             place: 'Select Payment Mode',
 
-            options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
-            { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
-            { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Cash/DD', label: 'Cash/DD' }],
+            options: [
+              { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
+              { value: 'University Bank Account', label: 'University Bank Account' },
+              { value: 'Cash/DD', label: 'Cash/DD' },
+             { value: 'University Website', label: 'University Website' }],
           },
 
           {
@@ -2779,7 +2784,7 @@ const formData = [
         label: 'AMITY',
         name: ['customfields', 'university_name'],
         value: 'AMITY',
-      fields: [
+        fields: [
           {
             courses: [
               {
@@ -3146,7 +3151,7 @@ const formData = [
                   }
                 ]
               },
-               {
+              {
                 value: "LATERAL ENTRY",
                 label: "LATERAL ENTRY",
                 payments: [
@@ -3247,7 +3252,7 @@ const formData = [
             place: 'eg: JAN 20',
             id: 'Session',
             type: 'select',
-              options: [{ value: 'JAN 20', label: 'JAN 20' },
+            options: [{ value: 'JAN 20', label: 'JAN 20' },
             { value: 'JULY 20', label: 'JULY 20' },
             { value: 'JAN 21', label: 'JAN 21' },
             { value: 'JULY 21', label: 'JULY 21' },
@@ -3297,10 +3302,11 @@ const formData = [
             type: 'select',
             place: 'Select Payment Mode',
 
-            options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
-            { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
-            { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Cash/DD', label: 'Cash/DD' }],
+            options: [
+              { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
+              { value: 'University Bank Account', label: 'University Bank Account' },
+              { value: 'Cash/DD', label: 'Cash/DD' },
+             { value: 'University Website', label: 'University Website' }],
           },
 
           {
@@ -3333,7 +3339,7 @@ const formData = [
         label: 'LPU',
         name: ['customfields', 'university_name'],
         value: 'LPU',
-      fields: [
+        fields: [
           {
             courses: [
               {
@@ -3700,7 +3706,7 @@ const formData = [
                   }
                 ]
               },
-               {
+              {
                 value: "LATERAL ENTRY",
                 label: "LATERAL ENTRY",
                 payments: [
@@ -3801,7 +3807,7 @@ const formData = [
             place: 'eg: JAN 20',
             id: 'Session',
             type: 'select',
-              options: [{ value: 'JAN 20', label: 'JAN 20' },
+            options: [{ value: 'JAN 20', label: 'JAN 20' },
             { value: 'JULY 20', label: 'JULY 20' },
             { value: 'JAN 21', label: 'JAN 21' },
             { value: 'JULY 21', label: 'JULY 21' },
@@ -3851,10 +3857,11 @@ const formData = [
             type: 'select',
             place: 'Select Payment Mode',
 
-            options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
-            { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
-            { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Cash/DD', label: 'Cash/DD' }],
+            options: [
+              { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
+              { value: 'University Bank Account', label: 'University Bank Account' },
+              { value: 'Cash/DD', label: 'Cash/DD' },
+             { value: 'University Website', label: 'University Website' }],
           },
 
           {
@@ -3887,7 +3894,7 @@ const formData = [
         label: 'JAIN',
         name: ['customfields', 'university_name'],
         value: 'JAIN',
-      fields: [
+        fields: [
           {
             courses: [
               {
@@ -4254,7 +4261,7 @@ const formData = [
                   }
                 ]
               },
-               {
+              {
                 value: "LATERAL ENTRY",
                 label: "LATERAL ENTRY",
                 payments: [
@@ -4355,7 +4362,7 @@ const formData = [
             place: 'eg: JAN 20',
             id: 'Session',
             type: 'select',
-              options: [{ value: 'JAN 20', label: 'JAN 20' },
+            options: [{ value: 'JAN 20', label: 'JAN 20' },
             { value: 'JULY 20', label: 'JULY 20' },
             { value: 'JAN 21', label: 'JAN 21' },
             { value: 'JULY 21', label: 'JULY 21' },
@@ -4405,10 +4412,11 @@ const formData = [
             type: 'select',
             place: 'Select Payment Mode',
 
-            options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
-            { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
-            { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Cash/DD', label: 'Cash/DD' }],
+            options: [
+              { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
+              { value: 'University Bank Account', label: 'University Bank Account' },
+              { value: 'Cash/DD', label: 'Cash/DD' },
+             { value: 'University Website', label: 'University Website' }],
           },
 
           {
@@ -4441,7 +4449,7 @@ const formData = [
         label: 'SVSU',
         name: ['customfields', 'university_name'],
         value: 'SVSU',
-      fields: [
+        fields: [
           {
             courses: [
               {
@@ -4808,7 +4816,7 @@ const formData = [
                   }
                 ]
               },
-               {
+              {
                 value: "LATERAL ENTRY",
                 label: "LATERAL ENTRY",
                 payments: [
@@ -4909,7 +4917,7 @@ const formData = [
             place: 'eg: JAN 20',
             id: 'Session',
             type: 'select',
-              options: [{ value: 'JAN 20', label: 'JAN 20' },
+            options: [{ value: 'JAN 20', label: 'JAN 20' },
             { value: 'JULY 20', label: 'JULY 20' },
             { value: 'JAN 21', label: 'JAN 21' },
             { value: 'JULY 21', label: 'JULY 21' },
@@ -4959,10 +4967,11 @@ const formData = [
             type: 'select',
             place: 'Select Payment Mode',
 
-            options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
-            { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
-            { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Cash/DD', label: 'Cash/DD' }],
+            options: [
+              { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
+              { value: 'University Bank Account', label: 'University Bank Account' },
+              { value: 'Cash/DD', label: 'Cash/DD' },
+             { value: 'University Website', label: 'University Website' }],
           },
 
           {
@@ -4996,7 +5005,7 @@ const formData = [
         label: 'VIGNAN',
         name: ['customfields', 'university_name'],
         value: 'VIGNAN',
-      fields: [
+        fields: [
           {
             courses: [
               {
@@ -5363,7 +5372,7 @@ const formData = [
                   }
                 ]
               },
-               {
+              {
                 value: "LATERAL ENTRY",
                 label: "LATERAL ENTRY",
                 payments: [
@@ -5464,7 +5473,7 @@ const formData = [
             place: 'eg: JAN 20',
             id: 'Session',
             type: 'select',
-              options: [{ value: 'JAN 20', label: 'JAN 20' },
+            options: [{ value: 'JAN 20', label: 'JAN 20' },
             { value: 'JULY 20', label: 'JULY 20' },
             { value: 'JAN 21', label: 'JAN 21' },
             { value: 'JULY 21', label: 'JULY 21' },
@@ -5514,10 +5523,11 @@ const formData = [
             type: 'select',
             place: 'Select Payment Mode',
 
-            options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
-            { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
-            { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Cash/DD', label: 'Cash/DD' }],
+            options: [
+              { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
+              { value: 'University Bank Account', label: 'University Bank Account' },
+              { value: 'Cash/DD', label: 'Cash/DD' },
+             { value: 'University Website', label: 'University Website' }],
           },
 
           {
@@ -5550,7 +5560,7 @@ const formData = [
         label: 'MANIPAL',
         name: ['customfields', 'university_name'],
         value: 'MANIPAL',
-      fields: [
+        fields: [
           {
             courses: [
               {
@@ -5917,7 +5927,7 @@ const formData = [
                   }
                 ]
               },
-               {
+              {
                 value: "LATERAL ENTRY",
                 label: "LATERAL ENTRY",
                 payments: [
@@ -6018,7 +6028,7 @@ const formData = [
             place: 'eg: JAN 20',
             id: 'Session',
             type: 'select',
-              options: [{ value: 'JAN 20', label: 'JAN 20' },
+            options: [{ value: 'JAN 20', label: 'JAN 20' },
             { value: 'JULY 20', label: 'JULY 20' },
             { value: 'JAN 21', label: 'JAN 21' },
             { value: 'JULY 21', label: 'JULY 21' },
@@ -6068,10 +6078,11 @@ const formData = [
             type: 'select',
             place: 'Select Payment Mode',
 
-            options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
-            { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
-            { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Cash/DD', label: 'Cash/DD' }],
+            options: [
+              { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
+              { value: 'University Bank Account', label: 'University Bank Account' },
+              { value: 'Cash/DD', label: 'Cash/DD' },
+             { value: 'University Website', label: 'University Website' }],
           },
 
           {
@@ -6104,7 +6115,7 @@ const formData = [
         label: 'SMU',
         name: ['customfields', 'university_name'],
         value: 'SMU',
-      fields: [
+        fields: [
           {
             courses: [
               {
@@ -6471,7 +6482,7 @@ const formData = [
                   }
                 ]
               },
-               {
+              {
                 value: "LATERAL ENTRY",
                 label: "LATERAL ENTRY",
                 payments: [
@@ -6572,7 +6583,7 @@ const formData = [
             place: 'eg: JAN 20',
             id: 'Session',
             type: 'select',
-              options: [{ value: 'JAN 20', label: 'JAN 20' },
+            options: [{ value: 'JAN 20', label: 'JAN 20' },
             { value: 'JULY 20', label: 'JULY 20' },
             { value: 'JAN 21', label: 'JAN 21' },
             { value: 'JULY 21', label: 'JULY 21' },
@@ -6622,10 +6633,11 @@ const formData = [
             type: 'select',
             place: 'Select Payment Mode',
 
-            options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
-            { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
-            { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Cash/DD', label: 'Cash/DD' }],
+            options: [
+              { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
+              { value: 'University Bank Account', label: 'University Bank Account' },
+              { value: 'Cash/DD', label: 'Cash/DD' },
+             { value: 'University Website', label: 'University Website' }],
           },
 
           {
@@ -6658,7 +6670,7 @@ const formData = [
         label: 'HU',
         name: ['customfields', 'university_name'],
         value: 'HU',
-      fields: [
+        fields: [
           {
             courses: [
               {
@@ -7025,7 +7037,7 @@ const formData = [
                   }
                 ]
               },
-               {
+              {
                 value: "LATERAL ENTRY",
                 label: "LATERAL ENTRY",
                 payments: [
@@ -7126,7 +7138,7 @@ const formData = [
             place: 'eg: JAN 20',
             id: 'Session',
             type: 'select',
-              options: [{ value: 'JAN 20', label: 'JAN 20' },
+            options: [{ value: 'JAN 20', label: 'JAN 20' },
             { value: 'JULY 20', label: 'JULY 20' },
             { value: 'JAN 21', label: 'JAN 21' },
             { value: 'JULY 21', label: 'JULY 21' },
@@ -7176,10 +7188,11 @@ const formData = [
             type: 'select',
             place: 'Select Payment Mode',
 
-            options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
-            { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
-            { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Cash/DD', label: 'Cash/DD' }],
+            options: [
+              { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
+              { value: 'University Bank Account', label: 'University Bank Account' },
+              { value: 'Cash/DD', label: 'Cash/DD' },
+             { value: 'University Website', label: 'University Website' }],
           },
 
           {
@@ -7212,7 +7225,7 @@ const formData = [
         label: 'BOSSE',
         name: ['customfields', 'university_name'],
         value: 'BOSSE',
-      fields: [
+        fields: [
           {
             courses: [
               {
@@ -7579,7 +7592,7 @@ const formData = [
                   }
                 ]
               },
-               {
+              {
                 value: "LATERAL ENTRY",
                 label: "LATERAL ENTRY",
                 payments: [
@@ -7680,7 +7693,7 @@ const formData = [
             place: 'eg: JAN 20',
             id: 'Session',
             type: 'select',
-              options: [{ value: 'JAN 20', label: 'JAN 20' },
+            options: [{ value: 'JAN 20', label: 'JAN 20' },
             { value: 'JULY 20', label: 'JULY 20' },
             { value: 'JAN 21', label: 'JAN 21' },
             { value: 'JULY 21', label: 'JULY 21' },
@@ -7730,10 +7743,11 @@ const formData = [
             type: 'select',
             place: 'Select Payment Mode',
 
-            options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
-            { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
-            { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Cash/DD', label: 'Cash/DD' }],
+            options: [
+              { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
+              { value: 'University Bank Account', label: 'University Bank Account' },
+              { value: 'Cash/DD', label: 'Cash/DD' },
+             { value: 'University Website', label: 'University Website' }],
           },
 
           {
@@ -7767,7 +7781,7 @@ const formData = [
         label: 'UU',
         name: ['customfields', 'university_name'],
         value: 'UU',
-      fields: [
+        fields: [
           {
             courses: [
               {
@@ -8134,7 +8148,7 @@ const formData = [
                   }
                 ]
               },
-               {
+              {
                 value: "LATERAL ENTRY",
                 label: "LATERAL ENTRY",
                 payments: [
@@ -8235,7 +8249,7 @@ const formData = [
             place: 'eg: JAN 20',
             id: 'Session',
             type: 'select',
-              options: [{ value: 'JAN 20', label: 'JAN 20' },
+            options: [{ value: 'JAN 20', label: 'JAN 20' },
             { value: 'JULY 20', label: 'JULY 20' },
             { value: 'JAN 21', label: 'JAN 21' },
             { value: 'JULY 21', label: 'JULY 21' },
@@ -8285,10 +8299,11 @@ const formData = [
             type: 'select',
             place: 'Select Payment Mode',
 
-            options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
-            { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
-            { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Cash/DD', label: 'Cash/DD' }],
+            options: [
+              { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
+              { value: 'University Bank Account', label: 'University Bank Account' },
+              { value: 'Cash/DD', label: 'Cash/DD' },
+             { value: 'University Website', label: 'University Website' }],
           },
 
           {
@@ -8321,7 +8336,7 @@ const formData = [
         label: 'UPES',
         name: ['customfields', 'university_name'],
         value: 'UPES',
-      fields: [
+        fields: [
           {
             courses: [
               {
@@ -8688,7 +8703,7 @@ const formData = [
                   }
                 ]
               },
-               {
+              {
                 value: "LATERAL ENTRY",
                 label: "LATERAL ENTRY",
                 payments: [
@@ -8789,7 +8804,7 @@ const formData = [
             place: 'eg: JAN 20',
             id: 'Session',
             type: 'select',
-              options: [{ value: 'JAN 20', label: 'JAN 20' },
+            options: [{ value: 'JAN 20', label: 'JAN 20' },
             { value: 'JULY 20', label: 'JULY 20' },
             { value: 'JAN 21', label: 'JAN 21' },
             { value: 'JULY 21', label: 'JULY 21' },
@@ -8839,10 +8854,11 @@ const formData = [
             type: 'select',
             place: 'Select Payment Mode',
 
-            options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
-            { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
-            { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Cash/DD', label: 'Cash/DD' }],
+            options: [
+              { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
+              { value: 'University Bank Account', label: 'University Bank Account' },
+              { value: 'Cash/DD', label: 'Cash/DD' },
+             { value: 'University Website', label: 'University Website' }],
           },
 
           {
@@ -8876,7 +8892,7 @@ const formData = [
         label: 'MANGALAYATAN',
         name: ['customfields', 'university_name'],
         value: 'MANGALAYATAN',
-      fields: [
+        fields: [
           {
             courses: [
               {
@@ -9243,7 +9259,7 @@ const formData = [
                   }
                 ]
               },
-               {
+              {
                 value: "LATERAL ENTRY",
                 label: "LATERAL ENTRY",
                 payments: [
@@ -9344,7 +9360,7 @@ const formData = [
             place: 'eg: JAN 20',
             id: 'Session',
             type: 'select',
-              options: [{ value: 'JAN 20', label: 'JAN 20' },
+            options: [{ value: 'JAN 20', label: 'JAN 20' },
             { value: 'JULY 20', label: 'JULY 20' },
             { value: 'JAN 21', label: 'JAN 21' },
             { value: 'JULY 21', label: 'JULY 21' },
@@ -9394,10 +9410,11 @@ const formData = [
             type: 'select',
             place: 'Select Payment Mode',
 
-            options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
-            { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
-            { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Cash/DD', label: 'Cash/DD' }],
+            options: [
+              { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
+              { value: 'University Bank Account', label: 'University Bank Account' },
+              { value: 'Cash/DD', label: 'Cash/DD' },
+             { value: 'University Website', label: 'University Website' }],
           },
 
           {
@@ -9430,7 +9447,7 @@ const formData = [
         label: 'MANGALAYATAN ONLINE',
         name: ['customfields', 'university_name'],
         value: 'MANGALAYATAN ONLINE',
-      fields: [
+        fields: [
           {
             courses: [
               {
@@ -9797,7 +9814,7 @@ const formData = [
                   }
                 ]
               },
-               {
+              {
                 value: "LATERAL ENTRY",
                 label: "LATERAL ENTRY",
                 payments: [
@@ -9898,7 +9915,7 @@ const formData = [
             place: 'eg: JAN 20',
             id: 'Session',
             type: 'select',
-              options: [{ value: 'JAN 20', label: 'JAN 20' },
+            options: [{ value: 'JAN 20', label: 'JAN 20' },
             { value: 'JULY 20', label: 'JULY 20' },
             { value: 'JAN 21', label: 'JAN 21' },
             { value: 'JULY 21', label: 'JULY 21' },
@@ -9948,10 +9965,11 @@ const formData = [
             type: 'select',
             place: 'Select Payment Mode',
 
-            options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
-            { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
-            { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Cash/DD', label: 'Cash/DD' }],
+            options: [
+              { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
+              { value: 'University Bank Account', label: 'University Bank Account' },
+              { value: 'Cash/DD', label: 'Cash/DD' },
+             { value: 'University Website', label: 'University Website' }],
           },
 
           {
@@ -9993,7 +10011,7 @@ const formData = [
         label: 'SGVU',
         name: ['customfields', 'university_name'],
         value: 'SGVU',
-      fields: [
+        fields: [
           {
             courses: [
               {
@@ -10360,7 +10378,7 @@ const formData = [
                   }
                 ]
               },
-               {
+              {
                 value: "LATERAL ENTRY",
                 label: "LATERAL ENTRY",
                 payments: [
@@ -10461,7 +10479,7 @@ const formData = [
             place: 'eg: JAN 20',
             id: 'Session',
             type: 'select',
-              options: [{ value: 'JAN 20', label: 'JAN 20' },
+            options: [{ value: 'JAN 20', label: 'JAN 20' },
             { value: 'JULY 20', label: 'JULY 20' },
             { value: 'JAN 21', label: 'JAN 21' },
             { value: 'JULY 21', label: 'JULY 21' },
@@ -10512,9 +10530,9 @@ const formData = [
             place: 'Select Payment Mode',
 
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
-            { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Cash/DD', label: 'Cash/DD' }],
+            { value: 'Cash/DD', label: 'Cash/DD' },
+           { value: 'University Website', label: 'University Website' }],
           },
 
           {
@@ -10547,7 +10565,7 @@ const formData = [
         label: 'DPU',
         name: ['customfields', 'university_name'],
         value: 'DPU',
-      fields: [
+        fields: [
           {
             courses: [
               {
@@ -10914,7 +10932,7 @@ const formData = [
                   }
                 ]
               },
-               {
+              {
                 value: "LATERAL ENTRY",
                 label: "LATERAL ENTRY",
                 payments: [
@@ -11015,7 +11033,7 @@ const formData = [
             place: 'eg: JAN 20',
             id: 'Session',
             type: 'select',
-              options: [{ value: 'JAN 20', label: 'JAN 20' },
+            options: [{ value: 'JAN 20', label: 'JAN 20' },
             { value: 'JULY 20', label: 'JULY 20' },
             { value: 'JAN 21', label: 'JAN 21' },
             { value: 'JULY 21', label: 'JULY 21' },
@@ -11066,9 +11084,9 @@ const formData = [
             place: 'Select Payment Mode',
 
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
-            { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Cash/DD', label: 'Cash/DD' }],
+            { value: 'Cash/DD', label: 'Cash/DD' },
+           { value: 'University Website', label: 'University Website' }],
           },
 
           {
@@ -11101,7 +11119,7 @@ const formData = [
         label: 'CU',
         name: ['customfields', 'university_name'],
         value: 'CU',
-      fields: [
+        fields: [
           {
             courses: [
               {
@@ -11468,7 +11486,7 @@ const formData = [
                   }
                 ]
               },
-               {
+              {
                 value: "LATERAL ENTRY",
                 label: "LATERAL ENTRY",
                 payments: [
@@ -11569,7 +11587,7 @@ const formData = [
             place: 'eg: JAN 20',
             id: 'Session',
             type: 'select',
-              options: [{ value: 'JAN 20', label: 'JAN 20' },
+            options: [{ value: 'JAN 20', label: 'JAN 20' },
             { value: 'JULY 20', label: 'JULY 20' },
             { value: 'JAN 21', label: 'JAN 21' },
             { value: 'JULY 21', label: 'JULY 21' },
@@ -11620,9 +11638,9 @@ const formData = [
             place: 'Select Payment Mode',
 
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
-            { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Cash/DD', label: 'Cash/DD' }],
+            { value: 'Cash/DD', label: 'Cash/DD' },
+           { value: 'University Website', label: 'University Website' }],
           },
 
           {
@@ -11655,7 +11673,7 @@ const formData = [
         label: 'SPU',
         name: ['customfields', 'university_name'],
         value: 'SPU',
-      fields: [
+        fields: [
           {
             courses: [
               {
@@ -12022,7 +12040,7 @@ const formData = [
                   }
                 ]
               },
-               {
+              {
                 value: "LATERAL ENTRY",
                 label: "LATERAL ENTRY",
                 payments: [
@@ -12123,7 +12141,7 @@ const formData = [
             place: 'eg: JAN 20',
             id: 'Session',
             type: 'select',
-              options: [{ value: 'JAN 20', label: 'JAN 20' },
+            options: [{ value: 'JAN 20', label: 'JAN 20' },
             { value: 'JULY 20', label: 'JULY 20' },
             { value: 'JAN 21', label: 'JAN 21' },
             { value: 'JULY 21', label: 'JULY 21' },
@@ -12174,9 +12192,9 @@ const formData = [
             place: 'Select Payment Mode',
 
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
-            { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Cash/DD', label: 'Cash/DD' }],
+            { value: 'Cash/DD', label: 'Cash/DD' },
+           { value: 'University Website', label: 'University Website' }],
           },
 
           {
@@ -12209,7 +12227,7 @@ const formData = [
         label: 'AMRITA',
         name: ['customfields', 'university_name'],
         value: 'AMRITA',
-      fields: [
+        fields: [
           {
             courses: [
               {
@@ -12576,7 +12594,7 @@ const formData = [
                   }
                 ]
               },
-               {
+              {
                 value: "LATERAL ENTRY",
                 label: "LATERAL ENTRY",
                 payments: [
@@ -12677,7 +12695,7 @@ const formData = [
             place: 'eg: JAN 20',
             id: 'Session',
             type: 'select',
-              options: [{ value: 'JAN 20', label: 'JAN 20' },
+            options: [{ value: 'JAN 20', label: 'JAN 20' },
             { value: 'JULY 20', label: 'JULY 20' },
             { value: 'JAN 21', label: 'JAN 21' },
             { value: 'JULY 21', label: 'JULY 21' },
@@ -12728,9 +12746,9 @@ const formData = [
             place: 'Select Payment Mode',
 
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
-            { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Cash/DD', label: 'Cash/DD' }],
+            { value: 'Cash/DD', label: 'Cash/DD' },
+           { value: 'University Website', label: 'University Website' }],
           },
 
           {
@@ -12763,7 +12781,7 @@ const formData = [
         label: 'AMITY',
         name: ['customfields', 'university_name'],
         value: 'AMITY',
-      fields: [
+        fields: [
           {
             courses: [
               {
@@ -13130,7 +13148,7 @@ const formData = [
                   }
                 ]
               },
-               {
+              {
                 value: "LATERAL ENTRY",
                 label: "LATERAL ENTRY",
                 payments: [
@@ -13231,7 +13249,7 @@ const formData = [
             place: 'eg: JAN 20',
             id: 'Session',
             type: 'select',
-              options: [{ value: 'JAN 20', label: 'JAN 20' },
+            options: [{ value: 'JAN 20', label: 'JAN 20' },
             { value: 'JULY 20', label: 'JULY 20' },
             { value: 'JAN 21', label: 'JAN 21' },
             { value: 'JULY 21', label: 'JULY 21' },
@@ -13282,9 +13300,9 @@ const formData = [
             place: 'Select Payment Mode',
 
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
-            { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Cash/DD', label: 'Cash/DD' }],
+            { value: 'Cash/DD', label: 'Cash/DD' },
+           { value: 'University Website', label: 'University Website' }],
           },
 
           {
@@ -13317,7 +13335,7 @@ const formData = [
         label: 'LPU',
         name: ['customfields', 'university_name'],
         value: 'LPU',
-      fields: [
+        fields: [
           {
             courses: [
               {
@@ -13684,7 +13702,7 @@ const formData = [
                   }
                 ]
               },
-               {
+              {
                 value: "LATERAL ENTRY",
                 label: "LATERAL ENTRY",
                 payments: [
@@ -13785,7 +13803,7 @@ const formData = [
             place: 'eg: JAN 20',
             id: 'Session',
             type: 'select',
-              options: [{ value: 'JAN 20', label: 'JAN 20' },
+            options: [{ value: 'JAN 20', label: 'JAN 20' },
             { value: 'JULY 20', label: 'JULY 20' },
             { value: 'JAN 21', label: 'JAN 21' },
             { value: 'JULY 21', label: 'JULY 21' },
@@ -13836,9 +13854,9 @@ const formData = [
             place: 'Select Payment Mode',
 
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
-            { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Cash/DD', label: 'Cash/DD' }],
+            { value: 'Cash/DD', label: 'Cash/DD' },
+           { value: 'University Website', label: 'University Website' }],
           },
 
           {
@@ -13871,7 +13889,7 @@ const formData = [
         label: 'JAIN',
         name: ['customfields', 'university_name'],
         value: 'JAIN',
-      fields: [
+        fields: [
           {
             courses: [
               {
@@ -14238,7 +14256,7 @@ const formData = [
                   }
                 ]
               },
-               {
+              {
                 value: "LATERAL ENTRY",
                 label: "LATERAL ENTRY",
                 payments: [
@@ -14339,7 +14357,7 @@ const formData = [
             place: 'eg: JAN 20',
             id: 'Session',
             type: 'select',
-              options: [{ value: 'JAN 20', label: 'JAN 20' },
+            options: [{ value: 'JAN 20', label: 'JAN 20' },
             { value: 'JULY 20', label: 'JULY 20' },
             { value: 'JAN 21', label: 'JAN 21' },
             { value: 'JULY 21', label: 'JULY 21' },
@@ -14390,9 +14408,9 @@ const formData = [
             place: 'Select Payment Mode',
 
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
-            { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Cash/DD', label: 'Cash/DD' }],
+            { value: 'Cash/DD', label: 'Cash/DD' },
+           { value: 'University Website', label: 'University Website' }],
           },
 
           {
@@ -14425,7 +14443,7 @@ const formData = [
         label: 'SVSU',
         name: ['customfields', 'university_name'],
         value: 'SVSU',
-      fields: [
+        fields: [
           {
             courses: [
               {
@@ -14792,7 +14810,7 @@ const formData = [
                   }
                 ]
               },
-               {
+              {
                 value: "LATERAL ENTRY",
                 label: "LATERAL ENTRY",
                 payments: [
@@ -14893,7 +14911,7 @@ const formData = [
             place: 'eg: JAN 20',
             id: 'Session',
             type: 'select',
-              options: [{ value: 'JAN 20', label: 'JAN 20' },
+            options: [{ value: 'JAN 20', label: 'JAN 20' },
             { value: 'JULY 20', label: 'JULY 20' },
             { value: 'JAN 21', label: 'JAN 21' },
             { value: 'JULY 21', label: 'JULY 21' },
@@ -14944,9 +14962,9 @@ const formData = [
             place: 'Select Payment Mode',
 
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
-            { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Cash/DD', label: 'Cash/DD' }],
+            { value: 'Cash/DD', label: 'Cash/DD' },
+           { value: 'University Website', label: 'University Website' }],
           },
 
           {
@@ -14980,7 +14998,7 @@ const formData = [
         label: 'VIGNAN',
         name: ['customfields', 'university_name'],
         value: 'VIGNAN',
-      fields: [
+        fields: [
           {
             courses: [
               {
@@ -15347,7 +15365,7 @@ const formData = [
                   }
                 ]
               },
-               {
+              {
                 value: "LATERAL ENTRY",
                 label: "LATERAL ENTRY",
                 payments: [
@@ -15448,7 +15466,7 @@ const formData = [
             place: 'eg: JAN 20',
             id: 'Session',
             type: 'select',
-              options: [{ value: 'JAN 20', label: 'JAN 20' },
+            options: [{ value: 'JAN 20', label: 'JAN 20' },
             { value: 'JULY 20', label: 'JULY 20' },
             { value: 'JAN 21', label: 'JAN 21' },
             { value: 'JULY 21', label: 'JULY 21' },
@@ -15499,9 +15517,9 @@ const formData = [
             place: 'Select Payment Mode',
 
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
-            { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Cash/DD', label: 'Cash/DD' }],
+            { value: 'Cash/DD', label: 'Cash/DD' },
+           { value: 'University Website', label: 'University Website' }],
           },
 
           {
@@ -15534,7 +15552,7 @@ const formData = [
         label: 'MANIPAL',
         name: ['customfields', 'university_name'],
         value: 'MANIPAL',
-      fields: [
+        fields: [
           {
             courses: [
               {
@@ -15901,7 +15919,7 @@ const formData = [
                   }
                 ]
               },
-               {
+              {
                 value: "LATERAL ENTRY",
                 label: "LATERAL ENTRY",
                 payments: [
@@ -16002,7 +16020,7 @@ const formData = [
             place: 'eg: JAN 20',
             id: 'Session',
             type: 'select',
-              options: [{ value: 'JAN 20', label: 'JAN 20' },
+            options: [{ value: 'JAN 20', label: 'JAN 20' },
             { value: 'JULY 20', label: 'JULY 20' },
             { value: 'JAN 21', label: 'JAN 21' },
             { value: 'JULY 21', label: 'JULY 21' },
@@ -16053,9 +16071,9 @@ const formData = [
             place: 'Select Payment Mode',
 
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
-            { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Cash/DD', label: 'Cash/DD' }],
+            { value: 'Cash/DD', label: 'Cash/DD' },
+           { value: 'University Website', label: 'University Website' }],
           },
 
           {
@@ -16088,7 +16106,7 @@ const formData = [
         label: 'SMU',
         name: ['customfields', 'university_name'],
         value: 'SMU',
-      fields: [
+        fields: [
           {
             courses: [
               {
@@ -16455,7 +16473,7 @@ const formData = [
                   }
                 ]
               },
-               {
+              {
                 value: "LATERAL ENTRY",
                 label: "LATERAL ENTRY",
                 payments: [
@@ -16556,7 +16574,7 @@ const formData = [
             place: 'eg: JAN 20',
             id: 'Session',
             type: 'select',
-              options: [{ value: 'JAN 20', label: 'JAN 20' },
+            options: [{ value: 'JAN 20', label: 'JAN 20' },
             { value: 'JULY 20', label: 'JULY 20' },
             { value: 'JAN 21', label: 'JAN 21' },
             { value: 'JULY 21', label: 'JULY 21' },
@@ -16607,9 +16625,9 @@ const formData = [
             place: 'Select Payment Mode',
 
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
-            { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Cash/DD', label: 'Cash/DD' }],
+            { value: 'Cash/DD', label: 'Cash/DD' },
+           { value: 'University Website', label: 'University Website' }],
           },
 
           {
@@ -16642,7 +16660,7 @@ const formData = [
         label: 'HU',
         name: ['customfields', 'university_name'],
         value: 'HU',
-      fields: [
+        fields: [
           {
             courses: [
               {
@@ -17009,7 +17027,7 @@ const formData = [
                   }
                 ]
               },
-               {
+              {
                 value: "LATERAL ENTRY",
                 label: "LATERAL ENTRY",
                 payments: [
@@ -17110,7 +17128,7 @@ const formData = [
             place: 'eg: JAN 20',
             id: 'Session',
             type: 'select',
-              options: [{ value: 'JAN 20', label: 'JAN 20' },
+            options: [{ value: 'JAN 20', label: 'JAN 20' },
             { value: 'JULY 20', label: 'JULY 20' },
             { value: 'JAN 21', label: 'JAN 21' },
             { value: 'JULY 21', label: 'JULY 21' },
@@ -17161,9 +17179,9 @@ const formData = [
             place: 'Select Payment Mode',
 
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
-            { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Cash/DD', label: 'Cash/DD' }],
+            { value: 'Cash/DD', label: 'Cash/DD' },
+           { value: 'University Website', label: 'University Website' }],
           },
 
           {
@@ -17196,7 +17214,7 @@ const formData = [
         label: 'BOSSE',
         name: ['customfields', 'university_name'],
         value: 'BOSSE',
-      fields: [
+        fields: [
           {
             courses: [
               {
@@ -17563,7 +17581,7 @@ const formData = [
                   }
                 ]
               },
-               {
+              {
                 value: "LATERAL ENTRY",
                 label: "LATERAL ENTRY",
                 payments: [
@@ -17664,7 +17682,7 @@ const formData = [
             place: 'eg: JAN 20',
             id: 'Session',
             type: 'select',
-              options: [{ value: 'JAN 20', label: 'JAN 20' },
+            options: [{ value: 'JAN 20', label: 'JAN 20' },
             { value: 'JULY 20', label: 'JULY 20' },
             { value: 'JAN 21', label: 'JAN 21' },
             { value: 'JULY 21', label: 'JULY 21' },
@@ -17715,9 +17733,9 @@ const formData = [
             place: 'Select Payment Mode',
 
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
-            { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Cash/DD', label: 'Cash/DD' }],
+            { value: 'Cash/DD', label: 'Cash/DD' },
+           { value: 'University Website', label: 'University Website' }],
           },
 
           {
@@ -17751,7 +17769,7 @@ const formData = [
         label: 'UU',
         name: ['customfields', 'university_name'],
         value: 'UU',
-      fields: [
+        fields: [
           {
             courses: [
               {
@@ -18118,7 +18136,7 @@ const formData = [
                   }
                 ]
               },
-               {
+              {
                 value: "LATERAL ENTRY",
                 label: "LATERAL ENTRY",
                 payments: [
@@ -18219,7 +18237,7 @@ const formData = [
             place: 'eg: JAN 20',
             id: 'Session',
             type: 'select',
-              options: [{ value: 'JAN 20', label: 'JAN 20' },
+            options: [{ value: 'JAN 20', label: 'JAN 20' },
             { value: 'JULY 20', label: 'JULY 20' },
             { value: 'JAN 21', label: 'JAN 21' },
             { value: 'JULY 21', label: 'JULY 21' },
@@ -18270,9 +18288,9 @@ const formData = [
             place: 'Select Payment Mode',
 
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
-            { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Cash/DD', label: 'Cash/DD' }],
+            { value: 'Cash/DD', label: 'Cash/DD' },
+           { value: 'University Website', label: 'University Website' }],
           },
 
           {
@@ -18305,7 +18323,7 @@ const formData = [
         label: 'UPES',
         name: ['customfields', 'university_name'],
         value: 'UPES',
-      fields: [
+        fields: [
           {
             courses: [
               {
@@ -18672,7 +18690,7 @@ const formData = [
                   }
                 ]
               },
-               {
+              {
                 value: "LATERAL ENTRY",
                 label: "LATERAL ENTRY",
                 payments: [
@@ -18773,7 +18791,7 @@ const formData = [
             place: 'eg: JAN 20',
             id: 'Session',
             type: 'select',
-              options: [{ value: 'JAN 20', label: 'JAN 20' },
+            options: [{ value: 'JAN 20', label: 'JAN 20' },
             { value: 'JULY 20', label: 'JULY 20' },
             { value: 'JAN 21', label: 'JAN 21' },
             { value: 'JULY 21', label: 'JULY 21' },
@@ -18824,9 +18842,9 @@ const formData = [
             place: 'Select Payment Mode',
 
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
-            { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Cash/DD', label: 'Cash/DD' }],
+            { value: 'Cash/DD', label: 'Cash/DD' },
+           { value: 'University Website', label: 'University Website' }],
           },
 
           {
@@ -18860,7 +18878,7 @@ const formData = [
         label: 'MANGALAYATAN',
         name: ['customfields', 'university_name'],
         value: 'MANGALAYATAN',
-      fields: [
+        fields: [
           {
             courses: [
               {
@@ -19227,7 +19245,7 @@ const formData = [
                   }
                 ]
               },
-               {
+              {
                 value: "LATERAL ENTRY",
                 label: "LATERAL ENTRY",
                 payments: [
@@ -19328,7 +19346,7 @@ const formData = [
             place: 'eg: JAN 20',
             id: 'Session',
             type: 'select',
-              options: [{ value: 'JAN 20', label: 'JAN 20' },
+            options: [{ value: 'JAN 20', label: 'JAN 20' },
             { value: 'JULY 20', label: 'JULY 20' },
             { value: 'JAN 21', label: 'JAN 21' },
             { value: 'JULY 21', label: 'JULY 21' },
@@ -19379,9 +19397,9 @@ const formData = [
             place: 'Select Payment Mode',
 
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
-            { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Cash/DD', label: 'Cash/DD' }],
+            { value: 'Cash/DD', label: 'Cash/DD' },
+           { value: 'University Website', label: 'University Website' }],
           },
 
           {
@@ -19414,7 +19432,7 @@ const formData = [
         label: 'MANGALAYATAN ONLINE',
         name: ['customfields', 'university_name'],
         value: 'MANGALAYATAN ONLINE',
-      fields: [
+        fields: [
           {
             courses: [
               {
@@ -19781,7 +19799,7 @@ const formData = [
                   }
                 ]
               },
-               {
+              {
                 value: "LATERAL ENTRY",
                 label: "LATERAL ENTRY",
                 payments: [
@@ -19882,7 +19900,7 @@ const formData = [
             place: 'eg: JAN 20',
             id: 'Session',
             type: 'select',
-              options: [{ value: 'JAN 20', label: 'JAN 20' },
+            options: [{ value: 'JAN 20', label: 'JAN 20' },
             { value: 'JULY 20', label: 'JULY 20' },
             { value: 'JAN 21', label: 'JAN 21' },
             { value: 'JULY 21', label: 'JULY 21' },
@@ -19933,9 +19951,9 @@ const formData = [
             place: 'Select Payment Mode',
 
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
-            { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
-            { value: 'Cash/DD', label: 'Cash/DD' }],
+            { value: 'Cash/DD', label: 'Cash/DD' },
+           { value: 'University Website', label: 'University Website' }],
           },
 
           {

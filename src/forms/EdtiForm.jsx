@@ -105,6 +105,7 @@ export default function EditForm() {
                         placeholder='select admission type'
                         options={[
                             { value: 'FRESH', label: 'FRESH' },
+                            { value: 'Credit Transfer', label: 'Credit Transfer' },
                             { value: 'LATERAL ENTRY', label: 'LATERAL ENTRY' }
                         ]}
                     ></Select>
@@ -283,6 +284,7 @@ export default function EditForm() {
                     >
                         <Input placeholder='Enter enrollment number' />
                     </Form.Item>
+
                 )}
 
                 {status === 'Approved' && ( // Conditionally render if status is 'Enrolled'

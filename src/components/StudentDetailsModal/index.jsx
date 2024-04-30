@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { Button, Drawer, Modal, Table, Image, Space } from 'antd';
+import { Drawer, Modal, Button } from 'antd';
 import moment from 'moment';
-import { PiStudent } from "react-icons/pi";
-import { SiContactlesspayment } from "react-icons/si";
+import { PiStudent } from 'react-icons/pi';
+import { SiContactlesspayment } from 'react-icons/si';
 import { CheckCircleOutlined, CloseCircleOutlined } from '@ant-design/icons';
-import { IoDocumentAttachOutline } from "react-icons/io5";
-import { DownloadOutlined, SwapOutlined, RotateLeftOutlined, RotateRightOutlined, ZoomOutOutlined, ZoomInOutlined } from '@ant-design/icons';
-import { FiDownload } from "react-icons/fi";
+import { IoDocumentAttachOutline } from 'react-icons/io5';
+import InstallmentTable from '../InstallmentTable';
+import DocumentPreview from '../DocumentPreview';
+
 const StudentDetailsModal = ({ visible, onClose, student }) => {
     const [installmentData, setInstallmentData] = useState([]);
     const [dueAmount, setDueAmount] = useState(0);
@@ -18,6 +19,7 @@ const StudentDetailsModal = ({ visible, onClose, student }) => {
         if (student) {
             const totalDue = parseFloat(student.customfields.total_course_fee) - parseFloat(student.customfields.total_paid_amount);
             setDueAmount(totalDue);
+
             // Extract document URLs
             const urls = [student.feeDocument, student.studentDocument].flat();
             setDocumentUrls(urls);
@@ -57,7 +59,7 @@ const StudentDetailsModal = ({ visible, onClose, student }) => {
 
     const handleViewInstallment = () => {
         if (student) {
-            const combinedData = student.previousData.map(data => ({
+            const combinedData = student.previousData.map((data) => ({
                 installment_type: data.installment_type,
                 paymentStatus: data.paymentStatus,
                 payment_mode: data.payment_mode,
@@ -73,6 +75,7 @@ const StudentDetailsModal = ({ visible, onClose, student }) => {
             setInstallmentModalVisible(true);
         }
     };
+
     const columns = [
         {
             title: 'Installment Type',
@@ -84,17 +87,15 @@ const StudentDetailsModal = ({ visible, onClose, student }) => {
             dataIndex: 'paymentStatus',
             key: 'paymentStatus',
             render: (text) => {
-                let color = '';
-                let icon = '';
+                let icon;
+                let color;
 
                 switch (text) {
                     case 'Payment Approved':
                         icon = <CheckCircleOutlined style={{ color: '#009933' }} />;
-                        color = '#009933';
                         break;
                     case 'Payment Rejected':
-                        icon = <CloseCircleOutlined style={{ color: '#E50201 ' }} />;
-                        color = '#E50201 ';
+                        icon = <CloseCircleOutlined style={{ color: '#E50201' }} />;
                         break;
                     default:
                         color = '#336699';
@@ -119,7 +120,7 @@ const StudentDetailsModal = ({ visible, onClose, student }) => {
             key: 'payment_type',
         },
         {
-            title: 'Fee Reciept',
+            title: 'Fee Receipt',
             dataIndex: 'sendfeeReciept',
             key: 'sendfeeReciept',
         },
@@ -153,176 +154,230 @@ const StudentDetailsModal = ({ visible, onClose, student }) => {
     return (
         <>
             <Drawer
-                placement='right'
+                placement="right"
                 visible={visible}
                 onClose={onClose}
                 width={1000}
             >
                 {student && (
                     <>
-                        <div className='flex items-center gap-1 mb-5 -mt-5 ml-4'>
-                            <span className='font-thin text-lg'><PiStudent /></span><span className='font-thin text-lg'>Student Details</span>
+                        <div className="flex items-center gap-1 mb-5 -mt-5 ml-4">
+                            <span className="font-thin text-lg">
+                                <PiStudent />
+                            </span>
+                            <span className="font-thin text-lg">Student Details</span>
                         </div>
-                        <div className='relative float-right -mt-10 font-thin text-base'>
+                        <div className="relative float-right -mt-10 font-thin text-base">
                             {moment(student.created).format('DD/MM/YYYY')}
                         </div>
-                        <div className='flex justify-items-start items-center gap-10'>
-                            <ul className='list-disc'>
-                                <li className='grid grid-cols-2 gap-20 border-b p-1 ml-8'>
-                                    <span className='text-base font-thin text-gray-700'>Student ID</span>
-                                    <span className='text-sm font-thin text-gray-500 '>{student.lead_id}</span>
+                        <div className="flex justify-items-start items-center gap-10">
+                            <ul className="list-disc">
+                                <li className="grid grid-cols-2 gap-20 border-b p-1 ml-8">
+                                    <span className="text-base font-thin text-gray-700">Student ID</span>
+                                    <span className="text-sm font-thin text-gray-500">{student.lead_id}</span>
                                 </li>
-                                <li className=' border-b p-1 ml-8 grid grid-cols-2 gap-20'>
-                                    <span className='text-base font-thin text-gray-700'>Fullname</span>
-                                    <span className='text-sm font-thin text-gray-500'>{student.full_name}</span>
+                                <li className="border-b p-1 ml-8 grid grid-cols-2 gap-20">
+                                    <span className="text-base font-thin text-gray-700">Fullname</span>
+                                    <span className="text-sm font-thin text-gray-500">{student.full_name}</span>
                                 </li>
-                                <li className=' border-b p-1 ml-8 grid grid-cols-2 gap-20 '>
-                                    <span className='text-base font-thin text-gray-700'>Email</span>
-                                    <span className='text-sm font-thin text-left text-gray-500'>{student.contact.email}</span>
+                                <li className="border-b p-1 ml-8 grid grid-cols-2 gap-20 ">
+                                    <span className="text-base font-thin text-gray-700">Email</span>
+                                    <span className="text-sm font-thin text-left text-gray-500">{student.contact.email}</span>
                                 </li>
-                                <li className=' border-b p-1 ml-8 grid grid-cols-2 gap-20'>
-                                    <span className='text-base font-thin text-gray-700'>Phone</span>
-                                    <span className='text-sm font-thin text-gray-500'>{student.contact.phone}</span>
+                                <li className="border-b p-1 ml-8 grid grid-cols-2 gap-20">
+                                    <span className="text-base font-thin text-gray-700">Phone</span>
+                                    <span className="text-sm font-thin text-gray-500">{student.contact.phone}</span>
                                 </li>
-                                <li className=' border-b p-1 ml-8 grid grid-cols-2 gap-20'>
-                                    <span className='text-base font-thin text-gray-700 capitalize'>alternate phone</span>
-                                    <span className='text-sm font-thin text-gray-500'>{student.contact.alternate_phone}</span>
+                                <li className="border-b p-1 ml-8 grid grid-cols-2 gap-20">
+                                    <span className="text-base font-thin text-gray-700 capitalize">alternate phone</span>
+                                    <span className="text-sm font-thin text-gray-500">{student.contact.alternate_phone}</span>
                                 </li>
-                                <li className=' border-b p-1 ml-8 grid grid-cols-2 gap-20'>
-                                    <span className='text-base font-thin text-gray-700'>Course</span>
-                                    <span className='text-sm font-thin text-gray-500'>{student.education.course}</span>
+                                <li className="border-b p-1 ml-8 grid grid-cols-2 gap-20">
+                                    <span className="text-base font-thin text-gray-700">Course</span>
+                                    <span class="text-sm font-thin text-gray-500">{student.education.course}</span>
                                 </li>
-                                <li className='grid grid-cols-2 gap-20 border-b p-1 ml-8'>
-                                    <span className='text-base font-thin text-gray-700'>Specialization</span>
-                                    <span className='text-sm font-thin text-gray-500'>{student.customfields.enter_specialization}</span>
+                                <li className="grid grid-cols-2 gap-20 border-b p-1 ml-8">
+                                    <span className="text-base font-thin text-gray-700">Specialization</span>
+                                    <span className="text-sm font-thin text-gray-500">{student.customfields.enter_specialization}</span>
                                 </li>
-                                <li className='grid grid-cols-2 gap-20 border-b p-1 ml-8'>
-                                    <span className='text-base font-thin text-gray-700'>Session</span>
-                                    <span className='text-sm font-thin text-gray-500'>{student.customfields.session}</span>
+                                <li className="grid grid-cols-2 gap-20 border-b p-1 ml-8">
+                                    <span className="text-base font-thin text-gray-700">Session</span>
+                                    <span className="text-sm font-thin text-gray-500">{student.customfields.session}</span>
                                 </li>
-                                <li className='grid grid-cols-2 gap-20 border-b p-1 ml-8'>
-                                    <span className='text-base font-thin text-gray-700'>LMS Status</span>
-                                    <span className='text-sm font-thin text-gray-500 capitalize'>{student.customfields.lmsStatus}</span>
+                                <li className="grid grid-cols-2 gap-20 border-b p-1 ml-8">
+                                    <span className="text-base font-thin text-gray-700">LMS Status</span>
+                                    <span className="text-sm font-thin text-gray-500 capitalize">{student.customfields.lmsStatus}</span>
                                 </li>
                             </ul>
                             <ul>
-                                <li className='grid grid-cols-2 gap-20 border-b p-1 ml-8'>
-                                    <span className='text-base font-thin text-gray-700'>Admission Type</span>
-                                    <span className='text-sm font-thin text-gray-500'>{student.customfields.admission_type}</span>
+                                <li className="grid grid-cols-2 gap-20 border-b p-1 ml-8">
+                                    <span className="text-base font-thin text-gray-700">Admission Type</span>
+                                    <span className="text-sm font-thin text-gray-500">{student.customfields.admission_type}</span>
                                 </li>
-                                <li className='grid grid-cols-2 gap-20 border-b p-1 ml-8'>
-                                    <span className='text-base font-thin text-gray-700'>Institute Name</span>
-                                    <span className='text-sm font-thin text-gray-500'>{student.customfields.institute_name}</span>
+                                <li className="grid grid-cols-2 gap-20 border-b p-1 ml-8">
+                                    <span className="text-base font-thin text-gray-700">Institute Name</span>
+                                    <span class="text-sm font-thin text-gray-500">{student.customfields.institute_name}</span>
                                 </li>
-                                <li className='grid grid-cols-2 gap-20 border-b p-1 ml-8'>
-                                    <span className='text-base font-thin text-gray-700'>University Name</span>
-                                    <span className='text-sm font-thin text-gray-500'>{student.customfields.university_name}</span>
+                                <li className="grid grid-cols-2 gap-20 border-b p-1 ml-8">
+                                    <span className="text-base font-thin text-gray-700">University Name</span>
+                                    <span class="text-sm font-thin text-gray-500">{student.customfields.university_name}</span>
                                 </li>
-                                <li className='grid grid-cols-2 gap-20 border-b p-1 ml-8'>
-                                    <span className='text-base font-thin text-gray-700'>User</span>
-                                    <span className='text-sm font-thin text-gray-500'>{student.userId?.fullname}</span>
+                                <li className="grid grid-cols-2 gap-20 border-b p-1 ml-8">
+                                    <span className="text-base font-thin text-gray-700">User</span>
+                                    <span class="text-sm font-thin text-gray-500">{student.userId?.fullname}</span>
                                 </li>
-                                <li className='grid grid-cols-2 gap-20 border-b p-1 ml-8'>
-                                    <span className='text-base font-thin text-gray-700'>Date of Birth</span>
-                                    <span className='text-sm font-thin text-gray-500'>{student.customfields.dob}</span>
+                                <li className="grid grid-cols-2 gap-20 border-b p-1 ml-8">
+                                    <span className="text-base font-thin text-gray-700">Date of Birth</span>
+                                    <span class="text-sm font-thin text-gray-500">{student.customfields.dob}</span>
                                 </li>
-                                <li className='grid grid-cols-2 gap-20 border-b p-1 ml-8'>
-                                    <span className='text-base font-thin text-gray-700'>Gender</span>
-                                    <span className='text-sm font-thin text-gray-500'>{student.customfields.gender}</span>
+                                <li className="grid grid-cols-2 gap-20 border-b p-1 ml-8">
+                                    <span className="text-base font-thin text-gray-700">Gender</span>
+                                    <span class="text-sm font-thin text-gray-500">{student.customfields.gender}</span>
                                 </li>
 
-                                <li className='grid grid-cols-2 gap-20 border-b p-1 ml-8'>
-                                    <span className='text-base font-thin text-gray-700'>Remark</span>
-                                    <span className='text-sm font-thin text-gray-500'>{student.customfields.remark}</span>
+                                <li className="grid grid-cols-2 gap-20 border-b p-1 ml-8">
+                                    <span className="text-base font-thin text-gray-700">Remark</span>
+                                    <span class="text-sm font-thin text-gray-500">{student.customfields.remark}</span>
                                 </li>
-                                <li className='grid grid-cols-2 gap-20 border-b p-1 ml-8'>
-                                    <span className='text-base font-thin text-gray-700'>Enrollment Number</span>
-                                    <span className='text-sm font-thin text-gray-500'>{student.customfields.enrollment}</span>
+                                <li className="grid grid-cols-2 gap-20 border-b p-1 ml-8">
+                                    <span className="text-base font-thin text-gray-700">Enrollment Number</span>
+                                    <span class="text-sm font-thin text-gray-500">{student.customfields.enrollment}</span>
                                 </li>
-                                <li className='grid grid-cols-2 gap-20 border-b p-1 ml-8'>
-                                    <span className='text-base font-thin text-gray-700'>Status</span>
-                                    <span className='text-sm font-thin text-gray-500'>
+                                <li className="grid grid-cols-2 gap-20 border-b p-1 ml-8">
+                                    <span className="text-base font-thin text-gray-700">Status</span>
+                                    <span class="text-sm font-thin text-gray-500">
                                         {student.customfields.status === 'New' && (
-                                            <span className='mt-3 capitalize text-center text-sm font-thin hover:bg-blue-100 bg-blue-100 hover:text-blue-700 text-blue-700 pl-2 pr-2'>New</span>
+                                            <span
+                                                className="mt-3 capitalize text-center text-sm font-thin hover:bg-blue-100 bg-blue-100 hover:text-blue-700 text-blue-700 pl-2 pr-2"
+                                            >
+                                                New
+                                            </span>
                                         )}
                                         {student.customfields.status === 'Approved' && (
-                                            <span className='mt-3 capitalize text-center text-sm font-thin hover:bg-green-100 bg-green-100 hover:text-green-700 text-green-700 pl-2 pr-2'>Approved</span>
+                                            <span
+                                                className="mt-3 capitalize text-center text-sm font-thin hover:bg-green-100 bg-green-100 hover:text-green-700 text-green-700 pl-2 pr-2"
+                                            >
+                                                Approved
+                                            </span>
                                         )}
                                         {student.customfields.status === 'Cancel' && (
-                                            <span className='mt-3 capitalize text-center text-sm font-thin hover:bg-red-100 bg-red-100 hover:text-red-700 text-red-700 pl-2 pr-2'>Cancel</span>
+                                            <span
+                                                className="mt-3 capitalize text-center text-sm font-thin hover:bg-red-100 bg-red-100 hover:text-red-700 text-red-700 pl-2 pr-2"
+                                            >
+                                                Cancel
+                                            </span>
                                         )}
                                         {student.customfields.status === 'Alumini' && (
-                                            <span className='mt-3 capitalize text-center text-sm font-thin hover:bg-green-100 bg-green-100 hover:text-green-700 text-green-700 pl-2 pr-2'>Alumini</span>
+                                            <span
+                                                className="mt-3 capitalize text-center text-sm font-thin hover:bg-green-100 bg-green-100 hover:text-green-700 text-green-700 pl-2 pr-2"
+                                            >
+                                                Alumini
+                                            </span>
                                         )}
-                                        {student.customfields.status === 'Not Intrested' && (
-                                            <span style={{ color: 'orange' }}>Not Intrested</span>
+                                        {student.customfields.status === 'Not Interested' && (
+                                            <span style={{ color: 'orange' }}>Not Interested</span>
                                         )}
                                         {student.customfields.status === 'Enrolled' && (
-                                            <span className='capitalize text-center text-sm font-thin hover:bg-yellow-100 bg-yellow-100 hover:text-yellow-700 text-yellow-700 pl-2 pr-2'>Enrolled</span>
+                                            <span className="capitalize text-center text-sm font-thin hover:bg-yellow-100 bg-yellow-100 hover:text-yellow-700 text-yellow-700 pl-2 pr-2"
+                                            >
+                                                Enrolled
+                                            </span>
                                         )}
                                     </span>
                                 </li>
                             </ul>
                         </div>
                         <div>
-                            <div className='flex items-center gap-1 mb-5 mt-10 ml-4'><span className='font-thin text-xl'><SiContactlesspayment /></span><span className='font-thin text-lg'>Payment Details</span></div>
-                            <div>
-                                <ul>
-                                    <li className='grid grid-cols-2 gap-20 border-b p-1.5 ml-8'>
-                                        <span className='text-base font-thin text-gray-700'>Payment Mode</span>
-                                        <span className='text-sm font-thin text-gray-500'>{student.customfields.payment_mode}</span>
-                                    </li>
-                                    <li className='grid grid-cols-2 gap-20 border-b p-1.5 ml-8'>
-                                        <span className='text-base font-thin text-gray-700'>Payment Type</span>
-                                        <span className='text-sm font-thin text-gray-500'>{student.customfields.payment_type}</span>
-                                    </li>
-
-                                    <li className='grid grid-cols-2 gap-20 border-b p-1.5 ml-8'>
-                                        <span className='text-base font-thin text-gray-700'>Fee Reciept</span>
-                                        <span className='text-sm font-thin text-gray-500 capitalize'>{student.customfields.sendfeeReciept}</span>
-                                    </li>
-                                    <li className='grid grid-cols-2 gap-20 border-b p-1.5 ml-8'>
-                                        <span className='text-base font-thin text-gray-700'>Installment</span>
-                                        <span className='text-sm font-thin text-gray-500'>{student.customfields.installment_type}</span>
-                                    </li>
-                                    <li className='grid grid-cols-2 gap-20 border-b p-1.5 ml-8'>
-                                        <span className='text-base font-thin text-gray-700'>Total Course Fee</span>
-                                        <span className='text-sm font-thin text-[#FF0066] relative text-justify'><span className='mr-1'>&#x20B9;</span>{student.customfields.total_course_fee}</span>
-                                    </li>
-                                    <li className='grid grid-cols-2 gap-20 border-b p-1.5 ml-8'>
-                                        <span className='text-base font-thin text-gray-700'>Total Paid Amount</span>
-                                        <span className='text-sm font-thin text-[#FF0066] relative text-justify'><span className='mr-1'>&#x20B9;</span>{student.customfields.total_paid_amount}</span>
-                                    </li>
-                                    <li className='grid grid-cols-2 gap-20 border-b p-1.5 ml-8'>
-                                        <span className='text-base font-thin text-gray-700'>Paid Amount</span>
-                                        <span className='text-sm font-thin text-[#FF0066] relative text-justify'><span className='mr-1'>&#x20B9;</span>{student.customfields.paid_amount}</span>
-                                    </li>
-                                    <li className='grid grid-cols-2 gap-20 border-b p-1.5 ml-8'>
-                                        <span className='text-base font-thin text-gray-700'>Due Amount</span>
-                                        <span className='text-sm font-thin text-[#FF0066] relative text-justify'><span className='mr-1'>&#x20B9;</span>{dueAmount}</span>
-                                    </li>
-
-                                    <li className='grid grid-cols-2 gap-20 border-b p-1.5 ml-8'>
-                                        <span className='text-base font-thin text-gray-700'>Payments</span>
-                                        <Button onClick={handleViewInstallment} className='hover:bg-[#CCFFCC] pl-2 pr-2 bg-[#CCFFCC] hover:text-[#333300] text-[#333300] max-w-32 text-center font-thin text-sm'>View Payments</Button>
-                                    </li>
-                                </ul>
+                            <div className="flex items-center gap-1 mb-5 mt-10 ml-4">
+                                <span className="font-thin text-xl">
+                                    <SiContactlesspayment />
+                                </span>
+                                <span className="font-thin text-lg">Payment Details</span>
                             </div>
+                            <ul>
+                                <li className="grid grid-cols-2 gap-20 border-b p-1.5 ml-8">
+                                    <span className="text-base font-thin text-gray-700">Payment Mode</span>
+                                    <span class="text-sm font-thin text-gray-500">{student.customfields.payment_mode}</span>
+                                </li>
+                                <li className="grid grid-cols-2 gap-20 border-b p-1.5 ml-8">
+                                    <span className="text-base font-thin text-gray-700">Payment Type</span>
+                                    <span class="text-sm font-thin text-gray-500">{student.customfields.payment_type}</span>
+                                </li>
+                                <li className="grid grid-cols-2 gap-20 border-b p-1.5 ml-8">
+                                    <span className="text-base font-thin text-gray-700">Fee Receipt</span>
+                                    <span class="text-sm font-thin text-gray-500 capitalize">{student.customfields.sendfeeReciept}</span>
+                                </li>
+                                <li className="grid grid-cols-2 gap-20 border-b p-1.5 ml-8">
+                                    <span className="text-base font-thin text-gray-700">Installment</span>
+                                    <span className="text-sm font-thin text-gray-500">{student.customfields.installment_type}</span>
+                                </li>
+                                <li className="grid grid-cols-2 gap-20 border-b p-1.5 ml-8">
+                                    <span className="text-base font-thin text-gray-700">Total Course Fee</span>
+                                    <span className="text-sm font-thin text-[#FF0066] relative text-justify">
+                                        <span className="mr-1">&#x20B9;</span>
+                                        {student.customfields.total_course_fee}
+                                    </span>
+                                </li>
+                                <li className="grid grid-cols-2 gap-20 border-b p-1.5 ml-8">
+                                    <span className="text-base font-thin text-gray-700">Total Paid Amount</span>
+                                    <span class="text-sm font-thin text-[#FF0066] relative text-justify">
+                                        <span className="mr-1">&#x20B9;</span>
+                                        {student.customfields.total_paid_amount}
+                                    </span>
+                                </li>
+                                <li className="grid grid-cols-2 gap-20 border-b p-1.5 ml-8">
+                                    <span className="text-base font-thin text-gray-700">Paid Amount</span>
+                                    <span class="text-sm font-thin text-[#FF0066] relative text-justify">
+                                        <span className="mr-1">&#x20B9;</span>
+                                        {student.customfields.paid_amount}
+                                    </span>
+                                </li>
+                                <li className="grid grid-cols-2 gap-20 border-b p-1.5 ml-8">
+                                    <span className="text-base font-thin text-gray-700">Due Amount</span>
+                                    <span class="text-sm font-thin text-[#FF0066] relative text-justify">
+                                        <span className="mr-1">&#x20B9;</span>
+                                        {dueAmount}
+                                    </span>
+                                </li>
+
+                                <li className="grid grid-cols-2 gap-20 border-b p-1.5 ml-8">
+                                    <span className="text-base font-thin text-gray-700">Payments</span>
+                                    <Button
+                                        onClick={handleViewInstallment}
+                                        className="hover:bg-[#CCFFCC] pl-2 pr-2 bg-[#CCFFCC] hover:text-[#333300] text-[#333300] max-w-32 text-center font-thin text-sm"
+                                    >
+                                        View Payments
+                                    </Button>
+                                </li>
+                            </ul>
                         </div>
                         <div>
-                            <div className='flex items-center gap-1 mb-5 mt-10 ml-4'><span className='font-thin text-xl'><IoDocumentAttachOutline /></span><span className='font-thin text-lg'>Student Documents</span></div>
-                            <div>
-                                <ul>
-                                    <li className='grid grid-cols-2 gap-20 border-b p-1.5 ml-8'>
-                                        <span className='text-base font-thin text-gray-700'>Student document</span>
-                                        <Button onClick={() => handleViewDocuments('studentDocument')} className='hover:bg-[#CCFFCC] pl-2 pr-2 bg-[#CCFFCC] hover:text-[#333300] text-[#333300] max-w-32 text-center font-thin text-sm'>View Documents</Button>
-                                    </li>
-                                    <li className='grid grid-cols-2 gap-20 border-b p-1.5 ml-8'>
-                                        <span className='text-base font-thin text-gray-700'>Fee Receipt</span>
-                                        <Button onClick={() => handleViewDocuments('feeDocument')} className='hover:bg-[#CCFFCC] pl-2 pr-2 bg-[#CCFFCC] hover:text-[#333300] text-[#333300] max-w-32 text-center font-thin text-sm'>View Fee Receipt</Button>
-                                    </li>
-                                </ul>
+                            <div className="flex items-center gap-1 mb-5 mt-10 ml-4">
+                                <span className="font-thin text-xl">
+                                    <IoDocumentAttachOutline />
+                                </span>
+                                <span className="font-thin text-lg">Student Documents</span>
                             </div>
+                            <ul>
+                                <li className="grid grid-cols-2 gap-20 border-b p-1.5 ml-8">
+                                    <span className="text-base font-thin text-gray-700">Student document</span>
+                                    <Button
+                                        onClick={() => handleViewDocuments('studentDocument')}
+                                        className="hover:bg-[#CCFFCC] pl-2 pr-2 bg-[#CCFFCC] hover:text-[#333300] text-[#333300] max-w-32 text-center font-thin text-sm"
+                                    >
+                                        View Documents
+                                    </Button>
+                                </li>
+                                <li className="grid grid-cols-2 gap-20 border-b p-1.5 ml-8">
+                                    <span className="text-base font-thin text-gray-700">Fee Receipt</span>
+                                    <Button
+                                        onClick={() => handleViewDocuments('feeDocument')}
+                                        className="hover:bg-[#CCFFCC] pl-2 pr-2 bg-[#CCFFCC] hover:text-[#333300] text-[#333300] max-w-32 text-center font-thin text-sm"
+                                    >
+                                        View Fee Receipt
+                                    </Button>
+                                </li>
+                            </ul>
                         </div>
                     </>
                 )}
@@ -335,11 +390,12 @@ const StudentDetailsModal = ({ visible, onClose, student }) => {
                 footer={null}
                 width={1500}
             >
-                <Table dataSource={installmentData} columns={columns} pagination={false} />
+                <InstallmentTable installmentData={installmentData} columns={columns} />
             </Modal>
+
             <Modal
                 title={
-                    <div className='font-thin text-lg border-b mb-10'>
+                    <div className="font-thin text-lg border-b mb-10">
                         Student Documents
                     </div>
                 }
@@ -348,36 +404,7 @@ const StudentDetailsModal = ({ visible, onClose, student }) => {
                 footer={null}
                 width={1000}
             >
-                <div className="grid grid-cols-4 gap-4">
-                    {documentUrls.map((doc, index) => (
-                        <div key={index} className='w-52 flex flex-col items-center'>
-                            <Image
-                                width={200}
-                                src={doc?.downloadURL}
-                                preview={{
-                                    toolbarRender: (
-                                        _,
-                                        {
-                                            transform: { scale },
-                                            actions: { onFlipY, onFlipX, onRotateLeft, onRotateRight, onZoomOut, onZoomIn },
-                                        },
-                                    ) => (
-                                        <Space size={12} className="toolbar-wrapper">
-                                            <Button className='bg-transparent' onClick={() => onDownload(doc.downloadURL)} icon={<DownloadOutlined />} />
-                                            <Button className='bg-transparent' onClick={onFlipY} icon={<SwapOutlined rotate={90} />} />
-                                            <Button className='bg-transparent' onClick={onFlipX} icon={<SwapOutlined />} />
-                                            <Button className='bg-transparent' onClick={onRotateLeft} icon={<RotateLeftOutlined />} />
-                                            <Button className='bg-transparent' onClick={onRotateRight} icon={<RotateRightOutlined />} />
-                                            <Button className='bg-transparent' onClick={onZoomOut} icon={<ZoomOutOutlined />} disabled={scale === 1} />
-                                            <Button className='bg-transparent' onClick={onZoomIn} icon={<ZoomInOutlined />} disabled={scale === 50} />
-                                        </Space>
-                                    ),
-                                }}
-                            />
-                            <span>{doc.originalFileName}</span>
-                        </div>
-                    ))}
-                </div>
+                <DocumentPreview documentUrls={documentUrls} onDownload={onDownload} />
             </Modal>
         </>
     );
