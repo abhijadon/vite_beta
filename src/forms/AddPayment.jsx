@@ -14,7 +14,7 @@ const UpdatePaymentForm = ({ entity, id, recordDetails, onCloseModal }) => {
     const [documentModalVisible, setDocumentModalVisible] = useState(false);
     const [documentUrls, setDocumentUrls] = useState([]);
     const [documentType, setDocumentType] = useState(''); // New state variable to track the document type to be displayed
-    const [installmentModalVisible, setInstallmentModalVisible] = useState(false);
+
     // Event handler to show fee-related documents in the modal
     const handleViewFeeReceipt = () => {
         if (recordDetails && recordDetails.feeDocument) {
@@ -396,7 +396,6 @@ const UpdatePaymentForm = ({ entity, id, recordDetails, onCloseModal }) => {
                     },
                 ]}
             >
-                {/* Render Select component based on isLoggedIn and role */}
                 {isLoggedIn && role ? (
                     <Select
                         showSearch

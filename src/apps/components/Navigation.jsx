@@ -1,192 +1,125 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Button, Drawer, Layout, Menu } from 'antd';
-import { useAppContext } from '@/context/appContext';
-import useLanguage from '@/locale/useLanguage';
-import logoIcon from '@/style/images/sodelogo.png';
-import logoText from '@/style/images/sodeicon.png';
 import { useNavigate } from 'react-router-dom';
-import { useSelector } from 'react-redux';
-import { PiUsersThree } from "react-icons/pi";
-import { BsPersonCheck } from "react-icons/bs";
-import { RiPenNibLine } from "react-icons/ri";
-import { MdLockOpen } from "react-icons/md";
+import axios from 'axios';
 import {
-  SettingOutlined,
-  FileTextOutlined,
   DashboardOutlined,
-  UserOutlined,
+  UserAddOutlined,
   CreditCardOutlined,
   MenuOutlined,
-  UserAddOutlined,
 } from '@ant-design/icons';
+import { PiMicrosoftTeamsLogoLight } from 'react-icons/pi';
+import { BsPersonCheck } from 'react-icons/bs';
+import logoIcon from '@/style/images/sodelogo.png';
+import logoText from '@/style/images/sodeicon.png';
+import { FaUsersRays } from "react-icons/fa6";
+import { CiUnread } from "react-icons/ci";
 
 const { Sider } = Layout;
 
-import { selectCurrentAdmin } from '@/redux/auth/selectors';
+export default function Navigation() {
+  const [menuOptions, setMenuOptions] = useState([]);
 
-export default function Navigation({ onPathChange }) {
-
-  const handlePathChange = (newPathname) => {
-    onPathChange(newPathname);
-    localStorage.setItem('currentPathname', newPathname);
-  };
   useEffect(() => {
-    const storedPath = localStorage.getItem('currentPathname');
-    if (storedPath) {
-      onPathChange(storedPath);
+    async function fetchRoleAndMenuOptions() {
+      try {
+        const response = await axios.get('http://localhost:5000/api/menu/list');
+        if (response.status === 200) {
+          const { role, options } = response.data;
+          setMenuOptions({ role, options });
+        }
+      } catch (error) {
+        console.error('Error fetching menu options:', error);
+      }
     }
-  }, [onPathChange]);
+
+    fetchRoleAndMenuOptions();
+  }, []);
 
   return (
     <>
       <div className="sidebar-wraper">
-        <Sidebar collapsible={true} onPathChange={handlePathChange} />
+        <Sidebar menuOptions={menuOptions} />
       </div>
-      <MobileSidebar onPathChange={handlePathChange} />
+      <MobileSidebar menuOptions={menuOptions} />
     </>
   );
 }
-function Sidebar({ collapsible, onPathChange }) {
-  let location = useLocation();
 
-  const { state: stateApp, appContextAction } = useAppContext();
-  const { isNavMenuClose } = stateApp;
-  const { navMenu } = appContextAction;
-  const [showLogoApp, setLogoApp] = useState(isNavMenuClose);
-  const [currentPath, setCurrentPath] = useState(location.pathname);
-
-  const translate = useLanguage();
+function Sidebar({ menuOptions }) {
+  const location = useLocation();
   const navigate = useNavigate();
-
-  const currentAdmin = useSelector(selectCurrentAdmin);
-  const isAdmin = currentAdmin?.role === 'admin';
-
-  const settingsOptions = [
-    {
-      key: 'generalSettings',
-      label: <Link to={'/settings'}>{translate('general_settings')}</Link>,
-    },
-    {
-      key: 'emailTemplates',
-      label: <Link to={'/email'}>{translate('email_templates')}</Link>,
-    },
-    {
-      key: 'paymentMode',
-      label: <Link to={'/payment/mode'}>{translate('payment_mode')}</Link>,
-    },
-    {
-      key: 'history',
-      label: <Link to={'/history'}>{translate('history')}</Link>,
-    },
-    {
-      key: 'advancedSettings',
-      label: <Link to={'/settings/advanced'}>{translate('advanced_settings')}</Link>,
-    },
-  ];
-
-  const settingsSection = isAdmin
-    ? {
-      label: translate('Settings'),
-      key: 'settings',
-      icon: <SettingOutlined />,
-      children: settingsOptions,
-    }
-    : null;
-
-  const rolesPermission = [
-    {
-      key: 'roles',
-      icon: <PiUsersThree className='text-[18px]' />,
-      label: <Link to={'/roles'}>{translate('Teams')}</Link>,
-    },
-    {
-      key: 'permissions',
-      icon: <BsPersonCheck className='text-[18px]' />,
-      label: <Link to={'/permissions'}>{translate('users')}</Link>,
-    },
-    {
-      key: 'permission',
-      icon: <RiPenNibLine className='text-[18px]' />,
-      label: <Link to={'/permission'}>{translate('permission')}</Link>,
-    },
-  ];
-
-
-  const rolesSection = isAdmin
-    ? {
-      label: 'Roles & Users',
-      key: 'rolesSection',
-      icon: <MdLockOpen />,
-      children: rolesPermission,
-    }
-    : null;
-
-  const items = [
-    {
-      key: 'dashboard',
-      icon: <DashboardOutlined />,
-      label: <Link to={'/'}>{translate('dashboard')}</Link>,
-    },
-    {
-      key: 'application',
-      icon: <UserAddOutlined />,
-      label: <Link to={'/application'}>{translate('applications')}</Link>,
-    },
-    {
-      key: 'payment',
-      icon: <CreditCardOutlined />,
-      label: <Link to={'/payment'}>{translate('payment')}</Link>,
-    },
-    rolesSection,
-    settingsSection,
-
-  ].filter(Boolean);
-
-
-  useEffect(() => {
-    if (location && currentPath !== location.pathname) {
-      setCurrentPath(location.pathname);
-      onPathChange(location.pathname);
-    }
-  }, [location, currentPath, onPathChange]);
-  useEffect(() => {
-    if (isNavMenuClose) {
-      setLogoApp(isNavMenuClose);
-    }
-    const timer = setTimeout(() => {
-      if (!isNavMenuClose) {
-        setLogoApp(isNavMenuClose);
-      }
-    }, 200);
-    return () => clearTimeout(timer);
-  }, [isNavMenuClose]);
+  const [collapsed, setCollapsed] = useState(false);
 
   const onCollapse = () => {
-    navMenu.collapse();
+    setCollapsed(!collapsed);
+  };
+
+  const generateMenuItems = () => {
+    if (!menuOptions?.options) return []; // Return empty array if menuOptions not defined
+
+    return menuOptions.options.map((option) => {
+      let icon;
+      let path;
+
+      switch (option) {
+        case 'Dashboard':
+          icon = <DashboardOutlined />;
+          path = '/'; // Change Dashboard path to "/"
+          break;
+        case 'Application':
+          icon = <UserAddOutlined />;
+          path = '/application';
+          break;
+        case 'Payment':
+          icon = <CreditCardOutlined />;
+          path = '/payment';
+          break;
+        case 'Teams':
+          icon = <PiMicrosoftTeamsLogoLight className="text-[18px]" />;
+          path = '/roles';
+          break;
+        case 'Users':
+          icon = <FaUsersRays className="text-[18px]" />;
+          path = '/permissions';
+          break;
+        case 'Permission':
+          icon = <CiUnread className="text-[18px]" />;
+          path = '/permission';
+          break;
+        default:
+          icon = null;
+          path = `/${option.toLowerCase()}`;
+      }
+
+      return {
+        key: path, // Use the path as the key
+        icon,
+        label: <Link to={path}>{option}</Link>, // Adjusted to use the correct path
+      };
+    });
   };
 
   return (
     <Sider
-      collapsible={collapsible}
-      collapsed={collapsible ? isNavMenuClose : collapsible}
+      collapsible
+      collapsed={collapsed}
       onCollapse={onCollapse}
-      className="navigation"
+      theme={'light'}
       style={{
         overflow: 'auto',
         height: '100vh',
         position: 'fixed',
-        left: '20px',
-        top: '20px',
-        bottom: '20px',
-        borderRadius: '8px',
+        left: '0',
+        top: '0',
+        bottom: '0',
         boxShadow: '0px 0px 20px 3px rgba(150, 190, 238, 0.15)',
       }}
-      theme={'light'}
     >
-      <div className="logo" onClick={() => navigate('/')} style={{ cursor: 'pointer' }}>
+      <div className="logo" onClick={() => navigate('/')}>
         <img src={logoIcon} alt="Logo" style={{ height: '35px' }} />
-        {!showLogoApp && (
+        {!collapsed && (
           <img
             src={logoText}
             alt="Logo"
@@ -194,19 +127,26 @@ function Sidebar({ collapsible, onPathChange }) {
           />
         )}
       </div>
-      <Menu items={items} mode="inline" theme={'light'} />
+      <Menu
+        mode="inline"
+        items={generateMenuItems()}
+        defaultSelectedKeys={[location.pathname]}
+      />
     </Sider>
   );
 }
 
-function MobileSidebar() {
+function MobileSidebar({ menuOptions }) {
   const [visible, setVisible] = useState(false);
+
   const showDrawer = () => {
     setVisible(true);
   };
+
   const onClose = () => {
     setVisible(false);
   };
+
   return (
     <>
       <Button
@@ -224,9 +164,8 @@ function MobileSidebar() {
         closable={false}
         onClose={onClose}
         open={visible}
-        rootClassName="mobile-sidebar-wraper"
       >
-        <Sidebar collapsible={false} />
+        <Sidebar collapsible={false} menuOptions={menuOptions} />
       </Drawer>
     </>
   );

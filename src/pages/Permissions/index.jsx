@@ -95,7 +95,7 @@ export default function Admin() {
     const Labels = {
         PANEL_TITLE: translate('admin'),
         DATATABLE_TITLE: translate('admin_list'),
-        ADD_NEW_ENTITY: translate('add_new_admin'),
+        ADD_NEW_ENTITY: translate('add_user'),
         ENTITY_NAME: translate('admin'),
         CREATE_ENTITY: translate('save'),
         UPDATE_ENTITY: translate('update'),

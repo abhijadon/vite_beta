@@ -1,24 +1,25 @@
-// UserTable.jsx
 import React, { useState } from 'react';
-import { Table, Button, Drawer, message, Card } from 'antd';
-import useFetch from '@/hooks/useFetch'; // Assuming this hook handles API requests
+import { Table, Button, Drawer, message } from 'antd';
+import useFetch from '@/hooks/useFetch';
 import { request } from '@/request';
-import AddRoleform from '@/forms/AddRoleform';
+import MenuForm from '@/forms/menuOptions';
+import EditOptions from '@/forms/EditOptions';
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { TbEdit } from "react-icons/tb";
-import { CiBookmarkPlus } from "react-icons/ci";
-import EditRole from '@/forms/EditRole';
+import { AiOutlineMenuFold } from "react-icons/ai";
 
-const UserTable = () => {
+const Index = () => {
     const [visible, setVisible] = useState(false);
     const [selectedRecord, setSelectedRecord] = useState(null);
 
     const { data: userList, isLoading: userLoading, error } = useFetch(() =>
-        request.list({ entity: 'teams' })
+        request.listAll({ entity: 'menu' })
     );
 
+    console.log('datanavoptons', userList)
+
     const handleAddNew = () => {
-        setSelectedRecord(null); // Reset selected record
+        setSelectedRecord(null);
         setVisible(true);
     };
 
@@ -34,51 +35,29 @@ const UserTable = () => {
 
     const handleDelete = async (record) => {
         try {
-            await request.delete({ entity: 'teams', id: record._id });
+            await request.delete({ entity: 'menu', id: record._id });
         } catch (error) {
             message.error('Failed to delete record');
         }
     };
 
     const handleFormSubmit = () => {
-        // Close drawer after form submission
         setVisible(false);
-        setSelectedRecord(null); // Reset selected record
+        setSelectedRecord(null);
     };
 
     const columns = [
         {
-            title: 'Full Name',
-            dataIndex: ['userId', 'fullname'],
-            key: 'fullname',
+            title: 'Role',
+            dataIndex: 'role',
+            key: 'role',
             render: (text) => <span style={{ textTransform: 'capitalize' }}>{text}</span>,
         },
         {
-            title: 'Team Members',
-            dataIndex: 'teamMembers',
-            key: 'teamMembers',
-            render: (teamMembers) => (
-                <span className='capitalize'>
-                    {teamMembers.map(member => member.fullname).join(', ')}
-                </span>
-            ),
-        },
-        {
-            title: 'Institute Name',
-            dataIndex: 'institute',
-            key: 'institute',
-            render: (institutes) => institutes.join(', '), // Assuming institutes is an array
-        },
-        {
-            title: 'University Name',
-            dataIndex: 'university',
-            key: 'university',
-            render: (universities) => universities.join(', '), // Assuming universities is an array
-        },
-        {
-            title: 'Teamname',
-            dataIndex: 'teamName',
-            key: 'teamName',
+            title: 'Options',
+            dataIndex: 'options',
+            key: 'options',
+            render: (options) => options.join(', '),
         },
         {
             title: 'Actions',
@@ -105,17 +84,18 @@ const UserTable = () => {
     }
 
     return (
-        <Card>
-            <div className='flex justify-between items-center'>
-                <h3 className='text-lg font-thin'>Teams</h3>
+        <div>
+            <div className='flex items-center justify-between'>
+                <h2 className='text-lg font-thin'>Sidebar Permissions</h2>
                 <Button type="primary" onClick={handleAddNew} className='relative float-right mb-4 flex items-center gap-1'>
-                    <span><CiBookmarkPlus className='text-red-600 font-bold text-lg' /></span> <span>Add Teams</span>
+                    <span><AiOutlineMenuFold className='font-light text-lg' /></span> <span>Add Menu</span>
                 </Button>
             </div>
-            
+
+
             <Table dataSource={userList?.result} columns={columns} loading={userLoading} />
             <Drawer
-                title={selectedRecord ? 'Edit Item' : 'Add New Item'}
+                title={selectedRecord ? 'Edit Permission' : 'Given Permission'}
                 placement="right"
                 closable={false}
                 onClose={handleDrawerClose}
@@ -123,20 +103,20 @@ const UserTable = () => {
                 width={400}
             >
                 {selectedRecord ? (
-                    <EditRole
+                    <EditOptions
                         onClose={handleDrawerClose}
                         onFormSubmit={handleFormSubmit}
                         selectedRecord={selectedRecord}
                     />
                 ) : (
-                    <AddRoleform
+                    <MenuForm
                         onClose={handleDrawerClose}
                         onFormSubmit={handleFormSubmit}
                     />
                 )}
             </Drawer>
-        </Card>
+        </div>
     );
 };
 
-export default UserTable;
+export default Index;

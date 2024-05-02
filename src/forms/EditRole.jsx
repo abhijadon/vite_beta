@@ -136,6 +136,8 @@ const EditRole = ({ onClose, onFormSubmit, selectedRecord }) => {
                         { value: 'LPU', label: 'LPU' },
                         { value: 'DPU', label: 'DPU' },
                         { value: 'JAIN', label: 'JAIN' },
+                        { value: 'AMRITA', label: 'AMRITA' },
+                        { value: 'AMITY', label: 'AMITY' },
                         { value: 'SVSU', label: 'SVSU' },
                         { value: 'VIGNAN', label: 'VIGNAN' },
                         { value: 'MANIPAL', label: 'MANIPAL' },

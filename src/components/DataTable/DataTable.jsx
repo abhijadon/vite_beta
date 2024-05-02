@@ -206,7 +206,7 @@ export default function DataTable({ config, extra = [] }) {
       console.error("Error preparing payment update:", error);
     }
   };
-  
+
   // Function to handle document upload drawer open
   const handleUploadDocument = (record) => {
     setRecordForUploadDocument(record); // Store the record to be used in the form
@@ -580,21 +580,21 @@ export default function DataTable({ config, extra = [] }) {
             </div>
             <div>
               {/* Button to filter Payment Received */}
-              <Button style={getPaymentStatusStyle('payment received')} className='w-24 mt-3 capitalize text-center text-sm font-thin hover:bg-cyan-100 bg-cyan-100 hover:text-cyan-700 text-cyan-700' onClick={() => handlePaymentStatus('payment received')}>
+              <Button className='w-32 mt-3 capitalize text-center text-sm font-thin hover:bg-cyan-100 bg-cyan-100 hover:text-cyan-700 text-cyan-700 border-cyan-500 hover:border-cyan-500 rounded-none' onClick={() => handlePaymentStatus('payment received')}>
                 <span className="font-thin text-sm -ml-2">Received</span>
                 <span className="font-thin text-sm ml-1">({paymentReceivedCount})</span>
               </Button>
             </div>
             <div>
               {/* Button to filter Payment Approved */}
-              <Button className='w-24 mt-3 capitalize text-center text-sm font-thin hover:bg-green-100 bg-green-100 hover:text-green-700 text-green-700' onClick={() => handlePaymentStatus('payment approved')}>
+              <Button className='w-32 mt-3 capitalize text-center text-sm font-thin hover:bg-green-100 bg-green-100 hover:text-green-700 text-green-700 hover:border-green-500 border-green-600 rounded-none' onClick={() => handlePaymentStatus('payment approved')}>
                 <span className="font-thin text-sm -ml-2">Approved</span>
                 <span className="font-thin text-sm ml-1">({paymentApprovedCount})</span>
               </Button>
             </div>
             <div>
               {/* Button to filter Payment Rejected */}
-              <Button className='w-24 mt-3 capitalize text-center text-sm font-thin hover:bg-red-100 bg-red-100 hover:text-red-700 text-red-700' onClick={() => handlePaymentStatus('payment rejected')}>
+              <Button className='w-32 mt-3 capitalize text-center text-sm font-thin hover:bg-red-100 bg-red-100 hover:text-red-700 text-red-700 hover:border-red-500 border-red-600 rounded-none' onClick={() => handlePaymentStatus('payment rejected')}>
                 <span className="font-thin text-sm -ml-2">Rejected</span>
                 <span className="font-thin text-sm ml-1">({paymentRejectedCount})</span>
               </Button>

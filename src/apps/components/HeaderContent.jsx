@@ -114,6 +114,15 @@ export default function HeaderContent() {
     ]
     : [
       {
+        icon: <SettingOutlined />,
+        key: 'settingProfile',
+        label: (
+          <Link to={'/profile'}>
+            <DropdownMenu text={translate('update_password')} />
+          </Link>
+        ),
+      },
+      {
         icon: <LogoutOutlined />,
         key: 'logout',
         label: <Link to={'/logout'}>{translate('logout')}</Link>,

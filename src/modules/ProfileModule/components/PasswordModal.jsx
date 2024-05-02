@@ -4,18 +4,20 @@ import { request } from '@/request';
 import { Button, Form, Input, Modal } from 'antd';
 import { useEffect } from 'react';
 import useLanguage from '@/locale/useLanguage';
+import { selectCurrentAdmin } from '@/redux/auth/selectors';
+import { useSelector } from 'react-redux';
 
 const PasswordModal = ({ config }) => {
   const translate = useLanguage();
-
+  const currentAdmin = useSelector(selectCurrentAdmin);
   const { state, profileContextAction } = useProfileContext();
   const { modal, updatePanel } = profileContextAction;
-  const { update, read, passwordModal } = state;
-  const modalTitle = translate('Update Password');
+  const {  passwordModal } = state;
 
+  const modalTitle = translate('Update Password');
   const [passForm] = Form.useForm();
 
-  const { onFetch, result, isLoading, isSuccess } = useOnFetch();
+  const { onFetch, isSuccess } = useOnFetch();
 
   useEffect(() => {
     if (isSuccess) {
@@ -24,12 +26,13 @@ const PasswordModal = ({ config }) => {
   }, [isSuccess]);
 
   const handelSubmit = (fieldsValue) => {
-    const entity = 'admin/password-update/' + config.id;
+    const entity = 'admin/password-update/' + currentAdmin._id; // Ensure config.id is defined
     const updateFn = () => {
       return request.patch({ entity, jsonData: fieldsValue });
     };
     onFetch(updateFn);
   };
+
   return (
     <Modal
       title={modalTitle}
@@ -69,7 +72,7 @@ const PasswordModal = ({ config }) => {
                   return Promise.resolve();
                 }
                 return Promise.reject(
-                  new Error('The two passwords that you entered do not match!')
+                  new Error('The two passwords you entered do not match!')
                 );
               },
             }),

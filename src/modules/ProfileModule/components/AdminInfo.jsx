@@ -28,17 +28,19 @@ const AdminInfo = ({ config }) => {
         title={ENTITY_NAME}
         ghost={false}
         extra={[
-          <Button
-            key={`${uniqueId()}`}
-            onClick={() => {
-              updatePanel.open();
-            }}
-            type="primary"
-            icon={<EditOutlined />}
-          >
-            {translate('Edit')}
-          </Button>,
-          <Button
+          currentAdmin?.role === 'admin' && (
+            <Button className='bg-blue-200 text-blue-900 hover:bg-blue-50 hover:text-blue-600 border-blue-500'
+              key={uniqueId()} // Ensure unique key
+              onClick={() => {
+                updatePanel.open();
+              }}
+              type="primary"
+              icon={<EditOutlined />}
+            >
+              {translate('Edit')}
+            </Button>
+          ),
+          <Button className='bg-blue-200 text-blue-900 hover:bg-blue-50 hover:text-blue-600'
             key={`${uniqueId()}`}
             icon={<LockOutlined />}
             onClick={() => {
@@ -70,6 +72,7 @@ const AdminInfo = ({ config }) => {
               {currentAdmin?.fullname}
             </Descriptions.Item>
             <Descriptions.Item label={translate('username')}>{currentAdmin?.username}</Descriptions.Item>
+            <Descriptions.Item label={translate('phone')}>{currentAdmin?.phone}</Descriptions.Item>
             <Descriptions.Item label={translate('role')}>{currentAdmin?.role}</Descriptions.Item>
           </Descriptions>
         </Col>

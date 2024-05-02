@@ -50,6 +50,9 @@ const PermissionForm = ({ onClose, onFormSubmit }) => {
         else if (selectedRole === 'Team Leader') {
             return userList.filter(user => user.role === 'teamleader');
         }
+        else if (selectedRole === 'User') {
+            return userList.filter(user => user.role === 'user');
+        }
         // For other roles or when no role is selected, return the full user list
         return userList;
     };
@@ -99,6 +102,7 @@ const PermissionForm = ({ onClose, onFormSubmit }) => {
                     <Option value="Manager">Manager</Option>
                     <Option value="Supportive Associate">Supportive Associate</Option>
                     <Option value="Team Leader">Team Leader</Option>
+                    <Option value="User">User</Option>
                 </Select>
             </Form.Item>
             <Form.Item label="Users" name="userId">
