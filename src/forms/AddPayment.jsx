@@ -335,9 +335,9 @@ const UpdatePaymentForm = ({ entity, id, recordDetails, onCloseModal }) => {
                     disabled={isFieldDisabled('paid_amount')}
                     options={[
                         { value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
+                        { value: 'University Website', label: 'University Website' },
                         { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
                         { value: 'University Bank Account', label: 'University Bank Account' },
-                        { value: 'Payment Gateway', label: 'Payment Gateway' },
                         { value: 'Cash/DD', label: 'Cash/DD' }
                     ]}
                 ></Select>

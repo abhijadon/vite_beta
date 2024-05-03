@@ -10,7 +10,6 @@ import {
   MenuOutlined,
 } from '@ant-design/icons';
 import { PiMicrosoftTeamsLogoLight } from 'react-icons/pi';
-import { BsPersonCheck } from 'react-icons/bs';
 import logoIcon from '@/style/images/sodelogo.png';
 import logoText from '@/style/images/sodeicon.png';
 import { FaUsersRays } from "react-icons/fa6";
@@ -24,7 +23,7 @@ export default function Navigation() {
   useEffect(() => {
     async function fetchRoleAndMenuOptions() {
       try {
-        const response = await axios.get('http://localhost:5000/api/menu/list');
+        const response = await axios.get(`${import.meta.env.VITE_BACKEND_SERVER}api/menu/list`);
         if (response.status === 200) {
           const { role, options } = response.data;
           setMenuOptions({ role, options });

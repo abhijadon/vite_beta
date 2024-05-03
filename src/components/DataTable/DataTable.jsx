@@ -18,8 +18,11 @@ import UpdatePaymentForm from '@/forms/AddPayment';
 import UploadDocumentForm from '@/forms/uploadDocument';
 import { IoDocumentAttachOutline } from "react-icons/io5";
 import StudentDetailsModal from '../StudentDetailsModal';
+import { AiOutlineComment } from "react-icons/ai";
 import HistoryModal from '../HistoryModal';
 import { IoFilterOutline } from "react-icons/io5";
+import { selectCurrentAdmin } from '@/redux/auth/selectors';
+import CommentForm from '@/forms/comment'
 const { Search } = Input;
 const { RangePicker } = DatePicker;
 
@@ -65,16 +68,33 @@ export default function DataTable({ config, extra = [] }) {
   const [showAddPaymentModal, setShowAddPaymentModal] = useState(false);
   const [updatePaymentRecord, setUpdatePaymentRecord] = useState(null);
   const [showStudentDetailsModal, setShowStudentDetailsModal] = useState(false);
-  const [selectedStudent, setSelectedStudent] = useState(null);
   const [Paymentstatus, setSelectedPaymentstatus] = useState(null);
   const [lmsFilter, setLmsFilter] = useState(null);
   const [showUploadDocumentDrawer, setShowUploadDocumentDrawer] = useState(false); // New state to control the drawer
   const [recordForUploadDocument, setRecordForUploadDocument] = useState(null); // Record to be used in the upload document form
+  const [selectedPaymentMode, setSelectedPaymentMode] = useState(null);
+  const [paymentMode, setPaymentMode] = useState([]);
+  const [showCommentDrawer, setShowCommentDrawer] = useState(false); // State to control the Drawer
+  const [commentRecord, setCommentRecord] = useState(null);
+  const currentAdmin = useSelector(selectCurrentAdmin);
+  const [showStudentDetailsDrawer, setShowStudentDetailsDrawer] = useState(false);
+  const [selectedStudent, setSelectedStudent] = useState(null);
 
-  // Function to handle click event on action button
+  const isAdmin = ['admin', 'subadmin', 'manager', 'supportiveassociate'].includes(currentAdmin?.role);
+
   const handleShowStudentDetails = (record) => {
     setSelectedStudent(record); // Store selected student details
-    setShowStudentDetailsModal(true); // Show modal
+    setShowStudentDetailsDrawer(true); // Open the drawer
+  };
+
+  const handleComment = (record) => {
+    setCommentRecord(record); // Store the record
+    setShowCommentDrawer(true); // Open the Drawer
+  };
+
+  const closeCommentDrawer = () => {
+    setShowCommentDrawer(false); // Close the Drawer
+    setCommentRecord(null); // Clear the record
   };
 
   const handleCancelAddPaymentModal = () => {
@@ -95,6 +115,7 @@ export default function DataTable({ config, extra = [] }) {
         const uniqueInstitutes = [...new Set(result.map(item => item.institute_name))];
         const uniqueSession = [...new Set(result.map(item => item.session))];
         const uniqueUniversities = [...new Set(result.map(item => item.university_name))];
+        const uniquePaymentMode = [...new Set(result.map(item => item.payment_mode))];
         const uniqueUserNames = [...new Set(result.map(item => item.userId?.fullname))];
 
         setStatuses(uniqueStatuses);
@@ -102,6 +123,7 @@ export default function DataTable({ config, extra = [] }) {
         setSession(uniqueSession);
         setUniversities(uniqueUniversities);
         setUserNames(uniqueUserNames);
+        setPaymentMode(uniquePaymentMode);
       }
     };
 
@@ -116,19 +138,10 @@ export default function DataTable({ config, extra = [] }) {
     setSelectedUserId(null);
     setSearchQuery('');
     setStartDate(null);
+    setSelectedPaymentMode(null)
     setEndDate(null);
     setSelectedPaymentstatus(null)
     setLmsFilter(null)
-  };
-
-
-  // Conditional styling for the payment status buttons
-  const getPaymentStatusStyle = (status) => {
-    const isSelected = lmsFilter === status;
-    return {
-      backgroundColor: isSelected ? '#blue' : '#white',
-      color: isSelected ? '#0000ff' : '#000',
-    };
   };
 
   const handleDateRangeChange = (dates) => {
@@ -138,42 +151,68 @@ export default function DataTable({ config, extra = [] }) {
     }
   };
 
-  const items = [
-    {
-      label: translate('Show'),
-      key: 'showDetails',
-      icon: <EyeOutlined />,
-    }, ,
-    {
-      label: translate('Edit'),
-      key: 'edit',
-      icon: <EditOutlined />,
-    },
-    {
-      label: translate('History'),
-      key: 'history',
-      icon: <GrHistory />,
-    },
-    {
-      label: translate('Add_payment'),
-      key: 'add',
-      icon: <LiaRupeeSignSolid className='text-base' />,
-    },
-    ...extra,
-    {
-      type: 'divider',
-    },
-    {
-      label: translate('Upload_document'),
-      key: 'upload',
-      icon: <IoDocumentAttachOutline />,
-    },
-    {
-      label: translate('Delete'),
-      key: 'delete',
-      icon: <DeleteOutlined />,
-    },
-  ];
+  const items = isAdmin
+    ? [
+      {
+        label: translate('Show'),
+        key: 'showDetails',
+        icon: <EyeOutlined />,
+      },
+      {
+        label: translate('Edit'),
+        key: 'edit',
+        icon: <EditOutlined />,
+      },
+      {
+        label: translate('History'),
+        key: 'history',
+        icon: <GrHistory />,
+      },
+      {
+        label: translate('Add_payment'),
+        key: 'add',
+        icon: <LiaRupeeSignSolid className='text-base' />,
+      },
+      ...extra,
+      {
+        type: 'divider',
+      },
+      {
+        label: translate('Upload_document'),
+        key: 'upload',
+        icon: <IoDocumentAttachOutline />,
+      },
+      {
+        label: translate('Comments'),
+        key: 'comments',
+        icon: <AiOutlineComment className='text-base' />,
+      },
+      {
+        label: translate('Delete'),
+        key: 'delete',
+        icon: <DeleteOutlined />,
+      },
+    ] : [
+      {
+        label: translate('Show'),
+        key: 'showDetails',
+        icon: <EyeOutlined />,
+      },
+      {
+        label: translate('Edit'),
+        key: 'edit',
+        icon: <EditOutlined />,
+      },
+      ...extra,
+      {
+        type: 'divider',
+      },
+      {
+        label: translate('Upload_document'),
+        key: 'upload',
+        icon: <IoDocumentAttachOutline />,
+      },
+    ]
 
   const handleHistory = async (record) => {
     try {
@@ -245,7 +284,7 @@ export default function DataTable({ config, extra = [] }) {
             onClick: ({ key }) => {
               switch (key) {
                 case 'showDetails':
-                  handleShowStudentDetails(record); // Handle 'Show Details' action
+                  handleShowStudentDetails(record); // Handle the "Show" action
                   break;
                 case 'edit':
                   handleEdit(record);
@@ -258,6 +297,9 @@ export default function DataTable({ config, extra = [] }) {
                   break;
                 case 'add':
                   handleAddpayment(record);
+                  break;
+                case 'comments':
+                  handleComment(record);
                   break;
                 case 'upload':
                   handleUploadDocument(record); // Open the drawer for document upload
@@ -292,6 +334,7 @@ export default function DataTable({ config, extra = [] }) {
         filter: {
           q: newSearchQuery,
           institute: selectedInstitute,
+          paymentMode: selectedPaymentMode,
           university: selectedUniversity,
           session: selectedSession,
           status: selectedStatus,
@@ -306,7 +349,7 @@ export default function DataTable({ config, extra = [] }) {
         const filteredData = filterDataSource(result);
       }
     },
-    [entity, selectedInstitute, selectedUniversity, selectedStatus, selectedUserId, selectedSession, startDate, endDate]
+    [entity, selectedInstitute, selectedUniversity, selectedStatus, selectedUserId, selectedSession, startDate, endDate, selectedPaymentMode]
   );
 
   const handleSearch = debounce((value) => {
@@ -333,6 +376,7 @@ export default function DataTable({ config, extra = [] }) {
       const customfields = item.customfields || {};
       const instituteMatch = !selectedInstitute || customfields.institute_name === selectedInstitute;
       const universityMatch = !selectedUniversity || customfields.university_name === selectedUniversity;
+      const paymentmodeMatch = !selectedPaymentMode || customfields.payment_mode === selectedPaymentMode;
       const sessionMatch = !selectedSession || customfields.session === selectedSession;
       const statusMatch = !selectedStatus || customfields.status === selectedStatus;
       const userMatch = !selectedUserId || item.userId?.fullname === selectedUserId;
@@ -372,7 +416,7 @@ export default function DataTable({ config, extra = [] }) {
         }
       }
 
-      return instituteMatch && universityMatch && sessionMatch && searchMatch && statusMatch && userMatch && startDateMatch && endDateMatch && paymentStatusMatch && lmsMatch;
+      return instituteMatch && universityMatch && sessionMatch && searchMatch && statusMatch && userMatch && startDateMatch && endDateMatch && paymentStatusMatch && lmsMatch && paymentmodeMatch;
     });
   };
   const handleExportToExcel = () => {
@@ -571,6 +615,22 @@ export default function DataTable({ config, extra = [] }) {
           </div>
           <div className='flex items-center space-x-2'>
             <div>
+              <Select showSearch optionFilterProp="children" filterOption={(input, option) =>
+                option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+              }
+                placeholder="Select payment mode"
+                className='w-60 h-10 mt-3 capitalize'
+                value={selectedPaymentMode}
+                onChange={(value) => setSelectedPaymentMode(value)}
+              >
+                {paymentMode.map((paymentmode) => (
+                  <Select.Option className="capitalize font-thin font-mono" key={paymentmode}>
+                    {paymentmode}
+                  </Select.Option>
+                ))}
+              </Select>
+            </div>
+            <div>
               <RangePicker
                 className='w-60 h-10 mt-3 capitalize'
                 onChange={handleDateRangeChange}
@@ -655,13 +715,49 @@ export default function DataTable({ config, extra = [] }) {
           />
         )}
       </Drawer>
-      <div>
-        <StudentDetailsModal
-          visible={showStudentDetailsModal}
-          onClose={() => setShowStudentDetailsModal(false)}
-          student={selectedStudent}
-        />
-      </div>
+      <Drawer
+        title={
+          <div>
+            <div className='relative float-right font-thin text-lg'>Comments</div>
+          </div>
+        }
+        placement="right" // The Drawer opens from the right
+        open={showCommentDrawer} // Controlled by state
+        onClose={closeCommentDrawer} // Close action
+        width={500}
+      >
+        {/* Render the CommentForm only if a record is set */}
+        {commentRecord && (
+          <CommentForm
+            entity="lead"
+            id={commentRecord._id}
+            recordDetails={commentRecord}
+          />
+        )}
+      </Drawer>
+
+      <Drawer
+        title={
+          <div>
+            <div className='relative font-thin text-base float-right'>
+              Student Details
+            </div>
+          </div>
+        }
+        placement="right" // Drawer opens from the right
+        open={showStudentDetailsDrawer} // Controlled by state
+        onClose={() => setShowStudentDetailsDrawer(false)} // Close action
+        width={1000} // Adjust as needed
+      >
+        {/* Display the component only if selectedStudent is set */}
+        {selectedStudent && (
+          <StudentDetailsModal
+            visible={showStudentDetailsDrawer}
+            onClose={() => setShowStudentDetailsDrawer(false)} // Function to close drawer
+            student={selectedStudent} // Pass the student data
+          />
+        )}
+      </Drawer>
       <HistoryModal
         showHistoryModal={showHistoryModal}
         historyData={historyData}
