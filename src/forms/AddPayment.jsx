@@ -192,20 +192,16 @@ const UpdatePaymentForm = ({ entity, id, recordDetails, onCloseModal }) => {
             }
 
             const response = await axios.put(`/${entity}/updatePayment/${id}`, formData);
-            if (response && response.data && response.data.success) {
-                setSuccess(true);
-                onCloseModal(); // Close modal if needed
-                if (response.data.message) {
-                    message.success(response.data.message); // Display success message from backend
-                }
+            // Check for success and handle message from backend
+            if (response.data.success) {
+                message.success(response.data.message); // Use dynamic message
+            } else {
+                message.error(response.data.message); // Handle failure message
             }
         } catch (error) {
-            console.error('Update failed:', error);
-            if (error.response && error.response.data && error.response.data.message) {
-                message.error(error.response.data.message); // Display error message from backend
-            } else {
-                message.error('Update failed'); // Display generic error message
-            }
+            // Handle error messages with proper checks
+            const errorMsg = error.response.data.message 
+            message.error(errorMsg);
         } finally {
             setLoading(false);
         }

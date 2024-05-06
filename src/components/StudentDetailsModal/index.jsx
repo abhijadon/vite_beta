@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Drawer, Modal, Button, Spin } from 'antd';
+import axios from 'axios';
+import { Drawer, Modal, Button, Spin, message } from 'antd';
 import moment from 'moment';
 import { PiStudent } from 'react-icons/pi';
 import { SiContactlesspayment } from 'react-icons/si';
@@ -15,7 +16,7 @@ const StudentDetailsModal = ({ student, id }) => {
     const [installmentModalVisible, setInstallmentModalVisible] = useState(false);
     const [documentModalVisible, setDocumentModalVisible] = useState(false);
     const [commentModalVisible, setCommentModalVisible] = useState(false);
-
+    const [loading, setLoading] = useState(false);
     useEffect(() => {
         if (student) {
             const totalDue = parseFloat(student.customfields.total_course_fee) - parseFloat(student.customfields.total_paid_amount);
@@ -79,6 +80,76 @@ const StudentDetailsModal = ({ student, id }) => {
             }));
             setInstallmentData(combinedData);
             setInstallmentModalVisible(true);
+        }
+    };
+
+
+    const handleSendEmail = async (record) => {
+        setLoading(true);
+
+        try {
+            const { full_name } = student; // From student
+            const {
+                installment_type,
+                paymentStatus,
+                payment_mode,
+                payment_type,
+                sendfeeReciept,
+                total_course_fee,
+                total_paid_amount,
+                paid_amount,
+                due_amount
+            } = record; // From table record
+
+            // Consolidate all required data for the email
+            const data = {
+                full_name,
+                customfields: {
+                    installment_type,
+                    paymentStatus,
+                    payment_mode,
+                    payment_type,
+                    sendfeeReciept,
+                    total_course_fee,
+                    total_paid_amount,
+                    paid_amount,
+                    due_amount,
+                    institute_name: student.customfields.institute_name,
+                    university_name: student.customfields.university_name,
+                    session: student.customfields.session,
+                    dob: student.customfields.dob,
+                    father_name: student.customfields.father_name,
+                },
+                contact: {
+                    phone: student.contact.phone,
+                    email: student.contact.email,
+                },
+                education: {
+                    course: student.education.course,
+                },
+            };
+
+            const response = await axios.post(`/applications/${student._id}/resend-email`, data);
+            if (response.data.success) {
+                message.success(response.data.message);
+            }
+        } catch (error) {
+            if (error.response) {
+                const { status, data } = error.response;
+
+                if (status === 403) {
+                    message.error(data.message);
+                } else if (status === 401) {
+                    message.error("Unauthorized: Please log in."); 
+                } else {
+                    message.error(data.message);
+                }
+            } else {
+                // Network error or other issues
+                message.error("An unexpected error occurred.");
+            }
+        } finally {
+            setLoading(false);
         }
     };
 
@@ -155,7 +226,27 @@ const StudentDetailsModal = ({ student, id }) => {
             dataIndex: 'date',
             key: 'date',
         },
+        {
+            title: 'Resend Email',
+            key: 'resend_email',
+            render: (text, record) => {
+                if (record.paymentStatus === 'payment approved') {
+                    return (
+                        <Button className='bg-blue-200 text-blue-700 hover:bg-blue-50 hover:text-blue-800 text-justify font-thin'
+                            type="link"
+                            onClick={() => handleSendEmail(record)}
+                            disabled={loading}
+                        >
+                            Resend feeReciept
+                        </Button>
+                    );
+                }
+                return null; // No button for other statuses
+            },
+        },
     ];
+
+
 
     return (
         <> <div>
