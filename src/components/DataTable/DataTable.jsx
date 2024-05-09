@@ -476,7 +476,7 @@ export default function DataTable({ config, extra = [] }) {
     const filteredData = filterDataSource(dataSource);
     return (
       <>
-        <Card className='mt-8'>
+        <div className='mt-8'>
           <div className='flex justify-between items-center mb-3'>
             {entity === 'lead' && (
               <div className='flex items-center gap-2'>
@@ -518,7 +518,7 @@ export default function DataTable({ config, extra = [] }) {
             pagination={true}
             onChange={handelDataTableLoad}
           />
-        </Card>
+        </div>
       </>
     );
   };
@@ -682,12 +682,10 @@ export default function DataTable({ config, extra = [] }) {
 
   return (
     <>
-      <div>
+      <Card className='w-full'>
         {renderFilters()}
-      </div>
-      <div className="table-container">
         {renderTable()}
-      </div>
+      </Card>
       <Drawer
         title="Add Payment"
         open={showAddPaymentModal}
