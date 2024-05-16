@@ -146,7 +146,7 @@ const EditRole = ({ onClose, onFormSubmit, selectedRecord }) => {
                         { value: 'BOSSE', label: 'BOSSE' },
                         { value: 'UU', label: 'UU' },
                         { value: 'UPES', label: 'UPES' },
-                        { value: 'MANGALAYATAN', label: 'MANGALAYATAN' },
+                        { value: 'MANGALAYATAN DISTANCE', label: 'MANGALAYATAN DISTANCE' },
                         { value: 'MANGALAYATAN ONLINE', label: 'MANGALAYATAN ONLINE' },
                     ]}
                 ></Select>

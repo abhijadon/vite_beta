@@ -71,6 +71,7 @@ export default function PaymentForm({ maxAmount = null, isUpdateForm = false }) 
       <Select name="status" style={{ width: '100%', marginTop: '10px' }}>
         <Select.Option>New</Select.Option>
         <Select.Option>Enrolled</Select.Option>
+        <Select.Option>Refunded</Select.Option>
         <Select.Option>Alumini</Select.Option>
         <Select.Option>Cancel</Select.Option>
       </ Select>

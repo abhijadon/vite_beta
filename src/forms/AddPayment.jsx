@@ -121,7 +121,7 @@ const UpdatePaymentForm = ({ entity, id, recordDetails, onCloseModal }) => {
 
     const isFieldDisabled = (fieldName) => {
         if (fieldName === 'paid_amount') {
-            return paymentStatus === 'payment received' || paymentStatus === 'payment rejected';
+            return paymentStatus === 'payment received';
         }
         return false; // default to not disabled
     };
@@ -130,7 +130,14 @@ const UpdatePaymentForm = ({ entity, id, recordDetails, onCloseModal }) => {
     // Determine whether the fields should be disabled or enabled
     const isField = (fieldName) => {
         if (fieldName === 'paid_amount') {
-            return paymentStatus === 'payment approved';
+            return paymentStatus === 'payment approved' || paymentStatus === 'payment rejected';
+        }
+        return false; // default to not disabled
+    };
+
+    const isFieldrejected = (fieldName) => {
+        if (fieldName === 'paid_amount') {
+            return  paymentStatus === 'payment rejected';
         }
         return false; // default to not disabled
     };
@@ -200,7 +207,7 @@ const UpdatePaymentForm = ({ entity, id, recordDetails, onCloseModal }) => {
             }
         } catch (error) {
             // Handle error messages with proper checks
-            const errorMsg = error.response.data.message 
+            const errorMsg = error.response.data.message
             message.error(errorMsg);
         } finally {
             setLoading(false);
@@ -314,7 +321,7 @@ const UpdatePaymentForm = ({ entity, id, recordDetails, onCloseModal }) => {
             >
 
                 <Select
-                    disabled={isFieldDisabled('paid_amount')}
+                    disabled={isFieldDisabled('paid_amount') || isFieldrejected('paid_amount')}
                     showSearch
                     options={installmentOptions}
                 ></Select>

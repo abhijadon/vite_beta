@@ -143,3 +143,12 @@ background-color: #1677ff !important;
   font-size: 22px;
  background-color: transparent;
 }
+
+
+.ant-select-selector {
+  border-radius: 0px !important;
+}
+
+.ant-card .ant-card-body{
+  padding: 6px !important;
+}

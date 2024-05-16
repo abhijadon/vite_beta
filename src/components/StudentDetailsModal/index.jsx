@@ -382,6 +382,12 @@ const StudentDetailsModal = ({ student, id }) => {
                                             Enrolled
                                         </span>
                                     )}
+                                    {student.customfields.status === 'Refunded' && (
+                                        <span className="capitalize text-center text-sm font-thin hover:bg-yellow-100 bg-yellow-100 hover:text-yellow-700 text-yellow-700 pl-2 pr-2"
+                                        >
+                                            Refunded
+                                        </span>
+                                    )}
                                 </span>
                             </li>
                         </ul>

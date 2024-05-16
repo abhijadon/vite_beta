@@ -45,7 +45,7 @@ function AddNewItem({ config }) {
 
 export default function DataTable({ config, extra = [] }) {
   let { entity, dataTableColumns } = config;
-  const { isLoading, isSuccess } = useSelector(selectCreatedItem);
+  const { isSuccess } = useSelector(selectCreatedItem);
   const dispatch = useDispatch();
   const { crudContextAction } = useCrudContext();
   const { panel, collapsedBox, modal, editBox, advancedBox } = crudContextAction;
@@ -67,7 +67,6 @@ export default function DataTable({ config, extra = [] }) {
   const [showHistoryModal, setShowHistoryModal] = useState(false);
   const [showAddPaymentModal, setShowAddPaymentModal] = useState(false);
   const [updatePaymentRecord, setUpdatePaymentRecord] = useState(null);
-  const [showStudentDetailsModal, setShowStudentDetailsModal] = useState(false);
   const [Paymentstatus, setSelectedPaymentstatus] = useState(null);
   const [lmsFilter, setLmsFilter] = useState(null);
   const [showUploadDocumentDrawer, setShowUploadDocumentDrawer] = useState(false); // New state to control the drawer
@@ -79,7 +78,11 @@ export default function DataTable({ config, extra = [] }) {
   const currentAdmin = useSelector(selectCurrentAdmin);
   const [showStudentDetailsDrawer, setShowStudentDetailsDrawer] = useState(false);
   const [selectedStudent, setSelectedStudent] = useState(null);
+  const [teamLeaders, setTeamLeaders] = useState([]); // For storing team leaders
+  const [selectedTeamLeader, setSelectedTeamLeader] = useState(null); // To track selected team leader
 
+
+  // buttons call function 
   const isAdmin = ['admin', 'subadmin', 'manager', 'supportiveassociate'].includes(currentAdmin?.role);
 
   const handleShowStudentDetails = (record) => {
@@ -106,6 +109,110 @@ export default function DataTable({ config, extra = [] }) {
     setShowAddPaymentModal(false); // Close the payment modal
     handelDataTableLoad({}, searchQuery); // Reload the table data
   };
+
+  const handleDateRangeChange = (dates) => {
+    if (dates && dates.length === 2) {
+      setStartDate(dates[0]);
+      setEndDate(dates[0]); // Set the end date correctly
+    }
+  };
+
+
+  const handleExportToExcel = () => {
+    if (dataSource.length === 0) {
+      return;
+    }
+    const fileName = 'data.xlsx';
+
+    const exportData = [
+      dataTableColumns.map(column => column.title),
+      ...dataSource.map(item => dataTableColumns.map(column => {
+        let value = item;
+        const dataIndex = column.dataIndex;
+        const keys = dataIndex ? (Array.isArray(dataIndex) ? dataIndex : dataIndex.split('.')) : [];
+        keys.forEach(key => {
+          value = value?.[key];
+        });
+        return value;
+      })),
+    ];
+
+    const ws = XLSX.utils.aoa_to_sheet(exportData);
+    const wb = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, ws, 'Lead Data');
+
+    try {
+      XLSX.writeFile(wb, fileName);
+    } catch (error) {
+      console.error('Error exporting data to Excel:', error);
+    }
+  };
+
+  const handleOptionSelect = (option) => {
+    setLmsFilter(option); // Set the filter to "yes" or "no"
+    handelDataTableLoad(); // Reload the table data with the new filter
+  };
+
+  const handleHistory = async (record) => {
+    try {
+      const historyData = await request.history({ entity: 'lead', id: record._id });
+      // Sort the history data in descending order based on the time it was changed
+      if (historyData && historyData.history) {
+        historyData.history.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
+      }
+      setHistoryData(historyData);
+      setShowHistoryModal(true);
+    } catch (error) {
+      console.error("Error fetching history data:", error);
+    }
+  };
+
+
+  const handleEdit = (record) => {
+    dispatch(crud.currentItem({ data: record }));
+    dispatch(crud.currentAction({ actionType: 'update', data: record }));
+    editBox.open();
+    panel.open();
+    collapsedBox.open();
+  };
+
+  const handleAddpayment = async (record) => {
+    try {
+      setUpdatePaymentRecord(record); // Ensure record details are correctly set
+      setShowAddPaymentModal(true);
+    } catch (error) {
+      console.error("Error preparing payment update:", error);
+    }
+  };
+
+  // Function to handle document upload drawer open
+  const handleUploadDocument = (record) => {
+    setRecordForUploadDocument(record); // Store the record to be used in the form
+    setShowUploadDocumentDrawer(true); // Open the drawer
+  };
+
+  // Close the drawer
+  const closeUploadDocumentDrawer = () => {
+    setShowUploadDocumentDrawer(false);
+    setRecordForUploadDocument(null);
+  };
+
+
+  const handleDelete = (record) => {
+    dispatch(crud.currentAction({ actionType: 'delete', data: record }));
+    modal.open();
+  };
+
+  const handleUpdatePassword = (record) => {
+    dispatch(crud.currentItem({ data: record }));
+    dispatch(crud.currentAction({ actionType: 'update', data: record }));
+    advancedBox.open();
+    panel.open();
+    collapsedBox.open();
+  };
+
+  // buttons call function 
+
 
   useEffect(() => {
     const fetchData = async () => {
@@ -137,6 +244,7 @@ export default function DataTable({ config, extra = [] }) {
     setSelectedStatus(null);
     setSelectedUserId(null);
     setSearchQuery('');
+    setSelectedTeamLeader(null)
     setStartDate(null);
     setSelectedPaymentMode(null)
     setEndDate(null);
@@ -144,12 +252,6 @@ export default function DataTable({ config, extra = [] }) {
     setLmsFilter(null)
   };
 
-  const handleDateRangeChange = (dates) => {
-    if (dates && dates.length === 2) {
-      setStartDate(dates[0]);
-      setEndDate(dates[1]); // Set the end date correctly
-    }
-  };
 
   const items = isAdmin
     ? [
@@ -214,63 +316,7 @@ export default function DataTable({ config, extra = [] }) {
       },
     ]
 
-  const handleHistory = async (record) => {
-    try {
-      const historyData = await request.history({ entity: 'lead', id: record._id });
-      // Sort the history data in descending order based on the time it was changed
-      if (historyData && historyData.history) {
-        historyData.history.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
-      }
-      setHistoryData(historyData);
-      setShowHistoryModal(true);
-    } catch (error) {
-      console.error("Error fetching history data:", error);
-    }
-  };
 
-
-  const handleEdit = (record) => {
-    dispatch(crud.currentItem({ data: record }));
-    dispatch(crud.currentAction({ actionType: 'update', data: record }));
-    editBox.open();
-    panel.open();
-    collapsedBox.open();
-  };
-
-  const handleAddpayment = async (record) => {
-    try {
-      setUpdatePaymentRecord(record); // Ensure record details are correctly set
-      setShowAddPaymentModal(true);
-    } catch (error) {
-      console.error("Error preparing payment update:", error);
-    }
-  };
-
-  // Function to handle document upload drawer open
-  const handleUploadDocument = (record) => {
-    setRecordForUploadDocument(record); // Store the record to be used in the form
-    setShowUploadDocumentDrawer(true); // Open the drawer
-  };
-
-  // Close the drawer
-  const closeUploadDocumentDrawer = () => {
-    setShowUploadDocumentDrawer(false);
-    setRecordForUploadDocument(null);
-  };
-
-
-  const handleDelete = (record) => {
-    dispatch(crud.currentAction({ actionType: 'delete', data: record }));
-    modal.open();
-  };
-
-  const handleUpdatePassword = (record) => {
-    dispatch(crud.currentItem({ data: record }));
-    dispatch(crud.currentAction({ actionType: 'update', data: record }));
-    advancedBox.open();
-    panel.open();
-    collapsedBox.open();
-  };
   dataTableColumns = [
     ...dataTableColumns,
     {
@@ -327,34 +373,8 @@ export default function DataTable({ config, extra = [] }) {
   const { result: listResult } = useSelector(selectListItems);
   const { items: dataSource } = listResult;
 
-
-  const handelDataTableLoad = useCallback(
-    async (pagination, newSearchQuery = '') => {
-      const options = {
-        filter: {
-          q: newSearchQuery,
-          institute: selectedInstitute,
-          paymentMode: selectedPaymentMode,
-          university: selectedUniversity,
-          session: selectedSession,
-          status: selectedStatus,
-          userId: selectedUserId,
-          startDate,
-          endDate,
-        },
-      };
-
-      const { success, result } = await dispatch(crud.list({ entity, options }));
-      if (success) {
-        const filteredData = filterDataSource(result);
-      }
-    },
-    [entity, selectedInstitute, selectedUniversity, selectedStatus, selectedUserId, selectedSession, startDate, endDate, selectedPaymentMode]
-  );
-
   const handleSearch = debounce((value) => {
     setSearchQuery(value);
-    handelDataTableLoad({}, value);
   }, 500);
 
   const dispatcher = () => {
@@ -419,40 +439,6 @@ export default function DataTable({ config, extra = [] }) {
       return instituteMatch && universityMatch && sessionMatch && searchMatch && statusMatch && userMatch && startDateMatch && endDateMatch && paymentStatusMatch && lmsMatch && paymentmodeMatch;
     });
   };
-  const handleExportToExcel = () => {
-    if (dataSource.length === 0) {
-      return;
-    }
-    const fileName = 'data.xlsx';
-
-    const exportData = [
-      dataTableColumns.map(column => column.title),
-      ...dataSource.map(item => dataTableColumns.map(column => {
-        let value = item;
-        const dataIndex = column.dataIndex;
-        const keys = dataIndex ? (Array.isArray(dataIndex) ? dataIndex : dataIndex.split('.')) : [];
-        keys.forEach(key => {
-          value = value?.[key];
-        });
-        return value;
-      })),
-    ];
-
-    const ws = XLSX.utils.aoa_to_sheet(exportData);
-    const wb = XLSX.utils.book_new();
-    XLSX.utils.book_append_sheet(wb, ws, 'Lead Data');
-
-    try {
-      XLSX.writeFile(wb, fileName);
-    } catch (error) {
-      console.error('Error exporting data to Excel:', error);
-    }
-  };
-
-  const handleOptionSelect = (option) => {
-    setLmsFilter(option); // Set the filter to "yes" or "no"
-    handelDataTableLoad(); // Reload the table data with the new filter
-  };
 
 
   const menu = (
@@ -516,11 +502,15 @@ export default function DataTable({ config, extra = [] }) {
             rowKey={(item) => item._id}
             dataSource={filteredData}
             pagination={true}
-            onChange={handelDataTableLoad}
           />
         </div>
       </>
     );
+  };
+
+  // Handling change in Select for team leaders
+  const handleTeamLeaderChange = (value) => {
+    setSelectedTeamLeader(value); // Update state with selected team leader ID
   };
 
 
@@ -529,10 +519,10 @@ export default function DataTable({ config, extra = [] }) {
   };
 
   const renderFilters = () => {
-    // Calculate counts for each payment status
-    const paymentReceivedCount = dataSource.filter(item => item.customfields?.paymentStatus === 'payment received').length;
-    const paymentApprovedCount = dataSource.filter(item => item.customfields?.paymentStatus === 'payment approved').length;
-    const paymentRejectedCount = dataSource.filter(item => item.customfields?.paymentStatus === 'payment rejected').length;
+    const filtered = filterDataSource(dataSource);
+    const paymentReceivedCount = filtered.filter(item => item.customfields?.paymentStatus === 'payment received').length;
+    const paymentApprovedCount = filtered.filter(item => item.customfields?.paymentStatus === 'payment approved').length;
+    const paymentRejectedCount = filtered.filter(item => item.customfields?.paymentStatus === 'payment rejected').length;
 
     if (entity === 'lead') {
       return (
@@ -543,7 +533,7 @@ export default function DataTable({ config, extra = [] }) {
                 option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
               }
                 placeholder="Select institute"
-                className='w-60 h-10 capitalize'
+                className='w-44 h-7 capitalize'
                 value={selectedInstitute}
                 onChange={(value) => setSelectedInstitute(value)}
               >
@@ -557,7 +547,7 @@ export default function DataTable({ config, extra = [] }) {
                 option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
               }
                 placeholder="Select university"
-                className='w-60 h-10 capitalize'
+                className='w-44 h-7 capitalize'
                 value={selectedUniversity}
                 onChange={(value) => setSelectedUniversity(value)}
               >
@@ -571,7 +561,7 @@ export default function DataTable({ config, extra = [] }) {
                 option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
               }
                 placeholder="Select status"
-                className='w-60 h-10 capitalize'
+                className='w-44 h-7 capitalize'
                 value={selectedStatus}
                 onChange={(value) => setSelectedStatus(value)}
               >
@@ -585,7 +575,7 @@ export default function DataTable({ config, extra = [] }) {
                 option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
               }
                 placeholder="Select user full name"
-                className='w-60 h-10 capitalize'
+                className='w-44 h-7 capitalize'
                 value={selectedUserId}
                 onChange={(value) => setSelectedUserId(value)}
               >
@@ -601,7 +591,7 @@ export default function DataTable({ config, extra = [] }) {
                 option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
               }
                 placeholder="Select session"
-                className='w-60 h-10 capitalize'
+                className='w-44 h-7 capitalize'
                 value={selectedSession}
                 onChange={(value) => setSelectedSession(value)}
               >
@@ -612,14 +602,12 @@ export default function DataTable({ config, extra = [] }) {
                 ))}
               </Select>
             </div>
-          </div>
-          <div className='flex items-center space-x-2'>
             <div>
               <Select showSearch optionFilterProp="children" filterOption={(input, option) =>
                 option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
               }
                 placeholder="Select payment mode"
-                className='w-60 h-10 mt-3 capitalize'
+                className='w-44 h-7 capitalize'
                 value={selectedPaymentMode}
                 onChange={(value) => setSelectedPaymentMode(value)}
               >
@@ -630,9 +618,11 @@ export default function DataTable({ config, extra = [] }) {
                 ))}
               </Select>
             </div>
+          </div>
+          <div className='flex items-center space-x-2'>
             <div>
               <RangePicker
-                className='w-60 h-10 mt-3 capitalize'
+                className='w-44 h-7 mt-3 capitalize rounded-none'
                 onChange={handleDateRangeChange}
                 style={{ width: '100%' }}
                 placeholder={['Start Date', 'End Date']}
@@ -640,28 +630,28 @@ export default function DataTable({ config, extra = [] }) {
             </div>
             <div>
               {/* Button to filter Payment Received */}
-              <Button className='w-32 mt-3 capitalize text-center text-sm font-thin hover:bg-cyan-100 bg-cyan-100 hover:text-cyan-700 text-cyan-700 border-cyan-500 hover:border-cyan-500 rounded-none' onClick={() => handlePaymentStatus('payment received')}>
+              <Button className='w-32 mt-3 h-7 capitalize text-center text-sm font-thin hover:bg-cyan-100 bg-cyan-100 hover:text-cyan-700 text-cyan-700 border-cyan-500 hover:border-cyan-500 rounded-none' onClick={() => handlePaymentStatus('payment received')}>
                 <span className="font-thin text-sm -ml-2">Received</span>
                 <span className="font-thin text-sm ml-1">({paymentReceivedCount})</span>
               </Button>
             </div>
             <div>
               {/* Button to filter Payment Approved */}
-              <Button className='w-32 mt-3 capitalize text-center text-sm font-thin hover:bg-green-100 bg-green-100 hover:text-green-700 text-green-700 hover:border-green-500 border-green-600 rounded-none' onClick={() => handlePaymentStatus('payment approved')}>
+              <Button className='w-32 mt-3 h-7 capitalize text-center text-sm font-thin hover:bg-green-100 bg-green-100 hover:text-green-700 text-green-700 hover:border-green-500 border-green-600 rounded-none' onClick={() => handlePaymentStatus('payment approved')}>
                 <span className="font-thin text-sm -ml-2">Approved</span>
                 <span className="font-thin text-sm ml-1">({paymentApprovedCount})</span>
               </Button>
             </div>
             <div>
               {/* Button to filter Payment Rejected */}
-              <Button className='w-32 mt-3 capitalize text-center text-sm font-thin hover:bg-red-100 bg-red-100 hover:text-red-700 text-red-700 hover:border-red-500 border-red-600 rounded-none' onClick={() => handlePaymentStatus('payment rejected')}>
+              <Button className='w-32 mt-3 h-7 capitalize text-center text-sm font-thin hover:bg-red-100 bg-red-100 hover:text-red-700 text-red-700 hover:border-red-500 border-red-600 rounded-none' onClick={() => handlePaymentStatus('payment rejected')}>
                 <span className="font-thin text-sm -ml-2">Rejected</span>
                 <span className="font-thin text-sm ml-1">({paymentRejectedCount})</span>
               </Button>
             </div>
           </div>
-          <div className='relative float-right -mt-10 mr-2'>
-            <Button title='Reset All Filters' onClick={resetValues} className='text-red-500 text-lg h-10 hover:text-red-600 bg-white rounded'>
+          <div className='relative float-right -mt-8 mr-2'>
+            <Button title='Reset All Filters' onClick={resetValues} className='text-red-500 hover:text-red-600 bg-white rounded-none h-7'>
               <BiReset />
             </Button>
           </div>
@@ -677,12 +667,12 @@ export default function DataTable({ config, extra = [] }) {
     if (isSuccess) {
       handelDataTableLoad({}, searchQuery); // Call handelDataTableLoad function with the current searchQuery
     }
-  }, [isSuccess, handelDataTableLoad, searchQuery]);
+  }, [isSuccess, searchQuery]);
 
 
   return (
     <>
-      <Card className='w-full'>
+      <Card className='w-full rounded-none'>
         {renderFilters()}
         {renderTable()}
       </Card>

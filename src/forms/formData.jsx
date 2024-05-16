@@ -21,6 +21,27 @@ const formData = [
                 label: '12th'
               },
               {
+                value: "DIPLOMA",
+                label: "DIPLOMA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BED",
+                label: "BED",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BVOC",
+                label: "BVOC",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
                 value: "BA",
                 label: "BA",
                 specializations: [
@@ -245,6 +266,7 @@ const formData = [
                   { value: "Phycics", label: "Phycics" },
                   { value: "Mathematics", label: "Mathematics" },
                   { value: "Information Technology", label: "Information Technology" },
+                  { value: "Nutrition & Dietetics", label: "Nutrition & Dietetics" },
                   { value: "Computer Science", label: "Computer Science" },
                   { value: "Microbiology", label: "Microbiology" },
                   { value: "Bio-Technology", label: "Bio-Technology" },
@@ -531,7 +553,7 @@ const formData = [
               { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
               { value: 'University Bank Account', label: 'University Bank Account' },
               { value: 'Cash/DD', label: 'Cash/DD' },
-             { value: 'University Website', label: 'University Website' }],
+              { value: 'University Website', label: 'University Website' }],
           },
 
           {
@@ -576,6 +598,27 @@ const formData = [
                 label: '12th'
               },
               {
+                value: "DIPLOMA",
+                label: "DIPLOMA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BED",
+                label: "BED",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BVOC",
+                label: "BVOC",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
                 value: "BA",
                 label: "BA",
                 specializations: [
@@ -800,6 +843,7 @@ const formData = [
                   { value: "Phycics", label: "Phycics" },
                   { value: "Mathematics", label: "Mathematics" },
                   { value: "Information Technology", label: "Information Technology" },
+                  { value: "Nutrition & Dietetics", label: "Nutrition & Dietetics" },
                   { value: "Computer Science", label: "Computer Science" },
                   { value: "Microbiology", label: "Microbiology" },
                   { value: "Bio-Technology", label: "Bio-Technology" },
@@ -1086,7 +1130,7 @@ const formData = [
               { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
               { value: 'University Bank Account', label: 'University Bank Account' },
               { value: 'Cash/DD', label: 'Cash/DD' },
-             { value: 'University Website', label: 'University Website' }],
+              { value: 'University Website', label: 'University Website' }],
           },
 
           {
@@ -1131,6 +1175,27 @@ const formData = [
                 label: '12th'
               },
               {
+                value: "DIPLOMA",
+                label: "DIPLOMA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BED",
+                label: "BED",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BVOC",
+                label: "BVOC",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
                 value: "BA",
                 label: "BA",
                 specializations: [
@@ -1355,6 +1420,7 @@ const formData = [
                   { value: "Phycics", label: "Phycics" },
                   { value: "Mathematics", label: "Mathematics" },
                   { value: "Information Technology", label: "Information Technology" },
+                  { value: "Nutrition & Dietetics", label: "Nutrition & Dietetics" },
                   { value: "Computer Science", label: "Computer Science" },
                   { value: "Microbiology", label: "Microbiology" },
                   { value: "Bio-Technology", label: "Bio-Technology" },
@@ -1641,7 +1707,7 @@ const formData = [
               { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
               { value: 'University Bank Account', label: 'University Bank Account' },
               { value: 'Cash/DD', label: 'Cash/DD' },
-             { value: 'University Website', label: 'University Website' }],
+              { value: 'University Website', label: 'University Website' }],
           },
 
           {
@@ -1686,6 +1752,27 @@ const formData = [
                 label: '12th'
               },
               {
+                value: "DIPLOMA",
+                label: "DIPLOMA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BED",
+                label: "BED",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BVOC",
+                label: "BVOC",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
                 value: "BA",
                 label: "BA",
                 specializations: [
@@ -1910,6 +1997,7 @@ const formData = [
                   { value: "Phycics", label: "Phycics" },
                   { value: "Mathematics", label: "Mathematics" },
                   { value: "Information Technology", label: "Information Technology" },
+                  { value: "Nutrition & Dietetics", label: "Nutrition & Dietetics" },
                   { value: "Computer Science", label: "Computer Science" },
                   { value: "Microbiology", label: "Microbiology" },
                   { value: "Bio-Technology", label: "Bio-Technology" },
@@ -2196,7 +2284,7 @@ const formData = [
               { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
               { value: 'University Bank Account', label: 'University Bank Account' },
               { value: 'Cash/DD', label: 'Cash/DD' },
-             { value: 'University Website', label: 'University Website' }],
+              { value: 'University Website', label: 'University Website' }],
           },
 
           {
@@ -2241,6 +2329,27 @@ const formData = [
                 label: '12th'
               },
               {
+                value: "DIPLOMA",
+                label: "DIPLOMA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BED",
+                label: "BED",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BVOC",
+                label: "BVOC",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
                 value: "BA",
                 label: "BA",
                 specializations: [
@@ -2465,6 +2574,7 @@ const formData = [
                   { value: "Phycics", label: "Phycics" },
                   { value: "Mathematics", label: "Mathematics" },
                   { value: "Information Technology", label: "Information Technology" },
+                  { value: "Nutrition & Dietetics", label: "Nutrition & Dietetics" },
                   { value: "Computer Science", label: "Computer Science" },
                   { value: "Microbiology", label: "Microbiology" },
                   { value: "Bio-Technology", label: "Bio-Technology" },
@@ -2751,7 +2861,7 @@ const formData = [
               { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
               { value: 'University Bank Account', label: 'University Bank Account' },
               { value: 'Cash/DD', label: 'Cash/DD' },
-             { value: 'University Website', label: 'University Website' }],
+              { value: 'University Website', label: 'University Website' }],
           },
 
           {
@@ -2796,6 +2906,27 @@ const formData = [
                 label: '12th'
               },
               {
+                value: "DIPLOMA",
+                label: "DIPLOMA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BED",
+                label: "BED",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BVOC",
+                label: "BVOC",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
                 value: "BA",
                 label: "BA",
                 specializations: [
@@ -3020,6 +3151,7 @@ const formData = [
                   { value: "Phycics", label: "Phycics" },
                   { value: "Mathematics", label: "Mathematics" },
                   { value: "Information Technology", label: "Information Technology" },
+                  { value: "Nutrition & Dietetics", label: "Nutrition & Dietetics" },
                   { value: "Computer Science", label: "Computer Science" },
                   { value: "Microbiology", label: "Microbiology" },
                   { value: "Bio-Technology", label: "Bio-Technology" },
@@ -3306,7 +3438,7 @@ const formData = [
               { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
               { value: 'University Bank Account', label: 'University Bank Account' },
               { value: 'Cash/DD', label: 'Cash/DD' },
-             { value: 'University Website', label: 'University Website' }],
+              { value: 'University Website', label: 'University Website' }],
           },
 
           {
@@ -3351,6 +3483,27 @@ const formData = [
                 label: '12th'
               },
               {
+                value: "DIPLOMA",
+                label: "DIPLOMA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BED",
+                label: "BED",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BVOC",
+                label: "BVOC",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
                 value: "BA",
                 label: "BA",
                 specializations: [
@@ -3575,6 +3728,7 @@ const formData = [
                   { value: "Phycics", label: "Phycics" },
                   { value: "Mathematics", label: "Mathematics" },
                   { value: "Information Technology", label: "Information Technology" },
+                  { value: "Nutrition & Dietetics", label: "Nutrition & Dietetics" },
                   { value: "Computer Science", label: "Computer Science" },
                   { value: "Microbiology", label: "Microbiology" },
                   { value: "Bio-Technology", label: "Bio-Technology" },
@@ -3861,7 +4015,7 @@ const formData = [
               { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
               { value: 'University Bank Account', label: 'University Bank Account' },
               { value: 'Cash/DD', label: 'Cash/DD' },
-             { value: 'University Website', label: 'University Website' }],
+              { value: 'University Website', label: 'University Website' }],
           },
 
           {
@@ -3906,6 +4060,27 @@ const formData = [
                 label: '12th'
               },
               {
+                value: "DIPLOMA",
+                label: "DIPLOMA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BED",
+                label: "BED",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BVOC",
+                label: "BVOC",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
                 value: "BA",
                 label: "BA",
                 specializations: [
@@ -4130,6 +4305,7 @@ const formData = [
                   { value: "Phycics", label: "Phycics" },
                   { value: "Mathematics", label: "Mathematics" },
                   { value: "Information Technology", label: "Information Technology" },
+                  { value: "Nutrition & Dietetics", label: "Nutrition & Dietetics" },
                   { value: "Computer Science", label: "Computer Science" },
                   { value: "Microbiology", label: "Microbiology" },
                   { value: "Bio-Technology", label: "Bio-Technology" },
@@ -4416,7 +4592,7 @@ const formData = [
               { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
               { value: 'University Bank Account', label: 'University Bank Account' },
               { value: 'Cash/DD', label: 'Cash/DD' },
-             { value: 'University Website', label: 'University Website' }],
+              { value: 'University Website', label: 'University Website' }],
           },
 
           {
@@ -4461,6 +4637,27 @@ const formData = [
                 label: '12th'
               },
               {
+                value: "DIPLOMA",
+                label: "DIPLOMA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BED",
+                label: "BED",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BVOC",
+                label: "BVOC",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
                 value: "BA",
                 label: "BA",
                 specializations: [
@@ -4685,6 +4882,7 @@ const formData = [
                   { value: "Phycics", label: "Phycics" },
                   { value: "Mathematics", label: "Mathematics" },
                   { value: "Information Technology", label: "Information Technology" },
+                  { value: "Nutrition & Dietetics", label: "Nutrition & Dietetics" },
                   { value: "Computer Science", label: "Computer Science" },
                   { value: "Microbiology", label: "Microbiology" },
                   { value: "Bio-Technology", label: "Bio-Technology" },
@@ -4971,7 +5169,7 @@ const formData = [
               { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
               { value: 'University Bank Account', label: 'University Bank Account' },
               { value: 'Cash/DD', label: 'Cash/DD' },
-             { value: 'University Website', label: 'University Website' }],
+              { value: 'University Website', label: 'University Website' }],
           },
 
           {
@@ -5017,6 +5215,27 @@ const formData = [
                 label: '12th'
               },
               {
+                value: "DIPLOMA",
+                label: "DIPLOMA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BED",
+                label: "BED",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BVOC",
+                label: "BVOC",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
                 value: "BA",
                 label: "BA",
                 specializations: [
@@ -5241,6 +5460,7 @@ const formData = [
                   { value: "Phycics", label: "Phycics" },
                   { value: "Mathematics", label: "Mathematics" },
                   { value: "Information Technology", label: "Information Technology" },
+                  { value: "Nutrition & Dietetics", label: "Nutrition & Dietetics" },
                   { value: "Computer Science", label: "Computer Science" },
                   { value: "Microbiology", label: "Microbiology" },
                   { value: "Bio-Technology", label: "Bio-Technology" },
@@ -5527,7 +5747,7 @@ const formData = [
               { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
               { value: 'University Bank Account', label: 'University Bank Account' },
               { value: 'Cash/DD', label: 'Cash/DD' },
-             { value: 'University Website', label: 'University Website' }],
+              { value: 'University Website', label: 'University Website' }],
           },
 
           {
@@ -5572,6 +5792,27 @@ const formData = [
                 label: '12th'
               },
               {
+                value: "DIPLOMA",
+                label: "DIPLOMA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BED",
+                label: "BED",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BVOC",
+                label: "BVOC",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
                 value: "BA",
                 label: "BA",
                 specializations: [
@@ -5796,6 +6037,7 @@ const formData = [
                   { value: "Phycics", label: "Phycics" },
                   { value: "Mathematics", label: "Mathematics" },
                   { value: "Information Technology", label: "Information Technology" },
+                  { value: "Nutrition & Dietetics", label: "Nutrition & Dietetics" },
                   { value: "Computer Science", label: "Computer Science" },
                   { value: "Microbiology", label: "Microbiology" },
                   { value: "Bio-Technology", label: "Bio-Technology" },
@@ -6082,7 +6324,7 @@ const formData = [
               { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
               { value: 'University Bank Account', label: 'University Bank Account' },
               { value: 'Cash/DD', label: 'Cash/DD' },
-             { value: 'University Website', label: 'University Website' }],
+              { value: 'University Website', label: 'University Website' }],
           },
 
           {
@@ -6127,6 +6369,27 @@ const formData = [
                 label: '12th'
               },
               {
+                value: "DIPLOMA",
+                label: "DIPLOMA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BED",
+                label: "BED",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BVOC",
+                label: "BVOC",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
                 value: "BA",
                 label: "BA",
                 specializations: [
@@ -6351,6 +6614,7 @@ const formData = [
                   { value: "Phycics", label: "Phycics" },
                   { value: "Mathematics", label: "Mathematics" },
                   { value: "Information Technology", label: "Information Technology" },
+                  { value: "Nutrition & Dietetics", label: "Nutrition & Dietetics" },
                   { value: "Computer Science", label: "Computer Science" },
                   { value: "Microbiology", label: "Microbiology" },
                   { value: "Bio-Technology", label: "Bio-Technology" },
@@ -6637,7 +6901,7 @@ const formData = [
               { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
               { value: 'University Bank Account', label: 'University Bank Account' },
               { value: 'Cash/DD', label: 'Cash/DD' },
-             { value: 'University Website', label: 'University Website' }],
+              { value: 'University Website', label: 'University Website' }],
           },
 
           {
@@ -6682,6 +6946,27 @@ const formData = [
                 label: '12th'
               },
               {
+                value: "DIPLOMA",
+                label: "DIPLOMA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BED",
+                label: "BED",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BVOC",
+                label: "BVOC",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
                 value: "BA",
                 label: "BA",
                 specializations: [
@@ -6906,6 +7191,7 @@ const formData = [
                   { value: "Phycics", label: "Phycics" },
                   { value: "Mathematics", label: "Mathematics" },
                   { value: "Information Technology", label: "Information Technology" },
+                  { value: "Nutrition & Dietetics", label: "Nutrition & Dietetics" },
                   { value: "Computer Science", label: "Computer Science" },
                   { value: "Microbiology", label: "Microbiology" },
                   { value: "Bio-Technology", label: "Bio-Technology" },
@@ -7192,7 +7478,7 @@ const formData = [
               { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
               { value: 'University Bank Account', label: 'University Bank Account' },
               { value: 'Cash/DD', label: 'Cash/DD' },
-             { value: 'University Website', label: 'University Website' }],
+              { value: 'University Website', label: 'University Website' }],
           },
 
           {
@@ -7237,6 +7523,27 @@ const formData = [
                 label: '12th'
               },
               {
+                value: "DIPLOMA",
+                label: "DIPLOMA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BED",
+                label: "BED",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BVOC",
+                label: "BVOC",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
                 value: "BA",
                 label: "BA",
                 specializations: [
@@ -7461,6 +7768,7 @@ const formData = [
                   { value: "Phycics", label: "Phycics" },
                   { value: "Mathematics", label: "Mathematics" },
                   { value: "Information Technology", label: "Information Technology" },
+                  { value: "Nutrition & Dietetics", label: "Nutrition & Dietetics" },
                   { value: "Computer Science", label: "Computer Science" },
                   { value: "Microbiology", label: "Microbiology" },
                   { value: "Bio-Technology", label: "Bio-Technology" },
@@ -7747,7 +8055,7 @@ const formData = [
               { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
               { value: 'University Bank Account', label: 'University Bank Account' },
               { value: 'Cash/DD', label: 'Cash/DD' },
-             { value: 'University Website', label: 'University Website' }],
+              { value: 'University Website', label: 'University Website' }],
           },
 
           {
@@ -7793,6 +8101,27 @@ const formData = [
                 label: '12th'
               },
               {
+                value: "DIPLOMA",
+                label: "DIPLOMA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BED",
+                label: "BED",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BVOC",
+                label: "BVOC",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
                 value: "BA",
                 label: "BA",
                 specializations: [
@@ -8017,6 +8346,7 @@ const formData = [
                   { value: "Phycics", label: "Phycics" },
                   { value: "Mathematics", label: "Mathematics" },
                   { value: "Information Technology", label: "Information Technology" },
+                  { value: "Nutrition & Dietetics", label: "Nutrition & Dietetics" },
                   { value: "Computer Science", label: "Computer Science" },
                   { value: "Microbiology", label: "Microbiology" },
                   { value: "Bio-Technology", label: "Bio-Technology" },
@@ -8303,7 +8633,7 @@ const formData = [
               { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
               { value: 'University Bank Account', label: 'University Bank Account' },
               { value: 'Cash/DD', label: 'Cash/DD' },
-             { value: 'University Website', label: 'University Website' }],
+              { value: 'University Website', label: 'University Website' }],
           },
 
           {
@@ -8348,6 +8678,27 @@ const formData = [
                 label: '12th'
               },
               {
+                value: "DIPLOMA",
+                label: "DIPLOMA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BED",
+                label: "BED",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BVOC",
+                label: "BVOC",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
                 value: "BA",
                 label: "BA",
                 specializations: [
@@ -8572,6 +8923,7 @@ const formData = [
                   { value: "Phycics", label: "Phycics" },
                   { value: "Mathematics", label: "Mathematics" },
                   { value: "Information Technology", label: "Information Technology" },
+                  { value: "Nutrition & Dietetics", label: "Nutrition & Dietetics" },
                   { value: "Computer Science", label: "Computer Science" },
                   { value: "Microbiology", label: "Microbiology" },
                   { value: "Bio-Technology", label: "Bio-Technology" },
@@ -8858,7 +9210,7 @@ const formData = [
               { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
               { value: 'University Bank Account', label: 'University Bank Account' },
               { value: 'Cash/DD', label: 'Cash/DD' },
-             { value: 'University Website', label: 'University Website' }],
+              { value: 'University Website', label: 'University Website' }],
           },
 
           {
@@ -8889,9 +9241,9 @@ const formData = [
 
       {
         // First university complete date 
-        label: 'MANGALAYATAN',
+        label: 'MANGALAYATAN DISTANCE',
         name: ['customfields', 'university_name'],
-        value: 'MANGALAYATAN',
+        value: 'MANGALAYATAN DISTANCE',
         fields: [
           {
             courses: [
@@ -8902,6 +9254,27 @@ const formData = [
               {
                 value: "12th",
                 label: '12th'
+              },
+              {
+                value: "DIPLOMA",
+                label: "DIPLOMA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BED",
+                label: "BED",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BVOC",
+                label: "BVOC",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
               },
               {
                 value: "BA",
@@ -9128,6 +9501,7 @@ const formData = [
                   { value: "Phycics", label: "Phycics" },
                   { value: "Mathematics", label: "Mathematics" },
                   { value: "Information Technology", label: "Information Technology" },
+                  { value: "Nutrition & Dietetics", label: "Nutrition & Dietetics" },
                   { value: "Computer Science", label: "Computer Science" },
                   { value: "Microbiology", label: "Microbiology" },
                   { value: "Bio-Technology", label: "Bio-Technology" },
@@ -9414,7 +9788,7 @@ const formData = [
               { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
               { value: 'University Bank Account', label: 'University Bank Account' },
               { value: 'Cash/DD', label: 'Cash/DD' },
-             { value: 'University Website', label: 'University Website' }],
+              { value: 'University Website', label: 'University Website' }],
           },
 
           {
@@ -9459,6 +9833,27 @@ const formData = [
                 label: '12th'
               },
               {
+                value: "DIPLOMA",
+                label: "DIPLOMA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BED",
+                label: "BED",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BVOC",
+                label: "BVOC",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
                 value: "BA",
                 label: "BA",
                 specializations: [
@@ -9683,6 +10078,7 @@ const formData = [
                   { value: "Phycics", label: "Phycics" },
                   { value: "Mathematics", label: "Mathematics" },
                   { value: "Information Technology", label: "Information Technology" },
+                  { value: "Nutrition & Dietetics", label: "Nutrition & Dietetics" },
                   { value: "Computer Science", label: "Computer Science" },
                   { value: "Microbiology", label: "Microbiology" },
                   { value: "Bio-Technology", label: "Bio-Technology" },
@@ -9969,7 +10365,7 @@ const formData = [
               { value: 'HES Bank Account/UPI', label: 'HES Bank Account/UPI' },
               { value: 'University Bank Account', label: 'University Bank Account' },
               { value: 'Cash/DD', label: 'Cash/DD' },
-             { value: 'University Website', label: 'University Website' }],
+              { value: 'University Website', label: 'University Website' }],
           },
 
           {
@@ -10023,6 +10419,27 @@ const formData = [
                 label: '12th'
               },
               {
+                value: "DIPLOMA",
+                label: "DIPLOMA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BED",
+                label: "BED",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BVOC",
+                label: "BVOC",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
                 value: "BA",
                 label: "BA",
                 specializations: [
@@ -10247,6 +10664,7 @@ const formData = [
                   { value: "Phycics", label: "Phycics" },
                   { value: "Mathematics", label: "Mathematics" },
                   { value: "Information Technology", label: "Information Technology" },
+                  { value: "Nutrition & Dietetics", label: "Nutrition & Dietetics" },
                   { value: "Computer Science", label: "Computer Science" },
                   { value: "Microbiology", label: "Microbiology" },
                   { value: "Bio-Technology", label: "Bio-Technology" },
@@ -10532,7 +10950,7 @@ const formData = [
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
             { value: 'Cash/DD', label: 'Cash/DD' },
-           { value: 'University Website', label: 'University Website' }],
+            { value: 'University Website', label: 'University Website' }],
           },
 
           {
@@ -10577,6 +10995,27 @@ const formData = [
                 label: '12th'
               },
               {
+                value: "DIPLOMA",
+                label: "DIPLOMA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BED",
+                label: "BED",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BVOC",
+                label: "BVOC",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
                 value: "BA",
                 label: "BA",
                 specializations: [
@@ -10801,6 +11240,7 @@ const formData = [
                   { value: "Phycics", label: "Phycics" },
                   { value: "Mathematics", label: "Mathematics" },
                   { value: "Information Technology", label: "Information Technology" },
+                  { value: "Nutrition & Dietetics", label: "Nutrition & Dietetics" },
                   { value: "Computer Science", label: "Computer Science" },
                   { value: "Microbiology", label: "Microbiology" },
                   { value: "Bio-Technology", label: "Bio-Technology" },
@@ -11086,7 +11526,7 @@ const formData = [
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
             { value: 'Cash/DD', label: 'Cash/DD' },
-           { value: 'University Website', label: 'University Website' }],
+            { value: 'University Website', label: 'University Website' }],
           },
 
           {
@@ -11131,6 +11571,27 @@ const formData = [
                 label: '12th'
               },
               {
+                value: "DIPLOMA",
+                label: "DIPLOMA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BED",
+                label: "BED",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BVOC",
+                label: "BVOC",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
                 value: "BA",
                 label: "BA",
                 specializations: [
@@ -11355,6 +11816,7 @@ const formData = [
                   { value: "Phycics", label: "Phycics" },
                   { value: "Mathematics", label: "Mathematics" },
                   { value: "Information Technology", label: "Information Technology" },
+                  { value: "Nutrition & Dietetics", label: "Nutrition & Dietetics" },
                   { value: "Computer Science", label: "Computer Science" },
                   { value: "Microbiology", label: "Microbiology" },
                   { value: "Bio-Technology", label: "Bio-Technology" },
@@ -11640,7 +12102,7 @@ const formData = [
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
             { value: 'Cash/DD', label: 'Cash/DD' },
-           { value: 'University Website', label: 'University Website' }],
+            { value: 'University Website', label: 'University Website' }],
           },
 
           {
@@ -11685,6 +12147,27 @@ const formData = [
                 label: '12th'
               },
               {
+                value: "DIPLOMA",
+                label: "DIPLOMA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BED",
+                label: "BED",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BVOC",
+                label: "BVOC",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
                 value: "BA",
                 label: "BA",
                 specializations: [
@@ -11909,6 +12392,7 @@ const formData = [
                   { value: "Phycics", label: "Phycics" },
                   { value: "Mathematics", label: "Mathematics" },
                   { value: "Information Technology", label: "Information Technology" },
+                  { value: "Nutrition & Dietetics", label: "Nutrition & Dietetics" },
                   { value: "Computer Science", label: "Computer Science" },
                   { value: "Microbiology", label: "Microbiology" },
                   { value: "Bio-Technology", label: "Bio-Technology" },
@@ -12194,7 +12678,7 @@ const formData = [
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
             { value: 'Cash/DD', label: 'Cash/DD' },
-           { value: 'University Website', label: 'University Website' }],
+            { value: 'University Website', label: 'University Website' }],
           },
 
           {
@@ -12239,6 +12723,27 @@ const formData = [
                 label: '12th'
               },
               {
+                value: "DIPLOMA",
+                label: "DIPLOMA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BED",
+                label: "BED",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BVOC",
+                label: "BVOC",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
                 value: "BA",
                 label: "BA",
                 specializations: [
@@ -12463,6 +12968,7 @@ const formData = [
                   { value: "Phycics", label: "Phycics" },
                   { value: "Mathematics", label: "Mathematics" },
                   { value: "Information Technology", label: "Information Technology" },
+                  { value: "Nutrition & Dietetics", label: "Nutrition & Dietetics" },
                   { value: "Computer Science", label: "Computer Science" },
                   { value: "Microbiology", label: "Microbiology" },
                   { value: "Bio-Technology", label: "Bio-Technology" },
@@ -12748,7 +13254,7 @@ const formData = [
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
             { value: 'Cash/DD', label: 'Cash/DD' },
-           { value: 'University Website', label: 'University Website' }],
+            { value: 'University Website', label: 'University Website' }],
           },
 
           {
@@ -12793,6 +13299,27 @@ const formData = [
                 label: '12th'
               },
               {
+                value: "DIPLOMA",
+                label: "DIPLOMA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BED",
+                label: "BED",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BVOC",
+                label: "BVOC",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
                 value: "BA",
                 label: "BA",
                 specializations: [
@@ -13017,6 +13544,7 @@ const formData = [
                   { value: "Phycics", label: "Phycics" },
                   { value: "Mathematics", label: "Mathematics" },
                   { value: "Information Technology", label: "Information Technology" },
+                  { value: "Nutrition & Dietetics", label: "Nutrition & Dietetics" },
                   { value: "Computer Science", label: "Computer Science" },
                   { value: "Microbiology", label: "Microbiology" },
                   { value: "Bio-Technology", label: "Bio-Technology" },
@@ -13302,7 +13830,7 @@ const formData = [
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
             { value: 'Cash/DD', label: 'Cash/DD' },
-           { value: 'University Website', label: 'University Website' }],
+            { value: 'University Website', label: 'University Website' }],
           },
 
           {
@@ -13347,6 +13875,27 @@ const formData = [
                 label: '12th'
               },
               {
+                value: "DIPLOMA",
+                label: "DIPLOMA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BED",
+                label: "BED",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BVOC",
+                label: "BVOC",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
                 value: "BA",
                 label: "BA",
                 specializations: [
@@ -13571,6 +14120,7 @@ const formData = [
                   { value: "Phycics", label: "Phycics" },
                   { value: "Mathematics", label: "Mathematics" },
                   { value: "Information Technology", label: "Information Technology" },
+                  { value: "Nutrition & Dietetics", label: "Nutrition & Dietetics" },
                   { value: "Computer Science", label: "Computer Science" },
                   { value: "Microbiology", label: "Microbiology" },
                   { value: "Bio-Technology", label: "Bio-Technology" },
@@ -13856,7 +14406,7 @@ const formData = [
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
             { value: 'Cash/DD', label: 'Cash/DD' },
-           { value: 'University Website', label: 'University Website' }],
+            { value: 'University Website', label: 'University Website' }],
           },
 
           {
@@ -13901,6 +14451,27 @@ const formData = [
                 label: '12th'
               },
               {
+                value: "DIPLOMA",
+                label: "DIPLOMA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BED",
+                label: "BED",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BVOC",
+                label: "BVOC",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
                 value: "BA",
                 label: "BA",
                 specializations: [
@@ -14125,6 +14696,7 @@ const formData = [
                   { value: "Phycics", label: "Phycics" },
                   { value: "Mathematics", label: "Mathematics" },
                   { value: "Information Technology", label: "Information Technology" },
+                  { value: "Nutrition & Dietetics", label: "Nutrition & Dietetics" },
                   { value: "Computer Science", label: "Computer Science" },
                   { value: "Microbiology", label: "Microbiology" },
                   { value: "Bio-Technology", label: "Bio-Technology" },
@@ -14410,7 +14982,7 @@ const formData = [
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
             { value: 'Cash/DD', label: 'Cash/DD' },
-           { value: 'University Website', label: 'University Website' }],
+            { value: 'University Website', label: 'University Website' }],
           },
 
           {
@@ -14455,6 +15027,27 @@ const formData = [
                 label: '12th'
               },
               {
+                value: "DIPLOMA",
+                label: "DIPLOMA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BED",
+                label: "BED",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BVOC",
+                label: "BVOC",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
                 value: "BA",
                 label: "BA",
                 specializations: [
@@ -14679,6 +15272,7 @@ const formData = [
                   { value: "Phycics", label: "Phycics" },
                   { value: "Mathematics", label: "Mathematics" },
                   { value: "Information Technology", label: "Information Technology" },
+                  { value: "Nutrition & Dietetics", label: "Nutrition & Dietetics" },
                   { value: "Computer Science", label: "Computer Science" },
                   { value: "Microbiology", label: "Microbiology" },
                   { value: "Bio-Technology", label: "Bio-Technology" },
@@ -14964,7 +15558,7 @@ const formData = [
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
             { value: 'Cash/DD', label: 'Cash/DD' },
-           { value: 'University Website', label: 'University Website' }],
+            { value: 'University Website', label: 'University Website' }],
           },
 
           {
@@ -15010,6 +15604,27 @@ const formData = [
                 label: '12th'
               },
               {
+                value: "DIPLOMA",
+                label: "DIPLOMA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BED",
+                label: "BED",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BVOC",
+                label: "BVOC",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
                 value: "BA",
                 label: "BA",
                 specializations: [
@@ -15234,6 +15849,7 @@ const formData = [
                   { value: "Phycics", label: "Phycics" },
                   { value: "Mathematics", label: "Mathematics" },
                   { value: "Information Technology", label: "Information Technology" },
+                  { value: "Nutrition & Dietetics", label: "Nutrition & Dietetics" },
                   { value: "Computer Science", label: "Computer Science" },
                   { value: "Microbiology", label: "Microbiology" },
                   { value: "Bio-Technology", label: "Bio-Technology" },
@@ -15519,7 +16135,7 @@ const formData = [
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
             { value: 'Cash/DD', label: 'Cash/DD' },
-           { value: 'University Website', label: 'University Website' }],
+            { value: 'University Website', label: 'University Website' }],
           },
 
           {
@@ -15564,6 +16180,27 @@ const formData = [
                 label: '12th'
               },
               {
+                value: "DIPLOMA",
+                label: "DIPLOMA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BED",
+                label: "BED",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BVOC",
+                label: "BVOC",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
                 value: "BA",
                 label: "BA",
                 specializations: [
@@ -15788,6 +16425,7 @@ const formData = [
                   { value: "Phycics", label: "Phycics" },
                   { value: "Mathematics", label: "Mathematics" },
                   { value: "Information Technology", label: "Information Technology" },
+                  { value: "Nutrition & Dietetics", label: "Nutrition & Dietetics" },
                   { value: "Computer Science", label: "Computer Science" },
                   { value: "Microbiology", label: "Microbiology" },
                   { value: "Bio-Technology", label: "Bio-Technology" },
@@ -16073,7 +16711,7 @@ const formData = [
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
             { value: 'Cash/DD', label: 'Cash/DD' },
-           { value: 'University Website', label: 'University Website' }],
+            { value: 'University Website', label: 'University Website' }],
           },
 
           {
@@ -16118,6 +16756,27 @@ const formData = [
                 label: '12th'
               },
               {
+                value: "DIPLOMA",
+                label: "DIPLOMA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BED",
+                label: "BED",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BVOC",
+                label: "BVOC",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
                 value: "BA",
                 label: "BA",
                 specializations: [
@@ -16342,6 +17001,7 @@ const formData = [
                   { value: "Phycics", label: "Phycics" },
                   { value: "Mathematics", label: "Mathematics" },
                   { value: "Information Technology", label: "Information Technology" },
+                  { value: "Nutrition & Dietetics", label: "Nutrition & Dietetics" },
                   { value: "Computer Science", label: "Computer Science" },
                   { value: "Microbiology", label: "Microbiology" },
                   { value: "Bio-Technology", label: "Bio-Technology" },
@@ -16627,7 +17287,7 @@ const formData = [
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
             { value: 'Cash/DD', label: 'Cash/DD' },
-           { value: 'University Website', label: 'University Website' }],
+            { value: 'University Website', label: 'University Website' }],
           },
 
           {
@@ -16672,6 +17332,27 @@ const formData = [
                 label: '12th'
               },
               {
+                value: "DIPLOMA",
+                label: "DIPLOMA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BED",
+                label: "BED",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BVOC",
+                label: "BVOC",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
                 value: "BA",
                 label: "BA",
                 specializations: [
@@ -16896,6 +17577,7 @@ const formData = [
                   { value: "Phycics", label: "Phycics" },
                   { value: "Mathematics", label: "Mathematics" },
                   { value: "Information Technology", label: "Information Technology" },
+                  { value: "Nutrition & Dietetics", label: "Nutrition & Dietetics" },
                   { value: "Computer Science", label: "Computer Science" },
                   { value: "Microbiology", label: "Microbiology" },
                   { value: "Bio-Technology", label: "Bio-Technology" },
@@ -17181,7 +17863,7 @@ const formData = [
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
             { value: 'Cash/DD', label: 'Cash/DD' },
-           { value: 'University Website', label: 'University Website' }],
+            { value: 'University Website', label: 'University Website' }],
           },
 
           {
@@ -17226,6 +17908,27 @@ const formData = [
                 label: '12th'
               },
               {
+                value: "DIPLOMA",
+                label: "DIPLOMA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BED",
+                label: "BED",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BVOC",
+                label: "BVOC",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
                 value: "BA",
                 label: "BA",
                 specializations: [
@@ -17450,6 +18153,7 @@ const formData = [
                   { value: "Phycics", label: "Phycics" },
                   { value: "Mathematics", label: "Mathematics" },
                   { value: "Information Technology", label: "Information Technology" },
+                  { value: "Nutrition & Dietetics", label: "Nutrition & Dietetics" },
                   { value: "Computer Science", label: "Computer Science" },
                   { value: "Microbiology", label: "Microbiology" },
                   { value: "Bio-Technology", label: "Bio-Technology" },
@@ -17735,7 +18439,7 @@ const formData = [
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
             { value: 'Cash/DD', label: 'Cash/DD' },
-           { value: 'University Website', label: 'University Website' }],
+            { value: 'University Website', label: 'University Website' }],
           },
 
           {
@@ -17781,6 +18485,27 @@ const formData = [
                 label: '12th'
               },
               {
+                value: "DIPLOMA",
+                label: "DIPLOMA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BED",
+                label: "BED",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BVOC",
+                label: "BVOC",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
                 value: "BA",
                 label: "BA",
                 specializations: [
@@ -18005,6 +18730,7 @@ const formData = [
                   { value: "Phycics", label: "Phycics" },
                   { value: "Mathematics", label: "Mathematics" },
                   { value: "Information Technology", label: "Information Technology" },
+                  { value: "Nutrition & Dietetics", label: "Nutrition & Dietetics" },
                   { value: "Computer Science", label: "Computer Science" },
                   { value: "Microbiology", label: "Microbiology" },
                   { value: "Bio-Technology", label: "Bio-Technology" },
@@ -18290,7 +19016,7 @@ const formData = [
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
             { value: 'Cash/DD', label: 'Cash/DD' },
-           { value: 'University Website', label: 'University Website' }],
+            { value: 'University Website', label: 'University Website' }],
           },
 
           {
@@ -18335,6 +19061,27 @@ const formData = [
                 label: '12th'
               },
               {
+                value: "DIPLOMA",
+                label: "DIPLOMA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BED",
+                label: "BED",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BVOC",
+                label: "BVOC",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
                 value: "BA",
                 label: "BA",
                 specializations: [
@@ -18559,6 +19306,7 @@ const formData = [
                   { value: "Phycics", label: "Phycics" },
                   { value: "Mathematics", label: "Mathematics" },
                   { value: "Information Technology", label: "Information Technology" },
+                  { value: "Nutrition & Dietetics", label: "Nutrition & Dietetics" },
                   { value: "Computer Science", label: "Computer Science" },
                   { value: "Microbiology", label: "Microbiology" },
                   { value: "Bio-Technology", label: "Bio-Technology" },
@@ -18844,7 +19592,7 @@ const formData = [
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
             { value: 'Cash/DD', label: 'Cash/DD' },
-           { value: 'University Website', label: 'University Website' }],
+            { value: 'University Website', label: 'University Website' }],
           },
 
           {
@@ -18875,9 +19623,9 @@ const formData = [
 
       {
         // First university complete date 
-        label: 'MANGALAYATAN',
+        label: 'MANGALAYATAN DISTANCE',
         name: ['customfields', 'university_name'],
-        value: 'MANGALAYATAN',
+        value: 'MANGALAYATAN DISTANCE',
         fields: [
           {
             courses: [
@@ -18888,6 +19636,27 @@ const formData = [
               {
                 value: "12th",
                 label: '12th'
+              },
+              {
+                value: "DIPLOMA",
+                label: "DIPLOMA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BED",
+                label: "BED",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BVOC",
+                label: "BVOC",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
               },
               {
                 value: "BA",
@@ -19114,6 +19883,7 @@ const formData = [
                   { value: "Phycics", label: "Phycics" },
                   { value: "Mathematics", label: "Mathematics" },
                   { value: "Information Technology", label: "Information Technology" },
+                  { value: "Nutrition & Dietetics", label: "Nutrition & Dietetics" },
                   { value: "Computer Science", label: "Computer Science" },
                   { value: "Microbiology", label: "Microbiology" },
                   { value: "Bio-Technology", label: "Bio-Technology" },
@@ -19399,7 +20169,7 @@ const formData = [
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
             { value: 'Cash/DD', label: 'Cash/DD' },
-           { value: 'University Website', label: 'University Website' }],
+            { value: 'University Website', label: 'University Website' }],
           },
 
           {
@@ -19444,6 +20214,27 @@ const formData = [
                 label: '12th'
               },
               {
+                value: "DIPLOMA",
+                label: "DIPLOMA",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BED",
+                label: "BED",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
+                value: "BVOC",
+                label: "BVOC",
+                specializations: [
+                  { value: "General", label: "General" },
+                ],
+              },
+              {
                 value: "BA",
                 label: "BA",
                 specializations: [
@@ -19668,6 +20459,7 @@ const formData = [
                   { value: "Phycics", label: "Phycics" },
                   { value: "Mathematics", label: "Mathematics" },
                   { value: "Information Technology", label: "Information Technology" },
+                  { value: "Nutrition & Dietetics", label: "Nutrition & Dietetics" },
                   { value: "Computer Science", label: "Computer Science" },
                   { value: "Microbiology", label: "Microbiology" },
                   { value: "Bio-Technology", label: "Bio-Technology" },
@@ -19953,7 +20745,7 @@ const formData = [
             options: [{ value: 'DES Bank Account/UPI', label: 'DES Bank Account/UPI' },
             { value: 'University Bank Account', label: 'University Bank Account' },
             { value: 'Cash/DD', label: 'Cash/DD' },
-           { value: 'University Website', label: 'University Website' }],
+            { value: 'University Website', label: 'University Website' }],
           },
 
           {
