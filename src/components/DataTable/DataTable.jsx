@@ -221,14 +221,14 @@ export default function DataTable({ config, extra = [] }) {
 
   useEffect(() => {
     const fetchData = async () => {
-      const { success, result } = await request.list({ entity: 'lead' });
+      const { success, result } = await request.list({ entity: 'payment' });
       if (success) {
-        const uniqueStatuses = [...new Set(result.map(item => item.customfields.status))];
-        const uniqueInstitutes = [...new Set(result.map(item => item.customfields.institute_name))];
-        const uniqueInstallment = [...new Set(result.map(item => item.customfields.installment_type))];
-        const uniqueSession = [...new Set(result.map(item => item.customfields.session))];
-        const uniqueUniversities = [...new Set(result.map(item => item.customfields.university_name))];
-        const uniquePaymentMode = [...new Set(result.map(item => item.customfields.payment_mode))];
+        const uniqueStatuses = [...new Set(result.map(item => item.status))];
+        const uniqueInstitutes = [...new Set(result.map(item => item.institute_name))];
+        const uniqueInstallment = [...new Set(result.map(item => item.installment_type))];
+        const uniqueSession = [...new Set(result.map(item => item.session))];
+        const uniqueUniversities = [...new Set(result.map(item => item.university_name))];
+        const uniquePaymentMode = [...new Set(result.map(item => item.payment_mode))];
         const uniqueUserNames = [...new Set(result.map(item => item.userId?.fullname))];
 
         setStatuses(uniqueStatuses);
@@ -390,6 +390,7 @@ export default function DataTable({ config, extra = [] }) {
     dispatch(crud.list({ entity }));
   };
 
+
   useEffect(() => {
     const controller = new AbortController();
     dispatcher();
@@ -521,6 +522,8 @@ export default function DataTable({ config, extra = [] }) {
       </>
     );
   };
+
+
 
   // Handling change in Select for team leaders
   const handleTeamLeaderChange = (value) => {
