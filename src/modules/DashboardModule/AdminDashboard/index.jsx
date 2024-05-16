@@ -158,6 +158,16 @@ export default function DashboardModule() {
         );
     });
 
+    const handleDateRangeChange = (dates) => {
+        if (dates && dates.length === 2) {
+            setSelectedStartDate(dates[0]);
+            setSelectedEndDate(dates[1].endOf('day')); // Set the end date to the end of the day
+        } else {
+            setSelectedStartDate(null);
+            setSelectedEndDate(null); // Clear dates if not a valid range
+        }
+    };
+
     const filterRender = () => (
         <div>
             <div className='flex items-center space-x-2'>
@@ -259,10 +269,7 @@ export default function DashboardModule() {
                     <RangePicker
                         className='w-60 h-10 capitalize'
                         format="YYYY-MM-DD"
-                        onChange={(dates) => {
-                            setSelectedStartDate(dates[0]?.toISOString());
-                            setSelectedEndDate(dates[1]?.toISOString());
-                        }}
+                        onChange={handleDateRangeChange}
                     />
                 </div>
             </div>

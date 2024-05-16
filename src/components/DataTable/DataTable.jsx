@@ -51,12 +51,14 @@ export default function DataTable({ config, extra = [] }) {
   const { panel, collapsedBox, modal, editBox, advancedBox } = crudContextAction;
   const translate = useLanguage();
   const [selectedInstitute, setSelectedInstitute] = useState(null);
+  const [selectedInstallment, setSelectedInstallment] = useState(null);
   const [selectedUniversity, setSelectedUniversity] = useState(null);
   const [selectedSession, setSelectedSession] = useState(null);
   const [selectedUserId, setSelectedUserId] = useState(null);
   const [selectedStatus, setSelectedStatus] = useState(null);
   const [statuses, setStatuses] = useState([]);
   const [institutes, setInstitutes] = useState([]);
+  const [installment, setInstallment] = useState([]);
   const [universities, setUniversities] = useState([]);
   const [session, setSession] = useState([]);
   const [userNames, setUserNames] = useState([]);
@@ -80,7 +82,7 @@ export default function DataTable({ config, extra = [] }) {
   const [selectedStudent, setSelectedStudent] = useState(null);
   const [teamLeaders, setTeamLeaders] = useState([]); // For storing team leaders
   const [selectedTeamLeader, setSelectedTeamLeader] = useState(null); // To track selected team leader
-
+  const [selectedDate, setSelectedDate] = useState(null);
 
   // buttons call function 
   const isAdmin = ['admin', 'subadmin', 'manager', 'supportiveassociate'].includes(currentAdmin?.role);
@@ -113,7 +115,12 @@ export default function DataTable({ config, extra = [] }) {
   const handleDateRangeChange = (dates) => {
     if (dates && dates.length === 2) {
       setStartDate(dates[0]);
-      setEndDate(dates[0]); // Set the end date correctly
+   setEndDate(dates[0]); // Set the end date correctly
+
+      setEndDate(dates[1].endOf('day')); // Set the end date to the end of the day
+    } else {
+      setStartDate(null);
+      setEndDate(null); // Clear dates if not a valid range
     }
   };
 
@@ -220,6 +227,7 @@ export default function DataTable({ config, extra = [] }) {
       if (success) {
         const uniqueStatuses = [...new Set(result.map(item => item.status))];
         const uniqueInstitutes = [...new Set(result.map(item => item.institute_name))];
+        const uniqueInstallment = [...new Set(result.map(item => item.installment_type))];
         const uniqueSession = [...new Set(result.map(item => item.session))];
         const uniqueUniversities = [...new Set(result.map(item => item.university_name))];
         const uniquePaymentMode = [...new Set(result.map(item => item.payment_mode))];
@@ -227,6 +235,7 @@ export default function DataTable({ config, extra = [] }) {
 
         setStatuses(uniqueStatuses);
         setInstitutes(uniqueInstitutes);
+        setInstallment(uniqueInstallment);
         setSession(uniqueSession);
         setUniversities(uniqueUniversities);
         setUserNames(uniqueUserNames);
@@ -239,6 +248,7 @@ export default function DataTable({ config, extra = [] }) {
 
   const resetValues = () => {
     setSelectedInstitute(null);
+    setSelectedInstallment(null);
     setSelectedUniversity(null);
     setSelectedSession(null);
     setSelectedStatus(null);
@@ -246,6 +256,7 @@ export default function DataTable({ config, extra = [] }) {
     setSearchQuery('');
     setSelectedTeamLeader(null)
     setStartDate(null);
+    setSelectedDate(null)
     setSelectedPaymentMode(null)
     setEndDate(null);
     setSelectedPaymentstatus(null)
@@ -381,6 +392,7 @@ export default function DataTable({ config, extra = [] }) {
     dispatch(crud.list({ entity }));
   };
 
+
   useEffect(() => {
     const controller = new AbortController();
     dispatcher();
@@ -395,6 +407,7 @@ export default function DataTable({ config, extra = [] }) {
     return data.filter(item => {
       const customfields = item.customfields || {};
       const instituteMatch = !selectedInstitute || customfields.institute_name === selectedInstitute;
+      const installmentMatch = !selectedInstallment || customfields.installment_type === selectedInstallment;
       const universityMatch = !selectedUniversity || customfields.university_name === selectedUniversity;
       const paymentmodeMatch = !selectedPaymentMode || customfields.payment_mode === selectedPaymentMode;
       const sessionMatch = !selectedSession || customfields.session === selectedSession;
@@ -404,6 +417,10 @@ export default function DataTable({ config, extra = [] }) {
       const createdDate = new Date(item.created);
       const startDateMatch = !startDate || createdDate >= startDate;
       const endDateMatch = !endDate || createdDate <= endDate;
+      const selectedDateStart = selectedDate ? selectedDate.startOf('day') : null;
+      const selectedDateEnd = selectedDate ? selectedDate.endOf('day') : null;
+      const dateMatch = (!selectedDateStart || createdDate >= selectedDateStart) && (!selectedDateEnd || createdDate <= selectedDateEnd);
+
 
       const phoneAsString = item.contact?.phone?.toString();
       const emailLowerCase = item.contact?.email?.toLowerCase();
@@ -436,7 +453,7 @@ export default function DataTable({ config, extra = [] }) {
         }
       }
 
-      return instituteMatch && universityMatch && sessionMatch && searchMatch && statusMatch && userMatch && startDateMatch && endDateMatch && paymentStatusMatch && lmsMatch && paymentmodeMatch;
+      return instituteMatch && universityMatch && sessionMatch && searchMatch && statusMatch && userMatch && startDateMatch && endDateMatch && paymentStatusMatch && lmsMatch && paymentmodeMatch && installmentMatch && dateMatch;
     });
   };
 
@@ -462,7 +479,7 @@ export default function DataTable({ config, extra = [] }) {
     const filteredData = filterDataSource(dataSource);
     return (
       <>
-        <div className='mt-8'>
+        <div className='mt-12'>
           <div className='flex justify-between items-center mb-3'>
             {entity === 'lead' && (
               <div className='flex items-center gap-2'>
@@ -507,8 +524,7 @@ export default function DataTable({ config, extra = [] }) {
       </>
     );
   };
-
-  // Handling change in Select for team leaders
+    // Handling change in Select for team leaders
   const handleTeamLeaderChange = (value) => {
     setSelectedTeamLeader(value); // Update state with selected team leader ID
   };
@@ -527,13 +543,13 @@ export default function DataTable({ config, extra = [] }) {
     if (entity === 'lead') {
       return (
         <div>
-          <div className='flex items-center space-x-2'>
+          <div className='flex items-center gap-3 flex-wrap'>
             <div>
               <Select showSearch optionFilterProp="children" filterOption={(input, option) =>
                 option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
               }
                 placeholder="Select institute"
-                className='w-44 h-7 capitalize'
+             className='w-44 h-7 capitalize'
                 value={selectedInstitute}
                 onChange={(value) => setSelectedInstitute(value)}
               >
@@ -547,7 +563,9 @@ export default function DataTable({ config, extra = [] }) {
                 option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
               }
                 placeholder="Select university"
-                className='w-44 h-7 capitalize'
+             className='w-44 h-7 capitalize'
+
+                className='w-48 h-7 capitalize'
                 value={selectedUniversity}
                 onChange={(value) => setSelectedUniversity(value)}
               >
@@ -561,7 +579,9 @@ export default function DataTable({ config, extra = [] }) {
                 option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
               }
                 placeholder="Select status"
-                className='w-44 h-7 capitalize'
+             className='w-44 h-7 capitalize'
+
+                className='w-48 h-7 capitalize'
                 value={selectedStatus}
                 onChange={(value) => setSelectedStatus(value)}
               >
@@ -575,7 +595,9 @@ export default function DataTable({ config, extra = [] }) {
                 option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
               }
                 placeholder="Select user full name"
-                className='w-44 h-7 capitalize'
+             className='w-44 h-7 capitalize'
+
+                className='w-48 h-7 capitalize'
                 value={selectedUserId}
                 onChange={(value) => setSelectedUserId(value)}
               >
@@ -591,7 +613,9 @@ export default function DataTable({ config, extra = [] }) {
                 option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
               }
                 placeholder="Select session"
-                className='w-44 h-7 capitalize'
+             className='w-44 h-7 capitalize'
+
+                className='w-48 h-7 capitalize'
                 value={selectedSession}
                 onChange={(value) => setSelectedSession(value)}
               >
@@ -607,7 +631,9 @@ export default function DataTable({ config, extra = [] }) {
                 option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
               }
                 placeholder="Select payment mode"
-                className='w-44 h-7 capitalize'
+             className='w-44 h-7 capitalize'
+
+                className='w-48 h-7 capitalize'
                 value={selectedPaymentMode}
                 onChange={(value) => setSelectedPaymentMode(value)}
               >
@@ -621,8 +647,32 @@ export default function DataTable({ config, extra = [] }) {
           </div>
           <div className='flex items-center space-x-2'>
             <div>
+              <Select showSearch optionFilterProp="children" filterOption={(input, option) =>
+                option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+              }
+                placeholder="Select installment type"
+                className='w-48 h-7 capitalize'
+                value={selectedInstallment}
+                onChange={(value) => setSelectedInstallment(value)}
+              >
+                {installment.map(install => (
+                  <Select.Option key={install}>{install}</Select.Option>
+                ))}
+              </Select>
+            </div>
+            <div>
+              <DatePicker
+                className='w-48 h-7 capitalize rounded-none'
+                style={{ width: '100%' }}
+                placeholder='Select Date'
+                onChange={(date) => setSelectedDate(date)}
+              />
+            </div>
+            <div>
               <RangePicker
-                className='w-44 h-7 mt-3 capitalize rounded-none'
+             className='w-44 h-7 mt-3 capitalize rounded-none'
+
+                className='w-48 h-7 capitalize rounded-none'
                 onChange={handleDateRangeChange}
                 style={{ width: '100%' }}
                 placeholder={['Start Date', 'End Date']}
@@ -630,25 +680,32 @@ export default function DataTable({ config, extra = [] }) {
             </div>
             <div>
               {/* Button to filter Payment Received */}
-              <Button className='w-32 mt-3 h-7 capitalize text-center text-sm font-thin hover:bg-cyan-100 bg-cyan-100 hover:text-cyan-700 text-cyan-700 border-cyan-500 hover:border-cyan-500 rounded-none' onClick={() => handlePaymentStatus('payment received')}>
+           <Button className='w-32 mt-3 h-7 capitalize text-center text-sm font-thin hover:bg-cyan-100 bg-cyan-100 hover:text-cyan-700 text-cyan-700 border-cyan-500 hover:border-cyan-500 rounded-none' onClick={() => handlePaymentStatus('payment received')}>
+
+              <Button className='w-48 h-7 capitalize text-center text-sm font-thin hover:bg-cyan-100 bg-cyan-100 hover:text-cyan-700 text-cyan-700 border-cyan-500 hover:border-cyan-500 rounded-none' onClick={() => handlePaymentStatus('payment received')}>
                 <span className="font-thin text-sm -ml-2">Received</span>
                 <span className="font-thin text-sm ml-1">({paymentReceivedCount})</span>
               </Button>
             </div>
             <div>
               {/* Button to filter Payment Approved */}
-              <Button className='w-32 mt-3 h-7 capitalize text-center text-sm font-thin hover:bg-green-100 bg-green-100 hover:text-green-700 text-green-700 hover:border-green-500 border-green-600 rounded-none' onClick={() => handlePaymentStatus('payment approved')}>
+           <Button className='w-32 mt-3 h-7 capitalize text-center text-sm font-thin hover:bg-green-100 bg-green-100 hover:text-green-700 text-green-700 hover:border-green-500 border-green-600 rounded-none' onClick={() => handlePaymentStatus('payment approved')}>
+
+              <Button className='w-48 h-7 capitalize text-center text-sm font-thin hover:bg-green-100 bg-green-100 hover:text-green-700 text-green-700 hover:border-green-500 border-green-600 rounded-none' onClick={() => handlePaymentStatus('payment approved')}>
                 <span className="font-thin text-sm -ml-2">Approved</span>
                 <span className="font-thin text-sm ml-1">({paymentApprovedCount})</span>
               </Button>
             </div>
             <div>
               {/* Button to filter Payment Rejected */}
-              <Button className='w-32 mt-3 h-7 capitalize text-center text-sm font-thin hover:bg-red-100 bg-red-100 hover:text-red-700 text-red-700 hover:border-red-500 border-red-600 rounded-none' onClick={() => handlePaymentStatus('payment rejected')}>
+           <Button className='w-32 mt-3 h-7 capitalize text-center text-sm font-thin hover:bg-red-100 bg-red-100 hover:text-red-700 text-red-700 hover:border-red-500 border-red-600 rounded-none' onClick={() => handlePaymentStatus('payment rejected')}>
+
+              <Button className='w-48 h-7 capitalize text-center text-sm font-thin hover:bg-red-100 bg-red-100 hover:text-red-700 text-red-700 hover:border-red-500 border-red-600 rounded-none' onClick={() => handlePaymentStatus('payment rejected')}>
                 <span className="font-thin text-sm -ml-2">Rejected</span>
                 <span className="font-thin text-sm ml-1">({paymentRejectedCount})</span>
               </Button>
             </div>
+
           </div>
           <div className='relative float-right -mt-8 mr-2'>
             <Button title='Reset All Filters' onClick={resetValues} className='text-red-500 hover:text-red-600 bg-white rounded-none h-7'>
