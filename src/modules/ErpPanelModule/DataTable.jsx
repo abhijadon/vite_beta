@@ -131,11 +131,13 @@ export default function DataTable({ config, extra = [] }) {
     }
   };
 
-  // Update the RangePicker component to set start and end dates
-  const handleDateRangeChange = (dates) => {
+   const handleDateRangeChange = (dates) => {
     if (dates && dates.length === 2) {
       setStartDate(dates[0]);
-      setEndDate(dates[1]); // Set the end date correctly
+      setEndDate(dates[1].endOf('day')); // Set the end date to the end of the day
+    } else {
+      setStartDate(null);
+      setEndDate(null); // Clear dates if not a valid range
     }
   };
 

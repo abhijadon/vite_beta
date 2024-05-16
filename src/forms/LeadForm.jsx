@@ -23,7 +23,7 @@ export default function LeadForm() {
   const [selectedPayment, setSelectedPayment] = useState(null);
   const [studentId, setStudentId] = useState('');
   const [selectedAdmissionType, setSelectedAdmissionType] = useState(null);
-
+  const [selectedSpecialization, setSelectedSpecialization] = useState(null)
 
   const handleAdmissionTypeChange = (value) => {
     setSelectedAdmissionType(value);
@@ -347,9 +347,10 @@ export default function LeadForm() {
                 {selectedCourse && (
                   <div>
                     <Form.Item label="Select Specialization" name={['customfields', 'enter_specialization']}>
-                      <Select showSearch optionFilterProp='children' filterOption={(input, option) =>
-                        option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
-                      }
+                      <Select
+                        showSearch
+                        optionFilterProp='children'
+                        filterOption={(input, option) => option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0}
                         placeholder="--Select Specialization--"
                         onChange={handleSpecializationChange}
                       >

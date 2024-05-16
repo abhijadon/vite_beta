@@ -148,7 +148,7 @@ export default function EditForm() {
                             { value: 'BOSSE', label: 'BOSSE' },
                             { value: 'UU', label: 'UU' },
                             { value: 'UPES', label: 'UPES' },
-                            { value: 'MANGALAYATAN', label: 'MANGALAYATAN' },
+                            { value: 'MANGALAYATAN DISTANCE', label: 'MANGALAYATAN DISTANCE' },
                             { value: 'MANGALAYATAN ONLINE', label: 'MANGALAYATAN ONLINE' },
                         ]}
                     ></Select>
@@ -269,6 +269,7 @@ export default function EditForm() {
                             { value: 'Approved', label: translate('Approved') },
                             { value: 'Enrolled', label: translate('Enrolled') },
                             { value: 'Cancel', label: translate('Cancel') },
+                            { value: 'Refunded', label: translate('Refunded') },
                             { value: 'Alumni', label: translate('Alumni') },
                         ]}
                         onChange={(value) => setStatus(value)} // Update status state

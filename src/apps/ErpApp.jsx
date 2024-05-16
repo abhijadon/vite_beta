@@ -48,10 +48,10 @@ export default function ErpCrmApp() {
           <HeaderContent currentPath={currentPath} />
           <Content
             style={{
-              margin: '40px auto 30px',
+              margin: '30px auto 30px',
               overflow: 'initial',
               width: '100%',
-              padding: '0 25px',
+              padding: '0px 10px 0px 0px',
               maxWidth: isNavMenuClose ? 1700 : 1600,
             }}
           >

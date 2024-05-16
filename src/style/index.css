@@ -7,11 +7,13 @@ button,
   background-color: #1677ff;
   color: #ffffff;
 }
+
 button,
 [type='button']:hover {
   background-color: #1677ffa3;
   color: #ffffff !important;
 }
+
 button,
 [type='button'],
 [type='reset'],
@@ -23,44 +25,48 @@ button,
 .login-form button[type='submit'] {
   background-color: #1677ff;
 }
+
 .logo {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.ant-modal-close{
-    color: red !important;
+
+.ant-modal-close {
+  color: red !important;
 }
 
-.ant-modal-close:hover{
-    color: white !important;
-    background-color: red !important;
+.ant-modal-close:hover {
+  color: white !important;
+  background-color: red !important;
 }
 
-.ant-btn.ant-btn-block:hover{
-    background-color: darkblue !important;
-    color: white !important; 
+.ant-btn.ant-btn-block:hover {
+  background-color: darkblue !important;
+  color: white !important;
 }
 
-.ant-pagination-item-link{
+.ant-pagination-item-link {
   color: #1677ff !important;
 }
 
-.ant-pagination-item-link:hover{
+.ant-pagination-item-link:hover {
   color: #ffffff !important;
-background-color: #1677ff !important;
+  background-color: #1677ff !important;
 }
 
 
- .ant-picker-header button {
-    color: #1677ff !important;
- }
+.ant-picker-header button {
+  color: #1677ff !important;
+}
 
-  .ant-picker-header button:hover {
-     color: #066cfb !important;
- }
+.ant-picker-header button:hover {
+  color: #066cfb !important;
+}
+
 .history-modal {
- max-height: 500px; /* Adjust the maximum height as needed */
+  max-height: 500px;
+  /* Adjust the maximum height as needed */
   overflow-y: auto;
   scrollbar-width: none;
 }
@@ -122,9 +128,11 @@ background-color: #1677ff !important;
 .new-value {
   color: #333;
 }
+
 .green-bullet {
-    color: green;
-    font-size: 1rem; /* Adjust the size as needed */
+  color: green;
+  font-size: 1rem;
+  /* Adjust the size as needed */
 }
 
 
@@ -133,13 +141,32 @@ background-color: #1677ff !important;
 }
 
 
-:where(.css-dev-only-do-not-override-1k979oh).ant-drawer .ant-drawer-close {
-  color:  red !important;
+.ant-drawer .ant-drawer-close {
+  color: red !important;
   font-size: 20px;
 }
 
-:where(.css-dev-only-do-not-override-1k979oh).ant-drawer .ant-drawer-close:hover {
-  color:  red !important;
+.ant-drawer .ant-drawer-close:hover {
+  color: red !important;
   font-size: 22px;
- background-color: transparent;
+  background-color: transparent;
+}
+
+
+.ant-select-selector {
+  border-radius: 0px !important;
+}
+
+.ant-card .ant-card-body {
+  padding: 6px !important;
+}
+
+.ant-input-group>.ant-input:first-child,
+.ant-input-group .ant-input-group-addon:first-child {
+  border-radius: 0px !important;
+}
+
+button{
+  border-radius: 0px !important;
+  
 }
