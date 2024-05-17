@@ -68,7 +68,7 @@ const Index = () => {
   return (
     <div style={{ height: 400, fontFamily: 'Arial, sans-serif' }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-        <Dropdown overlay={menu} placement="bottomLeft" arrow>
+        <Dropdown menu={menu} placement="bottomLeft" arrow>
           <div className='flex items-center gap-2 p-1 w-20 rounded-md border box-border hover:bg-slate-200 cursor-pointer -ml-6 -mt-6 font-thin text-sm'>
             <span><VscSettings /></span>
             <span className='font-thin text-sm'>Filter</span>

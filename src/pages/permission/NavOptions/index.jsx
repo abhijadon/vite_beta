@@ -16,8 +16,6 @@ const Index = () => {
         request.listAll({ entity: 'menu' })
     );
 
-    console.log('datanavoptons', userList)
-
     const handleAddNew = () => {
         setSelectedRecord(null);
         setVisible(true);
